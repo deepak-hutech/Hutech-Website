@@ -1,0 +1,52 @@
+import { NextPage } from "next";
+import styles from "../../styles/Header.module.css";
+import { baseUrl } from "./../../public/strings.json";
+
+const Action: NextPage = ({ type, display, link, group, icon }: any) => {
+  console.log(link);
+  console.log(icon, "nnn");
+  switch (type) {
+    case "hyperlink":
+      return (
+        <a href={link} className={styles.topNavLink}>
+          {display}
+        </a>
+      );
+    case "dropdown":
+      return (
+        <a href={link} className={styles.topNavLink}>
+          {display}
+          <section className={styles.subMenuContainer}>
+            {group.map(({ title, action }: any) => (
+              <div className={styles.subMenu}>
+                <h3>{title}</h3>
+                {action?.map((action: any, index: number) => (
+                  <a key={index} href={action.link ? action.link : "/"}>
+                    {action.display}
+                  </a>
+                ))}
+              </div>
+            ))}
+            <iframe
+              className={styles.subMenu}
+              src="https://docs.google.com/forms/d/e/1FAIpQLSfUWA0qXFdUUU_BJJlvfnKNfe7CSoBiYab63d33j8GHjw3JlA/viewform?embedded=true"
+            >
+              Loading…
+            </iframe>
+          </section>
+        </a>
+      );
+    case "call_to_action":
+      return (
+        <button className={styles.headerbtn}>
+         <p style={{margin:"0"}}>
+            {display} <img src={`${baseUrl}${icon[0].url}`} alt="" height="21px" width="24px" />
+         </p>
+        </button>
+      );
+    // case "call_to_action_image": return (<img src={`${baseUrl}${icon.url}`} height="50px" width="50px" />);
+    default:
+      return <div>default</div>;
+  }
+};
+export default Action;
