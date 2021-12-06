@@ -31,7 +31,7 @@
 .carosel_card img {
   width: 100%;
 }
-.carosel_card .image{
+.carosel_card .image {
   width: 80%;
   height: 80%;
 }
@@ -61,7 +61,6 @@
 }
 
 .cardbanner {
-  
   column-gap: 15px;
   overflow-y: scroll;
   margin: 0 20px;
@@ -96,15 +95,15 @@
   color: red;
 }
 .hero_banner {
-  height: auto;
+  height: 600px;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   align-content: space-around;
-  background-color: #C6DEF1;
-  font-family: 'Saira Extra Condensed', sans-serif;
+  background-color: #c6def1;
+  font-family: "Saira Extra Condensed", sans-serif;
 }
 /* .hero_banner:nth-child(even) {
   background-color: #f9f9f9;
@@ -113,7 +112,6 @@
   background-color: #ffffff;
   /* flex-direction: row-reverse;
   padding: 85px 30px 72px 150px; */
-
 
 .image {
   /* flex: 345px; */
@@ -130,8 +128,8 @@
 .hero_banner p {
   margin: 9px 0px;
   font-size: 80px;
-    line-height: 72px;
-    font-weight: bold;
+  line-height: 72px;
+  font-weight: bold;
 }
 .hero_banner .descrption {
   color: #8a93a5;
@@ -167,7 +165,7 @@
   color: #000;
   background-color: #ffffff;
   width: max-content;
-  font-family: 'Lato';
+  font-family: "Lato";
   padding: 8px 20px;
   font-size: 16px;
   font-weight: 400;
@@ -178,18 +176,18 @@
   cursor: pointer;
   border: 1px solid #ffff;
   margin-right: 40px;
-  transition: background-color 0.3s cubic-bezier(0.55, 0, 0.1, 1), color 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: background-color 0.3s cubic-bezier(0.55, 0, 0.1, 1),
+    color 0.3s cubic-bezier(0.55, 0, 0.1, 1);
   transition: box-shadow 1s cubic-bezier(0.55, 0, 0.1, 1) 0s;
 }
 
-.hero_banner .call_to_action:hover{
+/* .hero_banner .call_to_action:hover {
   background: #ff3038 !important;
-    box-shadow: 0 5px 7px rgb(228 24 32 / 40%);
-    color: #fff;
-    border: 1px solid #ED1C24;
-     
-  }
-.buttons{
+  box-shadow: 0 5px 7px rgb(228 24 32 / 40%);
+  color: #fff;
+  border: 1px solid #ed1c24;
+} */
+.buttons {
   display: flex;
 }
 .hero_banner .right {
@@ -340,38 +338,38 @@
   justify-content: center;
 }
 
-.career_banner{
+.career_banner {
   padding: 100px;
   display: flex;
-
+  
 }
-.careerContent{
+.careerContent {
   padding-left: 7%;
 }
-.careerContent .title{
-font-weight: bold;
-font-size: 20px;
-line-height: 24px;
-}
-.careerContent .note{
+.careerContent .title {
   font-weight: bold;
-font-size: 50px;
-line-height: 50px;
-font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 20px;
+  line-height: 24px;
 }
-.careerContent .freetext{
+.careerContent .note {
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 50px;
+  font-family: "Saira Extra Condensed", sans-serif;
+}
+.careerContent .freetext {
   font-weight: normal;
-font-size: 15px;
+  font-size: 15px;
 }
-.careerContent .call_to_action{
-  background: #FFFFFF;
-border: 1px solid #DAD3D3;
-box-sizing: border-box;
-box-shadow: 0px 4px 4px rgba(227, 213, 213, 0.25);
-border-radius: 5px;
-color: #000;
- width: max-content;
-  font-family: 'Lato';
+.careerContent .call_to_action {
+  background: #ffffff;
+  border: 1px solid #dad3d3;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(227, 213, 213, 0.25);
+  border-radius: 5px;
+  color: #000;
+  width: max-content;
+  font-family: "Lato";
   padding: 12px 20px;
   font-size: 14px;
   font-weight: 400;
@@ -380,235 +378,353 @@ color: #000;
   cursor: pointer;
   margin-top: 20px;
 }
- .arrowicon{
+.arrowicon {
   margin: 0px 0px -2px 10px;
 }
-.service_banner{
+.service_banner {
   position: relative;
   width: 100%;
 }
-.bannerimg{
+.bannerimg {
   width: 100%;
 }
-.service_banner .note_descrption{
+.service_banner .note_descrption {
   position: absolute;
   top: 4%;
   left: 7%;
-  font-family: 'Saira Extra Condensed', sans-serif;
-font-style: normal;
-font-weight: bold;
-font-size: 70px;
-line-height: 70px;
-color: #151616;
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 70px;
+  line-height: 70px;
+  color: #151616;
 }
-.service_banner .buttons{
+.service_banner .buttons {
   position: absolute;
   top: 60%;
   left: 7%;
-  background: #FFFFFF;
-  
+  background: #ffffff;
+
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(227, 213, 213, 0.25);
   border-radius: 5px;
   color: #000;
-   width: max-content;
-    font-family: 'Lato';
-    padding: 12px 20px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    
+  width: max-content;
+  font-family: "Lato";
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
-.client_banner{
+.client_banner {
   display: flex;
   width: 100%;
- 
-    
 }
-.blog_banner{
-  background: #E3E8EC;
+.blog_banner {
+  background: #e3e8ec;
   padding: 2% 0% 6% 7%;
 }
-.Industries_banner{
+.Industries_banner {
   background: #ffffff;
   padding: 2% 0% 6% 7%;
 }
 
-.client{
-  background: #F1F2F3;
+.client {
+  background: #f1f2f3;
   padding: 2% 0% 6% 7%;
 }
-.client_banner .downArrow{
+.client_banner .downArrow {
   justify-content: right;
   margin-top: 20px;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -9.00313, 0, 1);
 }
- .clientContent{
+
+.clientContent {
   width: 90%;
   left: 7%;
   margin-bottom: 20px;
 }
-.clientContent .title{
-font-weight: bold;
-font-size: 20px;
-line-height: 24px;
-}
-.clientContent .note{
+.clientContent .title {
   font-weight: bold;
-font-size: 50px;
-line-height: 50px;
-font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 20px;
+  line-height: 24px;
 }
- .react-multi-carousel-list {
+.clientContent .note {
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 50px;
+  font-family: "Saira Extra Condensed", sans-serif;
+}
+.react-multi-carousel-list {
   align-items: start !important;
-    overflow: visible !important;
+  overflow: visible !important;
   display: block !important;
 }
-.blog_banner .buttons{
+.blog_banner .buttons {
   margin: 60px 0 0;
-  background: #FFFFFF;
-  
+  background: #ffffff;
+
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(227, 213, 213, 0.25);
   border-radius: 5px;
   color: #000;
-   width: max-content;
-    font-family: 'Lato';
-    padding: 12px 20px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    
+  width: max-content;
+  font-family: "Lato";
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.accordion_head{
-  
+.accordion_head {
   padding-top: 3%;
-padding-bottom: 5%;
-background-color: #FFFFFF;
-
+  padding-bottom: 5%;
+  background-color: #ffffff;
+  margin-top: -130px;
 }
-.accordion{
-  
-  background-color: #F1F2F3;
+
+.accordion {
+  background-color: #f1f2f3;
   padding: 0 10%;
 }
-.services{
+.services {
   display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #F4F7F9;
+  justify-content: center;
+  align-items: center;
+  background: #f4f7f9;
 }
-.servicesleft{
+.servicesleft {
   width: 30%;
   padding: 7% 1% 7% 7%;
 }
-.servicesRight{
+.servicesRight {
   width: 70%;
   margin-left: 7%;
 }
-.container{
+.container {
   display: flex;
   width: 100%;
 }
-.subTitle{
+.subTitle {
   width: 75%;
   font-weight: bold;
-font-size: 80px;
-line-height: 70px;
-font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 80px;
+  line-height: 70px;
+  font-family: "Saira Extra Condensed", sans-serif;
 
-text-transform: uppercase;
+  text-transform: uppercase;
 
-color: #000000;
-
+  color: #000000;
 }
-.subTitle p{
+.subTitle p {
   margin: 7% 0;
 }
-.servicedownArrow{
+.servicedownArrow {
   display: contents;
 }
-.serviceimg img{
+.serviceimg img {
   width: 100%;
 }
-.servicedescrption h3{
+.servicedescrption h3 {
   font-weight: bold;
-font-size: 45px;
-line-height: 40px;
-font-family: 'Saira Extra Condensed', sans-serif;
-text-transform: uppercase;
-color: #000000;
-margin: 30px 0 20px;
+  font-size: 45px;
+  line-height: 40px;
+  font-family: "Saira Extra Condensed", sans-serif;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 30px 0 20px;
 }
-.servicedescrption h6{
+.servicedescrption h6 {
   font-size: 15px;
   line-height: 26px;
   margin: 0 25px 40px 0px;
   font-weight: 400;
 }
-.services .title{
+.services .title {
   font-size: 20px;
-line-height: 24px;
-margin: 30px 0;
+  line-height: 24px;
+  margin: 30px 0;
 }
-.services .subtitle{
+.services .subtitle {
   font-size: 14px;
-line-height: 18px;
+  line-height: 18px;
 }
 
-.stats_banner{
-  
-  background: #F4F7F9;
+.stats_banner {
+  background: #f4f7f9;
 }
-.status{
+.status {
   margin: 0 5%;
   padding: 5% 7%;
   background-color: #fff;
   width: 100%;
 }
-.stats_banner .title{
+.stats_banner .title {
   font-size: 45px;
-line-height: 40px;
-font-family: 'Saira Extra Condensed', sans-serif;
-text-transform: uppercase;
-color: #000000;
-font-weight: bold;
-text-align: left;
+  line-height: 40px;
+  font-family: "Saira Extra Condensed", sans-serif;
+  text-transform: uppercase;
+  color: #000000;
+  font-weight: bold;
+  text-align: left;
 }
-.border{
+.border {
   border: 1px solid #d6d6d67a;
   margin: 4% 0px 5%;
 }
-.offer h3{
+.offer h3 {
   font-weight: bold;
-font-size: 22px;
-line-height: 40px;
+  font-size: 22px;
+  line-height: 40px;
 }
-.offer p{
+.offer p {
   font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 24px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
 }
-.key_solutions{
+.key_solutions {
   display: flex;
 }
-.key_solutions_textfild{
-  background-color: #153C58;
+.key_solutions_textfild {
+  background-color: #153c58;
   padding: 4%;
-    color: #fff;
+  color: #fff;
   width: 50%;
 }
-.serviceKeySolutionimg{
+.serviceKeySolutionimg {
   width: 50%;
   height: 800px;
-
 }
-.serviceKeySolutionimg img{
+.serviceKeySolutionimg img {
   height: 800px;
   width: 100%;
+}
+.team_capabilities {
+  background: #f4f7f9;
+  padding: 4% 7%;
+}
+.appContainer {
+  background-color: #fff;
+  padding: 5% 7% 8%;
+}
+.team_capabilities title {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+}
+.team_capabilities .teamsubTitle {
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 50px;
+  font-family: "Saira Extra Condensed", sans-serif;
+  text-transform: uppercase;
+}
+.teamsubTitle p {
+  margin: 30px 0;
+}
+.teamcardtitle h2 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+}
+.teamcardtitle h4 {
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 50px;
+  font-family: "Saira Extra Condensed", sans-serif;
+  text-transform: uppercase;
+  margin: 8% 0;
+}
+.teamcardpara p {
+  padding: 8% 0px;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 24px;
+}
+.teamProcess {
+  display: flex;
+  width: 100%;
+}
+.teamcardtitle {
+  width: 45%;
+}
+.teamcardpara {
+  width: 55%;
+}
+.team_capabilitiesimg img {
+  width: 800px;
+  height: 400px;
+}
+.team_capabilitiesimg {
+  width: 100%;
+  text-align: center;
+}
+.card_free_text p {
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 50px;
+  font-family: "Saira Extra Condensed", sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+}
+.processtitle p {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+}
+.service_carosel_banner {
+  background: #f1f2f3;
+  padding: 2% 7% 6% 7%;
+}
+
+
+
+@media only screen and (max-width: 500px) {
+  .hero_banner p {
+    display: none;
+  }
+  .client_banner .downArrow {
+    display: none;
+  }
+  .clientContent .note {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .service_banner .note_descrption {
+    top: 12%;
+    font-size: 34px;
+    line-height: 40px;
+  }
+  .accordion_head {
+   
+    margin-top: 200px;
+  }
+  .service_banner {
+    background: #F1F2F3;
+  }
+   .service_banner .buttons {
+   
+    top: 28%;
+  } 
+  .accordion {
+  
+    padding: 0 7%;
+  }
+  .career_banner {
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+  .careerContent .note {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .careerContent .call_to_action {
+    margin-bottom: 30px;
+  }
 }

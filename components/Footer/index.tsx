@@ -10,6 +10,7 @@ const GetAction = ({ type, display, group }: any) => {
       return (
         <div className={styles.footerMenuOne}>
           <h2>{display}</h2>
+          
           {group.map(({ title }: any) => (
             <a href="/">{title}</a>
           ))}
@@ -51,14 +52,14 @@ const Footer: NextPage = (props: any) => {
 
   return (
     <div>
-      <div className={styles.footer}>
+      {/* <div className={styles.footer}>
         <div className={styles.container}>
           <div className={styles.footernav}>
             <div>
               <a className={styles.logo} href={"/"}>
                 <img src={`${baseUrl}${footerLogo.logo[0].url}`} />
               </a>
-              <p>{footerLogo.free_text}</p>
+              <p>{note}</p>
             </div>
           </div>
 
@@ -68,16 +69,16 @@ const Footer: NextPage = (props: any) => {
         </div>
         <hr className={styles.divider}></hr>
         <div className={styles.container}>
-          <div className={styles.footernav}>
+          <div className={styles.footernavtwo}> */}
             {/* <a className={styles.logo} href={"/"}>
                 <img src={Logo}/>
             </a> */}
-          </div>
-          <div className={styles.footernav}>
+          {/* </div>
+          <div className={styles.footernavthree}>
             {footer_three.map(({ phone_no, mail, Skype_id }: any, index:any) => (
-              <div key={index} >
-                <a>Desk Phone: +91-{phone_no}</a>
-                <a>Mail:{mail} </a>
+              <div key={index} className={styles.officedetails}>
+                <span>Desk Phone: +91-<a> {phone_no}</a></span>
+                <span>Mail: <a style={{color:"#0171C1"}}>{mail} </a></span>
                 <a>Skype: {Skype_id}</a>
               </div>
               ))}
@@ -88,7 +89,7 @@ const Footer: NextPage = (props: any) => {
         <div className={styles.footerbottom}>
           <p>{free_text}</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

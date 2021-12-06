@@ -63,7 +63,7 @@ export async function getStaticProps({ params }: any) {
   const footerResult = await fetch(`${baseUrl}/footer`);
   const header: any = await headerResult.json();
   const footer: any = await footerResult.json();
-debugger;
+
   return {
     props: {
       pages,

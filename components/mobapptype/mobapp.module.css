@@ -1,0 +1,28 @@
+.mobapp{
+  display: flex;
+  width: 100%;
+  margin-bottom: 6%;
+    padding-bottom: 5%;
+    border-bottom: 1px solid #D6D6D6;
+}
+.mobcontainer{
+width: 60%;
+padding: 0% 6% 2% 0;
+}
+.points{
+  display: flex;
+}
+.mobcontainer h2{
+  font-weight: bold;
+font-size: 36px;
+line-height: 34px;
+font-family: 'Saira Extra Condensed', sans-serif;
+text-transform: uppercase;
+}
+.mobcontainer p{
+  font-size: 15px;
+line-height: 24px;
+/* or 160% */
+
+text-transform: capitalize;
+}

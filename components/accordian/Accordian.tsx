@@ -1,15 +1,14 @@
-
 import React, { useState } from "react";
 import { NextPage } from "next";
- import styles from "../Accordian/accordian.module.css";
- import Image, { ImageLoader } from "next/image";
- import { baseUrl } from "./../../public/strings.json";
+import styles from "../Accordian/accordian.module.css";
+import Image, { ImageLoader } from "next/image";
+import { baseUrl } from "./../../public/strings.json";
+import plus from "../assets/plus.svg";
 
-
- const myLoader: ImageLoader = (url: any) => {
+const myLoader: ImageLoader = (url: any) => {
   return url;
 };
-const Accordian: NextPage = (props: any)  => {
+const Accordian: NextPage = (props: any) => {
   const [isActive, setIsActive] = useState(false);
   const {
     image,
@@ -20,16 +19,20 @@ const Accordian: NextPage = (props: any)  => {
     link,
     index,
     call_to_action,
-    content
+    content,
   } = props;
-
 
   return (
     <div className={styles.accordion_box}>
       <div className={styles.accordion_item}>
-        <div className={styles.accordion_title} onClick={() => setIsActive(!isActive)}>
+        <div
+          className={styles.accordion_title}
+          onClick={() => setIsActive(!isActive)}
+        >
           <div className={styles.accordion_heading}>{title}</div>
-          <div className={styles.accordion_symbol}>{isActive ? "-" : "+"}</div>
+          <div className={styles.accordion_symbol}>
+            {isActive ? "-": "+"}
+          </div>
         </div>
 
         {isActive && (
@@ -37,20 +40,19 @@ const Accordian: NextPage = (props: any)  => {
             <div className={styles.accordion_content}>
               <span>{free_text}</span>
               <button className={styles.accord_btn}>
-               <p>{call_to_action}
-                </p>
+                <p>{call_to_action}</p>
               </button>
             </div>
             <div className={styles.accordion_image}>
-            <Image
-              loader={() => myLoader((baseUrl + image[0].url) as any)}
-              src={`${baseUrl}${image[0].url}`}
-              placeholder="blur"
-              blurDataURL={baseUrl + image[0].url}
-              width={482}
-              height={356}
-              className={styles.cardimg}
-            />
+              <Image
+                loader={() => myLoader((baseUrl + image[0].url) as any)}
+                src={`${baseUrl}${image[0].url}`}
+                placeholder="blur"
+                blurDataURL={baseUrl + image[0].url}
+                width={482}
+                height={356}
+                className={styles.cardimg}
+              />
             </div>
           </div>
         )}
@@ -60,4 +62,3 @@ const Accordian: NextPage = (props: any)  => {
 };
 
 export default Accordian;
- 

@@ -6,6 +6,7 @@ import Action from "../Actions";
 import { baseUrl } from "./../../public/strings.json";
 import leftarrow from "../assets/arrow.png";
 
+
 const myLoader: ImageLoader = (url: any) => {
   return url;
 };
@@ -21,9 +22,10 @@ const Card: NextPage = (props: any) => {
     actions,
     type,
     link,
-    index,
+    image_one_title,
     call_to_action,
-    arrow
+    arrow,
+    image_one,
   } = props;
 
   switch (type) {
@@ -48,22 +50,24 @@ const Card: NextPage = (props: any) => {
     case "long_card":
       return (
         <div className={styles.carosoulCards}>
-            <a>
-          <div className={styles.long_card}>
-            <Image
-              loader={() => myLoader((baseUrl + image[0].url) as any)}
-              src={`${baseUrl}${image[0].url}`}
-              placeholder="blur"
-              blurDataURL={baseUrl + image[0].url}
-              width={482}
-              height={356}
-              className={styles.cardimg}
-            />
+          <a>
+            <div className={styles.long_card}>
+              <Image
+                loader={() => myLoader((baseUrl + image[0].url) as any)}
+                src={`${baseUrl}${image[0].url}`}
+                placeholder="blur"
+                blurDataURL={baseUrl + image[0].url}
+                width={482}
+                height={356}
+                className={styles.cardimg}
+              />
 
-            <button><p>{call_to_action}</p></button>
-          </div>
-          <div className={styles.heading}>{title}</div>
-          <p className={styles.para}>{card_free_text}</p>
+              <button>
+                <p>{call_to_action}</p>
+              </button>
+            </div>
+            <div className={styles.heading}>{title}</div>
+            <p className={styles.para}>{card_free_text}</p>
           </a>
         </div>
       );
@@ -77,31 +81,57 @@ const Card: NextPage = (props: any) => {
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
-              borderRadius:"10px 0 0 10px",
+              borderRadius: "10px 0 0 10px",
             }}
-          >
-           
-          </div>
+          ></div>
           <div className={styles.card_contant}>
-          <div className={styles.heading}>{title}</div>
+            <div className={styles.heading}>{title}</div>
             <p className={styles.para}>{on_image_text}</p>
-            <hr style={{border:" 1px solid #DCDCDC"}}/>
-            <div style={{textAlign:"end",
-    padding: "10px 30px"}}>
-            <Image
-              loader={() => myLoader((baseUrl + arrow[0].url) as any)}
-              src={`${baseUrl}${arrow[0].url}`}
-              placeholder="blur"
-              blurDataURL={baseUrl + arrow[0].url}
-              width={15}
-              height={15}
-            />
+            <hr style={{ border: " 1px solid #DCDCDC" }} />
+            <div style={{ textAlign: "end", padding: "10px 30px" }}>
+              <Image
+                loader={() => myLoader((baseUrl + arrow[0].url) as any)}
+                src={`${baseUrl}${arrow[0].url}`}
+                placeholder="blur"
+                blurDataURL={baseUrl + arrow[0].url}
+                width={15}
+                height={15}
+              />
             </div>
-            
           </div>
         </div>
       );
-
+    case "service_card":
+      return (
+        <div>
+          <div className={styles.servicecard}>
+            <div>
+              <Image
+                loader={() => myLoader((baseUrl + image_one[0].url) as any)}
+                src={`${baseUrl}${image_one[0].url}`}
+                placeholder="blur"
+                blurDataURL={baseUrl + image_one[0].url}
+                width={40}
+                height={40}
+              />
+              <p>{image_one_title}</p>
+            </div>
+          </div>
+          <div className={styles.servicecard}>
+            <div>
+              <Image
+                loader={() => myLoader((baseUrl + image_one[0].url) as any)}
+                src={`${baseUrl}${image_one[0].url}`}
+                placeholder="blur"
+                blurDataURL={baseUrl + image_one[0].url}
+                width={40}
+                height={40}
+              />
+              <p>{image_one_title}</p>
+            </div>
+          </div>
+        </div>
+      );
     default:
       return (
         <div className={styles.card}>

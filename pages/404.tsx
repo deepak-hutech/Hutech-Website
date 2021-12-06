@@ -12,7 +12,7 @@ const myLoader: ImageLoader = () => {
 
 const UnderConstruction: NextPage = (props: any) => {
     const router = useRouter();
-    console.log(router);
+    // console.log(router);
     const title = router.asPath.split("/").join("_").substr(1);
     return (
         <div className={Styles.construction}>

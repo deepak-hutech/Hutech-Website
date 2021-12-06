@@ -1,3 +1,4 @@
+import {useEffect, useRef} from "react";
 import type { NextPage, GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -5,7 +6,7 @@ import { useRouter } from "next/router";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ErrorPage from "next/error";
-import Section from '../components/Section';
+import Section from "../components/Section";
 
 import { baseUrl } from "../public/strings.json";
 
@@ -18,24 +19,44 @@ const DynamicPage: NextPage<{ header: any; pages: any; footer: any }> = (
     return <ErrorPage statusCode={404} />;
   }
 
+  const scrollRef = useRef()  as React.MutableRefObject<HTMLInputElement>;
+
+  // useEffect(() => {
+  //   if (typeof window === "undefined") {
+  //     return;
+  //   }
+  //   const LocomotiveScroll = require("locomotive-scroll");
+  //   const scroll = new LocomotiveScroll.default({
+  //     el: scrollRef.current,
+  //     smooth: true,
+  //   });
+
+  //   return () => scroll.destroy();
+  // }, []);
+
   const { header, footer } = props;
   console.log(header, "lll");
-  const { title, content, Logo, descrption } = props.pages[0];
+  const { title, content, Logo, descrption } = props.pages;
   console.log("lllllll", content);
   console.log("@@@@@@@@", props.pages);
   return (
-    <div>
+    <div ref={scrollRef}>
       <Head>
         <title>{title}</title>
         <meta name="description" content={descrption} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         {/* <link rel="icon" href={`${baseUrl}${favicon}`} /> */}
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.css"
+        />
       </Head>
       <Header {...header} />
-      {content.map((section: any) => (
+      {/* {content.map((section: any) => (
         <Section {...section} />
-      ))}
-
+      ))} */}
+      {/* <div data-scroll data-scroll-call="{y,o,l,o}">Trigger</div>
+      <h1 data-scroll data-scroll-speed="1" >TEST</h1> */}
       <Footer {...footer} />
     </div>
   );
@@ -45,7 +66,7 @@ const DynamicPage: NextPage<{ header: any; pages: any; footer: any }> = (
 // It may be called again, on a serverless function, if
 // the path has not been generated.
 export async function getStaticPaths() {
-  debugger;
+  
   const pageResult = await fetch(`${baseUrl}/pages`);
   const pages = await pageResult.json();
   console.log("pages", pages);
@@ -64,7 +85,7 @@ export async function getStaticPaths() {
 export const getStaticProps: GetStaticProps = async ({ res }: any) => {
   try {
     const headerResult = await fetch(`${baseUrl}/header`);
-    const pageResult = await fetch(`${baseUrl}/pages?Title=services`);
+    const pageResult = await fetch(`${baseUrl}/pages?Title=company`);
 
     const footerResult = await fetch(`${baseUrl}/footer`);
     const header: any = await headerResult.json();
@@ -72,7 +93,7 @@ export const getStaticProps: GetStaticProps = async ({ res }: any) => {
 
     const footer: any = await footerResult.json();
     console.log("plans/uid", res);
-    debugger;
+    
 
     return {
       props: { pages: pages, header, footer },

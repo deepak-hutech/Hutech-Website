@@ -40,7 +40,8 @@ const Action: NextPage = ({ type, display, link, group, icon }: any) => {
       return (
         <button className={styles.headerbtn}>
          <p style={{margin:"0"}}>
-            {display} <img src={`${baseUrl}${icon[0].url}`} alt="" height="21px" width="24px" />
+            {display} 
+            {/* <img src={`${baseUrl}${icon[0].url}`} alt="" height="21px" width="24px" /> */}
          </p>
         </button>
       );
