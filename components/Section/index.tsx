@@ -21,6 +21,7 @@ const Section: NextPage = (props: any) => {
     home_banner,
     home_button,
     sub_heading,
+    small_card,
     type,
     title,
     image_size,
@@ -46,7 +47,6 @@ const Section: NextPage = (props: any) => {
     para,
     servicecarosel
   } = props;
-  console.log(props.acordian, "hii");
   const responsive_cards = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -64,15 +64,15 @@ const Section: NextPage = (props: any) => {
       slidesToSlide: 1, // optional, default to 1.
     },
   };
-  const responsive_long_cards = {
+  const responsive_small_cards = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      items: 4,
       slidesToSlide: 1, // optional, default to 1.
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      items: 3,
       slidesToSlide: 2, // optional, default to 1.
     },
     mobile: {
@@ -312,53 +312,79 @@ const Section: NextPage = (props: any) => {
           
 //         </div>
 //       );
-//     case "Industries_banner":
-//       return (
-//         <div className={`${styles.Industries_banner}`}>
-//           <div className={`${styles.client_banner}`}>
-//             <div className={styles.clientContent}>
-//               {title && (
-//                 <div
-//                   className={styles.title}
-//                   dangerouslySetInnerHTML={{ __html: marked(title) }}
-//                 ></div>
-//               )}
-//               {note_descrption && (
-//                 <div
-//                   className={styles.note}
-//                   dangerouslySetInnerHTML={{ __html: marked(note_descrption) }}
-//                 ></div>
-//               )}
-//             </div>
-//             {media[0] && (
-//               <div className={`${styles.downArrow}`} data-scroll data-scroll-speed="1">
-//                 <img src={baseUrl + media[0].url} />
-//               </div>
-//             )}
-//           </div>
+    case "our_latest_works":
+      return (
+        <div className={`${styles.Industries_banner}`}>
+          <div className={`${styles.client_banner}`}>
+            <div className={styles.clientContent}>
+              {free_text && (
+                <div
+                  className={styles.title}
+                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                ></div>
+              )}
+              {/* {note_descrption && (
+                <div
+                  className={styles.note}
+                  dangerouslySetInnerHTML={{ __html: marked(note_descrption) }}
+                ></div>
+              )} */}
+            </div>
+            {/* {media[0] && (
+              <div className={`${styles.downArrow}`} data-scroll data-scroll-speed="1">
+                <img src={baseUrl + media[0].url} />
+              </div>
+            )} */}
+          </div>
 
-//           <Carousel
-//             swipeable={true}
-//             draggable={false}
-//             showDots={false}
-//             responsive={responsive_long_cards}
-//             ssr={true} // means to render carousel on server-side.
-//             infinite={false}
-//             keyBoardControl={true}
-//             customTransition="all 0.5s ease"
-//             transitionDuration={1000}
-//             containerClass="carousel-container"
-//             removeArrowOnDeviceType={["tablet", "mobile"]}
-//             dotListClass="custom-dot-list-style"
-//             // itemClass="carousel-item-padding-40-px"
-//             className={styles.clientcarousel}
-//           >
-//             {cards.map((_card: any, index: number) => (
-//               <Card {..._card} key={index} />
-//             ))}
-//           </Carousel>
-//         </div>
-//       );
+          <Carousel
+            swipeable={true}
+            draggable={false}
+            showDots={false}
+            responsive={responsive_small_cards}
+            ssr={true} // means to render carousel on server-side.
+            infinite={false}
+            keyBoardControl={true}
+            customTransition="all 0.5s ease"
+            transitionDuration={1000}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+            dotListClass="custom-dot-list-style"
+            // itemClass="carousel-item-padding-40-px"
+            className={styles.clientcarousel}
+          >
+            {carosel_cards.map((_card: any, index: number) => (
+              <Card {..._card} key={index} />
+            ))}
+          </Carousel>
+        </div>
+      );
+      case "capabilities":
+      return (
+        <div className={`${styles.Industries_banner}`}>
+          <div className={`${styles.client_banner}`}>
+            <div className={styles.clientContent}>
+              {free_text && (
+                <div
+                  className={styles.title}
+                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                ></div>
+              )}
+              {sub_heading && (
+                <div
+                  className={styles.note}
+                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                ></div>
+              )}
+            </div>
+          </div>
+          <div className={styles.capabilities_cards}>
+          {carosel_cards.map((_card: any, index: number) => (
+              <Card {..._card} key={index} />
+            ))}
+          </div>
+        </div>
+      );
 
 //     case "blog":
 //       return (

@@ -11,11 +11,12 @@ const myLoader: ImageLoader = () => {
 }
 
 const UnderConstruction: NextPage = (props: any) => {
+    console.log("40404040404040404")
     const router = useRouter();
-    // console.log(router);
     const title = router.asPath.split("/").join("_").substr(1);
     return (
         <div className={Styles.construction}>
+            <h1>404</h1>
             <Head>
                 <title>{title}</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />

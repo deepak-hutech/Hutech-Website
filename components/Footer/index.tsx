@@ -4,7 +4,6 @@ import Action from "../Actions";
 import { baseUrl } from "../../public/strings.json";
 
 const GetAction = ({ type, display, group }: any) => {
-  console.log(type, "///");
   switch (type) {
     case "hyperlink":
       return (
@@ -48,7 +47,6 @@ const Footer: NextPage = (props: any) => {
     Skype_id,
     mail,
   } = props;
-  console.log(footerLogo, "hhh");
 
   return (
     <div>

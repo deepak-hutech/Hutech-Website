@@ -14,7 +14,12 @@
 .card a {
   width: 100%;
   vertical-align: middle;
-  display: flex;
+  
+}
+.capabilities_cards{
+  text-align: left;
+  margin: 10px 10px;
+  width: 300px;
 }
 
 /* .card:hover {
@@ -228,12 +233,12 @@
   width: 390px;
   margin-top: 80px;
 }
-.long_card {
+.capabilities {
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
   max-width: 500px;
   /* max-height: 300px; */
   margin: auto;
-  text-align: center;
+  text-align: left;
   font-family: arial;
   position: relative;
 }

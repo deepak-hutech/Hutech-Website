@@ -3,8 +3,6 @@ import styles from "../../styles/Header.module.css";
 import { baseUrl } from "./../../public/strings.json";
 
 const Action: NextPage = ({ type, display, link, group, icon }: any) => {
-  console.log(link);
-  console.log(icon, "nnn");
   switch (type) {
     case "hyperlink":
       return (

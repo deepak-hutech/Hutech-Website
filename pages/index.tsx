@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import ErrorPage from "next/error";
 import Section from "../components/Section";
 
-import { baseUrl } from "./../public/strings.json";
+import { baseUrl } from "../public/strings.json";
 
 // if (typeof window !== "undefined") {
 //   const LocomotiveScroll = require("locomotive-scroll");
@@ -38,10 +38,7 @@ const Home: NextPage<{ header: any; pages: any; footer: any }> = (props) => {
   // }, []);
 
   const { header, footer } = props;
-  console.log(header, "lll");
   const { title, content, Logo, descrption } = props.pages[0];
-  console.log("lllllll", content);
-  console.log("@@@@@@@@", props.pages);
   return (
     <div ref={scrollRef}>
       <Head>
@@ -65,7 +62,6 @@ const Home: NextPage<{ header: any; pages: any; footer: any }> = (props) => {
   );
 };
 export const getStaticProps: GetStaticProps = async ({ res }: any) => {
-  console.log(res);
   try {
     const headerResult = await fetch(`${baseUrl}/header`);
     const pageResult = await fetch(`${baseUrl}/pages`);
@@ -75,7 +71,6 @@ export const getStaticProps: GetStaticProps = async ({ res }: any) => {
     const pages: any = await pageResult.json();
 
     const footer: any = await footerResult.json();
-    console.log("plans/uid", res);
     
     return {
       props: { pages: pages, header, footer },

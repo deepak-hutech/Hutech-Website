@@ -136,7 +136,7 @@
   width: fit-content;
   word-wrap: normal;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 12px;
 }
 .hero_banner .title {
   color: #233253;
@@ -727,4 +727,8 @@
   .careerContent .call_to_action {
     margin-bottom: 30px;
   }
+}
+.capabilities_cards{
+  display: flex;
+  flex-wrap: wrap;
 }

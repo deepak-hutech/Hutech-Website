@@ -2,7 +2,7 @@ import {useEffect, useRef} from "react";
 import type { NextPage, GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useRouter, withRouter} from "next/router";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ErrorPage from "next/error";
@@ -13,7 +13,6 @@ import { baseUrl } from "../public/strings.json";
 const DynamicPage: NextPage<{ header: any; pages: any; footer: any }> = (
   props
 ) => {
-  console.log("@@@@@@@@", props);
 
   if (!props.pages) {
     return <ErrorPage statusCode={404} />;
@@ -35,10 +34,7 @@ const DynamicPage: NextPage<{ header: any; pages: any; footer: any }> = (
   // }, []);
 
   const { header, footer } = props;
-  console.log(header, "lll");
   const { title, content, Logo, descrption } = props.pages;
-  console.log("lllllll", content);
-  console.log("@@@@@@@@", props.pages);
   return (
     <div ref={scrollRef}>
       <Head>
@@ -75,31 +71,28 @@ export async function getStaticPaths() {
   const paths = pages.map((page: any) => ({
     params: { uid: page.uid },
   }));
-
   // We'll pre-render only these paths at build time.
   // { fallback: blocking } will server-render pages
   // on-demand if the path doesn't exist.
   return { paths, fallback: false };
 }
 
-export const getStaticProps: GetStaticProps = async ({ res }: any) => {
+export const getStaticProps: GetStaticProps = async ({ params }: any) => {
+  console.log("###insidegetstatic", params.uid);
   try {
     const headerResult = await fetch(`${baseUrl}/header`);
-    const pageResult = await fetch(`${baseUrl}/pages?Title=company`);
+    const pageResult = await fetch(`${baseUrl}/pages?Title=${params.uid}`);
 
     const footerResult = await fetch(`${baseUrl}/footer`);
     const header: any = await headerResult.json();
     const pages: any = await pageResult.json();
 
-    const footer: any = await footerResult.json();
-    console.log("plans/uid", res);
-    
+    const footer: any = await footerResult.json();    
 
     return {
       props: { pages: pages, header, footer },
     };
   } catch {
-    res.statusCode = 404;
     return {
       props: {},
     };
