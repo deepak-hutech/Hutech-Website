@@ -34,9 +34,10 @@ const DynamicPage: NextPage<{ header: any; pages: any; footer: any }> = (
   // }, []);
 
   const { header, footer } = props;
-  const { title, content, Logo, descrption } = props.pages;
+  const { title, content, Logo, descrption } = props.pages[0];
+  console.log(props.pages,"kkk");
   return (
-    <div ref={scrollRef}>
+    <div >
       <Head>
         <title>{title}</title>
         <meta name="description" content={descrption} />
@@ -48,9 +49,11 @@ const DynamicPage: NextPage<{ header: any; pages: any; footer: any }> = (
         />
       </Head>
       <Header {...header} />
-      {/* {content.map((section: any) => (
+      
+      {content.map((section: any) => (
         <Section {...section} />
-      ))} */}
+      ))}
+      <h1>jiii</h1>
       {/* <div data-scroll data-scroll-call="{y,o,l,o}">Trigger</div>
       <h1 data-scroll data-scroll-speed="1" >TEST</h1> */}
       <Footer {...footer} />
@@ -68,8 +71,8 @@ export async function getStaticPaths() {
   console.log("pages", pages);
 
   // Get the paths we want to pre-render based on posts
-  const paths = pages.map((page: any) => ({
-    params: { uid: page.uid },
+  const paths = pages.map((pages: any) => ({
+    params: { uid: pages.uid },
   }));
   // We'll pre-render only these paths at build time.
   // { fallback: blocking } will server-render pages
@@ -78,15 +81,15 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-  console.log("###insidegetstatic", params.uid);
+  
   try {
     const headerResult = await fetch(`${baseUrl}/header`);
-    const pageResult = await fetch(`${baseUrl}/pages?Title=${params.uid}`);
-
+    const pageResult = await fetch(`${baseUrl}/pages?uid=${params.uid}`);
+    
     const footerResult = await fetch(`${baseUrl}/footer`);
     const header: any = await headerResult.json();
     const pages: any = await pageResult.json();
-
+    console.log("###insidegetstatic", pages);
     const footer: any = await footerResult.json();    
 
     return {

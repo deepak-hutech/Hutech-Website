@@ -385,6 +385,32 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
+      case "company_banner":
+      return (
+        <div className={`${styles.Industries_banner}`}>
+          <div className={`${styles.client_banner}`}>
+            <div className={styles.clientContent}>
+              {free_text && (
+                <div
+                  className={styles.title}
+                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                ></div>
+              )}
+              {/* {sub_heading && (
+                <div
+                  className={styles.note}
+                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                ></div>
+              )} */}
+            </div>
+          </div>
+          {/* <div className={styles.capabilities_cards}>
+          {carosel_cards.map((_card: any, index: number) => (
+              <Card {..._card} key={index} />
+            ))}
+          </div> */}
+        </div>
+      );
 
 //     case "blog":
 //       return (
