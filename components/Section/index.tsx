@@ -118,9 +118,22 @@ const Section: NextPage = (props: any) => {
   switch (type) {
     case "home_page_banner":
       return (
-        <div className={`${styles.hero_banner}`}>
+        <div className={styles.home_bannerimg}>
+          {home_banner[0] && (
+              <Image
+                loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
+                src={baseUrl + home_banner[0].url}
+                placeholder="blur"
+                blurDataURL={baseUrl + home_banner[0].url}
+                height={600}
+                width={"100%"}
+                className={styles.bannerimg}
+              />
+           
+          )}
+          <div className={styles.banner_container}>
           
-          {free_text ? (
+          {free_text &&(
             <div className={styles.content}>
               <div
                 className={styles.free_text}
@@ -147,37 +160,73 @@ const Section: NextPage = (props: any) => {
               </div>
             )}
             </div>
-          ) : (
-            <div className={styles.content}>
+          
+          )}
+          </div>
+        </div>
+      );
+      case "development":
+      return (
+        <div className={styles.key_solutions}>
+          {home_banner[0] && (
+            <div className={`${styles.serviceKeySolutionimg}`}>
+              <img src={baseUrl + home_banner[0].url} />
+            </div>
+          )}
+          <div className={styles.key_solutions_textfild}>
+            {free_text && (
+              <div
+                className={styles.development_title}
+                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+              ></div>
+            )}
+            {sub_heading && (
+              <div
+                className={styles.development_descrption}
+                dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+              ></div>
+            )}
+          </div>
+        </div>
+      );
+      case "successful_product":
+      return (
+        <div >
+            {free_text && (
+              <div
+                className={styles.title}
+                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+              ></div>
+            )}
+          <div className={styles.capabilities_cards}>
+          {carosel_cards.map((_card: any, index: number) => (
+              <Card {..._card} key={index} />
+            ))}
+          </div>
+        </div>
+      );
+      case "clients":
+        return (
+          <div >
+              {free_text && (
+                <div
+                  className={styles.title}
+                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                ></div>
+              )}
               {sub_heading && (
                 <div
-                  className={styles.descrption}
+                  className={styles.title}
                   dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
                 ></div>
               )}
-              
-              
+            <div className={styles.capabilities_cards}>
+            {carosel_cards.map((_card: any, index: number) => (
+                <Card {..._card} key={index} />
+              ))}
             </div>
-          )}
-          
-          {home_banner[0] && (
-            <div
-              className={`${styles.image} ${
-                image_position ? styles[image_position] : ""
-              } ${image_size ? styles[image_size] : ""}`}
-            >
-              <Image
-                loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
-                src={baseUrl + home_banner[0].url}
-                placeholder="blur"
-                blurDataURL={baseUrl + home_banner[0].url}
-                height={421}
-                width={497}
-              />
-            </div>
-          )}
-        </div>
-      );
+          </div>
+        );
 //     case "career_banner":
 //       return (
 //         <div className={`${styles.career_banner}`}>
@@ -314,8 +363,7 @@ const Section: NextPage = (props: any) => {
 //       );
     case "our_latest_works":
       return (
-        <div className={`${styles.Industries_banner}`}>
-          <div className={`${styles.client_banner}`}>
+        <div className={`${styles.our_latest_works}`}>
             <div className={styles.clientContent}>
               {free_text && (
                 <div
@@ -323,19 +371,8 @@ const Section: NextPage = (props: any) => {
                   dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                 ></div>
               )}
-              {/* {note_descrption && (
-                <div
-                  className={styles.note}
-                  dangerouslySetInnerHTML={{ __html: marked(note_descrption) }}
-                ></div>
-              )} */}
             </div>
-            {/* {media[0] && (
-              <div className={`${styles.downArrow}`} data-scroll data-scroll-speed="1">
-                <img src={baseUrl + media[0].url} />
-              </div>
-            )} */}
-          </div>
+          
 
           <Carousel
             swipeable={true}
@@ -361,18 +398,18 @@ const Section: NextPage = (props: any) => {
       );
       case "capabilities":
       return (
-        <div className={`${styles.Industries_banner}`}>
+        <div className={`${styles.capabilities}`}>
           <div className={`${styles.client_banner}`}>
             <div className={styles.clientContent}>
               {free_text && (
                 <div
-                  className={styles.title}
+                  className={styles.capab_title}
                   dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                 ></div>
               )}
               {sub_heading && (
                 <div
-                  className={styles.note}
+                  className={styles.descrption}
                   dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
                 ></div>
               )}
@@ -402,6 +439,37 @@ const Section: NextPage = (props: any) => {
                   dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
                 ></div>
               )} */}
+            </div>
+          </div>
+          {/* <div className={styles.capabilities_cards}>
+          {carosel_cards.map((_card: any, index: number) => (
+              <Card {..._card} key={index} />
+            ))}
+          </div> */}
+        </div>
+      );
+      case "career_banner":
+      return (
+        <div className={`${styles.Industries_banner}`}>
+          <div className={`${styles.client_banner}`}>
+            <div className={styles.clientContent}>
+              {free_text && (
+                <div
+                  className={styles.title}
+                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                ></div>
+              )}
+              {sub_heading && (
+                <div
+                  className={styles.note}
+                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                ></div>
+              )}
+              {home_banner[0] && (
+               <div className={`${styles.downArrow}`} >
+                <img src={baseUrl + home_banner[0].url} />
+              </div>
+           )}
             </div>
           </div>
           {/* <div className={styles.capabilities_cards}>
@@ -543,30 +611,7 @@ const Section: NextPage = (props: any) => {
 //           </div>
 //         </div>
 //       );
-//     case "key_solutions":
-//       return (
-//         <div className={styles.key_solutions}>
-//           {media[0] && (
-//             <div className={`${styles.serviceKeySolutionimg}`}>
-//               <img src={baseUrl + media[0].url} />
-//             </div>
-//           )}
-//           <div className={styles.key_solutions_textfild}>
-//             {card_free_text && (
-//               <div
-//                 className={styles.title}
-//                 dangerouslySetInnerHTML={{ __html: marked(card_free_text) }}
-//               ></div>
-//             )}
-//             {free_text && (
-//               <div
-//                 className={styles.title}
-//                 dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-//               ></div>
-//             )}
-//           </div>
-//         </div>
-//       );
+    
 //     case "team_capabilities":
 //       return (
 //         <div className={styles.team_capabilities}>

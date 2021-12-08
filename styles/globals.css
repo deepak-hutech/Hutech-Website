@@ -18,9 +18,15 @@ a {
 }
 .react-multi-carousel-list {
   align-items: start !important;
+  height: 340px !important;
   
 }
+
 .react-multiple-carousel__arrow--left {
   left: -webkit-calc(4% + 1px);
   left: calc(86% + 1px) !important;
+  bottom: 0;
+}
+.react-multiple-carousel__arrow--right{
+  bottom: 0 !important;
 }

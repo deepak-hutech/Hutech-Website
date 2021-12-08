@@ -1,12 +1,10 @@
 .card {
-  margin-top: 80px;
-  width: 280px;
-  height: 230px;
-  background: #ffffff;
+  
+  width: 300px;
+  height: 210px;
+  background: #fff;
   box-shadow: 0px 4px 14px rgba(177, 177, 177, 0.25);
   border-radius: 10px;
-
-  padding: 16px 12px;
   text-align: center;
   display: flex;
   transition: box-shadow 1s cubic-bezier(0.55, 0, 0.1, 1) 0s;
@@ -19,7 +17,8 @@
 .capabilities_cards{
   text-align: left;
   margin: 10px 10px;
-  width: 300px;
+  width: 290px;
+  height: 190px;
 }
 
 /* .card:hover {
@@ -41,10 +40,10 @@
   text-align: left;
 }
 
-.card img {
+/* .card img {
   padding: 0px 15px !important;
   height: 93px;
-}
+} */
 
 .asset_card {
   background: #ffffff;
@@ -304,15 +303,16 @@
   transform-origin: center left;
 }
 .heading {
-  font-size: 24px;
-  margin: 30px 10px 20px 20px;
-  text-transform: lowercase;
-  line-height: 29px;
+  font-size: 20px;
+  margin:30px 50px 20px 20px;
+  text-transform: capitalize;
+  line-height: 22px;
+  text-align: center;
 }
 .para {
-  font-size: 14px;
-  line-height: 22px;
-  margin: 10px 20px 26px 20px;
+  font-size: 18px;
+  line-height: 30px;
+  margin: 18px 0px 26px 0px;
 }
 .projectcard {
   max-width: 300px;

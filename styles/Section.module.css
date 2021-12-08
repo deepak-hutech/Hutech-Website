@@ -426,10 +426,10 @@
   background: #e3e8ec;
   padding: 2% 0% 6% 7%;
 }
-.Industries_banner {
+/* .Industries_banner {
   background: #ffffff;
   padding: 2% 0% 6% 7%;
-}
+} */
 
 .client {
   background: #f1f2f3;
@@ -591,17 +591,17 @@
   display: flex;
 }
 .key_solutions_textfild {
-  background-color: #153c58;
+  background-color: #fff;
   padding: 4%;
   color: #fff;
-  width: 50%;
+  width: 60%;
 }
 .serviceKeySolutionimg {
-  width: 50%;
-  height: 800px;
+  width: 40%;
+  height: 520px;
 }
 .serviceKeySolutionimg img {
-  height: 800px;
+  height: 520px;
   width: 100%;
 }
 .team_capabilities {
@@ -731,4 +731,74 @@
 .capabilities_cards{
   display: flex;
   flex-wrap: wrap;
+}
+.home_bannerimg{
+  width: 100%;
+  display: grid;
+  margin-top: -65px;
+  position: relative;
+}
+
+.banner_container{
+position: absolute;
+top: 26%;
+left: 8%;
+}
+.free_text h2{
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 60px;
+  color: #383838;
+  margin: 5px 0;
+}
+.descrption{
+  font-size: 24px;
+  line-height: 30px;
+  color: #000;
+}
+.call_to_action{
+  font-size: 15px;
+  line-height: 17px;
+  color: #fff;
+  background: #0171C1;
+border: 1px solid #FFFFFF;
+box-sizing: border-box;
+border-radius: 30px;
+padding: 14px 32px;
+margin-top: 30px;
+}
+.title h3{
+  font-size: 38px;
+  font-weight: bold;
+  line-height: 60px;
+  color: #383838;
+  margin-left: 8%;
+}
+.our_latest_works {
+  background: #ffffff;
+  padding: 2% 0% 3% 0%;
+}
+.capabilities{
+  padding: 0 5% 6% 7%; 
+}
+.capab_title h3{
+  
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 60px;
+    color: #383838;
+   margin: 0;
+  
+}
+.development_title h3{
+  font-size: 38px;
+    font-weight: bold;
+    line-height: 60px;
+    color: #383838;
+   margin: 0;
+}
+.development_descrption p{
+  font-size: 15px;
+  line-height: 30px;
+  color: #000;
 }
