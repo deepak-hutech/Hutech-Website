@@ -848,21 +848,6 @@ const Section: NextPage = (props: any) => {
                       )}
                     </div>
                   ) : " "}
-                     {home_banner[0] && (
-                      <div
-                        className={`${companyStyles.image} ${
-                          image_position ? companyStyles[image_position] : ""
-                        } ${image_size ? companyStyles[image_size] : ""}`}
-                      >
-                        <Image
-                          loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
-                          src={baseUrl + home_banner[0].url}
-                          placeholder="blur"
-                          blurDataURL={baseUrl + home_banner[0].url}
-                          layout="fill"
-                        />
-                      </div>
-                    )}
                 </div>
                 )
 
