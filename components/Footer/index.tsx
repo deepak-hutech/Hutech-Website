@@ -2,6 +2,13 @@ import { NextPage } from "next";
 import styles from "../../styles/Footer.module.css";
 import Action from "../Actions";
 import { baseUrl } from "../../public/strings.json";
+import { Container, Col, Row } from 'react-bootstrap';
+import vector2 from "../assets/vector2.svg";
+import Image, { ImageLoader } from "next/image";
+
+const myLoader: ImageLoader = (url: any) => {
+  return url;
+};
 
 const GetAction = ({ type, display, group }: any) => {
   switch (type) {
@@ -43,52 +50,40 @@ const Footer: NextPage = (props: any) => {
     weblinks,
     footerLogo,
     footer_three,
+    footer_action,
     phone_no,
     Skype_id,
     mail,
   } = props;
-
   return (
     <div>
-      {/* <div className={styles.footer}>
-        <div className={styles.container}>
-          <div className={styles.footernav}>
-            <div>
-              <a className={styles.logo} href={"/"}>
-                <img src={`${baseUrl}${footerLogo.logo[0].url}`} />
-              </a>
-              <p>{note}</p>
-            </div>
-          </div>
+       <div className={styles.footer}>
+            <Container>
+              <Row>
+                {footer_action.map(({ display, group }: any, index:any) => (
+                  <Col>
+                    <div key={index} className={styles.heading}>
+                      {display}
+                    </div>
 
-          <div className={styles.footernavOne}>
-            {action.map((action: any) => GetAction(action))}
-          </div>
-        </div>
+                    <div key={index} className={styles.sub_heading}>
+                      {group.map((v:any)=> (
+                        <p>
+                        <img
+                          src={vector2} height={30} width={30} />{v.title}
+                        </p>
+                      ))}
+                    </div>
+                  </Col>
+                  ))}
+              </Row>
+            </Container>
         <hr className={styles.divider}></hr>
-        <div className={styles.container}>
-          <div className={styles.footernavtwo}> */}
-            {/* <a className={styles.logo} href={"/"}>
-                <img src={Logo}/>
-            </a> */}
-          {/* </div>
-          <div className={styles.footernavthree}>
-            {footer_three.map(({ phone_no, mail, Skype_id }: any, index:any) => (
-              <div key={index} className={styles.officedetails}>
-                <span>Desk Phone: +91-<a> {phone_no}</a></span>
-                <span>Mail: <a style={{color:"#0171C1"}}>{mail} </a></span>
-                <a>Skype: {Skype_id}</a>
-              </div>
-              ))}
-           
-          </div>
-        </div>
-        <hr className={styles.divider}></hr>
-        <div className={styles.footerbottom}>
-          <p>{free_text}</p>
-        </div>
-      </div> */}
+        <p>Terms and conditions</p>
+      </div> 
     </div>
-  );
-};
+    )
+   }
+
+
 export default Footer;
