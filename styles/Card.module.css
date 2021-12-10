@@ -14,11 +14,27 @@
   vertical-align: middle;
   
 }
+.clients_card{
+  width: 200px;
+  height: auto;
+}
+.successful_product_card{
+
+width: 290px;
+  height: 190px;
+}
+.product_para{
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  font-size: 14px;
+  line-height: 24px;
+}
 .capabilities_cards{
   text-align: left;
   margin: 10px 10px;
-  width: 290px;
-  height: 190px;
+  width: 220px;
+  height: 260px;
 }
 
 /* .card:hover {
@@ -117,19 +133,22 @@
   grid-area: descrption;
 }
 .blog {
-  width: 620px;
-  height: 256px;
+  width: 420px;
+  height: 415px;
   background: #ffffff;
-  box-shadow: 0px 4px 14px rgba(177, 177, 177, 0.25);
+  margin-left: 6px;
   border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
   display: flex;
-  margin-top: 80px;
+  
 }
 .wide_card {
-  width: 33%;
+  width: 50%;
 }
 .card_contant {
-  width: 67%;
+  width: 50%;
+  padding: 10% 0% 0 8%;
 }
 .wide_card.wide {
   column-gap: 20px;
@@ -168,70 +187,9 @@
   color: #ffffff;
   font-family: "Poppins", sans-serif;
 }
-.asset_card .title {
-  grid-area: 1 / 1 / 2 / 4;
-}
-.asset_card .image {
-  grid-area: 2 / 1 / 3 / 2;
-}
-.content .value {
-  grid-area: value;
-}
-.content .descrption {
-  grid-area: descrption;
-}
 
-.mediumCard {
-  background: #ffffff;
-  border: 1px solid #c7cacc;
-  display: flex;
-  width: 790px;
-  height: 242px;
-  margin: 10px;
-}
-.mediumSizeCard {
-  display: flex;
-  justify-content: center;
-}
-.mediumCard:hover {
-  box-shadow: 0 4px 20px rgb(0 94 158 / 5%), 3px 6px 10px rgb(50 130 196 / 8%);
-}
-.mediumCard h4 {
-  color: #233253;
-  font-size: 26px;
-  font-weight: 300;
-}
-.mediumCard p {
-  font-size: 14px;
-  color: #8a93a5;
-  font-weight: 300;
-}
-.cardCoverImg:hover {
-  box-shadow: 0 4px 20px rgb(0 94 158 / 5%), 3px 6px 10px rgb(50 130 196 / 8%);
-}
-.cardCoverImg {
-  position: relative;
-  text-align: center;
-  width: 350px;
-  height: 240px;
-  margin: 10px;
-}
-.bottom {
-  position: absolute;
-  text-align: left;
 
-  bottom: 0;
-  background: rgba(23, 22, 22, 0.76);
-  padding: 16px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.4;
-}
-.carosoulCards {
-  width: 390px;
-  margin-top: 80px;
-}
+
 .capabilities {
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
   max-width: 500px;
@@ -308,11 +266,14 @@
   text-transform: capitalize;
   line-height: 22px;
   text-align: center;
+  font-family: "GraphikRegular";
+  font-weight: 600;
 }
 .para {
   font-size: 18px;
-  line-height: 30px;
-  margin: 18px 0px 26px 0px;
+  font-family: "GraphikRegular";
+  margin: 18px 0px 20px 0px;
+  font-weight: 600;
 }
 .projectcard {
   max-width: 300px;
@@ -340,6 +301,38 @@
 }
 .servicecard:first-child{
     margin-top: 40%;
+}
+.wide_card_{
+  display: flex;
+}
+.right_card{
+  display: flex;
+  height: 54px;
+}
+.right_card_heading{
+  font-size: 22px;
+    margin: 4px 10px 10px 20px;
+    text-transform: capitalize;
+    line-height: 22px;
+    
+    font-family: "GraphikRegular";
+    font-weight: 600;
+    color: #fff;
+}
+.right_card_para{
+  font-size: 14px;
+    font-family: "GraphikRegular";
+    margin: 10px 0px 20px 22px;
+    color: #fff;
+    font-weight: 400;
+}
+.right_card_text{
+  font-size: 22px;
+    font-family: "GraphikRegular";
+    margin: 10px 0px 20px 4px;
+    color: #fff;
+    font-weight: 400;
+    line-height: 27px;
 }
 
 @media only screen and (max-width: 500px) {

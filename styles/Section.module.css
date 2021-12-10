@@ -423,8 +423,14 @@
   width: 100%;
 }
 .blog_banner {
-  background: #e3e8ec;
-  padding: 2% 0% 6% 7%;
+  background: #EA9913;
+  padding: 2% 7% 0% 7%;
+  margin-bottom: 100px;
+  height: 450px;
+
+}
+.wide_card_{
+  display: flex;
 }
 /* .Industries_banner {
   background: #ffffff;
@@ -731,6 +737,7 @@
 .capabilities_cards{
   display: flex;
   flex-wrap: wrap;
+  margin-top: 30px;
 }
 .home_bannerimg{
   width: 100%;
@@ -750,9 +757,10 @@ left: 8%;
   line-height: 60px;
   color: #383838;
   margin: 5px 0;
+  font-family: "GraphikMedium";
 }
 .descrption{
-  font-size: 24px;
+  font-size: 20px;
   line-height: 30px;
   color: #000;
 }
@@ -770,9 +778,10 @@ margin-top: 30px;
 .title h3{
   font-size: 38px;
   font-weight: bold;
+  font-family: "GraphikMedium";
   line-height: 60px;
   color: #383838;
-  margin-left: 8%;
+  margin: 3% 0 10% 8%;
 }
 .our_latest_works {
   background: #ffffff;
@@ -782,7 +791,7 @@ margin-top: 30px;
   padding: 0 5% 6% 7%; 
 }
 .capab_title h3{
-  
+  font-family: "GraphikMedium";
     font-size: 38px;
     font-weight: bold;
     line-height: 60px;
@@ -802,3 +811,28 @@ margin-top: 30px;
   line-height: 30px;
   color: #000;
 }
+.product_title h3{
+  font-size: 38px;
+  font-family: "GraphikMedium";
+  font-weight: bold;
+  line-height: 60px;
+  color: #383838;
+ margin: 0;
+}
+.successful_product{
+  padding: 4% 7% 4% 7%;
+  background-color: #F4F7F9;;
+}
+.clients{
+  padding: 0 7% 4% 7%;}
+ .clients_title h3{
+  font-family: "GraphikMedium";
+  font-size: 38px;
+  font-weight: bold;
+  line-height: 60px;
+  color: #383838;
+  margin: 0;
+ } 
+ .clients_heading{
+
+ }

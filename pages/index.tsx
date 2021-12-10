@@ -38,7 +38,9 @@ const Home: NextPage<{ header: any; pages: any; footer: any }> = (props) => {
   // }, []);
 
   const { header, footer } = props;
+  console.log(props,"kkk");
   const { title, content, Logo, descrption } = props.pages[0];
+
   return (
     <div ref={scrollRef}>
       <Head>
