@@ -16,16 +16,16 @@ const Card: NextPage = (props: any) => {
     images,
     heading,
     free_text,
-    para,
+    image,
     on_image_text,
     card_free_text,
-    actions,
+    descrption,
     type,
     link,
     image_one_title,
     call_to_action,
     arrow,
-    image_one,
+    profile_img,
   } = props;
 
   switch (type) {
@@ -57,10 +57,10 @@ const Card: NextPage = (props: any) => {
          
             <div className={styles.capabilities}>
               <Image
-                loader={() => myLoader((baseUrl + images[0].url) as any)}
-                src={`${baseUrl}${images[0].url}`}
+                loader={() => myLoader((baseUrl + images.url) as any)}
+                src={`${baseUrl}${images.url}`}
                 placeholder="blur"
-                blurDataURL={baseUrl + images[0].url}
+                blurDataURL={baseUrl + images.url}
                 width={55}
                 height={55}
                 className={styles.cardimg}
@@ -70,7 +70,7 @@ const Card: NextPage = (props: any) => {
                 <p>{call_to_action}</p>
               </button> */}
             </div>
-            <p className={styles.para}>{free_text}</p>
+            <div className={styles.para} dangerouslySetInnerHTML={{ __html: marked(free_text)}}></div>
           
         </div>
       );
@@ -89,61 +89,66 @@ const Card: NextPage = (props: any) => {
                 className={styles.cardimg}
               />
             </div>
-            <p className={styles.heading}>{heading}</p>
-            <p className={styles.para}>{free_text}</p>
+            <p className={styles.para}>{heading}</p>
+            <div className={styles.product_para} dangerouslySetInnerHTML={{ __html: marked(free_text)}}></div>
            
           
         </div>
       );
       case "clients_card":
       return (
-        <div className={styles.capabilities_cards}>
+       
          
-            <div className={styles.capabilities}>
+            <div className={styles.clients_card}>
               <Image
                 loader={() => myLoader((baseUrl + images[0].url) as any)}
                 src={`${baseUrl}${images[0].url}`}
                 placeholder="blur"
                 blurDataURL={baseUrl + images[0].url}
-                width={100}
-                height={100}
+                width={"100%"}
+                height={"100%"}
                 className={styles.cardimg}
               />
 
             </div>
-          
+      );
+    case "wide_card":
+      return (
+        <div className={styles.wide_card_}>
+        <div className={styles.blog}>
+           <Image
+                loader={() => myLoader((baseUrl + image[0].url) as any)}
+                src={`${baseUrl}${image[0].url}`}
+                placeholder="blur"
+                blurDataURL={baseUrl + image[0].url}
+                width={420}
+                height={430}
+              />
+         </div>
+          <div className={styles.card_contant}>
+            
+           
+            
+            <div className={styles.right_card}>
+              <Image
+                loader={() => myLoader((baseUrl + profile_img[0].url) as any)}
+                src={`${baseUrl}${profile_img[0].url}`}
+                placeholder="blur"
+                blurDataURL={baseUrl + profile_img[0].url}
+                width={54}
+                height={54}
+              />
+              <div>
+              <div className={styles.right_card_heading}>{descrption}</div>
+               <p className={styles.right_card_para}>{card_free_text}</p>
+              </div>
+            </div>
+            <div className={styles.right_card_text} dangerouslySetInnerHTML={{ __html: marked(on_image_text)}}></div>
+           
+          </div>
+        
         </div>
       );
-    // case "wide_card":
-    //   return (
-    //     <div className={styles.blog}>
-    //       <div
-    //         className={styles.wide_card}
-    //         style={{
-    //           backgroundImage: `url(${baseUrl}${image[0].url})`,
-    //           backgroundPosition: "center",
-    //           backgroundSize: "cover",
-    //           backgroundRepeat: "no-repeat",
-    //           borderRadius: "10px 0 0 10px",
-    //         }}
-    //       ></div>
-    //       <div className={styles.card_contant}>
-    //         <div className={styles.heading}>{title}</div>
-    //         <p className={styles.para}>{on_image_text}</p>
-    //         <hr style={{ border: " 1px solid #DCDCDC" }} />
-    //         <div style={{ textAlign: "end", padding: "10px 30px" }}>
-    //           <Image
-    //             loader={() => myLoader((baseUrl + arrow[0].url) as any)}
-    //             src={`${baseUrl}${arrow[0].url}`}
-    //             placeholder="blur"
-    //             blurDataURL={baseUrl + arrow[0].url}
-    //             width={15}
-    //             height={15}
-    //           />
-    //         </div>
-    //       </div>
-    //     </div>
-    //   );
     // case "service_card":
     //   return (
     //     <div>

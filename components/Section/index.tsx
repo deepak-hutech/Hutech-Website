@@ -84,12 +84,12 @@ const Section: NextPage = (props: any) => {
   const responsive_wide_cards = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 2,
+      items: 1,
       slidesToSlide: 1, // optional, default to 1.
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      items: 1,
       slidesToSlide: 2, // optional, default to 1.
     },
     mobile: {
@@ -191,10 +191,10 @@ const Section: NextPage = (props: any) => {
       );
       case "successful_product":
       return (
-        <div >
+        <div className={styles.successful_product}>
             {free_text && (
               <div
-                className={styles.title}
+                className={styles.product_title}
                 dangerouslySetInnerHTML={{ __html: marked(free_text) }}
               ></div>
             )}
@@ -207,16 +207,16 @@ const Section: NextPage = (props: any) => {
       );
       case "clients":
         return (
-          <div >
+          <div className={styles.clients}>
               {free_text && (
                 <div
-                  className={styles.title}
+                  className={styles.clients_title}
                   dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                 ></div>
               )}
               {sub_heading && (
                 <div
-                  className={styles.title}
+                  className={styles.descrption}
                   dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
                 ></div>
               )}
@@ -227,6 +227,7 @@ const Section: NextPage = (props: any) => {
             </div>
           </div>
         );
+
 //     case "career_banner":
 //       return (
 //         <div className={`${styles.career_banner}`}>
@@ -378,6 +379,7 @@ const Section: NextPage = (props: any) => {
             swipeable={true}
             draggable={false}
             showDots={false}
+            
             responsive={responsive_small_cards}
             ssr={true} // means to render carousel on server-side.
             infinite={false}
@@ -422,126 +424,37 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
-      case "company_banner":
+     
+      
+      
+
+    case "home_blog":
       return (
-        <div className={`${styles.Industries_banner}`}>
-          <div className={`${styles.client_banner}`}>
-            <div className={styles.clientContent}>
-              {free_text && (
-                <div
-                  className={styles.title}
-                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-                ></div>
-              )}
-              {/* {sub_heading && (
-                <div
-                  className={styles.note}
-                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-                ></div>
-              )} */}
-            </div>
-          </div>
-          {/* <div className={styles.capabilities_cards}>
-          {carosel_cards.map((_card: any, index: number) => (
+        <div className={`${styles.blog_banner}`}>
+           <Carousel
+            swipeable={true}
+            draggable={false}
+            showDots={false}
+            responsive={responsive_wide_cards}
+            ssr={true} // means to render carousel on server-side.
+            infinite={false}
+            keyBoardControl={true}
+            customTransition="all 0.5s ease"
+            transitionDuration={1000}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+            dotListClass="custom-dot-list-style"
+            // itemClass="carousel-item-padding-40-px"
+            className={styles.clientcarousel}
+          >
+            {cards.map((_card: any, index: number) => (
               <Card {..._card} key={index} />
             ))}
-          </div> */}
+          </Carousel>
+
+         
         </div>
       );
-      case "career_banner":
-      return (
-        <div className={`${styles.Industries_banner}`}>
-          <div className={`${styles.client_banner}`}>
-            <div className={styles.clientContent}>
-              {free_text && (
-                <div
-                  className={styles.title}
-                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-                ></div>
-              )}
-              {sub_heading && (
-                <div
-                  className={styles.note}
-                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-                ></div>
-              )}
-              {home_banner[0] && (
-               <div className={`${styles.downArrow}`} >
-                <img src={baseUrl + home_banner[0].url} />
-              </div>
-           )}
-            </div>
-          </div>
-          {/* <div className={styles.capabilities_cards}>
-          {carosel_cards.map((_card: any, index: number) => (
-              <Card {..._card} key={index} />
-            ))}
-          </div> */}
-        </div>
-      );
-
-//     case "blog":
-//       return (
-//         <div className={`${styles.blog_banner}`}>
-//           <div className={`${styles.client_banner}`}>
-//             <div className={styles.clientContent}>
-//               {title && (
-//                 <div
-//                   className={styles.title}
-//                   dangerouslySetInnerHTML={{ __html: marked(title) }}
-//                 ></div>
-//               )}
-//               {note_descrption && (
-//                 <div
-//                   className={styles.note}
-//                   dangerouslySetInnerHTML={{ __html: marked(note_descrption) }}
-//                 ></div>
-//               )}
-//             </div>
-//             {media[0] && (
-//               <div className={`${styles.downArrow}`} >
-//                 <img src={baseUrl + media[0].url} />
-//               </div>
-//             )}
-//           </div>
-
-//           <Carousel
-//             swipeable={true}
-//             draggable={false}
-//             showDots={false}
-//             responsive={responsive_wide_cards}
-//             ssr={true} // means to render carousel on server-side.
-//             infinite={false}
-//             keyBoardControl={true}
-//             customTransition="all 0.5s ease"
-//             transitionDuration={1000}
-//             containerClass="carousel-container"
-//             removeArrowOnDeviceType={["tablet", "mobile"]}
-//             dotListClass="custom-dot-list-style"
-//             // itemClass="carousel-item-padding-40-px"
-//             className={styles.clientcarousel}
-//           >
-//             {cards.map((_card: any, index: number) => (
-//               <Card {..._card} key={index} />
-//             ))}
-//           </Carousel>
-
-//           {buttons && (
-//             <div className={styles.buttons}>
-//               {buttons.map((item: any) => (
-//                 <div className={styles.call_to_action}>
-//                   {" "}
-//                   {item.call_to_action}{" "}
-//                   <img
-//                     src={`${baseUrl}${buttons[0].arrow_icon[0].url}`}
-//                     className={styles.arrowicon}
-//                   />
-//                 </div>
-//               ))}
-//             </div>
-//           )}
-//         </div>
-//       );
    
 //     case "offre_banner":
 //       return (
