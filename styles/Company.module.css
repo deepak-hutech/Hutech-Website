@@ -13,6 +13,7 @@
   .company_banner .banner_container{
       position: absolute;
       top: 26%;
+      width: 100%;
   }
 
   .company_banner .content .free_text {
@@ -51,7 +52,7 @@
     background-color:#FFAF2B;
     width: max-content;
     font-family: "Lato";
-    padding: 8px 20px;
+    padding: 8px 40px;
     font-size: 16px;
     font-weight: 800;
     line-height: 20px;
@@ -124,14 +125,9 @@
     margin: 50px 0px;
   }
 
-  .our_people .free_text{
+  .our_people .free_text h3{
     font-weight: 700;
     font-size: 40px;
-    line-height: 20px
-  }
-
-  .our_people .sub_heading{
-
   }
 
   .our_people .profiles {
@@ -155,6 +151,7 @@
   .our_people .role{
     line-height: 3px;
     color: #E18E04;
+    font-size: 13px;
   }
 
 
@@ -171,15 +168,21 @@
     line-height: 22px;
   }
   
+  .partner h3 {
+    font-weight: bold;
+    font-size: 40px;
+  }
+
   .partner .heading .free_text{
     font-weight: bold;
     font-size: 40px;
     text-align: center;
   }
 
-  .partner .heading .desc {
+  .partner .desc p{
     font-weight: normal;
-    font-size: 20px;
+    font-size: 22px;
+    line-height: 27px;
   }
 
   .partner .logos{
