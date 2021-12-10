@@ -11,6 +11,9 @@ import Carousel from "react-multi-carousel";
 import Accordian from "../accordian/Accordian";
 import Mobapp from "../mobapptype";
 import "react-multi-carousel/lib/styles.css";
+import companyStyles from "../../styles/Company.module.css";
+import { Container, Col, Row } from 'react-bootstrap';
+import Footer from "../Footer";
 
 const myLoader: ImageLoader = (url: any) => {
   return url;
@@ -28,9 +31,24 @@ const Section: NextPage = (props: any) => {
     subtitle,
     image_position,
     free_text,
+    web_front_end_title,
+    web_back_end_title,
+    database_title,
+    database_para,
+    android_title,
+    android_para,
+    ios_title,
+    ios_para,
+    devops_title,
+    devops_para,
+    devops_cards,
+    ios_cards,
+    android_card,
     cards,
     acordian,
     carosel_cards,
+    Carosel_cards,
+    carosel_card,
     descrption,
     note_descrption,
     media,
@@ -189,22 +207,22 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
-      case "successful_product":
-      return (
-        <div className={styles.successful_product}>
-            {free_text && (
-              <div
-                className={styles.product_title}
-                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-              ></div>
-            )}
-          <div className={styles.capabilities_cards}>
-          {carosel_cards.map((_card: any, index: number) => (
-              <Card {..._card} key={index} />
-            ))}
-          </div>
-        </div>
-      );
+      // case "successful_product":
+      // return (
+      //   <div className={styles.successful_product}>
+      //       {free_text && (
+      //         <div
+      //           className={styles.product_title}
+      //           dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+      //         ></div>
+      //       )}
+      //     <div className={styles.capabilities_cards}>
+      //     {carosel_cards.map((_card: any, index: number) => (
+      //         <Card {..._card} key={index} />
+      //       ))}
+      //     </div>
+      //   </div>
+      // );
       case "clients":
         return (
           <div className={styles.clients}>
@@ -424,9 +442,441 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
-     
-      
-      
+
+      case "company_banner":
+        return (
+          <div className={companyStyles.company_banner}>
+          {home_banner[0] && (
+              <Image
+                loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
+                src={baseUrl + home_banner[0].url}
+                placeholder="blur"
+                blurDataURL={baseUrl + home_banner[0].url}
+                height={400}
+                width={"100%"}
+                className={companyStyles.bannerimg}
+              />
+           
+          )}
+          <div className={companyStyles.banner_container}>
+          {free_text &&(
+            <div className={companyStyles.content}>
+              <div
+                className={companyStyles.free_text}
+                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+              />
+              {sub_heading && (
+                <div
+                  className={companyStyles.descrption}
+                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                ></div>
+              )}
+              {home_button && (
+                <div className={companyStyles.buttons}>
+                {home_button.map((item: any) => (
+                  <div className={companyStyles.call_to_action}>
+                    {" "}
+                    {item.call_to_action}{" "}
+                    {/* <img
+                      src={`${baseUrl}${home_button[0].arrow_icon[0].url}`}
+                      className={styles.arrowicon}
+                    /> */}
+                  </div>
+                ))}
+              </div>
+            )}
+            </div>
+          )}
+          </div>
+        </div>
+        );
+        case "about_company": 
+        return (
+          <div className={companyStyles.abt_company}>
+            <Container>
+              <Row>
+                  {free_text && (
+                      <p
+                        className={companyStyles.heading}>
+                        {free_text.split('\n').map((str: any) => 
+                        <p>{str}</p>)}
+                      </p>
+                    )}
+              </Row>
+            </Container>
+            
+            <Container>
+              <Row>
+                <Col>
+                  {home_banner[0] && (
+                    <div
+                      className={`${companyStyles.abt_img}`}>
+                    <Image
+                      loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
+                      src={baseUrl + home_banner[0].url}
+                      placeholder="blur"
+                      blurDataURL={baseUrl + home_banner[0].url}
+                      height={421}
+                      width={497}
+                      />
+                    </div>
+                    )}
+                </Col>
+                <Col>
+                {sub_heading && (
+                  <div
+                    className={companyStyles.note}
+                    dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                  ></div>
+                )}
+                </Col>
+              </Row>
+              </Container>
+          </div>
+        )
+    
+        case "values_vision_mission": 
+        return (
+          <div className={companyStyles.values_vision}>
+             <Container >
+               <Row>
+                  {carosel_cards.map((v:any) => (
+                     <Col>
+                     <img className={companyStyles.profile}
+                                src={baseUrl + v.images.map((v:any)=> v.url)}
+                                placeholder="blur"
+                                height={50}
+                                width={50}
+                              />
+                       <p className={companyStyles.heading}>{v.heading}</p>
+                       <p className={companyStyles.free_text}>{v.free_text}</p>
+                     </Col>
+                  ))}
+                </Row>
+              </Container>
+          </div>
+        )
+    
+        case "our_people": 
+        return (
+          <div className={companyStyles.our_people}>
+             <Container>
+                <Row>
+                    {free_text && (
+                    <div className={companyStyles.free_text}
+                      dangerouslySetInnerHTML={{ __html: marked(free_text) }}>
+                    </div>
+                      )}
+                </Row>
+                <Row>
+                  <div className={companyStyles.sub_heading}>
+                    {sub_heading && (
+                        <h6
+                          className=""
+                          dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                        ></h6>
+                      )}
+                  </div>
+                </Row>
+                  <Row>
+                      {carosel_cards.map((v:any) => (
+                        <Col>
+                            <div className={companyStyles.profiles}>
+                            <img className={companyStyles.img}
+                                src={baseUrl + v.images.map((v:any)=> v.url)}
+                                placeholder="blur"
+                                height={120}
+                                width={137}
+                              />
+                              <h6>{v.heading}</h6>
+                              <p className={companyStyles.role}>{v.free_text}</p>
+                            </div>
+                        </Col>
+                       ))}
+                  </Row>
+            </Container>
+          </div>
+        )
+        case "successful_product":
+          return (
+            <div className={`${companyStyles.partner}`}>
+              {free_text &&  (
+                <div className={`${companyStyles.heading}`}
+                     dangerouslySetInnerHTML={{ __html: marked(free_text) }}>
+                </div>
+              )}
+              {sub_heading && (
+                  <div
+                    className={companyStyles.desc}
+                    dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                  ></div>
+                )}
+            <Container>
+                  <Row>
+                      {carosel_cards.map((v:any) => (
+                        <Col md={3}>
+                            <div className={companyStyles.logos}>
+                              <img className={companyStyles.images}
+                                src={baseUrl + v.images.map((v:any)=> v.url)}
+                                placeholder="blur"
+                                height={45}
+                                width={137}
+                              />
+                            </div>
+                        </Col>
+                      ))}
+                  </Row>
+            </Container>
+          </div>
+        );
+
+          case "technology_slack":
+            return (
+              <div className={`${companyStyles.tech_slack}`}>
+                  {free_text ? (
+                  <div className={`${companyStyles.heading}`}>
+                      <h2
+                        className={companyStyles.free_text}
+                        dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                      />
+                      {sub_heading && (
+                        <div
+                          className={companyStyles.desc}
+                          dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                        ></div>
+                      )}
+                    </div>
+                  ) : " "}
+              </div>
+            )
+
+            case "web_frontend":
+              return (
+                <div className={`${companyStyles.web_dev}`}>
+                   <Container>
+                      <Row>
+                      <Col md={6}>{ web_front_end_title ? (
+                          <div className={`${companyStyles.title}`}>
+                              <h2
+                                className={companyStyles.free_text}
+                                dangerouslySetInnerHTML={{ __html: marked(web_front_end_title) }}
+                              />
+                              {free_text && (
+                                <div
+                                  className={companyStyles.desc}
+                                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                                ></div>
+                              )}
+                               <div className={companyStyles.company_cards}>
+                                  {carosel_cards.map((_card: any, index: number) => (
+                                      <Card {..._card} key={index} />
+                                    ))}
+                               </div>
+                            </div>
+                            
+                          ) : " "}</Col>
+                        <Col md={6}>{ web_back_end_title ? (
+                          <div className={`${companyStyles.title}`}>
+                              <h2
+                                className={companyStyles.free_text}
+                                dangerouslySetInnerHTML={{ __html: marked(web_back_end_title) }}
+                              />
+                              {free_text && (
+                                <div
+                                  className={companyStyles.desc}
+                                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                                ></div>
+                              )}
+                               <div className={companyStyles.company_cards}>
+                                  {Carosel_cards.map((_card: any, index: number) => (
+                                      <Card {..._card} key={index} />
+                                    ))}
+                               </div>
+                            </div>
+                          ) : " "}</Col>
+                          <Col md={6}>{ database_title ? (
+                          <div className={`${companyStyles.title}`}>
+                              <h2
+                                className={companyStyles.free_text}
+                                dangerouslySetInnerHTML={{ __html: marked(database_title) }}
+                              />
+                              {database_para && (
+                                <div
+                                  className={companyStyles.desc}
+                                  dangerouslySetInnerHTML={{ __html: marked(database_para) }}
+                                ></div>
+                              )}
+                               <div className={companyStyles.company_cards}>
+                                  {carosel_card.map((_card: any, index: number) => (
+                                      <Card {..._card} key={index} />
+                                    ))}
+                               </div>
+                            </div>
+                          ) : " "}</Col>
+                          <Col md={6}>{ android_title ? (
+                          <div className={`${companyStyles.title}`}>
+                              <h2
+                                className={companyStyles.free_text}
+                                dangerouslySetInnerHTML={{ __html: marked(android_title) }}
+                              />
+                              {android_para && (
+                                <div
+                                  className={companyStyles.desc}
+                                  dangerouslySetInnerHTML={{ __html: marked(android_para) }}
+                                ></div>
+                              )}
+                              <div className={companyStyles.company_cards}>
+                                  {android_card.map((_card: any, index: number) => (
+                                      <Card {..._card} key={index} />
+                                    ))}
+                               </div>
+                            </div>
+                          ) : " "}</Col>
+                           <Col md={6}>{ ios_title ? (
+                          <div className={`${companyStyles.title}`}>
+                              <h2
+                                className={companyStyles.free_text}
+                                dangerouslySetInnerHTML={{ __html: marked(ios_title) }}
+                              />
+                              {ios_para && (
+                                <div
+                                  className={companyStyles.desc}
+                                  dangerouslySetInnerHTML={{ __html: marked(ios_para) }}
+                                ></div>
+                              )}
+                               <div className={companyStyles.company_cards}>
+                                  {ios_cards.map((_card: any, index: number) => (
+                                      <Card {..._card} key={index} />
+                                    ))}
+                               </div>
+                            </div>
+                          ) : " "}</Col>
+                          <Col md={6}>{ devops_title ? (
+                          <div className={`${companyStyles.title}`}>
+                              <h2
+                                className={companyStyles.free_text}
+                                dangerouslySetInnerHTML={{ __html: marked(devops_title) }}
+                              />
+                              {devops_para && (
+                                <div
+                                  className={companyStyles.desc}
+                                  dangerouslySetInnerHTML={{ __html: marked(devops_para) }}
+                                ></div>
+                              )}
+                               <div className={companyStyles.company_cards}>
+                                  {devops_cards.map((_card: any, index: number) => (
+                                      <Card {..._card} key={index} />
+                                    ))}
+                               </div>
+                            </div>
+                          ) : " "}</Col>
+                      </Row>
+                   </Container>
+                </div>
+              )
+
+              case "current_opening_banner":
+                return (
+                  <div className={`${companyStyles.career_open}`}>
+                     {home_banner[0] && (
+                          <Image
+                            loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
+                            src={baseUrl + home_banner[0].url}
+                            placeholder="blur"
+                            blurDataURL={baseUrl + home_banner[0].url}
+                            height={400}
+                            width={"100%"}
+                            className={companyStyles.bannerimg}
+                          />
+                      )}
+                  {free_text ? (
+                    <div className={companyStyles.free_text}>
+                      <h2
+                        dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                      />
+                      {home_button && (
+                        <div className={companyStyles.button}>
+                        {home_button.map((item: any) => (
+                          <div className={companyStyles.call_to_action}>
+                            {" "}
+                            {item.call_to_action}{" "}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                      {sub_heading && (
+                        <div
+                          className={companyStyles.descrption}
+                          dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                        ></div>
+                      )}
+                    </div>
+                  ) : " "}
+                </div>
+                )
+
+//     case "blog":
+//       return (
+//         <div className={`${styles.blog_banner}`}>
+//           <div className={`${styles.client_banner}`}>
+//             <div className={styles.clientContent}>
+//               {title && (
+//                 <div
+//                   className={styles.title}
+//                   dangerouslySetInnerHTML={{ __html: marked(title) }}
+//                 ></div>
+//               )}
+//               {note_descrption && (
+//                 <div
+//                   className={styles.note}
+//                   dangerouslySetInnerHTML={{ __html: marked(note_descrption) }}
+//                 ></div>
+//               )}
+//             </div>
+//             {media[0] && (
+//               <div className={`${styles.downArrow}`} >
+//                 <img src={baseUrl + media[0].url} />
+//               </div>
+//             )}
+//           </div>
+
+//           <Carousel
+//             swipeable={true}
+//             draggable={false}
+//             showDots={false}
+//             responsive={responsive_wide_cards}
+//             ssr={true} // means to render carousel on server-side.
+//             infinite={false}
+//             keyBoardControl={true}
+//             customTransition="all 0.5s ease"
+//             transitionDuration={1000}
+//             containerClass="carousel-container"
+//             removeArrowOnDeviceType={["tablet", "mobile"]}
+//             dotListClass="custom-dot-list-style"
+//             // itemClass="carousel-item-padding-40-px"
+//             className={styles.clientcarousel}
+//           >
+//             {cards.map((_card: any, index: number) => (
+//               <Card {..._card} key={index} />
+//             ))}
+//           </Carousel>
+
+//           {buttons && (
+//             <div className={styles.buttons}>
+//               {buttons.map((item: any) => (
+//                 <div className={styles.call_to_action}>
+//                   {" "}
+//                   {item.call_to_action}{" "}
+//                   <img
+//                     src={`${baseUrl}${buttons[0].arrow_icon[0].url}`}
+//                     className={styles.arrowicon}
+//                   />
+//                 </div>
+//               ))}
+//             </div>
+//           )}
+//         </div>
+//       );
 
     case "home_blog":
       return (
@@ -624,5 +1074,12 @@ const Section: NextPage = (props: any) => {
     default:
       return <div>Default</div>;
   }
+  <div>
+    <Footer/>
+  </div>
 };
 export default Section;
+
+
+
+

@@ -35,7 +35,6 @@ const DynamicPage: NextPage<{ header: any; pages: any; footer: any }> = (
 
   const { header, footer } = props;
   const { title, content, Logo, descrption } = props.pages[0];
-  console.log(props.pages,"kkk");
   return (
     <div >
       <Head>
@@ -53,7 +52,6 @@ const DynamicPage: NextPage<{ header: any; pages: any; footer: any }> = (
       {content.map((section: any) => (
         <Section {...section} />
       ))}
-      <h1>jiii</h1>
       {/* <div data-scroll data-scroll-call="{y,o,l,o}">Trigger</div>
       <h1 data-scroll data-scroll-speed="1" >TEST</h1> */}
       <Footer {...footer} />

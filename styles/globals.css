@@ -48,6 +48,16 @@ a {
 .react-multiple-carousel__arrow--right{
   bottom: 0 !important;
 }
+
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 4px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #2f2c2c;
+  border-radius: 12px;
+}
 .react-multi-carousel-list {
   margin-top: -90px !important;
 }

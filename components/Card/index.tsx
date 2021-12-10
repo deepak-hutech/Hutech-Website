@@ -2,6 +2,8 @@ import marked from "marked";
 import { NextPage } from "next";
 import Image, { ImageLoader } from "next/image";
 import styles from "../../styles/Card.module.css";
+import companyStyles from "../../styles/Company.module.css";
+
 import Action from "../Actions";
 import { baseUrl } from "./../../public/strings.json";
 import leftarrow from "../assets/arrow.png";
@@ -56,15 +58,15 @@ const Card: NextPage = (props: any) => {
         <div className={styles.capabilities_cards}>
          
             <div className={styles.capabilities}>
-              <Image
-                loader={() => myLoader((baseUrl + images.url) as any)}
-                src={`${baseUrl}${images.url}`}
+              {/* <Image
+                loader={() => myLoader((baseUrl + images[0].url) as any)}
+                src={`${baseUrl}${images[0].url}`}
                 placeholder="blur"
                 blurDataURL={baseUrl + images.url}
                 width={55}
                 height={55}
                 className={styles.cardimg}
-              />
+              /> */}
 
               {/* <button>
                 <p>{call_to_action}</p>
@@ -180,17 +182,35 @@ const Card: NextPage = (props: any) => {
     //       </div>
     //     </div>
     //   );
+      case "web_frontend":
+        return (
+          <div className={companyStyles.c_cards}>
+            <Image
+              loader={() => myLoader((baseUrl + images[0].url) as any)}
+              src={`${baseUrl}${images[0].url}`}
+              placeholder="blur"
+              blurDataURL={baseUrl + images[0].url}
+              width={55}
+              height={55}
+              className={companyStyles.cardImg2}
+            />
+            <p>{props.heading}</p>
+        </div>
+      );
     default:
       return (
-        <div className={styles.card}>
-          {/* <a
-                    id={props.id}
-                    href="/plans">
-                    <img src={`${baseUrl}${url}`} alt={name} />
-                    <h4>{title}</h4>
-                    <h5>{descrption}</h5>
-                </a> */}
-        </div>
+        <div className={companyStyles.c_cards}>
+        <Image
+          loader={() => myLoader((baseUrl + images[0].url) as any)}
+          src={`${baseUrl}${images[0].url}`}
+          placeholder="blur"
+          blurDataURL={baseUrl + images[0].url}
+          width={55}
+          height={55}
+          className={companyStyles.cardImg2}
+        />
+        <p>{props.heading}</p>
+    </div>
       );
   }
 };
