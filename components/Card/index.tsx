@@ -21,7 +21,7 @@ const Card: NextPage = (props: any) => {
     card_free_text,
     descrption,
     type,
-    link,
+    Link,
     image_one_title,
     call_to_action,
     arrow,
@@ -35,7 +35,7 @@ const Card: NextPage = (props: any) => {
         <div className={styles.card}>
           <a
             id={props.id}
-            // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
+            href={Link ? Link : `/plans/${props.title}`}
           >
             <Image
               loader={() => myLoader((baseUrl + images[0].url) as any)}
@@ -143,7 +143,7 @@ const Card: NextPage = (props: any) => {
                <p className={styles.right_card_para}>{card_free_text}</p>
               </div>
             </div>
-            <div className={styles.right_card_text} dangerouslySetInnerHTML={{ __html: marked(on_image_text)}}></div>
+            <div className={styles.product_text} dangerouslySetInnerHTML={{ __html: marked(on_image_text)}}></div>
            
           </div>
         
