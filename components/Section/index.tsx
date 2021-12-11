@@ -12,8 +12,10 @@ import Accordian from "../accordian/Accordian";
 import Mobapp from "../mobapptype";
 import "react-multi-carousel/lib/styles.css";
 import companyStyles from "../../styles/Company.module.css";
-import { Container, Col, Row } from 'react-bootstrap';
+import contactStyle from "../../styles/Contact.module.css";
 import Footer from "../Footer";
+import {Tabs ,Tab, Form, Button, Row, Col,Container} from "react-bootstrap"
+import ContactForm from "../ContactForm"
 
 const myLoader: ImageLoader = (url: any) => {
   return url;
@@ -133,6 +135,7 @@ const Section: NextPage = (props: any) => {
       slidesToSlide: 1, // optional, default to 1.
     },
   };
+
   switch (type) {
     case "home_page_banner":
       return (
@@ -905,6 +908,120 @@ const Section: NextPage = (props: any) => {
          
         </div>
       );
+      case "contact_us":
+        return (
+          <>
+        <div className={companyStyles.company_banner}>
+          {home_banner[0] && (
+              <Image
+                loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
+                src={baseUrl + home_banner[0].url}
+                placeholder="blur"
+                blurDataURL={baseUrl + home_banner[0].url}
+                height={400}
+                width={"100%"}
+                className={companyStyles.bannerimg}
+              />
+           
+          )}
+          <div className={companyStyles.banner_container}>
+          {free_text &&(
+            <div className={companyStyles.content}>
+              <div
+                className={companyStyles.free_text}
+                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+              />
+              {sub_heading && (
+                <div
+                  className={companyStyles.descrption}
+                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                ></div>
+              )}
+              {home_button && (
+                <div className={companyStyles.buttons}>
+                {home_button.map((item: any) => (
+                  <div className={companyStyles.call_to_action}>
+                    {" "}
+                    {item.call_to_action}{" "}
+                    {/* <img
+                      src={`${baseUrl}${home_button[0].arrow_icon[0].url}`}
+                      className={styles.arrowicon}
+                    /> */}
+                  </div>
+                ))}
+              </div>
+            )}
+            </div>
+          )}
+          </div>
+        </div>
+          <div className={contactStyle.contact}>
+                <div className={contactStyle.content}>
+                    <div>
+                      <h2>Looking for more assistance? </h2>
+                      <h4>Choose how you'd like to contact our Mail support:</h4>
+                    </div>
+
+                  <div className={contactStyle.tabsContainer}>
+                  <Tabs defaultActiveKey="home" id="uncontrolled-tab-example" className="mb-3">
+                      <Tab eventKey="home" title="Submit a form">
+                        <div className={contactStyle.tab1}>
+                          <div className="mb-5">
+                            <h4>Fill out this form and a support representative will be in touch.</h4>
+                          </div>
+                          <ContactForm />
+                        </div>
+                      </Tab>
+
+                      <Tab eventKey="profile" title="Shoot us an Email">
+                        <div className={contactStyle.tab2}>
+                              <div>
+                                <h4>
+                                      Send us an email with necessary screenshots and your account details to:
+                                </h4>
+                                <div className={contactStyle.sendEmail}>
+                                  <Button variant="">Support@hutechsolutions.com</Button>
+                                </div>
+                              </div>
+                            <div>
+                              <h4>For sales enquiries, contact us at:</h4>
+                                <div className={contactStyle.sendEmail}>
+                                  <Button variant="">sales@hutechsolutions.com</Button>
+                                </div>
+                            </div>
+                        </div>
+                      </Tab>
+
+                      <Tab eventKey="contact" title="Give us a call">
+                        <div className={contactStyle.tab3}>
+                                <div>
+                                  <h4>
+                                      Reach out to Hutech Mail technical support team at:
+                                  </h4>
+                                <p>(Call support available only for paid users of Hutech Mail)</p>
+                                </div>
+                              <div>
+                                <Row>
+                                  <Col>USA +2874787284</Col>
+                                  <Col>India +91-2874787284</Col>
+                                </Row>
+                                <Row>
+                                  <Col>USA +2874787284</Col>
+                                  <Col>India +91-2874787284</Col>
+                                </Row>
+                                <Row>
+                                  <Col>USA +2874787284</Col>
+                                  <Col>India +91-2874787284</Col>
+                                </Row>
+                              </div>
+                          </div>
+                      </Tab>
+                  </Tabs>
+                  </div>
+                </div> 
+              </div>
+          </>
+        );
    
 //     case "offre_banner":
 //       return (
