@@ -43,10 +43,20 @@ a {
 .react-multiple-carousel__arrow--left {
   left: -webkit-calc(4% + 1px);
   left: calc(86% + 1px) !important;
-  bottom: 0;
+  bottom: 20%;
 }
 .react-multiple-carousel__arrow--right{
-  bottom: 0 !important;
+  bottom: 20% !important;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 4px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #2f2c2c;
+  border-radius: 12px;
 }
 .react-multi-carousel-list {
   margin-top: -90px !important;

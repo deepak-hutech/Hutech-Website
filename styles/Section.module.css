@@ -785,10 +785,10 @@ margin-top: 30px;
 }
 .our_latest_works {
   background: #ffffff;
-  padding: 2% 0% 3% 0%;
+  padding: 2% 0% 0% 0%;
 }
 .capabilities{
-  padding: 0 5% 6% 7%; 
+  padding: 0 5% 2% 7%; 
 }
 .capab_title h3{
   font-family: "GraphikMedium";
@@ -815,12 +815,12 @@ margin-top: 30px;
   font-size: 38px;
   font-family: "GraphikMedium";
   font-weight: bold;
-  line-height: 60px;
+  line-height: 40px;
   color: #383838;
  margin: 0;
 }
 .successful_product{
-  padding: 4% 7% 4% 7%;
+  padding: 5% 7% 8% 7%;
   background-color: #F4F7F9;;
 }
 .clients{

@@ -34,7 +34,7 @@ width: 290px;
   text-align: left;
   margin: 10px 10px;
   width: 220px;
-  height: 260px;
+  height: 210px;
 }
 
 /* .card:hover {
@@ -147,8 +147,11 @@ width: 290px;
   width: 50%;
 }
 .card_contant {
-  width: 50%;
+  
   padding: 10% 0% 0 8%;
+  display: flex;
+  flex-direction: column;
+    width: calc(100% - 420px);
 }
 .wide_card.wide {
   column-gap: 20px;
@@ -329,10 +332,18 @@ width: 290px;
 .right_card_text{
   font-size: 22px;
     font-family: "GraphikRegular";
-    margin: 10px 0px 20px 4px;
+    margin: 20px 0px 20px 4px;
     color: #fff;
     font-weight: 400;
     line-height: 27px;
+}
+.capabilities_cards_title h3{
+  font-size: 17px;
+  font-family: "GraphikRegular";
+  font-weight: 600;
+}
+.capabilities{
+  margin-bottom: 16px;
 }
 
 @media only screen and (max-width: 500px) {

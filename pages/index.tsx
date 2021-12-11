@@ -47,10 +47,10 @@ const Home: NextPage<{ header: any; pages: any; footer: any }> = (props) => {
         <title>{title}</title>
         <meta name="description" content={descrption} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link
+        {/* <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.3.11/dist/locomotive-scroll.css"
-        />
+        /> */}
         {/* <link rel="icon" href={`${baseUrl}${favicon}`} /> */}
       </Head>
       <Header {...header} />
