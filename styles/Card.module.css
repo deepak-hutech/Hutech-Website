@@ -1,5 +1,4 @@
 .card {
-  
   width: 300px;
   height: 210px;
   background: #fff;
@@ -12,25 +11,24 @@
 .card a {
   width: 100%;
   vertical-align: middle;
+}
+.clients_card {
   
+  width: 300px;
+  height: 130px;
 }
-.clients_card{
-  width: 200px;
-  height: auto;
-}
-.successful_product_card{
-
-width: 290px;
+.successful_product_card {
+  width: 290px;
   height: 190px;
 }
-.product_para{
+.product_para {
   font-size: 14px;
   font-weight: 400;
   text-align: left;
   font-size: 14px;
   line-height: 24px;
 }
-.capabilities_cards{
+.capabilities_cards {
   text-align: left;
   margin: 10px 10px;
   width: 220px;
@@ -141,17 +139,15 @@ width: 290px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   display: flex;
-  
 }
 .wide_card {
   width: 50%;
 }
 .card_contant {
-  
   padding: 10% 0% 0 8%;
   display: flex;
   flex-direction: column;
-    width: calc(100% - 420px);
+  width: calc(100% - 420px);
 }
 .wide_card.wide {
   column-gap: 20px;
@@ -190,8 +186,6 @@ width: 290px;
   color: #ffffff;
   font-family: "Poppins", sans-serif;
 }
-
-
 
 .capabilities {
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
@@ -265,7 +259,7 @@ width: 290px;
 }
 .heading {
   font-size: 20px;
-  margin:30px 50px 20px 20px;
+  margin: 30px 50px 20px 20px;
   text-transform: capitalize;
   line-height: 22px;
   text-align: center;
@@ -302,59 +296,58 @@ width: 290px;
   text-align: center;
   margin-top: 18%;
 }
-.servicecard:first-child{
-    margin-top: 40%;
+.servicecard:first-child {
+  margin-top: 40%;
 }
-.wide_card_{
+.wide_card_ {
   display: flex;
 }
-.right_card{
+.right_card {
   display: flex;
   height: 54px;
 }
-.right_card_heading{
+.right_card_heading {
   font-size: 22px;
-    margin: 4px 10px 10px 20px;
-    text-transform: capitalize;
-    line-height: 22px;
-    
-    font-family: "GraphikRegular";
-    font-weight: 600;
-    color: #fff;
+  margin: 4px 10px 10px 20px;
+  text-transform: capitalize;
+  line-height: 22px;
+
+  font-family: "GraphikRegular";
+  font-weight: 600;
+  color: #fff;
 }
-.right_card_para{
+.right_card_para {
   font-size: 14px;
-    font-family: "GraphikRegular";
-    margin: 10px 0px 20px 22px;
-    color: #fff;
-    font-weight: 400;
+  font-family: "GraphikRegular";
+  margin: 10px 0px 20px 22px;
+  color: #fff;
+  font-weight: 400;
 }
-.right_card_text{
+.right_card_text {
   font-size: 22px;
-    font-family: "GraphikRegular";
-    margin: 20px 0px 20px 4px;
-    color: #fff;
-    font-weight: 400;
-    line-height: 27px;
+  font-family: "GraphikRegular";
+  margin: 20px 0px 20px 4px;
+  color: #fff;
+  font-weight: 400;
+  line-height: 27px;
 }
-.capabilities_cards_title h3{
+.capabilities_cards_title h3 {
   font-size: 17px;
   font-family: "GraphikRegular";
   font-weight: 600;
 }
-.capabilities{
+.capabilities {
   margin-bottom: 16px;
 }
 
 @media only screen and (max-width: 500px) {
-.carosoulCards {
-   
+  .carosoulCards {
     margin-top: 0px;
   }
   .long_card button {
     left: 40%;
-}
-.blog {
+  }
+  .blog {
     margin-top: 0px;
-}
+  }
 }

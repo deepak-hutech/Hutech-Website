@@ -98,15 +98,16 @@ const Card: NextPage = (props: any) => {
        
          
             <div className={styles.clients_card}>
-              <Image
+              <img src={`${baseUrl}${images[0].url}`}></img>
+              {/* <Image
                 loader={() => myLoader((baseUrl + images[0].url) as any)}
                 src={`${baseUrl}${images[0].url}`}
                 placeholder="blur"
                 blurDataURL={baseUrl + images[0].url}
                 width={"100%"}
-                height={"100%"}
+                height={100}
                 className={styles.cardimg}
-              />
+              /> */}
 
             </div>
       );
@@ -175,8 +176,7 @@ const Card: NextPage = (props: any) => {
               </button> */}
             </div>
             <div className={servicesStyles.section3_cards}>
-            <p className={servicesStyles.section3_para1} dangerouslySetInnerHTML={{__html: marked(heading)}}></p>
-            <p className={servicesStyles.section3_para2} dangerouslySetInnerHTML={{__html: marked(free_text)}} ></p>
+            
             </div>
         </div>
       );
