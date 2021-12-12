@@ -176,7 +176,8 @@ const Card: NextPage = (props: any) => {
               </button> */}
             </div>
             <div className={servicesStyles.section3_cards}>
-            
+            <div className={servicesStyles.section3_para1} dangerouslySetInnerHTML={{__html: marked(heading)}}></div>
+            <div className={servicesStyles.section3_para2} dangerouslySetInnerHTML={{__html: marked(free_text)}} ></div>
             </div>
         </div>
       );
@@ -205,8 +206,8 @@ const Card: NextPage = (props: any) => {
                   <p>{call_to_action}</p>
                 </button> */}
               </div>
-              <p className={servicesStyles.section5_para1} dangerouslySetInnerHTML={{__html: marked(heading)}}></p>
-              <p className={servicesStyles.section5_para2} dangerouslySetInnerHTML={{__html: marked(free_text)}}></p>
+              <div className={servicesStyles.section5_para1} dangerouslySetInnerHTML={{__html: marked(heading)}}></div>
+              <div className={servicesStyles.section5_para2} dangerouslySetInnerHTML={{__html: marked(free_text)}}></div>
             
           </div>
         );

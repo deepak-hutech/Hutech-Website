@@ -51,7 +51,7 @@
   margin-top: 30px;
 }
 .section2_note{
-  margin-left: 90px;
+  margin-left: 160px;
   font-weight: 400;
   font-size: 15px;
   line-height: 24px;
@@ -148,7 +148,7 @@
   justify-content:center ;
   align-items: center;
   flex-wrap: wrap;
-  padding-left: 475px;
+  padding-left: 500px;
   column-gap: 70px;
   margin-top: -920px;
   row-gap: 50px;
@@ -174,7 +174,7 @@
   
   color: black;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 800;
 }
 .section6_title{
@@ -253,12 +253,6 @@
   margin-top: 120px;
   margin-left: 10px;
 }
-.section8_serviceimg{
-  width: 100%;
-  overflow: hidden;
-  margin-top: -200px;
-  height: 700px;
-}
 .section8_title{
   position: relative;
   font: 3rem sans-serif;
@@ -266,7 +260,7 @@
   text-align: center;
   font-weight: 800;
   font-size: 30px;   
-  margin-top: 100px;
+  margin-top: 150px;
 }
 .section8_note{
   position: relative;
@@ -274,6 +268,14 @@
   font-weight: 400;
   font-size: 15px;
   line-height: 24px;
+  margin-top: 20px;
+
+}
+.section8_serviceimg{
+  width: 100%;
+  overflow: hidden;
+  margin-top: -200px;
+  height: 700px;
 }
 .section8_img{
   display: flex;
@@ -281,8 +283,9 @@
   align-items: center;
   flex-wrap: wrap;
   padding-left: 0px;
-  margin-top: -220px;
+  margin-top: -179px;
   column-gap: 60px;
+
 }
 .section8Cardimg{
   border-radius: 10px;
@@ -309,4 +312,7 @@
   margin-left: 77px;
   height: 58px;
   padding: 5px;
+}
+.our_work_card{
+  margin-top: -60px;
 }
