@@ -7,6 +7,7 @@ import servicesStyles from "../../styles/Services.module.css";
 import Action from "../Actions";
 import { baseUrl } from "./../../public/strings.json";
 import leftarrow from "../assets/arrow.png";
+import careerstyles from "../../styles/Careers.module.css";
 
 
 const myLoader: ImageLoader = (url: any) => {
@@ -28,6 +29,16 @@ const Card: NextPage = (props: any) => {
     call_to_action,
     arrow,
     profile_img,
+    Estimated_buttons,
+    estimate_image,
+    Call_to_action,
+    image_size,
+    subtitle,
+    image_position,
+    Heading,
+    para,
+    estimate_icon,
+    
   } = props;
 
   switch (type) {
@@ -298,7 +309,97 @@ const Card: NextPage = (props: any) => {
                   </div>
               </div>
             );
-
+            case "feature_card":
+              return (
+                <div>
+                  <div className={careerstyles.featurecard}>
+                    <a
+                      id={props.id}
+                      // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
+                    >
+                      <div className={careerstyles.featurecardimg}>
+                        <Image
+                          loader={() => myLoader((baseUrl + images[0].url) as any)}
+                          src={`${baseUrl}${images[0].url}`}
+                          placeholder="blur"
+                          blurDataURL={baseUrl + images[0].url}
+                          width={94}
+                          height={94}
+                        />
+                      </div>
+                      <div className={careerstyles.feature_cardtext}>
+                        <div className={careerstyles.feature_heading}>{heading}</div>
+                        <div
+                          className={careerstyles.feature_subheading}
+                          dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                        ></div>
+                        {/* <div className={careerstyles.feature_subheading}>
+                          {free_text}
+                        </div> */}
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              );
+        
+            case "opening_card":
+              return (
+                <div>
+                  <div
+                    className={careerstyles.openingcard}
+                    style={
+                      heading === "IOS Developer"
+                        ? { backgroundColor: "#F9F8F8", border: "1px solid #D3D3D3" }
+                        : heading === "React Developer"
+                        ? { backgroundColor: "#EFFCFF", border: "1px solid #61DAFB" }
+                        : heading === "Node JS Developer"
+                        ? { backgroundColor: "#F8FFF9", border: "1px solid #66CE77" }
+                        : heading === "Java Developer"
+                        ? { backgroundColor: "#FFF3F3", border: "1px solid #F56767" }
+                        : heading === "Adriod Developer"
+                        ? { backgroundColor: "#F8FFF9", border: "1px solid #66CE77" }
+                        : { color: "black" }
+                    }
+                  >
+                    <a
+                      id={props.id}
+                      // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
+                    >
+                      <div className={careerstyles.openingcardimg}>
+                        <Image
+                          loader={() => myLoader((baseUrl + images[0].url) as any)}
+                          src={`${baseUrl}${images[0].url}`}
+                          placeholder="blur"
+                          blurDataURL={baseUrl + images[0].url}
+                          width={51}
+                          height={58}
+                        />
+                      </div>
+        
+                      <div className={careerstyles.opening_cardtext}>
+                        <div className={careerstyles.opening_heading}>{heading}</div>
+                        <div className={careerstyles.opening_subheading}>
+                          <button>{free_text}</button>
+                        </div>
+                        <div className={careerstyles.moreinfo_icon}>
+                          <a href={Link ? Link : `/plans/${props.title}`}>
+                            {call_to_action}
+                          </a>
+                          <a className={careerstyles.rightarrowicon}>
+                            {/* <ArrowRight /> */}
+                          </a>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+        
+                  {/* <Button variant="success"> {call_to_action}</Button>{" "} */}
+                  {/* <button>
+                    <p>{call_to_action}</p>
+                  </button> */}
+                </div>
+              );
+        
     default:
       return (
         <div className={companyStyles.c_cards}>

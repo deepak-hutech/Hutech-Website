@@ -737,7 +737,7 @@
 .capabilities_cards{
   display: flex;
   flex-wrap: wrap;
-  margin-top: 30px;
+  margin-top: 50px;
   align-items: baseline;
 
 }
