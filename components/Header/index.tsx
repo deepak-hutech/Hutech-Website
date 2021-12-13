@@ -8,6 +8,7 @@ import { baseUrl } from "./../../public/strings.json";
 //   color: string;
 // }
 
+
 const Header: NextPage = (props: any) => {
   const { Logo, action } = props;
 
@@ -29,6 +30,7 @@ const Header: NextPage = (props: any) => {
   }, [changeBackgroundColor]);
 
   return (
+     <div>
     <nav
       className={styles.container}
       style={{ backgroundColor: backgroundColor }}
@@ -42,6 +44,23 @@ const Header: NextPage = (props: any) => {
         ))}
       </div>
     </nav>
+    {/* <header className={styles.header}>
+    <a className={styles.logo} href={"/"}>
+        <img src={`${baseUrl}${Logo?.url}`} />
+      </a>
+    
+    <input className={styles.menu_btn} type="checkbox" id="menu_btn" />
+    <label className={styles.menu_icon} htmlFor="menu_btn"><span className={styles.navicon}></span></label>
+    <div className={styles.menu}>
+    
+      <div className={styles.navContainer}>
+        {action.map((item: any) => (
+          <Action {...item} />
+        ))}
+      </div>
+    </div>
+  </header> */}
+  </div>
   );
 };
 export default Header;

@@ -62,9 +62,10 @@ const Section: NextPage = (props: any) => {
     estimate_icon,
     User_Experience_Data,
     media,
+    heading_text,
     call_to_action,
     Call_to_action,
-    note,
+    address,
     header,
     footer,
     buttons,
@@ -320,6 +321,50 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
+      case "home_form":
+      return (
+        <div className={`${styles.capabilities}`}>
+          <div className={`${styles.client_banner}`}>
+            <div className={styles.clientContent}>
+              {free_text && (
+                <div
+                  className={styles.capab_title}
+                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                ></div>
+              )}
+              {address && (
+                <div
+                  className={styles.descrption}
+                  dangerouslySetInnerHTML={{ __html: marked(address) }}
+                ></div>
+              )}
+              {home_button && (
+                <div className={styles.buttons}>
+                {home_button.map((item: any) => (
+                  <div className={styles.call_to_action}>
+                    {" "}
+                    {item.call_to_action}{" "}
+                    <img
+                      src={`${baseUrl}${home_button[0].arrow_icon[0].url}`}
+                      className={styles.arrowicon}
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+               {heading_text && (
+                <div
+                  className={styles.capab_title}
+                  dangerouslySetInnerHTML={{ __html: marked(heading_text) }}
+                ></div>
+              )}
+
+            </div>
+          </div>
+          
+        </div>
+      );
+
 
       case "company_banner":
         return (
@@ -1259,7 +1304,7 @@ const Section: NextPage = (props: any) => {
                       </div>
                     );
               
-                  case "current_opening_banner":
+                  case "current_opening_career":
                     return (
                       <div className={`${careerstyles.main_sec4}`}>
                         <div className={careerstyles.section4}>

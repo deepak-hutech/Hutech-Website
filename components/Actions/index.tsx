@@ -6,9 +6,16 @@ const Action: NextPage = ({ type, display, link, group, icon }: any) => {
   switch (type) {
     case "hyperlink":
       return (
+        
         <a href={link} className={styles.topNavLink}>
           {display}
         </a>
+        /* <ul className={styles.menu}>
+          <li  className={styles.topNavLink}>
+        {display}
+      </li>
+        </ul> */
+        
       );
     case "dropdown":
       return (

@@ -186,6 +186,9 @@
 }
 
 
+
+/* header */
+/* 
 .header {
   background-color: #fff;
   box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
@@ -210,7 +213,7 @@
 }
 
 .header li a:hover,
-.header .menu_btn:hover {
+.header .menu-btn:hover {
   background-color: #f4f4f4;
 }
 
@@ -224,15 +227,15 @@
 
 /* menu */
 
-.header .menu {
+/* .header .menu {
   clear: both;
   max-height: 0;
   transition: max-height .2s ease-out;
-}
+} */
 
 /* menu icon */
 
-.header .menu_icon {
+/* .header .menu_icon {
   cursor: pointer;
   display: inline-block;
   float: right;
@@ -261,17 +264,17 @@
   width: 100%;
 }
 
-.header .menu_con .navicon:before {
+.header .menu_icon .navicon:before {
   top: 5px;
 }
 
 .header .menu_icon .navicon:after {
   top: -5px;
-}
+} */ 
 
 /* menu btn */
 
-.header .menu_btn {
+/* .header .menu_btn {
   display: none;
 }
 
@@ -294,11 +297,11 @@
 .header .menu_btn:checked ~ .menu_icon:not(.steps) .navicon:before,
 .header .menu_btn:checked ~ .menu_icon:not(.steps) .navicon:after {
   top: 0;
-}
+} */
 
 /* 48em = 768px */
 
-@media (min-width: 48em) {
+/* @media (min-width: 48em) {
   .header li {
     float: left;
   }
@@ -310,7 +313,7 @@
     float: right;
     max-height: none;
   }
-  .header .menu-icon {
+  .header .menu_icon {
     display: none;
   }
-}
+} */
