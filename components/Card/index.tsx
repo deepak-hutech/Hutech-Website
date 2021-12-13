@@ -85,7 +85,7 @@ const Card: NextPage = (props: any) => {
       );
       case "successful_product_card":
       return (
-        <div className={styles.capabilities_cards}>
+        <div className={styles.successful_product_card}>
          
             <div className={styles.capabilities}>
               <Image
@@ -106,19 +106,8 @@ const Card: NextPage = (props: any) => {
       );
       case "clients_card":
       return (
-       
-         
-            <div className={styles.clients_card}>
+        <div className={styles.clients_card}>
               <img src={`${baseUrl}${images[0].url}`}></img>
-              {/* <Image
-                loader={() => myLoader((baseUrl + images[0].url) as any)}
-                src={`${baseUrl}${images[0].url}`}
-                placeholder="blur"
-                blurDataURL={baseUrl + images[0].url}
-                width={"100%"}
-                height={100}
-                className={styles.cardimg}
-              /> */}
 
             </div>
       );

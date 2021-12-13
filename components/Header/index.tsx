@@ -4,10 +4,9 @@ import styles from "../../styles/Header.module.css";
 import Action from "../Actions";
 import { baseUrl } from "./../../public/strings.json";
 
-// interface IBackground {
-//   color: string;
-// }
-
+interface IBackground {
+  color: string;
+}
 
 const Header: NextPage = (props: any) => {
   const { Logo, action } = props;
@@ -30,21 +29,28 @@ const Header: NextPage = (props: any) => {
   }, [changeBackgroundColor]);
 
   return (
-     <div>
     <nav
       className={styles.container}
       style={{ backgroundColor: backgroundColor }}
     >
-      <a className={styles.logo} href={"/"}>
-        <img src={`${baseUrl}${Logo?.url}`} />
-      </a>
-      <div className={styles.navContainer}>
-        {action.map((item: any) => (
-          <Action {...item} />
-        ))}
+      <div className={styles.innerContainer}>
+        <a className={styles.logo} href={"/"}>
+          <img src={`${baseUrl}${Logo?.url}`} />
+        </a>
+        <div className={styles.menuToggle}>
+          <input type="checkbox" className={styles.hamburgerCheckbox} />
+          <span className={styles.hamburgerMenuIcon}></span>
+          <span className={styles.hamburgerMenuIcon}></span>
+          <span className={styles.hamburgerMenuIcon}></span>
+          <div className={styles.navContainer}>
+            {action.map((item: any) => (
+              <Action {...item} />
+            ))}
+          </div>
+        </div>
       </div>
     </nav>
-    {/* <header className={styles.header}>
+    /* <header className={styles.header}>
     <a className={styles.logo} href={"/"}>
         <img src={`${baseUrl}${Logo?.url}`} />
       </a>
@@ -59,8 +65,7 @@ const Header: NextPage = (props: any) => {
         ))}
       </div>
     </div>
-  </header> */}
-  </div>
+  </header> */
   );
 };
 export default Header;

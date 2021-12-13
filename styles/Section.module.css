@@ -341,7 +341,6 @@
 .career_banner {
   padding: 100px;
   display: flex;
-  
 }
 .careerContent {
   padding-left: 7%;
@@ -378,9 +377,7 @@
   cursor: pointer;
   margin-top: 20px;
 }
-.arrowicon {
-  margin: 0px 0px -2px 10px;
-}
+
 .service_banner {
   position: relative;
   width: 100%;
@@ -423,20 +420,23 @@
   width: 100%;
 }
 .blog_banner {
-  background: #EA9913;
+  background: #ea9913;
   padding: 2% 7% 0% 7%;
   margin-bottom: 100px;
   height: 450px;
-
 }
-.wide_card_{
+.wide_card_ {
   display: flex;
 }
 /* .Industries_banner {
   background: #ffffff;
   padding: 2% 0% 6% 7%;
 } */
-
+.clients_cards{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
 .client {
   background: #f1f2f3;
   padding: 2% 0% 6% 7%;
@@ -467,6 +467,9 @@
   align-items: start !important;
   overflow: visible !important;
   display: block !important;
+}
+.carousel{
+margin-top: -90px;
 }
 .blog_banner .buttons {
   margin: 60px 0 0;
@@ -689,8 +692,6 @@
   padding: 2% 7% 6% 7%;
 }
 
-
-
 @media only screen and (max-width: 500px) {
   .hero_banner p {
     display: none;
@@ -708,18 +709,15 @@
     line-height: 40px;
   }
   .accordion_head {
-   
     margin-top: 200px;
   }
   .service_banner {
-    background: #F1F2F3;
+    background: #f1f2f3;
   }
-   .service_banner .buttons {
-   
+  .service_banner .buttons {
     top: 28%;
-  } 
+  }
   .accordion {
-  
     padding: 0 7%;
   }
   .career_banner {
@@ -734,26 +732,25 @@
     margin-bottom: 30px;
   }
 }
-.capabilities_cards{
+.capabilities_cards {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 50px;
+  margin-top: 0px;
   align-items: baseline;
-
 }
-.home_bannerimg{
+.home_bannerimg {
   width: 100%;
   display: grid;
-  margin-top: -65px;
+  
   position: relative;
 }
 
-.banner_container{
-position: absolute;
-top: 26%;
-left: 8%;
+.banner_container {
+  position: absolute;
+  top: 26%;
+  left: 8%;
 }
-.free_text h2{
+.free_text h2 {
   font-size: 50px;
   font-weight: bold;
   line-height: 60px;
@@ -761,80 +758,180 @@ left: 8%;
   margin: 5px 0;
   font-family: "GraphikMedium";
 }
-.descrption{
+.descrption {
   font-size: 20px;
   line-height: 30px;
   color: #000;
 }
-.call_to_action{
+.homecall_to_action {
   font-size: 15px;
   line-height: 17px;
   color: #fff;
-  background: #0171C1;
-border: 1px solid #FFFFFF;
-box-sizing: border-box;
-border-radius: 30px;
-padding: 14px 32px;
-margin-top: 30px;
+  background: #0171c1;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 30px;
+  padding: 14px 32px;
+  margin-top: 30px;
 }
-.title h3{
+.title h3 {
   font-size: 38px;
   font-weight: bold;
   font-family: "GraphikMedium";
   line-height: 60px;
   color: #383838;
-  margin: 3% 0 10% 8%;
+  margin: 4% 0 3% 8%;
 }
 .our_latest_works {
   background: #ffffff;
   padding: 2% 0% 0% 0%;
 }
-.capabilities{
-  padding: 0 5% 2% 7%; 
+.capabilities {
+  padding: 0 5% 2% 7%;
 }
-.capab_title h3{
-  font-family: "GraphikMedium";
-    font-size: 38px;
-    font-weight: bold;
-    line-height: 60px;
-    color: #383838;
-   margin: 0;
-  
-}
-.development_title h3{
-  font-size: 38px;
-    font-weight: bold;
-    line-height: 60px;
-    color: #383838;
-   margin: 0;
-}
-.development_descrption p{
-  font-size: 15px;
-  line-height: 30px;
-  color: #000;
-}
-.product_title h3{
-  font-size: 38px;
-  font-family: "GraphikMedium";
-  font-weight: bold;
-  line-height: 40px;
-  color: #383838;
- margin: 0;
-}
-.successful_product{
-  padding: 5% 7% 8% 7%;
-  background-color: #F4F7F9;;
-}
-.clients{
-  padding: 0 7% 4% 7%;}
- .clients_title h3{
+.capab_title h3 {
   font-family: "GraphikMedium";
   font-size: 38px;
   font-weight: bold;
   line-height: 60px;
   color: #383838;
   margin: 0;
- } 
- .clients_heading{
+}
+.development_title h3 {
+  font-size: 38px;
+  font-weight: bold;
+  line-height: 60px;
+  color: #383838;
+  margin: 0;
+}
+.development_descrption p {
+  font-size: 15px;
+  line-height: 30px;
+  color: #000;
+}
+.product_title h3 {
+  font-size: 38px;
+  font-family: "GraphikMedium";
+  font-weight: bold;
+  line-height: 40px;
+  color: #383838;
+  margin: 0;
+}
+.successful_product {
+  padding: 5% 7% 8% 7%;
+  background-color: #f4f7f9;
+}
+.clients {
+  padding: 0 7% 4% 7%;
+}
+.clients_title h3 {
+  font-family: "GraphikMedium";
+  font-size: 38px;
+  font-weight: bold;
+  line-height: 60px;
+  color: #383838;
+  margin: 0;
+}
+.home_form_section {
+  background-color: #0171c1;
+  padding: 4% 7%;
+  display: flex;
+}
+.left_content {
+  width: 50%;
+}
+.left_content_title h3 {
+  font-family: "GraphikMedium";
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 40px;
+  color: #ffff;
+  margin: 0;
+}
+.left_content_title h4 {
+  font-family: "GraphikMedium";
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 30px;
+  color: #ffff;
+  margin: 30px 0 20px;
+  padding: 25px 0 0;
+}
+.fome_form_button {
+  font-size: 18px;
+  margin: 10px 0;
+  line-height: 30px;
+  color: #ffff;
+}
+.arrowicon {
+  margin-right: 16px;
+}
+.left_content_title p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #ffff;
+}
 
- }
+@media only screen and (max-width: 768px) {
+  .free_text h2 {
+    font-size: 34px;
+    line-height: 50px;
+  }
+  .descrption {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .free_text h2 {
+    font-size: 30px;
+    line-height: 40px;
+    margin-right: 72px;
+  }
+  .descrption {
+    font-size: 18px;
+    line-height: 30px;
+    
+  }
+  .banner_container {
+    top: 30%;
+    left: 4%;
+  }
+  .our_latest_works {
+    padding: 10% 0% 0% 0%;
+  }
+  .title h3 {
+    font-size: 30px;
+  }
+  .capab_title h3 {
+    
+    font-size: 30px;
+  }
+  .key_solutions {
+    flex-wrap: wrap;
+  }
+  .key_solutions_textfild {
+    width: 100%;
+  }
+  .serviceKeySolutionimg {
+    width: 100%;
+    
+  }
+  .development_title h3 {
+    font-size: 30px;
+  }
+  .product_title h3 {
+    font-size: 30px;
+  }
+  .blog_banner {
+    padding: 7%;
+  }
+  .blog_banner {
+    height: 460px;
+    margin-bottom: 50px;
+  }
+  .clients_title h3 {
+    font-size: 30px;
+  }
+}

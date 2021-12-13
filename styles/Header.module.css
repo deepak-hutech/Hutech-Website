@@ -1,20 +1,26 @@
 .container {
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   display: flex;
   height: 66px;
   /* box-shadow: 0 2px 4px 0 rgb(84 83 83 / 30%); */
   z-index: 1001;
   background: transparent;
   transition: all ease-out 0.5s;
+  justify-content: center;
+}
+.innerContainer {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 .logo {
-  width: 25%;
-  padding: 10px 7%;
 }
 .navContainer {
-  width: 75%;
-  padding: 16px 2%;
   text-align: right;
 }
 .subMenu a {
@@ -36,8 +42,7 @@
   width: 100%;
   font-size: 15px;
   font-weight: 400;
-  padding: 22px 20px;
-  margin: 10px;
+  margin: 0 16px;
   color: #233253;
   text-decoration: none;
 }
@@ -185,135 +190,179 @@
   margin: 0;
 }
 
-
-
-/* header */
-/* 
-.header {
-  background-color: #fff;
-  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
-  position: fixed;
-  width: 100%;
-  z-index: 3;
+.hamburgerCheckbox {
+  display: none;
 }
-
-.header ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  overflow: hidden;
-  background-color: #fff;
-}
-
-.header li a {
-  display: block;
-  padding: 20px 20px;
-  border-right: 1px solid #f4f4f4;
-  text-decoration: none;
-}
-
-.header li a:hover,
-.header .menu-btn:hover {
-  background-color: #f4f4f4;
-}
-
-.header .logo {
-  display: block;
-  float: left;
-  font-size: 2em;
-  padding: 10px 20px;
-  text-decoration: none;
-}
-
-/* menu */
-
-/* .header .menu {
-  clear: both;
-  max-height: 0;
-  transition: max-height .2s ease-out;
-} */
-
-/* menu icon */
-
-/* .header .menu_icon {
-  cursor: pointer;
-  display: inline-block;
-  float: right;
-  padding: 28px 20px;
-  position: relative;
-  user-select: none;
-}
-
-.header .menu_icon .navicon {
-  background: #333;
-  display: block;
-  height: 2px;
-  position: relative;
-  transition: background .2s ease-out;
-  width: 18px;
-}
-
-.header .menu_icon .navicon:before,
-.header .menu_icon .navicon:after {
-  background: #333;
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all .2s ease-out;
-  width: 100%;
-}
-
-.header .menu_icon .navicon:before {
-  top: 5px;
-}
-
-.header .menu_icon .navicon:after {
-  top: -5px;
-} */ 
-
-/* menu btn */
-
-/* .header .menu_btn {
+.hamburgerMenuIcon {
   display: none;
 }
 
-.header .menu_btn:checked ~ .menu {
-  max-height: 240px;
+@media only screen and (max-width: 1240px) {
+  .logo {
+    margin: 0 16px;
+  }
 }
 
-.header .menu_btn:checked ~ .menu_icon .navicon {
-  background: transparent;
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+  .container {
+    /* background-color: orange; */
+  }
 }
 
-.header .menu_btn:checked ~ .menu_icon .navicon:before {
-  transform: rotate(-45deg);
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+  .container {
+    /* background-color: green; */
+  }
+  .logo img {
+    height: 36px;
+  }
+  .navContainer a {
+    margin: 0 8px;
+    padding: 12px 0;
+  }
+  .headerbtn {
+    width: 110px;
+    height: 36px;
+  }
 }
 
-.header .menu_btn:checked ~ .menu_icon .navicon:after {
-  transform: rotate(45deg);
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  .container {
+    /* background-color: blue; */
+  }
+  .navContainer {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    /* background-color: red; */
+  }
+
+  .menuToggle {
+    display: block;
+    position: absolute;
+    right: 50px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .menuToggle .hamburgerCheckbox {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+
+    cursor: pointer;
+
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */
+
+    -webkit-touch-callout: none;
+  }
+
+  /*
+ * Just a quick hamburger
+ */
+  .menuToggle .hamburgerMenuIcon {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #000;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  }
+
+  .menuToggle .hamburgerMenuIcon:first-child {
+    transform-origin: 0% 0%;
+  }
+
+  .menuToggle .hamburgerMenuIcon:nth-last-child(2) {
+    transform-origin: 0% 100%;
+  }
+
+  /* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+  .menuToggle .hamburgerCheckbox:checked ~ .hamburgerMenuIcon {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+  }
+
+  /*
+ * But let's hide the middle one.
+ */
+  .menuToggle
+    .hamburgerCheckbox:checked
+    ~ .hamburgerMenuIcon:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+
+  /*
+ * Ohyeah and the last one should go the other direction
+ */
+  .menuToggle
+    .hamburgerCheckbox:checked
+    ~ .hamburgerMenuIcon:nth-last-child(2) {
+    opacity: 1;
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+
+  /*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+  .navContainer {
+    position: absolute;
+    width: 300px;
+    margin: -50px 0 0 0;
+    padding: 50px;
+    padding-top: 50px;
+    right: -50px;
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    transform-origin: 0% 0%;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    height: 100vh;
+    justify-content: flex-start;
+  }
+
+  .navContainer li {
+    padding: 10px 0;
+    font-size: 22px;
+  }
+
+  /*
+ * And let's fade it in from the left
+ */
+  .menuToggle .hamburgerCheckbox:checked ~ .navContainer {
+    transform: none;
+    opacity: 1;
+  }
 }
 
-.header .menu_btn:checked ~ .menu_icon:not(.steps) .navicon:before,
-.header .menu_btn:checked ~ .menu_icon:not(.steps) .navicon:after {
-  top: 0;
-} */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  .container {
+    /* background-color: yellow; */
+  }
+}
 
-/* 48em = 768px */
 
-/* @media (min-width: 48em) {
-  .header li {
-    float: left;
-  }
-  .header li a {
-    padding: 20px 30px;
-  }
-  .header .menu {
-    clear: none;
-    float: right;
-    max-height: none;
-  }
-  .header .menu_icon {
-    display: none;
-  }
-} */
