@@ -178,23 +178,15 @@ const Card: NextPage = (props: any) => {
       case "mobile_app_development_card":
       return (
         <div className={servicesStyles.mobile_app_development_card}>
-         
-            <div className={servicesStyles.mobile_app_development_card}>
-
-
-              {/* <button>
-                <p>{call_to_action}</p>
-              </button> */}
-            </div>
             <div className={servicesStyles.section3_cards}>
-            <div className={servicesStyles.section3_para1} dangerouslySetInnerHTML={{__html: marked(heading)}}></div>
+            <div className={servicesStyles.section3_heading} dangerouslySetInnerHTML={{__html: marked(heading)}}></div>
             <div className={servicesStyles.section3_para2} dangerouslySetInnerHTML={{__html: marked(free_text)}} ></div>
-            </div>
+          </div>
         </div>
       );
       case "custom_mobile_card":
         return (
-          <div className={servicesStyles.mobile_app_development_card}>
+          <div className={servicesStyles.mobile_app_development_cards}>
            
               <div className={servicesStyles.mobile_app_development_card}>
               <div className={servicesStyles.section5_img}>
@@ -211,15 +203,9 @@ const Card: NextPage = (props: any) => {
                 <p>{call_to_action}</p>
               </button> */}
             </div>
-  
-  
-                {/* <button>
-                  <p>{call_to_action}</p>
-                </button> */}
               </div>
-              <div className={servicesStyles.section5_para1} dangerouslySetInnerHTML={{__html: marked(heading)}}></div>
+              <div className={servicesStyles.section5_heading} dangerouslySetInnerHTML={{__html: marked(heading)}}></div>
               <div className={servicesStyles.section5_para2} dangerouslySetInnerHTML={{__html: marked(free_text)}}></div>
-            
           </div>
         );
       case "mobile_tech_card":

@@ -881,50 +881,55 @@ const Section: NextPage = (props: any) => {
         );
         case "service_page_banner":
           return (
-            <div className={`${servicesStyles.section1}`}>
-            <div className={`${servicesStyles.Industries_banner}`}>
-              <div className={`${servicesStyles.client_banner}`}>
-                <div className={servicesStyles.clientContent}>
-                  {free_text && (
-                    <div
-                      className={servicesStyles.section1_title}
-                      dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-                    ></div>
-                  )}
-                  {sub_heading && (
-                    <div
-                      className={servicesStyles.section1_note}
-                      dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-                    ></div>
-                  )}
-                            {home_banner[0] && (
-                  <div className={`${servicesStyles.section1_serviceimg}`}>
-                    <img src={baseUrl + home_banner[0].url} />
-                  </div>
+            <div className={servicesStyles.section1}>
+            {home_banner[0] && (
+                <Image
+                  loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
+                  src={baseUrl + home_banner[0].url}
+                  placeholder="blur"
+                  blurDataURL={baseUrl + home_banner[0].url}
+                  height={400}
+                  width={"100%"}
+                  className={companyStyles.bannerimg}
+                />
+             
+            )}
+            <div className={servicesStyles.banner_container}>
+            {free_text &&(
+              <div className={servicesStyles.content}>
+                <div
+                  className={servicesStyles.free_text}
+                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                />
+                {sub_heading && (
+                  <div
+                    className={servicesStyles.descrption}
+                    dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                  ></div>
                 )}
+                {home_button && (
+                  <div className={servicesStyles.buttons}>
+                  {home_button.map((item: any) => (
+                    <div className={servicesStyles.call_to_action}>
+                      {" "}
+                      {item.call_to_action}{" "}
+                      {/* <img
+                        src={`${baseUrl}${home_button[0].arrow_icon[0].url}`}
+                        className={styles.arrowicon}
+                      /> */}
+                    </div>
+                  ))}
                 </div>
+              )}
               </div>
-              {/* <div className={styles.capabilities_cards}>
-              {carosel_cards.map((_card: any, index: number) => (
-                  <Card {..._card} key={index} />
-                ))}
-              </div> */}
-         {home_button && (
-                    <div className={servicesStyles.section1_buttons}>
-                    {home_button.map((item: any) => (
-                      <div className={servicesStyles.call_to_action}>
-                        {" "}
-                        {item.call_to_action}{" "}
-                      </div>
-                    ))}
-                  </div>
-                )}
+            )}
             </div>
-            </div>
+          </div>
           );
+         
           case "mobile_app_development":
             return (
-              <div className={`${servicesStyles.Industries_banner}`}>
+              <div className={`${servicesStyles.section2}`}>
                 <div className={`${servicesStyles.client_banner}`}>
                   <div className={servicesStyles.clientContent}>
                     {free_text && (
@@ -967,11 +972,11 @@ const Section: NextPage = (props: any) => {
                           dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
                         ></div>
                       )}
-                                                              {home_banner[0] && (
+                   {/* {home_banner[0] && (
                   <div className={`${servicesStyles.section3_serviceimg}`}>
                     <img src={baseUrl + home_banner[0].url} />
                   </div>
-                )}
+                )} */}
                     </div>
                   </div>
                   { <div className={servicesStyles.mobile_app_development_card}>
@@ -991,13 +996,24 @@ const Section: NextPage = (props: any) => {
               return (
                 <div className={`${servicesStyles.Industries_banner}`}>
                   <div className={`${servicesStyles.client_banner}`}>
-                    <div className={servicesStyles.clientContent}>
+                    <div className={servicesStyles.clientContent4}>
                       {free_text && (
                         <div
                           className={servicesStyles.section4_title}
                           dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                         ></div>
                       )}
+                        {home_button && (
+                          <div className={servicesStyles.section4_buttons}>
+                            {home_button.map((item: any) => (
+                              <div className={servicesStyles.call_to_action}>
+                                {" "}
+                                {item.call_to_action}{" "}
+                              </div>
+                             ))}
+                           </div>
+                         )}
+                      </div>
                       {sub_heading && (
                         <div
                           className={servicesStyles.note2}
@@ -1005,56 +1021,48 @@ const Section: NextPage = (props: any) => {
                         ></div>
                         
                       )}
-                    </div>
                   </div>
-                  {home_button && (
-                <div className={servicesStyles.section4_buttons}>
-                {home_button.map((item: any) => (
-                  <div className={servicesStyles.call_to_action}>
-                    {" "}
-                    {item.call_to_action}{" "}
-                  </div>
-                ))}
-              </div>
-            )}
                 </div>
               );
     
               case "custom_mobile_app":
                 return (
-                  <div className={`${servicesStyles.Industries_banner}`}>
-                    <div className={`${servicesStyles.client_banner}`}>
-                      <div className={servicesStyles.clientContent}>
-                        {free_text && (
-                          <div
-                            className={servicesStyles.section5_title}
-                            dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-                          ></div>
-                        )}
-                        {sub_heading && (
-                          <div
-                            className={servicesStyles.section5_note}
-                            dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-                          >
-    
-                          </div>
-                        )}
-                                                {home_banner[0] && (
-                  <div className={`${servicesStyles.section5_serviceimg}`}>
-                    <img src={baseUrl + home_banner[0].url} />
-                  </div>
-                )}
+                  <div className={`${servicesStyles.Industries_banner5}`}>
+                    <div className={`${servicesStyles.client_banner5}`}>
+                      <div className={servicesStyles.section5}>
+                          {free_text && (
+                            <div
+                              className={servicesStyles.section5_title}
+                              dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                            ></div>
+                          )}
+                          {sub_heading && (
+                            <div
+                              className={servicesStyles.section5_note}
+                              dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                            >
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                    { <div className={servicesStyles.custom_mobile_card}>
-                  {carosel_cards[0] && (
-                    <div className={servicesStyles.section5}>
-                      {carosel_cards.map((_card: any, index: number) => (
-                        <Card {..._card} key={index} />
-                      ))}
-                    </div>
-                  )}
-                  </div> }
+                      <div className={`${servicesStyles.flexContainer}`}>
+                          <div className={`${servicesStyles.imgColumn}`}>
+                          {home_banner[0] && (
+                            <div className={`${servicesStyles.section5_serviceimg}`}>
+                              <img src={baseUrl + home_banner[0].url} />
+                            </div>
+                         )}
+                          </div>
+                       <div className={servicesStyles.cardColumn}>
+                         {carosel_cards[0] && (
+                          <div className={servicesStyles.section5_cards}>
+                            {carosel_cards.map((_card: any, index: number) => (
+                              <Card {..._card} key={index} />
+                            ))}
+                          </div>
+                         )}
+                         </div>
+                        </div>
                   </div>
                 );
     
@@ -1077,28 +1085,20 @@ const Section: NextPage = (props: any) => {
                         ></div>
                         
                       )}
-                                                                  {home_banner[0] && (
+                      </div>
+                        {/* {home_banner[0] && (
                   <div className={`${servicesStyles.section6_serviceimg}`}>
                     <img src={baseUrl + home_banner[0].url} />
                   </div>
-                )}
-                    </div>
+                )} */}
                   </div>
-                  <Container>
-                    <Row>
-                      <Col>
-                  { <div className={servicesStyles.mobile_tech_card}>
-                  {carosel_cards[0] && (
-                    <div className={servicesStyles.section6_imgages}>
-                      {carosel_cards.map((_card: any, index: number) => (
-                        <Card {..._card} key={index} />
-                      ))}
-                    </div>
-                  )}
-                  </div> }
-                     </Col>
-                  </Row>
-                  </Container>
+                      {carosel_cards[0] && (
+                        <div className={servicesStyles.section6_imgages}>
+                          {carosel_cards.map((_card: any, index: number) => (
+                            <Card {..._card} key={index} />
+                          ))}
+                        </div>
+                      )}
                 </div>
                 </div>
               );
@@ -1155,14 +1155,13 @@ const Section: NextPage = (props: any) => {
                             ></div>
                             
                           )}
-                          {home_banner[0] && (
+                          {/* {home_banner[0] && (
                   <div className={`${servicesStyles.section8_serviceimg}`}>
                     <img src={baseUrl + home_banner[0].url} />
                   </div>
-                )}
+                )} */}
                         </div>
                       </div>
-                      { <div className={servicesStyles.our_work_card}>
                       {carosel_cards[0] && (
                         <div className={servicesStyles.section8_img}>
                           {carosel_cards.map((_card: any, index: number) => (
@@ -1170,8 +1169,6 @@ const Section: NextPage = (props: any) => {
                           ))}
                         </div>
                       )}
-                      </div> }
-                      
                     </div>
                     </div>
                   );
