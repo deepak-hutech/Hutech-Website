@@ -1063,84 +1063,86 @@ const Section: NextPage = (props: any) => {
         </div>
       );
 
-    case "custom_mobile_app":
+      case "custom_mobile_app":
+        return (
+          <div className={`${servicesStyles.section5}`}>
+            <div className={`${servicesStyles.client_banner5}`}>
+              <div className={servicesStyles.section5_content}>
+                  {free_text && (
+                    <div
+                      className={servicesStyles.section5_title}
+                      dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                    ></div>
+                  )}
+                  {sub_heading && (
+                    <div
+                      className={servicesStyles.section5_note}
+                      dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                    >
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div className={`${servicesStyles.section5_img_container}`}>
+                  <div className={`${servicesStyles.imgColumn}`}>
+                  {home_banner[0] && (
+                    <div className={`${servicesStyles.section5_serviceimg}`}>
+                      <img src={baseUrl + home_banner[0].url} />
+                    </div>
+                 )}
+                  </div>
+               <div className={servicesStyles.cardColumn}>
+                 {carosel_cards[0] && (
+                  <div className={servicesStyles.section5_cards}>
+                    {carosel_cards.map((_card: any, index: number) => (
+                      <Card {..._card} key={index} />
+                    ))}
+                  </div>
+                 )}
+                 </div>
+                </div>
+          </div>
+        );
+
+        case "mobile_technologies":
       return (
-        <div className={`${servicesStyles.Industries_banner5}`}>
-          <div className={`${servicesStyles.client_banner5}`}>
-            <div className={servicesStyles.section5}>
+        <div className={`${servicesStyles.section6}`}>
+        <div className={`${servicesStyles.Industries_banner}`}>
+          <div className={`${servicesStyles.client_banner}`}>
+            <div className={servicesStyles.clientContent}>
               {free_text && (
                 <div
-                  className={servicesStyles.section5_title}
+                  className={servicesStyles.section6_title}
                   dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                 ></div>
               )}
               {sub_heading && (
                 <div
-                  className={servicesStyles.section5_note}
+                  className={servicesStyles.section6_note}
                   dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
                 ></div>
+                
               )}
-            </div>
+              </div>
+                {/* {home_banner[0] && (
+          <div className={`${servicesStyles.section6_serviceimg}`}>
+            <img src={baseUrl + home_banner[0].url} />
           </div>
-          <div className={`${servicesStyles.flexContainer}`}>
-            <div className={`${servicesStyles.imgColumn}`}>
-              {home_banner[0] && (
-                <div className={`${servicesStyles.section5_serviceimg}`}>
-                  <img src={baseUrl + home_banner[0].url} />
-                </div>
-              )}
-            </div>
-            <div className={servicesStyles.cardColumn}>
+        )} */}
+          </div>
               {carosel_cards[0] && (
-                <div className={servicesStyles.section5_cards}>
+                <div className={servicesStyles.section6_imgages}>
                   {carosel_cards.map((_card: any, index: number) => (
                     <Card {..._card} key={index} />
                   ))}
                 </div>
               )}
-            </div>
-          </div>
+        </div>
         </div>
       );
-
-    case "mobile_technologies":
-      return (
-        <div className={`${servicesStyles.section6}`}>
-          <div className={`${servicesStyles.Industries_banner}`}>
-            <div className={`${servicesStyles.client_banner}`}>
-              <div className={servicesStyles.clientContent}>
-                {free_text && (
-                  <div
-                    className={servicesStyles.section6_title}
-                    dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-                  ></div>
-                )}
-                {sub_heading && (
-                  <div
-                    className={servicesStyles.section6_note}
-                    dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-                  ></div>
-                )}
-              </div>
-              {/* {home_banner[0] && (
-                  <div className={`${servicesStyles.section6_serviceimg}`}>
-                    <img src={baseUrl + home_banner[0].url} />
-                  </div>
-                )} */}
-            </div>
-            {carosel_cards[0] && (
-              <div className={servicesStyles.section6_imgages}>
-                {carosel_cards.map((_card: any, index: number) => (
-                  <Card {..._card} key={index} />
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      );
-    case "development_process":
-      return (
-        <div className={`${servicesStyles.section7}`}>
+      case "development_process":
+        return (
+          <div className={`${servicesStyles.section7}`}>
           <div className={`${servicesStyles.Industries_banner}`}>
             <div className={`${servicesStyles.client_banner}`}>
               <div className={servicesStyles.clientContent}>
@@ -1150,64 +1152,77 @@ const Section: NextPage = (props: any) => {
                     dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                   ></div>
                 )}
-                {sub_heading && (
-                  <div
-                    className={servicesStyles.section7_note}
-                    dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-                  ></div>
-                )}
+                  <div className={servicesStyles.dots}>
+                     
+                  </div>
+                <div className={servicesStyles.numbers}>
+                   <div> 
+                     <h4>1</h4>
+                     <h5>Analsis Requiremnt</h5>
+                   </div>
+                   <div> 
+                     <h4>2</h4>
+                     <h5>Wireframing</h5>
+                   </div>
+                   <div> 
+                     <h4>3</h4>
+                     <h5>Design And Approval</h5>
+                   </div>
+                   <div> 
+                     <h4>4</h4>
+                     <h5>Development Process</h5>
+                   </div>
+                   <div> 
+                     <h4>5</h4>
+                     <h5>Testing</h5>
+                   </div>
+                   <div> 
+                     <h4>6</h4>
+                     <h5>Launch</h5>
+                   </div>
+                </div>
               </div>
             </div>
-            {
-              <div className={servicesStyles.dev_process_card}>
-                {carosel_cards[0] && (
-                  <div className={servicesStyles.section7_img}>
-                    {carosel_cards.map((_card: any, index: number) => (
-                      <Card {..._card} key={index} />
-                    ))}
-                  </div>
-                )}
-              </div>
-            }
           </div>
-        </div>
-      );
+          </div>
+        );
 
-    case "our_works_banner":
-      return (
-        <div className={`${servicesStyles.section8}`}>
-          <div className={`${servicesStyles.Industries_banner}`}>
-            <div className={`${servicesStyles.client_banner}`}>
-              <div className={servicesStyles.clientContent}>
-                {free_text && (
-                  <div
-                    className={servicesStyles.section8_title}
-                    dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-                  ></div>
-                )}
-                {sub_heading && (
-                  <div
-                    className={servicesStyles.section8_note}
-                    dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-                  ></div>
-                )}
-                {/* {home_banner[0] && (
-                  <div className={`${servicesStyles.section8_serviceimg}`}>
-                    <img src={baseUrl + home_banner[0].url} />
-                  </div>
-                )} */}
-              </div>
-            </div>
-            {carosel_cards[0] && (
-              <div className={servicesStyles.section8_img}>
-                {carosel_cards.map((_card: any, index: number) => (
-                  <Card {..._card} key={index} />
-                ))}
-              </div>
-            )}
+        case "our_works_banner":
+          return (
+            <div className={`${servicesStyles.section8}`}>
+            <div className={`${servicesStyles.Industries_banner}`}>
+              <div className={`${servicesStyles.client_banner}`}>
+                <div className={servicesStyles.clientContent}>
+                  {free_text && (
+                    <div
+                      className={servicesStyles.section8_title}
+                      dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                    ></div>
+                  )}
+                  {sub_heading && (
+                    <div
+                      className={servicesStyles.section8_note}
+                      dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                    ></div>
+                    
+                  )}
+                  {/* {home_banner[0] && (
+          <div className={`${servicesStyles.section8_serviceimg}`}>
+            <img src={baseUrl + home_banner[0].url} />
           </div>
-        </div>
-      );
+        )} */}
+                </div>
+              </div>
+              {carosel_cards[0] && (
+                <div className={servicesStyles.section8_img}>
+                  {carosel_cards.map((_card: any, index: number) => (
+                    <Card {..._card} key={index} />
+                  ))}
+                </div>
+              )}
+            </div>
+            </div>
+          );
     case "career_banner":
       return (
         <div className={`${careerstyles.main_sec1}`}>
