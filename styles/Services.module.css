@@ -1,6 +1,3 @@
-/* .Industries_banner img {
-  width: 100%;
-} */
 
 
 .section1 {
@@ -8,17 +5,22 @@
   /* position: relative; */
 }
 
-.section1 {
-  width: 100%;
-  display: grid;
-  margin-top: 5px;
-  text-align: center;
-  color: white;
-  height: 77%;
-  background:#0662a7;
-  align-items: center;
-  position: relative;
+.section1 img {
+  opacity: 0.3;
 }
+
+.section1 {
+    width: 100%;
+    display: grid;
+    margin-top: 5px;
+    text-align: center;
+    color: white;
+    height: 77%;
+    background:#0662a7;
+    align-items: center;
+    position: relative;
+}
+
 .section1 .banner_container{
     position: absolute;
     top: 26%;
@@ -26,12 +28,12 @@
 }
 
 .section1 .content .free_text {
-  font-weight: normal;
-  font-size: 40px;
+    font-weight: 700;
+    font-size: 40px;
  }
 
 .section1 .content .descrption {
-  padding: 0 300px;
+  padding: 0 30px;
 }
 
 .companybanner .title p {
@@ -56,7 +58,7 @@
 }
 
 
-.call_to_action {
+.section1 .call_to_action {
   color: white;
   background-color:#FFAF2B;
   width: max-content;
@@ -107,7 +109,6 @@
 .section3 .clientContent {
   text-align: center;
   padding-top: 60px;
-  /* background-color: greenyellow; */
 }
 
 .section3 .clientContent .section3_title {
@@ -127,7 +128,7 @@
   padding-left: 10px;
   column-gap: 60px;
   margin-top: 35px;
-  padding: 70px;
+  padding: 10px;
 }
 
 .section3_serviceimg{
@@ -140,9 +141,7 @@
 
 .section3_card .mobile_app_development_card {
   width: 360px;
-  height: 402px;
-  left: 122px;
-  top: 1236px;
+  height: auto;
   padding: 20px 18px;
   background: #FFFFFF;
   border: 1px solid #CCCCCC;
@@ -150,17 +149,22 @@
   box-shadow: 0px 4px 4px rgba(144, 140, 140, 0.25);
   border-radius: 20px;
 }
+
+.section3_card .mobile_app_development_card button {
+    all: unset;
+    color: #0662a7;
+    font-weight: 500;
+}
 .section3_heading {
   font-weight: bold;
   font-size: 24px;
   line-height: 24px;
 }
 
-/* ////////// */
+/* //////////SECTION-4 */
 
 
 .clientContent4 {
-  /* background-color: grey; */
   text-align: center;
   margin: 50px 0;
 }
@@ -173,7 +177,12 @@
   font-size: 30px;
 }
 
-.section4_buttons{
+.section4_buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.section4_buttons .call_to_action{
   background-color: #FFAF2B;
   color: white;
   font-size: 11px;
@@ -182,40 +191,37 @@
   bottom: 65px;
   height: 34px;
   margin-top: 30px;
-  margin-left: 85px;
   padding: 8px;
   text-align: center;
-  margin-left:620px;
   border-radius: 20px;
 }
 
 
-/* ////////////////////5 */
+/* ////////////////////SECTION-5 */
 
 .section5 {
+  padding-bottom: 4rem;
+}
+.section5_content {
   text-align: center;
   margin: 100px 0;
 }
 
-.section5 .section5_title {
+.section5_content .section5_title {
   font-style: normal;
   font-weight: bold;
   font-size: 30px;
   line-height: 29px
 }
 
-.flexContainer {
+ .section5_img_container {
     display: flex;
     padding-left: 10px;
-}
+  }
 
-.imgColumn {
-  width: 40%;
-}
-
-.cardColumn {
-  width: 60%;
-}
+  .section5_img_container img {
+    border-radius: 20px;
+  }
 
 .section5_cards {
   display: flex;
@@ -223,19 +229,19 @@
   flex-wrap: wrap;
 }
 
-.Industries_banner5 .mobile_app_development_cards{
-  width: 400px;
-  height: 300px;
-  padding: 10px 20px
+.section5 .mobile_app_development_cards{
+  margin: 10px 0;
+  padding: 10px 20px;
 }
 
-.Industries_banner5 .mobile_app_development_cards .section5_heading{
-  font-weight: bold;
+.section5 .mobile_app_development_cards .section5_heading{
+    font-weight: bold;
     font-size: 20px;
     line-height: 22px;
+    margin: 20px 0;
 }
 
-/* //////////////6 */
+/* //////////////SECTION-6 */
 
 .section6 {
     text-align: center;
@@ -264,10 +270,6 @@
   line-height: 1px;
 }
 
-
-.section6 .mobile_tech_card {
-}
-
 .section6_imgages {
   justify-content: space-evenly;
   display: flex;
@@ -287,9 +289,9 @@
 
 
 .section7 {
-  height: 300px;
-  margin-top: 50px;
+  /* height: 300px; */
   text-align: center;
+  margin: 50px 10px;
 }
 
 .section7_title {
@@ -297,12 +299,34 @@
   font-size: 30px;
 }
 
+.section7 .numbers {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 60px 40px 40px 40px;
+}
 
-/* 8 */
+.section7 h4 {
+  width: 61px;
+  height: 51px;
+  padding: 9px;
+  display: inline-block;
+  background: #F3F9FF;
+  border: 2px solid #2F95DE;
+  /* box-sizing: border-box; */
+  border-radius: 26px;
+}
+
+/* .section7 h4::after {
+  content: '';
+  border-top: 2px dashed red;
+} */
+
+/* SECTION-8 */
 
 .section8  {
   text-align: center;
   background-color: #eea52c;
+  padding: 50px 0;
 }
 .section8 .clientContent {
   padding: 30px 0;
@@ -327,7 +351,7 @@
   width: 202px;
   height: 82px;
   position: relative;
-  left: 62px;
+  margin: 0 50px;
   top: -28px;
   padding: 10px 0;
   background: #FFFFFF;
@@ -336,6 +360,10 @@
 
 }
 
+/* .section8Contents {
+  background-color: grey;
+} */
+
 .section8_para1 {
    font-weight: bold;
    /* line-height: 2px; */
@@ -343,4 +371,91 @@
 }
 .section8_para2 {
  line-height: 0px;
+}  
+
+
+/* //////RESPONSIVE */
+
+@media only screen and (max-width: 500px) {
+  .section1 .banner_container{
+    top: 20%;
+  }
+
+  .section1 .banner_container .free_text {
+    font-size: 30px;
+  }
+
+
+  .section2 .clientContent .section2_note {
+    padding: 10px 20px;
+  }
+   
+
+  .section3 {
+    padding: 0 15px;
+  }
+
+  .section3 .clientContent .section3_title {
+      line-height:35px;
+    }
+
+  .section3_card .mobile_app_development_card {
+      margin: 10px 0;
+    } 
+
+
+  .section5_img_container img{
+      width: 200px;
+      border-radius: 20px;
+  }
+
+
+  .section6_imgages {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .client_banner5 {
+    flex-direction: column;
+  }
+
+   .numbers {
+    flex-direction: column;
+  }
+
+  .section5_img_container {
+    display: flex;
+    padding-left: 10px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+    .section5_cards img {
+      width: 75px;
+      height: 68px;
+    }
+
+    .imgColumn {
+      width: 100%;
+    }
+
+    .cardColumn {
+      width: 100%;
+    }
+
+    .section6_note {
+      line-height: 25px;
+    }
+    
+    .section8_img {
+      margin: auto;
+      flex-direction: column;
+      border-radius: 10px;
+      width: 90%;
+      height: 90%;
+    }
+
+    .section8Para {
+      margin: auto;
+    }
 }
