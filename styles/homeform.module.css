@@ -1,0 +1,72 @@
+.homeformlabel{
+  display: block;
+  font-size: 15px;
+    color: #5B5B5B;
+}
+.contactForm{
+  display: flex;
+  flex-wrap: wrap;
+}
+.labelbox{
+  width: 50%;
+  margin-bottom: 40px;
+}
+.homeinputbox{
+  width: 90%;
+  border-bottom: 1px solid #000;
+  border-top: 0;
+  margin-top: 10px;
+  border-left: 0;
+  border-right: 0;
+  font-size: 14px;
+  line-height: 30px;
+}
+.labelmsgbox{
+  width: 90%;
+}
+.homecontactForm{
+  background-color: #fff;
+  padding: 7% 2% 7% 7%;
+}
+.homecontactForm h3{
+  color: #226196;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "GraphikMedium";
+  margin-bottom: 50px;
+}
+.homeinputbox::-webkit-input-placeholder {
+  color: #BABABA;
+}
+
+.homeinputbox:-moz-placeholder {
+  color: #BABABA;
+}
+
+.homeinputbox::-moz-placeholder {
+  color: #BABABA;
+}
+
+.homeinputbox:-ms-input-placeholder {
+  color: #BABABA;
+}
+.homeinputbox:focus-visible {
+  outline: none;
+}
+.formbtn{
+  width: 75px;
+    height: 75px;
+    vertical-align: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 38px;
+    margin-top: 56px;
+    margin-left: -40px;
+    background-color: #FFAF2B;
+    border: 1px solid #FFAF2B;
+    background-image: url(../components/assets/contact.svg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+}

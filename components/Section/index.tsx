@@ -19,6 +19,7 @@ import ContactForm from "../ContactForm";
 import servicesStyles from "../../styles/Services.module.css";
 import careerstyles from "../../styles/Careers.module.css";
 import CareerForm from "../careerForm/index.js";
+import HomeForm from "../home_form/index.js";
 import portfolioStyles from "../../styles/Portfolio.module.css";
 
 const myLoader: ImageLoader = (url: any) => {
@@ -345,7 +346,7 @@ const Section: NextPage = (props: any) => {
             </div>
           </div>
 
-          <div className={styles.right_from_section}>hii</div>
+          <div className={styles.right_from_section}><HomeForm /></div>
         </div>
       );
 

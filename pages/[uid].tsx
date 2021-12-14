@@ -34,14 +34,14 @@ const DynamicPage: NextPage<{ header: any; pages: any; footer: any }> = (
   // }, []);
 
   const { header, footer } = props;
-  const { title, content, Logo, descrption } = props.pages[0];
+  const { title, content, Logo, descrption,favicon } = props.pages[0];
   return (
     <div >
       <Head>
         <title>{title}</title>
         <meta name="description" content={descrption} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        {/* <link rel="icon" href={`${baseUrl}${favicon}`} /> */}
+        {/* <link rel="icon" href={`${baseUrl}${favicon[0]}`} /> */}
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.css"
