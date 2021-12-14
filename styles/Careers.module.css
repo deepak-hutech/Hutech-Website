@@ -462,9 +462,24 @@ line-height: 26px;
   margin: 2rem;
   border-bottom: 1px solid #ccc;
 }
+.formselectborder{
+   border: 0;
+    padding: 16px 0;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    margin-right: 2.7rem;
+  border-bottom: 1px solid #ccc;
+}
 .formborder ~ .focus_border{position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; z-index: 99;}
 .formborder ~ .focus_border:before, 
 .formborder ~ .focus_border:after{content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 100%; background-color: #3399FF; transition: 0.4s;}
 .formborder ~ .focus_border:after{left: auto; right: 0;}
 .formborder:focus ~ .focus_border:before, 
 .formborder:focus ~ .focus_border:after{width: 50%; transition: 0.4s;}
+
+
+
+
+
+
+
