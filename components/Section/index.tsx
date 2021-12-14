@@ -19,6 +19,7 @@ import ContactForm from "../ContactForm";
 import servicesStyles from "../../styles/Services.module.css";
 import careerstyles from "../../styles/Careers.module.css";
 import CareerForm from "../careerForm/index.js";
+import portfolioStyles from "../../styles/Portfolio.module.css";
 
 const myLoader: ImageLoader = (url: any) => {
   return url;
@@ -1506,6 +1507,111 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
+
+      case "portfolio_banner":
+        return (
+          <div className={portfolioStyles.portfolio_section1}>
+          {home_banner[0] && (
+              <Image
+                loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
+                src={baseUrl + home_banner[0].url}
+                placeholder="blur"
+                blurDataURL={baseUrl + home_banner[0].url}
+                height={500}
+                width={"100%"}
+                className={companyStyles.bannerimg}
+              />
+           
+          )}
+          <div className={portfolioStyles.banner_container}>
+          {free_text &&(
+            <div className={portfolioStyles.content}>
+              <div
+                className={portfolioStyles.free_text}
+                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+              />
+              {sub_heading && (
+                <div
+                  className={portfolioStyles.descrption}
+                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                ></div>
+              )}
+            </div>
+          )}
+          </div>
+        </div>
+        );
+
+        case "portfolio_img_banner":
+          return (
+            <div className={`${portfolioStyles.porfolio_card_section}`}>
+            <div className={`${portfolioStyles.Industries_banner}`}>
+              <div className={`${portfolioStyles.client_banner}`}>
+                <div className={portfolioStyles.clientContent}>
+                {free_text && (
+                <div
+                  className={portfolioStyles.portfolio_title}
+                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                ></div>
+              )}
+              {sub_heading && (
+                <div
+                  className={portfolioStyles.portfolio_note}
+                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                ></div>
+                
+              )}
+                </div>
+              </div>
+              { <div className={portfolioStyles.porfolio_card}>
+        {carosel_cards[0] && (
+          <div className={portfolioStyles.portfolio_img}>
+            {carosel_cards.map((_card: any, index: number) => (
+              <Card {..._card} key={index} />
+            ))}
+          </div>
+        )}
+        </div> }
+              
+            </div>
+            </div>
+          );
+
+          case "portfolio_sub_banner":
+          return (
+            <div className={`${portfolioStyles.porfolioDetails_card_section}`}>
+            <div className={`${portfolioStyles.Industries_section1}`}>
+            { <div className={portfolioStyles.porfolio_details_cards}>
+        {carosel_cards[0] && (
+          <div className={portfolioStyles.porfolioDetails_img}>
+            {carosel_cards.map((_card: any, index: number) => (
+              <Card {..._card} key={index} />
+            ))}
+          </div>
+        )}
+        </div> }
+              <div className={`${portfolioStyles.pclient_banner}`}>
+                <div className={portfolioStyles.clientContent}>
+                {free_text && (
+                <div
+                  className={portfolioStyles.porfolioDetails_title}
+                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                ></div>
+              )}
+              {sub_heading && (
+                <div
+                  className={portfolioStyles.porfolioDetails_note}
+                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                ></div>
+                
+              )}
+                </div>
+              </div>
+
+              
+            </div>
+            </div>
+          );
 
     default:
       return <div>Default</div>;

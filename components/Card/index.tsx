@@ -4,6 +4,7 @@ import Image, { ImageLoader } from "next/image";
 import styles from "../../styles/Card.module.css";
 import companyStyles from "../../styles/Company.module.css";
 import servicesStyles from "../../styles/Services.module.css";
+import portfolioStyles from "../../styles/Portfolio.module.css";
 import Action from "../Actions";
 import { baseUrl } from "./../../public/strings.json";
 import leftarrow from "../assets/arrow.png";
@@ -380,6 +381,60 @@ const Card: NextPage = (props: any) => {
                   </button> */}
                 </div>
               );
+
+              case "portfolio_card":
+                return (
+                  <div className={portfolioStyles.portfolio_card}>
+                   
+                      <div className={portfolioStyles.portfolio_card}>
+                      <div className={portfolioStyles.portfolio_img}>
+                        <a id={props.id} href={Link?Link:`/portfolio/${props.title}`}>
+                    <Image
+                      loader={() => myLoader((baseUrl + images[0].url) as any)}
+                      src={`${baseUrl}${images[0].url}`}
+                      placeholder="blur"
+                      blurDataURL={baseUrl + images[0].url}
+                      width={300}
+                      height={250}
+                      className={portfolioStyles.portfolioCardimg}
+                    />
+                    </a>
+                    
+                  </div>
+                      </div>
+                      <div className={portfolioStyles.portfolioPara}>
+                      <p className={portfolioStyles.portfolio_para1}>{heading}</p>
+                      <p className={portfolioStyles.portfolio_para2}>{free_text}</p>
+                      </div>
+                  </div>
+                );
+  
+                case "portfolio_details_cards":
+                return (
+                  <div className={portfolioStyles.portfolio_details_cards}>
+                   
+                      <div className={portfolioStyles.portfolio_details_cards}>
+                      <div className={portfolioStyles.porfolioDetails_img}>
+                       
+                    <Image
+                      loader={() => myLoader((baseUrl + images[0].url) as any)}
+                      src={`${baseUrl}${images[0].url}`}
+                      placeholder="blur"
+                      blurDataURL={baseUrl + images[0].url}
+                      width={728}
+                      height={445}
+                      className={portfolioStyles.portfolioDetailsCardimg}
+                    />
+                    
+                    
+                  </div>
+                      </div>
+                      {/* <div className={portfolioStyles.portfolioPara}>
+                      <p className={portfolioStyles.portfolio_para1}>{heading}</p>
+                      <p className={portfolioStyles.portfolio_para2}>{free_text}</p>
+                      </div> */}
+                  </div>
+                );
         
     default:
       return (
