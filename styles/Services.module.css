@@ -372,8 +372,168 @@
 .section8_para2 {
  line-height: 0px;
 }  
+/* Service_inner_page Design */
 
+.seviceinner_bannerimg{
+  width: 100%;
+  display: grid;
+  position: relative;
+}
+.seviceinner_bannerimg{
+  width: 100%;
+}
+.seviceinner_banner_container{
+  position: absolute;
+  top: 26%;
+  left: 8%;
+}
+.seviceinner_free_text h3{
+font-style: normal;
+font-weight: bold;
+font-size: 3rem;
+line-height: 3.15rem;
+color: #413F3F;
+}
+.seviceinner_descrption p{
+font-style: normal;
+font-weight: normal;
+font-size: 1rem;
+line-height: 1.875rem;
+color: #413F3F;
+}
+.seviceinner_banner_buttons{
+  height: 2.5rem;
+  width: 12rem;
+  background-color: #ffaf2b;
+  color: #fff;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 0.9375rem;
+  line-height: 17px;
+  padding: 0.6rem 0rem;
+  margin-top: 1.875rem;
+}
+.serviceinner_sec2_Container{
+margin-top:10rem;
+}
 
+.serviceinner_sec2_Content{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  margin-top:3.5rem;
+}
+.serviceinner_sec2_heading h3{
+ font-style: normal;
+font-weight: bold;
+font-size: 2.5rem;
+line-height: 2.75rem;
+text-align: center;
+margin-bottom:0.5rem;
+}
+.serviceinner_sec2_left_img{
+margin-right: 1rem;
+}
+.serviceinner_sec2_left_note p{
+  margin-left: 5rem;
+font-style: normal;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  font-weight: normal;
+  text-align: justify;
+}
+.serviceinner_sec3_Container{
+  margin:4rem;
+}
+.serviceinner_sec3_heading h4{
+  width: 100%;
+font-style: normal;
+font-weight: bold;
+font-size: 1.3rem;
+line-height: 1.75rem;
+text-align: justify;
+margin-bottom:3.5rem;
+}
+.serviceinner_sec3_left_note p{
+ /* margin-left: 5rem; */
+font-style: normal;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  font-weight: normal;
+  text-align: justify;
+}
+.serviceinner_sec3_Content{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  margin-top:3.5rem;
+}
+.serviceinner_sec3_Content_left{
+  margin-right: 5rem;
+}
+.seviceinner_sec4_Container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.seviceinner_sec4_title h3{
+font-style: normal;
+font-weight: bolder;
+font-size: 1.5rem;
+line-height: 1.875rem;
+margin-top: 2rem;
+}
+.seviceinner_sec4_descrption p{
+text-align:justify;
+font-style: normal;
+font-weight: normal;
+font-size: 0.9375rem;
+line-height: 1.875rem;
+}
+.seviceinner_sec4_cards{
+display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+.androidcard{
+  height: 384px;
+  width: 374px;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+  transition: 0.3s;
+  background-color: white;
+  padding: 3% 1.5% 3% 1.5%;
+}
+.androidcardimg{
+  margin-top: 1.5rem;
+}
+.android_cardtext{
+display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.android_heading p{
+  width: 100%;
+  margin-right: 11rem;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  text-align: justify;
+  font-weight: bold;
+}
+.android_subheading p{
+font-size: 0.9375rem;
+  line-height: 1.875rem;
+  text-align: justify;
+  margin-top: 0.5rem;
+}
 /* //////RESPONSIVE */
 
 @media only screen and (max-width: 500px) {
@@ -458,4 +618,36 @@
     .section8Para {
       margin: auto;
     }
+}
+@media only screen and (max-width: 992px){
+  .seviceinner_sec4_descrption p{
+  margin: 2rem 3rem;
+font-size: 0.9rem;
+line-height: 1.5rem;
+}
+.serviceinner_sec2_left_note p{
+ 
+margin-left: 5rem;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  
+}
+}
+@media only screen and (max-width: 768px){
+  .serviceinner_sec2_Content{
+    display: block
+  }
+  .serviceinner_sec3_Content{
+    display: block
+  }
+.seviceinner_sec4_descrption p{
+  margin: 2rem 3.5rem;
+font-size: 0.9rem;
+line-height: 1.5rem;
+}
+.seviceinner_sec4_title h3{
+   margin: 0rem 2rem ;
+font-size: 1.3rem;
+line-height: 1.875rem;
+}
 }
