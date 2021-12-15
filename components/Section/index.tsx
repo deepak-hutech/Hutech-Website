@@ -727,7 +727,7 @@ const Section: NextPage = (props: any) => {
 
     case "current_opening_banner":
       return (
-        <div className={`${companyStyles.career_open}`}>
+       <div className={companyStyles.current_opening}>
           {home_banner[0] && (
             <Image
               loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
@@ -739,29 +739,36 @@ const Section: NextPage = (props: any) => {
               className={companyStyles.bannerimg}
             />
           )}
-          {free_text ? (
-            <div className={companyStyles.free_text}>
-              <h2 dangerouslySetInnerHTML={{ __html: marked(free_text) }} />
-              {home_button && (
-                <div className={companyStyles.button}>
-                  {home_button.map((item: any) => (
-                    <div className={companyStyles.call_to_action}>
-                      {" "}
-                      {item.call_to_action}{" "}
-                    </div>
-                  ))}
-                </div>
-              )}
-              {sub_heading && (
+          <div className={companyStyles.current_container}>
+            {free_text && (
+              <div className={companyStyles.current_content}>
                 <div
-                  className={companyStyles.descrption}
-                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-                ></div>
-              )}
-            </div>
-          ) : (
-            " "
-          )}
+                  className={companyStyles.free_text}
+                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                />
+                  {home_button && (
+                    <div className={companyStyles.buttons}>
+                      {home_button.map((item: any) => (
+                        <div className={companyStyles.call_to_action}>
+                          {" "}
+                          {item.call_to_action}{" "}
+                          {/* <img
+                        src={`${baseUrl}${home_button[0].arrow_icon[0].url}`}
+                        className={styles.arrowicon}
+                      /> */}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                {sub_heading && (
+                  <div
+                    className={companyStyles.description}
+                    dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                  ></div>
+                )}
+              </div>
+            )}
+          </div>
         </div>
       );
 
@@ -1608,12 +1615,97 @@ const Section: NextPage = (props: any) => {
               )}
                 </div>
               </div>
-
-              
             </div>
             </div>
           );
 
+                  case "qualification_banner":
+                    return (
+                      <div className={`${careerstyles.qualification_banner}`}>
+                        <div className={careerstyles.qualification_section2}>
+                          <div className={careerstyles.apply_left}>
+                            {User_Experience_Data[0] && (
+                              <div className={careerstyles.apply_section2_left}>
+                                {User_Experience_Data.map((_card: any, index: number) => (
+                                  <div style={{ display: "block" }}>
+                                    <div style={{ display: "inline-block" }}>
+                                      {_card.title && (
+                                        <div
+                                          className={careerstyles.qualification_left_title}
+                                          dangerouslySetInnerHTML={{
+                                            __html: marked(_card.title),
+                                          }}
+                                        ></div>
+                                      )}
+                                    </div>
+                                    <div style={{ display: "inline-block" }}>
+                                      {_card.free_text && (
+                                        <div
+                                          className={careerstyles.qualification_left_note}
+                                          dangerouslySetInnerHTML={{
+                                            __html: marked(_card.free_text),
+                                          }}
+                                        ></div>
+                                      )}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                          <div className={careerstyles.apply_right}>
+                            <div className={careerstyles.apply_heading}>Apply Now</div>
+                            <CareerForm />
+                          </div>
+                        </div>
+                      </div>
+                    );
+                    case "blog_banner":
+                      return (
+                        <div className={companyStyles.company_banner}>
+                        {home_banner[0] && (
+                            <Image
+                              loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
+                              src={baseUrl + home_banner[0].url}
+                              placeholder="blur"
+                              blurDataURL={baseUrl + home_banner[0].url}
+                              height={400}
+                              width={"100%"}
+                              className={companyStyles.bannerimg}
+                            />
+                         
+                        )}
+                        <div className={companyStyles.banner_container}>
+                        {free_text &&(
+                          <div className={companyStyles.content}>
+                            <div
+                              className={companyStyles.free_text}
+                              dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                            />
+                            {sub_heading && (
+                              <div
+                                className={companyStyles.descrption}
+                                dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                              ></div>
+                            )}
+                          </div>
+                        )}
+                        <div>
+                        </div>
+                        </div>
+                            {carosel_cards[0] && (
+                              <div className={careerstyles.section4_cards}>
+                              {carosel_cards.map((_card: any, index: number) => (
+                                <div>
+                                  <Card {..._card} key={index} />
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                      </div>
+                      );
+    
+    
     default:
       return <div>Default</div>;
   }

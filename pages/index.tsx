@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ErrorPage from "next/error";
 import Section from "../components/Section";
+import BlogSection from "../components/Blog";
 
 import { baseUrl } from "../public/strings.json";
 
@@ -16,11 +17,11 @@ import { baseUrl } from "../public/strings.json";
 //   });
 // }
 
-const Home: NextPage<{ header: any; pages: any; footer: any }> = (props) => {
+const Home: NextPage<{ header: any; pages: any; footer: any, blogs: any }> = (props) => {
   
-  if (!props.pages) {
-    return <ErrorPage statusCode={404} />;
-  }
+  // if (!props.pages) {
+  //   return <ErrorPage statusCode={404} />;
+  // }
 
   const scrollRef = useRef()  as React.MutableRefObject<HTMLInputElement>;
 
@@ -40,6 +41,9 @@ const Home: NextPage<{ header: any; pages: any; footer: any }> = (props) => {
   const { header, footer } = props;
   console.log(props,"kkk");
   const { title, content, Logo, descrption } = props.pages[0];
+  // const { blogcontent, blogdescrption } = props.blogs[0];
+  const blogContent = props.blogs[0]
+  const AllBlogContent = blogContent.content
 
   return (
     <div ref={scrollRef}>
@@ -59,6 +63,10 @@ const Home: NextPage<{ header: any; pages: any; footer: any }> = (props) => {
         <Section {...section} />
       ))}
 
+      {/* {AllBlogContent.map((section: any) => (
+          <BlogSection {...section} />
+        ))} */}
+
       <Footer {...footer} />
     </div>
   );
@@ -67,15 +75,16 @@ export const getStaticProps: GetStaticProps = async ({ res }: any) => {
   try {
     const headerResult = await fetch(`${baseUrl}/header`);
     const pageResult = await fetch(`${baseUrl}/pages`);
-
+    const blogResult = await fetch(`${baseUrl}/blog-pages`);
     const footerResult = await fetch(`${baseUrl}/footer`);
     const header: any = await headerResult.json();
     const pages: any = await pageResult.json();
+    const blogs: any = await blogResult.json();
 
     const footer: any = await footerResult.json();
     
     return {
-      props: { pages: pages, header, footer },
+      props: { pages: pages, header, footer,blogs: blogs },
     };
   } catch(e) {
     
