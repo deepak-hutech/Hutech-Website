@@ -10,7 +10,6 @@ import { baseUrl } from "./../../public/strings.json";
 import leftarrow from "../assets/arrow.png";
 import careerstyles from "../../styles/Careers.module.css";
 
-
 const myLoader: ImageLoader = (url: any) => {
   return url;
 };
@@ -39,96 +38,88 @@ const Card: NextPage = (props: any) => {
     Heading,
     para,
     estimate_icon,
-    
   } = props;
 
   switch (type) {
     case "small_card":
       return (
         <div>
-        <div className={styles.card}>
-          <a
-            id={props.id}
-            href={Link ? Link : `/plans/${props.title}`}
-          >
-            <Image
-              loader={() => myLoader((baseUrl + images[0].url) as any)}
-              src={`${baseUrl}${images[0].url}`}
-              placeholder="blur"
-              blurDataURL={baseUrl + images[0].url}
-              width={372}
-              height={277}
-            />
-          </a>
-         
-        </div>
-        <div className={styles.heading}>{heading}</div>
-        </div>
-      );
-    case "capabilities_cards":
-      return (
-        <div className={styles.capabilities_cards}>
-         
-            <div className={styles.capabilities}>
-              <Image
-                loader={() => myLoader((baseUrl + images[0].url) as any)}
-                src={`${baseUrl}${images[0].url}`}
-                placeholder="blur"
-                blurDataURL={baseUrl + images.url}
-                width={55}
-                height={55}
-                className={styles.cardimg}
-              />
-            </div>
-            <div className={styles.capabilities_cards_title} dangerouslySetInnerHTML={{ __html: marked(free_text)}}></div>
-          
-        </div>
-      );
-      case "successful_product_card":
-      return (
-        <div className={styles.successful_product_card}>
-         
-            <div className={styles.capabilities}>
+          <div className={styles.card}>
+            <a id={props.id} href={Link ? Link : `/plans/${props.title}`}>
               <Image
                 loader={() => myLoader((baseUrl + images[0].url) as any)}
                 src={`${baseUrl}${images[0].url}`}
                 placeholder="blur"
                 blurDataURL={baseUrl + images[0].url}
-                width={55}
-                height={55}
-                className={styles.cardimg}
+                width={372}
+                height={277}
               />
-            </div>
-            <p className={styles.para}>{heading}</p>
-            <div className={styles.product_para} dangerouslySetInnerHTML={{ __html: marked(free_text)}}></div>
-           
-          
+            </a>
+          </div>
+          <div className={styles.heading}>{heading}</div>
         </div>
       );
-      case "clients_card":
+    case "capabilities_cards":
+      return (
+        <div className={styles.capabilities_cards}>
+          <div className={styles.capabilities}>
+            <Image
+              loader={() => myLoader((baseUrl + images[0].url) as any)}
+              src={`${baseUrl}${images[0].url}`}
+              placeholder="blur"
+              blurDataURL={baseUrl + images.url}
+              width={55}
+              height={55}
+              className={styles.cardimg}
+            />
+          </div>
+          <div
+            className={styles.capabilities_cards_title}
+            dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+          ></div>
+        </div>
+      );
+    case "successful_product_card":
+      return (
+        <div className={styles.successful_product_card}>
+          <div className={styles.capabilities}>
+            <Image
+              loader={() => myLoader((baseUrl + images[0].url) as any)}
+              src={`${baseUrl}${images[0].url}`}
+              placeholder="blur"
+              blurDataURL={baseUrl + images[0].url}
+              width={55}
+              height={55}
+              className={styles.cardimg}
+            />
+          </div>
+          <p className={styles.para}>{heading}</p>
+          <div
+            className={styles.product_para}
+            dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+          ></div>
+        </div>
+      );
+    case "clients_card":
       return (
         <div className={styles.clients_card}>
-              <img src={`${baseUrl}${images[0].url}`}></img>
-
-            </div>
+          <img src={`${baseUrl}${images[0].url}`}></img>
+        </div>
       );
     case "wide_card":
       return (
         <div className={styles.wide_card_}>
-        <div className={styles.blog}>
-           <Image
-                loader={() => myLoader((baseUrl + image[0].url) as any)}
-                src={`${baseUrl}${image[0].url}`}
-                placeholder="blur"
-                blurDataURL={baseUrl + image[0].url}
-                width={420}
-                height={430}
-              />
-         </div>
+          <div className={styles.blog}>
+            <Image
+              loader={() => myLoader((baseUrl + image[0].url) as any)}
+              src={`${baseUrl}${image[0].url}`}
+              placeholder="blur"
+              blurDataURL={baseUrl + image[0].url}
+              width={420}
+              height={430}
+            />
+          </div>
           <div className={styles.card_contant}>
-            
-           
-            
             <div className={styles.right_card}>
               <Image
                 loader={() => myLoader((baseUrl + profile_img[0].url) as any)}
@@ -139,50 +130,60 @@ const Card: NextPage = (props: any) => {
                 height={54}
               />
               <div>
-              <div className={styles.right_card_heading}>{descrption}</div>
-               <p className={styles.right_card_para}>{card_free_text}</p>
+                <div className={styles.right_card_heading}>{descrption}</div>
+                <p className={styles.right_card_para}>{card_free_text}</p>
               </div>
             </div>
-            <div className={styles.right_card_text} dangerouslySetInnerHTML={{ __html: marked(on_image_text)}}></div>
-           
+            <div
+              className={styles.right_card_text}
+              dangerouslySetInnerHTML={{ __html: marked(on_image_text) }}
+            ></div>
           </div>
-        
         </div>
       );
-    
-      case "web_frontend":
-        return (
-          <div className={companyStyles.c_cards}>
-            <Image
-              loader={() => myLoader((baseUrl + images[0].url) as any)}
-              src={`${baseUrl}${images[0].url}`}
-              placeholder="blur"
-              blurDataURL={baseUrl + images[0].url}
-              width={55}
-              height={55}
-              className={companyStyles.cardImg2}
-            />
-            <p>{props.heading}</p>
+    case "web_frontend":
+      return (
+        <div className={companyStyles.c_cards}>
+          <Image
+            loader={() => myLoader((baseUrl + images[0].url) as any)}
+            src={`${baseUrl}${images[0].url}`}
+            placeholder="blur"
+            blurDataURL={baseUrl + images[0].url}
+            width={55}
+            height={55}
+            className={companyStyles.cardImg2}
+          />
+          <p>{props.heading}</p>
         </div>
       );
-      case "mobile_app_development_card":
-        return (
-          <div className={servicesStyles.mobile_app_development_card}>
-              <div className={servicesStyles.section3_cards}>
-              <div className={servicesStyles.section3_heading} dangerouslySetInnerHTML={{__html: marked(heading)}}></div>
-              <div className={servicesStyles.section3_para2} dangerouslySetInnerHTML={{__html: marked(free_text)}} ></div>
-             <button>
-                  <p>{call_to_action}</p>
-                </button>
+    case "mobile_app_development_card":
+      return (
+        <div className={servicesStyles.mobile_app_development_card}>
+          <a
+            style={{ textDecoration: "none", color: "black" }}
+            href={Link ? Link : `/plans/${props.title}`}
+          >
+            <div className={servicesStyles.section3_cards}>
+              <div
+                className={servicesStyles.section3_heading}
+                dangerouslySetInnerHTML={{ __html: marked(heading) }}
+              ></div>
+              <div
+                className={servicesStyles.section3_para2}
+                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+              ></div>
+              <button>
+                <p>{call_to_action}</p>
+              </button>
             </div>
-          </div>
-        );
-      case "custom_mobile_card":
-        return (
-          <div className={servicesStyles.mobile_app_development_cards}>
-           
-              <div className={servicesStyles.mobile_app_development_card}>
-              <div className={servicesStyles.section5_img}>
+          </a>
+        </div>
+      );
+    case "custom_mobile_card":
+      return (
+        <div className={servicesStyles.mobile_app_development_cards}>
+          <div className={servicesStyles.mobile_app_development_card}>
+            <div className={servicesStyles.section5_img}>
               <Image
                 loader={() => myLoader((baseUrl + images[0].url) as any)}
                 src={`${baseUrl}${images[0].url}`}
@@ -196,49 +197,52 @@ const Card: NextPage = (props: any) => {
                 <p>{call_to_action}</p>
               </button> */}
             </div>
-              </div>
-              <div className={servicesStyles.section5_heading} dangerouslySetInnerHTML={{__html: marked(heading)}}></div>
-              <div className={servicesStyles.section5_para2} dangerouslySetInnerHTML={{__html: marked(free_text)}}></div>
           </div>
-        );
-      case "mobile_tech_card":
-        return (
+          <div
+            className={servicesStyles.section5_heading}
+            dangerouslySetInnerHTML={{ __html: marked(heading) }}
+          ></div>
+          <div
+            className={servicesStyles.section5_para2}
+            dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+          ></div>
+        </div>
+      );
+    case "mobile_tech_card":
+      return (
+        <div className={servicesStyles.mobile_tech_card}>
           <div className={servicesStyles.mobile_tech_card}>
-              <div className={servicesStyles.mobile_tech_card}>
-                <div className={servicesStyles.section6_imgages}>
+            <div className={servicesStyles.section6_imgages}>
               <div className={servicesStyles.section6_img}>
-              <Image
-                loader={() => myLoader((baseUrl + images[0].url) as any)}
-                src={`${baseUrl}${images[0].url}`}
-                placeholder="blur"
-                blurDataURL={baseUrl + images[0].url}
-                width={70}
-                height={55}
-                className={servicesStyles.cardimg}
-              />
-              {/* <button>
+                <Image
+                  loader={() => myLoader((baseUrl + images[0].url) as any)}
+                  src={`${baseUrl}${images[0].url}`}
+                  placeholder="blur"
+                  blurDataURL={baseUrl + images[0].url}
+                  width={70}
+                  height={55}
+                  className={servicesStyles.cardimg}
+                />
+                {/* <button>
                 <p>{call_to_action}</p>
               </button> */}
-              <p className={servicesStyles.iconText}>{free_text}</p>
+                <p className={servicesStyles.iconText}>{free_text}</p>
+              </div>
             </div>
-            </div>
-  
-  
-                {/* <button>
+
+            {/* <button>
                   <p>{call_to_action}</p>
                 </button> */}
-              </div>
-              {/* <p className={servicesStyles.icon}>{heading}</p> */}
-              <p className={servicesStyles.iconText}></p>
-            
           </div>
-        );
-        case "dev_process_card":
-          return (
-            <div className={servicesStyles.dev_process_card}>
-             
-                <div className={servicesStyles.dev_process_card}>
-                <div className={servicesStyles.section7_img}>
+          {/* <p className={servicesStyles.icon}>{heading}</p> */}
+          <p className={servicesStyles.iconText}></p>
+        </div>
+      );
+    case "dev_process_card":
+      return (
+        <div className={servicesStyles.dev_process_card}>
+          <div className={servicesStyles.dev_process_card}>
+            <div className={servicesStyles.section7_img}>
               <Image
                 loader={() => myLoader((baseUrl + images[0].url) as any)}
                 src={`${baseUrl}${images[0].url}`}
@@ -251,25 +255,127 @@ const Card: NextPage = (props: any) => {
               {/* <button>
                 <p>{call_to_action}</p>
               </button> */}
-              <p className={servicesStyles.section7_para2} dangerouslySetInnerHTML= {{__html: marked(free_text)}}></p>
+              <p
+                className={servicesStyles.section7_para2}
+                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+              ></p>
             </div>
-    
-    
-                  {/* <button>
+
+            {/* <button>
                     <p>{call_to_action}</p>
                   </button> */}
-                </div>
-                {/* <p className={servicesStyles.section7_para1}>{heading}</p> */}
-                {/* <p className={servicesStyles.section7_para2}>{free_text}</p> */}
-              
+          </div>
+          {/* <p className={servicesStyles.section7_para1}>{heading}</p> */}
+          {/* <p className={servicesStyles.section7_para2}>{free_text}</p> */}
+        </div>
+      );
+    case "our_work_card":
+      return (
+        <div className={servicesStyles.our_work_card}>
+          <div className={servicesStyles.our_work_card}>
+            <div className={servicesStyles.section8_img}>
+              <Image
+                loader={() => myLoader((baseUrl + images[0].url) as any)}
+                src={`${baseUrl}${images[0].url}`}
+                placeholder="blur"
+                blurDataURL={baseUrl + images[0].url}
+                width={300}
+                height={250}
+                className={servicesStyles.section8Cardimg}
+              />
             </div>
-          );
-          case "our_work_card":
-            return (
-              <div className={servicesStyles.our_work_card}>
-               
-                  <div className={servicesStyles.our_work_card}>
-                  <div className={servicesStyles.section8_img}>
+          </div>
+          <div className={servicesStyles.section8Para}>
+            <div className={servicesStyles.section8Contents}>
+              <p className={servicesStyles.section8_para1}>{heading}</p>
+              <p className={servicesStyles.section8_para2}>{free_text}</p>
+            </div>
+          </div>
+        </div>
+      );
+    case "feature_card":
+      return (
+        <div className={careerstyles.featurecard}>
+          <a
+            id={props.id}
+            // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
+          >
+            <div className={careerstyles.featurecardimg}>
+              <Image
+                loader={() => myLoader((baseUrl + images[0].url) as any)}
+                src={`${baseUrl}${images[0].url}`}
+                placeholder="blur"
+                blurDataURL={baseUrl + images[0].url}
+                width={94}
+                height={94}
+              />
+            </div>
+            <div className={careerstyles.feature_cardtext}>
+              <div className={careerstyles.feature_heading}>{heading}</div>
+              <div
+                className={careerstyles.feature_subheading}
+                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+              ></div>
+            </div>
+          </a>
+        </div>
+      );
+    case "opening_card":
+      return (
+        <div
+          className={careerstyles.openingcard}
+          style={
+            heading === "IOS Developer"
+              ? { backgroundColor: "#F9F8F8", border: "1px solid #D3D3D3" }
+              : heading === "React Developer"
+              ? { backgroundColor: "#EFFCFF", border: "1px solid #61DAFB" }
+              : heading === "Node JS Developer"
+              ? { backgroundColor: "#F8FFF9", border: "1px solid #66CE77" }
+              : heading === "Java Developer"
+              ? { backgroundColor: "#FFF3F3", border: "1px solid #F56767" }
+              : heading === "Adriod Developer"
+              ? { backgroundColor: "#F8FFF9", border: "1px solid #66CE77" }
+              : { color: "black" }
+          }
+        >
+          <a
+            id={props.id}
+            // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
+          >
+            <div className={careerstyles.openingcardimg}>
+              <Image
+                loader={() => myLoader((baseUrl + images[0].url) as any)}
+                src={`${baseUrl}${images[0].url}`}
+                placeholder="blur"
+                blurDataURL={baseUrl + images[0].url}
+                width={51}
+                height={58}
+              />
+            </div>
+
+            <div className={careerstyles.opening_cardtext}>
+              <div className={careerstyles.opening_heading}>{heading}</div>
+              <div className={careerstyles.opening_subheading}>
+                <button>{free_text}</button>
+              </div>
+              <div className={careerstyles.moreinfo_icon}>
+                <a href={Link ? Link : `/plans/${props.title}`}>
+                  {call_to_action}
+                </a>
+                <a className={careerstyles.rightarrowicon}>
+                  {/* <ArrowRight /> */}
+                </a>
+              </div>
+            </div>
+          </a>
+        </div>
+      );
+    case "portfolio_card":
+      return (
+        <div className={portfolioStyles.portfolio_card}>
+          <div className={portfolioStyles.portfolio_card}>
+            <div className={portfolioStyles.portfolio_img}>
+              <a id={props.id} href={Link ? Link : `/portfolio/${props.title}`}>
                 <Image
                   loader={() => myLoader((baseUrl + images[0].url) as any)}
                   src={`${baseUrl}${images[0].url}`}
@@ -277,179 +383,83 @@ const Card: NextPage = (props: any) => {
                   blurDataURL={baseUrl + images[0].url}
                   width={300}
                   height={250}
-                  className={servicesStyles.section8Cardimg}
+                  className={portfolioStyles.portfolioCardimg}
                 />
-                
-              </div>
-                  </div>
-                  <div className={servicesStyles.section8Para}>
-                  <div className={servicesStyles.section8Contents}>
-
-                    <p className={servicesStyles.section8_para1}>{heading}</p>
-                  <p className={servicesStyles.section8_para2}>{free_text}</p>
-                    </div>
-                  </div>
-              </div>
-            );
-            case "feature_card":
-              return (
-                <div>
-                  <div className={careerstyles.featurecard}>
-                    <a
-                      id={props.id}
-                      // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
-                    >
-                      <div className={careerstyles.featurecardimg}>
-                        <Image
-                          loader={() => myLoader((baseUrl + images[0].url) as any)}
-                          src={`${baseUrl}${images[0].url}`}
-                          placeholder="blur"
-                          blurDataURL={baseUrl + images[0].url}
-                          width={94}
-                          height={94}
-                        />
-                      </div>
-                      <div className={careerstyles.feature_cardtext}>
-                        <div className={careerstyles.feature_heading}>{heading}</div>
-                        <div
-                          className={careerstyles.feature_subheading}
-                          dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-                        ></div>
-                        {/* <div className={careerstyles.feature_subheading}>
-                          {free_text}
-                        </div> */}
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              );
-        
-            case "opening_card":
-              return (
-                <div>
-                  <div
-                    className={careerstyles.openingcard}
-                    style={
-                      heading === "IOS Developer"
-                        ? { backgroundColor: "#F9F8F8", border: "1px solid #D3D3D3" }
-                        : heading === "React Developer"
-                        ? { backgroundColor: "#EFFCFF", border: "1px solid #61DAFB" }
-                        : heading === "Node JS Developer"
-                        ? { backgroundColor: "#F8FFF9", border: "1px solid #66CE77" }
-                        : heading === "Java Developer"
-                        ? { backgroundColor: "#FFF3F3", border: "1px solid #F56767" }
-                        : heading === "Adriod Developer"
-                        ? { backgroundColor: "#F8FFF9", border: "1px solid #66CE77" }
-                        : { color: "black" }
-                    }
-                  >
-                    <a
-                      id={props.id}
-                      // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
-                    >
-                      <div className={careerstyles.openingcardimg}>
-                        <Image
-                          loader={() => myLoader((baseUrl + images[0].url) as any)}
-                          src={`${baseUrl}${images[0].url}`}
-                          placeholder="blur"
-                          blurDataURL={baseUrl + images[0].url}
-                          width={51}
-                          height={58}
-                        />
-                      </div>
-        
-                      <div className={careerstyles.opening_cardtext}>
-                        <div className={careerstyles.opening_heading}>{heading}</div>
-                        <div className={careerstyles.opening_subheading}>
-                          <button>{free_text}</button>
-                        </div>
-                        <div className={careerstyles.moreinfo_icon}>
-                          <a href={Link ? Link : `/plans/${props.title}`}>
-                            {call_to_action}
-                          </a>
-                          <a className={careerstyles.rightarrowicon}>
-                            {/* <ArrowRight /> */}
-                          </a>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-        
-                  {/* <Button variant="success"> {call_to_action}</Button>{" "} */}
-                  {/* <button>
-                    <p>{call_to_action}</p>
-                  </button> */}
-                </div>
-              );
-
-              case "portfolio_card":
-                return (
-                  <div className={portfolioStyles.portfolio_card}>
-                   
-                      <div className={portfolioStyles.portfolio_card}>
-                      <div className={portfolioStyles.portfolio_img}>
-                        <a id={props.id} href={Link?Link:`/portfolio/${props.title}`}>
-                    <Image
-                      loader={() => myLoader((baseUrl + images[0].url) as any)}
-                      src={`${baseUrl}${images[0].url}`}
-                      placeholder="blur"
-                      blurDataURL={baseUrl + images[0].url}
-                      width={300}
-                      height={250}
-                      className={portfolioStyles.portfolioCardimg}
-                    />
-                    </a>
-                    
-                  </div>
-                      </div>
-                      <div className={portfolioStyles.portfolioPara}>
-                      <p className={portfolioStyles.portfolio_para1}>{heading}</p>
-                      <p className={portfolioStyles.portfolio_para2}>{free_text}</p>
-                      </div>
-                  </div>
-                );
-  
-                case "portfolio_details_cards":
-                return (
-                  <div className={portfolioStyles.portfolio_details_cards}>
-                   
-                      <div className={portfolioStyles.portfolio_details_cards}>
-                      <div className={portfolioStyles.porfolioDetails_img}>
-                       
-                    <Image
-                      loader={() => myLoader((baseUrl + images[0].url) as any)}
-                      src={`${baseUrl}${images[0].url}`}
-                      placeholder="blur"
-                      blurDataURL={baseUrl + images[0].url}
-                      width={728}
-                      height={445}
-                      className={portfolioStyles.portfolioDetailsCardimg}
-                    />
-                    
-                    
-                  </div>
-                      </div>
-                      {/* <div className={portfolioStyles.portfolioPara}>
+              </a>
+            </div>
+          </div>
+          <div className={portfolioStyles.portfolioPara}>
+            <p className={portfolioStyles.portfolio_para1}>{heading}</p>
+            <p className={portfolioStyles.portfolio_para2}>{free_text}</p>
+          </div>
+        </div>
+      );
+    case "portfolio_details_cards":
+      return (
+        <div className={portfolioStyles.portfolio_details_cards}>
+          <div className={portfolioStyles.portfolio_details_cards}>
+            <div className={portfolioStyles.porfolioDetails_img}>
+              <Image
+                loader={() => myLoader((baseUrl + images[0].url) as any)}
+                src={`${baseUrl}${images[0].url}`}
+                placeholder="blur"
+                blurDataURL={baseUrl + images[0].url}
+                width={728}
+                height={445}
+                className={portfolioStyles.portfolioDetailsCardimg}
+              />
+            </div>
+          </div>
+          {/* <div className={portfolioStyles.portfolioPara}>
                       <p className={portfolioStyles.portfolio_para1}>{heading}</p>
                       <p className={portfolioStyles.portfolio_para2}>{free_text}</p>
                       </div> */}
-                  </div>
-                );
-        
+        </div>
+      );
+    case "android_app_card":
+      return (
+        <div className={servicesStyles.androidcard}>
+          <a
+            id={props.id}
+            // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
+          >
+            <div className={servicesStyles.androidcardimg}>
+              <Image
+                loader={() => myLoader((baseUrl + images[0].url) as any)}
+                src={`${baseUrl}${images[0].url}`}
+                placeholder="blur"
+                blurDataURL={baseUrl + images[0].url}
+                width={75}
+                height={70}
+              />
+            </div>
+            <div className={servicesStyles.android_cardtext}>
+              <div
+                className={servicesStyles.android_heading}
+                dangerouslySetInnerHTML={{ __html: marked( heading ) }}
+              ></div>
+              <div
+                className={servicesStyles.android_subheading}
+                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+              ></div>
+            </div>
+          </a>
+        </div>
+      );
     default:
       return (
         <div className={companyStyles.c_cards}>
-        <Image
-          loader={() => myLoader((baseUrl + images[0].url) as any)}
-          src={`${baseUrl}${images[0].url}`}
-          placeholder="blur"
-          blurDataURL={baseUrl + images[0].url}
-          width={55}
-          height={55}
-          className={companyStyles.cardImg2}
-        />
-        <p>{props.heading}</p>
-    </div>
+          <Image
+            loader={() => myLoader((baseUrl + images[0].url) as any)}
+            src={`${baseUrl}${images[0].url}`}
+            placeholder="blur"
+            blurDataURL={baseUrl + images[0].url}
+            width={55}
+            height={55}
+            className={companyStyles.cardImg2}
+          />
+          <p>{props.heading}</p>
+        </div>
       );
   }
 };
