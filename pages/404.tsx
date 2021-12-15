@@ -5,6 +5,9 @@ import Image, { ImageLoader } from "next/image";
 
 import { useRouter } from "next/router";
 import Head from "next/head";
+
+import Breadcrumbs from "nextjs-breadcrumbs";
+
 import { underConstruction, underConstructionBlur } from "./../public/strings.json";
 const myLoader: ImageLoader = () => {
     return underConstructionBlur;
@@ -21,6 +24,7 @@ const UnderConstruction: NextPage = (props: any) => {
                 <title>{title}</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
+            <Breadcrumbs useDefaultStyle transformLabel={(title) => title } />
             <div>
                 <Image src={underConstruction} loader={myLoader} layout="fill" unoptimized/>
             </div>
