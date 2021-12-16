@@ -70,6 +70,8 @@ const Section: NextPage = (props: any) => {
     para,
   } = props;
 
+
+  
   const CustomArrow = ({ onClick }) => (
     <button
       style={{ position: "absolute", right: 90, bottom: 90 }}
