@@ -320,56 +320,65 @@ const Card: NextPage = (props: any) => {
           </a>
         </div>
       );
+
     case "opening_card":
       return (
-        <div
-          className={careerstyles.openingcard}
-          style={
-            heading === "IOS Developer"
-              ? { backgroundColor: "#F9F8F8", border: "1px solid #D3D3D3" }
-              : heading === "React Developer"
-              ? { backgroundColor: "#EFFCFF", border: "1px solid #61DAFB" }
-              : heading === "Node JS Developer"
-              ? { backgroundColor: "#F8FFF9", border: "1px solid #66CE77" }
-              : heading === "Java Developer"
-              ? { backgroundColor: "#FFF3F3", border: "1px solid #F56767" }
-              : heading === "Adriod Developer"
-              ? { backgroundColor: "#F8FFF9", border: "1px solid #66CE77" }
-              : { color: "black" }
-          }
-        >
-          <a
-            id={props.id}
-            // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
+        <div>
+          <div
+            className={careerstyles.openingcard}
+            style={
+              heading === "IOS Developer"
+                ? { backgroundColor: "#F9F8F8", border: "1px solid #D3D3D3" }
+                : heading === "React Developer"
+                ? { backgroundColor: "#EFFCFF", border: "1px solid #61DAFB" }
+                : heading === "Node JS Developer"
+                ? { backgroundColor: "#F8FFF9", border: "1px solid #66CE77" }
+                : heading === "Java Developer"
+                ? { backgroundColor: "#FFF3F3", border: "1px solid #F56767" }
+                : heading === "Adriod Developer"
+                ? { backgroundColor: "#F8FFF9", border: "1px solid #66CE77" }
+                : { color: "black" }
+            }
           >
-            <div className={careerstyles.openingcardimg}>
-              <Image
-                loader={() => myLoader((baseUrl + images[0].url) as any)}
-                src={`${baseUrl}${images[0].url}`}
-                placeholder="blur"
-                blurDataURL={baseUrl + images[0].url}
-                width={51}
-                height={58}
-              />
-            </div>
+            <a
+              id={props.id}
+              // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
+            >
+              <div className={careerstyles.openingcardimg}>
+                <Image
+                  loader={() => myLoader((baseUrl + images[0].url) as any)}
+                  src={`${baseUrl}${images[0].url}`}
+                  placeholder="blur"
+                  blurDataURL={baseUrl + images[0].url}
+                  width={51}
+                  height={58}
+                />
+              </div>
 
-            <div className={careerstyles.opening_cardtext}>
-              <div className={careerstyles.opening_heading}>{heading}</div>
-              <div className={careerstyles.opening_subheading}>
-                <button>{free_text}</button>
+              <div className={careerstyles.opening_cardtext}>
+                <div className={careerstyles.opening_heading}>{heading}</div>
+                <div className={careerstyles.opening_subheading}>
+                  <button>{free_text}</button>
+                </div>
+                <div className={careerstyles.moreinfo_icon}>
+                  <a href={Link ? Link : `/plans/${props.title}`}>
+                    {call_to_action}
+                  </a>
+                  <a className={careerstyles.rightarrowicon}>
+                    {/* <ArrowRight /> */}
+                  </a>
+                </div>
               </div>
-              <div className={careerstyles.moreinfo_icon}>
-                <a href={Link ? Link : `/plans/${props.title}`}>
-                  {call_to_action}
-                </a>
-                <a className={careerstyles.rightarrowicon}>
-                  {/* <ArrowRight /> */}
-                </a>
-              </div>
-            </div>
-          </a>
+            </a>
+          </div>
+
+          {/* <Button variant="success"> {call_to_action}</Button>{" "} */}
+          {/* <button>
+                    <p>{call_to_action}</p>
+                  </button> */}
         </div>
       );
+
     case "portfolio_card":
       return (
         <div className={portfolioStyles.portfolio_card}>
@@ -394,6 +403,7 @@ const Card: NextPage = (props: any) => {
           </div>
         </div>
       );
+
     case "portfolio_details_cards":
       return (
         <div className={portfolioStyles.portfolio_details_cards}>
@@ -436,7 +446,7 @@ const Card: NextPage = (props: any) => {
             <div className={servicesStyles.android_cardtext}>
               <div
                 className={servicesStyles.android_heading}
-                dangerouslySetInnerHTML={{ __html: marked( heading ) }}
+                dangerouslySetInnerHTML={{ __html: marked(heading) }}
               ></div>
               <div
                 className={servicesStyles.android_subheading}

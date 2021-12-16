@@ -148,7 +148,14 @@
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(144, 140, 140, 0.25);
   border-radius: 20px;
+  /* transition: all 0.4s;
+  transition-timing-function: ease-in-out; */
 }
+/* .section3_card .mobile_app_development_card:hover {
+  box-shadow: 0 1px 4px 0 rgb(0 0 0 / 22%);
+  transform: scale(1.1);
+} */
+
 
 .section3_card .mobile_app_development_card button {
     all: unset;
@@ -282,6 +289,13 @@
   border: 1px solid #9F9F9F;
   box-sizing: border-box;
   border-radius: 30px;
+  transition: all 0.4s;
+  transition-timing-function: ease-in-out;
+}
+
+.section6_img:hover{
+  box-shadow: 0 1px 4px 0 rgb(0 0 0 / 22%);
+  transform: scale(1.1);
 }
 
 
@@ -289,7 +303,7 @@
 
 
 .section7 {
-  /* height: 300px; */
+  height: 300px;
   text-align: center;
   margin: 50px 10px;
 }
@@ -297,24 +311,44 @@
 .section7_title {
   font-weight: bold;
   font-size: 30px;
+  margin-bottom: -50px;
 }
 
-.section7 .numbers {
+.section7 .sec7_numbers {
   display: flex;
   justify-content: space-evenly;
-  margin: 60px 40px 40px 40px;
+  /* margin: 60px 40px 40px 40px; */
+  position: relative;
+  top: 98px;
+}
+.section7 .sec7_numbers > div {
+   width: 200px;
+   text-align: center;
 }
 
 .section7 h4 {
-  width: 61px;
-  height: 51px;
-  padding: 9px;
-  display: inline-block;
-  background: #F3F9FF;
-  border: 2px solid #2F95DE;
-  /* box-sizing: border-box; */
-  border-radius: 26px;
+  border: 2px solid;
+  border-color: #2F95DE;;
+  border-radius: 20px;
+  height: 40px;
+  width: 40px;
+  background-color: #ffffff;
+  color: #2F95DE;;
+  margin: 20px auto;
+  transition: all 0.4s;
+  transition-timing-function: ease-in-out;
 }
+.section7 h4:hover{
+  box-shadow: 0 1px 4px 0 rgb(0 0 0 / 22%);
+  transform: scale(1.6);
+}
+.section7 .dots {
+  margin: auto;
+  width: 84%;
+  border-top: 1px dashed #AAAAAA;
+}
+
+
 
 /* .section7 h4::after {
   content: '';
@@ -341,10 +375,17 @@
   display: flex;
   position: relative;
   justify-content: space-evenly;
+
 }
 
-.section8 img {
-  border-radius: 10px
+.section8_img .section8Cardimg {
+  border-radius: 10px;
+  transition: all 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.section8_img .section8Cardimg:hover{
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 22%);
+    transform: scale(1.1);
 }
 
 .section8Para {
@@ -650,4 +691,8 @@ line-height: 1.5rem;
 font-size: 1.3rem;
 line-height: 1.875rem;
 }
+
+    .section7 {
+      display: none;
+    }
 }
