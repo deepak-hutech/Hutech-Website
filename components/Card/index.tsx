@@ -267,8 +267,6 @@ const Card: NextPage = (props: any) => {
           case "our_work_card":
             return (
               <div className={servicesStyles.our_work_card}>
-               
-                  <div className={servicesStyles.our_work_card}>
                   <div className={servicesStyles.section8_img}>
                 <Image
                   loader={() => myLoader((baseUrl + images[0].url) as any)}
@@ -279,9 +277,8 @@ const Card: NextPage = (props: any) => {
                   height={250}
                   className={servicesStyles.section8Cardimg}
                 />
-                
               </div>
-                  </div>
+    
                   <div className={servicesStyles.section8Para}>
                   <div className={servicesStyles.section8Contents}>
 

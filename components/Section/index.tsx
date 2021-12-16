@@ -43,8 +43,11 @@ const Section: NextPage = (props: any) => {
     image_size,
     image_position,
     free_text,
+    our_slack_title,
     web_front_end_title,
     web_back_end_title,
+    web_front_end_para,
+    web_back_end_para,
     database_title,
     database_para,
     android_title,
@@ -458,7 +461,7 @@ const Section: NextPage = (props: any) => {
 
           <Container>
             <Row>
-              <Col>
+              <Col md={6} sm={12}>
                 {home_banner[0] && (
                   <div className={`${companyStyles.abt_img}`}>
                     <Image
@@ -474,7 +477,7 @@ const Section: NextPage = (props: any) => {
                   </div>
                 )}
               </Col>
-              <Col>
+              <Col md={6} sm={12}>
                 {sub_heading && (
                   <div
                     className={companyStyles.note}
@@ -493,7 +496,8 @@ const Section: NextPage = (props: any) => {
           <Container>
             <Row>
               {carosel_cards.map((v: any) => (
-                <Col>
+                <Col md={4} sm={12}>
+                  <div className={companyStyles.vvContent}>
                   <img
                     className={companyStyles.profile}
                     src={baseUrl + v.images.map((v: any) => v.url)}
@@ -503,6 +507,7 @@ const Section: NextPage = (props: any) => {
                   />
                   <p className={companyStyles.heading}>{v.heading}</p>
                   <p className={companyStyles.free_text}>{v.free_text}</p>
+                  </div>
                 </Col>
               ))}
             </Row>
@@ -552,25 +557,25 @@ const Section: NextPage = (props: any) => {
           </Container>
         </div>
       );
-    case "successful_product":
+    case "successful_product_company":
       return (
         <div className={`${companyStyles.partner}`}>
-          {free_text && (
-            <div
-              className={`${companyStyles.heading}`}
-              dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-            ></div>
-          )}
-          {sub_heading && (
-            <div
-              className={companyStyles.desc}
-              dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-            ></div>
-          )}
-          <Container>
-            <Row>
+           <div className={`${companyStyles.partner_head}`}>
+              {free_text && (
+                <div
+                  className={`${companyStyles.heading}`}
+                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                ></div>
+              )}
+              {sub_heading && (
+                <div
+                  className={companyStyles.desc}
+                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                ></div>
+              )}
+           </div>
+          <div className={companyStyles.allProducts}>
               {carosel_cards.map((v: any) => (
-                <Col md={3}>
                   <div className={companyStyles.logos}>
                     <img
                       className={companyStyles.images}
@@ -580,26 +585,24 @@ const Section: NextPage = (props: any) => {
                       width={137}
                     />
                   </div>
-                </Col>
               ))}
-            </Row>
-          </Container>
+          </div>
         </div>
       );
 
-    case "technology_slack":
+    case "our_tech_slack":
       return (
         <div className={`${companyStyles.tech_slack}`}>
-          {free_text ? (
+          {our_slack_title ? (
             <div className={`${companyStyles.heading}`}>
               <h2
-                className={companyStyles.free_text}
-                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                className={companyStyles.our_slack_title}
+                dangerouslySetInnerHTML={{ __html: marked(our_slack_title) }}
               />
-              {sub_heading && (
+              {free_text && (
                 <div
                   className={companyStyles.desc}
-                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                 ></div>
               )}
             </div>
@@ -623,10 +626,10 @@ const Section: NextPage = (props: any) => {
                         __html: marked(web_front_end_title),
                       }}
                     />
-                    {free_text && (
+                    {web_front_end_para && (
                       <div
                         className={companyStyles.desc}
-                        dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                        dangerouslySetInnerHTML={{ __html: marked(web_front_end_para) }}
                       ></div>
                     )}
                     <div className={companyStyles.company_cards}>
@@ -648,10 +651,11 @@ const Section: NextPage = (props: any) => {
                         __html: marked(web_back_end_title),
                       }}
                     />
-                    {free_text && (
+                    {web_back_end_para && (
                       <div
                         className={companyStyles.desc}
-                        dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                        dangerouslySetInnerHTML={{
+                          __html: marked(web_back_end_para)}}
                       ></div>
                     )}
                     <div className={companyStyles.company_cards}>
@@ -785,9 +789,9 @@ const Section: NextPage = (props: any) => {
               className={companyStyles.bannerimg}
             />
           )}
-          <div className={companyStyles.current_container}>
+          <div className={companyStyles.banner_container}>
             {free_text && (
-              <div className={companyStyles.current_content}>
+              <div className={companyStyles.content}>
                 <div
                   className={companyStyles.free_text}
                   dangerouslySetInnerHTML={{ __html: marked(free_text) }}
@@ -795,7 +799,7 @@ const Section: NextPage = (props: any) => {
                 {home_button && (
                   <div className={companyStyles.buttons}>
                     {home_button.map((item: any) => (
-                      <div className={companyStyles.call_to_action}>
+                      <div className={companyStyles.call_to_action_req}>
                         {" "}
                         {item.call_to_action}{" "}
                         {/* <img
@@ -1210,33 +1214,37 @@ const Section: NextPage = (props: any) => {
                     dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                   ></div>
                 )}
-                <div className={servicesStyles.dots}></div>
-                <div className={servicesStyles.numbers}>
-                  <div>
-                    <h4>1</h4>
-                    <h5>Analsis Requiremnt</h5>
-                  </div>
-                  <div>
-                    <h4>2</h4>
-                    <h5>Wireframing</h5>
-                  </div>
-                  <div>
-                    <h4>3</h4>
-                    <h5>Design And Approval</h5>
-                  </div>
-                  <div>
-                    <h4>4</h4>
-                    <h5>Development Process</h5>
-                  </div>
-                  <div>
-                    <h4>5</h4>
-                    <h5>Testing</h5>
-                  </div>
-                  <div>
-                    <h4>6</h4>
-                    <h5>Launch</h5>
+                  
+                <div className={servicesStyles.sec7_container}>
+                  <div className={servicesStyles.sec7_numbers}>
+                  <div> 
+                     <h4>1</h4>
+                     <h5>Anlysis <br/>Requirement</h5>
+                   </div>
+                   <div> 
+                     <h4>2</h4>
+                     <h5>Wireframing</h5>
+                   </div>
+                   <div> 
+                     <h4>3</h4>
+                     <h5>Design and <br/> Approval</h5>
+                   </div>
+                   <div> 
+                     <h4>4</h4>
+                     <h5>Development <br/>Process</h5>
+                   </div>
+                   <div> 
+                     <h4>5</h4>
+                     <h5>Testing</h5>
+                   </div>
+                   <div> 
+                     <h4>6</h4>
+                     <h5>Launch</h5>
+                   </div>
                   </div>
                 </div>
+                <div className={servicesStyles.dots} > </div>
+
               </div>
             </div>
           </div>
@@ -1572,7 +1580,7 @@ const Section: NextPage = (props: any) => {
               src={baseUrl + home_banner[0].url}
               placeholder="blur"
               blurDataURL={baseUrl + home_banner[0].url}
-              height={500}
+              height={400}
               width={"100%"}
               className={companyStyles.bannerimg}
             />
@@ -1752,7 +1760,7 @@ const Section: NextPage = (props: any) => {
       );
 
     default:
-      return <div>Default</div>;
+      return <div></div>;
   }
   <div>
     <Footer />
