@@ -59,6 +59,15 @@ a {
   background-color: #2f2c2c;
   border-radius: 12px;
 }
-
-
-
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: #0171C1!important;
+  background-color: transparent !important;
+  border-color: transparent transparent #0171C1 !important;
+}
+.nav-tabs .nav-link:hover {
+  border-color: transparent transparent #0171C1 !important;
+  color: #0171C1;
+ 
+}
+.nav-link {
+  color: #000 !important;}

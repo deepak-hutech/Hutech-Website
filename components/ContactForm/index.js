@@ -36,7 +36,9 @@ function Form() {
         <div>
           <textarea id="description" type="text" autoComplete="desc" placeholder="Description" />
         </div>
-        <button type="submit">Submit</button>
+        <div style={{textAlign:"right"}}>
+        <button type="submit" className={contactStyle.submitbtn}>Submit</button>
+        </div>
       </form>
     )
   }

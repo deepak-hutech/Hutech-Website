@@ -49,7 +49,7 @@ const DynamicPage: NextPage<{ header: any; pages: any; footer: any }> = (
         />
       </Head>
       <Header {...header} />
-      <Breadcrumbs useDefaultStyle transformLabel={(title) => title } />
+      
       {content.map((section: any) => (
         <Section {...section} />
       ))}
@@ -84,7 +84,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   try {
     const headerResult = await fetch(`${baseUrl}/header`);
     const pageResult = await fetch(`${baseUrl}/pages?uid=${params.uid}`);
-    
+    const blogResult = await fetch(`${baseUrl}/blog-pages`);
     const footerResult = await fetch(`${baseUrl}/footer`);
     const header: any = await headerResult.json();
     const pages: any = await pageResult.json();

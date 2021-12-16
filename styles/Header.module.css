@@ -42,7 +42,7 @@
   width: 100%;
   font-size: 15px;
   font-weight: 400;
-  margin: 0 16px;
+  margin: 0 18px;
   color: #233253;
   text-decoration: none;
 }
@@ -83,8 +83,8 @@
   color: #000;
 }
 .headerbtn::before {
-  background-color: #3cedb7;
-  border-radius: 4px;
+  background-color: #0171C1;
+  border-radius: 30px;
   content: "";
   position: absolute;
   top: 0;
