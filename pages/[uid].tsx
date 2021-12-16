@@ -2,6 +2,7 @@ import {useEffect, useRef} from "react";
 import type { NextPage, GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Breadcrumbs from "nextjs-breadcrumbs";
 import { useRouter, withRouter} from "next/router";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -48,7 +49,7 @@ const DynamicPage: NextPage<{ header: any; pages: any; footer: any }> = (
         />
       </Head>
       <Header {...header} />
-      
+      <Breadcrumbs useDefaultStyle transformLabel={(title) => title } />
       {content.map((section: any) => (
         <Section {...section} />
       ))}

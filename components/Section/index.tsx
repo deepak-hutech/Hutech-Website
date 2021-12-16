@@ -20,9 +20,12 @@ import careerstyles from "../../styles/Careers.module.css";
 import CareerForm from "../careerForm/index.js";
 import HomeForm from "../home_form/index.js";
 import portfolioStyles from "../../styles/Portfolio.module.css";
+import rightIcon from "../../components/assets/rightarrow.svg";
+import leftIcon from "../../components/assets/leftarrow.svg";
 
-const myLoader: ImageLoader = (url: any) => {
-  return url;
+const myLoader = ({ src, width, quality }) => {
+  const origin = typeof window !== "undefined" && window.location.origin;
+  return `${origin}/${src}?w=${width}&q=${quality || 75}`;
 };
 
 const Section: NextPage = (props: any) => {
@@ -62,6 +65,38 @@ const Section: NextPage = (props: any) => {
     address,
     para,
   } = props;
+
+  const CustomArrow = ({ onClick }) => (
+    <button
+      style={{ position: "absolute", right: 90, bottom: 90 }}
+      onClick={onClick}
+      className={styles.arrowbtn}
+    >
+      <Image
+        loader={myLoader}
+        src={rightIcon}
+        alt="Picture of the author"
+        width={30}
+        height={17}
+      />
+    </button>
+  );
+  const CustomleftArrow=({ onClick }) => (
+    <button
+    style={{ position: "absolute", right: 150, bottom: 90 }}
+    onClick={onClick}
+    className={styles.arrowbtn}
+  >
+    <Image
+      loader={myLoader}
+      src={leftIcon}
+      alt="Picture of the author"
+      width={30}
+      height={17}
+      className={styles.svgarrow}
+    />
+  </button>
+  );
   const responsive_cards = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -267,6 +302,8 @@ const Section: NextPage = (props: any) => {
             dotListClass="custom-dot-list-style"
             // itemClass="carousel-item-padding-40-px"
             className={styles.clientcarousel}
+            customRightArrow={<CustomArrow />}
+            customLeftArrow={<CustomleftArrow/>}
           >
             {carosel_cards.map((_card: any, index: number) => (
               <Card {..._card} key={index} />
@@ -503,6 +540,7 @@ const Section: NextPage = (props: any) => {
           </Container>
         </div>
       );
+   
     case "successful_product":
       return (
         <div className={`${companyStyles.partner}`}>
@@ -537,6 +575,7 @@ const Section: NextPage = (props: any) => {
           </Container>
         </div>
       );
+   
     case "technology_slack":
       return (
         <div className={`${companyStyles.tech_slack}`}>
@@ -1142,7 +1181,7 @@ const Section: NextPage = (props: any) => {
               <div className={servicesStyles.clientContent}>
                 {free_text && (
                   <div
-                    className={servicesStyles.section7_title}
+                    className={servicesStyles.section6_title}
                     dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                   ></div>
                 )}
@@ -1178,6 +1217,7 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
+
     case "our_works_banner":
       return (
         <div className={`${servicesStyles.section8}`}>
@@ -1534,6 +1574,7 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
+    
     case "end_to_end_banner":
       return (
         <div className={servicesStyles.seviceinner_sec4_Container}>
@@ -1630,47 +1671,10 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
-    case "qualification_banner":
-      return (
-        <div className={`${careerstyles.qualification_banner}`}>
-          <div className={careerstyles.qualification_section2}>
-            <div className={careerstyles.apply_left}>
-              {User_Experience_Data[0] && (
-                <div className={careerstyles.apply_section2_left}>
-                  {User_Experience_Data.map((_card: any, index: number) => (
-                    <div style={{ display: "block" }}>
-                      <div style={{ display: "inline-block" }}>
-                        {_card.title && (
-                          <div
-                            className={careerstyles.qualification_left_title}
-                            dangerouslySetInnerHTML={{
-                              __html: marked(_card.title),
-                            }}
-                          ></div>
-                        )}
-                      </div>
-                      <div style={{ display: "inline-block" }}>
-                        {_card.free_text && (
-                          <div
-                            className={careerstyles.qualification_left_note}
-                            dangerouslySetInnerHTML={{
-                              __html: marked(_card.free_text),
-                            }}
-                          ></div>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-            <div className={careerstyles.apply_right}>
-              <div className={careerstyles.apply_heading}>Apply Now</div>
-              <CareerForm />
-            </div>
-          </div>
-        </div>
-      );
+    
+   
+    
+   
     case "blog_banner":
       return (
         <div className={companyStyles.company_banner}>
@@ -1695,9 +1699,7 @@ const Section: NextPage = (props: any) => {
                 {sub_heading && (
                   <div
                     className={companyStyles.descrption}
-                    dangerouslySetInnerHTML={{
-                      __html: marked(sub_heading),
-                    }}
+                    dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
                   ></div>
                 )}
               </div>
@@ -1713,39 +1715,6 @@ const Section: NextPage = (props: any) => {
               ))}
             </div>
           )}
-        </div>
-      );
-    case "android_app_right_banner":
-      return (
-        <div className={servicesStyles.serviceinner_sec3_Container}>
-          <div className={servicesStyles.serviceinner_sec3_Content}>
-            <div className={servicesStyles.serviceinner_sec3_Content_left}>
-              {free_text && (
-                <div
-                  className={servicesStyles.serviceinner_sec3_heading}
-                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-                ></div>
-              )}
-              {sub_heading && (
-                <div
-                  className={servicesStyles.serviceinner_sec3_left_note}
-                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-                ></div>
-              )}
-            </div>
-            {home_banner[0] && (
-              <div className={`${servicesStyles.serviceinner_sec2_left_img}`}>
-                <Image
-                  loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
-                  src={baseUrl + home_banner[0].url}
-                  placeholder="blur"
-                  blurDataURL={baseUrl + home_banner[0].url}
-                  height={389}
-                  width={613}
-                />
-              </div>
-            )}
-          </div>
         </div>
       );
 

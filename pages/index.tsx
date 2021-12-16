@@ -1,6 +1,9 @@
-import {useEffect, useRef} from "react";
+import { useEffect, useRef } from "react";
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
+
+import Breadcrumbs from "nextjs-breadcrumbs";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ErrorPage from "next/error";
@@ -17,13 +20,14 @@ import { baseUrl } from "../public/strings.json";
 //   });
 // }
 
-const Home: NextPage<{ header: any; pages: any; footer: any, blogs: any }> = (props) => {
-  
+const Home: NextPage<{ header: any; pages: any; footer: any; blogs: any }> = (
+  props
+) => {
   // if (!props.pages) {
   //   return <ErrorPage statusCode={404} />;
   // }
 
-  const scrollRef = useRef()  as React.MutableRefObject<HTMLInputElement>;
+  const scrollRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 
   // useEffect(() => {
   //   if (typeof window === "undefined") {
@@ -39,11 +43,11 @@ const Home: NextPage<{ header: any; pages: any; footer: any, blogs: any }> = (pr
   // }, []);
 
   const { header, footer } = props;
-  console.log(props,"kkk");
+  console.log(props, "kkk");
   const { title, content, Logo, descrption } = props.pages[0];
   // const { blogcontent, blogdescrption } = props.blogs[0];
-  const blogContent = props.blogs[0]
-  const AllBlogContent = blogContent.content
+  const blogContent = props.blogs[0];
+  const AllBlogContent = blogContent.content;
 
   return (
     <div ref={scrollRef}>
@@ -58,14 +62,15 @@ const Home: NextPage<{ header: any; pages: any; footer: any, blogs: any }> = (pr
         {/* <link rel="icon" href={`${baseUrl}${favicon}`} /> */}
       </Head>
       <Header {...header} />
-      
+      <Breadcrumbs useDefaultStyle transformLabel={(title) => title } />
+      <Breadcrumbs omitRootLabel />
       {content.map((section: any) => (
         <Section {...section} />
       ))}
 
       {/* {AllBlogContent.map((section: any) => (
-          <BlogSection {...section} />
-        ))} */}
+        <BlogSection {...section} />
+      ))} */}
 
       <Footer {...footer} />
     </div>
@@ -82,12 +87,11 @@ export const getStaticProps: GetStaticProps = async ({ res }: any) => {
     const blogs: any = await blogResult.json();
 
     const footer: any = await footerResult.json();
-    
+
     return {
-      props: { pages: pages, header, footer,blogs: blogs },
+      props: { pages: pages, header, footer, blogs: blogs },
     };
-  } catch(e) {
-    
+  } catch (e) {
     // res.statusCode = 404;
     return {
       props: {},
