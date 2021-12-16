@@ -68,9 +68,9 @@ const Home: NextPage<{ header: any; pages: any; footer: any; blogs: any }> = (
         <Section {...section} />
       ))}
 
-      {AllBlogContent.map((section: any) => (
+      {/* {AllBlogContent.map((section: any) => (
         <BlogSection {...section} />
-      ))}
+      ))} */}
 
       <Footer {...footer} />
     </div>
