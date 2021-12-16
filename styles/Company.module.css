@@ -9,6 +9,10 @@
     background:#0662a7;
     align-items: center;
     position: relative;
+    background-image: url(../components/assets/company-yellow-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
   }
   .company_banner .banner_container{
       position: absolute;
@@ -17,8 +21,9 @@
   }
 
   .company_banner .content .free_text {
-    font-weight: normal;
+    font-weight: 600;
     font-size: 40px;
+    font-family: "GraphikMedium";
    }
 
   .company_banner .content .descrption {

@@ -350,12 +350,8 @@
   font-size: 20px;
   line-height: 24px;
 }
-.careerContent .note {
-  font-weight: bold;
-  font-size: 50px;
-  line-height: 50px;
-  font-family: "Saira Extra Condensed", sans-serif;
-}
+
+
 .careerContent .freetext {
   font-weight: normal;
   font-size: 15px;
@@ -421,7 +417,7 @@
 }
 .blog_banner {
   background: #ea9913;
-  padding: 2% 7% 0% 7%;
+  padding: 2% 7% 0% 8%;
   margin-bottom: 100px;
   height: 450px;
 }
@@ -439,7 +435,7 @@
 }
 .client {
   background: #f1f2f3;
-  padding: 2% 0% 6% 7%;
+  padding: 2% 0% 6% 8%;
 }
 .client_banner .downArrow {
   justify-content: right;
@@ -457,12 +453,7 @@
   font-size: 20px;
   line-height: 24px;
 }
-.clientContent .note {
-  font-weight: bold;
-  font-size: 50px;
-  line-height: 50px;
-  font-family: "Saira Extra Condensed", sans-serif;
-}
+
 .react-multi-carousel-list {
   align-items: start !important;
   overflow: visible !important;
@@ -626,13 +617,7 @@ margin-top: -90px;
   font-size: 20px;
   line-height: 24px;
 }
-.team_capabilities .teamsubTitle {
-  font-weight: bold;
-  font-size: 50px;
-  line-height: 50px;
-  font-family: "Saira Extra Condensed", sans-serif;
-  text-transform: uppercase;
-}
+
 .teamsubTitle p {
   margin: 30px 0;
 }
@@ -642,14 +627,7 @@ margin-top: -90px;
   line-height: 24px;
   margin: 0;
 }
-.teamcardtitle h4 {
-  font-weight: bold;
-  font-size: 50px;
-  line-height: 50px;
-  font-family: "Saira Extra Condensed", sans-serif;
-  text-transform: uppercase;
-  margin: 8% 0;
-}
+
 .teamcardpara p {
   padding: 8% 0px;
   font-weight: normal;
@@ -674,14 +652,7 @@ margin-top: -90px;
   width: 100%;
   text-align: center;
 }
-.card_free_text p {
-  font-weight: bold;
-  font-size: 50px;
-  line-height: 50px;
-  font-family: "Saira Extra Condensed", sans-serif;
-  text-transform: uppercase;
-  margin: 0;
-}
+
 .processtitle p {
   font-weight: bold;
   font-size: 20px;
@@ -787,14 +758,14 @@ margin-top: -90px;
   font-family: "GraphikMedium";
   line-height: 60px;
   color: #383838;
-  margin: 4% 0 3% 8%;
+  margin: 4% 0 3% 9%;
 }
 .our_latest_works {
   background: #ffffff;
   padding: 2% 0% 0% 0%;
 }
 .capabilities {
-  padding: 0 5% 2% 7%;
+  padding: 0 5% 2% 8.2%;
 }
 .capab_title h3 {
   font-family: "GraphikMedium";
@@ -822,14 +793,14 @@ margin-top: -90px;
   font-weight: bold;
   line-height: 40px;
   color: #383838;
-  margin: 0;
+  margin: 0 0 50px 0;
 }
 .successful_product {
   padding: 5% 7% 8% 7%;
   background-color: #f4f7f9;
 }
 .clients {
-  padding: 0 7% 4% 7%;
+  padding: 0 7% 4% 8%;
 }
 .clients_title h3 {
   font-family: "GraphikMedium";
@@ -841,7 +812,7 @@ margin-top: -90px;
 }
 .home_form_section {
   background-color: #0171c1;
-  padding: 4% 7%;
+  padding: 4% 8%;
   display: flex;
   flex-wrap: wrap;
 }

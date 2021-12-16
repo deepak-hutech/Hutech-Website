@@ -62,15 +62,18 @@ const Home: NextPage<{ header: any; pages: any; footer: any; blogs: any }> = (
         {/* <link rel="icon" href={`${baseUrl}${favicon}`} /> */}
       </Head>
       <Header {...header} />
+      {/* <div style={{display:"none"}}>
       <Breadcrumbs useDefaultStyle transformLabel={(title) => title } />
       <Breadcrumbs omitRootLabel />
+      </div> */}
+      
       {content.map((section: any) => (
         <Section {...section} />
       ))}
 
-      {AllBlogContent.map((section: any) => (
+      {/* {AllBlogContent.map((section: any) => (
         <BlogSection {...section} />
-      ))}
+      ))} */}
 
       <Footer {...footer} />
     </div>

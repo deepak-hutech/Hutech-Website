@@ -23,21 +23,15 @@ const Action: NextPage = ({ type, display, link, group, icon }: any) => {
           {display}
           <section className={styles.subMenuContainer}>
             {group.map(({ title, action }: any) => (
-              <div className={styles.subMenu}>
+              <div className={styles.servicesubMenu}>
                 <h3>{title}</h3>
-                {action?.map((action: any, index: number) => (
+                {/* {action?.map((action: any, index: number) => (
                   <a key={index} href={action.link ? action.link : "/"}>
                     {action.display}
                   </a>
-                ))}
+                ))} */}
               </div>
             ))}
-            <iframe
-              className={styles.subMenu}
-              src="https://docs.google.com/forms/d/e/1FAIpQLSfUWA0qXFdUUU_BJJlvfnKNfe7CSoBiYab63d33j8GHjw3JlA/viewform?embedded=true"
-            >
-              Loading…
-            </iframe>
           </section>
         </a>
       );
