@@ -202,7 +202,9 @@
   text-align: left;
   font-family: arial;
   position: relative;
+  
 }
+
 .carosoulCards :hover {
   transform: translate3d(0px, 0px, 0px);
 }

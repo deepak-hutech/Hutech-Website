@@ -5,18 +5,26 @@
   }
   
   .contact .content {
-    padding: 50px 0;
+    padding: 50px;
+    margin: 60px;
     background-color: #fafafa
   }
   
-  .contact .content h2{
-    text-align: center;
-    font-weight: bolder;
-    font-size: 55px;
+  .contact .content h2 {
+      font-size: 50px;
+      font-weight: bold;
+      line-height: 60px;
+      color: #383838;
+      margin: 5px 0;
+      font-family: "GraphikMedium";
+      text-align: center;
+    
   }
   .contact .content h4{
-    font-weight: 700;
+    font-weight: 600;
     text-align: center;
+    padding: 10px 10px 0;
+    line-height: 40px;
   }
   .nav-tabs {
      display: flex;
@@ -39,6 +47,17 @@
    .nav-item .nav-link {
     color:black
   }
+  .submitbtn{
+    background: #FFAF2B;
+    height: 43px;
+    font-size: 15px;
+    color: #fff;
+    border: 1px solid #FFAF2B;
+    padding: 10px 40px;
+    margin-top: 30px;
+    border-radius: 30px;
+    margin: 30px 0 0 0;
+  }
   
   .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
     color:#03a9f5!important;
@@ -46,9 +65,10 @@
     border-color: none !important;
   }
   
+  
   .tabsContainer .tab1 {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 40px auto;
     box-shadow: 0 0 20px 4px rgb(207 207 207 / 30%);
     background: #fff;
     padding: 50px;
@@ -58,7 +78,7 @@
    
    .tabsContainer .tab2 {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 40px auto;
     box-shadow: 0 0 20px 4px rgb(207 207 207 / 30%);
     background: #fff;
     padding: 50px;
@@ -67,7 +87,7 @@
    }
    .tabsContainer .tab3 {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 40px auto;
     box-shadow: 0 0 20px 4px rgb(207 207 207 / 30%);
     background: #fff;
     padding: 50px;
@@ -112,7 +132,7 @@
    .contactForm input{
     width: 100%;
     height: 45px;
-    margin: 20px;
+    margin: 20px 0;
     line-height: 22px;
     font-size: 14px;
     padding: 5px 10px;
@@ -125,7 +145,7 @@
    .contactForm textarea{
     width: 100%;
     height: 145px;
-    margin: 20px;
+    margin: 20px 0;
     line-height: 22px;
     font-size: 14px;
     padding: 5px 10px;
