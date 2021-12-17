@@ -169,7 +169,7 @@ const Card: NextPage = (props: any) => {
                 dangerouslySetInnerHTML={{ __html: marked(heading) }}
               ></div>
               <div
-                className={servicesStyles.section3_para2}
+                className={servicesStyles.section3_para}
                 dangerouslySetInnerHTML={{ __html: marked(free_text) }}
               ></div>
               <button>
