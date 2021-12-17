@@ -19,6 +19,10 @@
     background:#0662a7;
     align-items: center;
     position: relative;
+    background-image: url(../components/assets/top-banner-transparent.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .section1 .banner_container{
@@ -28,8 +32,11 @@
 }
 
 .section1 .content .free_text {
-    font-weight: 700;
-    font-size: 40px;
+  font-family: "GraphikMedium";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 55px;
  }
 
 .section1 .content .descrption {
@@ -83,32 +90,43 @@
   margin-bottom: 40px;
 }
 
-.section2 .section2_title{
+.section2 .section2_title p{
   text-align: center;
-  font: 3rem sans-serif;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  font-weight: 800;
-  font-size: 30px;
   line-height: 33px;
   margin-top: 30px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+ 
 }
-
 .section2 .section2_note{
   display: flex;
   justify-content: center;
+}
+.section2 .section2_note p{
+  font-family: "GraphikMedium";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
 }
 
 /* SECTION3 */
 
 .section3 {
   background-color: #f1f8ff;
+  background-image: url(../components/assets/transparent-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 60px 0;
+  
 }
 
 
 .section3 .clientContent {
   text-align: center;
-  padding-top: 60px;
 }
 
 .section3 .clientContent .section3_title {
@@ -126,7 +144,6 @@
   align-items: center;
   flex-wrap: wrap;
   padding-left: 10px;
-  column-gap: 60px;
   margin-top: 35px;
   padding: 10px;
 }
@@ -135,28 +152,43 @@
   width: 100%;
   height: 700px;
   margin-top: -160px;
-  overflow-x:hidden ;
- 
 }
 
 .section3_card .mobile_app_development_card {
-  width: 360px;
-  height: auto;
+  width: 330px;
+  height: 350px;
+  margin: 2px 20px;
   padding: 20px 18px;
   background: #FFFFFF;
   border: 1px solid #CCCCCC;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(144, 140, 140, 0.25);
   border-radius: 20px;
-  /* transition: all 0.4s;
-  transition-timing-function: ease-in-out; */
+
 }
-/* .section3_card .mobile_app_development_card:hover {
-  box-shadow: 0 1px 4px 0 rgb(0 0 0 / 22%);
-  transform: scale(1.1);
-} */
 
 
+.section3_cards .section3_para {
+  font-family: Graphik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px !important;
+  display: -webkit-box;
+  max-width: 360px;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.section3_cards .section3_para {
+  font-family: Graphik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12x;
+}
 .section3_card .mobile_app_development_card button {
     all: unset;
     color: #0662a7;
@@ -174,6 +206,7 @@
 .clientContent4 {
   text-align: center;
   margin: 50px 0;
+  
 }
 
 .section4_title {
@@ -208,6 +241,7 @@
 
 .section5 {
   padding-bottom: 4rem;
+  
 }
 .section5_content {
   text-align: center;
@@ -238,7 +272,7 @@
 
 .section5 .mobile_app_development_cards{
   margin: 10px 0;
-  padding: 10px 20px;
+  padding: 10px 16px;
 }
 
 .section5 .mobile_app_development_cards .section5_heading{
@@ -253,6 +287,10 @@
 .section6 {
     text-align: center;
     background:#0662a7;
+    background-image: url(../components/assets/mobile-tech-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .section6 .Industries_banner {
@@ -362,6 +400,10 @@
   text-align: center;
   background-color: #eea52c;
   padding: 50px 0;
+  background-image: url(../components/assets/our-work-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .section8 .clientContent {
   padding: 30px 0;

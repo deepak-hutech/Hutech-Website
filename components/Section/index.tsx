@@ -419,7 +419,7 @@ const Section: NextPage = (props: any) => {
                 />
                 {sub_heading && (
                   <div
-                    className={companyStyles.descrption}
+                    className={companyStyles.description}
                     dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
                   ></div>
                 )}
@@ -446,7 +446,7 @@ const Section: NextPage = (props: any) => {
       return (
 
         <div className={companyStyles.abt_company}>
-          <div><Breadcrumbs useDefaultStyle transformLabel={(title) => title } /></div>
+          <div id="breadCrum"><Breadcrumbs useDefaultStyle transformLabel={(title) => title } /></div>
           <Container>
             <Row>
               {free_text && (
@@ -490,6 +490,7 @@ const Section: NextPage = (props: any) => {
       );
     case "values_vision_mission":
       return (
+        <div className={companyStyles.values_vision_banner}>
         <div className={companyStyles.values_vision}>
           <Container>
             <Row>
@@ -503,7 +504,7 @@ const Section: NextPage = (props: any) => {
                     height={50}
                     width={50}
                   />
-                  <p className={companyStyles.heading}>{v.heading}</p>
+                  <h5 className={companyStyles.heading}>{v.heading}</h5>
                   <div
                     className={companyStyles.free_text}
                     dangerouslySetInnerHTML={{ __html: marked(v.free_text) }}
@@ -514,6 +515,7 @@ const Section: NextPage = (props: any) => {
               ))}
             </Row>
           </Container>
+        </div>
         </div>
       );
     case "our_people":
@@ -1200,7 +1202,7 @@ const Section: NextPage = (props: any) => {
               <div className={servicesStyles.clientContent}>
                 {free_text && (
                   <div
-                    className={servicesStyles.section6_title}
+                    className={servicesStyles.section7_title}
                     dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                   ></div>
                 )}

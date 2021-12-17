@@ -84,12 +84,13 @@ const Footer: NextPage = (props: any) => {
                   })}
                 </div>
               </Col>
-            ))}
+            ))} 
           </Row>
         </Container>
         <hr className={styles.divider}></hr>
-        <p>Terms and conditions</p>
-      </div>
+        <p className={styles.terms}>Terms and Conditions  |  Privacy Policy | Disclaimer</p>
+        <p className={styles.copyRight}>Copyright © 2019 - 2021. All Rights Reserved.</p>
+       </div>
     </div>
   );
 };

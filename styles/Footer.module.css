@@ -61,6 +61,20 @@
   line-height: 14px;
 }
 
+.footer .terms {
+  font-family: Graphik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+}
+
+.footer .copyRight {
+  font-family: Graphik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+}
+
 @media only screen and (max-width: 500px) {
   .footernav {
     width: 100%;
@@ -68,6 +82,10 @@
   }
   .container {
     flex-wrap: wrap;
+  }
+  .footernav .container .row {
+    
+    flex-direction: column;
   }
 
   .footernavOne {
