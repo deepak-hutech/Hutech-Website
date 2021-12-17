@@ -4,24 +4,15 @@ import styles from "../../styles/Section.module.css";
 
 import Action from "../Actions";
 import Card from "../Card";
-import { baseUrl } from "./../../public/strings.json";
 import marked from "marked";
-import AssetCard from "../AssetCard";
-import Carousel from "react-multi-carousel";
-import Accordian from "../accordian/Accordian";
-import Mobapp from "../mobapptype";
 import "react-multi-carousel/lib/styles.css";
-import companyStyles from "../../styles/Company.module.css";
-import contactStyle from "../../styles/Contact.module.css";
-import Footer from "../Footer";
-import { Tabs, Tab, Form, Button, Row, Col, Container } from "react-bootstrap";
-import ContactForm from "../ContactForm";
-import servicesStyles from "../../styles/Services.module.css";
+
 import blogStyle from "../../styles/blog.module.css";
-import CareerForm from "../careerForm/index.js";
-import portfolioStyles from "../../styles/Portfolio.module.css";
 
 import { Pagination } from "react-bootstrap";
+
+import { baseUrl } from "../../public/strings.json";
+
 
 const myLoader: ImageLoader = (url: any) => {
     return url;
@@ -30,57 +21,50 @@ const myLoader: ImageLoader = (url: any) => {
   
   const Blog: NextPage = (props: any) => {
     const {
-      home_banner,
-      home_button,
+      blogs,
+  
       sub_heading,
-      type,
-      Buttons,
-  
-      image_position,
       free_text,
-      ios_para,
-      devops_title,
-      blogTitle,
-      devops_para,
+      blog_text,
+      blog_title,
+   
       blogimage,
-  
-      estimate_icon,
+       type,
       BlogCards,
-      User_Experience_Data,
-      address,
-      para,
-    } = props;
-  
-  
+    
+   } = props;
+
+  //  console.log(props, "props")
+
 
     switch (type) {
-         case "blog_banner":
+         case "blog":
             return (
-            <div className={blogStyle.blog_banner}>
-                {home_banner[0] && (
+            <div className={blogStyle.compo}>
+                {blogimage && (
                     <Image
-                    loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
-                    src={baseUrl + home_banner[0].url}
+                    loader={() => myLoader((baseUrl + blogimage.url) as any)}
+                    src={baseUrl + blogimage.url}
                     placeholder="blur"
-                    blurDataURL={baseUrl + home_banner[0].url}
-                    height={400}
-                    width={"100%"}
+                    blurDataURL={baseUrl + blogimage.url}
+                    height={200}
+                    width={"80%"}
                     className={blogStyle.bannerimg}
                         />
                 )}
             <div className={blogStyle.banner_container}>
-                {free_text &&(
+                {blog_title &&(
                     <div className={blogStyle.content}>
                     <div
                       className={blogStyle.free_text}
-                      dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                      dangerouslySetInnerHTML={{ __html: marked(blog_title) }}
                     />
-                    {sub_heading && (
+                    {/* {blog_text && (
                     <div
                         className={blogStyle.descrption}
-                        dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                        dangerouslySetInnerHTML={{ __html: marked(blog_text) }}
                     ></div>
-                    )}
+                    )} */}
                     </div>
                     )}
                  </div>
@@ -97,7 +81,7 @@ const myLoader: ImageLoader = (url: any) => {
                 <div className={blogStyle.blog_container}>
                     {BlogCards.map((v: any, index: number) => (
                       <div className={blogStyle.item}>
-                        <Image
+                        {/* <Image
                             loader={() => myLoader((baseUrl + v.blogimage.map((v: any) => v.url)) as any)}
                             src={baseUrl + v.blogimage.map((v: any) => v.url)}
                             placeholder="blur"
@@ -105,7 +89,7 @@ const myLoader: ImageLoader = (url: any) => {
                             width={55}
                             height={55}
                             className={companyStyles.cardImg2}
-                        />
+                        /> */}
                           <div className={blogStyle.subHeading}>
                             <h5>{v.blogtitle}</h5>
                             <p>{v.blogsubtitle}</p>
@@ -136,7 +120,7 @@ const myLoader: ImageLoader = (url: any) => {
     default:
     return (
         <div>
-              <div className={blogStyle.blog_details_container}>
+              {/* <div className={blogStyle.blog_details_container}>
                  <div className={blogStyle.research}>
                   <p>
                     Apple offers some of the prominent and commonly used products like the 
@@ -217,9 +201,9 @@ const myLoader: ImageLoader = (url: any) => {
                     </div>
                 </div>
               </div>
+*/}
 
-
-        </div>
+        </div> 
     );
     }
 
