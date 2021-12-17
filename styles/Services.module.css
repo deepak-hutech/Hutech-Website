@@ -478,6 +478,9 @@ margin-bottom:0.5rem;
 .serviceinner_sec2_left_img{
 margin-right: 1rem;
 }
+.serviceinner_sec3_left_img{
+  margin-right: 7rem;
+}
 .serviceinner_sec2_left_note p{
   margin-left: 5rem;
 font-style: normal;
@@ -513,7 +516,7 @@ font-style: normal;
   margin-top:3.5rem;
 }
 .serviceinner_sec3_Content_left{
-  margin-right: 5rem;
+  margin-right: 9rem;
 }
 .seviceinner_sec4_Container{
   display: flex;

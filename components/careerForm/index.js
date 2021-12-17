@@ -88,7 +88,7 @@ const careerform = () => {
   };
   return (
     <form onSubmit={upload} className={CareerStyle.careerForm}>
-      <div className={CareerStyle.careerForm_row}>
+      <div className={CareerStyle.careerForm_row1}>
         <input
           type="text"
           className={CareerStyle.formborder}
@@ -108,7 +108,7 @@ const careerform = () => {
           required
         />
       </div>
-      <div className={CareerStyle.careerForm_row}>
+      <div className={CareerStyle.careerForm_row2}>
         <input
           className={CareerStyle.formborder}
           type="number"
@@ -144,11 +144,16 @@ const careerform = () => {
         />
       </div>
       <input
+        className={CareerStyle.form_upload}
         type="file"
         onChange={onChange}
         required
         placeholder="Attach file"
       />
+      <p className={CareerStyle.form_upload_text}>
+        File types: pdf, docx and doc | Maximum file size: 5MB.
+      </p>
+
       <button type="submit">Submit Applications</button>
     </form>
   );
