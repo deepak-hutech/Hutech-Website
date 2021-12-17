@@ -504,7 +504,11 @@ const Section: NextPage = (props: any) => {
                     width={50}
                   />
                   <p className={companyStyles.heading}>{v.heading}</p>
-                  <p className={companyStyles.free_text}>{v.free_text}</p>
+                  <div
+                    className={companyStyles.free_text}
+                    dangerouslySetInnerHTML={{ __html: marked(v.free_text) }}
+                  ></div>
+                   
                   </div>
                 </Col>
               ))}
@@ -542,8 +546,8 @@ const Section: NextPage = (props: any) => {
                       className={companyStyles.img}
                       src={baseUrl + v.images.map((v: any) => v.url)}
                       placeholder="blur"
-                      height={120}
-                      width={137}
+                      height={162}
+                      width={163}
                     />
                     <h6>{v.heading}</h6>
                     <p className={companyStyles.role}>{v.free_text}</p>
@@ -1019,11 +1023,8 @@ const Section: NextPage = (props: any) => {
     case "mobile_app_development":
       return (
         <div className={`${servicesStyles.section2}`}>
-          <div><Breadcrumbs useDefaultStyle transformLabel={(title) => title } /></div>
-          <Breadcrumbs
-        useDefaultStyle
-        transformLabel={(title) => title}
-      />
+          <div style={{padding:"3% 6% 0"}}><Breadcrumbs useDefaultStyle transformLabel={(title) => title } /></div>
+          
           <div className={`${servicesStyles.client_banner}`}>
             <div className={servicesStyles.clientContent}>
               {free_text && (
@@ -1282,7 +1283,7 @@ const Section: NextPage = (props: any) => {
           <div className={careerstyles.section1}>
             {home_banner[0] && (
               <Image
-                loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
+                loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
                 src={baseUrl + home_banner[0].url}
                 placeholder="blur"
                 blurDataURL={baseUrl + home_banner[0].url}
@@ -1338,7 +1339,7 @@ const Section: NextPage = (props: any) => {
           <div className={careerstyles.sec2_right}>
             {home_banner[0] && (
               <Image
-                loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
+                loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
                 src={baseUrl + home_banner[0].url}
                 placeholder="blur"
                 blurDataURL={baseUrl + home_banner[0].url}
@@ -1396,7 +1397,7 @@ const Section: NextPage = (props: any) => {
         <div className={careerstyles.section5}>
           {estimate_image[0] && (
             <Image
-              loader={() => myLoader((baseUrl + estimate_image[0].url) as any)}
+              loader={() => myLoaderbanner((baseUrl + estimate_image[0].url) as any)}
               src={baseUrl + estimate_image[0].url}
               placeholder="blur"
               blurDataURL={baseUrl + estimate_image[0].url}
@@ -1532,7 +1533,7 @@ const Section: NextPage = (props: any) => {
     case "portfolio_img_banner":
       return (
         <div className={`${portfolioStyles.porfolio_card_section}`}>
-          <div><Breadcrumbs useDefaultStyle transformLabel={(title) => title } /></div>
+          <div style={{padding:"4% 3% 0"}}><Breadcrumbs useDefaultStyle transformLabel={(title) => title } /></div>
           <div className={`${portfolioStyles.Industries_banner}`}>
             <div className={`${portfolioStyles.client_banner}`}>
               <div className={portfolioStyles.clientContent}>

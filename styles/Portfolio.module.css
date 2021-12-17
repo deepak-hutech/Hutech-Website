@@ -9,6 +9,10 @@
   background:#0662a7;
   align-items: center;
   position: relative;
+  background-image: url(../components/assets/company-yellow-bg.png);
+  background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 .portfolio_section1 .banner_container{
@@ -20,6 +24,7 @@
 .portfolio_section1 .content .free_text {
   font-weight: bold;
   font-size: 40px;
+  font-family: "GraphikMedium";
  }
 
 .companybanner .title p {
@@ -50,30 +55,30 @@
     flex-wrap: wrap;
     padding-left: 10px;
     margin-top: 40px;
-    column-gap: 60px;
+    column-gap: 40px;
   }
   .portfolio_para1{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
+    font-family: "GraphikMedium";
+    font-size: 18px;
     font-weight: bold;
     
   }
   .portfolio_para2{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 11px;
+    font-family: "GraphikMedium";
+    font-size: 13px;
     line-height: 8px;
   }
   .portfolioPara{
     position: relative;
-    bottom:25px;
+    bottom:40px;
+    left: 26%;
     background-color:white;
     color:black;
     width: 50%;
     border-radius: 8px;
     text-align: center;
-    margin-left: 77px;
-    height: 58px;
-    padding: 5px;
+    height: 80px;
+    padding: 14px;
     box-shadow: 0px 4px 3px -1px rgba(192, 189, 189, 0.25);
   }
   .portfolioCardimg{

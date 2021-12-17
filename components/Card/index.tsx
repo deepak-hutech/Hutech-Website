@@ -390,8 +390,8 @@ const Card: NextPage = (props: any) => {
                   src={`${baseUrl}${images[0].url}`}
                   placeholder="blur"
                   blurDataURL={baseUrl + images[0].url}
-                  width={300}
-                  height={250}
+                  width={370}
+                  height={300}
                   className={portfolioStyles.portfolioCardimg}
                 />
               </a>
