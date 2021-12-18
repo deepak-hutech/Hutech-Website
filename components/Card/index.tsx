@@ -40,6 +40,7 @@ const Card: NextPage = (props: any) => {
     estimate_icon,
   } = props;
 
+
   switch (type) {
     case "small_card":
       return (
@@ -173,7 +174,13 @@ const Card: NextPage = (props: any) => {
                 dangerouslySetInnerHTML={{ __html: marked(free_text) }}
               ></div>
               <button>
-                <p>{call_to_action}</p>
+                <p>{call_to_action}
+                 {images.map((v:any)=> (
+                      <div>
+                        <img src={baseUrl + v.url}></img>
+                      </div>
+                 ))}
+                </p>
               </button>
             </div>
           </a>
@@ -293,6 +300,33 @@ const Card: NextPage = (props: any) => {
           </div>
         </div>
       );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
     case "feature_card":
       return (
         <div className={careerstyles.featurecard}>
@@ -460,10 +494,10 @@ const Card: NextPage = (props: any) => {
       return (
         <div className={companyStyles.c_cards}>
           <Image
-            loader={() => myLoader((baseUrl + images[0].url) as any)}
-            src={`${baseUrl}${images[0].url}`}
+            loader={() => myLoader((baseUrl + images[0]?.url) as any)}
+            src={`${baseUrl}${images[0]?.url}`}
             placeholder="blur"
-            blurDataURL={baseUrl + images[0].url}
+            blurDataURL={baseUrl + images[0]?.url}
             width={55}
             height={55}
             className={companyStyles.cardImg2}

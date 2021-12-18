@@ -61,32 +61,41 @@
   line-height: 14px;
 }
 
-.footer .terms {
-  font-family: Graphik;
+.footer .terms , .copyRight {
+  font-family: "GraphikRegular";
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 11px;
 }
 
-.footer .copyRight {
-  font-family: Graphik;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
+.footer .iconsContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .iconsContainer .item {
+  display: flex;
+}
+
+.footer .iconsContainer img {
+  padding:  0 5px;
 }
 
 @media only screen and (max-width: 500px) {
-  .footernav {
+  .footer {
     width: 100%;
     padding: 40px 20px 0;
   }
   .container {
     flex-wrap: wrap;
   }
-  .footernav .container .row {
-    
-    flex-direction: column;
+  .footer  .footerContainer {
+    flex-direction: row;
+    width: 400px;
   }
+  .footer .iconsContainer .item {
+
+}
 
   .footernavOne {
     width: 100%;
