@@ -316,6 +316,9 @@
 }
 
 @media only screen and (max-width: 500px) {
+  .clientContent4 {
+    margin: 30px;
+  }
   .section4_title {
    font-size: 22px;
   }
@@ -323,6 +326,7 @@
     width: 190px;
     font-size: 12px;
     height: 40px;
+    margin-top: 0;
   }
 }
 
@@ -373,6 +377,9 @@
 }
 
 @media only screen and (max-width: 500px) {
+  .section5_content {
+    margin: 0;
+  }
   .section5_content .section5_title {
     font-size: 22px;
   }
