@@ -1,10 +1,21 @@
 
 import { baseUrl } from "../../public/strings.json";
+import type { GetStaticProps, NextPage } from "next";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
-const Article = ({ article }:any) => {
+
+  const Article: NextPage<{
+    header: any;
+    footer: any;
+    blogs: any;
+    blogBanner: any;
+  }> = (props) => {
+   
+    const { header, footer, blogs, blogBanner } = props;
   // console.log(article);
 return (
-  <div>{article.blog_title}</div>
+  <div> <Header {...header} /></div>
 );
 };
 export async function getStaticPaths() {

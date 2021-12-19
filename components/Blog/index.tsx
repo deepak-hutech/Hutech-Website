@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import Link from "next/link";
 import Image, { ImageLoader } from "next/image";
 import styles from "../../styles/Section.module.css";
 
@@ -33,6 +34,7 @@ const Blog: NextPage = (props: any) => {
     blogimage,
     type,
     BlogCards,
+    _id
   } = props;
 
   //  console.log(props, "props")
@@ -56,10 +58,13 @@ const Blog: NextPage = (props: any) => {
             <div className={blogStyle.banner_container}>
               {blog_title && (
                 <div className={blogStyle.content}>
-                  <div
-                    className={blogStyle.free_text}
-                    dangerouslySetInnerHTML={{ __html: marked(blog_title) }}
-                  />
+                  <div className={blogStyle.free_text}
+                  dangerouslySetInnerHTML={{ __html: marked(blog_title) }}>
+                    {/* <Link href={`/blog/${_id}`}>
+                      <a>{blog_title}</a>
+                    </Link> */}
+                    
+                  </div>
                   {blog_text && (
                     <div
                       className={blogStyle.descrption}
@@ -76,7 +81,6 @@ const Blog: NextPage = (props: any) => {
                         height={18}
                       />
                       <p className={blogStyle.publishtitle}> {publishdate}</p>
-                     
                     </div>
                   )}
                 </div>
