@@ -21,7 +21,7 @@
   }
 
   .company_banner .content .free_text p{
-    font-family: 'Lato';
+    font-family: 'GraphikMedium';
     font-style: normal;
     font-weight: normal;
     font-size: 40px;
@@ -42,7 +42,7 @@
     background-color:#FFAF2B;
     width: 220px;
     height: 45px;
-    font-family: "Lato";
+    font-family: 'GraphikRegular';
     padding: 10px 0px;
     font-size: 16px;
     font-weight: 800;
@@ -56,6 +56,32 @@
     transition: background-color 0.3s cubic-bezier(0.55, 0, 0.1, 1),
       color 0.3s cubic-bezier(0.55, 0, 0.1, 1);
     transition: box-shadow 1s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .company_banner .content .free_text p{
+        font-size: 30px;
+    }
+  
+    .company_banner .content .description {
+        font-size: 12px;
+    }
+
+    .company_banner .call_to_action {
+      width: 158px;
+      font-size: 13px;
+    }
+  }
+
+
+  @media only screen and (max-width: 500px) {
+    .current_opening .banner_container{
+      top: 20%;
+    }
+  
+    .current_opening .banner_container .free_text {
+      font-size: 30px;
+    }
   }
 
 
@@ -83,7 +109,7 @@
   animation: slide 1s;
 }
 .abt_company .heading h6{
-  font-family: Graphik;
+  font-family: "GraphikRegular";
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -107,29 +133,39 @@
 .abt_company .abt_img img {
   border-radius: 20px;
   transition:  all 0.5s;
-
 }
-
-/* .abt_company .abt_img:hover img {
-  -ms-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -o-transform: scale(1.2);
-    border-radius: 20px;
-
-   opacity: 0.7;
-} */
-
 
 
 .abt_company .note {
   text-align: left;
-  font-family: Graphik;
   font-style: normal;
   font-weight: normal;
+  font-family: 'GraphikRegular';
   font-size: 15px;
   line-height: 30px;
 }
+
+@media only screen and (max-width: 500px) {
+  .abt_company .heading h3{
+      font-size: 30px;
+  }
+
+  .abt_company .heading h6{
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+    .abt_company .note {
+    font-size: 12px !important;
+  }
+
+  .company_banner .call_to_action {
+    width: 158px;
+    font-size: 13px;
+  }
+}
+
+
 
 /* Values Vision */
 .values_vision_banner {
@@ -177,16 +213,30 @@
 
   .values_vision .heading {
     margin-top: 20px;
-    font-family: Graphik;
+    font-family: "GraphikMedium";
     font-style: normal;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 21px;
     visibility: visible;
     animation: slide 1s;
   }
 
   .values_vision  .free_text{
      font-size: 13px;
+     font-family: 'GraphikRegular';
+  }
+
+  @media only screen and (max-width: 500px) {
+    .values_vision .free_text{
+        font-size: 12px;
+    }
+    .values_vision .vvContent{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 10px;
+    }
   }
 
 
@@ -199,23 +249,28 @@
 
   .our_people .free_text h3{
     color: #383838;
-    /* font-family: Graphik; */
+    font-family: "GraphikMedium";
     font-style: normal;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 38px;
   }
 
-  .our_people .profiles {
-    font-size: 15px;
-    font-weight: 600;
+  .our_people .profiles h6{
+    font-family: "GraphikMedium";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
     margin-top: 20px;
-    
   }
 
-  /* .our_people .profiles .border{
-    border: 2px solid #0d79e4;
-    border-radius: 50%;
-  } */
+  .our_people .profiles .role {
+    color: #383838;
+    font-family: "GraphikRegular";
+    font-style: normal;
+    font-weight: normal;
+    line-height: 3px;
+    color: #E18E04;
+    font-size: 13px;  }
 
   .our_people .profiles .img{
     border-radius: 50%;
@@ -223,11 +278,27 @@
     background: #2196ea;
   }
 
-  .our_people .role{
-    line-height: 3px;
-    color: #E18E04;
-    font-size: 13px;
+  @media only screen and (max-width: 500px) {
+   .our_people .free_text h3{
+     font-size: 30px ;
+     line-height: 20px;
+   }
+
+   .our_people .sub_heading{
+     font-size: 12px;
+     margin-bottom: 10px;
+   }
+
+   .our_people .profiles h6 {
+     font-size: 15px;
+   }
+
+  .our_people .profiles .img{
+      height: 136px;
+      width: 150px;
+    }
   }
+
 
 
   /* Partner and Clients*/
@@ -241,11 +312,14 @@
   .partner .heading {
     line-height: 22px;
     text-align: center;
+
   }
   
   .partner h3 {
-    font-weight: bold;
     font-size: 40px;
+    font-family: "GraphikMedium";
+    font-style: normal;
+    font-weight: bold;
     color: #383838;
   }
 
@@ -256,10 +330,10 @@
   }
 
   .partner .desc p{
-    font-family: Graphik;
+    font-family: "GraphikRegular";
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 27px;
   }
   .partner .allProducts {
@@ -275,10 +349,20 @@
   .partner .logos .images{
     margin: 30px;
   }
-  @media only screen and (max-width: 480px) {
+
+  @media only screen and (max-width: 500px) {
+
+    .partner .heading h3{
+      font-size: 30px;
+    }
+    .partner .desc p{
+      font-size: 14px;
+    }
+    .partner .allProducts .images {
+      margin: 10px;
+    }
     .partner .logos{
       width: 50%;
-      /* margin-top: 30px; */
     }
   }
 
@@ -293,6 +377,11 @@
     /* background-color: #E18E04; */
   }
 
+  @media only screen and (max-width: 500px) {
+    .web_dev .title {
+      margin: 0 30px;
+    }
+  }
 
   /* Tech Slack */
 
@@ -306,6 +395,7 @@
     font-style: normal;
     font-weight: bold;
     font-size: 40px;
+    font-family: "GraphikMedium";
   }
 
   .tech_slack .heading .free_text{
@@ -314,10 +404,20 @@
   }
 
   .tech_slack .heading .desc{
-    /* font-family: Graphik; */
+    font-family: "GraphikRegular";
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 16px;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .tech_slack .our_slack_title {
+      font-size: 30px;
+    }
+
+    .tech_slack .heading .desc {
+      font-size: 12px;
+    }
   }
   
   .company_cards {
@@ -346,6 +446,26 @@
       font-size: 13px;
       font-weight: 600;
     }
+
+    @media only screen and (max-width: 500px) {
+      .company_cards {
+        margin: 0px -9px;
+      }
+      .web_dev .free_text {
+        margin-top: 20px;
+      }
+      .web_dev .desc {
+        font-size: 13px;
+        height: 55px !important;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      .c_cards {
+        margin: 20px 10px;
+      }
+    }
+  
 
     
 /* ///Current Opening */
@@ -421,15 +541,6 @@
     color: white;
   }
 
-  @media only screen and (max-width: 500px) {
-    .current_opening .banner_container{
-      top: 20%;
-    }
-  
-    .current_opening .banner_container .free_text {
-      font-size: 29px;
-    }
-  }
 
 
  

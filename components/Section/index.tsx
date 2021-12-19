@@ -429,10 +429,6 @@ const Section: NextPage = (props: any) => {
                       <div className={companyStyles.call_to_action}>
                         {" "}
                         {item.call_to_action}{" "}
-                        {/* <img
-                      src={`${baseUrl}${home_button[0].arrow_icon[0].url}`}
-                      className={styles.arrowicon}
-                    /> */}
                       </div>
                     ))}
                   </div>
@@ -533,10 +529,10 @@ const Section: NextPage = (props: any) => {
             <Row>
               <div className={companyStyles.sub_heading}>
                 {sub_heading && (
-                  <h6
+                  <div
                     className=""
                     dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-                  ></h6>
+                  ></div>
                 )}
               </div>
             </Row>
@@ -1068,11 +1064,6 @@ const Section: NextPage = (props: any) => {
                     dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
                   ></div>
                 )}
-                {/* {home_banner[0] && (
-                  <div className={`${servicesStyles.section3_serviceimg}`}>
-                    <img src={baseUrl + home_banner[0].url} />
-                  </div>
-                )} */}
               </div>
             </div>
             {
@@ -1262,11 +1253,6 @@ const Section: NextPage = (props: any) => {
                     dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
                   ></div>
                 )}
-                {/* {home_banner[0] && (
-          <div className={`${servicesStyles.section8_serviceimg}`}>
-            <img src={baseUrl + home_banner[0].url} />
-          </div>
-        )} */}
               </div>
             </div>
             {carosel_cards[0] && (
