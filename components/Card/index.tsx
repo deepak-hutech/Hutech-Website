@@ -441,24 +441,19 @@ const Card: NextPage = (props: any) => {
     case "portfolio_details_cards":
       return (
         <div className={portfolioStyles.portfolio_details_cards}>
-          <div className={portfolioStyles.portfolio_details_cards}>
-            <div className={portfolioStyles.porfolioDetails_img}>
+          
               <Image
                 loader={() => myLoader((baseUrl + images[0].url) as any)}
                 src={`${baseUrl}${images[0].url}`}
                 placeholder="blur"
                 blurDataURL={baseUrl + images[0].url}
-                width={728}
+                width={628}
                 height={445}
                 className={portfolioStyles.portfolioDetailsCardimg}
               />
             </div>
-          </div>
-          {/* <div className={portfolioStyles.portfolioPara}>
-                      <p className={portfolioStyles.portfolio_para1}>{heading}</p>
-                      <p className={portfolioStyles.portfolio_para2}>{free_text}</p>
-                      </div> */}
-        </div>
+          
+       
       );
     case "android_app_card":
       return (

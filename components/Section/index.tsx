@@ -106,15 +106,15 @@ const Section: NextPage = (props: any) => {
     />
   </button>
   );
-  const responsive_cards = {
+  const responsive_portfolio_cards = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 4,
+      items: 1,
       slidesToSlide: 1, // optional, default to 1.
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      items: 1,
       slidesToSlide: 2, // optional, default to 1.
     },
     mobile: {
@@ -1557,7 +1557,7 @@ const Section: NextPage = (props: any) => {
       return (
         <div className={`${portfolioStyles.porfolioDetails_card_section}`}>
           <div className={`${portfolioStyles.Industries_section1}`}>
-            {
+            {/* {
               <div className={portfolioStyles.porfolio_details_cards}>
                 {carosel_cards[0] && (
                   <div className={portfolioStyles.porfolioDetails_img}>
@@ -1567,7 +1567,31 @@ const Section: NextPage = (props: any) => {
                   </div>
                 )}
               </div>
-            }
+              
+            } */}
+             <Carousel
+            swipeable={true}
+            draggable={false}
+            showDots={false}
+            responsive={responsive_portfolio_cards}
+            ssr={true} // means to render carousel on server-side.
+            infinite={true}
+            keyBoardControl={true}
+            customTransition="all 0.5s ease"
+            transitionDuration={1000}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+            dotListClass="custom-dot-list-style"
+            // itemClass="carousel-item-padding-40-px"
+            className={styles.clientcarousel}
+            // customRightArrow={<CustomArrow />}
+            // customLeftArrow={<CustomleftArrow/>}
+          >
+            {carosel_cards.map((_card: any, index: number) => (
+              <Card {..._card} key={index} />
+            ))}
+          </Carousel>
+            
             <div className={`${portfolioStyles.pclient_banner}`}>
               <div className={portfolioStyles.clientContent}>
                 {free_text && (
