@@ -159,7 +159,7 @@ const Card: NextPage = (props: any) => {
       );
     case "mobile_app_development_card":
       return (
-        <div className={servicesStyles.mobile_app_development_card}>
+        <div className={servicesStyles.mobile_app_development_card} data-aos="flip-right">
           <a
             style={{ textDecoration: "none", color: "black" }}
             href={Link ? Link : `/plans/${props.title}`}
@@ -167,6 +167,7 @@ const Card: NextPage = (props: any) => {
             <div className={servicesStyles.section3_cards}>
               <div
                 className={servicesStyles.section3_heading}
+               
                 dangerouslySetInnerHTML={{ __html: marked(heading) }}
               ></div>
               <div
@@ -188,7 +189,7 @@ const Card: NextPage = (props: any) => {
       );
     case "custom_mobile_card":
       return (
-        <div className={servicesStyles.mobile_app_development_cards}>
+        <div className={servicesStyles.mobile_app_development_cards} data-aos="fade-up">
           <div className={servicesStyles.mobile_app_development_card}>
             <div className={servicesStyles.section5_img}>
               <Image
@@ -431,7 +432,7 @@ const Card: NextPage = (props: any) => {
               </a>
             </div>
           </div>
-          <div className={portfolioStyles.portfolioPara}>
+          <div className={portfolioStyles.portfolio_subBox}>
             <p className={portfolioStyles.portfolio_para1}>{heading}</p>
             <p className={portfolioStyles.portfolio_para2}>{free_text}</p>
           </div>

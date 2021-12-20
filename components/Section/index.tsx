@@ -23,6 +23,9 @@ import portfolioStyles from "../../styles/Portfolio.module.css";
 import rightIcon from "../../components/assets/rightarrow.svg";
 import leftIcon from "../../components/assets/leftarrow.svg";
 import Breadcrumbs from "nextjs-breadcrumbs";
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const myLoader = ({ src, width, quality }) => {
   const origin = typeof window !== "undefined" && window.location.origin;
@@ -73,6 +76,9 @@ const Section: NextPage = (props: any) => {
     para,
   } = props;
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   
   const CustomArrow = ({ onClick }) => (
@@ -488,11 +494,8 @@ const Section: NextPage = (props: any) => {
       return (
         <div className={companyStyles.values_vision_banner}>
         <div className={companyStyles.values_vision}>
-          <Container>
-            <Row>
               {carosel_cards.map((v: any) => (
-                <Col md={4} sm={12}>
-                  <div className={companyStyles.vvContent}>
+                  <div className={companyStyles.vvContent} data-aos="fade-up">
                   <img
                     className={companyStyles.profile}
                     src={baseUrl + v.images.map((v: any) => v.url)}
@@ -507,10 +510,7 @@ const Section: NextPage = (props: any) => {
                   ></div>
                    
                   </div>
-                </Col>
               ))}
-            </Row>
-          </Container>
         </div>
         </div>
       );
@@ -539,7 +539,7 @@ const Section: NextPage = (props: any) => {
             <Row>
               {carosel_cards.map((v: any) => (
                 <Col>
-                  <div className={companyStyles.profiles}>
+                  <div className={companyStyles.profiles} data-aos="zoom-in">
                     <img
                       className={companyStyles.img}
                       src={baseUrl + v.images.map((v: any) => v.url)}
@@ -558,7 +558,7 @@ const Section: NextPage = (props: any) => {
       );
     case "successful_product_company":
       return (
-        <div className={`${companyStyles.partner}`}>
+        <div className={`${companyStyles.partner}`} >
            <div className={`${companyStyles.partner_head}`}>
               {free_text && (
                 <div
@@ -573,7 +573,7 @@ const Section: NextPage = (props: any) => {
                 ></div>
               )}
            </div>
-          <div className={companyStyles.allProducts}>
+          <div className={companyStyles.allProducts} data-aos="fade-up">
               {carosel_cards.map((v: any) => (
                   <div className={companyStyles.logos}>
                     <img
@@ -630,7 +630,7 @@ const Section: NextPage = (props: any) => {
                         dangerouslySetInnerHTML={{ __html: marked(web_front_end_para) }}
                       ></div>
                     )}
-                    <div className={companyStyles.company_cards}>
+                    <div className={companyStyles.company_cards} data-aos="fade-up">
                       {carosel_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
                       ))}
@@ -656,7 +656,7 @@ const Section: NextPage = (props: any) => {
                           __html: marked(web_back_end_para)}}
                       ></div>
                     )}
-                    <div className={companyStyles.company_cards}>
+                    <div className={companyStyles.company_cards} data-aos="fade-up">
                       {Carosel_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
                       ))}
@@ -683,7 +683,7 @@ const Section: NextPage = (props: any) => {
                         }}
                       ></div>
                     )}
-                    <div className={companyStyles.company_cards}>
+                    <div className={companyStyles.company_cards} data-aos="fade-right">
                       {carosel_card.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
                       ))}
@@ -710,7 +710,7 @@ const Section: NextPage = (props: any) => {
                         }}
                       ></div>
                     )}
-                    <div className={companyStyles.company_cards}>
+                    <div className={companyStyles.company_cards} data-aos="fade-left">
                       {android_card.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
                       ))}
@@ -733,7 +733,7 @@ const Section: NextPage = (props: any) => {
                         dangerouslySetInnerHTML={{ __html: marked(ios_para) }}
                       ></div>
                     )}
-                    <div className={companyStyles.company_cards}>
+                    <div className={companyStyles.company_cards} data-aos="fade-up">
                       {ios_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
                       ))}
@@ -758,7 +758,7 @@ const Section: NextPage = (props: any) => {
                         }}
                       ></div>
                     )}
-                    <div className={companyStyles.company_cards}>
+                    <div className={companyStyles.company_cards} data-aos="fade-up">
                       {devops_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
                       ))}
@@ -986,9 +986,9 @@ const Section: NextPage = (props: any) => {
               className={companyStyles.bannerimg}
             />
           )}
-          <div className={servicesStyles.banner_container}>
+          <div className={servicesStyles.banner_container} >
             {free_text && (
-              <div className={servicesStyles.content}>
+              <div className={servicesStyles.content} data-aos="fade-up">
                 <div
                   className={servicesStyles.free_text}
                   dangerouslySetInnerHTML={{ __html: marked(free_text) }}
@@ -1024,7 +1024,7 @@ const Section: NextPage = (props: any) => {
           <div style={{padding:"3% 6% 0"}}><Breadcrumbs useDefaultStyle transformLabel={(title) => title } /></div>
           
           <div className={`${servicesStyles.client_banner}`}>
-            <div className={servicesStyles.clientContent}>
+            <div className={servicesStyles.clientContent} data-aos="fade-up">
               {free_text && (
                 <div
                   className={servicesStyles.section2_title}
@@ -1133,7 +1133,7 @@ const Section: NextPage = (props: any) => {
           <div className={`${servicesStyles.section5_img_container}`}>
             <div className={`${servicesStyles.imgColumn}`}>
               {home_banner[0] && (
-                <div className={`${servicesStyles.section5_serviceimg}`}>
+                <div className={`${servicesStyles.section5_serviceimg}`} data-aos="zoom-in">
                   <img src={baseUrl + home_banner[0].url} />
                 </div>
               )}
@@ -1176,7 +1176,7 @@ const Section: NextPage = (props: any) => {
         )} */}
             </div>
             {carosel_cards[0] && (
-              <div className={servicesStyles.section6_imgages}>
+              <div className={servicesStyles.section6_imgages} data-aos="fade-right">
                 {carosel_cards.map((_card: any, index: number) => (
                   <Card {..._card} key={index} />
                 ))}
@@ -1256,7 +1256,7 @@ const Section: NextPage = (props: any) => {
               </div>
             </div>
             {carosel_cards[0] && (
-              <div className={servicesStyles.section8_img}>
+              <div className={servicesStyles.section8_img} data-aos="fade-up">
                 {carosel_cards.map((_card: any, index: number) => (
                   <Card {..._card} key={index} />
                 ))}
@@ -1518,6 +1518,8 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
+      
+      
     case "portfolio_img_banner":
       return (
         <div className={`${portfolioStyles.porfolio_card_section}`}>
@@ -1525,12 +1527,12 @@ const Section: NextPage = (props: any) => {
           <div className={`${portfolioStyles.Industries_banner}`}>
             <div className={`${portfolioStyles.client_banner}`}>
               <div className={portfolioStyles.clientContent}>
-                {free_text && (
+                {/* {free_text && (
                   <div
                     className={portfolioStyles.portfolio_title}
                     dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                   ></div>
-                )}
+                )} */}
                 {sub_heading && (
                   <div
                     className={portfolioStyles.portfolio_note}

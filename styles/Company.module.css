@@ -88,32 +88,28 @@
 /* About Company */
 
 .abt_company  {
-  text-align: center;
+  /* text-align: center; */
   padding: 3% 6%;
-  border-radius: 20%;
-  visibility: visible;
-  animation: slide 1s;
+  /* border-radius: 20%; */
 }
 .abt_company .heading {
   margin: 40px 0;
 }
 .abt_company .heading h3{
-  margin-top: 40px;
-  font-size: 38px;
+  /* margin-top: 40px; */
+  font-size: 31px;
   font-weight: bold;
   font-family: "GraphikMedium";
-  line-height: 20px;
+  line-height: 30px;
   color: #383838;
   text-align: center;
   visibility: visible;
-  animation: slide 1s;
 }
 .abt_company .heading h6{
   font-family: "GraphikRegular";
   font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: initial;
+  font-weight: 600;
+  font-size: 18px;
   color: #383838;
   text-align: center;
 }
@@ -126,13 +122,12 @@
 }
 
 .abt_company .abt_img{
-  border-radius: 3%;
-  text-align: left;
-    padding: 0 4% 4%;
+    /* border-radius: 3%;
+    text-align: left;
+    padding: 0 4% 4%; */
 }
 .abt_company .abt_img img {
-  border-radius: 20px;
-  transition:  all 0.5s;
+  /* border-radius: 20px; */
 }
 
 
@@ -168,44 +163,24 @@
 
 
 /* Values Vision */
+
+
 .values_vision_banner {
+  margin-top: 66px;
   background-image: url(../components/assets/company-yellow-bg.png);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-color:#FEF8ED;
   background-position: center;
 }
 .values_vision {
-     background:#FEF8ED;
-     /* font-weight: normal; */
-     padding: 2%;
-     background:#FEF8ED;
+     padding: 50px 20px;
      width: 100%;
-
+     display: flex;
+     justify-content: space-evenly;
+     flex-wrap: wrap;
   }
 
-  .values_vision .heading {
-    visibility: visible;
-    animation: slide 1s;
-    animation-duration: 1s;
-    animation-timing-function: ease;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: none;
-    animation-play-state: running;
-    animation-name: slide;
-  }
-
-  @keyframes slide {
-    0% {
-      opacity: 0;
-      transform: translateY(50%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
   .values_vision .vvContent {
     margin: 30px;
     
@@ -255,6 +230,11 @@
     font-size: 38px;
   }
 
+  .our_people .sub_heading p {
+      font-family: "GraphikRegular";
+      font-weight: 600;
+      font-size: 16px;
+  }
   .our_people .profiles h6{
     font-family: "GraphikMedium";
     font-style: normal;

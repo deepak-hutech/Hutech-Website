@@ -27,6 +27,17 @@
   font-family: "GraphikMedium";
  }
 
+ .portfolio_note {
+    margin: 40px 60px ;
+ }
+
+ .portfolio_note p {
+  font-family: "GraphikMedium";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 24px;
+ }
 .companybanner .title p {
   font-size: 15px;
   color: #062841;
@@ -68,12 +79,12 @@
     font-size: 13px;
     line-height: 8px;
   }
-  .portfolioPara{
+  .portfolio_subBox{
     position: relative;
     bottom:40px;
-    left: 26%;
     background-color:white;
     color:black;
+    margin: auto;
     width: 50%;
     border-radius: 8px;
     text-align: center;
@@ -84,6 +95,38 @@
   .portfolioCardimg{
     border-radius: 10px;
   }
+  @media only screen and (max-width: 500px) {
+    .portfolio_section1 .content .free_text {
+        font-size: 30px;
+    }
+    
+    .portfolio_section1 .banner_container .descrption{
+      font-size: 12px;
+    }
+
+    .portfolio_img{
+      padding-left: 0;
+      margin-top: 20px;
+
+    }
+      .portfolio_img img {
+        width: 238px;
+        height: 180px;
+      }
+      .portfolio_subBox{
+        width: 121px;
+        height: 58px;
+        padding: 8px;
+      }
+      .portfolio_para1{
+        font-family: "GraphikRegular";
+        font-size: 14px;
+      }
+      .portfolio_para2  {
+        margin-bottom: 0;
+        font-size: 11px;
+      }
+}
 
   /* PORTFOLIO DETAILS CSS */
   .Industries_section1{
@@ -95,12 +138,19 @@
     background-size: contain;
     background-position: center; */
     /* align-items: center; */
+    margin-top: 5rem;
   }
   .porfolioDetails_title{
     font-weight: bold;
     font-size: 30px;
     letter-spacing: 0.4px;
+    font-family: "GraphikMedium";
+    /* margin-top: 50px; */
   }
+  .porfolioDetails_note {
+     font-family: "GraphikRegular";
+  }
+
   .porfolio_details_cards{
     width: 60%;
 
@@ -120,12 +170,18 @@
     }
   .porfolio_details_cards{
     align-self: center;
+
   }
+  
   .porfolioDetails_title{
     font-size: 18px;
     margin-top: 20px;
     }
+
+  .porfolioDetails_note {
+     font-size: 12px;
   }
+}
 
 
  
