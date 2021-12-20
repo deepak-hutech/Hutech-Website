@@ -18,13 +18,14 @@ const Article: NextPage<{
   header: any;
   footer: any;
   blogs: any;
-  blog:any;
+  blog: any;
   blogBanner: any;
   article: any;
   categories: any;
 }> = (props) => {
   const scrollRef = useRef() as React.MutableRefObject<HTMLInputElement>;
-  const { header, footer, blogs, blogBanner, article, categories,blog } = props;
+  const { header, footer, blogs, blogBanner, article, categories, blog } =
+    props;
 
   // const Article = ({ article }:any) => {
   console.log(props);
@@ -61,8 +62,36 @@ const Article: NextPage<{
       <div className={blogStyle.blog_details_container}>
         <div
           className={blogStyle.blog_details_left}
-          dangerouslySetInnerHTML={{ __html: marked(article.blog_text) }}
-        ></div>
+         
+        >
+          <div  dangerouslySetInnerHTML={{ __html: marked(article.blog_text) }}>
+
+          </div>
+          <div className={blogStyle.authercontainer}>
+          <Image
+          loader={() =>
+            myLoaderbanner(
+              (baseUrl + blogBanner[0].content[0].home_banner[0].url) as any
+            )
+          }
+          src={baseUrl + blogBanner[0].content[0].home_banner[0].url}
+          placeholder="blur"
+          blurDataURL={baseUrl + blogBanner[0].content[0].home_banner[0].url}
+          height={60}
+          width={60}
+          className={blogStyle.autherimg}
+        />
+            <div className={blogStyle.authername}>
+              <h4>Samir kumar</h4>
+              <p>Author</p>
+            </div>
+            <div className={blogStyle.postdate}><p>Posted on </p>
+            <p>December 12, 2021</p>
+            </div>
+
+          </div>
+
+        </div>
         <div className={blogStyle.blog_details_right}>
           <h4>Categories</h4>
           <div>
@@ -74,18 +103,25 @@ const Article: NextPage<{
           </div>
 
           <h4>Recent Articles</h4>
-          {/* {blog.map((blog: any, index: number) => (
-            <div className={blogStyle.blog_cat}>
-              <p>{blog.blog_title}</p>
-            </div>
-          ))} */}
-          <div className={blogStyle.blog_cat}>
-            <p>How to choose the right MVP software development company?</p>
-          </div>
+          {blogs.map(
+            (blogs: any, index: number) =>
+              index < 5 && (
+                <div className={blogStyle.resent_blog}>
+                  <a className={blogStyle.blog_cata}>{blogs.blog_title}</a>
+                </div>
+              )
+          )}
         </div>
       </div>
-      <div>
+      <div className={blogStyle.relatedPost}> 
         <h3>Related Posts</h3>
+        <div style={{ display: "flex", flexWrap: "wrap" }}>
+        {blogs.map((val: any, index: number) => index < 3 &&(
+          <div className={blogStyle.allBlogs}>
+            <BlogSection {...val} />
+          </div>
+        ))}
+      </div>
       </div>
 
       <div className={careerstyles.section5}>
@@ -166,10 +202,11 @@ export async function getStaticProps({ params }: any) {
   const headerResult = await fetch(`${baseUrl}/header`);
   const categoriesResult = await fetch(`${baseUrl}/categories`);
   const blogResult = await fetch(`${baseUrl}/blog-pages?uid=${params.uid}`);
+  const blogtitleResult = await fetch(`${baseUrl}/blog-pages`);
   const blogBannerRes = await fetch(`${baseUrl}/pages/?uid=blog-1`);
   const footerResult = await fetch(`${baseUrl}/footer`);
   const blog: any = await blogResult.json();
-  const allBlogs: any= await blogResult.json();
+  const allBlog: any = await blogtitleResult.json();
   const header: any = await headerResult.json();
   const categories: any = await categoriesResult.json();
   const blogBanner: any = await blogBannerRes.json();
@@ -180,7 +217,14 @@ export async function getStaticProps({ params }: any) {
   //   `/articles?link=${params.link}`
   // );
   return {
-    props: { article: blog[0], header, footer, blogBanner, categories,blogs:allBlogs },
+    props: {
+      article: blog[0],
+      header,
+      footer,
+      blogBanner,
+      categories,
+      blogs: allBlog,
+    },
     revalidate: 1,
   };
 }

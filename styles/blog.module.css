@@ -164,6 +164,7 @@
   margin-left: 20px;
   border: 1px solid #cfcfcf;
   border-radius: 5px;
+  padding: 20px;
 }
 .blog_details_right h4 {
   font-size: 18px;
@@ -176,9 +177,59 @@
   border-bottom: 1px dashed #C8C8C8;
   margin: 20px 30px 10px 30px;
   font-size: 14px;
+  padding-bottom: 10px;
 }
 .blog_cat p{
   margin-bottom: 10px;
+}
+.resent_blog{
+  border-bottom: 1px dashed #C8C8C8;
+  margin: 20px 30px 10px 30px;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+.blog_cata{
+  line-height: 20px;
+}
+.relatedPost{
+  padding: 2% 8%;
+}
+.authercontainer{
+  background: #F7F7F7;
+border-radius: 5px;
+height: 104px;
+padding: 22px;
+display: flex;
+width: 100%;
+}
+.autherimg{
+border-radius: 40px;
+width: 20%;
+}
+.authername h4{
+font-size: 16px;
+line-height: 20px;
+margin: 0;
+color: #000000;
+}
+.authername{
+  padding: 8px 20px;
+  width: 54%;
+}
+.authername p{
+  font-size: 14px;
+line-height: 30px;
+margin: 0;
+color: #9E9E9E;
+}
+.postdate{
+  display: flex;
+  width: 36%;
+  padding: 15px;
+}
+.postdate p{
+  font-size: 12px;
+  
 }
 @media only screen and (max-width: 480px) {
   .blog_details_container {
