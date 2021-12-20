@@ -10,6 +10,9 @@
   background: transparent;
   transition: all ease-out 0.5s;
   justify-content: center;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
 }
 .innerContainer {
   display: flex;
@@ -72,7 +75,6 @@
   box-sizing: border-box;
   border-radius: 30px;
   font-size: 12px;
-
   padding: 10px 20px;
   margin: 0 10px;
   transition: background-color 0.6s cubic-bezier(0.075, 0.82, 0.165, 1),
@@ -130,7 +132,10 @@
   box-shadow: none;
   transform: rotate(180deg);
 }
-
+/* .topNavLink{
+  position: relative;
+  display: inline-block;
+} */
 .topNavLink:hover > .subMenuContainer {
   display: grid;
   padding: 2% 6%;
