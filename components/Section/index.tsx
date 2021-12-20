@@ -96,21 +96,21 @@ const Section: NextPage = (props: any) => {
       />
     </button>
   );
-  const CustomleftArrow=({ onClick }) => (
+  const CustomleftArrow = ({ onClick }) => (
     <button
-    style={{ position: "absolute", right: 150, bottom: 90 }}
-    onClick={onClick}
-    className={styles.arrowbtn}
-  >
-    <Image
-      loader={myLoader}
-      src={leftIcon}
-      alt="Picture of the author"
-      width={30}
-      height={17}
-      className={styles.svgarrow}
-    />
-  </button>
+      style={{ position: "absolute", right: 150, bottom: 90 }}
+      onClick={onClick}
+      className={styles.arrowbtn}
+    >
+      <Image
+        loader={myLoader}
+        src={leftIcon}
+        alt="Picture of the author"
+        width={30}
+        height={17}
+        className={styles.svgarrow}
+      />
+    </button>
   );
   const responsive_cards = {
     desktop: {
@@ -187,7 +187,9 @@ const Section: NextPage = (props: any) => {
         <div className={styles.home_bannerimg}>
           {home_banner[0] && (
             <Image
-              loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
+              loader={() =>
+                myLoaderbanner((baseUrl + home_banner[0].url) as any)
+              }
               src={baseUrl + home_banner[0].url}
               placeholder="blur"
               blurDataURL={baseUrl + home_banner[0].url}
@@ -318,7 +320,7 @@ const Section: NextPage = (props: any) => {
             // itemClass="carousel-item-padding-40-px"
             className={styles.clientcarousel}
             customRightArrow={<CustomArrow />}
-            customLeftArrow={<CustomleftArrow/>}
+            customLeftArrow={<CustomleftArrow />}
           >
             {carosel_cards.map((_card: any, index: number) => (
               <Card {..._card} key={index} />
@@ -406,7 +408,9 @@ const Section: NextPage = (props: any) => {
         <div className={companyStyles.company_banner}>
           {home_banner[0] && (
             <Image
-              loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
+              loader={() =>
+                myLoaderbanner((baseUrl + home_banner[0].url) as any)
+              }
               src={baseUrl + home_banner[0].url}
               placeholder="blur"
               blurDataURL={baseUrl + home_banner[0].url}
@@ -415,7 +419,7 @@ const Section: NextPage = (props: any) => {
               className={companyStyles.bannerimg}
             />
           )}
-          
+
           <div className={companyStyles.banner_container}>
             {free_text && (
               <div className={companyStyles.content}>
@@ -446,7 +450,6 @@ const Section: NextPage = (props: any) => {
       );
     case "about_company":
       return (
-
         <div className={companyStyles.abt_company}>
           <div id="breadCrum"><Breadcrumbs useDefaultStyle transformLabel={(title) => title } /></div>
           <Container>
@@ -588,7 +591,6 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
-
     case "our_tech_slack":
       return (
         <div className={`${companyStyles.tech_slack}`}>
@@ -627,7 +629,9 @@ const Section: NextPage = (props: any) => {
                     {web_front_end_para && (
                       <div
                         className={companyStyles.desc}
-                        dangerouslySetInnerHTML={{ __html: marked(web_front_end_para) }}
+                        dangerouslySetInnerHTML={{
+                          __html: marked(web_front_end_para),
+                        }}
                       ></div>
                     )}
                     <div className={companyStyles.company_cards} data-aos="fade-up">
@@ -653,7 +657,8 @@ const Section: NextPage = (props: any) => {
                       <div
                         className={companyStyles.desc}
                         dangerouslySetInnerHTML={{
-                          __html: marked(web_back_end_para)}}
+                          __html: marked(web_back_end_para),
+                        }}
                       ></div>
                     )}
                     <div className={companyStyles.company_cards} data-aos="fade-up">
@@ -777,7 +782,9 @@ const Section: NextPage = (props: any) => {
         <div className={companyStyles.current_opening}>
           {home_banner[0] && (
             <Image
-              loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
+              loader={() =>
+                myLoaderbanner((baseUrl + home_banner[0].url) as any)
+              }
               src={baseUrl + home_banner[0].url}
               placeholder="blur"
               blurDataURL={baseUrl + home_banner[0].url}
@@ -851,7 +858,9 @@ const Section: NextPage = (props: any) => {
           <div className={companyStyles.company_banner}>
             {home_banner[0] && (
               <Image
-                loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
+                loader={() =>
+                  myLoaderbanner((baseUrl + home_banner[0].url) as any)
+                }
                 src={baseUrl + home_banner[0].url}
                 placeholder="blur"
                 blurDataURL={baseUrl + home_banner[0].url}
@@ -891,7 +900,9 @@ const Section: NextPage = (props: any) => {
               )}
             </div>
           </div>
-          <div style={{padding:"2% 6% 0"}}><Breadcrumbs useDefaultStyle transformLabel={(title) => title } /></div>
+          <div style={{ padding: "2% 6% 0" }}>
+            <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
+          </div>
           <div className={contactStyle.contact}>
             <div className={contactStyle.content}>
               <div>
@@ -977,7 +988,9 @@ const Section: NextPage = (props: any) => {
         <div className={servicesStyles.section1}>
           {home_banner[0] && (
             <Image
-              loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
+              loader={() =>
+                myLoaderbanner((baseUrl + home_banner[0].url) as any)
+              }
               src={baseUrl + home_banner[0].url}
               placeholder="blur"
               blurDataURL={baseUrl + home_banner[0].url}
@@ -1197,44 +1210,49 @@ const Section: NextPage = (props: any) => {
                     dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                   ></div>
                 )}
-                  
+
                 <div className={servicesStyles.sec7_container}>
                   <div className={servicesStyles.sec7_numbers}>
-                  <div> 
-                     <h4>1</h4>
-                     <h5>Anlysis <br/>Requirement</h5>
-                   </div>
-                   <div> 
-                     <h4>2</h4>
-                     <h5>Wireframing</h5>
-                   </div>
-                   <div> 
-                     <h4>3</h4>
-                     <h5>Design and <br/> Approval</h5>
-                   </div>
-                   <div> 
-                     <h4>4</h4>
-                     <h5>Development <br/>Process</h5>
-                   </div>
-                   <div> 
-                     <h4>5</h4>
-                     <h5>Testing</h5>
-                   </div>
-                   <div> 
-                     <h4>6</h4>
-                     <h5>Launch</h5>
-                   </div>
+                    <div>
+                      <h4>1</h4>
+                      <h5>
+                        Anlysis <br />
+                        Requirement
+                      </h5>
+                    </div>
+                    <div>
+                      <h4>2</h4>
+                      <h5>Wireframing</h5>
+                    </div>
+                    <div>
+                      <h4>3</h4>
+                      <h5>
+                        Design and <br /> Approval
+                      </h5>
+                    </div>
+                    <div>
+                      <h4>4</h4>
+                      <h5>
+                        Development <br />
+                        Process
+                      </h5>
+                    </div>
+                    <div>
+                      <h4>5</h4>
+                      <h5>Testing</h5>
+                    </div>
+                    <div>
+                      <h4>6</h4>
+                      <h5>Launch</h5>
+                    </div>
                   </div>
                 </div>
-                <div className={servicesStyles.dots} > </div>
-
+                <div className={servicesStyles.dots}> </div>
               </div>
             </div>
           </div>
         </div>
       );
-
-    
     case "our_works_banner":
       return (
         <div className={`${servicesStyles.section8}`}>
@@ -1275,7 +1293,7 @@ const Section: NextPage = (props: any) => {
                 src={baseUrl + home_banner[0].url}
                 placeholder="blur"
                 blurDataURL={baseUrl + home_banner[0].url}
-                height={500}
+                height={470}
                 width={"100%"}
                 className={careerstyles.careerbannerimg}
               />
@@ -1300,41 +1318,52 @@ const Section: NextPage = (props: any) => {
     case "culture_banner":
       return (
         <div className={careerstyles.section2}>
-          <div className={careerstyles.sec2_left}>
-            {free_text && (
-              <div
-                className={careerstyles.sec2_left_title}
-                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-              ></div>
-            )}
-            {sub_heading && (
-              <div
-                className={careerstyles.sec2_left_note}
-                dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-              ></div>
-            )}
-            {home_button && (
-              <div className={careerstyles.opening_btn}>
-                {home_button.map((item: any) => (
-                  <div className={careerstyles.call_to_action}>
-                    {" "}
-                    {item.call_to_action}{" "}
-                  </div>
-                ))}
-              </div>
-            )}
+          <div className={careerstyles.breadCum_career}>
+            <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
           </div>
-          <div className={careerstyles.sec2_right}>
-            {home_banner[0] && (
-              <Image
-                loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
-                src={baseUrl + home_banner[0].url}
-                placeholder="blur"
-                blurDataURL={baseUrl + home_banner[0].url}
-                height={405}
-                width={659}
-              />
-            )}
+          <div className={careerstyles.section2_content}>
+            <div className={careerstyles.sec2_left}>
+              {free_text && (
+                <div
+                  className={careerstyles.sec2_left_title}
+                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                ></div>
+              )}
+              {sub_heading && (
+                <div
+                  className={careerstyles.sec2_left_note}
+                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                ></div>
+              )}
+              <button className={careerstyles.opening_btn}>
+               
+                  {home_button && (
+                    <div>
+                      {home_button.map((item: any) => (
+                        <div className={careerstyles.call_to_action}>
+                          {" "}
+                          {item.call_to_action}{" "}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+          
+              </button>
+            </div>
+            <div className={careerstyles.sec2_right}>
+              {home_banner[0] && (
+                <Image
+                  loader={() =>
+                    myLoaderbanner((baseUrl + home_banner[0].url) as any)
+                  }
+                  src={baseUrl + home_banner[0].url}
+                  placeholder="blur"
+                  blurDataURL={baseUrl + home_banner[0].url}
+                  height={500}
+                  width={659}
+                />
+              )}
+            </div>
           </div>
         </div>
       );
@@ -1491,7 +1520,9 @@ const Section: NextPage = (props: any) => {
         <div className={portfolioStyles.portfolio_section1}>
           {home_banner[0] && (
             <Image
-              loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
+              loader={() =>
+                myLoaderbanner((baseUrl + home_banner[0].url) as any)
+              }
               src={baseUrl + home_banner[0].url}
               placeholder="blur"
               blurDataURL={baseUrl + home_banner[0].url}
@@ -1535,7 +1566,7 @@ const Section: NextPage = (props: any) => {
                 )} */}
                 {sub_heading && (
                   <div
-                    className={portfolioStyles.portfolio_note}
+                    className={portfolioStyles.portfolio_sec2_note}
                     dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
                   ></div>
                 )}
@@ -1589,7 +1620,6 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
-    
     case "end_to_end_banner":
       return (
         <div className={servicesStyles.seviceinner_sec4_Container}>
@@ -1686,16 +1716,50 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
-    
-   
-    
-   
+
+    case "android_app_right_banner":
+      return (
+        <div className={servicesStyles.serviceinner_sec3_Container}>
+          <div className={servicesStyles.serviceinner_sec3_Content}>
+            <div className={servicesStyles.serviceinner_sec3_Content_left}>
+              {free_text && (
+                <div
+                  className={servicesStyles.serviceinner_sec3_heading}
+                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                ></div>
+              )}
+              {sub_heading && (
+                <div
+                  className={servicesStyles.serviceinner_sec3_left_note}
+                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                ></div>
+              )}
+            </div>
+
+            {home_banner[0] && (
+              <div className={`${servicesStyles.serviceinner_sec3_left_img}`}>
+                <Image
+                  loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
+                  src={baseUrl + home_banner[0].url}
+                  placeholder="blur"
+                  blurDataURL={baseUrl + home_banner[0].url}
+                  height={485}
+                  width={497}
+                />
+              </div>
+            )}
+          </div>
+        </div>
+      );
+
     case "blog_banner":
       return (
         <div className={companyStyles.company_banner}>
           {home_banner[0] && (
             <Image
-              loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
+              loader={() =>
+                myLoaderbanner((baseUrl + home_banner[0].url) as any)
+              }
               src={baseUrl + home_banner[0].url}
               placeholder="blur"
               blurDataURL={baseUrl + home_banner[0].url}
