@@ -66,6 +66,7 @@
     cursor: pointer;
     border: none;
     margin: auto;
+    height: 40px;
     transition: background-color 0.3s cubic-bezier(0.55, 0, 0.1, 1),
       color 0.3s cubic-bezier(0.55, 0, 0.1, 1);
     transition: box-shadow 1s cubic-bezier(0.55, 0, 0.1, 1) 0s;
@@ -76,7 +77,7 @@
 
 .abt_company  {
   text-align: center;
-  margin: 50px 50px;
+  padding: 3% 6%;
   border-radius: 20%;
   visibility: visible;
   animation: slide 1s;
@@ -109,6 +110,8 @@
 
 .abt_company .abt_img{
   border-radius: 3%;
+  text-align: left;
+    padding: 0 4% 4%;
 }
 .abt_company .abt_img img {
   transition:  all 0.5s;
@@ -129,12 +132,13 @@
 
 .abt_company .note {
   padding-top: 10px;
+  text-align: left;
 }
 
 /* Values Vision */
    .values_vision {
      font-weight: normal;
-     padding: 20px;
+     padding: 2% 5%;
      background:#FEF8ED;
      width: 100%;
   }
@@ -276,7 +280,7 @@
   /* WEB DEV */
 
   .web_dev .title {
-    margin: 30px 0px;
+    margin: 30px 48px 0 0;
   }
 
   .web_dev .title .desc {
@@ -361,7 +365,8 @@
 
 .current_opening .content .free_text {
     font-weight: 700;
-    font-size: 40px;
+    font-size: 30px;
+    font-family: "GraphikMedium";
  }
 
 .current_opening .content .description {
@@ -383,6 +388,7 @@
   font-weight: 800;
   line-height: 20px;
   border: 0px;
+
   border-radius: 60px;
   cursor: pointer;
   border: none;
