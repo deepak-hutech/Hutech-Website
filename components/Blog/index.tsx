@@ -34,7 +34,8 @@ const Blog: NextPage = (props: any) => {
     blogimage,
     type,
     BlogCards,
-    _id
+    _id,
+    uid
   } = props;
 
   //  console.log(props, "props")
@@ -59,10 +60,10 @@ const Blog: NextPage = (props: any) => {
               {blog_title && (
                 <div className={blogStyle.content}>
                   <div className={blogStyle.free_text}
-                  dangerouslySetInnerHTML={{ __html: marked(blog_title) }}>
-                    {/* <Link href={`/blog/${_id}`}>
+                 >
+                    <Link href={`/blog/${uid}`}>
                       <a>{blog_title}</a>
-                    </Link> */}
+                    </Link>
                     
                   </div>
                   {blog_text && (
