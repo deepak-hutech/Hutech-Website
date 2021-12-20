@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import Link from "next/link";
 import Image, { ImageLoader } from "next/image";
 import styles from "../../styles/Section.module.css";
 
@@ -10,117 +11,107 @@ import "react-multi-carousel/lib/styles.css";
 import blogStyle from "../../styles/blog.module.css";
 
 import { Pagination } from "react-bootstrap";
-
+import publishIcon from "../assets/publishdate.svg";
 import { baseUrl } from "../../public/strings.json";
 
-
 const myLoader: ImageLoader = (url: any) => {
-    return url;
-  };
+  return url;
+};
+const myLoaderBlog = ({ src, width, quality }) => {
+  const origin = typeof window !== "undefined" && window.location.origin;
+  return `${origin}/${src}?w=${width}&q=${quality || 75}`;
+};
 
-  
-  const Blog: NextPage = (props: any) => {
-    const {
-      blogs,
-  
-      sub_heading,
-      free_text,
-      blog_text,
-      blog_title,
-   
-      blogimage,
-       type,
-      BlogCards,
-    
-   } = props;
+const Blog: NextPage = (props: any) => {
+  const {
+    blogs,
+
+    sub_heading,
+    free_text,
+    blog_text,
+    blog_title,
+    publishdate,
+    blogimage,
+    type,
+    BlogCards,
+    _id,
+    uid
+  } = props;
 
   //  console.log(props, "props")
 
-
-    switch (type) {
-         case "blog":
-            return (
-            <div className={blogStyle.compo}>
-                {blogimage && (
-                    <Image
-                    loader={() => myLoader((baseUrl + blogimage.url) as any)}
-                    src={baseUrl + blogimage.url}
-                    placeholder="blur"
-                    blurDataURL={baseUrl + blogimage.url}
-                    height={200}
-                    width={"80%"}
-                    className={blogStyle.bannerimg}
-                        />
-                )}
-            <div className={blogStyle.banner_container}>
-                {blog_title &&(
-                    <div className={blogStyle.content}>
-                    <div
-                      className={blogStyle.free_text}
-                      dangerouslySetInnerHTML={{ __html: marked(blog_title) }}
-                    />
-                    {/* {blog_text && (
-                    <div
-                        className={blogStyle.descrption}
-                        dangerouslySetInnerHTML={{ __html: marked(blog_text) }}
-                    ></div>
-                    )} */}
-                    </div>
-                    )}
-                 </div>
-            <div>
-          </div>
-             
-        </div>
-        );
-
-        case "blog_banner_type":
-        return (
-            <div>
-                {BlogCards && (
-                <div className={blogStyle.blog_container}>
-                    {BlogCards.map((v: any, index: number) => (
-                      <div className={blogStyle.item}>
-                        {/* <Image
-                            loader={() => myLoader((baseUrl + v.blogimage.map((v: any) => v.url)) as any)}
-                            src={baseUrl + v.blogimage.map((v: any) => v.url)}
-                            placeholder="blur"
-                            blurDataURL={baseUrl + v.blogimage.map((v: any) => v.url)}
-                            width={55}
-                            height={55}
-                            className={companyStyles.cardImg2}
-                        /> */}
-                          <div className={blogStyle.subHeading}>
-                            <h5>{v.blogtitle}</h5>
-                            <p>{v.blogsubtitle}</p>
-                            <p className={blogStyle.date}>{v.createdate}</p>
-                          </div>
-                    </div>
-                    ))}
-                </div>
-            )}
-             <div className={blogStyle.page}>
-               <Pagination>
-                    <Pagination.Prev />
-                        <Pagination.Item key={1} active= {true}>
-                            1
-                        </Pagination.Item>
-                        <Pagination.Item key={2}>
-                            2
-                        </Pagination.Item>
-                        <Pagination.Item key={3}>
-                            3
-                        </Pagination.Item>
-                    <Pagination.Next />
-               </Pagination>
-              </div>
-        </div>
-        );      
-        
-    default:
-    return (
+  switch (type) {
+    case "blog":
+      return (
         <div>
-              {/* <div className={blogStyle.blog_details_container}>
+          <div className={blogStyle.compo}>
+            {blogimage && (
+              <Image
+                loader={() => myLoader((baseUrl + blogimage.url) as any)}
+                src={baseUrl + blogimage.url}
+                placeholder="blur"
+                blurDataURL={baseUrl + blogimage.url}
+                height={182}
+                width={361}
+                className={blogStyle.bannerimg}
+              />
+            )}
+            <div className={blogStyle.banner_container}>
+              {blog_title && (
+                <div className={blogStyle.content}>
+                  <div className={blogStyle.free_text}
+                 >
+                    <Link href={`/blog/${uid}`}>
+                      <a>{blog_title}</a>
+                    </Link>
+                    
+                  </div>
+                  {blog_text && (
+                    <div
+                      className={blogStyle.descrption}
+                      dangerouslySetInnerHTML={{ __html: marked(blog_text) }}
+                    ></div>
+                  )}
+                  {publishdate && (
+                    <div className={blogStyle.publishcontent}>
+                      <Image
+                        loader={myLoaderBlog}
+                        src={publishIcon}
+                        alt="Picture of the author"
+                        width={18}
+                        height={18}
+                      />
+                      <p className={blogStyle.publishtitle}> {publishdate}</p>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      );
+
+    case "blog_banner":
+      return (
+        <div>
+          <div className={blogStyle.page}>
+            <Pagination>
+              <Pagination.Prev />
+              <Pagination.Item key={1} active={true}>
+                1
+              </Pagination.Item>
+              <Pagination.Item key={2}>2</Pagination.Item>
+              <Pagination.Item key={3}>3</Pagination.Item>
+              <Pagination.Next />
+            </Pagination>
+          </div>
+        </div>
+      );
+
+    default:
+      return (
+        <div>
+          {/* <div className={blogStyle.blog_details_container}>
                  <div className={blogStyle.research}>
                   <p>
                     Apple offers some of the prominent and commonly used products like the 
@@ -200,14 +191,10 @@ const myLoader: ImageLoader = (url: any) => {
                         <p>We offer a wide range of services for all needs and requirements such as online shopping, payment ga</p>
                     </div>
                 </div>
-              </div>
-*/}
+              </div> */}
+        </div>
+      );
+  }
+};
 
-        </div> 
-    );
-    }
-
-      };
-      
-      
 export default Blog;
