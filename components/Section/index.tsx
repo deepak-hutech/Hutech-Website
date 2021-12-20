@@ -421,7 +421,7 @@ const Section: NextPage = (props: any) => {
                 />
                 {sub_heading && (
                   <div
-                    className={companyStyles.descrption}
+                    className={companyStyles.description}
                     dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
                   ></div>
                 )}
@@ -431,10 +431,6 @@ const Section: NextPage = (props: any) => {
                       <div className={companyStyles.call_to_action}>
                         {" "}
                         {item.call_to_action}{" "}
-                        {/* <img
-                      src={`${baseUrl}${home_button[0].arrow_icon[0].url}`}
-                      className={styles.arrowicon}
-                    /> */}
                       </div>
                     ))}
                   </div>
@@ -447,9 +443,7 @@ const Section: NextPage = (props: any) => {
     case "about_company":
       return (
         <div className={companyStyles.abt_company}>
-          <div>
-            <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
-          </div>
+          <div id="breadCrum"><Breadcrumbs useDefaultStyle transformLabel={(title) => title } /></div>
           <Container>
             <Row>
               {free_text && (
@@ -493,6 +487,7 @@ const Section: NextPage = (props: any) => {
       );
     case "values_vision_mission":
       return (
+        <div className={companyStyles.values_vision_banner}>
         <div className={companyStyles.values_vision}>
           <Container>
             <Row>
@@ -506,7 +501,7 @@ const Section: NextPage = (props: any) => {
                     height={50}
                     width={50}
                   />
-                  <p className={companyStyles.heading}>{v.heading}</p>
+                  <h5 className={companyStyles.heading}>{v.heading}</h5>
                   <div
                     className={companyStyles.free_text}
                     dangerouslySetInnerHTML={{ __html: marked(v.free_text) }}
@@ -517,6 +512,7 @@ const Section: NextPage = (props: any) => {
               ))}
             </Row>
           </Container>
+        </div>
         </div>
       );
     case "our_people":
@@ -534,10 +530,10 @@ const Section: NextPage = (props: any) => {
             <Row>
               <div className={companyStyles.sub_heading}>
                 {sub_heading && (
-                  <h6
+                  <div
                     className=""
                     dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-                  ></h6>
+                  ></div>
                 )}
               </div>
             </Row>
@@ -1079,11 +1075,6 @@ const Section: NextPage = (props: any) => {
                     dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
                   ></div>
                 )}
-                {/* {home_banner[0] && (
-                  <div className={`${servicesStyles.section3_serviceimg}`}>
-                    <img src={baseUrl + home_banner[0].url} />
-                  </div>
-                )} */}
               </div>
             </div>
             {
@@ -1213,7 +1204,7 @@ const Section: NextPage = (props: any) => {
               <div className={servicesStyles.clientContent}>
                 {free_text && (
                   <div
-                    className={servicesStyles.section6_title}
+                    className={servicesStyles.section7_title}
                     dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                   ></div>
                 )}
@@ -1278,11 +1269,6 @@ const Section: NextPage = (props: any) => {
                     dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
                   ></div>
                 )}
-                {/* {home_banner[0] && (
-          <div className={`${servicesStyles.section8_serviceimg}`}>
-            <img src={baseUrl + home_banner[0].url} />
-          </div>
-        )} */}
               </div>
             </div>
             {carosel_cards[0] && (
@@ -1305,7 +1291,7 @@ const Section: NextPage = (props: any) => {
                 src={baseUrl + home_banner[0].url}
                 placeholder="blur"
                 blurDataURL={baseUrl + home_banner[0].url}
-                height={500}
+                height={470}
                 width={"100%"}
                 className={careerstyles.careerbannerimg}
               />
@@ -1330,41 +1316,52 @@ const Section: NextPage = (props: any) => {
     case "culture_banner":
       return (
         <div className={careerstyles.section2}>
-          <div className={careerstyles.sec2_left}>
-            {free_text && (
-              <div
-                className={careerstyles.sec2_left_title}
-                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-              ></div>
-            )}
-            {sub_heading && (
-              <div
-                className={careerstyles.sec2_left_note}
-                dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-              ></div>
-            )}
-            {home_button && (
-              <div className={careerstyles.opening_btn}>
-                {home_button.map((item: any) => (
-                  <div className={careerstyles.call_to_action}>
-                    {" "}
-                    {item.call_to_action}{" "}
-                  </div>
-                ))}
-              </div>
-            )}
+          <div className={careerstyles.breadCum_career}>
+            <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
           </div>
-          <div className={careerstyles.sec2_right}>
-            {home_banner[0] && (
-              <Image
-                loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
-                src={baseUrl + home_banner[0].url}
-                placeholder="blur"
-                blurDataURL={baseUrl + home_banner[0].url}
-                height={405}
-                width={659}
-              />
-            )}
+          <div className={careerstyles.section2_content}>
+            <div className={careerstyles.sec2_left}>
+              {free_text && (
+                <div
+                  className={careerstyles.sec2_left_title}
+                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                ></div>
+              )}
+              {sub_heading && (
+                <div
+                  className={careerstyles.sec2_left_note}
+                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                ></div>
+              )}
+              <button className={careerstyles.opening_btn}>
+               
+                  {home_button && (
+                    <div>
+                      {home_button.map((item: any) => (
+                        <div className={careerstyles.call_to_action}>
+                          {" "}
+                          {item.call_to_action}{" "}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+          
+              </button>
+            </div>
+            <div className={careerstyles.sec2_right}>
+              {home_banner[0] && (
+                <Image
+                  loader={() =>
+                    myLoaderbanner((baseUrl + home_banner[0].url) as any)
+                  }
+                  src={baseUrl + home_banner[0].url}
+                  placeholder="blur"
+                  blurDataURL={baseUrl + home_banner[0].url}
+                  height={500}
+                  width={659}
+                />
+              )}
+            </div>
           </div>
         </div>
       );

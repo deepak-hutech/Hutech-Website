@@ -143,16 +143,24 @@ const careerform = () => {
           required
         />
       </div>
-      <input
-        className={CareerStyle.form_upload}
-        type="file"
-        onChange={onChange}
-        required
-        placeholder="Attach file"
-      />
-      <p className={CareerStyle.form_upload_text}>
-        File types: pdf, docx and doc | Maximum file size: 5MB.
-      </p>
+      {/* <label
+        className={CareerStyle.customfileupload}
+      >
+        <i className="fa fa-cloud-upload"></i> Custom Upload
+      </label>
+      <input id="fileupload" type="file" /> */}
+      <div className={CareerStyle.form_input}>
+        <input
+          className={CareerStyle.form_upload}
+          type="file"
+          onChange={onChange}
+          required
+          placeholder="Attach file"
+        />
+        <p className={CareerStyle.form_upload_text}>
+          File types: pdf, docx and doc | Maximum file size: 5MB.
+        </p>
+      </div>
 
       <button type="submit">Submit Applications</button>
     </form>

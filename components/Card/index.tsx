@@ -40,6 +40,7 @@ const Card: NextPage = (props: any) => {
     estimate_icon,
   } = props;
 
+
   switch (type) {
     case "small_card":
       return (
@@ -169,11 +170,17 @@ const Card: NextPage = (props: any) => {
                 dangerouslySetInnerHTML={{ __html: marked(heading) }}
               ></div>
               <div
-                className={servicesStyles.section3_para2}
+                className={servicesStyles.section3_para}
                 dangerouslySetInnerHTML={{ __html: marked(free_text) }}
               ></div>
               <button>
-                <p>{call_to_action}</p>
+                <p>{call_to_action}
+                 {images.map((v:any)=> (
+                      <div>
+                        <img src={baseUrl + v.url}></img>
+                      </div>
+                 ))}
+                </p>
               </button>
             </div>
           </a>
@@ -307,8 +314,8 @@ const Card: NextPage = (props: any) => {
                   src={`${baseUrl}${images[0].url}`}
                   placeholder="blur"
                   blurDataURL={baseUrl + images[0].url}
-                  width={94}
-                  height={94}
+                  width={73}
+                  height={70.02}
                 />
               </div>
               <div className={careerstyles.feature_cardtext}>
@@ -322,7 +329,6 @@ const Card: NextPage = (props: any) => {
          
         </div>
       );
-
     case "opening_card":
       return (
         <div>
@@ -344,10 +350,10 @@ const Card: NextPage = (props: any) => {
           >
             <a
               id={props.id}
-              href={Link ? Link : `/plans/${props.title}`}
+              href={Link ? Link : `/career-details`}
               style={{
                 textDecoration: "none",
-                color: "black"
+                color: "black",
               }}
               // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
             >
@@ -368,12 +374,12 @@ const Card: NextPage = (props: any) => {
                   <button>{free_text}</button>
                 </div>
                 <div className={careerstyles.moreinfo_icon}>
-                  <a href={Link ? Link : `/plans/${props.title}`}>
+                  <a href={Link ? Link : `/career-details`}>
                     {call_to_action}
                   </a>
-                  <a className={careerstyles.rightarrowicon}>
-                    {/* <ArrowRight /> */}
-                  </a>
+                  {/* <a className={careerstyles.rightarrowicon}>
+                   
+                  </a> */}
                 </div>
               </div>
             </a>
@@ -385,7 +391,6 @@ const Card: NextPage = (props: any) => {
                   </button> */}
         </div>
       );
-
     case "portfolio_card":
       return (
         <div className={portfolioStyles.portfolio_card}>
@@ -410,7 +415,6 @@ const Card: NextPage = (props: any) => {
           </div>
         </div>
       );
-
     case "portfolio_details_cards":
       return (
         <div className={portfolioStyles.portfolio_details_cards}>
@@ -467,10 +471,10 @@ const Card: NextPage = (props: any) => {
       return (
         <div className={companyStyles.c_cards}>
           <Image
-            loader={() => myLoader((baseUrl + images[0].url) as any)}
-            src={`${baseUrl}${images[0].url}`}
+            loader={() => myLoader((baseUrl + images[0]?.url) as any)}
+            src={`${baseUrl}${images[0]?.url}`}
             placeholder="blur"
-            blurDataURL={baseUrl + images[0].url}
+            blurDataURL={baseUrl + images[0]?.url}
             width={55}
             height={55}
             className={companyStyles.cardImg2}
