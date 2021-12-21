@@ -70,3 +70,8 @@
     background-size: auto;
     background-position: center;
 }
+
+ .contactForm input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

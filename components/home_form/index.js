@@ -1,30 +1,68 @@
 import homeform from "../../styles/homeform.module.css";
 import contact from "../assets/contact.svg";
+import React, { useState, useEffect } from "react";
+
 
 function HomeForm() {
   const registerUser = async (event) => {
     event.preventDefault();
     let e = event.target;
-    const res = await fetch("https://strapi.hutech.solutions/contact-forms", {
+
+    var name = document.forms["form"]["name"];
+    var email = document.forms["form"]["email"];
+    var phone = document.forms["form"]["phone"];
+    var company = document.forms["form"]["company"];
+    let colorBlack = "1px solid black";
+    let colorRed = "1px solid red"
+
+    if(company.value === ""){
+      company.style.borderBottom = colorRed;
+      company.focus();
+    }else 
+     company.style.borderBottom = colorBlack
+
+    if(phone.value === ""){
+      phone.style.borderBottom = colorRed;
+      phone.focus();
+    }else
+      phone.style.borderBottom = colorBlack
+
+    if(email.value === ""){
+      email.style.borderBottom = colorRed;
+      email.focus();
+    }else
+       email.style.borderBottom = colorBlack
+
+    if(name.value === "") {
+       name.style.borderBottom = colorRed;
+       name.focus();
+    }else
+      name.style.borderBottom = colorBlack
+
+    const res = await fetch("https://strapi.hutech.solutions/home-page-forms", {
       body: JSON.stringify({
         username: e.name.value,
-        email: e.email.value,
-        phone: e.phone.value,
-        description: e.description.value,
+        email_address: e.email.value,
+        phone_number: e.phone.value,
+        company: e.company.value,
+        message: e.message.value,
       }),
       headers: {
         "Content-Type": "application/json",
       },
       method: "POST",
     });
-
     const result = await res.json();
-    document.getElementById("form").reset();
+
+    if(res.status == 200){
+      document.getElementById("form").reset();
+    }
+
   };
 
   return (
     <form onSubmit={registerUser} id="form" className={homeform.homecontactForm}>
-      <h3>Hey! there :)</h3>
+      <h3>Hey! there {`${":)"}` } </h3>
       <div className={homeform.contactForm}>
         <div className={homeform.labelbox}>
           <label for="username" className={homeform.homeformlabel}>
@@ -36,7 +74,6 @@ function HomeForm() {
             autoComplete="name"
             className={homeform.homeinputbox}
             placeholder="Enter your name"
-            required
           />
         </div>
         <div className={homeform.labelbox}>
@@ -49,7 +86,6 @@ function HomeForm() {
             autoComplete="email"
             className={homeform.homeinputbox}
             placeholder="Enter your email address"
-            required
           />
         </div>
         <div className={homeform.labelbox}>
@@ -69,12 +105,11 @@ function HomeForm() {
             Company
           </label>
           <input
-            id="name"
+            id="company"
             type="text"
             autoComplete="name"
             className={homeform.homeinputbox}
             placeholder="Company name"
-            required
           />
         </div>
         <div className={homeform.labelmsgbox}>
@@ -82,7 +117,7 @@ function HomeForm() {
             Message
           </label>
           <textarea
-            id="description"
+            id="message"
             type="text"
             rows="3"
             autoComplete="desc"

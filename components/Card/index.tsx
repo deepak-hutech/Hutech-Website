@@ -395,7 +395,7 @@ const Card: NextPage = (props: any) => {
     case "portfolio_card":
       return (
         <div className={portfolioStyles.portfolio_card}>
-          <div className={portfolioStyles.portfolio_card}>
+          <div className={portfolioStyles.portfolio_card}  data-aos="fade-up" data-aos-duration="2000">
             <div className={portfolioStyles.portfolio_img}>
               <a id={props.id} href={Link ? Link : `/portfolio/${props.title}`}>
                 <Image
