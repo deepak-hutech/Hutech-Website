@@ -1414,7 +1414,9 @@ const Section: NextPage = (props: any) => {
         <div className={careerstyles.section5}>
           {estimate_image[0] && (
             <Image
-              loader={() => myLoaderbanner((baseUrl + estimate_image[0].url) as any)}
+              loader={() =>
+                myLoaderbanner((baseUrl + estimate_image[0].url) as any)
+              }
               src={baseUrl + estimate_image[0].url}
               placeholder="blur"
               blurDataURL={baseUrl + estimate_image[0].url}
@@ -1459,19 +1461,21 @@ const Section: NextPage = (props: any) => {
                   dangerouslySetInnerHTML={{ __html: marked(para) }}
                 ></div>
               )}
-              <img
-                src={`${baseUrl}${estimate_icon[0].url}`}
-                className={careerstyles.estimatearrowicon}
-              />
+              <div className={careerstyles.estimate_call}>
+                <img
+                  src={`${baseUrl}${estimate_icon[0].url}`}
+                  className={careerstyles.estimatearrowicon}
+                />
 
-              {Call_to_action && (
-                <div
-                  className={careerstyles.estimatenote}
-                  dangerouslySetInnerHTML={{
-                    __html: marked(Call_to_action),
-                  }}
-                ></div>
-              )}
+                {Call_to_action && (
+                  <div
+                    className={careerstyles.estimatenote}
+                    dangerouslySetInnerHTML={{
+                      __html: marked(Call_to_action),
+                    }}
+                  ></div>
+                )}
+              </div>
             </div>
           </div>
         </div>
