@@ -436,10 +436,10 @@ const Section: NextPage = (props: any) => {
                 {home_button && (
                   <div className={companyStyles.buttons}>
                     {home_button.map((item: any) => (
-                      <div className={companyStyles.call_to_action}>
+                      <button className={companyStyles.call_to_action}>
                         {" "}
                         {item.call_to_action}{" "}
-                      </div>
+                      </button>
                     ))}
                   </div>
                 )}
@@ -542,7 +542,7 @@ const Section: NextPage = (props: any) => {
             <Row>
               {carosel_cards.map((v: any) => (
                 <Col>
-                  <div className={companyStyles.profiles} data-aos="zoom-in">
+                  <div className={companyStyles.profiles} data-aos="zoom-in" data-aos-duration="2000">
                     <img
                       className={companyStyles.img}
                       src={baseUrl + v.images.map((v: any) => v.url)}
@@ -576,7 +576,7 @@ const Section: NextPage = (props: any) => {
                 ></div>
               )}
            </div>
-          <div className={companyStyles.allProducts} data-aos="fade-up">
+          <div className={companyStyles.allProducts} data-aos="zoom-out-up">
               {carosel_cards.map((v: any) => (
                   <div className={companyStyles.logos}>
                     <img
@@ -634,7 +634,7 @@ const Section: NextPage = (props: any) => {
                         }}
                       ></div>
                     )}
-                    <div className={companyStyles.company_cards} data-aos="fade-up">
+                    <div className={companyStyles.company_cards} data-aos="fade-up" data-aos-duration="2000">
                       {carosel_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
                       ))}
@@ -661,7 +661,7 @@ const Section: NextPage = (props: any) => {
                         }}
                       ></div>
                     )}
-                    <div className={companyStyles.company_cards} data-aos="fade-up">
+                    <div className={companyStyles.company_cards} data-aos="fade-up" data-aos-duration="2000">
                       {Carosel_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
                       ))}
@@ -688,7 +688,7 @@ const Section: NextPage = (props: any) => {
                         }}
                       ></div>
                     )}
-                    <div className={companyStyles.company_cards} data-aos="fade-right">
+                    <div className={companyStyles.company_cards} data-aos="fade-right" data-aos-duration="2000">
                       {carosel_card.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
                       ))}
@@ -715,7 +715,7 @@ const Section: NextPage = (props: any) => {
                         }}
                       ></div>
                     )}
-                    <div className={companyStyles.company_cards} data-aos="fade-left">
+                    <div className={companyStyles.company_cards} data-aos="fade-left" data-aos-duration="2000">
                       {android_card.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
                       ))}
@@ -738,7 +738,7 @@ const Section: NextPage = (props: any) => {
                         dangerouslySetInnerHTML={{ __html: marked(ios_para) }}
                       ></div>
                     )}
-                    <div className={companyStyles.company_cards} data-aos="fade-up">
+                    <div className={companyStyles.company_cards} data-aos="fade-up" data-aos-duration="2000">
                       {ios_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
                       ))}
@@ -1518,18 +1518,18 @@ const Section: NextPage = (props: any) => {
     case "portfolio_banner":
       return (
         <div className={portfolioStyles.portfolio_section1}>
-          {home_banner[0] && (
-            <Image
-              loader={() =>
-                myLoaderbanner((baseUrl + home_banner[0].url) as any)
-              }
-              src={baseUrl + home_banner[0].url}
-              placeholder="blur"
-              blurDataURL={baseUrl + home_banner[0].url}
-              height={400}
-              width={"100%"}
-              className={companyStyles.bannerimg}
-            />
+            {home_banner[0] && (
+              <Image
+                loader={() =>
+                  myLoaderbanner((baseUrl + home_banner[0].url) as any)
+                }
+                src={baseUrl + home_banner[0].url}
+                placeholder="blur"
+                blurDataURL={baseUrl + home_banner[0].url}
+                height={400}
+                width={"100%"}
+                className={companyStyles.bannerimg}
+              />
           )}
           <div className={portfolioStyles.banner_container}>
             {free_text && (

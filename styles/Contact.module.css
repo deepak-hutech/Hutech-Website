@@ -154,3 +154,7 @@
     box-sizing: border-box;
     border-radius: 4px;
 }
+.contactForm input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
