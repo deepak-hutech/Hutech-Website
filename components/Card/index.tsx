@@ -197,10 +197,8 @@ const Card: NextPage = (props: any) => {
       );
     case "mobile_app_development_card":
       return (
-        <div
-          className={servicesStyles.mobile_app_development_card}
-          data-aos="flip-right"
-        >
+        <div className={servicesStyles.mobile_app_development_card} data-aos="flip-right"
+        data-aos-duration="2000">
           <a
             style={{ textDecoration: "none", color: "black" }}
             href= "/service-details"
