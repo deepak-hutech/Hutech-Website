@@ -179,7 +179,7 @@ const Card: NextPage = (props: any) => {
         <div className={servicesStyles.mobile_app_development_card} data-aos="flip-right">
           <a
             style={{ textDecoration: "none", color: "black" }}
-            href={Link ? Link : `/plans/${props.title}`}
+            href={Link ? Link : `/service-details}`}
           >
             <div className={servicesStyles.section3_cards}>
               <div

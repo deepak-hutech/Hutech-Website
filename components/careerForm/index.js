@@ -1,9 +1,10 @@
-/* eslint-disable no-var */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable indent */
+
 import { useState } from "react";
 import axios from "axios";
 import CareerStyle from "../../styles/Careers.module.css";
+import { InputGroup, Form, Button, Row, Col, Container } from "react-bootstrap";
+
+
 const careerform = () => {
   const [file, setFile] = useState("");
   const [inputs, setInputs] = useState({
@@ -13,52 +14,14 @@ const careerform = () => {
     post: "Select Post",
     message: ""
   });
+
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setInputs((values) => ({ ...values, [name]: value }));
+    setInputs((values) => ({ ...values,
+       [name]: value }));
   };
-  // const onChange = (info) => {
-  //   console.log(info);
-  //   if (info?.length > 0) {
-  //     const reader = new FileReader();
-  //     reader.readAsDataURL(info);
-  //     reader.onload = (e) => {
-  //       const imgdata = {
-  //         fileName: info.name,
-  //         Content_Type: info.type,
-  //         data: String(e.target.result).split(",")[1],
-  //       };
-  //       console.log(imgdata);
-  //       setimageData(imgdata);
-  //     };
-  //   }
-  // };
-  // const registerUser = async (event) => {
-  //   event.preventDefault();
-  //   const e = event.target;
-  //   const res = await fetch(
-  //     "https://strapi.hutech.solutions/new-career-forms",
-  //     {
-  //       body: JSON.parse({
-  //         name: e.name.value,
-  //         email: e.email.value,
-  //         phone: e.phone.value,
-  //         post: e.post.value,
-  //         message: e.message.value,
-  //         file: imageData,
-  //       }),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       method: "POST",
-  //     }
-  //   );
-
-  //   const result = await res.json();
-  //   // document.getElementById("form").reset();
-  //   console.log(result);
-  // };
+  
   const postData = {
     name: inputs.name,
     email: inputs.email,
@@ -66,11 +29,14 @@ const careerform = () => {
     post: inputs.post,
     message: inputs.message
   };
+
+
   const onChange = (event) => {
     setFile(event.target.files[0]);
   };
 
   const upload = (e) => {
+    e.preventDefault();
     const formData = new FormData();
     formData.append("files.file", file);
     formData.append("data", JSON.stringify(postData));
@@ -79,350 +45,107 @@ const careerform = () => {
       url: "https://strapi.hutech.solutions/new-career-forms",
       data: formData
     })
-      .then(({ data }) => {
+    .then(({ data }) => {
         console.log("Succesfully uploaded: ", JSON.stringify(data));
-      })
-      .catch((error) => {
-        console.log("Error: ", error.message);
-      });
+        location.reload(true);
+    })
+    .catch((error) => {
+      console.log("Error: ", error.message);
+    });
   };
-  return (
-    <form onSubmit={upload} className={CareerStyle.careerForm}>
-      <div className={CareerStyle.careerForm_row1}>
-        <input
-          type="text"
-          className={CareerStyle.formborder}
-          name="name"
-          value={inputs.name || ""}
-          placeholder="Name"
-          onChange={handleChange}
-          required
-        />
-        <input
-          className={CareerStyle.formborder}
-          type="email"
-          name="email"
-          value={inputs.email || ""}
-          onChange={handleChange}
-          placeholder="Email"
-          required
-        />
-      </div>
-      <div className={CareerStyle.careerForm_row2}>
-        <input
-          className={CareerStyle.formborder}
-          type="number"
-          name="phone"
-          value={inputs.phone || ""}
-          placeholder="Phone"
-          onChange={handleChange}
-          required
-        />
-        <select
-          className={CareerStyle.formselectborder}
-          name="post"
-          value={inputs.post || ""}
-          onChange={handleChange}
-        >
-          <option value="Select Post" disabled selected>
-            Select Post
-          </option>
-          <option value="Java_Developer">Java_Developer</option>
-          <option value="React_Developer">React_Developer</option>
-          <option value="IOS_Developer">IOS_Developer</option>
-        </select>
-      </div>
-      <div>
-        <textarea
-          className={CareerStyle.formborder}
-          type="text"
-          name="message"
-          value={inputs.message || ""}
-          placeholder="Message"
-          onChange={handleChange}
-          required
-        />
-      </div>
-      {/* <label
-        className={CareerStyle.customfileupload}
-      >
-        <i className="fa fa-cloud-upload"></i> Custom Upload
-      </label>
-      <input id="fileupload" type="file" /> */}
-      <div className={CareerStyle.form_input}>
-        <input
-          className={CareerStyle.form_upload}
-          type="file"
-          onChange={onChange}
-          required
-          placeholder="Attach file"
-        />
+
+    const [validated, setValidated] = useState(false);
+  
+    const handleSubmit = (event) => {
+      const form = event.currentTarget;
+      if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      setValidated(true);
+      document.getElementById("form").onsubmit = function(){
+    }
+    };
+  
+    return (
+      <Form noValidate validated={validated} id="form" autoComplete="off"
+              className={CareerStyle.careerFormNew}
+              onSubmit={upload}>
+        <Row className="mb-5 mt-3">
+          <Form.Group as={Col} md="6" controlId="validationCustom01">
+            <Form.Control
+              required value={inputs.name}
+              type="text"
+              className={CareerStyle.inputs}
+              onChange={handleChange}
+              name="name"
+              placeholder="Name"
+            />
+          </Form.Group>
+          <Form.Group as={Col} md="6" controlId="validationCustom02">
+            <Form.Control
+              required value={inputs.email}
+              type="email"
+              className={CareerStyle.inputs}
+              onChange={handleChange}
+              name="email"
+              placeholder="Email"
+            />
+          </Form.Group>
+        </Row>
+        <Row className="mb-5">
+          <Form.Group as={Col} md="6" controlId="validationCustomPhone">
+              <Form.Control
+                 type="number" 
+                 value={inputs.phone}
+                 className={CareerStyle.inputs}
+                 onChange={handleChange}
+                 name="phone"
+                 placeholder="Phone Number"
+                 aria-describedby="inputGroupPrepend"
+                 required
+              />
+          </Form.Group>
+          <Form.Group as={Col} md="6" controlId="validationCustomUsername">
+          <Form.Select  value={inputs.post || ""} onChange={handleChange} name="post" required>
+            <option value="" selected>
+          Select Post
+        </option>
+            <option value="Java_Developer">Java_Developer</option>
+            <option value="React_Developer">React_Developer</option>
+            <option value="IOS_Developer">IOS_Developer</option>
+          </Form.Select>
+        </Form.Group>
+        </Row>
+
+        <Row className="mb-3">
+        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+          <Form.Control as="textarea" placeholder="Message" rows={3}  
+              className={CareerStyle.inputs}
+              />
+         </Form.Group>
+        </Row>
+
+        <Row className="">
+        <Form.Group className="position-relative mb-3">
+            <Form.Label>Attack File</Form.Label>
+            <Form.Control
+              type="file"
+              required
+              name="file"
+              onChange={onChange}
+            />
+            {/* <Form.Control.Feedback type="invalid" tooltip>File is required field
+            </Form.Control.Feedback> */}
+          </Form.Group>
+        </Row>
         <p className={CareerStyle.form_upload_text}>
           File types: pdf, docx and doc | Maximum file size: 5MB.
         </p>
-      </div>
-
-      <button type="submit">Submit Applications</button>
-    </form>
-  );
-};
-
+        <button type="submit" onClick={handleSubmit}>Submit Application</button>
+      </Form>
+    );
+  }
+  
 export default careerform;
 
-// /* eslint-disable no-var */
-// /* eslint-disable react/react-in-jsx-scope */
-// /* eslint-disable indent */
-// import { useState } from "react";
-// import CareerStyle from "../../styles/Careers.module.css";
-// const careerform = () => {
-//   const [imageData, setimageData] = useState("");
-//   const [inputs, setInputs] = useState({
-//     name: "",
-//     email: "",
-//     phone: "",
-//     post: "Select Post",
-//     message: ""
-//   });
-//   const handleChange = (event) => {
-//     const name = event.target.name;
-//     const value = event.target.value;
-//     setInputs((values) => ({ ...values, [name]: value }));
-//   };
-//   // const onChange = (file) => {
-//   //   if (!file) {
-//   //     setDataUri("");
-//   //     return;
-//   //   }
-
-//   //   fileToDataUri(file).then((dataUri) => {
-//   //     setDataUri(dataUri);
-//   //   });
-//   // };
-//   const onChange = (info) => {
-//     console.log(info);
-//     if (info?.length > 0) {
-//       const reader = new FileReader();
-//       reader.readAsDataURL(info);
-//       reader.onload = (e) => {
-//         const imgdata = {
-//           fileName: info.name,
-//           Content_Type: info.type,
-//           data: String(e.target.result).split(",")[1]
-//         };
-//          console.log(imgdata);
-//         setimageData(imgdata);
-//       };
-//     }
-//   };
-//     const registerUser = async (event) => {
-//       event.preventDefault();
-//       const e = event.target;
-//       const res = await fetch(
-//         "https://strapi.hutech.solutions/new-career-forms",
-//         {
-//           body: JSON.parse({
-//             name: e.name.value,
-//             email: e.email.value,
-//             phone: e.phone.value,
-//             post: e.post.value,
-//             message: e.message.value,
-//             file: imageData
-//           }),
-//           headers: {
-//             "Content-Type": "application/json"
-//           },
-//           method: "POST"
-//         }
-//       );
-
-//       const result = await res.json();
-//       // document.getElementById("form").reset();
-//       console.log(result);
-//     };
-
-//   return (
-//     <form onSubmit={registerUser} className={CareerStyle.careerForm}>
-//       <div className={CareerStyle.careerForm_row}>
-//         <input
-//           type="text"
-//           className={CareerStyle.formborder}
-//           name="name"
-//           value={inputs.name || ""}
-//           placeholder="Name"
-//           onChange={handleChange}
-//           required
-//         />
-//         <input
-//           className={CareerStyle.formborder}
-//           type="email"
-//           name="email"
-//           value={inputs.email || ""}
-//           onChange={handleChange}
-//           placeholder="Email"
-//           required
-//         />
-//       </div>
-//       <div className={CareerStyle.careerForm_row}>
-//         <input
-//           className={CareerStyle.formborder}
-//           type="number"
-//           name="phone"
-//           value={inputs.phone || ""}
-//           placeholder="Phone"
-//           onChange={handleChange}
-//           required
-//         />
-//         <select
-//           className={CareerStyle.formselectborder}
-//           name="post"
-//           value={inputs.post || ""}
-//           onChange={handleChange}
-//         >
-//           <option value="Select Post" disabled selected>
-//             Select Post
-//           </option>
-//           <option value="Java_Developer">Java_Developer</option>
-//           <option value="React_Developer">React_Developer</option>
-//           <option value="IOS_Developer">IOS_Developer</option>
-//         </select>
-//       </div>
-//       <div>
-//         <textarea
-//           className={CareerStyle.formborder}
-//           type="text"
-//           name="message"
-//           value={inputs.message || ""}
-//           placeholder="Message"
-//           onChange={handleChange}
-//           required
-//         />
-//       </div>
-//       <input
-//         type="file"
-//         // onChange={handelfile}
-//         onChange={(event) => onChange(event.target.files[0] || null)}
-//       />
-//       {/* <input
-//         type="file"
-//         name="file"
-//         value={inputs.file || ""}
-//         placeholder="Attach file"
-//         onChange={handelfile}
-//         required
-//       /> */}
-//       <button type="submit">Submit Applications</button>
-//     </form>
-//   );
-// };
-
-// export default careerform;
-
-// const [state, setState] = useState("")
-// useEffect(() => {
-//   fetch("https://strapi.hutech.solutions/new-career-forms")
-//     .then((response) => response.json())
-//     .then((data) => console.log(data));
-// }, []);
-
-// // import { useState } from "react";
-// import CareerStyle from "../../styles/Careers.module.css";
-
-// const careerform = () => {
-// const registerUser = async (event) => {
-//   event.preventDefault();
-//   const e = event.target;
-//   const res = await fetch(
-//     "https://strapi.hutech.solutions/new-career-forms",
-//     {
-//       body: JSON.stringify({
-//         name: e.name.value,
-//         email: e.email.value,
-//         phone: e.phone.value,
-//         message: e.message.value,
-//       }),
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       method: "POST",
-//     }
-//   );
-
-//   const result = await res.json();
-//   document.getElementById("form").reset();
-//   console.log(result);
-// };
-
-//   return (
-//     <>
-// <form
-//   onSubmit={registerUser}
-//   className={CareerStyle.careerForm}
-//   id="form"
-// >
-//   <div className={CareerStyle.careerForm_row}>
-//     <input
-//       // id="name"
-//       className={CareerStyle.formborder}
-//       type="text"
-//       autoComplete="name"
-//       placeholder="Name"
-//       required
-//     />
-//     {/* <span className={CareerStyle.focus_border}></span> */}
-//     <input
-//       // id="email"
-//       className={CareerStyle.formborder}
-//       type="email"
-//       autoComplete="email"
-//       placeholder="Email"
-//       required
-//     />
-//     {/* <span className={CareerStyle.focus_border}></span> */}
-//   </div>
-//   <div className={CareerStyle.careerForm_row}>
-//     <input
-//       // id="phone"
-//       className={CareerStyle.formborder}
-//       type="number"
-//       autoComplete="phone"
-//       placeholder="Phone"
-//     />
-//     {/* <span className={CareerStyle.focus_border}></span> */}
-//     <select
-//       placeholder="Select Post"
-//       autoComplete="post"
-//       className={CareerStyle.formselectborder}
-//       // onChange={handleDropdownChange}
-//     >
-//       <option value="Select Post">Select Post</option>
-//       <option value="React">React Developer</option>
-//       <option value="NodeJs">NodeJs Developer</option>
-//       <option value="Java">Java Developer</option>
-//     </select>
-//     {/* <span className={CareerStyle.focus_border}></span> */}
-//   </div>
-//   <div>
-//     <textarea
-//       // id="message"
-//       className={CareerStyle.formborder}
-//       type="text"
-//       autoComplete="message"
-//       placeholder="Message"
-//     />
-//     {/* <span className={CareerStyle.focus_border}></span> */}
-//   </div>
-//   <button type="submit">Submit Applications</button>
-// </form>
-//       ;
-//     </>
-//   );
-// };
-
-// export default careerform;
-
-// // const [state, setState] = useState("")
-// // useEffect(() => {
-// //   fetch("https://strapi.hutech.solutions/new-career-forms")
-// //     .then((response) => response.json())
-// //     .then((data) => console.log(data));
-// // }, []);

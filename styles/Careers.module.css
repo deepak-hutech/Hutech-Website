@@ -294,7 +294,7 @@ font-style: normal;
   transition: all 0.15s ease-in-out;
   padding: 3% 1.5% 3% 1.5%;
 }
-.openingcard:hover ::after,
+/* .openingcard:hover ::after,
 .openingcard :hover ::before {
   content: "";
   position: absolute;
@@ -318,7 +318,7 @@ font-style: normal;
   border: 0;
   border-radius: 15px;
   animation: animate 20s linear infinite;
-}
+} */
 @keyframes animate {
   0% {
     background-position: 0 0;
@@ -330,9 +330,9 @@ font-style: normal;
     background-position: 0 0;
   }
 }
-.openingcard:hover ::after {
+/* .openingcard:hover ::after {
   filter: blur(5px);
-}
+} */
 /* .openingcard:hover {
 
 } */
@@ -361,6 +361,41 @@ font-style: normal;
   transition: all .15s ease-in-out;
   color: #00d7c3;
 } */
+
+
+.careerFormNew input {
+   box-shadow: none !important;
+   background-color: none;
+}
+
+.careerFormNew .inputs{
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  background-color: white !important;
+  background-image: none !important;
+}
+
+.careerFormNew select{
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  box-shadow: none !important;
+  /* background-image: none !important; */
+  /* background-image: ; */
+
+}
+
+.careerForm textarea {
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  box-shadow: none !important;
+}
+
+
+
+/* //////////////////// */
 
 .opening_heading {
   font-size: 1.25rem;
@@ -499,9 +534,7 @@ font-style: normal;
 .rightarrowicon {
   margin: 1rem 0px 0px 0px;
 }
-.careerForm input {
-  width: 91%;
-  height: 45px;
+.careerFormNew input {
   margin: 20px;
   line-height: 22px;
   font-size: 14px;
@@ -511,6 +544,9 @@ font-style: normal;
   /* border: 1px solid #d9d9d9; */
   margin-bottom: 0;
   box-sizing: border-box;
+} 
+.careerFormNew textarea:focus, .careerFormNew input:focus{
+    outline: none;
 }
 .careerForm textarea:focus, .careerForm input:focus{
     outline: none;
@@ -528,7 +564,7 @@ font-style: normal;
   box-sizing: border-box;
   border-radius: 4px;
 }
-.careerForm button {
+.careerFormNew button {
   width: 90%;
   font-size: 18px;
   color: #ffff;
@@ -542,6 +578,21 @@ font-style: normal;
   font-weight: 500;
   cursor: pointer;
   text-align: center;
+}
+
+.careerFormNew button:hover{
+  border: 0;
+  background-color: #ffaf2b !important;
+}
+
+.careerFormNew button:active{
+  border: 0;
+  background-color: #ffaf2b !important;
+}
+
+.careerFormNew input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .section5_subText4 {

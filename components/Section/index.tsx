@@ -22,6 +22,11 @@ import HomeForm from "../home_form/index.js";
 import portfolioStyles from "../../styles/Portfolio.module.css";
 import rightIcon from "../../components/assets/rightarrow.svg";
 import leftIcon from "../../components/assets/leftarrow.svg";
+import  mailIcon from "../../components/assets/mail-icon@2x.svg";
+import  phoneIcon from "../../components/assets/phone-icon@2x.svg";
+import  submitIcon from "../../components/assets/submit-icon@2x.svg";
+
+
 import Breadcrumbs from "nextjs-breadcrumbs";
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
@@ -994,11 +999,38 @@ const Section: NextPage = (props: any) => {
               </div>
 
               <div className={contactStyle.tabsContainer}>
+                  <div className={contactStyle.tabsIcons}>
+                      <Image
+                          loader={myLoader}
+                          src={submitIcon}
+                          alt="Picture of the author"
+                          width={30}
+                          height={100}
+                          className={styles.svgarrow}
+                        />
+                        <Image
+                          loader={myLoader}
+                          src={mailIcon}
+                          alt="Picture of the author"
+                          width={30}
+                          height={100}
+                          className={styles.svgarrow}
+                        />
+                      <Image
+                        loader={myLoader}
+                        src={phoneIcon}
+                        alt="Picture of the author"
+                        width={30}
+                        height={100}
+                        className={styles.svgarrow}
+                          />
+                  </div>
                 <Tabs
                   defaultActiveKey="home"
                   id="uncontrolled-tab-example"
                   className="mb-3"
                 >
+
                   <Tab eventKey="home" title="Submit a form">
                     <div className={contactStyle.tab1}>
                       <div className="mb-5">
