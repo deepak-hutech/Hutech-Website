@@ -11,12 +11,12 @@ interface IBackground {
 const Header: NextPage = (props: any) => {
   const { Logo, action } = props;
 
-  const [backgroundColor, setBackgroundColor] = useState("");
+  const [onScrollBackground, setOnScrollBackground] = useState(false);
   const changeBackgroundColor = () => {
     if (window.pageYOffset > 50) {
-      setBackgroundColor("#ffffff");
+      setOnScrollBackground(true);
     } else {
-      setBackgroundColor("");
+      setOnScrollBackground(false);
     }
   };
 
@@ -30,8 +30,9 @@ const Header: NextPage = (props: any) => {
 
   return (
     <nav
-      className={styles.container}
-      style={{ backgroundColor: backgroundColor }}
+      className={`${styles.container} ${
+        onScrollBackground ? styles.onScrollBackground : ""
+      }`}
     >
       <div className={styles.innerContainer}>
         <a className={styles.logo} href={"/"}>

@@ -5,14 +5,11 @@
   left: 0;
   display: flex;
   height: 66px;
-  /* box-shadow: 0 2px 4px 0 rgb(84 83 83 / 30%); */
   z-index: 1001;
   background: transparent;
   transition: all ease-out 0.5s;
   justify-content: center;
-  background: #ffffff;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
+  
 }
 .innerContainer {
   display: flex;
@@ -21,7 +18,10 @@
   justify-content: space-between;
   align-items: center;
 }
-.logo {
+
+.onScrollBackground {
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgb(84 83 83 / 30%);
 }
 .navContainer {
   text-align: right;

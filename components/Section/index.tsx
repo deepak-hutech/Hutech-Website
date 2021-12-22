@@ -42,6 +42,7 @@ const Section: NextPage = (props: any) => {
     sub_heading,
     type,
     Buttons,
+    
     image_size,
     image_position,
     free_text,
@@ -80,7 +81,6 @@ const Section: NextPage = (props: any) => {
     AOS.init();
   }, []);
 
-  
   const CustomArrow = ({ onClick }) => (
     <button
       style={{ position: "absolute", right: 90, bottom: 90 }}
@@ -112,6 +112,40 @@ const Section: NextPage = (props: any) => {
       />
     </button>
   );
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+      slidesToSlide: 2, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+  };
+  const responsive_our_people_cards = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 5,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3,
+      slidesToSlide: 2, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+  };
   const responsive_portfolio_cards = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -184,50 +218,50 @@ const Section: NextPage = (props: any) => {
   switch (type) {
     case "home_page_banner":
       return (
-        <div className={styles.home_bannerimg}>
-          {home_banner[0] && (
-            <Image
-              loader={() =>
-                myLoaderbanner((baseUrl + home_banner[0].url) as any)
-              }
-              src={baseUrl + home_banner[0].url}
-              placeholder="blur"
-              blurDataURL={baseUrl + home_banner[0].url}
-              height={600}
-              width={"100%"}
-              className={styles.bannerimg}
-            />
-          )}
-          <div className={styles.banner_container}>
-            {free_text && (
-              <div className={styles.content}>
-                <div
-                  className={styles.free_text}
-                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-                />
-                {sub_heading && (
-                  <div
-                    className={styles.descrption}
-                    dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-                  ></div>
-                )}
-                {home_button && (
-                  <div className={styles.buttons}>
-                    {home_button.map((item: any) => (
+        <div className={styles.home_caro}>
+          <Carousel
+            swipeable={true}
+            draggable={false}
+            showDots={true}
+            responsive={responsive}
+            ssr={true} // means to render carousel on server-side.
+            infinite={true}
+            autoPlaySpeed={5000}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={500}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
+            className={styles.carosel_banner}
+          >
+            {carosel_cards.map((item: any) => (
+              <div className={styles.carosel_card} data-aos="zoom-in"
+              data-aos-duration="1000">
+                <img src={baseUrl + item.images[0].url} />
+
+                <div className={styles.banner_container} >
+                  {item.free_text && (
+                    <div
+                      className={styles.free_text}
+                      dangerouslySetInnerHTML={{
+                        __html: marked(item.free_text),
+                      }}
+                      
+                    ></div>
+                  )}
+                  {item.call_to_action && (
+                    <div className={styles.buttons}>
                       <div className={styles.homecall_to_action}>
-                        {" "}
-                        {item.call_to_action}{" "}
-                        {/* <img
-                      src={`${baseUrl}${home_button[0].arrow_icon[0].url}`}
-                      className={styles.arrowicon}
-                    /> */}
+                        {item.call_to_action}
                       </div>
-                    ))}
-                  </div>
-                )}
+                    </div>
+                  )}
+                </div>
               </div>
-            )}
-          </div>
+            ))}
+          </Carousel>
         </div>
       );
     case "development":
@@ -451,7 +485,9 @@ const Section: NextPage = (props: any) => {
     case "about_company":
       return (
         <div className={companyStyles.abt_company}>
-          <div id="breadCrum"><Breadcrumbs useDefaultStyle transformLabel={(title) => title } /></div>
+          <div id="breadCrum">
+            <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
+          </div>
           <Container>
             <Row>
               {free_text && (
@@ -496,25 +532,24 @@ const Section: NextPage = (props: any) => {
     case "values_vision_mission":
       return (
         <div className={companyStyles.values_vision_banner}>
-        <div className={companyStyles.values_vision}>
-              {carosel_cards.map((v: any) => (
-                  <div className={companyStyles.vvContent} data-aos="fade-up">
-                  <img
-                    className={companyStyles.profile}
-                    src={baseUrl + v.images.map((v: any) => v.url)}
-                    placeholder="blur"
-                    height={50}
-                    width={50}
-                  />
-                  <h5 className={companyStyles.heading}>{v.heading}</h5>
-                  <div
-                    className={companyStyles.free_text}
-                    dangerouslySetInnerHTML={{ __html: marked(v.free_text) }}
-                  ></div>
-                   
-                  </div>
-              ))}
-        </div>
+          <div className={companyStyles.values_vision}>
+            {carosel_cards.map((v: any) => (
+              <div className={companyStyles.vvContent} data-aos="fade-up">
+                <img
+                  className={companyStyles.profile}
+                  src={baseUrl + v.images.map((v: any) => v.url)}
+                  placeholder="blur"
+                  height={50}
+                  width={50}
+                />
+                <h5 className={companyStyles.heading}>{v.heading}</h5>
+                <div
+                  className={companyStyles.free_text}
+                  dangerouslySetInnerHTML={{ __html: marked(v.free_text) }}
+                ></div>
+              </div>
+            ))}
+          </div>
         </div>
       );
     case "our_people":
@@ -540,9 +575,31 @@ const Section: NextPage = (props: any) => {
               </div>
             </Row>
             <Row>
-              {carosel_cards.map((v: any) => (
+            <Carousel
+            swipeable={true}
+            draggable={false}
+            showDots={false}
+            responsive={responsive_our_people_cards}
+            ssr={true} // means to render carousel on server-side.
+            infinite={true}
+            keyBoardControl={true}
+            customTransition="all 0.5s ease"
+            transitionDuration={1000}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+            dotListClass="custom-dot-list-style"
+            // itemClass="carousel-item-padding-40-px"
+            className={styles.clientcarousel}
+            customRightArrow={<CustomArrow />}
+            customLeftArrow={<CustomleftArrow />}
+          >
+            {carosel_cards.map((v: any) => (
                 <Col>
-                  <div className={companyStyles.profiles} data-aos="zoom-in" data-aos-duration="2000">
+                  <div
+                    className={companyStyles.profiles}
+                    data-aos="zoom-in"
+                    data-aos-duration="2000"
+                  >
                     <img
                       className={companyStyles.img}
                       src={baseUrl + v.images.map((v: any) => v.url)}
@@ -555,39 +612,41 @@ const Section: NextPage = (props: any) => {
                   </div>
                 </Col>
               ))}
+          </Carousel>
+              
             </Row>
           </Container>
         </div>
       );
     case "successful_product_company":
       return (
-        <div className={`${companyStyles.partner}`} >
-           <div className={`${companyStyles.partner_head}`}>
-              {free_text && (
-                <div
-                  className={`${companyStyles.heading}`}
-                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-                ></div>
-              )}
-              {sub_heading && (
-                <div
-                  className={companyStyles.desc}
-                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-                ></div>
-              )}
-           </div>
+        <div className={`${companyStyles.partner}`}>
+          <div className={`${companyStyles.partner_head}`}>
+            {free_text && (
+              <div
+                className={`${companyStyles.heading}`}
+                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+              ></div>
+            )}
+            {sub_heading && (
+              <div
+                className={companyStyles.desc}
+                dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+              ></div>
+            )}
+          </div>
           <div className={companyStyles.allProducts} data-aos="zoom-out-up">
-              {carosel_cards.map((v: any) => (
-                  <div className={companyStyles.logos}>
-                    <img
-                      className={companyStyles.images}
-                      src={baseUrl + v.images.map((v: any) => v.url)}
-                      placeholder="blur"
-                      height={45}
-                      width={137}
-                    />
-                  </div>
-              ))}
+            {carosel_cards.map((v: any) => (
+              <div className={companyStyles.logos}>
+                <img
+                  className={companyStyles.images}
+                  src={baseUrl + v.images.map((v: any) => v.url)}
+                  placeholder="blur"
+                  height={45}
+                  width={137}
+                />
+              </div>
+            ))}
           </div>
         </div>
       );
@@ -617,9 +676,9 @@ const Section: NextPage = (props: any) => {
         <div className={`${companyStyles.web_dev}`}>
           <Container>
             <Row>
-              <Col md={6}>
+              <Col md={6} className={companyStyles.webContainer}>
                 {web_front_end_title ? (
-                  <div className={`${companyStyles.title}`}>
+                  <div className={`${companyStyles.web_front_end_title}`}>
                     <h2
                       className={companyStyles.free_text}
                       dangerouslySetInnerHTML={{
@@ -628,13 +687,17 @@ const Section: NextPage = (props: any) => {
                     />
                     {web_front_end_para && (
                       <div
-                        className={companyStyles.desc}
+                        className={companyStyles.web_front_end_para}
                         dangerouslySetInnerHTML={{
                           __html: marked(web_front_end_para),
                         }}
                       ></div>
                     )}
-                    <div className={companyStyles.company_cards} data-aos="fade-up" data-aos-duration="2000">
+                    <div
+                      className={companyStyles.company_cards}
+                      data-aos="fade-up"
+                      data-aos-duration="1500"
+                    >
                       {carosel_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
                       ))}
@@ -644,9 +707,9 @@ const Section: NextPage = (props: any) => {
                   " "
                 )}
               </Col>
-              <Col md={6}>
+              <Col md={6} className={companyStyles.webContainer}>
                 {web_back_end_title ? (
-                  <div className={`${companyStyles.title}`}>
+                  <div className={`${companyStyles.web_front_end_title}`}>
                     <h2
                       className={companyStyles.free_text}
                       dangerouslySetInnerHTML={{
@@ -655,13 +718,17 @@ const Section: NextPage = (props: any) => {
                     />
                     {web_back_end_para && (
                       <div
-                        className={companyStyles.desc}
+                        className={companyStyles.web_front_end_para}
                         dangerouslySetInnerHTML={{
                           __html: marked(web_back_end_para),
                         }}
                       ></div>
                     )}
-                    <div className={companyStyles.company_cards} data-aos="fade-up" data-aos-duration="2000">
+                    <div
+                      className={companyStyles.company_cards}
+                      data-aos="fade-up"
+                      data-aos-duration="1600"
+                    >
                       {Carosel_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
                       ))}
@@ -671,9 +738,9 @@ const Section: NextPage = (props: any) => {
                   " "
                 )}
               </Col>
-              <Col md={6}>
+              <Col md={6} className={companyStyles.webContainer}>
                 {database_title ? (
-                  <div className={`${companyStyles.title}`}>
+                  <div className={`${companyStyles.web_front_end_title}`}>
                     <h2
                       className={companyStyles.free_text}
                       dangerouslySetInnerHTML={{
@@ -682,13 +749,17 @@ const Section: NextPage = (props: any) => {
                     />
                     {database_para && (
                       <div
-                        className={companyStyles.desc}
+                        className={companyStyles.web_front_end_para}
                         dangerouslySetInnerHTML={{
                           __html: marked(database_para),
                         }}
                       ></div>
                     )}
-                    <div className={companyStyles.company_cards} data-aos="fade-right" data-aos-duration="2000">
+                    <div
+                      className={companyStyles.company_cards}
+                      data-aos="fade-up"
+                      data-aos-duration="1500"
+                    >
                       {carosel_card.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
                       ))}
@@ -698,9 +769,9 @@ const Section: NextPage = (props: any) => {
                   " "
                 )}
               </Col>
-              <Col md={6}>
+              <Col md={6} className={companyStyles.webContainer}>
                 {android_title ? (
-                  <div className={`${companyStyles.title}`}>
+                  <div className={`${companyStyles.web_front_end_title}`}>
                     <h2
                       className={companyStyles.free_text}
                       dangerouslySetInnerHTML={{
@@ -709,13 +780,17 @@ const Section: NextPage = (props: any) => {
                     />
                     {android_para && (
                       <div
-                        className={companyStyles.desc}
+                        className={companyStyles.web_front_end_para}
                         dangerouslySetInnerHTML={{
                           __html: marked(android_para),
                         }}
                       ></div>
                     )}
-                    <div className={companyStyles.company_cards} data-aos="fade-left" data-aos-duration="2000">
+                    <div
+                      className={companyStyles.company_cards}
+                      data-aos="fade-up"
+                      data-aos-duration="1600"
+                    >
                       {android_card.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
                       ))}
@@ -725,20 +800,24 @@ const Section: NextPage = (props: any) => {
                   " "
                 )}
               </Col>
-              <Col md={6}>
+              <Col md={6} className={companyStyles.webContainer}>
                 {ios_title ? (
-                  <div className={`${companyStyles.title}`}>
+                  <div className={`${companyStyles.web_front_end_title}`}>
                     <h2
                       className={companyStyles.free_text}
                       dangerouslySetInnerHTML={{ __html: marked(ios_title) }}
                     />
                     {ios_para && (
                       <div
-                        className={companyStyles.desc}
+                        className={companyStyles.web_front_end_para}
                         dangerouslySetInnerHTML={{ __html: marked(ios_para) }}
                       ></div>
                     )}
-                    <div className={companyStyles.company_cards} data-aos="fade-up" data-aos-duration="2000">
+                    <div
+                      className={companyStyles.company_cards}
+                      data-aos="fade-up"
+                      data-aos-duration="1500"
+                    >
                       {ios_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
                       ))}
@@ -748,22 +827,26 @@ const Section: NextPage = (props: any) => {
                   " "
                 )}
               </Col>
-              <Col md={6}>
+              <Col md={6} className={companyStyles.webContainer}>
                 {devops_title ? (
-                  <div className={`${companyStyles.title}`}>
+                  <div className={`${companyStyles.web_front_end_title}`}>
                     <h2
                       className={companyStyles.free_text}
                       dangerouslySetInnerHTML={{ __html: marked(devops_title) }}
                     />
                     {devops_para && (
                       <div
-                        className={companyStyles.desc}
+                        className={companyStyles.web_front_end_para}
                         dangerouslySetInnerHTML={{
                           __html: marked(devops_para),
                         }}
                       ></div>
                     )}
-                    <div className={companyStyles.company_cards} data-aos="fade-up">
+                    <div
+                      className={companyStyles.company_cards}
+                      data-aos="fade-up"
+                      data-aos-duration="1600"
+                    >
                       {devops_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
                       ))}
@@ -999,7 +1082,7 @@ const Section: NextPage = (props: any) => {
               className={companyStyles.bannerimg}
             />
           )}
-          <div className={servicesStyles.banner_container} >
+          <div className={servicesStyles.banner_container}>
             {free_text && (
               <div className={servicesStyles.content} data-aos="fade-up">
                 <div
@@ -1034,8 +1117,10 @@ const Section: NextPage = (props: any) => {
     case "mobile_app_development":
       return (
         <div className={`${servicesStyles.section2}`}>
-          <div style={{padding:"3% 6% 0"}}><Breadcrumbs useDefaultStyle transformLabel={(title) => title } /></div>
-          
+          <div style={{ padding: "3% 6% 0" }}>
+            <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
+          </div>
+
           <div className={`${servicesStyles.client_banner}`}>
             <div className={servicesStyles.clientContent} data-aos="fade-up">
               {free_text && (
@@ -1146,7 +1231,10 @@ const Section: NextPage = (props: any) => {
           <div className={`${servicesStyles.section5_img_container}`}>
             <div className={`${servicesStyles.imgColumn}`}>
               {home_banner[0] && (
-                <div className={`${servicesStyles.section5_serviceimg}`} data-aos="zoom-in">
+                <div
+                  className={`${servicesStyles.section5_serviceimg}`}
+                  data-aos="zoom-in"
+                >
                   <img src={baseUrl + home_banner[0].url} />
                 </div>
               )}
@@ -1189,7 +1277,10 @@ const Section: NextPage = (props: any) => {
         )} */}
             </div>
             {carosel_cards[0] && (
-              <div className={servicesStyles.section6_imgages} data-aos="fade-right">
+              <div
+                className={servicesStyles.section6_imgages}
+                data-aos="fade-right"
+              >
                 {carosel_cards.map((_card: any, index: number) => (
                   <Card {..._card} key={index} />
                 ))}
@@ -1289,7 +1380,9 @@ const Section: NextPage = (props: any) => {
           <div className={careerstyles.section1}>
             {home_banner[0] && (
               <Image
-                loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
+                loader={() =>
+                  myLoaderbanner((baseUrl + home_banner[0].url) as any)
+                }
                 src={baseUrl + home_banner[0].url}
                 placeholder="blur"
                 blurDataURL={baseUrl + home_banner[0].url}
@@ -1336,18 +1429,16 @@ const Section: NextPage = (props: any) => {
                 ></div>
               )}
               <button className={careerstyles.opening_btn}>
-               
-                  {home_button && (
-                    <div>
-                      {home_button.map((item: any) => (
-                        <div className={careerstyles.call_to_action}>
-                          {" "}
-                          {item.call_to_action}{" "}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-          
+                {home_button && (
+                  <div>
+                    {home_button.map((item: any) => (
+                      <div className={careerstyles.call_to_action}>
+                        {" "}
+                        {item.call_to_action}{" "}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </button>
             </div>
             <div className={careerstyles.sec2_right}>
@@ -1414,7 +1505,9 @@ const Section: NextPage = (props: any) => {
         <div className={careerstyles.section5}>
           {estimate_image[0] && (
             <Image
-              loader={() => myLoaderbanner((baseUrl + estimate_image[0].url) as any)}
+              loader={() =>
+                myLoaderbanner((baseUrl + estimate_image[0].url) as any)
+              }
               src={baseUrl + estimate_image[0].url}
               placeholder="blur"
               blurDataURL={baseUrl + estimate_image[0].url}
@@ -1518,18 +1611,18 @@ const Section: NextPage = (props: any) => {
     case "portfolio_banner":
       return (
         <div className={portfolioStyles.portfolio_section1}>
-            {home_banner[0] && (
-              <Image
-                loader={() =>
-                  myLoaderbanner((baseUrl + home_banner[0].url) as any)
-                }
-                src={baseUrl + home_banner[0].url}
-                placeholder="blur"
-                blurDataURL={baseUrl + home_banner[0].url}
-                height={400}
-                width={"100%"}
-                className={companyStyles.bannerimg}
-              />
+          {home_banner[0] && (
+            <Image
+              loader={() =>
+                myLoaderbanner((baseUrl + home_banner[0].url) as any)
+              }
+              src={baseUrl + home_banner[0].url}
+              placeholder="blur"
+              blurDataURL={baseUrl + home_banner[0].url}
+              height={400}
+              width={"100%"}
+              className={companyStyles.bannerimg}
+            />
           )}
           <div className={portfolioStyles.banner_container}>
             {free_text && (
@@ -1549,12 +1642,13 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
-      
-      
+
     case "portfolio_img_banner":
       return (
         <div className={`${portfolioStyles.porfolio_card_section}`}>
-          <div style={{padding:"4% 3% 0"}}><Breadcrumbs useDefaultStyle transformLabel={(title) => title } /></div>
+          <div style={{ padding: "4% 3% 0" }}>
+            <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
+          </div>
           <div className={`${portfolioStyles.Industries_banner}`}>
             <div className={`${portfolioStyles.client_banner}`}>
               <div className={portfolioStyles.clientContent}>
@@ -1602,29 +1696,29 @@ const Section: NextPage = (props: any) => {
               </div>
               
             } */}
-             <Carousel
-            swipeable={true}
-            draggable={false}
-            showDots={false}
-            responsive={responsive_portfolio_cards}
-            ssr={true} // means to render carousel on server-side.
-            infinite={true}
-            keyBoardControl={true}
-            customTransition="all 0.5s ease"
-            transitionDuration={1000}
-            containerClass="carousel-container"
-            removeArrowOnDeviceType={["tablet", "mobile"]}
-            dotListClass="custom-dot-list-style"
-            // itemClass="carousel-item-padding-40-px"
-            className={styles.clientcarousel}
-            // customRightArrow={<CustomArrow />}
-            // customLeftArrow={<CustomleftArrow/>}
-          >
-            {carosel_cards.map((_card: any, index: number) => (
-              <Card {..._card} key={index} />
-            ))}
-          </Carousel>
-            
+            <Carousel
+              swipeable={true}
+              draggable={false}
+              showDots={false}
+              responsive={responsive_portfolio_cards}
+              ssr={true} // means to render carousel on server-side.
+              infinite={true}
+              keyBoardControl={true}
+              customTransition="all 0.5s ease"
+              transitionDuration={1000}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={["tablet", "mobile"]}
+              dotListClass="custom-dot-list-style"
+              // itemClass="carousel-item-padding-40-px"
+              className={styles.clientcarousel}
+              // customRightArrow={<CustomArrow />}
+              // customLeftArrow={<CustomleftArrow/>}
+            >
+              {carosel_cards.map((_card: any, index: number) => (
+                <Card {..._card} key={index} />
+              ))}
+            </Carousel>
+
             <div className={`${portfolioStyles.pclient_banner}`}>
               <div className={portfolioStyles.clientContent}>
                 {free_text && (

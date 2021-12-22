@@ -125,12 +125,14 @@
   color: #383838;
   text-align: center;
   visibility: visible;
+  
 }
 .abt_company .heading h6{
   font-family: "GraphikRegular";
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
+  line-height: 30px;
   color: #383838;
   text-align: center;
 }
@@ -143,9 +145,7 @@
 }
 
 .abt_company .abt_img{
-    /* border-radius: 3%;
-    text-align: left;
-    padding: 0 4% 4%; */
+  margin-left:32px;
 }
 .abt_company .abt_img img {
   /* border-radius: 20px; */
@@ -190,7 +190,7 @@
   margin-top: 66px;
   background-image: url(../components/assets/company-yellow-bg.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-color:#FEF8ED;
   background-position: center;
 }
@@ -206,7 +206,21 @@
     margin: 30px;
     
   }
-
+.web_dev{
+  padding: 0 8%;
+}
+.web_front_end_title h2{
+  font-size: 24px;
+}
+.web_front_end_para p{
+  font-size: 14px;
+}
+.web_front_end_para{
+  margin: 20px 0 30px;
+}
+.webContainer{
+  margin: 50px 0 0;
+}
   .values_vision .heading {
     margin-top: 20px;
     font-family: "GraphikMedium";
@@ -240,7 +254,7 @@
   .our_people {
     text-align: center;
     width: 100%;
-    margin: 50px 0px;
+    margin: 50px 0px 0;
   }
 
   .our_people .free_text h3{
@@ -255,6 +269,7 @@
       font-family: "GraphikRegular";
       font-weight: 600;
       font-size: 16px;
+      margin-bottom: 50px;
   }
   .our_people .profiles h6{
     font-family: "GraphikMedium";
@@ -427,8 +442,8 @@
     }
 
     .c_cards {
-      width: 110px;
-      height: 110px;
+      width: 120px;
+      height: 120px;
       margin: 5px;
       padding: 14px 2px;
       background: #FFFFFF;

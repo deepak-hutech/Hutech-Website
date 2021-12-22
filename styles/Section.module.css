@@ -16,26 +16,39 @@
   font-weight: 500;
   padding: 1% 20% 0 8%;
 }
-
+.clientcarousel{
+  align-items: start;
+  height: 430px;
+}
+.clientcarousel .react-multiple-carousel__arrow--left {
+  left: -webkit-calc(4% + 1px);
+  left: calc(86% + 1px) ;
+  bottom: 20%;
+}
+.clientcarousel .react-multiple-carousel__arrow--right{
+  bottom: 20% ;
+}
 .homebanner_plans P {
   font-size: 10px;
 }
-.carosel_banner {
+/* .carosel_banner {
   position: relative;
-}
-.carosel_banner .carosel_card {
+} */
+/* .carosel_banner .carosel_card {
   display: flex;
   justify-content: center;
   width: 100%;
-}
+} */
 .carosel_card img {
   width: 100%;
+  height: 600px;
 }
+
 .carosel_card .image {
   width: 80%;
   height: 80%;
 }
-.carosel_banner .content {
+/* .carosel_banner .content {
   position: absolute;
   left: 10%;
   height: 400px;
@@ -45,8 +58,8 @@
   justify-content: center;
   align-content: center;
   padding: 20px;
-}
-.carosel_banner .content h1 {
+} */
+/* .carosel_banner .content h1 {
   color: #233253;
   font-size: 48px;
   font-weight: 400;
@@ -58,7 +71,7 @@
   font-size: 16px;
   font-weight: 400;
   margin: 10px 0px;
-}
+} */
 
 .cardbanner {
   column-gap: 15px;
@@ -727,6 +740,7 @@ margin-top: -90px;
   position: absolute;
   top: 26%;
   left: 8%;
+  width: 100%;
 }
 .free_text h2 {
   font-size: 50px;
@@ -736,7 +750,7 @@ margin-top: -90px;
   margin: 5px 0;
   font-family: "GraphikMedium";
 }
-.descrption {
+.free_text p {
   font-size: 20px;
   line-height: 30px;
   color: #000;

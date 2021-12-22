@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import styles from "../../styles/Header.module.css";
 import { baseUrl } from "./../../public/strings.json";
+import Link from "next/link";
 
 const Action: NextPage = ({
   type,
@@ -45,12 +46,14 @@ const Action: NextPage = ({
       );
     case "call_to_action":
       return (
-        <button className={styles.headerbtn}>
-          <p style={{ margin: "0" }}>
-            {display}
-            {/* <img src={`${baseUrl}${icon[0].url}`} alt="" height="21px" width="24px" /> */}
-          </p>
-        </button>
+        <Link href="/contact-us" passHref>
+          <button className={styles.headerbtn}>
+            <p style={{ margin: "0" }}>
+              {display}
+              {/* <img src={`${baseUrl}${icon[0].url}`} alt="" height="21px" width="24px" /> */}
+            </p>
+          </button>
+        </Link>
       );
     // case "call_to_action_image": return (<img src={`${baseUrl}${icon.url}`} height="50px" width="50px" />);
     default:
