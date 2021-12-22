@@ -12,32 +12,29 @@ function HomeForm() {
     var email = document.forms["form"]["email"];
     var phone = document.forms["form"]["phone"];
     var company = document.forms["form"]["company"];
-    let colorBlack = "1px solid black";
     let colorRed = "1px solid red"
 
     if(company.value === ""){
       company.style.borderBottom = colorRed;
       company.focus();
-    }else 
-     company.style.borderBottom = colorBlack
+    }
 
     if(phone.value === ""){
       phone.style.borderBottom = colorRed;
       phone.focus();
-    }else
-      phone.style.borderBottom = colorBlack
+    }
 
     if(email.value === ""){
       email.style.borderBottom = colorRed;
       email.focus();
-    }else
-       email.style.borderBottom = colorBlack
+    }
 
     if(name.value === "") {
        name.style.borderBottom = colorRed;
        name.focus();
-    }else
-      name.style.borderBottom = colorBlack
+    }else if(name.value.length > 4){
+      name.style.borderBottom = "1px solid black"
+    }
 
     const res = await fetch("https://strapi.hutech.solutions/home-page-forms", {
       body: JSON.stringify({

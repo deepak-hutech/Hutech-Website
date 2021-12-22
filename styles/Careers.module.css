@@ -293,10 +293,13 @@ font-style: normal;
   transition: all 0.15s ease-in-out;
   padding: 3% 1.5% 3% 1.5%;
 }
+<<<<<<< HEAD
 .openingcard:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+=======
+>>>>>>> ef09776e9db59a792deb7897f6a4d38c3c3c37f8
 /* .openingcard:hover ::after,
 .openingcard :hover ::before {
   content: "";
@@ -364,6 +367,41 @@ font-style: normal;
   transition: all .15s ease-in-out;
   color: #00d7c3;
 } */
+
+
+.careerFormNew input {
+   box-shadow: none !important;
+   background-color: none;
+}
+
+.careerFormNew .inputs{
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  background-color: white !important;
+  background-image: none !important;
+}
+
+.careerFormNew select{
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  box-shadow: none !important;
+  /* background-image: none !important; */
+  /* background-image: ; */
+
+}
+
+.careerForm textarea {
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  box-shadow: none !important;
+}
+
+
+
+/* //////////////////// */
 
 .opening_heading {
   font-size: 1.25rem;
@@ -484,10 +522,6 @@ font-style: normal;
 .estimatearrowicon {
   margin: 0px 0px -2px 10px;
 }
-/* .estimatearrowicon:hover{
-  animation: pulse 1s infinite;
-  transition: .3s;
-} */
 .estimatebannerimg {
   width: 100%;
 }
@@ -504,23 +538,20 @@ font-style: normal;
 .rightarrowicon {
   margin: 1rem 0px 0px 0px;
 }
-.careerForm input {
-  width: 91%;
-  height: 45px;
+/* .careerFormNew input {
   margin: 20px;
   line-height: 22px;
   font-size: 14px;
   padding: 5px 10px;
   border: none;
   border-bottom: 1px solid #d9d9d9;
-  /* border: 1px solid #d9d9d9; */
   margin-bottom: 0;
   box-sizing: border-box;
-}
-.careerForm textarea:focus, .careerForm input:focus{
+} */
+.careerFormNew textarea:focus, .careerFormNew input:focus{
     outline: none;
 }
-.careerForm textarea {
+.careerFormNew textarea {
   width: 90%;
   height: 100px;
   margin: 20px;
@@ -533,7 +564,7 @@ font-style: normal;
   box-sizing: border-box;
   border-radius: 4px;
 }
-.careerForm button {
+.careerFormNew button {
   width: 90%;
   font-size: 18px;
   color: #ffff;
@@ -547,6 +578,21 @@ font-style: normal;
   font-weight: 500;
   cursor: pointer;
   text-align: center;
+}
+
+.careerFormNew button:hover{
+  border: 0;
+  background-color: #ffaf2b !important;
+}
+
+.careerFormNew button:active{
+  border: 0;
+  background-color: #ffaf2b !important;
+}
+
+.careerFormNew input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .section5_subText4 {
@@ -567,18 +613,6 @@ font-weight: normal;
   font-size: 1.25rem;
   line-height: 1.875rem;
   margin: 0 10px;
-}
-/* .estimatenote:hover{
-   animation: pulse 1s infinite;
-  transition: .3s;
-} */
-.estimate_call{
-display: flex;
-}
-.estimate_call:hover{
-  
-   animation: pulse 1s infinite;
-  transition: .3s;
 }
 .qualification_section2 {
   display: flex;
@@ -841,9 +875,6 @@ display: flex;
     margin: 5% 10%;
   }
   .section5_subText4 {
-    display: flex;
-    align-items: center;
-    justify-content:center;
     font-size: 0.8rem;
     margin-top: 1rem;
   }
