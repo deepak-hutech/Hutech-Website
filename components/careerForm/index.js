@@ -128,7 +128,7 @@ const careerform = () => {
 
         <Row className="">
         <Form.Group className="position-relative mb-3">
-            <Form.Label>Attack File</Form.Label>
+            <Form.Label>Attach File</Form.Label>
             <Form.Control
               type="file"
               required
