@@ -1,6 +1,5 @@
 import contactStyle from "../../styles/Contact.module.css";
 
-
 function Form() {
     const registerUser = async (event) => {
       event.preventDefault();
@@ -12,11 +11,6 @@ function Form() {
       let colorBlack = "1px solid black";
       let colorRed = "1px solid red"
   
-      // if(description.value === ""){
-      //   description.style.border = colorRed;
-      //   description.focus();
-      // }else 
-      //  description.style.border = colorBlack
   
       if(phone.value === ""){
         phone.style.border = colorRed;
@@ -35,6 +29,7 @@ function Form() {
          name.focus();
       }else
         name.style.border = colorBlack
+
   
     const res = await fetch('https://strapi.hutech.solutions/contact-forms', {
       body: JSON.stringify({
@@ -59,7 +54,7 @@ function Form() {
     return (
       <form onSubmit={registerUser} className={contactStyle.contactForm} id="form">
         <div>
-           <input id="name" type="text" autoComplete="name" placeholder="Name"  />
+           <input id="name" type="text" autoComplete="name" placeholder="Name" />
         </div>
         <div>
           <input id="email" type="email" autoComplete="email" placeholder="Email" />
