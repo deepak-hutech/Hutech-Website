@@ -539,7 +539,7 @@ const Section: NextPage = (props: any) => {
         <div className={companyStyles.values_vision_banner}>
           <div className={companyStyles.values_vision}>
             {carosel_cards.map((v: any) => (
-              <div className={companyStyles.vvContent} data-aos="fade-up">
+              <div className={companyStyles.vvContent} data-aos="fade-up" data-aos-duration="1500">
                 <img
                   className={companyStyles.profile}
                   src={baseUrl + v.images.map((v: any) => v.url)}
@@ -640,7 +640,8 @@ const Section: NextPage = (props: any) => {
               ></div>
             )}
           </div>
-          <div className={companyStyles.allProducts} data-aos="zoom-out-up">
+          <div className={companyStyles.allProducts} data-aos="zoom-out-up"
+           data-aos-duration="1500">
             {carosel_cards.map((v: any) => (
               <div className={companyStyles.logos}>
                 <img
@@ -994,19 +995,21 @@ const Section: NextPage = (props: any) => {
           <div className={contactStyle.contact}>
             <div className={contactStyle.content}>
               <div>
-                <h2>Looking for more assistance? </h2>
-                <h4>Choose how you'd like to contact our Mail support:</h4>
+                <h2 data-aos="fade-up" data-aos-duration="1000">
+                    Looking for more assistance? </h2>
+                <h4 data-aos="fade-up" data-aos-duration="1300">
+                  Choose how you'd like to contact our Mail support:</h4>
               </div>
 
               <div className={contactStyle.tabsContainer}>
-                  <div className={contactStyle.tabsIcons}>
+                  <div className={contactStyle.tabsIcons} data-aos="fade-up" data-aos-duration="1500">
                       <Image
                           loader={myLoader}
                           src={submitIcon}
                           alt="Picture of the author"
                           width={30}
                           height={100}
-                          className={styles.svgarrow}
+                          // className={styles.svgarrow}
                         />
                         <Image
                           loader={myLoader}
@@ -1014,7 +1017,7 @@ const Section: NextPage = (props: any) => {
                           alt="Picture of the author"
                           width={30}
                           height={100}
-                          className={styles.svgarrow}
+                          // className={styles.svgarrow}
                         />
                       <Image
                         loader={myLoader}
@@ -1022,17 +1025,16 @@ const Section: NextPage = (props: any) => {
                         alt="Picture of the author"
                         width={30}
                         height={100}
-                        className={styles.svgarrow}
+                        // className={styles.svgarrow}
                           />
                   </div>
                 <Tabs
                   defaultActiveKey="home"
                   id="uncontrolled-tab-example"
-                  className="mb-3"
-                >
+                  className="mb-3" >
 
                   <Tab eventKey="home" title="Submit a form">
-                    <div className={contactStyle.tab1}>
+                    <div className={contactStyle.tab1} data-aos="fade-up" data-aos-duration="1800">
                       <div className="mb-5">
                         <h4>
                           Fill out this form and a support representative will
@@ -1154,7 +1156,8 @@ const Section: NextPage = (props: any) => {
           </div>
 
           <div className={`${servicesStyles.client_banner}`}>
-            <div className={servicesStyles.clientContent} data-aos="fade-up">
+            <div className={servicesStyles.clientContent} data-aos="fade-up"
+             data-aos-duration="1500">
               {free_text && (
                 <div
                   className={servicesStyles.section2_title}
@@ -1290,13 +1293,13 @@ const Section: NextPage = (props: any) => {
             <div className={`${servicesStyles.client_banner}`}>
               <div className={servicesStyles.clientContent}>
                 {free_text && (
-                  <div
+                  <div  data-aos="fade-up" data-aos-duration="1000"
                     className={servicesStyles.section6_title}
                     dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                   ></div>
                 )}
                 {sub_heading && (
-                  <div
+                  <div data-aos="fade-up" data-aos-duration="1000"
                     className={servicesStyles.section6_note}
                     dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
                   ></div>
@@ -1311,7 +1314,7 @@ const Section: NextPage = (props: any) => {
             {carosel_cards[0] && (
               <div
                 className={servicesStyles.section6_imgages}
-                data-aos="fade-right"
+                data-aos="zoom-in" data-aos-duration="2000"
               >
                 {carosel_cards.map((_card: any, index: number) => (
                   <Card {..._card} key={index} />
@@ -1328,7 +1331,7 @@ const Section: NextPage = (props: any) => {
             <div className={`${servicesStyles.client_banner}`}>
               <div className={servicesStyles.clientContent}>
                 {free_text && (
-                  <div
+                  <div data-aos="fade-up" data-aos-duration="1500"
                     className={servicesStyles.section7_title}
                     dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                   ></div>
@@ -1383,7 +1386,7 @@ const Section: NextPage = (props: any) => {
             <div className={`${servicesStyles.client_banner}`}>
               <div className={servicesStyles.clientContent}>
                 {free_text && (
-                  <div
+                  <div data-aos="fade-up" data-aos-duration="1200"
                     className={servicesStyles.section8_title}
                     dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                   ></div>
@@ -1397,7 +1400,9 @@ const Section: NextPage = (props: any) => {
               </div>
             </div>
             {carosel_cards[0] && (
-              <div className={servicesStyles.section8_img} data-aos="fade-up">
+              <div className={servicesStyles.section8_img} data-aos="fade-up"
+                  data-aos-duration="2000"
+              >
                 {carosel_cards.map((_card: any, index: number) => (
                   <Card {..._card} key={index} />
                 ))}

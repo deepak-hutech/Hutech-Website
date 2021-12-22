@@ -130,16 +130,18 @@ margin-left: 3rem;
   transform: translateZ(0);
 }
 
+.opening_btn:hover{
+  background: #0171c1;
+}
+
 .opening_btn .call_to_action {
   text-align: center;
   font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
 }
-.opening_btn .call_to_action:hover {
-  color: red;
-}
-.opening_btn:before {
+
+/* .opening_btn:before {
   background-color: #0171C1;
   border-radius: 30px;
   content: "";
@@ -155,7 +157,7 @@ margin-left: 3rem;
 .opening_btn:hover:before {
   transform: scaleX(1);
   transform-origin: center left;
-}
+} */
 .section3 {
   display: flex;
   align-items: center;
@@ -503,6 +505,7 @@ font-style: normal;
 .Estimate_btn1:hover{
   animation: pulse 1s infinite;
   transition: .3s;
+  background: #0171c1;
 }
 @keyframes pulse {
   0% {
@@ -579,7 +582,7 @@ font-style: normal;
 
 .careerFormNew button:hover{
   border: 0;
-  background-color: #ffaf2b !important;
+  background: #0171c1;
 }
 
 .careerFormNew button:active{

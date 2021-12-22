@@ -92,6 +92,11 @@
   transition: box-shadow 1s cubic-bezier(0.55, 0, 0.1, 1) 0s;
 }
 
+.section1 .call_to_action:hover{
+  background: #0171c1;
+}
+
+
 @media only screen and (max-width: 500px) {
   .section1 .banner_container{
     top: 20%;
@@ -309,6 +314,8 @@
 
 .section4_buttons .call_to_action{
   background-color: #FFAF2B;
+  cursor: pointer;
+
   color: white;
   width:267px;
   bottom: 65px;
@@ -322,6 +329,11 @@
   font-weight: 600;
   font-size: 15px;
 }
+
+.section4_buttons .call_to_action:hover{
+  background: #0171c1;
+}
+
 
 @media only screen and (max-width: 500px) {
   .clientContent4 {
@@ -367,7 +379,7 @@
 
 .section5_cards {
   display: flex;
-  padding: 0 20px 0 60px;
+  padding: 0 25px;
   flex-wrap: wrap;
 }
 
