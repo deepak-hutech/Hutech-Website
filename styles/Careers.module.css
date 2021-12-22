@@ -51,7 +51,7 @@
 .section1_subText2 p {
   width: 100%;
   font-style: normal;
-  font-size: 1.5rem;
+  font-size: 16px;
   line-height: 1.875rem;
   font-weight: normal;
   text-align: center;
@@ -281,12 +281,11 @@ font-style: normal;
   margin-top: 0.2rem;
 }
 .openingcard {
-  height: 277px;
-  width: 277px;
+  height: 240px;
+  width: 264px;
   position: relative;
-  margin-bottom: 3rem;
-  margin-top: 1rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 1rem 2rem 1rem 0;
+  
   border: 0;
   border-radius: 15px;
   /* transition: 0.3s; */
@@ -294,7 +293,11 @@ font-style: normal;
   transition: all 0.15s ease-in-out;
   padding: 3% 1.5% 3% 1.5%;
 }
-.openingcard:hover ::after,
+.openingcard:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* .openingcard:hover ::after,
 .openingcard :hover ::before {
   content: "";
   position: absolute;
@@ -318,7 +321,7 @@ font-style: normal;
   border: 0;
   border-radius: 15px;
   animation: animate 20s linear infinite;
-}
+} */
 @keyframes animate {
   0% {
     background-position: 0 0;
@@ -330,9 +333,9 @@ font-style: normal;
     background-position: 0 0;
   }
 }
-.openingcard:hover ::after {
+/* .openingcard:hover ::after {
   filter: blur(5px);
-}
+} */
 /* .openingcard:hover {
 
 } */
@@ -377,14 +380,15 @@ font-style: normal;
 }
 .opening_subheading button {
   background-color: white;
-  border: 1px solid #0171c1;
-  border-radius: 7px;
-  color: #0171c1;
-  padding: 0.625rem 1.375rem;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1rem;
+    border: 1px solid #0171c1;
+    border-radius: 4px;
+    color: #0171c1;
+    padding: 4px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin-top: 7px;
 }
 .section4 {
   position: relative;
@@ -405,9 +409,9 @@ font-style: normal;
 
 .section4_cards {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   flex-wrap: wrap;
-  margin: 0 3rem;
+  margin: 0 7.5rem 3rem;
 }
 .section5 {
   width: 100%;
@@ -487,6 +491,7 @@ font-style: normal;
   text-decoration: none;
   color: #0171c1;
   margin-bottom: 15%;
+  font-size: 14px;
 }
 .moreinfo_icon a::after {
   content: "→";
@@ -560,7 +565,7 @@ font-weight: normal;
 .apply_left {
   width: 55%;
   height: 80%;
-  margin: 10% 0% 6% 6%;
+  margin: 10% 0% 6% 8%;
   transition: 0.3s;
   background-color: white;
   padding: 3% 0% 3% 0%;
@@ -568,7 +573,7 @@ font-weight: normal;
 .apply_right {
   width: 45%;
   height: 80%;
-  margin: 10% 6% 6% 2%;
+  margin: 10% 9% 6% 2%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: 0;
   border-radius: 15px;
