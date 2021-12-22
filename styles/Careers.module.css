@@ -298,7 +298,13 @@ font-style: normal;
 .openingcard:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-
+.estimate_call{
+  display: flex;
+}
+.estimate_call:hover{
+  animation: pulse 1s infinite;
+  transition: .3s;
+}
 /* .openingcard:hover ::after,
 .openingcard :hover ::before {
   content: "";
