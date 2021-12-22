@@ -151,7 +151,7 @@ const Section: NextPage = (props: any) => {
       slidesToSlide: 1, // optional, default to 1.
     },
   };
-  const responsive_portfolio_cards = {
+  const responsive_portfolio_details_cards = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 1,
@@ -1718,7 +1718,7 @@ const Section: NextPage = (props: any) => {
       return (
         <div className={`${portfolioStyles.porfolioDetails_card_section}`}>
           <div className={`${portfolioStyles.Industries_section1}`}>
-            {/* {
+            {
               <div className={portfolioStyles.porfolio_details_cards}>
                 {carosel_cards[0] && (
                   <div className={portfolioStyles.porfolioDetails_img}>
@@ -1729,12 +1729,12 @@ const Section: NextPage = (props: any) => {
                 )}
               </div>
               
-            } */}
-            <Carousel
+            }
+            {/* <Carousel
               swipeable={true}
               draggable={false}
               showDots={false}
-              responsive={responsive_portfolio_cards}
+              responsive={responsive_portfolio_details_cards}
               ssr={true} // means to render carousel on server-side.
               infinite={true}
               keyBoardControl={true}
@@ -1751,7 +1751,7 @@ const Section: NextPage = (props: any) => {
               {carosel_cards.map((_card: any, index: number) => (
                 <Card {..._card} key={index} />
               ))}
-            </Carousel>
+            </Carousel> */}
 
             <div className={`${portfolioStyles.pclient_banner}`}>
               <div className={portfolioStyles.clientContent}>
@@ -1801,7 +1801,7 @@ const Section: NextPage = (props: any) => {
         <div className={servicesStyles.seviceinner_bannerimg}>
           {home_banner[0] && (
             <Image
-              loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
+              loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
               src={baseUrl + home_banner[0].url}
               placeholder="blur"
               blurDataURL={baseUrl + home_banner[0].url}
@@ -1849,7 +1849,7 @@ const Section: NextPage = (props: any) => {
             {home_banner[0] && (
               <div className={`${servicesStyles.serviceinner_sec2_left_img}`}>
                 <Image
-                  loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
+                  loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
                   src={baseUrl + home_banner[0].url}
                   placeholder="blur"
                   blurDataURL={baseUrl + home_banner[0].url}
@@ -1891,7 +1891,7 @@ const Section: NextPage = (props: any) => {
             {home_banner[0] && (
               <div className={`${servicesStyles.serviceinner_sec3_left_img}`}>
                 <Image
-                  loader={() => myLoader((baseUrl + home_banner[0].url) as any)}
+                  loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
                   src={baseUrl + home_banner[0].url}
                   placeholder="blur"
                   blurDataURL={baseUrl + home_banner[0].url}

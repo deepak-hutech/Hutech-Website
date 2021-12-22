@@ -18,8 +18,9 @@
 }
 .footersubheading img {
   margin-right: 8px;
-  height: 10px;
+  min-height: auto;
   margin-top: 5px;
+  height: 100%;
 }
 .navContainer button {
   font-weight: 600;

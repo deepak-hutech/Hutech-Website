@@ -2,7 +2,13 @@
   margin-top: 100px;
   display: flex;
 } */
-
+.blogfree_text{
+  font-family: "GraphikMedium";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 55px;
+}
 .compo {
   background-color: blueviolet;
   width: 361px;
@@ -16,10 +22,12 @@
 }
 /* /////////////BLOG DETAILS */
 
+
+
 .free_text {
   font-size: 18px;
   line-height: 24px;
-  padding: 20px 20px 0;
+  padding: 20px 20px 15px;
   color: #000;
   cursor: pointer;
 }
@@ -42,7 +50,7 @@
 }
 .publishcontent {
   display: flex;
-  padding: 0 20px;
+  padding: 12px 20px;
 }
 .publishtitle {
   font-size: 13px;
@@ -125,7 +133,11 @@
 }
 
 .page {
-  text-align: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 30px;
+ width: 100%;
+ display: flex;
 }
 
 .section5_subText1 {

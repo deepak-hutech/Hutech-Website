@@ -2,7 +2,13 @@ import { NextPage } from "next";
 import styles from "../../styles/Header.module.css";
 import { baseUrl } from "./../../public/strings.json";
 import Link from "next/link";
+import Image, { ImageLoader } from "next/image";
+import subheadingIcon from "../assets/subheading.svg";
 
+const myLoader = ({ src, width, quality }) => {
+  const origin = typeof window !== "undefined" && window.location.origin;
+  return `${origin}/${src}?w=${width}&q=${quality || 75}`;
+};
 const Action: NextPage = ({
   type,
   display,
@@ -30,7 +36,16 @@ const Action: NextPage = ({
           <section className={styles.subMenuContainer}>
             {group.map(({ title, action }: any) => (
               <div className={styles.servicesubMenu}>
+                <Image
+                    loader={myLoader}
+                    src={subheadingIcon}
+                    className={styles.subheaderimg}
+                    width={10}
+                    height={10}
+                  />
                 <a href={title} className={styles.topNavLink}>
+                  
+                  
                   {title}
                 </a>
 
