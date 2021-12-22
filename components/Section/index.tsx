@@ -1648,7 +1648,7 @@ const Section: NextPage = (props: any) => {
     case "portfolio_img_banner":
       return (
         <div className={`${portfolioStyles.porfolio_card_section}`}>
-          <div style={{ padding: "4% 3% 0" }}>
+          <div style={{ padding: "4% 6% 0" }}>
             <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
           </div>
           <div className={`${portfolioStyles.Industries_banner}`}>
