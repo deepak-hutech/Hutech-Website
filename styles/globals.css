@@ -1,30 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Saira+Extra+Condensed&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Saira+Extra+Condensed&display=swap");
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'GraphikRegular';
+  font-family: "GraphikRegular";
   scroll-behavior: smooth;
   font-weight: 400;
   overflow-x: hidden;
 }
 @font-face {
-  font-family: 'GraphikMedium';
-  src: URL('./../components/assets/fonts/GraphikMedium.otf') format('truetype');
+  font-family: "GraphikMedium";
+  src: URL("./../components/assets/fonts/GraphikMedium.otf") format("truetype");
 }
 @font-face {
-  font-family: 'GraphikBold';
-  src: URL('./../components/assets/fonts/GraphikBold.otf') format('truetype');
+  font-family: "GraphikBold";
+  src: URL("./../components/assets/fonts/GraphikBold.otf") format("truetype");
 }
 @font-face {
-  font-family: 'GraphikSemibold';
-  src: URL('./../components/assets/fonts/GraphikSemibold.otf') format('truetype');
+  font-family: "GraphikSemibold";
+  src: URL("./../components/assets/fonts/GraphikSemibold.otf")
+    format("truetype");
 }
 @font-face {
-  font-family: 'GraphikRegular';
-  src: URL('./../components/assets/fonts/GraphikRegular.otf') format('truetype');
+  font-family: "GraphikRegular";
+  src: URL("./../components/assets/fonts/GraphikRegular.otf") format("truetype");
 }
 a {
   color: inherit;
@@ -34,20 +35,24 @@ a {
 * {
   box-sizing: border-box;
 }
+.custom-dot-list-style .react-multi-carousel-dot--active button {
+  border-color: #ffaf2b !important;
+  background: #ffaf2b !important;
+}
+.custom-dot-list-style .react-multi-carousel-dot button {
+  background: #0171c1;
+  border-color: #0171c1;
+}
 .react-multi-carousel-list {
-  align-items: start !important;
-  height: 430px !important;
-  
+  align-items: baseline !important;
+  overflow: visible !important;
 }
-
-
-.react-multiple-carousel__arrow--left {
-  left: -webkit-calc(4% + 1px);
-  left: calc(86% + 1px) !important;
-  bottom: 20%;
+.react-multi-carousel-dot-list {
+  bottom: -35px !important;
 }
-.react-multiple-carousel__arrow--right{
-  bottom: 20% !important;
+.custom-dot-list-style .react-multi-carousel-dot button:hover:active {
+  background: #0171c1 !important;
+  /* border-color: #0171C1 !important; */
 }
 
 *::-webkit-scrollbar {
@@ -59,26 +64,30 @@ a {
   background-color: #2f2c2c;
   border-radius: 12px;
 }
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-  color: #0171C1!important;
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: #0171c1 !important;
   background-color: transparent !important;
-  border-color: transparent transparent #0171C1 !important;
+  border-color: transparent transparent #0171c1 !important;
 }
 .nav-tabs .nav-link:hover {
-  border-color: transparent transparent #0171C1 !important;
-  color: #0171C1;
- 
+  border-color: transparent transparent #0171c1 !important;
+  color: #0171c1;
 }
 .nav-link {
-  color: #000 !important;}
-  .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-     padding-left: 0 !important;
-  }
+  color: #000 !important;
+}
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  padding-left: 0 !important;
+}
 /* 
  #breadCrum ol li a{
    font-weight: 600;
    background-color: white !important;
  }  */
-
-
-  
