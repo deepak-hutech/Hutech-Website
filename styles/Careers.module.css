@@ -293,13 +293,10 @@ font-style: normal;
   transition: all 0.15s ease-in-out;
   padding: 3% 1.5% 3% 1.5%;
 }
-<<<<<<< HEAD
 .openingcard:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-=======
->>>>>>> ef09776e9db59a792deb7897f6a4d38c3c3c37f8
 /* .openingcard:hover ::after,
 .openingcard :hover ::before {
   content: "";

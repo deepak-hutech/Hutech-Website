@@ -159,8 +159,8 @@
 .tabsContainer .tabsIcons {
     display: flex;
     justify-content: space-evenly;
-    margin: 0 57px;
-    margin-bottom: -25px;
+    margin: 0 80px;
+    margin-bottom: -26px;
 }
 
 
