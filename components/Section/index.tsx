@@ -1034,7 +1034,7 @@ const Section: NextPage = (props: any) => {
                   className="mb-3" >
 
                   <Tab eventKey="home" title="Submit a form">
-                    <div className={contactStyle.tab1} data-aos="fade-up" data-aos-duration="1800">
+                    <div className={contactStyle.tab1}>
                       <div className="mb-5">
                         <h4>
                           Fill out this form and a support representative will

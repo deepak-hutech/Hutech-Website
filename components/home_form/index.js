@@ -58,7 +58,8 @@ function HomeForm() {
   };
 
   return (
-    <form onSubmit={registerUser} id="form" className={homeform.homecontactForm}>
+    <form onSubmit={registerUser} id="form" autoComplete="off"
+    className={homeform.homecontactForm}>
       <h3>Hey! there {`${":)"}` } </h3>
       <div className={homeform.contactForm}>
         <div className={homeform.labelbox}>

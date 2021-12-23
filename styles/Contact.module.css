@@ -74,11 +74,12 @@
   .tabsContainer .tab1 {
     max-width: 600px;
     margin: 40px auto;
-    box-shadow: 0 0 20px 4px rgb(207 207 207 / 30%);
-    background: #fff;
     padding: 50px;
     box-sizing: border-box;
     min-height: 400px;
+    width: 779px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(155, 149, 149, 0.25);
    }
    
    .tabsContainer .tab2 {
@@ -136,11 +137,11 @@
   
    .contactForm input{
     width: 100%;
-    height: 45px;
-    margin: 20px 0;
+    height: 30px;
+    /* margin: 20px 0; */
     line-height: 22px;
     font-size: 14px;
-    padding: 5px 10px;
+    padding: 0;
     border: 1px solid #d9d9d9;
     margin-bottom: 0;
     box-sizing: border-box;
@@ -170,7 +171,82 @@
 
 
 
+.contactForm {
+  /* background-color: blueviolet; */
+}
+
 .contactForm input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.d input {
+  box-shadow: none !important;
+  background-color: none;
+}
+
+
+.contactForm .inputs{
+ border: none;
+ border-bottom: 1px solid black;
+ border-radius: 0;
+ background-image: none !important;
+}
+
+.contact input:focus {
+  box-shadow: none;
+}
+
+.contact textarea:focus {
+  box-shadow: none;
+}
+
+.contactForm select{
+ border: none;
+ border-bottom: 1px solid black;
+ border-radius: 0;
+ box-shadow: none !important;
+ padding: 10px 0;
+ /* background-image: url(../components/assets/dropdown.svg); */
+ /* background-image: none !important; */
+
+}
+
+.careerForm textarea {
+ border: none;
+ border-bottom: 1px solid black;
+ border-radius: 0;
+ box-shadow: none !important;
+}
+
+.contactForm button {
+  width: 90%;
+  font-size: 18px;
+  color: #ffff;
+  background: #ffaf2b;
+  border: 0;
+  border-radius: 5px;
+  display: block;
+  padding: 9px 20px;
+  line-height: normal;
+  margin: 20px auto;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+}
+
+.contactForm button:hover{
+  border: 0;
+  background: #0171c1;
+}
+
+.contactForm button:active{
+  border: 0;
+  background-color: #ffaf2b !important;
+}
+
+.contactForm input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
