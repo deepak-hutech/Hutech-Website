@@ -134,7 +134,7 @@ const careerform = () => {
         <Form.Group as={Col} md="6" controlId="validationCountryUsername">
            <Form.Label>Country</Form.Label>
            <Form.Select  value={inputs.country || ""} onChange={handleChange} name="country" >
-            <option value="" selected>Select Post</option>
+            <option value="" selected>Select Country</option>
             <option value="India">India</option>
             <option value="China">China</option>
             <option value="Japan">Japan</option>

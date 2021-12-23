@@ -7,7 +7,6 @@
   .contact .content {
     padding: 50px;
     margin: 60px;
-    background-color: #fafafa
   }
   
   .contact .content h2 {
@@ -42,7 +41,7 @@
   .tabsContainer ul{
     color: #1976d2;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
   }
    .nav-item .nav-link {
     color:black
@@ -164,8 +163,7 @@
 
 .contact .tabsContainer .tabsIcons {
     display: flex;
-    justify-content: space-evenly;
-    margin: 0 80px;
+    justify-content: space-around;
     margin-bottom: -26px;
 }
 

@@ -994,12 +994,12 @@ const Section: NextPage = (props: any) => {
           </div>
           <div className={contactStyle.contact}>
             <div className={contactStyle.content}>
-              <div>
+              {/* <div>
                 <h2 data-aos="fade-up" data-aos-duration="1000">
                     Looking for more assistance? </h2>
                 <h4 data-aos="fade-up" data-aos-duration="1300">
                   Choose how you'd like to contact our Mail support:</h4>
-              </div>
+              </div> */}
 
               <div className={contactStyle.tabsContainer}>
                   <div className={contactStyle.tabsIcons} data-aos="fade-up" data-aos-duration="1500">
@@ -1034,7 +1034,7 @@ const Section: NextPage = (props: any) => {
                   className="mb-3" >
 
                   <Tab eventKey="home" title="Submit a form">
-                    <div className={contactStyle.tab1}>
+                  <div className={contactStyle.tab1} data-aos="fade-up" data-aos-duration="1800">
                       <div className="mb-5">
                         <h4>
                           Fill out this form and a support representative will
