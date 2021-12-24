@@ -43,8 +43,7 @@
 }
 .section1_subText1 h3 {
   font-style: normal;
-  font-size: 2.5rem;
-  line-height: 2.75rem;
+  font-size: 40px;
   font-weight: 400;
   font-family: "GraphikMedium";
 }
@@ -52,7 +51,7 @@
   width: 100%;
   font-style: normal;
   font-size: 16px;
-  line-height: 1.875rem;
+  line-height: 25px;
   font-weight: normal;
   text-align: center;
 }
@@ -84,10 +83,10 @@ margin-left: 3rem;
 .sec2_left_title h3 {
   font-style: normal;
   font-weight: bold;
-  font-size: 1.875rem;
-  line-height: 2.0625rem;
+  font-size: 30px;
+  line-height: 30px;
   font-family: "GraphikMedium";
-  margin-top: 1.2rem;
+  margin-top: 20px;
 }
 .sec2_left_note p {
   font-size: 1rem;
@@ -460,7 +459,7 @@ font-style: normal;
   width: 100%;
   color: white;
   display: grid;
-  background: linear-gradient(to top, #3189cd) no-repeat;
+  background: #0662a7;
   position: relative;
   text-align: center;
 }

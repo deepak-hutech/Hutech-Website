@@ -1,75 +1,189 @@
-import contactStyle from "../../styles/Contact.module.css";
 
-function Form() {
-    const registerUser = async (event) => {
-      event.preventDefault();
-      let e = event.target;
-  
-      var name = document.forms["form"]["name"];
-      var email = document.forms["form"]["email"];
-      var phone = document.forms["form"]["phone"];
-      let colorBlack = "1px solid black";
-      let colorRed = "1px solid red"
-  
-  
-      if(phone.value === ""){
-        phone.style.border = colorRed;
-        phone.focus();
-      }else
-        phone.style.border = colorBlack
-  
-      if(email.value === ""){
-        email.style.border = colorRed;
-        email.focus();
-      }else
-         email.style.border = colorBlack
-  
-      if(name.value === "") {
-         name.style.border = colorRed;
-         name.focus();
-      }else
-        name.style.border = colorBlack
+import { useState } from "react";
+import axios from "axios";
+import CareerStyle from "../../styles/Contact.module.css";
+import { InputGroup, Form, Button, Row, Col, Container } from "react-bootstrap";
 
+
+const careerform = () => {
+  const [file, setFile] = useState("");
+  const [inputs, setInputs] = useState({
+    username:String,
+    email: String,
+    phone: Number,
+    company: String,
+    projectDetails: '',
+    country: String,
+    services: String,
+
+  });
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs((values) => ({ ...values,
+       [name]: value }));
+  };
   
-    const res = await fetch('https://strapi.hutech.solutions/contact-forms', {
-      body: JSON.stringify({
-          username: e.name.value,
-          email: e.email.value,
-          phone: e.phone.value,
-          description: e.description.value,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
+  const postData = {
+    username: inputs.username,
+    email: inputs.email,
+    phone: inputs.phone,
+    company: inputs.company,
+    country: inputs.country,
+    services: inputs.services,
+    projectDetails: inputs.projectDetails
+  };
+
+
+  const onChange = (event) => {
+    setFile(event.target.files[0]);
+  };
+
+  const upload = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("files.file", file);
+    // if(file.name) {
+      formData.append("data", JSON.stringify(postData));
+      axios({
+        method: "post",
+        url: "https://strapi.hutech.solutions/contact-forms",
+        data: formData
+      })
+      .then(({ data }) => {
+          console.log("Succesfully uploaded: ", JSON.stringify(data));
+          location.reload(true);
+      })
+      .catch((error) => {
+        console.log("Error: ", error.message);
       });
-      const result = await res.json();
+    // }
+  };
+
+    const [validated, setValidated] = useState(false);
   
-      if(res.status == 200){
-        document.getElementById("form").reset();
+    const handleSubmit = (event) => {
+      const form = event.currentTarget;
+      if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
       }
-  
+      setValidated(true);
+      document.getElementById("form").onsubmit = function(){
+    }
     };
   
     return (
-      <form onSubmit={registerUser} className={contactStyle.contactForm} id="form">
-        <div>
-           <input id="name" type="text" autoComplete="name" placeholder="Name" />
-        </div>
-        <div>
-          <input id="email" type="email" autoComplete="email" placeholder="Email" />
-        </div>
-        <div>
-          <input id="phone" type="number" autoComplete="phone" placeholder="Phone" />
-        </div>
-        <div>
-          <textarea id="description" type="text" autoComplete="desc" placeholder="Description" />
-        </div>
-        <div style={{textAlign:"right"}}>
-        <button type="submit" className={contactStyle.submitbtn}>Submit</button>
-        </div>
-      </form>
-    )
-  }
+      <Form noValidate validated={validated} id="form" autoComplete="off"
+              className={CareerStyle.contactForm}
+              onSubmit={upload}>
+        <Row className="mb-5 mt-3">
+          <Form.Group as={Col} md="6" controlId="validationCustom01">
+            <Form.Label>Your Name *</Form.Label>
 
-  export default Form
+            <Form.Control
+              required value={inputs.username}
+              type="text"
+              className={CareerStyle.inputs}
+              onChange={handleChange}
+              name="username"
+              placeholder="Enter your name"
+            />
+          </Form.Group>
+          <Form.Group as={Col} md="6" controlId="validationCustom02">
+          <Form.Label>Email *</Form.Label>
+            <Form.Control
+              required value={inputs.email}
+              type="email"
+              className={CareerStyle.inputs}
+              onChange={handleChange}
+              name="email"
+              placeholder="Enter your email address"
+            />
+          </Form.Group>
+        </Row>
+        <Row className="mb-5 mt-3">
+          <Form.Group as={Col} md="6" controlId="validationCustomPhone">
+            <Form.Label>Phone Number *</Form.Label>
+            <Form.Control
+              value={inputs.phone}
+              type="number"
+              className={CareerStyle.inputs}
+              onChange={handleChange}
+              name="phone"
+              placeholder="09897888927"
+              aria-describedby="inputGroupPrepend"
+              required 
+            />
+          </Form.Group>
+          <Form.Group as={Col} md="6" controlId="validationCustom04">
+           <Form.Label>Company Name</Form.Label>
+             <Form.Control
+              value={inputs.company}
+              type="text"
+              className={CareerStyle.inputs}
+              onChange={handleChange}
+              name="company"
+              placeholder="Enter company name"
+            />
+          </Form.Group>
+        </Row>
+        <Row className="mb-5">
+
+        <Form.Group as={Col} md="6" controlId="validationCountryUsername">
+           <Form.Label>Country</Form.Label>
+           <Form.Select  value={inputs.country || ""} onChange={handleChange} name="country" >
+            <option value="" selected>Select Country</option>
+            <option value="India">India</option>
+            <option value="China">China</option>
+            <option value="Japan">Japan</option>
+          </Form.Select>
+         </Form.Group>
+
+          <Form.Group as={Col} md="6" controlId="validationCustomUsername">
+           <Form.Label>Interested Service</Form.Label>
+          <Form.Select  value={inputs.services || ""} onChange={handleChange} name="services" >
+          <option value="" selected>Select interested service</option>
+            <option value="service1">service1</option>
+            <option value="service2">service2</option>
+            <option value="servic3">Service3</option>
+          </Form.Select>
+        </Form.Group>
+        </Row>
+
+        <Row className="mb-3">
+        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+         <Form.Label>Project Details *</Form.Label>
+          <Form.Control as="textarea" placeholder="Brief about the project"
+           rows={3}   
+          required name="projectDetails"
+              className={CareerStyle.inputs}
+              value={inputs.projectDetails || ""}
+              onChange={handleChange}
+              />
+         </Form.Group>
+        </Row>
+
+        <Row className="">
+        <Form.Group className="position-relative mb-3">
+            <Form.Label>Please share your requirement documents</Form.Label>
+            <Form.Control
+              type="file"
+              name="file"
+              onChange={onChange}
+            />
+            {/* <Form.Control.Feedback type="invalid" tooltip>File is required field
+            </Form.Control.Feedback> */}
+          </Form.Group>
+        </Row>
+        <p className={CareerStyle.form_upload_text}>
+          File types: pdf, docx and doc | Maximum file size: 5MB.
+        </p>
+        <button type="submit" onClick={handleSubmit}>Submit</button>
+      </Form>
+    );
+  }
+  
+export default careerform;
+
