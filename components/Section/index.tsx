@@ -232,6 +232,7 @@ const Section: NextPage = (props: any) => {
             ssr={true} // means to render carousel on server-side.
             infinite={true}
             autoPlaySpeed={5000}
+            autoPlay={true}
             keyBoardControl={true}
             customTransition="all .5"
             transitionDuration={500}
@@ -932,7 +933,7 @@ const Section: NextPage = (props: any) => {
               removeArrowOnDeviceType={["tablet", "mobile"]}
               dotListClass="custom-dot-list-style"
               // itemClass="carousel-item-padding-40-px"
-              className={styles.clientcarousel}
+              className={styles.home_blog_carousel}
             >
               {cards.map((_card: any, index: number) => (
                 <Card {..._card} key={index} />

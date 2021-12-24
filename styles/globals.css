@@ -43,12 +43,13 @@ a {
   background: #0171c1;
   border-color: #0171c1;
 }
+
+.react-multi-carousel-dot-list {
+  bottom: -35px !important;
+}
 .react-multi-carousel-list {
   align-items: baseline !important;
   overflow: visible !important;
-}
-.react-multi-carousel-dot-list {
-  bottom: -35px !important;
 }
 .custom-dot-list-style .react-multi-carousel-dot button:hover:active {
   background: #0171c1 !important;
