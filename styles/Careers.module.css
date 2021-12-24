@@ -43,8 +43,7 @@
 }
 .section1_subText1 h3 {
   font-style: normal;
-  font-size: 2.5rem;
-  line-height: 2.75rem;
+  font-size: 40px;
   font-weight: 400;
   font-family: "GraphikMedium";
 }
@@ -52,7 +51,7 @@
   width: 100%;
   font-style: normal;
   font-size: 16px;
-  line-height: 1.875rem;
+  line-height: 25px;
   font-weight: normal;
   text-align: center;
 }
@@ -84,10 +83,10 @@ margin-left: 3rem;
 .sec2_left_title h3 {
   font-style: normal;
   font-weight: bold;
-  font-size: 1.875rem;
-  line-height: 2.0625rem;
+  font-size: 30px;
+  line-height: 30px;
   font-family: "GraphikMedium";
-  margin-top: 1.2rem;
+  margin-top: 20px;
 }
 .sec2_left_note p {
   font-size: 1rem;
@@ -130,16 +129,18 @@ margin-left: 3rem;
   transform: translateZ(0);
 }
 
+.opening_btn:hover{
+  background: #0171c1;
+}
+
 .opening_btn .call_to_action {
   text-align: center;
   font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
 }
-.opening_btn .call_to_action:hover {
-  color: red;
-}
-.opening_btn:before {
+
+/* .opening_btn:before {
   background-color: #0171C1;
   border-radius: 30px;
   content: "";
@@ -155,7 +156,7 @@ margin-left: 3rem;
 .opening_btn:hover:before {
   transform: scaleX(1);
   transform-origin: center left;
-}
+} */
 .section3 {
   display: flex;
   align-items: center;
@@ -296,7 +297,13 @@ font-style: normal;
 .openingcard:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-
+.estimate_call{
+  display: flex;
+}
+.estimate_call:hover{
+  animation: pulse 1s infinite;
+  transition: .3s;
+}
 /* .openingcard:hover ::after,
 .openingcard :hover ::before {
   content: "";
@@ -452,7 +459,7 @@ font-style: normal;
   width: 100%;
   color: white;
   display: grid;
-  background: linear-gradient(to top, #3189cd) no-repeat;
+  background: #0662a7;
   position: relative;
   text-align: center;
 }
@@ -503,6 +510,7 @@ font-style: normal;
 .Estimate_btn1:hover{
   animation: pulse 1s infinite;
   transition: .3s;
+  background: #0171c1;
 }
 @keyframes pulse {
   0% {
@@ -585,7 +593,7 @@ font-style: normal;
 
 .careerFormNew button:hover{
   border: 0;
-  background-color: #ffaf2b !important;
+  background: #0171c1;
 }
 
 .careerFormNew button:active{

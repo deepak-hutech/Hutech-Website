@@ -258,6 +258,7 @@
     ". . full";
 }
 
+
 .stats_banner p {
   margin: 0px;
 }
@@ -467,11 +468,11 @@
   line-height: 24px;
 }
 
-.react-multi-carousel-list {
+/* .react-multi-carousel-list {
   align-items: start !important;
   overflow: visible !important;
   display: block !important;
-}
+} */
 .carousel{
 margin-top: -90px;
 }
@@ -492,7 +493,9 @@ margin-top: -90px;
   border-radius: 5px;
   cursor: pointer;
 }
+.carosel_home_blog_banner{
 
+}
 .accordion_head {
   padding-top: 3%;
   padding-bottom: 5%;

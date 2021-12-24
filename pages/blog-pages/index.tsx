@@ -10,6 +10,7 @@ import Breadcrumbs from "nextjs-breadcrumbs";
 import { baseUrl } from "../../public/strings.json";
 import { Pagination } from "react-bootstrap";
 import careerstyles from "../../styles/Careers.module.css";
+import marked from "marked";
 const myLoaderbanner: ImageLoader = (url: any) => {
   return url;
 };
@@ -43,20 +44,23 @@ const AllBlogs: NextPage<{
 
         <div className={companyStyles.banner_container}>
           <div className={companyStyles.content}>
-            <div className={companyStyles.free_text}>
+            <div className={blogStyle.blogfree_text}>
               {blogBanner[0].content[0].free_text}
             </div>
 
-            <div className={companyStyles.descrption}>
-              {blogBanner[0].content[0].sub_heading}
-            </div>
+            <div
+              className={companyStyles.descrption}
+              dangerouslySetInnerHTML={{
+                __html: marked(blogBanner[0].content[0].sub_heading),
+              }}
+            ></div>
           </div>
         </div>
       </div>
       <div style={{ padding: "2% 6% 0" }}>
         <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
       </div>
-      <div style={{ display: "flex", flexWrap: "wrap", padding: "0 7%" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", padding: "0 7% 8%", position:"relative" }}>
         {blogs.map((val: any) => (
           <div className={blogStyle.allBlogs}>
             <BlogSection {...val} />

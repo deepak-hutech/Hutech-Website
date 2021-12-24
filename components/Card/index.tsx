@@ -13,7 +13,6 @@ import careerstyles from "../../styles/Careers.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-
 const myLoader: ImageLoader = (url: any) => {
   return url;
 };
@@ -52,9 +51,12 @@ const Card: NextPage = (props: any) => {
     case "small_card":
       return (
         <div>
-          <div className={styles.card} data-aos="zoom-in"
-              data-aos-duration="1600">
-            <a id={props.id} href={Link ? Link : `/plans/${props.title}`} >
+          <div
+            className={styles.card}
+            data-aos="zoom-in"
+            data-aos-duration="1600"
+          >
+            <a id={props.id} href={Link ? Link : `/plans/${props.title}`}>
               <Image
                 loader={() => myLoader((baseUrl + images[0].url) as any)}
                 src={`${baseUrl}${images[0].url}`}
@@ -65,15 +67,23 @@ const Card: NextPage = (props: any) => {
               />
             </a>
           </div>
-          <div className={styles.heading} data-aos="zoom-in"
-              data-aos-duration="1800">{heading}</div>
+          <div
+            className={styles.heading}
+            data-aos="zoom-in"
+            data-aos-duration="1800"
+          >
+            {heading}
+          </div>
         </div>
       );
     case "capabilities_cards":
       return (
         <div className={styles.capabilities_cards}>
-          <div className={styles.capabilities} data-aos="zoom-in"
-              data-aos-duration="1000">
+          <div
+            className={styles.capabilities}
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          >
             <Image
               loader={() => myLoader((baseUrl + images[0].url) as any)}
               src={`${baseUrl}${images[0].url}`}
@@ -88,15 +98,18 @@ const Card: NextPage = (props: any) => {
             className={styles.capabilities_cards_title}
             dangerouslySetInnerHTML={{ __html: marked(free_text) }}
             data-aos="zoom-in"
-              data-aos-duration="1500"
+            data-aos-duration="1500"
           ></div>
         </div>
       );
     case "successful_product_card":
       return (
         <div className={styles.successful_product_card}>
-          <div className={styles.capabilities} data-aos="zoom-in"
-              data-aos-duration="1000">
+          <div
+            className={styles.capabilities}
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          >
             <Image
               loader={() => myLoader((baseUrl + images[0].url) as any)}
               src={`${baseUrl}${images[0].url}`}
@@ -107,20 +120,28 @@ const Card: NextPage = (props: any) => {
               className={styles.cardimg}
             />
           </div>
-          <p className={styles.para} data-aos="zoom-in"
-              data-aos-duration="1200">{heading}</p>
+          <p
+            className={styles.para}
+            data-aos="zoom-in"
+            data-aos-duration="1200"
+          >
+            {heading}
+          </p>
           <div
             className={styles.product_para}
             dangerouslySetInnerHTML={{ __html: marked(free_text) }}
             data-aos="zoom-in"
-              data-aos-duration="1500"
+            data-aos-duration="1500"
           ></div>
         </div>
       );
     case "clients_card":
       return (
-        <div className={styles.clients_card} data-aos="zoom-in"
-        data-aos-duration="1000">
+        <div
+          className={styles.clients_card}
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+        >
           <img src={`${baseUrl}${images[0].url}`}></img>
         </div>
       );
@@ -176,28 +197,29 @@ const Card: NextPage = (props: any) => {
       );
     case "mobile_app_development_card":
       return (
-        <div className={servicesStyles.mobile_app_development_card} data-aos="flip-right">
+        <div className={servicesStyles.mobile_app_development_card} data-aos="flip-right"
+        data-aos-duration="2000">
           <a
             style={{ textDecoration: "none", color: "black" }}
-            href={Link ? Link : `/service-details}`}
+            href= "/service-details"
           >
             <div className={servicesStyles.section3_cards}>
               <div
                 className={servicesStyles.section3_heading}
-               
                 dangerouslySetInnerHTML={{ __html: marked(heading) }}
               ></div>
               <div
                 className={servicesStyles.section3_para}
                 dangerouslySetInnerHTML={{ __html: marked(free_text) }}
               ></div>
-              <button>
-                <p>{call_to_action}
-                 {images.map((v:any)=> (
-                      <div>
-                        <img src={baseUrl + v.url}></img>
-                      </div>
-                 ))}
+              <button >
+                <p>
+                  {call_to_action}
+                  {images.map((v: any) => (
+                    <div>
+                      <img src={baseUrl + v.url}></img>
+                    </div>
+                  ))}
                 </p>
               </button>
             </div>
@@ -206,10 +228,13 @@ const Card: NextPage = (props: any) => {
       );
     case "custom_mobile_card":
       return (
-        <div className={servicesStyles.mobile_app_development_cards} >
+        <div className={servicesStyles.mobile_app_development_cards}>
           <div className={servicesStyles.mobile_app_development_card}>
-            <div className={servicesStyles.section5_img} data-aos="zoom-in"
-              data-aos-duration="1000">
+            <div
+              className={servicesStyles.section5_img}
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+            >
               <Image
                 loader={() => myLoader((baseUrl + images[0].url) as any)}
                 src={`${baseUrl}${images[0].url}`}
@@ -228,13 +253,13 @@ const Card: NextPage = (props: any) => {
             className={servicesStyles.section5_heading}
             dangerouslySetInnerHTML={{ __html: marked(heading) }}
             data-aos="zoom-in"
-              data-aos-duration="1300"
+            data-aos-duration="1300"
           ></div>
           <div
             className={servicesStyles.section5_para2}
             dangerouslySetInnerHTML={{ __html: marked(free_text) }}
             data-aos="zoom-in"
-              data-aos-duration="1500"
+            data-aos-duration="1500"
           ></div>
         </div>
       );
@@ -326,30 +351,28 @@ const Card: NextPage = (props: any) => {
     case "feature_card":
       return (
         <div className={careerstyles.featurecard}>
-         
-            <a
-              id={props.id}
-              // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
-            >
-              <div className={careerstyles.featurecardimg}>
-                <Image
-                  loader={() => myLoader((baseUrl + images[0].url) as any)}
-                  src={`${baseUrl}${images[0].url}`}
-                  placeholder="blur"
-                  blurDataURL={baseUrl + images[0].url}
-                  width={73}
-                  height={70.02}
-                />
-              </div>
-              <div className={careerstyles.feature_cardtext}>
-                <div className={careerstyles.feature_heading}>{heading}</div>
-                <div
-                  className={careerstyles.feature_subheading}
-                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-                ></div>
-              </div>
-            </a>
-         
+          <a
+            id={props.id}
+            // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
+          >
+            <div className={careerstyles.featurecardimg}>
+              <Image
+                loader={() => myLoader((baseUrl + images[0].url) as any)}
+                src={`${baseUrl}${images[0].url}`}
+                placeholder="blur"
+                blurDataURL={baseUrl + images[0].url}
+                width={73}
+                height={70.02}
+              />
+            </div>
+            <div className={careerstyles.feature_cardtext}>
+              <div className={careerstyles.feature_heading}>{heading}</div>
+              <div
+                className={careerstyles.feature_subheading}
+                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+              ></div>
+            </div>
+          </a>
         </div>
       );
     case "opening_card":
@@ -397,9 +420,7 @@ const Card: NextPage = (props: any) => {
                   <button>{free_text}</button>
                 </div>
                 <div className={careerstyles.moreinfo_icon}>
-                  <a href={Link ? Link : `/career-details`}>
-                    {call_to_action}
-                  </a>
+                  <a href={Link ? Link : `/career-details`}>{call_to_action}</a>
                   {/* <a className={careerstyles.rightarrowicon}>
                    
                   </a> */}
@@ -417,7 +438,11 @@ const Card: NextPage = (props: any) => {
     case "portfolio_card":
       return (
         <div className={portfolioStyles.portfolio_card}>
-          <div className={portfolioStyles.portfolio_card}  data-aos="fade-up" data-aos-duration="2000">
+          <div
+            className={portfolioStyles.portfolio_card}
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             <div className={portfolioStyles.portfolio_img}>
               <a id={props.id} href={Link ? Link : `/portfolio/${props.title}`}>
                 <Image
@@ -441,19 +466,16 @@ const Card: NextPage = (props: any) => {
     case "portfolio_details_cards":
       return (
         <div className={portfolioStyles.portfolio_details_cards}>
-          
-              <Image
-                loader={() => myLoader((baseUrl + images[0].url) as any)}
-                src={`${baseUrl}${images[0].url}`}
-                placeholder="blur"
-                blurDataURL={baseUrl + images[0].url}
-                width={628}
-                height={445}
-                className={portfolioStyles.portfolioDetailsCardimg}
-              />
-            </div>
-          
-       
+          <Image
+            loader={() => myLoader((baseUrl + images[0].url) as any)}
+            src={`${baseUrl}${images[0].url}`}
+            placeholder="blur"
+            blurDataURL={baseUrl + images[0].url}
+            width={628}
+            height={445}
+            className={portfolioStyles.portfolioDetailsCardimg}
+          />
+        </div>
       );
     case "android_app_card":
       return (

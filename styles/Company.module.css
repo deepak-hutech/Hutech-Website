@@ -57,6 +57,10 @@
       color 0.3s cubic-bezier(0.55, 0, 0.1, 1);
     transition: box-shadow 1s cubic-bezier(0.55, 0, 0.1, 1) 0s;
   }
+  
+  .company_banner .call_to_action:hover{
+    background: #0171c1;
+  }
 
   /* .company_banner .call_to_action :hover {
     color: #000;
@@ -545,6 +549,10 @@
   transition: background-color 0.3s cubic-bezier(0.55, 0, 0.1, 1),
     color 0.3s cubic-bezier(0.55, 0, 0.1, 1);
   transition: box-shadow 1s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+}
+
+.buttons .call_to_action_req:hover{
+  background: #0171c1;
 }
 
 

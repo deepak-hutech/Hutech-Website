@@ -33,7 +33,7 @@ const Blog: NextPage = (props: any) => {
     publishdate,
     blogimage,
     type,
-    BlogCards,
+    blog_short_text,
     _id,
     uid
   } = props;
@@ -69,7 +69,7 @@ const Blog: NextPage = (props: any) => {
                   {blog_text && (
                     <div
                       className={blogStyle.descrption}
-                      dangerouslySetInnerHTML={{ __html: marked(blog_text) }}
+                      dangerouslySetInnerHTML={{ __html: marked(blog_short_text) }}
                     ></div>
                   )}
                   {publishdate && (
@@ -93,7 +93,7 @@ const Blog: NextPage = (props: any) => {
 
     case "blog_banner":
       return (
-        <div>
+        <div> 
           <div className={blogStyle.page}>
             <Pagination>
               <Pagination.Prev />

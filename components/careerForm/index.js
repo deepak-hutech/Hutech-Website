@@ -8,11 +8,11 @@ import { InputGroup, Form, Button, Row, Col, Container } from "react-bootstrap";
 const careerform = () => {
   const [file, setFile] = useState("");
   const [inputs, setInputs] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    post: "Select Post",
-    message: ""
+    name:String,
+    email: String,
+    phone: Number,
+    post: String,
+    message: String
   });
 
   const handleChange = (event) => {
@@ -39,19 +39,21 @@ const careerform = () => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("files.file", file);
-    formData.append("data", JSON.stringify(postData));
-    axios({
-      method: "post",
-      url: "https://strapi.hutech.solutions/new-career-forms",
-      data: formData
-    })
-    .then(({ data }) => {
-        console.log("Succesfully uploaded: ", JSON.stringify(data));
-        location.reload(true);
-    })
-    .catch((error) => {
-      console.log("Error: ", error.message);
-    });
+    if(file.name) {
+      formData.append("data", JSON.stringify(postData));
+      axios({
+        method: "post",
+        url: "https://strapi.hutech.solutions/new-career-forms",
+        data: formData
+      })
+      .then(({ data }) => {
+          console.log("Succesfully uploaded: ", JSON.stringify(data));
+          location.reload(true);
+      })
+      .catch((error) => {
+        console.log("Error: ", error.message);
+      });
+    }
   };
 
     const [validated, setValidated] = useState(false);
@@ -120,8 +122,9 @@ const careerform = () => {
 
         <Row className="mb-3">
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-          <Form.Control as="textarea" placeholder="Message" rows={3}  
-              className={CareerStyle.inputs}
+          <Form.Control as="textarea" 
+               placeholder="Message" rows={3} 
+               className={CareerStyle.inputs}
               />
          </Form.Group>
         </Row>

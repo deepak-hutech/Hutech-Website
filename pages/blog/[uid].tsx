@@ -50,7 +50,7 @@ const Article: NextPage<{
 
         <div className={companyStyles.banner_container}>
           <div className={companyStyles.content}>
-            <div className={companyStyles.free_text}>{article.blog_title}</div>
+            <div className={blogStyle.blogfree_text}>{article.blog_title}</div>
 
             <div className={companyStyles.descrption}>Hutech, Technology</div>
           </div>
