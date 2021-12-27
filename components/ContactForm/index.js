@@ -101,7 +101,9 @@ const careerform = () => {
     >
       <Row className="mb-5 mt-3">
         <Form.Group as={Col} md="6" controlId="validationCustom01">
-          <Form.Label>Your Name *</Form.Label>
+          <Form.Label className={CareerStyle.contactForm_label}>
+            Your Name
+          </Form.Label>
 
           <Form.Control
             required
@@ -175,7 +177,6 @@ const careerform = () => {
             <option value="India">India</option>
             <option value="China">China</option>
             <option value="Japan">Japan</option>
-            
           </Form.Select>
         </Form.Group>
 
