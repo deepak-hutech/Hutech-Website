@@ -47,9 +47,6 @@ const Section: NextPage = (props: any) => {
     sub_heading,
     type,
     Buttons,
-    
-    image_size,
-    image_position,
     free_text,
     our_slack_title,
     web_front_end_title,
