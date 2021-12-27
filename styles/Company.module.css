@@ -167,16 +167,17 @@
 
 @media only screen and (max-width: 500px) {
   .abt_company .heading h3{
-      font-size: 30px;
+      font-size: 26px;
   }
 
   .abt_company .heading h6{
-    font-size: 12px;
+    font-size: 11px;
     line-height: 20px;
   }
 
     .abt_company .note {
-    font-size: 12px !important;
+    font-size: 11px !important;
+    line-height: 20px;
   }
 
   .company_banner .call_to_action {
@@ -300,12 +301,15 @@
 
   @media only screen and (max-width: 500px) {
    .our_people .free_text h3{
-     font-size: 30px ;
+     font-size: 28px ;
      line-height: 20px;
+   }
+   .our_people .sub_heading p {
+     font-size: 13px;
    }
 
    .our_people .sub_heading{
-     font-size: 12px;
+     font-size: 11px;
      margin-bottom: 10px;
    }
 
@@ -380,6 +384,7 @@
     }
     .partner .allProducts .images {
       margin: 10px;
+      width: 85px;
     }
     .partner .logos{
       width: 50%;
@@ -483,6 +488,18 @@
     @media only screen and (max-width: 500px) {
       .c_cards {
         margin: 5px 10px;
+        width: 90px;
+        height: 90px;
+        padding: 7px 2px;
+      }
+
+      .c_cards img {
+        width: 45px;
+       height: 45px;
+      }
+
+      .c_cards p {
+        font-size: 11px;
       }
     }
   
@@ -565,6 +582,17 @@
     color: white;
   }
 
+  @media only screen and (max-width: 500px) {
+   .current_opening .content .free_text {
+      font-size: 22px;
+   }
+   .current_opening .call_to_action_req {
+     font-size: 10px;
+   }
+   .current_opening .description {
+     font-size: smaller;
+   }
+  }
 
 
  
