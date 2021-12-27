@@ -475,6 +475,17 @@
 } */
 .carousel{
 margin-top: -90px;
+overflow: hidden;
+}
+.homeblogcarousel .react-multiple-carousel__arrow--right {
+  right: -webkit-calc(4% + 1px);
+  
+  
+}
+.homeblogcarousel .react-multiple-carousel__arrow--left {
+  left: -webkit-calc(4% + 1px);
+  
+ 
 }
 .blog_banner .buttons {
   margin: 60px 0 0;

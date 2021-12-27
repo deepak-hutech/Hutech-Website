@@ -117,6 +117,37 @@ const Section: NextPage = (props: any) => {
       />
     </button>
   );
+  const CustomArrowBlog = ({ onClick }) => (
+    <button
+      style={{ position: "absolute", right: "50%", bottom: 10 }}
+      onClick={onClick}
+      className={styles.arrowbtn}
+    >
+      <Image
+        loader={myLoader}
+        src={rightIcon}
+        alt="Picture of the author"
+        width={30}
+        height={17}
+      />
+    </button>
+  );
+  const CustomleftArrowBlog = ({ onClick }) => (
+    <button
+      style={{ position: "absolute", right: "54%", bottom: 10 }}
+      onClick={onClick}
+      className={styles.arrowbtn}
+    >
+      <Image
+        loader={myLoader}
+        src={leftIcon}
+        alt="Picture of the author"
+        width={30}
+        height={17}
+        className={styles.svgarrow}
+      />
+    </button>
+  );
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -925,7 +956,7 @@ const Section: NextPage = (props: any) => {
               showDots={false}
               responsive={responsive_wide_cards}
               ssr={true} // means to render carousel on server-side.
-              infinite={false}
+              infinite={true}
               keyBoardControl={true}
               customTransition="all 0.5s ease"
               transitionDuration={1000}
@@ -933,7 +964,9 @@ const Section: NextPage = (props: any) => {
               removeArrowOnDeviceType={["tablet", "mobile"]}
               dotListClass="custom-dot-list-style"
               // itemClass="carousel-item-padding-40-px"
-              className={styles.home_blog_carousel}
+              className={styles.homeblogcarousel}
+              customRightArrow={<CustomArrowBlog />}
+            customLeftArrow={<CustomleftArrowBlog />}
             >
               {cards.map((_card: any, index: number) => (
                 <Card {..._card} key={index} />
