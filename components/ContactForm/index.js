@@ -106,7 +106,7 @@ const careerform = () => {
           </Form.Label>
 
           
-
+          
           <Form.Control
             required
             value={inputs.username}
@@ -233,7 +233,7 @@ const careerform = () => {
               className={CareerStyle.fileUpload}
               onChange={onChange}
             />{" "}
-          
+            {/* <span className={CareerStyle.vl}></span> */}
             <sapn className={CareerStyle.vl}>
               {" "}
               Drag and drop your file here
