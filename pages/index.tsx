@@ -63,7 +63,7 @@ const Home: NextPage<{ header: any; pages: any; footer: any; blogs: any }> = (
         {/* <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
         <script src="bower_components/aos/dist/aos.js"></script>  */}
 
-
+       
       </Head>
       <Header {...header} />
       {/* <div style={{display:"none"}}>

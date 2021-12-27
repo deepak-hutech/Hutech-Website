@@ -1,177 +1,270 @@
 /* ///////////////////////APPP */
 
 .contact {
-    /* text-align: center; */
-  }
-  
-  .contact .content {
-    padding: 50px;
-    margin: 60px;
-  }
-  
-  .contact .content h2 {
-      font-size: 50px;
-      font-weight: bold;
-      line-height: 60px;
-      color: #383838;
-      margin: 5px 0;
-      font-family: "GraphikMedium";
-      text-align: center;
-    
-  }
-  .contact .content h4{
-    font-weight: 600;
-    text-align: center;
-    padding: 10px 10px 0;
-    line-height: 40px;
-  }
-  .nav-tabs {
-     display: flex;
-     justify-content: center;
-  }
-  
-  .tabsContainer {
-   margin: 20px 250px;
-  }
-  
-  .tabsContainer .nav-link{
-    color: #1976d2;
-  }
+  /* text-align: center; */
+}
 
-  .tabsContainer ul{
-    color: #1976d2;
-    display: flex;
-    justify-content: space-around;
-  }
-   .nav-item .nav-link {
-    color:black
-  }
-  .submitbtn{
-    background: #FFAF2B;
-    height: 43px;
-    font-size: 15px;
-    color: #fff;
-    border: 1px solid #FFAF2B;
-    padding: 10px 40px;
-    margin-top: 30px;
-    border-radius: 30px;
-    margin: 30px 0 0 0;
-  }
+.contact .content {
+  width: 100%;
+  /* padding: 50px;
+  margin: 60px; */
+}
 
-  .submitbtn:hover{
+.contact .content h2 {
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 60px;
+  color: #383838;
+  margin: 5px 0;
+  font-family: "GraphikMedium";
+  text-align: center;
+}
+.contact .content h4 {
+  font-weight: 700;
+  text-align: center;
+  /* padding: 10px 10px 0; */
+  line-height: 30px;
+  font-size: 19px;
+}
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+   width: 100%;
+}
+.tabStyle{
+  margin-bottom: 3px;
+  width: 45%;
+}
+.tabtitle{
+  font-weight: 500;
+font-size: 18px;
+line-height: 20px;
+color: #000000;
+}
+.tabsContainer ul li .nav-item button{
+ display: flex;
+flex-direction: column;
+}
+.tabsContainer {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+   /* width: 50%; */
+  /* margin: 20px 70px; */
+}
+.tabimage{
+  display: flex;
+  flex-direction: column;
+}
+.tabsContainer .nav-link {
+  color: #1976d2;
+}
+
+.tabsContainer ul {
+  color: #1976d2;
+  display: flex;
+  justify-content: space-around;
+}
+.nav-item .nav-link {
+  color: black;
+}
+.submitbtn {
+  background: #ffaf2b;
+  height: 43px;
+  font-size: 15px;
+  color: #fff;
+  border: 1px solid #ffaf2b;
+  padding: 10px 40px;
+  margin-top: 30px;
+  border-radius: 30px;
+  margin: 30px 0 0 0;
+}
+
+.submitbtn:hover {
   background: #0171c1;
   border: none;
-  }
-  
-  .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
-    color:#03a9f5!important;
-    background-color: none !important;
-    border-color: none !important;
-  }
-  
-  
-  .tabsContainer .tab1 {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 50px;
-    box-sizing: border-box;
-    min-height: 400px;
-    width: 779px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 15px rgba(155, 149, 149, 0.25);
-   }
-   
-   .tabsContainer .tab2 {
-    max-width: 600px;
-    margin: 40px auto;
-    box-shadow: 0 0 20px 4px rgb(207 207 207 / 30%);
-    background: #fff;
-    padding: 50px;
-    box-sizing: border-box;
-    min-height: 400px;
-   }
-   .tabsContainer .tab3 {
-    max-width: 600px;
-    margin: 40px auto;
-    box-shadow: 0 0 20px 4px rgb(207 207 207 / 30%);
-    background: #fff;
-    padding: 50px;
-    box-sizing: border-box;
-    min-height: 400px;
-   }
-  
-   .tab3 p {
-     text-align: center;
-   }
-   .tab3 .countries {
-     font-weight: 500;
-   }
-  
-   .tab2 .sendEmail button{
-      font-size: 20px;
-      color: #03a9f5;;
-      background: #f5f5f5;
-      border-radius: 20px;
-      display: block;
-      padding: 12px 20px;
-      line-height: normal;
-      max-width: 320px;
-      margin: 20px auto;
-      font-weight: 500;
-      cursor: pointer;
-      text-align: center;
-   }
-  
-   /* button[type="submit"] {
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: #03a9f5 !important;
+  background-color: none !important;
+  border-color: none !important;
+}
+
+.tabsContainer .tab1 {
+  /* max-width: 600px; */
+  margin: 40px auto;
+  padding: 50px;
+  box-sizing: border-box;
+  min-height: 400px;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px rgba(155, 149, 149, 0.25);
+}
+
+.tabsContainer .tab2 {
+  /* max-width: 600px; */
+  margin: 40px auto;
+  box-shadow: 0 0 20px 4px rgb(207 207 207 / 30%);
+  background: #fff;
+  padding: 50px;
+  box-sizing: border-box;
+  min-height: 400px;
+}
+.tabsContainer .tab3 {
+  /* max-width: 600px; */
+  margin: 40px auto;
+  box-shadow: 0 0 20px 4px rgb(207 207 207 / 30%);
+  background: #fff;
+  padding: 50px;
+  box-sizing: border-box;
+  min-height: 400px;
+}
+
+.tab3 p {
+  text-align: center;
+}
+.tab3 .countries {
+  font-weight: 500;
+}
+
+.tab2 .sendEmail button {
+  font-size: 20px;
+  color: #03a9f5;
+  background: #f5f5f5;
+  border-radius: 20px;
+  display: block;
+  padding: 12px 20px;
+  line-height: normal;
+  max-width: 320px;
+  margin: 20px auto;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* button[type="submit"] {
     padding: 5px 50px;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
     text-transform: uppercase;
    } */
-  
-   .content .terms {
-     font-size: 12px;
-   }
-  
-   .contactForm input{
-    width: 100%;
-    height: 30px;
-    /* margin: 20px 0; */
-    line-height: 22px;
-    font-size: 14px;
-    padding: 0;
-    border: 1px solid #d9d9d9;
-    margin-bottom: 0;
-    box-sizing: border-box;
-    border-radius: 4px;
-   }
-   
-   .contactForm textarea{
-    width: 100%;
-    height: 145px;
-    margin: 20px 0;
-    line-height: 22px;
-    font-size: 14px;
-    padding: 5px 10px;
-    border: 1px solid #d9d9d9;
-    margin-bottom: 0;
-    box-sizing: border-box;
-    border-radius: 4px;
+
+.content .terms {
+  font-size: 12px;
 }
 
+.contactForm input {
+  width: 100%;
+  height: 30px;
+  /* margin: 20px 0; */
+  line-height: 22px;
+  font-size: 14px;
+  padding: 0;
+  border: 1px solid #d9d9d9;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
 
+.contactForm textarea {
+  width: 100%;
+  /* height:85px; */
+  /* margin: 20px 0; */
+  line-height: 22px;
+  font-size: 14px;
+  padding: 5px 0px;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+/* .form_upload{
+   background-color: #F6F6F6;
+  border:2px dashed #E6E3E3;
+  border-radius: 5px;
+  width: 10%;
+} */
+.fileUpload{
+ display: none;
+}
+.Drag_label{
+  background-image: url(../components/assets/upload-icon@2x.png);
+  background-size: 30px;
+  background-position: calc(10px); 
+  background-repeat: no-repeat;
+  color:#474848;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  flex-direction: column;
+  height: 50px;
+  background-color: #F6F6F6;
+  border:2px dashed #E6E3E3;
+  border-radius: 5px;
+  width: 100%;
+  font-weight: normal;
+font-size: 13px;
+line-height: 14px;
+  margin:auto;
+  /* top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; */
+}
+.vl{
+  border-left:  1px solid #DADADA;
+  height: 50px;
+  /* margin-right: 45%; */
+  padding-left:20%;
+  padding-top: 3%;
+   padding-bottom: 2%;
+  padding-right: 25%;
+}
+.form_upload_text{
+  font-size: 13px;
+line-height: 14px;
+color: #000000;
+}
 .contact .tabsContainer .tabsIcons {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: -26px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: -26px;
 }
 
-
-
-.contactForm {
+.contactForm_label {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  color: #5b5b5b;
   /* background-color: blueviolet; */
 }
+.contactForm_label::after {
+    padding-left: 3px;
+    color: #FF4D4F;
+    font-size: 16px;
+    content: '*';
+}
+.contactForm ::placeholder{
+  font-style: normal;
+font-weight: normal;
+  color: #BABABA;
+  font-size: 16px;
+line-height: 20px;
+
+}
+.nonMendatory_label{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  color: #5b5b5b;
+}
+
+/* .contactForm .form-label {
+  background-color: blueviolet;
+} */
 
 .contactForm input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -183,12 +276,12 @@
   background-color: none;
 }
 
-
-.contactForm .inputs{
- border: none;
- border-bottom: 1px solid black;
- border-radius: 0;
- background-image: none !important;
+.contactForm .inputs {
+  border: none;
+  border-bottom: 1px solid #C5C5C5;
+  padding-bottom: 10px;
+  border-radius: 0;
+  background-image: none !important;
 }
 
 .contact input:focus {
@@ -199,26 +292,34 @@
   box-shadow: none;
 }
 
-.contactForm select{
- border: none;
- border-bottom: 1px solid black;
- border-radius: 0;
- box-shadow: none !important;
- padding: 10px 0;
- /* background-image: url(../components/assets/dropdown.svg); */
- /* background-image: none !important; */
-
+.contactForm select {
+  border: none;
+ border-bottom: 1px solid #C5C5C5;
+  border-radius: 0;
+  box-shadow: none !important;
+  padding: 10px 0;
+  /* background-image: url(../components/assets/dropdown.svg); */
+  /* background-image: none !important; */
 }
-
+.selectoption_style{
+  font-style: normal;
+font-weight: normal;
+  color: #BABABA;
+  font-size: 16px;
+line-height: 20px;
+}
+.selectoption_style option{
+  color: #000    ;
+}
 .careerForm textarea {
- border: none;
- border-bottom: 1px solid black;
- border-radius: 0;
- box-shadow: none !important;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  box-shadow: none !important;
 }
 
 .contactForm button {
-  width: 90%;
+  width: 100%;
   font-size: 18px;
   color: #ffff;
   background: #ffaf2b;
@@ -226,19 +327,19 @@
   border-radius: 5px;
   display: block;
   padding: 9px 20px;
-  line-height: normal;
+  line-height: 20px;
   margin: 20px auto;
   font-weight: 500;
   cursor: pointer;
   text-align: center;
 }
 
-.contactForm button:hover{
+.contactForm button:hover {
   border: 0;
   background: #0171c1;
 }
 
-.contactForm button:active{
+.contactForm button:active {
   border: 0;
   background-color: #ffaf2b !important;
 }
@@ -247,4 +348,3 @@
   -webkit-appearance: none;
   margin: 0;
 }
-
