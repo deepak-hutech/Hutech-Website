@@ -102,7 +102,7 @@
     top: 20%;
   }
   .section1 .content .free_text{
-    font-size: 30px;
+    font-size: 25px;
     line-height: 30px;
   }
   .section1 .content .descrption {
@@ -112,10 +112,9 @@
 
   .section1 .banner_container .call_to_action{
     font-size: 12px;
+    padding: 6px 25px;
   }
-
 }
-
 
 /* /////////SECTION2/ */
 .section2 {
@@ -148,6 +147,12 @@
   line-height: 33px;
   font-family: "GraphikMedium";
   font-size: 36px;
+}
+
+@media only screen and (max-width: 500px) {
+  .section2 .section2_title p{
+     font-size: 26px;
+  }
 }
 
 /* SECTION3 */
@@ -262,8 +267,8 @@
   .section3_heading {
     font-family: "GraphikMedium";
     font-weight: bold;
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 20px;
     }
 
     .section3 {
@@ -271,8 +276,8 @@
     }
 
   .section3 .clientContent .section3_title {
-      font-size: 26px;
-      line-height:35px;
+      font-size: 25px;
+      line-height:30px;
     }
 
     .section3 .clientContent .section3_note{
@@ -340,12 +345,12 @@
     margin: 30px;
   }
   .section4_title {
-   font-size: 22px;
+   font-size: 20px;
   }
   .section4_buttons .call_to_action{
-    width: 190px;
-    font-size: 12px;
-    height: 40px;
+    width: 155px;
+    font-size: 11px;
+    height: 37px;
     margin-top: 0;
   }
 }
@@ -401,7 +406,7 @@
     margin: 0;
   }
   .section5_content .section5_title {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .section5_content .section5_note{
@@ -409,6 +414,15 @@
   }
   .section5 .mobile_app_development_cards{
      margin: auto;
+  }
+  .section5 .mobile_app_development_cards img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .section5 .mobile_app_development_cards .section5_para2
+  {
+    font-size: 12px;
   }
 }
 
@@ -625,11 +639,10 @@
     font-size: 12px;
   }
 
-  .section8_img .section8Cardimg {
-    /* all:unset;
-    background-color: brown;
-    width: 100px !important;
-   height: 100px !important ; */
+.section8 .our_work_card .section8_img img {
+   /* width: 250px;
+   height: 180px; */
+  
   }
 }
 
@@ -840,10 +853,6 @@ font-size: 0.9375rem;
     text-align: center;
   }
 
-    .section5_cards img {
-      width: 75px;
-      height: 68px;
-    }
 
     .imgColumn {
       width: 100%;
@@ -919,3 +928,14 @@ margin-right: 1.7rem;
       display: none;
     }
 }
+
+
+  /* width: 238px;
+  height: 180px;
+  } */
+
+/* 
+  width: 121px;
+  height: 58px;
+  padding: 8px; */
+
