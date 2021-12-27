@@ -16,7 +16,7 @@ const careerform = () => {
     company: String,
     projectDetails: "",
     country: String,
-    services: String,
+    services: String
   });
 
   const handleChange = (event) => {
@@ -24,7 +24,6 @@ const careerform = () => {
     const value = event.target.value;
     setInputs((values) => ({ ...values, [name]: value }));
   };
-
   const postData = {
     username: inputs.username,
     email: inputs.email,
@@ -115,7 +114,9 @@ const careerform = () => {
           />
         </Form.Group>
         <Form.Group as={Col} md="6" controlId="validationCustom02">
-          <Form.Label>Email *</Form.Label>
+          <Form.Label className={CareerStyle.contactForm_label}>
+            Email address{" "}
+          </Form.Label>
           <Form.Control
             required
             value={inputs.email}
@@ -129,7 +130,9 @@ const careerform = () => {
       </Row>
       <Row className="mb-5 mt-3">
         <Form.Group as={Col} md="6" controlId="validationCustomPhone">
-          <Form.Label>Phone Number *</Form.Label>
+          <Form.Label className={CareerStyle.contactForm_label}>
+            Phone Number
+          </Form.Label>
           <Form.Control
             value={inputs.phone}
             type="number"
@@ -142,7 +145,9 @@ const careerform = () => {
           />
         </Form.Group>
         <Form.Group as={Col} md="6" controlId="validationCustom04">
-          <Form.Label>Company Name</Form.Label>
+          <Form.Label className={CareerStyle.nonMendatory_label}>
+            Company name
+          </Form.Label>
           <Form.Control
             value={inputs.company}
             type="text"
@@ -155,8 +160,11 @@ const careerform = () => {
       </Row>
       <Row className="mb-5">
         <Form.Group as={Col} md="6" controlId="validationCountryUsername">
-          <Form.Label>Country</Form.Label>
+          <Form.Label className={CareerStyle.nonMendatory_label}>
+            Country
+          </Form.Label>
           <Form.Select
+            className={CareerStyle.selectoption_style}
             value={inputs.country || ""}
             onChange={handleChange}
             name="country"
@@ -167,12 +175,16 @@ const careerform = () => {
             <option value="India">India</option>
             <option value="China">China</option>
             <option value="Japan">Japan</option>
+            
           </Form.Select>
         </Form.Group>
 
         <Form.Group as={Col} md="6" controlId="validationCustomUsername">
-          <Form.Label>Interested Service</Form.Label>
+          <Form.Label className={CareerStyle.nonMendatory_label}>
+            Interested Service
+          </Form.Label>
           <Form.Select
+            className={CareerStyle.selectoption_style}
             value={inputs.services || ""}
             onChange={handleChange}
             name="services"
@@ -189,7 +201,9 @@ const careerform = () => {
 
       <Row className="mb-3">
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Project Details *</Form.Label>
+          <Form.Label className={CareerStyle.contactForm_label}>
+            Project Details{" "}
+          </Form.Label>
           <Form.Control
             as="textarea"
             placeholder="Brief about the project"
@@ -205,8 +219,24 @@ const careerform = () => {
 
       <Row className="">
         <Form.Group className="position-relative mb-3">
-          <Form.Label>Please share your requirement documents</Form.Label>
-          <Form.Control type="file" name="file" onChange={onChange} />
+          <Form.Label className={CareerStyle.nonMendatory_label}>
+            Please share your requirement documents
+          </Form.Label>
+
+          <Form.Label className={CareerStyle.Drag_label}>
+            <Form.Control
+              type="file"
+              name="file"
+              className={CareerStyle.fileUpload}
+              onChange={onChange}
+            />{" "}
+            {/* <span className={CareerStyle.vl}></span> */}
+            <sapn className={CareerStyle.vl}>
+              {" "}
+              Drag and drop your file here
+            </sapn>
+          </Form.Label>
+
           {/* <Form.Control.Feedback type="invalid" tooltip>File is required field
             </Form.Control.Feedback> */}
         </Form.Group>
