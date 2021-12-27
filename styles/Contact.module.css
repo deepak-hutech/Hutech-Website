@@ -266,6 +266,24 @@ line-height: 20px;
   background-color: blueviolet;
 } */
 
+.contactForm label {
+  font-family: "GraphikMedium";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+  color: #5B5B5B;
+}
+
+.contactForm .form_upload_text {
+  font-family: "GraphikRegular";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  color: black;
+  margin-top: -10px;
+}
+
 .contactForm input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;

@@ -44,7 +44,7 @@ const Home: NextPage<{ header: any; pages: any; footer: any; blogs: any }> = (
 
   const { header, footer } = props;
   console.log(props, "kkk");
-  const { title, content, Logo, descrption } = props.pages[0];
+  const { title, content, Logo, descrption } = props?.pages[0];
   // const { blogcontent, blogdescrption } = props.blogs[0];
   const blogContent = props.blogs[0];
   const AllBlogContent = blogContent.content;
