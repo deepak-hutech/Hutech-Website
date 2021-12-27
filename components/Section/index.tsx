@@ -1036,50 +1036,96 @@ const Section: NextPage = (props: any) => {
               </div> */}
 
               <div className={contactStyle.tabsContainer}>
-                  <div className={contactStyle.tabsIcons} data-aos="fade-up" data-aos-duration="1500">
-                      <Image
+                {/* <div
+                  className={contactStyle.tabsIcons}
+                  data-aos="fade-up"
+                  data-aos-duration="1500"
+                >
+                  <Image
+                    loader={myLoader}
+                    src={submitIcon}
+                    alt="Picture of the author"
+                    width={30}
+                    height={100}
+                    // className={styles.svgarrow}
+                  />
+                  <Image
+                    loader={myLoader}
+                    src={mailIcon}
+                    alt="Picture of the author"
+                    width={30}
+                    height={100}
+                    // className={styles.svgarrow}
+                  />
+                  <Image
+                    loader={myLoader}
+                    src={phoneIcon}
+                    alt="Picture of the author"
+                    width={30}
+                    height={100}
+                    // className={styles.svgarrow}
+                  />
+                </div> */}
+                <Tabs
+                  defaultActiveKey="home"
+                  id="uncontrolled-tab-example"
+                  className={contactStyle.tabStyle}
+                >
+                  <Tab
+                    eventKey="home"
+                    title={
+                      <span>
+                        {/* <img
+                          src={submitIcon}
+                          alt="Picture of the author"
+                          className={contactStyle.tabimage}
+                        ></img> */}
+                        <Image
                           loader={myLoader}
                           src={submitIcon}
                           alt="Picture of the author"
                           width={30}
-                          height={100}
-                          // className={styles.svgarrow}
-                        />
-                        <Image
-                          loader={myLoader}
-                          src={mailIcon}
-                          alt="Picture of the author"
-                          width={30}
-                          height={100}
-                          // className={styles.svgarrow}
-                        />
-                      <Image
-                        loader={myLoader}
-                        src={phoneIcon}
-                        alt="Picture of the author"
-                        width={30}
-                        height={100}
-                        // className={styles.svgarrow}
-                          />
-                  </div>
-                <Tabs
-                  defaultActiveKey="home"
-                  id="uncontrolled-tab-example"
-                  className="mb-3" >
-
-                  <Tab eventKey="home" title="Submit a form">
-                  <div className={contactStyle.tab1} data-aos="fade-up" data-aos-duration="1800">
+                          height={50}
+                        />{" "}
+                        <div className={contactStyle.tabtitle}>Submit a form</div>
+                      </span>
+                    }
+                  >
+                    <div
+                      className={contactStyle.tab1}
+                      data-aos="fade-up"
+                      data-aos-duration="1800"
+                    >
                       <div className="mb-5">
                         <h4>
-                          Fill out this form and a support representative will
-                          be in touch.
+                          Take a Step Forward To Start a Conversation With Us !
                         </h4>
                       </div>
                       <ContactForm />
                     </div>
                   </Tab>
 
-                  <Tab eventKey="profile" title="Shoot us an Email">
+                  <Tab
+                    eventKey="profile"
+                    title={
+                      <span>
+                        {/* <img
+                          src={submitIcon}
+                          alt="Picture of the author"
+                          className={contactStyle.tabimage}
+                        ></img> */}
+                        <Image
+                          loader={myLoader}
+                          src={mailIcon}
+                          alt="Picture of the author"
+                          width={30}
+                          height={50}
+                        />{" "}
+                        <div className={contactStyle.tabtitle}>Shoot us an Email</div>
+                      </span>
+                    }
+                    // title="Shoot us an Email"
+                  >
                     <div className={contactStyle.tab2}>
                       <div>
                         <h4>
@@ -1101,7 +1147,27 @@ const Section: NextPage = (props: any) => {
                     </div>
                   </Tab>
 
-                  <Tab eventKey="contact" title="Give us a call">
+                  <Tab
+                    eventKey="contact"
+                    title={
+                      <span>
+                        {/* <img
+                          src={submitIcon}
+                          alt="Picture of the author"
+                          className={contactStyle.tabimage}
+                        ></img> */}
+                        <Image
+                          loader={myLoader}
+                          src={phoneIcon}
+                          alt="Picture of the author"
+                          width={30}
+                          height={50}
+                        />{" "}
+                        <div className={contactStyle.tabtitle}> Give us a call</div>
+                      </span>
+                    }
+                    // title="Give us a call"
+                  >
                     <div className={contactStyle.tab3}>
                       <div>
                         <h4>
@@ -1838,13 +1904,16 @@ const Section: NextPage = (props: any) => {
     case "servicedetails_banner":
       return (
         <div className={servicesStyles.seviceinner_bannerimg}>
+         
           {home_banner[0] && (
             <Image
-              loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
+              loader={() =>
+                myLoaderbanner((baseUrl + home_banner[0].url) as any)
+              }
               src={baseUrl + home_banner[0].url}
               placeholder="blur"
               blurDataURL={baseUrl + home_banner[0].url}
-              height={500}
+              height={488}
               width={"100%"}
               className={servicesStyles.seviceinner_bannerimg}
             />
@@ -1878,6 +1947,9 @@ const Section: NextPage = (props: any) => {
     case "android_app_left_banner":
       return (
         <div className={servicesStyles.serviceinner_sec2_Container}>
+          <div style={{ padding: "4% 6% 0" }}>
+            <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
+          </div>
           {free_text && (
             <div
               className={servicesStyles.serviceinner_sec2_heading}
@@ -1888,7 +1960,9 @@ const Section: NextPage = (props: any) => {
             {home_banner[0] && (
               <div className={`${servicesStyles.serviceinner_sec2_left_img}`}>
                 <Image
-                  loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
+                  loader={() =>
+                    myLoaderbanner((baseUrl + home_banner[0].url) as any)
+                  }
                   src={baseUrl + home_banner[0].url}
                   placeholder="blur"
                   blurDataURL={baseUrl + home_banner[0].url}
@@ -1910,7 +1984,7 @@ const Section: NextPage = (props: any) => {
 
     case "android_app_right_banner":
       return (
-        <div className={servicesStyles.serviceinner_sec3_Container}>
+        // <div className={servicesStyles.serviceinner_sec3_Container}>
           <div className={servicesStyles.serviceinner_sec3_Content}>
             <div className={servicesStyles.serviceinner_sec3_Content_left}>
               {free_text && (
@@ -1934,13 +2008,13 @@ const Section: NextPage = (props: any) => {
                   src={baseUrl + home_banner[0].url}
                   placeholder="blur"
                   blurDataURL={baseUrl + home_banner[0].url}
-                  height={485}
-                  width={497}
+                  height={389}
+                  width={613}
                 />
               </div>
             )}
           </div>
-        </div>
+        // </div>
       );
 
     case "blog_banner":
