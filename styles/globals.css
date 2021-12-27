@@ -92,3 +92,13 @@ a {
    font-weight: 600;
    background-color: white !important;
  }  */
+ .home_blog_carousel .react-multiple-carousel__arrow--right {
+  right: -webkit-calc(4% + 1px);
+  right: calc(43% + 1px) !important;
+  bottom: 0;
+}
+.home_blog_carousel .react-multiple-carousel__arrow--left {
+  left: -webkit-calc(4% + 1px);
+  left: calc(46% + 1px);
+  bottom: 0;
+}

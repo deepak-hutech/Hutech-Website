@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useState, createRef } from "react";
 import axios from "axios";
 import CareerStyle from "../../styles/Contact.module.css";
-import { Form, Row, Col } from "react-bootstrap";
+import { InputGroup, Form, Button, Row, Col, Container } from "react-bootstrap";
+import ReCAPTCHA from "react-google-recaptcha";
+
 const careerform = () => {
+  const recaptchaRef = createRef();
+  const [captchaCode, setCaptchaCode] = useState("");
+
   const [file, setFile] = useState("");
   const [inputs, setInputs] = useState({
     username: String,
@@ -11,7 +16,7 @@ const careerform = () => {
     company: String,
     projectDetails: "",
     country: String,
-    services: String,
+    services: String
   });
 
   const handleChange = (event) => {
@@ -63,9 +68,28 @@ const careerform = () => {
       event.stopPropagation();
     }
     setValidated(true);
+    //recaptchaRef.current.execute();
+    if (!captchaCode) {
+      alert("Select recaptcha.");
+      recaptchaRef.current.reset();
+      return;
+    }
     document.getElementById("form").onsubmit = function () {};
   };
 
+  const onReCAPTCHAChange = (captchaCode) => {
+    alert(captchaCode);
+    // If the reCAPTCHA code is null or undefined indicating that
+    // the reCAPTCHA was expired then return early
+    if (!captchaCode) {
+      return;
+    }
+    setCaptchaCode(captchaCode);
+  };
+
+  const removeCaptchaCode = () => {
+    setCaptchaCode("");
+  };
   return (
     <Form
       noValidate
@@ -77,9 +101,7 @@ const careerform = () => {
     >
       <Row className="mb-5 mt-3">
         <Form.Group as={Col} md="6" controlId="validationCustom01">
-          <Form.Label className={CareerStyle.contactForm_label}>
-            Your name{" "}
-          </Form.Label>
+          <Form.Label>Your Name *</Form.Label>
 
           <Form.Control
             required
@@ -221,6 +243,14 @@ const careerform = () => {
       <p className={CareerStyle.form_upload_text}>
         File types: pdf, docx and doc | Maximum file size: 5MB.
       </p>
+
+      <ReCAPTCHA
+        ref={recaptchaRef}
+        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+        onChange={onReCAPTCHAChange}
+        onExpired={removeCaptchaCode}
+        onErrored={removeCaptchaCode}
+      />
       <button type="submit" onClick={handleSubmit}>
         Submit
       </button>
