@@ -1,38 +1,34 @@
-import { NextPage } from "next";
-import Image, { ImageLoader } from "next/image";
-import styles from "../../styles/Section.module.css";
-import Action from "../Actions";
-import Card from "../Card";
-import { baseUrl } from "./../../public/strings.json";
-import marked from "marked";
-import AssetCard from "../AssetCard";
-import Carousel from "react-multi-carousel";
-import Accordian from "../accordian/Accordian";
-import Mobapp from "../mobapptype";
-import "react-multi-carousel/lib/styles.css";
-import companyStyles from "../../styles/Company.module.css";
-import contactStyle from "../../styles/Contact.module.css";
-import Footer from "../Footer";
-import { Tabs, Tab, Form, Button, Row, Col, Container } from "react-bootstrap";
-import ContactForm from "../ContactForm";
-import servicesStyles from "../../styles/Services.module.css";
-import careerstyles from "../../styles/Careers.module.css";
-import CareerForm from "../careerForm/index.js";
-import HomeForm from "../home_form/index.js";
-import portfolioStyles from "../../styles/Portfolio.module.css";
-import rightIcon from "../../components/assets/rightarrow.svg";
-import leftIcon from "../../components/assets/leftarrow.svg";
-import  mailIcon from "../../components/assets/mail-icon@2x.svg";
-import  phoneIcon from "../../components/assets/phone-icon@2x.svg";
-import  submitIcon from "../../components/assets/submit-icon@2x.svg";
-
-
-import Breadcrumbs from "nextjs-breadcrumbs";
-import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import marked from "marked";
+import { NextPage } from "next";
+import Image, { ImageLoader } from "next/image";
+import Breadcrumbs from "nextjs-breadcrumbs";
+import React, { useEffect } from "react";
+import { Button, Col, Container, Row, Tab, Tabs } from "react-bootstrap";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import leftIcon from "../../components/assets/leftarrow.svg";
+import mailIcon from "../../components/assets/mail-icon@2x.svg";
+import phoneIcon from "../../components/assets/phone-icon@2x.svg";
+import rightIcon from "../../components/assets/rightarrow.svg";
+import submitIcon from "../../components/assets/submit-icon@2x.svg";
+import careerstyles from "../../styles/Careers.module.css";
+import companyStyles from "../../styles/Company.module.css";
+import contactStyle from "../../styles/Contact.module.css";
+import portfolioStyles from "../../styles/Portfolio.module.css";
+import styles from "../../styles/Section.module.css";
+import servicesStyles from "../../styles/Services.module.css";
+import Card from "../Card";
+import CareerForm from "../careerForm/index.js";
+import ContactForm from "../ContactForm";
+import Footer from "../Footer";
+import HomeForm from "../home_form/index.js";
+import strings from "./../../public/strings.json";
 
-const myLoader = ({ src, width, quality }) => {
+const { baseUrl } = strings;
+
+const myLoader = ({ src, width, quality }: any) => {
   const origin = typeof window !== "undefined" && window.location.origin;
   return `${origin}/${src}?w=${width}&q=${quality || 75}`;
 };
@@ -47,7 +43,7 @@ const Section: NextPage = (props: any) => {
     sub_heading,
     type,
     Buttons,
-    
+
     image_size,
     image_position,
     free_text,
@@ -86,7 +82,7 @@ const Section: NextPage = (props: any) => {
     AOS.init();
   }, []);
 
-  const CustomArrow = ({ onClick }) => (
+  const CustomArrow = ({ onClick }: any) => (
     <button
       style={{ position: "absolute", right: 90, bottom: 90 }}
       onClick={onClick}
@@ -101,7 +97,7 @@ const Section: NextPage = (props: any) => {
       />
     </button>
   );
-  const CustomleftArrow = ({ onClick }) => (
+  const CustomleftArrow = ({ onClick }: any) => (
     <button
       style={{ position: "absolute", right: 150, bottom: 90 }}
       onClick={onClick}
@@ -244,7 +240,7 @@ const Section: NextPage = (props: any) => {
           >
             {carosel_cards.map((item: any) => (
               <div className={styles.carosel_card} data-aos="zoom-in"
-              data-aos-duration="1000">
+                data-aos-duration="1000">
                 <img src={baseUrl + item.images[0].url} />
 
                 <div className={styles.banner_container} >
@@ -254,7 +250,7 @@ const Section: NextPage = (props: any) => {
                       dangerouslySetInnerHTML={{
                         __html: marked(item.free_text),
                       }}
-                      
+
                     ></div>
                   )}
                   {item.call_to_action && (
@@ -581,45 +577,45 @@ const Section: NextPage = (props: any) => {
               </div>
             </Row>
             <Row>
-            <Carousel
-            swipeable={true}
-            draggable={false}
-            showDots={false}
-            responsive={responsive_our_people_cards}
-            ssr={true} // means to render carousel on server-side.
-            infinite={true}
-            keyBoardControl={true}
-            customTransition="all 0.5s ease"
-            transitionDuration={1000}
-            containerClass="carousel-container"
-            removeArrowOnDeviceType={["tablet", "mobile"]}
-            dotListClass="custom-dot-list-style"
-            // itemClass="carousel-item-padding-40-px"
-            className={styles.clientcarousel}
-            customRightArrow={<CustomArrow />}
-            customLeftArrow={<CustomleftArrow />}
-          >
-            {carosel_cards.map((v: any) => (
-                <Col>
-                  <div
-                    className={companyStyles.profiles}
-                    data-aos="zoom-in"
-                    data-aos-duration="2000"
-                  >
-                    <img
-                      className={companyStyles.img}
-                      src={baseUrl + v.images.map((v: any) => v.url)}
-                      placeholder="blur"
-                      height={162}
-                      width={163}
-                    />
-                    <h6>{v.heading}</h6>
-                    <p className={companyStyles.role}>{v.free_text}</p>
-                  </div>
-                </Col>
-              ))}
-          </Carousel>
-              
+              <Carousel
+                swipeable={true}
+                draggable={false}
+                showDots={false}
+                responsive={responsive_our_people_cards}
+                ssr={true} // means to render carousel on server-side.
+                infinite={true}
+                keyBoardControl={true}
+                customTransition="all 0.5s ease"
+                transitionDuration={1000}
+                containerClass="carousel-container"
+                removeArrowOnDeviceType={["tablet", "mobile"]}
+                dotListClass="custom-dot-list-style"
+                // itemClass="carousel-item-padding-40-px"
+                className={styles.clientcarousel}
+                customRightArrow={<CustomArrow />}
+                customLeftArrow={<CustomleftArrow />}
+              >
+                {carosel_cards.map((v: any) => (
+                  <Col>
+                    <div
+                      className={companyStyles.profiles}
+                      data-aos="zoom-in"
+                      data-aos-duration="2000"
+                    >
+                      <img
+                        className={companyStyles.img}
+                        src={baseUrl + v.images.map((v: any) => v.url)}
+                        placeholder="blur"
+                        height={162}
+                        width={163}
+                      />
+                      <h6>{v.heading}</h6>
+                      <p className={companyStyles.role}>{v.free_text}</p>
+                    </div>
+                  </Col>
+                ))}
+              </Carousel>
+
             </Row>
           </Container>
         </div>
@@ -642,7 +638,7 @@ const Section: NextPage = (props: any) => {
             )}
           </div>
           <div className={companyStyles.allProducts} data-aos="zoom-out-up"
-           data-aos-duration="1500">
+            data-aos-duration="1500">
             {carosel_cards.map((v: any) => (
               <div className={companyStyles.logos}>
                 <img
@@ -1003,39 +999,39 @@ const Section: NextPage = (props: any) => {
               </div> */}
 
               <div className={contactStyle.tabsContainer}>
-                  <div className={contactStyle.tabsIcons} data-aos="fade-up" data-aos-duration="1500">
-                      <Image
-                          loader={myLoader}
-                          src={submitIcon}
-                          alt="Picture of the author"
-                          width={30}
-                          height={100}
-                          // className={styles.svgarrow}
-                        />
-                        <Image
-                          loader={myLoader}
-                          src={mailIcon}
-                          alt="Picture of the author"
-                          width={30}
-                          height={100}
-                          // className={styles.svgarrow}
-                        />
-                      <Image
-                        loader={myLoader}
-                        src={phoneIcon}
-                        alt="Picture of the author"
-                        width={30}
-                        height={100}
-                        // className={styles.svgarrow}
-                          />
-                  </div>
+                <div className={contactStyle.tabsIcons} data-aos="fade-up" data-aos-duration="1500">
+                  <Image
+                    loader={myLoader}
+                    src={submitIcon}
+                    alt="Picture of the author"
+                    width={30}
+                    height={100}
+                  // className={styles.svgarrow}
+                  />
+                  <Image
+                    loader={myLoader}
+                    src={mailIcon}
+                    alt="Picture of the author"
+                    width={30}
+                    height={100}
+                  // className={styles.svgarrow}
+                  />
+                  <Image
+                    loader={myLoader}
+                    src={phoneIcon}
+                    alt="Picture of the author"
+                    width={30}
+                    height={100}
+                  // className={styles.svgarrow}
+                  />
+                </div>
                 <Tabs
                   defaultActiveKey="home"
                   id="uncontrolled-tab-example"
                   className="mb-3" >
 
                   <Tab eventKey="home" title="Submit a form">
-                  <div className={contactStyle.tab1} data-aos="fade-up" data-aos-duration="1800">
+                    <div className={contactStyle.tab1} data-aos="fade-up" data-aos-duration="1800">
                       <div className="mb-5">
                         <h4>
                           Fill out this form and a support representative will
@@ -1158,7 +1154,7 @@ const Section: NextPage = (props: any) => {
 
           <div className={`${servicesStyles.client_banner}`}>
             <div className={servicesStyles.clientContent} data-aos="fade-up"
-             data-aos-duration="1500">
+              data-aos-duration="1500">
               {free_text && (
                 <div
                   className={servicesStyles.section2_title}
@@ -1294,7 +1290,7 @@ const Section: NextPage = (props: any) => {
             <div className={`${servicesStyles.client_banner}`}>
               <div className={servicesStyles.clientContent}>
                 {free_text && (
-                  <div  data-aos="fade-up" data-aos-duration="1000"
+                  <div data-aos="fade-up" data-aos-duration="1000"
                     className={servicesStyles.section6_title}
                     dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                   ></div>
@@ -1402,7 +1398,7 @@ const Section: NextPage = (props: any) => {
             </div>
             {carosel_cards[0] && (
               <div className={servicesStyles.section8_img} data-aos="fade-up"
-                  data-aos-duration="2000"
+                data-aos-duration="2000"
               >
                 {carosel_cards.map((_card: any, index: number) => (
                   <Card {..._card} key={index} />
@@ -1734,7 +1730,7 @@ const Section: NextPage = (props: any) => {
                   </div>
                 )}
               </div>
-              
+
             }
             {/* <Carousel
               swipeable={true}

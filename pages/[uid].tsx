@@ -1,15 +1,13 @@
-import {useEffect, useRef} from "react";
-import type { NextPage, GetStaticProps } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import Breadcrumbs from "nextjs-breadcrumbs";
-import { useRouter, withRouter} from "next/router";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import type { GetStaticProps, NextPage } from "next";
 import ErrorPage from "next/error";
+import Head from "next/head";
+import { useRef } from "react";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import Section from "../components/Section";
+import strings from "../public/strings.json";
 
-import { baseUrl } from "../public/strings.json";
+const { baseUrl } = strings;
 
 const DynamicPage: NextPage<{ header: any; pages: any; footer: any }> = (
   props
@@ -19,7 +17,7 @@ const DynamicPage: NextPage<{ header: any; pages: any; footer: any }> = (
     return <ErrorPage statusCode={404} />;
   }
 
-  const scrollRef = useRef()  as React.MutableRefObject<HTMLInputElement>;
+  const scrollRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 
   // useEffect(() => {
   //   if (typeof window === "undefined") {
@@ -35,7 +33,7 @@ const DynamicPage: NextPage<{ header: any; pages: any; footer: any }> = (
   // }, []);
 
   const { header, footer } = props;
-  const { title, content, Logo, descrption,favicon } = props.pages[0];
+  const { title, content, Logo, descrption, favicon } = props.pages[0];
   return (
     <div >
       <Head>
@@ -49,7 +47,7 @@ const DynamicPage: NextPage<{ header: any; pages: any; footer: any }> = (
         />
       </Head>
       <Header {...header} />
-      
+
       {content.map((section: any) => (
         <Section {...section} />
       ))}
@@ -64,7 +62,7 @@ const DynamicPage: NextPage<{ header: any; pages: any; footer: any }> = (
 // It may be called again, on a serverless function, if
 // the path has not been generated.
 export async function getStaticPaths() {
-  
+
   const pageResult = await fetch(`${baseUrl}/pages`);
   const pages = await pageResult.json();
   console.log("pages", pages);
@@ -80,7 +78,7 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-  
+
   try {
     const headerResult = await fetch(`${baseUrl}/header`);
     const pageResult = await fetch(`${baseUrl}/pages?uid=${params.uid}`);
@@ -89,7 +87,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
     const header: any = await headerResult.json();
     const pages: any = await pageResult.json();
     console.log("###insidegetstatic", pages);
-    const footer: any = await footerResult.json();    
+    const footer: any = await footerResult.json();
 
     return {
       props: { pages: pages, header, footer },

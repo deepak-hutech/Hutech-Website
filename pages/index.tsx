@@ -1,17 +1,14 @@
-import { useEffect, useRef } from "react";
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-
-import Breadcrumbs from "nextjs-breadcrumbs";
-
-import Header from "../components/Header";
+import { useRef } from "react";
 import Footer from "../components/Footer";
-import ErrorPage from "next/error";
+import Header from "../components/Header";
 import Section from "../components/Section";
-import BlogSection from "../components/Blog";
+import strings from "../public/strings.json";
 
-import { baseUrl } from "../public/strings.json";
 
+
+const { baseUrl } = strings;
 // if (typeof window !== "undefined") {
 //   const LocomotiveScroll = require("locomotive-scroll");
 //   const scroll = new LocomotiveScroll.default({
@@ -70,7 +67,7 @@ const Home: NextPage<{ header: any; pages: any; footer: any; blogs: any }> = (
       <Breadcrumbs useDefaultStyle transformLabel={(title) => title } />
       <Breadcrumbs omitRootLabel />
       </div> */}
-      
+
       {content.map((section: any) => (
         <Section {...section} />
       ))}

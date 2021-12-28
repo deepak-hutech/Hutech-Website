@@ -1,23 +1,21 @@
-import { NextPage } from "next";
-import Link from "next/link";
-import Image, { ImageLoader } from "next/image";
-import styles from "../../styles/Section.module.css";
-
-import Action from "../Actions";
-import Card from "../Card";
 import marked from "marked";
-import "react-multi-carousel/lib/styles.css";
-
-import blogStyle from "../../styles/blog.module.css";
-
+import { NextPage } from "next";
+import Image, { ImageLoader } from "next/image";
+import Link from "next/link";
 import { Pagination } from "react-bootstrap";
+import "react-multi-carousel/lib/styles.css";
+import strings from "../../public/strings.json";
+import blogStyle from "../../styles/blog.module.css";
 import publishIcon from "../assets/publishdate.svg";
-import { baseUrl } from "../../public/strings.json";
 
+
+
+const { baseUrl } = strings;
 const myLoader: ImageLoader = (url: any) => {
   return url;
 };
-const myLoaderBlog = ({ src, width, quality }) => {
+
+const myLoaderBlog = ({ src, width, quality }: any) => {
   const origin = typeof window !== "undefined" && window.location.origin;
   return `${origin}/${src}?w=${width}&q=${quality || 75}`;
 };
@@ -25,7 +23,6 @@ const myLoaderBlog = ({ src, width, quality }) => {
 const Blog: NextPage = (props: any) => {
   const {
     blogs,
-
     sub_heading,
     free_text,
     blog_text,
@@ -60,11 +57,11 @@ const Blog: NextPage = (props: any) => {
               {blog_title && (
                 <div className={blogStyle.content}>
                   <div className={blogStyle.free_text}
-                 >
+                  >
                     <Link href={`/blog/${uid}`}>
                       <a>{blog_title}</a>
                     </Link>
-                    
+
                   </div>
                   {blog_text && (
                     <div
@@ -93,7 +90,7 @@ const Blog: NextPage = (props: any) => {
 
     case "blog_banner":
       return (
-        <div> 
+        <div>
           <div className={blogStyle.page}>
             <Pagination>
               <Pagination.Prev />

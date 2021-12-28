@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { GetStaticProps, NextPage } from "next";
+import { NextPage } from "next";
+import React, { useEffect, useState } from "react";
 import styles from "../../styles/Header.module.css";
 import Action from "../Actions";
-import { baseUrl } from "./../../public/strings.json";
+import strings from "./../../public/strings.json";
 
+const { baseUrl } = strings;
 interface IBackground {
   color: string;
 }
@@ -30,9 +31,8 @@ const Header: NextPage = (props: any) => {
 
   return (
     <nav
-      className={`${styles.container} ${
-        onScrollBackground ? styles.onScrollBackground : ""
-      }`}
+      className={`${styles.container} ${onScrollBackground ? styles.onScrollBackground : ""
+        }`}
     >
       <div className={styles.innerContainer}>
         <a className={styles.logo} href={"/"}>

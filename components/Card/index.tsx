@@ -1,17 +1,17 @@
-import marked from "marked";
-import React, { useState, useEffect } from "react";
-import { NextPage } from "next";
-import Image, { ImageLoader } from "next/image";
-import styles from "../../styles/Card.module.css";
-import companyStyles from "../../styles/Company.module.css";
-import servicesStyles from "../../styles/Services.module.css";
-import portfolioStyles from "../../styles/Portfolio.module.css";
-import Action from "../Actions";
-import { baseUrl } from "./../../public/strings.json";
-import leftarrow from "../assets/arrow.png";
-import careerstyles from "../../styles/Careers.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import marked from "marked";
+import { NextPage } from "next";
+import Image, { ImageLoader } from "next/image";
+import React, { useEffect } from "react";
+import styles from "../../styles/Card.module.css";
+import careerstyles from "../../styles/Careers.module.css";
+import companyStyles from "../../styles/Company.module.css";
+import portfolioStyles from "../../styles/Portfolio.module.css";
+import servicesStyles from "../../styles/Services.module.css";
+import strings from "./../../public/strings.json";
+
+const { baseUrl } = strings;
 
 const myLoader: ImageLoader = (url: any) => {
   return url;
@@ -198,10 +198,10 @@ const Card: NextPage = (props: any) => {
     case "mobile_app_development_card":
       return (
         <div className={servicesStyles.mobile_app_development_card} data-aos="flip-right"
-        data-aos-duration="2000">
+          data-aos-duration="2000">
           <a
             style={{ textDecoration: "none", color: "black" }}
-            href= "/service-details"
+            href="/service-details"
           >
             <div className={servicesStyles.section3_cards}>
               <div
@@ -353,7 +353,7 @@ const Card: NextPage = (props: any) => {
         <div className={careerstyles.featurecard}>
           <a
             id={props.id}
-            // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
+          // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
           >
             <div className={careerstyles.featurecardimg}>
               <Image
@@ -384,14 +384,14 @@ const Card: NextPage = (props: any) => {
               heading === "IOS Developer"
                 ? { backgroundColor: "#F9F8F8", border: "1px solid #D3D3D3" }
                 : heading === "React Developer"
-                ? { backgroundColor: "#EFFCFF", border: "1px solid #61DAFB" }
-                : heading === "Node JS Developer"
-                ? { backgroundColor: "#F8FFF9", border: "1px solid #66CE77" }
-                : heading === "Java Developer"
-                ? { backgroundColor: "#FFF3F3", border: "1px solid #F56767" }
-                : heading === "Adriod Developer"
-                ? { backgroundColor: "#F8FFF9", border: "1px solid #66CE77" }
-                : { color: "black" }
+                  ? { backgroundColor: "#EFFCFF", border: "1px solid #61DAFB" }
+                  : heading === "Node JS Developer"
+                    ? { backgroundColor: "#F8FFF9", border: "1px solid #66CE77" }
+                    : heading === "Java Developer"
+                      ? { backgroundColor: "#FFF3F3", border: "1px solid #F56767" }
+                      : heading === "Adriod Developer"
+                        ? { backgroundColor: "#F8FFF9", border: "1px solid #66CE77" }
+                        : { color: "black" }
             }
           >
             <a
@@ -401,7 +401,7 @@ const Card: NextPage = (props: any) => {
                 textDecoration: "none",
                 color: "black",
               }}
-              // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
+            // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
             >
               <div className={careerstyles.openingcardimg}>
                 <Image
@@ -482,7 +482,7 @@ const Card: NextPage = (props: any) => {
         <div className={servicesStyles.androidcard}>
           <a
             id={props.id}
-            // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
+          // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
           >
             <div className={servicesStyles.androidcardimg}>
               <Image

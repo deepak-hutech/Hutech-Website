@@ -1,10 +1,10 @@
-import React, { useState } from "react";
 import { NextPage } from "next";
-import styles from "../Accordian/accordian.module.css";
 import Image, { ImageLoader } from "next/image";
-import { baseUrl } from "./../../public/strings.json";
-import plus from "../assets/plus.svg";
+import React, { useState } from "react";
+import styles from "../Accordian/accordian.module.css";
+import strings from "./../../public/strings.json";
 
+const { baseUrl } = strings;
 const myLoader: ImageLoader = (url: any) => {
   return url;
 };
@@ -31,7 +31,7 @@ const Accordian: NextPage = (props: any) => {
         >
           <div className={styles.accordion_heading}>{title}</div>
           <div className={styles.accordion_symbol}>
-            {isActive ? "-": "+"}
+            {isActive ? "-" : "+"}
           </div>
         </div>
 
