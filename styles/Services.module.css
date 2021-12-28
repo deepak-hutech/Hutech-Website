@@ -833,8 +833,8 @@ font-size: 0.9375rem;
 
 
   .section5_img_container img{
-      width: 200px;
-      border-radius: 20px;
+      width: auto;
+      /* border-radius: 20px; */
   }
 
 
@@ -848,7 +848,7 @@ font-size: 0.9375rem;
 
   .section5_img_container {
     display: flex;
-    padding-left: 10px;
+    /* padding-left: 10px; */
     flex-direction: column;
     text-align: center;
   }

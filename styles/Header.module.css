@@ -210,10 +210,12 @@ left: 44%;
   .navContainer a {
     margin: 0 8px;
     padding: 12px 0;
+    color: #fff;
+     font-family: "GraphikMedium";
   }
   .headerbtn {
-    width: 110px;
-    height: 36px;
+    width: 130px;
+    height: 45px;
   }
 }
 
@@ -288,7 +290,7 @@ left: 44%;
   .menuToggle .hamburgerCheckbox:checked ~ .hamburgerMenuIcon {
     opacity: 1;
     transform: rotate(45deg) translate(-2px, -1px);
-    background: #232323;
+    background: #fff;
   }
 
   /*
@@ -317,12 +319,12 @@ left: 44%;
  */
   .navContainer {
     position: absolute;
-    width: 300px;
+    width: 250px;
     margin: -50px 0 0 0;
     padding: 50px;
     padding-top: 50px;
     right: -50px;
-    background: #ededed;
+    background: #0171C1;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     /* to stop flickering of text in safari */

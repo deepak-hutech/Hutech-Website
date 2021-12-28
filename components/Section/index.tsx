@@ -85,7 +85,7 @@ const Section: NextPage = (props: any) => {
 
   const CustomArrow = ({ onClick }) => (
     <button
-      style={{ position: "absolute", right: 90, bottom: 90 }}
+      style={{ position: "absolute", right: 90, bottom: 50 }}
       onClick={onClick}
       className={styles.arrowbtn}
     >
@@ -100,7 +100,7 @@ const Section: NextPage = (props: any) => {
   );
   const CustomleftArrow = ({ onClick }) => (
     <button
-      style={{ position: "absolute", right: 150, bottom: 90 }}
+      style={{ position: "absolute", right: 150, bottom: 50 }}
       onClick={onClick}
       className={styles.arrowbtn}
     >
@@ -175,7 +175,7 @@ const Section: NextPage = (props: any) => {
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1,
+      items: 2,
       slidesToSlide: 1, // optional, default to 1.
     },
   };
@@ -199,12 +199,12 @@ const Section: NextPage = (props: any) => {
   const responsive_small_cards = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 4,
+      items: 3,
       slidesToSlide: 1, // optional, default to 1.
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 3,
+      items: 2,
       slidesToSlide: 2, // optional, default to 1.
     },
     mobile: {
@@ -376,6 +376,7 @@ const Section: NextPage = (props: any) => {
             swipeable={true}
             draggable={false}
             showDots={false}
+            // autoPlay={true}
             responsive={responsive_small_cards}
             ssr={true} // means to render carousel on server-side.
             infinite={true}
@@ -613,6 +614,7 @@ const Section: NextPage = (props: any) => {
             swipeable={true}
             draggable={false}
             showDots={false}
+            autoPlay={true}
             responsive={responsive_our_people_cards}
             ssr={true} // means to render carousel on server-side.
             infinite={true}

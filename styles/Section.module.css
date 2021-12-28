@@ -19,6 +19,7 @@
 .clientcarousel{
   align-items: start;
   height: 430px;
+  overflow: hidden;
 }
 .clientcarousel .react-multiple-carousel__arrow--left {
   left: -webkit-calc(4% + 1px);
@@ -786,11 +787,13 @@ overflow: hidden;
   font-family: "GraphikMedium";
   line-height: 60px;
   color: #383838;
-  margin: 4% 0 3% 9%;
+  margin: 4% 0 3% 0;
 }
 .our_latest_works {
   background: #ffffff;
   padding: 2% 0% 0% 0%;
+  margin: 0 8%;
+  overflow: hidden;
 }
 .capabilities {
   padding: 0 5% 2% 8.2%;
@@ -892,6 +895,24 @@ overflow: hidden;
     font-size: 18px;
     line-height: 30px;
   }
+  .left_content_title h3 {
+    font-size: 20px;
+  }
+  .left_content_title h4 {
+    font-size: 20px;
+    margin: 0;
+  }
+  .home_form_section {
+    background-color: #0171c1;
+    padding: 4%;
+  }
+  .left_content_title p {
+    font-size: 12px;
+  }
+  .fome_form_button {
+    font-size: 14px;
+  }
+
 }
 @media only screen and (max-width: 480px) {
   .free_text h2 {
@@ -904,6 +925,10 @@ overflow: hidden;
     line-height: 30px;
     
   }
+  .successful_product{
+    padding: 5% 4% 8% 4%;
+    margin-bottom: 6%;
+  }
   .banner_container {
     top: 30%;
     left: 4%;
@@ -912,11 +937,11 @@ overflow: hidden;
     padding: 10% 0% 0% 0%;
   }
   .title h3 {
-    font-size: 30px;
+    font-size: 26px;
   }
   .capab_title h3 {
     
-    font-size: 30px;
+    font-size: 26px;
   }
   .key_solutions {
     flex-wrap: wrap;
@@ -929,10 +954,10 @@ overflow: hidden;
     
   }
   .development_title h3 {
-    font-size: 30px;
+    font-size: 26px;
   }
   .product_title h3 {
-    font-size: 30px;
+    font-size: 26px;
   }
   .blog_banner {
     padding: 7%;
@@ -942,7 +967,7 @@ overflow: hidden;
     margin-bottom: 50px;
   }
   .clients_title h3 {
-    font-size: 30px;
+    font-size: 26px;
   }
   .left_content {
     width: 100%;

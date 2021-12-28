@@ -169,14 +169,17 @@
   .abt_company .heading h3{
       font-size: 26px;
   }
+  .abt_company .abt_img{
+    margin-left:0px;
+  }
 
   .abt_company .heading h6{
-    font-size: 11px;
+    font-size: 12px;
     line-height: 20px;
   }
 
     .abt_company .note {
-    font-size: 11px !important;
+    font-size: 12px !important;
     line-height: 20px;
   }
 
@@ -301,11 +304,11 @@
 
   @media only screen and (max-width: 500px) {
    .our_people .free_text h3{
-     font-size: 28px ;
+     font-size: 26px ;
      line-height: 20px;
    }
    .our_people .sub_heading p {
-     font-size: 13px;
+     font-size: 12px;
    }
 
    .our_people .sub_heading{
@@ -377,10 +380,10 @@
   @media only screen and (max-width: 500px) {
 
     .partner .heading h3{
-      font-size: 30px;
+      font-size: 26px;
     }
     .partner .desc p{
-      font-size: 14px;
+      font-size: 12px;
     }
     .partner .allProducts .images {
       margin: 10px;
@@ -389,6 +392,9 @@
     .partner .logos{
       width: 50%;
     }
+    .partner {
+      padding: 50px 10px;
+   }
   }
 
   /* WEB DEV */
@@ -437,11 +443,12 @@
 
   @media only screen and (max-width: 500px) {
     .tech_slack .our_slack_title {
-      font-size: 30px;
+      font-size: 26px;
     }
 
     .tech_slack .heading .desc {
       font-size: 12px;
+      padding: 0 20px;
     }
   }
   
@@ -584,13 +591,17 @@
 
   @media only screen and (max-width: 500px) {
    .current_opening .content .free_text {
-      font-size: 22px;
+      font-size: 18px;
    }
+   .current_opening .banner_container{
+    top: 15%;
+  }
    .current_opening .call_to_action_req {
      font-size: 10px;
    }
    .current_opening .description {
-     font-size: smaller;
+     font-size: 12px;
+     padding: 0 10px;
    }
   }
 

@@ -54,7 +54,7 @@ const Card: NextPage = (props: any) => {
           <div
             className={styles.card}
             data-aos="zoom-in"
-            data-aos-duration="1600"
+            data-aos-duration="1000"
           >
             <a id={props.id} href={Link ? Link : `/plans/${props.title}`}>
               <Image
@@ -70,7 +70,7 @@ const Card: NextPage = (props: any) => {
           <div
             className={styles.heading}
             data-aos="zoom-in"
-            data-aos-duration="1800"
+            data-aos-duration="1200"
           >
             {heading}
           </div>
@@ -98,7 +98,7 @@ const Card: NextPage = (props: any) => {
             className={styles.capabilities_cards_title}
             dangerouslySetInnerHTML={{ __html: marked(free_text) }}
             data-aos="zoom-in"
-            data-aos-duration="1500"
+            data-aos-duration="1200"
           ></div>
         </div>
       );
@@ -167,6 +167,7 @@ const Card: NextPage = (props: any) => {
                 blurDataURL={baseUrl + profile_img[0].url}
                 width={54}
                 height={54}
+                className={styles.testimonial_profile}
               />
               <div>
                 <div className={styles.right_card_heading}>{descrption}</div>

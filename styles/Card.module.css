@@ -1,12 +1,13 @@
 .card {
-  width: 300px;
-  height: 210px;
+  width: 360px;
+  height: 266px;
   background: #fff;
   box-shadow: 0px 4px 14px rgba(177, 177, 177, 0.25);
   border-radius: 10px;
   text-align: center;
   display: flex;
   transition: box-shadow 1s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+  margin: 0 10px;
 }
 .card a {
   width: 100%;
@@ -136,6 +137,9 @@
 }
 .content .descrption {
   grid-area: descrption;
+}
+.testimonial_profile{
+  border-radius: 40px;
 }
 .blog {
   width: 420px;
@@ -353,7 +357,37 @@
   flex-wrap: wrap;
   margin-top: 50px;
 }
+@media only screen and (max-width: 1350px) {
+  .card {
+    width: 330px;
+    height: 236px;
+  }
+  
+}
+@media only screen and (max-width: 1250px) {
+  .card {
+    width: 270px;
+    height: 200px;
+  }
+  .heading {
+    font-size: 18px;
+    margin: 30px 50px 20px 20px;
+  }
+  .capabilities_cards {
+    
+    width: 170px;
+    height: 210px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .card {
+    width: 250px;
+    height: 170px;
+  }
+}
+@media only screen and (max-width: 768px) {
 
+}
 @media only screen and (max-width: 500px) {
   .carosoulCards {
     margin-top: 0px;
@@ -385,8 +419,10 @@
 .successful_product_card {
   
   width: 220px;
-  height: 220px;
+  height: 210px;
 }
+/* .product_para {
+  font-size: 11px;} */
 .para {
   margin: 10px 0px 10px 0px;
 }
