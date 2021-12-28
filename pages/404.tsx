@@ -14,7 +14,6 @@ const myLoader: ImageLoader = () => {
 }
 
 const UnderConstruction: NextPage = (props: any) => {
-    console.log("40404040404040404")
     const router = useRouter();
     const title = router.asPath.split("/").join("_").substr(1);
     return (

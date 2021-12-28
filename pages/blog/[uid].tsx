@@ -27,8 +27,6 @@ const Article: NextPage<{
   const { header, footer, blogs, blogBanner, article, categories, blog } =
     props;
 
-  // const Article = ({ article }:any) => {
-  console.log(props);
   return (
     <div ref={scrollRef}>
       <Header {...header} />
@@ -184,7 +182,6 @@ export async function getStaticPaths() {
   const blogResult = await fetch(`${baseUrl}/blog-pages`);
 
   const blogs: any = await blogResult.json();
-  //  console.log(blogs, "blogs")
 
   return {
     paths: blogs.map((blog: any) => ({
@@ -196,7 +193,6 @@ export async function getStaticPaths() {
   };
 }
 export async function getStaticProps({ params }: any) {
-  console.log(params, "parama");
   // const allBlogResult = await fetch(`${baseUrl}/blog-pages`);
   // const allBlogs: any = await allBlogResult.json();
   const headerResult = await fetch(`${baseUrl}/header`);

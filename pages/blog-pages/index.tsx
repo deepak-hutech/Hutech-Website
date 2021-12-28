@@ -1,5 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { GetStaticProps, NextPage } from "next";
+import Router, { withRouter } from "next/router";
+
 import BlogSection from "../../components/Blog";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -11,6 +13,10 @@ import { baseUrl } from "../../public/strings.json";
 import { Pagination } from "react-bootstrap";
 import careerstyles from "../../styles/Careers.module.css";
 import marked from "marked";
+import ReactPaginate from "react-paginate";
+
+// import "./bootstrap.min.css";
+
 const myLoaderbanner: ImageLoader = (url: any) => {
   return url;
 };
@@ -20,9 +26,37 @@ const AllBlogs: NextPage<{
   blogs: any;
   blogBanner: any;
 }> = (props) => {
+  const PAGE_SIZE = 3;
   const scrollRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const { header, footer, blogs, blogBanner } = props;
-  console.log(blogBanner[0], "ppp");
+  const [pageNum, setPageNum] = useState(1);
+  const pageCount = Math.ceil(blogs.length / PAGE_SIZE);
+
+  //When new page selected in paggination, we take current path and query parrams.
+  // Then add or modify page parram and then navigate to the new route.
+  const pagginationHandler = (page: any) => {
+    setPageNum(page.selected + 1);
+  };
+
+  const dataToShow = blogs.slice((pageNum - 1) * PAGE_SIZE, pageNum * PAGE_SIZE);
+  console.log(blogs);
+  console.log(dataToShow);
+  //Conditional rendering of the posts list or loading indicator
+  // let content = null;
+  // if (isLoading) content = <div>Loading...</div>;
+  // else {
+  //   console.log("&&&&&&&&&&&&", blogs);
+  //   //Generating posts list
+  //   content = (
+  //     <>
+  //       {blogs.map((val: any) => (
+  //         <div key={val.uid} className={blogStyle.allBlogs}>
+  //           <BlogSection {...val} />
+  //         </div>
+  //       ))}
+  //     </>
+  //   );
+  // }
 
   return (
     <div ref={scrollRef}>
@@ -60,23 +94,33 @@ const AllBlogs: NextPage<{
       <div style={{ padding: "2% 6% 0" }}>
         <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
       </div>
-      <div style={{ display: "flex", flexWrap: "wrap", padding: "0 7% 8%", position:"relative" }}>
-        {blogs.map((val: any) => (
-          <div className={blogStyle.allBlogs}>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          padding: "0 7% 8%",
+          position: "relative",
+        }}
+      >
+        {dataToShow.map((val: any) => (
+          <div key={val.uid} className={blogStyle.allBlogs}>
             <BlogSection {...val} />
           </div>
         ))}
-        <div className={blogStyle.page}>
-          <Pagination>
-            <Pagination.Prev />
-            <Pagination.Item key={1} active={true}>
-              1
-            </Pagination.Item>
-            <Pagination.Item key={2}>2</Pagination.Item>
-            <Pagination.Item key={3}>3</Pagination.Item>
-            <Pagination.Next />
-          </Pagination>
-        </div>
+        <ReactPaginate
+          previousLabel={"previous"}
+          nextLabel={"next"}
+          breakLabel={"..."}
+          breakClassName={"break-me"}
+          activeClassName={"active"}
+          containerClassName={"pagination"}
+          subContainerClassName={"pages pagination"}
+          initialPage={pageNum - 1}
+          pageCount={pageCount}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={5}
+          onPageChange={pagginationHandler}
+        />
       </div>
       <div className={careerstyles.section5}>
         <Image
@@ -135,7 +179,7 @@ const AllBlogs: NextPage<{
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ res }: any) => {
+export const getStaticProps: GetStaticProps = async ({ query }: any) => {
   try {
     const headerResult = await fetch(`${baseUrl}/header`);
     const blogResult = await fetch(`${baseUrl}/blog-pages`);

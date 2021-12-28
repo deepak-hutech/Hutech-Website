@@ -67,7 +67,6 @@ export async function getStaticPaths() {
   
   const pageResult = await fetch(`${baseUrl}/pages`);
   const pages = await pageResult.json();
-  console.log("pages", pages);
 
   // Get the paths we want to pre-render based on posts
   const paths = pages.map((pages: any) => ({
@@ -88,7 +87,6 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
     const footerResult = await fetch(`${baseUrl}/footer`);
     const header: any = await headerResult.json();
     const pages: any = await pageResult.json();
-    console.log("###insidegetstatic", pages);
     const footer: any = await footerResult.json();    
 
     return {
