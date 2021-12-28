@@ -78,7 +78,7 @@ const careerform = () => {
   };
 
   const onReCAPTCHAChange = (captchaCode) => {
-    alert(captchaCode);
+    // alert(captchaCode);
     // If the reCAPTCHA code is null or undefined indicating that
     // the reCAPTCHA was expired then return early
     if (!captchaCode) {
@@ -104,9 +104,6 @@ const careerform = () => {
           <Form.Label className={CareerStyle.contactForm_label}>
             Your Name
           </Form.Label>
-
-          
-          
           <Form.Control
             required
             value={inputs.username}
@@ -220,7 +217,7 @@ const careerform = () => {
         </Form.Group>
       </Row>
 
-      <Row className="">
+      {/* <Row className="">
         <Form.Group className="position-relative mb-3">
           <Form.Label className={CareerStyle.nonMendatory_label}>
             Please share your requirement documents
@@ -233,15 +230,19 @@ const careerform = () => {
               className={CareerStyle.fileUpload}
               onChange={onChange}
             />{" "}
-            {/* <span className={CareerStyle.vl}></span> */}
+          
             <sapn className={CareerStyle.vl}>
               {" "}
               Drag and drop your file here
             </sapn>
           </Form.Label>
 
-          {/* <Form.Control.Feedback type="invalid" tooltip>File is required field
-            </Form.Control.Feedback> */}
+        </Form.Group>
+      </Row> */}
+       <Row className="">
+        <Form.Group className="position-relative mb-3">
+          <Form.Label>Please share your requirement documents</Form.Label>
+          <Form.Control type="file" name="file" onChange={onChange} />
         </Form.Group>
       </Row>
       <p className={CareerStyle.form_upload_text}>

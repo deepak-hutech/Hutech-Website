@@ -138,8 +138,6 @@ const careerform = () => {
               name="file"
               onChange={onChange}
             />
-            {/* <Form.Control.Feedback type="invalid" tooltip>File is required field
-            </Form.Control.Feedback> */}
           </Form.Group>
         </Row>
         <p className={CareerStyle.form_upload_text}>
