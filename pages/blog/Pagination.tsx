@@ -1,8 +1,14 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import BsPagination  from "react-bootstrap/Pagination";
+import BsPagination from "react-bootstrap/Pagination";
 
-class Pagination extends Component {
+type PaginationProps = {
+  onPageClick: any
+  numberOfPages: any
+  maxButtons: any
+  activePage: any
+  viewAll: any
+}
+class Pagination extends Component<PaginationProps> {
   handleOnSelect = (page: any) => this.props.onPageClick(page);
 
   handleViewAllPages = (e: any) => {
@@ -18,13 +24,6 @@ class Pagination extends Component {
     return (
       <div>
         <BsPagination
-          activePage={activePage}
-          items={numberOfPages}
-          maxButtons={maxButtons}
-          first
-          last
-          next
-          prev
           onSelect={this.handleOnSelect}
         />
       </div>

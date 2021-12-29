@@ -2,7 +2,6 @@ import marked from "marked";
 import { NextPage } from "next";
 import Image, { ImageLoader } from "next/image";
 import Link from "next/link";
-import { Pagination } from "react-bootstrap";
 import "react-multi-carousel/lib/styles.css";
 import strings from "../../public/strings.json";
 import blogStyle from "../../styles/blog.module.css";
@@ -106,7 +105,7 @@ const Blog: NextPage = (props: any) => {
     default:
       return (
         <div>
-          
+
         </div>
       );
   }

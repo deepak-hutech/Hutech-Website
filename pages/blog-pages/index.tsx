@@ -1,25 +1,21 @@
-import { useEffect, useRef, useState } from "react";
+import marked from "marked";
 import type { GetStaticProps, NextPage } from "next";
-import Router, { withRouter } from "next/router";
-
-import BlogSection from "../../components/Blog";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import blogStyle from "../../styles/blog.module.css";
 import Image, { ImageLoader } from "next/image";
 import Breadcrumbs from "nextjs-breadcrumbs";
-// import { useRef } from "react";
-import { Pagination } from "react-bootstrap";
-
-import strings from "../../public/strings.json";
-
-import careerstyles from "../../styles/Careers.module.css";
-import marked from "marked";
+import { useRef, useState } from "react";
 import ReactPaginate from "react-paginate";
-
+import BlogSection from "../../components/Blog";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import strings from "../../public/strings.json";
+import blogStyle from "../../styles/blog.module.css";
+import careerstyles from "../../styles/Careers.module.css";
 // import "./bootstrap.min.css";
-
 import companyStyles from "../../styles/Company.module.css";
+
+
+
+
 
 const { baseUrl } = strings;
 const myLoaderbanner: ImageLoader = (url: any) => {
@@ -105,7 +101,7 @@ const AllBlogs: NextPage<{
           flexWrap: "wrap",
           padding: "0 7% 8%",
           position: "relative",
-          justifyContent:"center",
+          justifyContent: "center",
         }}
       >
         {dataToShow.map((val: any) => (
@@ -120,7 +116,6 @@ const AllBlogs: NextPage<{
           breakClassName={"break-me"}
           activeClassName={"active"}
           containerClassName={"pagination"}
-          subContainerClassName={"pages pagination"}
           initialPage={pageNum - 1}
           pageCount={pageCount}
           marginPagesDisplayed={2}

@@ -113,7 +113,7 @@ const Section: NextPage = (props: any) => {
       />
     </button>
   );
-  const CustomArrowBlog = ({ onClick }) => (
+  const CustomArrowBlog = ({ onClick }: any) => (
     <button
       style={{ position: "absolute", right: "50%", bottom: 10 }}
       onClick={onClick}
@@ -128,7 +128,7 @@ const Section: NextPage = (props: any) => {
       />
     </button>
   );
-  const CustomleftArrowBlog = ({ onClick }) => (
+  const CustomleftArrowBlog = ({ onClick }: any) => (
     <button
       style={{ position: "absolute", right: "54%", bottom: 10 }}
       onClick={onClick}
@@ -609,46 +609,46 @@ const Section: NextPage = (props: any) => {
               </div>
             </Row>
             <Row>
-            <Carousel
-            swipeable={true}
-            draggable={false}
-            showDots={false}
-            autoPlay={true}
-            responsive={responsive_our_people_cards}
-            ssr={true} // means to render carousel on server-side.
-            infinite={true}
-            keyBoardControl={true}
-            customTransition="all 0.5s ease"
-            transitionDuration={1000}
-            containerClass="carousel-container"
-            removeArrowOnDeviceType={["tablet", "mobile"]}
-            dotListClass="custom-dot-list-style"
-            // itemClass="carousel-item-padding-40-px"
-            className={styles.clientcarousel}
-            customRightArrow={<CustomArrow />}
-            customLeftArrow={<CustomleftArrow />}
-          >
-            {carosel_cards.map((v: any) => (
-                <Col>
-                  <div
-                    className={companyStyles.profiles}
-                    data-aos="zoom-in"
-                    data-aos-duration="2000"
-                  >
-                    <img
-                      className={companyStyles.img}
-                      src={baseUrl + v.images.map((v: any) => v.url)}
-                      placeholder="blur"
-                      height={162}
-                      width={163}
-                    />
-                    <h6>{v.heading}</h6>
-                    <p className={companyStyles.role}>{v.free_text}</p>
-                  </div>
-                </Col>
-              ))}
-          </Carousel>
-              
+              <Carousel
+                swipeable={true}
+                draggable={false}
+                showDots={false}
+                autoPlay={true}
+                responsive={responsive_our_people_cards}
+                ssr={true} // means to render carousel on server-side.
+                infinite={true}
+                keyBoardControl={true}
+                customTransition="all 0.5s ease"
+                transitionDuration={1000}
+                containerClass="carousel-container"
+                removeArrowOnDeviceType={["tablet", "mobile"]}
+                dotListClass="custom-dot-list-style"
+                // itemClass="carousel-item-padding-40-px"
+                className={styles.clientcarousel}
+                customRightArrow={<CustomArrow />}
+                customLeftArrow={<CustomleftArrow />}
+              >
+                {carosel_cards.map((v: any) => (
+                  <Col>
+                    <div
+                      className={companyStyles.profiles}
+                      data-aos="zoom-in"
+                      data-aos-duration="2000"
+                    >
+                      <img
+                        className={companyStyles.img}
+                        src={baseUrl + v.images.map((v: any) => v.url)}
+                        placeholder="blur"
+                        height={162}
+                        width={163}
+                      />
+                      <h6>{v.heading}</h6>
+                      <p className={companyStyles.role}>{v.free_text}</p>
+                    </div>
+                  </Col>
+                ))}
+              </Carousel>
+
             </Row>
           </Container>
         </div>
@@ -964,7 +964,7 @@ const Section: NextPage = (props: any) => {
               // itemClass="carousel-item-padding-40-px"
               className={styles.homeblogcarousel}
               customRightArrow={<CustomArrowBlog />}
-            customLeftArrow={<CustomleftArrowBlog />}
+              customLeftArrow={<CustomleftArrowBlog />}
             >
               {cards.map((_card: any, index: number) => (
                 <Card {..._card} key={index} />
@@ -1122,7 +1122,7 @@ const Section: NextPage = (props: any) => {
                         <div className={contactStyle.tabtitle}>Shoot us an Email</div>
                       </span>
                     }
-                    // title="Shoot us an Email"
+                  // title="Shoot us an Email"
                   >
                     <div className={contactStyle.tab2}>
                       <div>
@@ -1164,7 +1164,7 @@ const Section: NextPage = (props: any) => {
                         <div className={contactStyle.tabtitle}> Give us a call</div>
                       </span>
                     }
-                    // title="Give us a call"
+                  // title="Give us a call"
                   >
                     <div className={contactStyle.tab3}>
                       <div>
@@ -1902,7 +1902,7 @@ const Section: NextPage = (props: any) => {
     case "servicedetails_banner":
       return (
         <div className={servicesStyles.seviceinner_bannerimg}>
-         
+
           {home_banner[0] && (
             <Image
               loader={() =>
@@ -1983,35 +1983,35 @@ const Section: NextPage = (props: any) => {
     case "android_app_right_banner":
       return (
         // <div className={servicesStyles.serviceinner_sec3_Container}>
-          <div className={servicesStyles.serviceinner_sec3_Content}>
-            <div className={servicesStyles.serviceinner_sec3_Content_left}>
-              {free_text && (
-                <div
-                  className={servicesStyles.serviceinner_sec3_heading}
-                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-                ></div>
-              )}
-              {sub_heading && (
-                <div
-                  className={servicesStyles.serviceinner_sec3_left_note}
-                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-                ></div>
-              )}
-            </div>
-
-            {home_banner[0] && (
-              <div className={`${servicesStyles.serviceinner_sec3_left_img}`}>
-                <Image
-                  loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
-                  src={baseUrl + home_banner[0].url}
-                  placeholder="blur"
-                  blurDataURL={baseUrl + home_banner[0].url}
-                  height={389}
-                  width={613}
-                />
-              </div>
+        <div className={servicesStyles.serviceinner_sec3_Content}>
+          <div className={servicesStyles.serviceinner_sec3_Content_left}>
+            {free_text && (
+              <div
+                className={servicesStyles.serviceinner_sec3_heading}
+                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+              ></div>
+            )}
+            {sub_heading && (
+              <div
+                className={servicesStyles.serviceinner_sec3_left_note}
+                dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+              ></div>
             )}
           </div>
+
+          {home_banner[0] && (
+            <div className={`${servicesStyles.serviceinner_sec3_left_img}`}>
+              <Image
+                loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
+                src={baseUrl + home_banner[0].url}
+                placeholder="blur"
+                blurDataURL={baseUrl + home_banner[0].url}
+                height={389}
+                width={613}
+              />
+            </div>
+          )}
+        </div>
         // </div>
       );
 
