@@ -4,7 +4,7 @@ export const SmoothScrollContext = createContext({
   scroll: null,
 });
 
-export const SmoothScrollProvider = ({ children, options }) => {
+const SmoothScrollProvider = ({ children, options }) => {
   const [scroll, setScroll] = useState(null);
 
   useEffect(() => {
@@ -40,3 +40,5 @@ export const SmoothScrollProvider = ({ children, options }) => {
 
 SmoothScrollContext.displayName = "SmoothScrollContext";
 SmoothScrollProvider.displayName = "SmoothScrollProvider";
+
+export default SmoothScrollProvider;

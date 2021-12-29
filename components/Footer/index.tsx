@@ -1,12 +1,12 @@
-import { NextPage } from "next";
 import marked from "marked";
+import { NextPage } from "next";
+import { ImageLoader } from "next/image";
+import { Col, Container, Row } from "react-bootstrap";
+import strings from "../../public/strings.json";
 import styles from "../../styles/Footer.module.css";
-import Action from "../Actions";
-import { baseUrl } from "../../public/strings.json";
-import { Container, Col, Row } from "react-bootstrap";
-import vector2 from "../assets/vector2.svg";
-import Image, { ImageLoader } from "next/image";
 
+
+const { baseUrl } = strings;
 const myLoader: ImageLoader = (url: any) => {
   return url;
 };
@@ -60,52 +60,52 @@ const Footer: NextPage = (props: any) => {
     mail,
     social_icon
   } = props;
-  
+
 
   return (
     <div>
       <div className={styles.footer}>
         <Container>
           <Row>
-             {footer_action.map(({ display, group, icon }: any, index: any) => (
-               <Col>
-             <div className={styles.footerContainer}>
-                <div key={index} className={styles.heading}>
-                  {display}
-                </div>
+            {footer_action.map(({ display, group, icon }: any, index: any) => (
+              <Col>
+                <div className={styles.footerContainer}>
+                  <div key={index} className={styles.heading}>
+                    {display}
+                  </div>
 
-                <div key={index} className={styles.sub_heading}>
-                  {group.map((v: any) => {
-                    
-                    return (
-                      <div className={styles.footersubheading} >
-                        <img src={`${baseUrl}${v.icon[0]?.url}`} /><div dangerouslySetInnerHTML={{ __html: marked(v.freetext)}}></div>
-                      </div>
-                    );
-                  })}
+                  <div key={index} className={styles.sub_heading}>
+                    {group.map((v: any) => {
+
+                      return (
+                        <div className={styles.footersubheading} >
+                          <img src={`${baseUrl}${v.icon[0]?.url}`} /><div dangerouslySetInnerHTML={{ __html: marked(v.freetext) }}></div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-             </div>
               </Col>
-            ))} 
+            ))}
           </Row>
           <hr className={styles.divider}></hr>
           <div className={styles.iconsContainer}>
-           <p className={styles.terms}>Terms and Conditions  |  Privacy Policy | Disclaimer</p>
+            <p className={styles.terms}>Terms and Conditions  |  Privacy Policy | Disclaimer</p>
             <div className={styles.item}>
-                    {social_icon.map(({ display, icon }: any, index: any) => (
+              {social_icon.map(({ display, icon }: any, index: any) => (
+                <div>
+                  <div key={index}>
                     <div>
-                      <div key={index}>
-                            <div>
-                              <img src={`${baseUrl}${icon[0]?.url}`} />
-                            </div>
-                      </div>
+                      <img src={`${baseUrl}${icon[0]?.url}`} />
+                    </div>
                   </div>
-              ))} 
+                </div>
+              ))}
             </div>
           </div>
-           <p className={styles.copyRight}>Copyright © 2019 - 2021. All Rights Reserved.</p>
+          <p className={styles.copyRight}>Copyright © 2019 - 2021. All Rights Reserved.</p>
         </Container>
-       </div>
+      </div>
     </div>
   );
 };

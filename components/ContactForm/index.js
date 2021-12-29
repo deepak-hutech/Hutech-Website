@@ -70,7 +70,7 @@ const careerform = () => {
     setValidated(true);
     //recaptchaRef.current.execute();
     if (!captchaCode) {
-      alert("Select recaptcha.");
+      // alert("Select recaptcha.");
       recaptchaRef.current.reset();
       return;
     }
@@ -78,7 +78,7 @@ const careerform = () => {
   };
 
   const onReCAPTCHAChange = (captchaCode) => {
-    alert(captchaCode);
+    // alert(captchaCode);
     // If the reCAPTCHA code is null or undefined indicating that
     // the reCAPTCHA was expired then return early
     if (!captchaCode) {

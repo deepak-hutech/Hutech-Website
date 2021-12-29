@@ -144,7 +144,9 @@
   width: 100%;
   display: flex;
 }
-
+.pagination li{
+  border: 1px solid;
+}
 .section5_subText1 {
   font-style: normal;
   font-size: 1.5rem;

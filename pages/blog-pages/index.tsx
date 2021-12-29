@@ -6,17 +6,22 @@ import BlogSection from "../../components/Blog";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import blogStyle from "../../styles/blog.module.css";
-import companyStyles from "../../styles/Company.module.css";
 import Image, { ImageLoader } from "next/image";
 import Breadcrumbs from "nextjs-breadcrumbs";
-import { baseUrl } from "../../public/strings.json";
+// import { useRef } from "react";
 import { Pagination } from "react-bootstrap";
+
+import strings from "../../public/strings.json";
+
 import careerstyles from "../../styles/Careers.module.css";
 import marked from "marked";
 import ReactPaginate from "react-paginate";
 
 // import "./bootstrap.min.css";
 
+import companyStyles from "../../styles/Company.module.css";
+
+const { baseUrl } = strings;
 const myLoaderbanner: ImageLoader = (url: any) => {
   return url;
 };
@@ -100,6 +105,7 @@ const AllBlogs: NextPage<{
           flexWrap: "wrap",
           padding: "0 7% 8%",
           position: "relative",
+          justifyContent:"center",
         }}
       >
         {dataToShow.map((val: any) => (
