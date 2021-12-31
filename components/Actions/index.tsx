@@ -6,7 +6,7 @@ import subheadingIcon from "../assets/subheading.svg";
 
 const myLoader = ({ src, width, quality }: any) => {
   const origin = typeof window !== "undefined" && window.location.origin;
-  return `${origin}/${src}?w=${width}&q=${quality || 75}`;
+  return `${origin}${src}?w=${width}&q=${quality || 75}`;
 };
 const Action: NextPage = ({
   type,

@@ -9,16 +9,24 @@
   transition: box-shadow 1s cubic-bezier(0.55, 0, 0.1, 1) 0s;
   margin: 0 10px;
 }
+.hello{
+  width: 100%;
+  height: auto;
+}
 .card a {
   width: 100%;
   vertical-align: middle;
 }
 .clients_card {
-  
-  width: 180px;
-  height: 100px;
-  margin: 0px 5%;
+  width: 254px;
+  height: 154px;
+  margin: 2% 4% 2% 0;
+  border: 1px solid #d1d1d1;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 1px;
 }
+
 .successful_product_card {
   width: 290px;
   height: 190px;
@@ -36,7 +44,7 @@
   width: 220px;
   height: 210px;
 }
-.successful_product_card{
+.successful_product_card {
   text-align: left;
   margin: 10px 10px;
   width: 220px;
@@ -138,7 +146,7 @@
 .content .descrption {
   grid-area: descrption;
 }
-.testimonial_profile{
+.testimonial_profile {
   border-radius: 40px;
 }
 .blog {
@@ -206,7 +214,6 @@
   text-align: left;
   font-family: arial;
   position: relative;
-  
 }
 
 .carosoulCards :hover {
@@ -352,7 +359,7 @@
 .capabilities {
   margin-bottom: 16px;
 }
-.clients_cards{
+.clients_cards {
   display: flex;
   flex-wrap: wrap;
   margin-top: 50px;
@@ -362,7 +369,6 @@
     width: 330px;
     height: 236px;
   }
-  
 }
 @media only screen and (max-width: 1250px) {
   .card {
@@ -374,7 +380,6 @@
     margin: 30px 50px 20px 20px;
   }
   .capabilities_cards {
-    
     width: 170px;
     height: 210px;
   }
@@ -386,7 +391,6 @@
   }
 }
 @media only screen and (max-width: 768px) {
-
 }
 @media only screen and (max-width: 500px) {
   .carosoulCards {
@@ -401,54 +405,53 @@
 }
 
 @media only screen and (max-width: 480px) {
-.card {
-  width: 90%;
-  height: 100%;
-  margin: 20px 20px 40px;
-}
-.heading {
+  .card {
+    width: 90%;
+    height: 100%;
+    margin: 20px 20px 40px;
+  }
+  .heading {
     margin: 30px 20px 20px 20px;
-}
-.capabilities_cards {
-  width: 136px;
-  height: 150px;
-}
-.capabilities_cards_title h3 {
-  font-size: 14px;
-}
-.successful_product_card {
-  
-  width: 220px;
-  height: 210px;
-}
-/* .product_para {
+  }
+  .capabilities_cards {
+    width: 136px;
+    height: 150px;
+  }
+  .capabilities_cards_title h3 {
+    font-size: 14px;
+  }
+  .successful_product_card {
+    width: 220px;
+    height: 210px;
+  }
+  /* .product_para {
   font-size: 11px;} */
-.para {
-  margin: 10px 0px 10px 0px;
-}
-.wide_card_ {
-  flex-wrap: wrap;
-}
-.blog{
- width: 310px;
-height: 250px;
-}
-.card_contant {
-  padding: 10% 0% 0 8%;
-  width: 100%;
-}
-.right_card_para {
-  font-size: 10px;
-}
-.right_card_text {
-  font-size: 12px;
-  margin: 8px 0px 20px 4px;
-  line-height: 16px;
-}
-.right_card_heading {
-  font-size: 18px;
-}
-.clients_card:first-child {
-  margin-top: 50px;
-}
+  .para {
+    margin: 10px 0px 10px 0px;
+  }
+  .wide_card_ {
+    flex-wrap: wrap;
+  }
+  .blog {
+    width: 310px;
+    height: 250px;
+  }
+  .card_contant {
+    padding: 10% 0% 0 8%;
+    width: 100%;
+  }
+  .right_card_para {
+    font-size: 10px;
+  }
+  .right_card_text {
+    font-size: 12px;
+    margin: 8px 0px 20px 4px;
+    line-height: 16px;
+  }
+  .right_card_heading {
+    font-size: 18px;
+  }
+  .clients_card:first-child {
+    margin-top: 50px;
+  }
 }

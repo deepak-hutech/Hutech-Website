@@ -16,18 +16,18 @@
   font-weight: 500;
   padding: 1% 20% 0 8%;
 }
-.clientcarousel{
+.clientcarousel {
   align-items: start;
   height: 430px;
   overflow: hidden;
 }
 .clientcarousel .react-multiple-carousel__arrow--left {
   left: -webkit-calc(4% + 1px);
-  left: calc(86% + 1px) ;
+  left: calc(86% + 1px);
   bottom: 20%;
 }
-.clientcarousel .react-multiple-carousel__arrow--right{
-  bottom: 20% ;
+.clientcarousel .react-multiple-carousel__arrow--right {
+  bottom: 20%;
 }
 .homebanner_plans P {
   font-size: 10px;
@@ -259,7 +259,6 @@
     ". . full";
 }
 
-
 .stats_banner p {
   margin: 0px;
 }
@@ -366,7 +365,6 @@
   line-height: 24px;
 }
 
-
 .careerContent .freetext {
   font-weight: normal;
   font-size: 15px;
@@ -443,7 +441,7 @@
   background: #ffffff;
   padding: 2% 0% 6% 7%;
 } */
-.clients_cards{
+.clients_cards {
   display: flex;
   flex-wrap: wrap;
   margin-top: 50px;
@@ -474,19 +472,15 @@
   overflow: visible !important;
   display: block !important;
 } */
-.carousel{
-margin-top: -90px;
-overflow: hidden;
+.carousel {
+  margin-top: -90px;
+  overflow: hidden;
 }
 .homeblogcarousel .react-multiple-carousel__arrow--right {
   right: -webkit-calc(4% + 1px);
-  
-  
 }
 .homeblogcarousel .react-multiple-carousel__arrow--left {
   left: -webkit-calc(4% + 1px);
-  
- 
 }
 .blog_banner .buttons {
   margin: 60px 0 0;
@@ -505,8 +499,7 @@ overflow: hidden;
   border-radius: 5px;
   cursor: pointer;
 }
-.carosel_home_blog_banner{
-
+.carosel_home_blog_banner {
 }
 .accordion_head {
   padding-top: 3%;
@@ -691,14 +684,18 @@ overflow: hidden;
   padding: 2% 7% 6% 7%;
 }
 
-.arrowbtn{
+.arrowbtn {
   border: none;
   background: transparent;
 }
-.arrowbtn:hover{
-  filter: brightness(0) saturate(100%)
+.arrowbtn:hover {
+  filter: brightness(0) saturate(100%);
 }
 @media only screen and (max-width: 500px) {
+  .clientcarousel {
+    
+    height: 240px;
+  }
   .hero_banner p {
     display: none;
   }
@@ -747,7 +744,7 @@ overflow: hidden;
 .home_bannerimg {
   width: 100%;
   display: grid;
-  
+
   position: relative;
 }
 
@@ -875,6 +872,8 @@ overflow: hidden;
 }
 .arrowicon {
   margin-right: 16px;
+  width: 24px;
+  height: auto;
 }
 .left_content_title p {
   font-size: 16px;
@@ -882,7 +881,7 @@ overflow: hidden;
   line-height: 30px;
   color: #ffff;
 }
-.right_from_section{
+.right_from_section {
   width: 58%;
 }
 
@@ -912,7 +911,6 @@ overflow: hidden;
   .fome_form_button {
     font-size: 14px;
   }
-
 }
 @media only screen and (max-width: 480px) {
   .free_text h2 {
@@ -923,9 +921,8 @@ overflow: hidden;
   .descrption {
     font-size: 18px;
     line-height: 30px;
-    
   }
-  .successful_product{
+  .successful_product {
     padding: 5% 4% 8% 4%;
     margin-bottom: 6%;
   }
@@ -940,7 +937,6 @@ overflow: hidden;
     font-size: 26px;
   }
   .capab_title h3 {
-    
     font-size: 26px;
   }
   .key_solutions {
@@ -951,7 +947,6 @@ overflow: hidden;
   }
   .serviceKeySolutionimg {
     width: 100%;
-    
   }
   .development_title h3 {
     font-size: 26px;
@@ -972,7 +967,7 @@ overflow: hidden;
   .left_content {
     width: 100%;
   }
-  .right_from_section{
+  .right_from_section {
     width: 100%;
   }
   .home_form_section {

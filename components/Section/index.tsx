@@ -9,9 +9,11 @@ import { Button, Col, Container, Row, Tab, Tabs } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import leftIcon from "../../components/assets/leftarrow.svg";
+import leftIconBlog from "../../components/assets/leftarrowblog.svg";
 import mailIcon from "../../components/assets/mail-icon@2x.svg";
 import phoneIcon from "../../components/assets/phone-icon@2x.svg";
 import rightIcon from "../../components/assets/rightarrow.svg";
+import rightIconBlog from "../../components/assets/rightarrowblog.svg";
 import submitIcon from "../../components/assets/submit-icon@2x.svg";
 import careerstyles from "../../styles/Careers.module.css";
 import companyStyles from "../../styles/Company.module.css";
@@ -30,7 +32,7 @@ const { baseUrl } = strings;
 
 const myLoader = ({ src, width, quality }: any) => {
   const origin = typeof window !== "undefined" && window.location.origin;
-  return `${origin}/${src}?w=${width}&q=${quality || 75}`;
+  return `${origin}${src}?w=${width}&q=${quality || 75}`;
 };
 const myLoaderbanner: ImageLoader = (url: any) => {
   return url;
@@ -121,7 +123,7 @@ const Section: NextPage = (props: any) => {
     >
       <Image
         loader={myLoader}
-        src={rightIcon}
+        src={rightIconBlog}
         alt="Picture of the author"
         width={30}
         height={17}
@@ -136,7 +138,7 @@ const Section: NextPage = (props: any) => {
     >
       <Image
         loader={myLoader}
-        src={leftIcon}
+        src={leftIconBlog}
         alt="Picture of the author"
         width={30}
         height={17}
@@ -153,7 +155,7 @@ const Section: NextPage = (props: any) => {
     tablet: {
       breakpoint: { max: 1024, min: 464 },
       items: 1,
-      slidesToSlide: 2, // optional, default to 1.
+      slidesToSlide: 1, // optional, default to 1.
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
@@ -273,7 +275,7 @@ const Section: NextPage = (props: any) => {
               <div className={styles.carosel_card} data-aos="zoom-in"
                 data-aos-duration="1000">
                 <img src={baseUrl + item.images[0].url} />
-
+               
                 <div className={styles.banner_container} >
                   {item.free_text && (
                     <div
@@ -474,6 +476,7 @@ const Section: NextPage = (props: any) => {
     case "company_banner":
       return (
         <div className={companyStyles.company_banner}>
+          <div className={companyStyles.campany_banner_web}>
           {home_banner[0] && (
             <Image
               loader={() =>
@@ -487,6 +490,10 @@ const Section: NextPage = (props: any) => {
               className={companyStyles.bannerimg}
             />
           )}
+          </div>
+          
+          
+          
 
           <div className={companyStyles.banner_container}>
             {free_text && (
@@ -899,6 +906,7 @@ const Section: NextPage = (props: any) => {
     case "current_opening_banner":
       return (
         <div className={companyStyles.current_opening}>
+          <div className={companyStyles.current_opening_banner_web}>
           {home_banner[0] && (
             <Image
               loader={() =>
@@ -912,6 +920,8 @@ const Section: NextPage = (props: any) => {
               className={companyStyles.bannerimg}
             />
           )}
+          </div>
+          
           <div className={companyStyles.banner_container}>
             {free_text && (
               <div className={companyStyles.content}>
@@ -1026,44 +1036,8 @@ const Section: NextPage = (props: any) => {
           </div>
           <div className={contactStyle.contact}>
             <div className={contactStyle.content}>
-              {/* <div>
-                <h2 data-aos="fade-up" data-aos-duration="1000">
-                    Looking for more assistance? </h2>
-                <h4 data-aos="fade-up" data-aos-duration="1300">
-                  Choose how you'd like to contact our Mail support:</h4>
-              </div> */}
-
               <div className={contactStyle.tabsContainer}>
-                {/* <div
-                  className={contactStyle.tabsIcons}
-                  data-aos="fade-up"
-                  data-aos-duration="1500"
-                >
-                  <Image
-                    loader={myLoader}
-                    src={submitIcon}
-                    alt="Picture of the author"
-                    width={30}
-                    height={100}
-                    // className={styles.svgarrow}
-                  />
-                  <Image
-                    loader={myLoader}
-                    src={mailIcon}
-                    alt="Picture of the author"
-                    width={30}
-                    height={100}
-                    // className={styles.svgarrow}
-                  />
-                  <Image
-                    loader={myLoader}
-                    src={phoneIcon}
-                    alt="Picture of the author"
-                    width={30}
-                    height={100}
-                    // className={styles.svgarrow}
-                  />
-                </div> */}
+                
                 <Tabs
                   defaultActiveKey="home"
                   id="uncontrolled-tab-example"
@@ -1073,11 +1047,6 @@ const Section: NextPage = (props: any) => {
                     eventKey="home"
                     title={
                       <span>
-                        {/* <img
-                          src={submitIcon}
-                          alt="Picture of the author"
-                          className={contactStyle.tabimage}
-                        ></img> */}
                         <Image
                           loader={myLoader}
                           src={submitIcon}
@@ -1107,11 +1076,7 @@ const Section: NextPage = (props: any) => {
                     eventKey="profile"
                     title={
                       <span>
-                        {/* <img
-                          src={submitIcon}
-                          alt="Picture of the author"
-                          className={contactStyle.tabimage}
-                        ></img> */}
+                        
                         <Image
                           loader={myLoader}
                           src={mailIcon}
@@ -1149,11 +1114,7 @@ const Section: NextPage = (props: any) => {
                     eventKey="contact"
                     title={
                       <span>
-                        {/* <img
-                          src={submitIcon}
-                          alt="Picture of the author"
-                          className={contactStyle.tabimage}
-                        ></img> */}
+                      
                         <Image
                           loader={myLoader}
                           src={phoneIcon}

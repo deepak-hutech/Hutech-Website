@@ -511,15 +511,18 @@ const Card: NextPage = (props: any) => {
     default:
       return (
         <div className={companyStyles.c_cards}>
-          <Image
+          {/* <Image
             loader={() => myLoader((baseUrl + images[0]?.url) as any)}
             src={`${baseUrl}${images[0]?.url}`}
             placeholder="blur"
             blurDataURL={baseUrl + images[0]?.url}
-            width={55}
+            width={"100%"}
             height={55}
             className={companyStyles.cardImg2}
-          />
+          /> */}
+          <img
+                        src={`${baseUrl}${images[0].url}`}
+                        className={styles.hello}/>
           <p>{props.heading}</p>
         </div>
       );
