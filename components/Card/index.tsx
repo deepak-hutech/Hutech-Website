@@ -10,6 +10,7 @@ import companyStyles from "../../styles/Company.module.css";
 import portfolioStyles from "../../styles/Portfolio.module.css";
 import servicesStyles from "../../styles/Services.module.css";
 import strings from "./../../public/strings.json";
+import expertiseStyle from "../../styles/expertise.module.css";
 
 const { baseUrl } = strings;
 
@@ -41,6 +42,7 @@ const Card: NextPage = (props: any) => {
     Heading,
     para,
     estimate_icon,
+    icon,
   } = props;
 
   useEffect(() => {
@@ -468,7 +470,7 @@ const Card: NextPage = (props: any) => {
       return (
         <div className={portfolioStyles.portfolio_details_cards}>
           <Image
-            loader={() => myLoader((baseUrl + images[0].url) as any)}
+            loader={() => myLoader((baseUrl +images[0].url) as any)}
             src={`${baseUrl}${images[0].url}`}
             placeholder="blur"
             blurDataURL={baseUrl + images[0].url}
@@ -508,18 +510,51 @@ const Card: NextPage = (props: any) => {
           </a>
         </div>
       );
+      case "expertise_carousal_card":
+        return (
+          <div className={expertiseStyle.expertisecard}>
+            <a
+              id={props.id}
+              // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
+            >
+              <div className={expertiseStyle.expertisecardimg}>
+                <Image
+                  loader={() => myLoader((baseUrl + images[0].url) as any)}
+                  src={`${baseUrl}${images[0].url}`}
+                  placeholder="blur"
+                  blurDataURL={baseUrl + images[0].url}
+                  width={70}
+                  height={70}
+                />
+              </div>
+              <div className={expertiseStyle.expertise_cardtext}>
+                <div
+                  className={expertiseStyle.expertise_heading}
+                  dangerouslySetInnerHTML={{ __html: marked(heading) }}
+                ></div>
+                <div
+                  className={expertiseStyle.expertise_subheading}
+                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                ></div>
+                <button>
+                  <p>
+                    {call_to_action}
+                    {icon.map((v: any) => (
+                      <div>
+                        <img src={baseUrl + v.url}></img>
+                      </div>
+                    ))}
+                  </p>
+                </button>
+              </div>
+            </a>
+          </div>
+        );
+ 
     default:
       return (
         <div className={companyStyles.c_cards}>
-          {/* <Image
-            loader={() => myLoader((baseUrl + images[0]?.url) as any)}
-            src={`${baseUrl}${images[0]?.url}`}
-            placeholder="blur"
-            blurDataURL={baseUrl + images[0]?.url}
-            width={"100%"}
-            height={55}
-            className={companyStyles.cardImg2}
-          /> */}
+         
           <img
                         src={`${baseUrl}${images[0].url}`}
                         className={styles.hello}/>

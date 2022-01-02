@@ -7,6 +7,7 @@ import { InputGroup, Form, Button, Row, Col, Container } from "react-bootstrap";
 
 const careerform = () => {
   const [file, setFile] = useState("");
+  const [formMessage, setFormMessage] = useState("");
   const [inputs, setInputs] = useState({
     name:String,
     email: String,
@@ -48,10 +49,11 @@ const careerform = () => {
       })
       .then(({ data }) => {
           console.log("Succesfully uploaded: ", JSON.stringify(data));
-          location.reload(true);
+          setFormMessage("Form submitted successfully.");
       })
       .catch((error) => {
         console.log("Error: ", error.message);
+        setFormMessage("Error during form submission.");
       });
     }
   };
@@ -73,8 +75,8 @@ const careerform = () => {
       <Form noValidate validated={validated} id="form" autoComplete="off"
               className={CareerStyle.careerFormNew}
               onSubmit={upload}>
-        <Row className="mb-5 mt-3">
-          <Form.Group as={Col} md="6" controlId="validationCustom01">
+        <Row className=" mt-3">
+          <Form.Group as={Col} md="6" controlId="validationCustom01" className={CareerStyle.career_col}>
             <Form.Control
               required value={inputs.name}
               type="text"
@@ -84,7 +86,7 @@ const careerform = () => {
               placeholder="Name"
             />
           </Form.Group>
-          <Form.Group as={Col} md="6" controlId="validationCustom02">
+          <Form.Group as={Col} md="6" controlId="validationCustom02" className={CareerStyle.career_col}>
             <Form.Control
               required value={inputs.email}
               type="email"
@@ -95,8 +97,8 @@ const careerform = () => {
             />
           </Form.Group>
         </Row>
-        <Row className="mb-5">
-          <Form.Group as={Col} md="6" controlId="validationCustomPhone">
+        <Row >
+          <Form.Group as={Col} md="6" controlId="validationCustomPhone" className={CareerStyle.career_col}>
               <Form.Control
                  type="number" 
                  value={inputs.phone}
@@ -108,7 +110,7 @@ const careerform = () => {
                  required
               />
           </Form.Group>
-          <Form.Group as={Col} md="6" controlId="validationCustomUsername">
+          <Form.Group as={Col} md="6" controlId="validationCustomUsername" className={CareerStyle.career_col}>
           <Form.Select  value={inputs.post || ""} onChange={handleChange} name="post" required>
             <option value="" selected>
           Select Post
@@ -121,7 +123,7 @@ const careerform = () => {
         </Row>
 
         <Row className="mb-3">
-        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" className={CareerStyle.career_col}>
           <Form.Control as="textarea" 
                placeholder="Message" rows={3} 
                className={CareerStyle.inputs}
@@ -130,7 +132,7 @@ const careerform = () => {
         </Row>
 
         <Row className="">
-        <Form.Group className="position-relative mb-3">
+        <Form.Group className="position-relative mb-3" >
             <Form.Label>Attach File</Form.Label>
             <Form.Control
               type="file"
@@ -144,6 +146,11 @@ const careerform = () => {
           File types: pdf, docx and doc | Maximum file size: 5MB.
         </p>
         <button type="submit" onClick={handleSubmit}>Submit Application</button>
+        {formMessage.indexOf("successfully") > 0 ? (
+        <p className={CareerStyle.sucessmsg}>{formMessage}</p>
+      ) : (
+        <p className={CareerStyle.errormsg}>{formMessage}</p>
+      )}
       </Form>
     );
   }

@@ -1,3 +1,8 @@
-.container{
-    
+.sucessmsg{
+  font-size: 15px;
+  color: green;
+}
+.errormsg{
+  font-size: 15px;
+  color: red;
 }

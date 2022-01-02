@@ -42,27 +42,12 @@ const AllBlogs: NextPage<{
   const dataToShow = blogs.slice((pageNum - 1) * PAGE_SIZE, pageNum * PAGE_SIZE);
   console.log(blogs);
   console.log(dataToShow);
-  //Conditional rendering of the posts list or loading indicator
-  // let content = null;
-  // if (isLoading) content = <div>Loading...</div>;
-  // else {
-  //   console.log("&&&&&&&&&&&&", blogs);
-  //   //Generating posts list
-  //   content = (
-  //     <>
-  //       {blogs.map((val: any) => (
-  //         <div key={val.uid} className={blogStyle.allBlogs}>
-  //           <BlogSection {...val} />
-  //         </div>
-  //       ))}
-  //     </>
-  //   );
-  // }
 
   return (
     <div ref={scrollRef}>
       <Header {...header} />
       <div className={companyStyles.company_banner}>
+        <div className={companyStyles.blog_banner_web}>
         <Image
           loader={() =>
             myLoaderbanner(
@@ -76,6 +61,8 @@ const AllBlogs: NextPage<{
           width={"100%"}
           className={companyStyles.bannerimg}
         />
+        </div>
+        
 
         <div className={companyStyles.banner_container}>
           <div className={companyStyles.content}>
@@ -92,7 +79,7 @@ const AllBlogs: NextPage<{
           </div>
         </div>
       </div>
-      <div style={{ padding: "2% 6% 0" }}>
+      <div className={blogStyle.blog_bredcrumb} >
         <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
       </div>
       <div
@@ -124,6 +111,7 @@ const AllBlogs: NextPage<{
         />
       </div>
       <div className={careerstyles.section5}>
+        <div className={careerstyles.section5_banner_web}> 
         <Image
           loader={() =>
             myLoaderbanner(
@@ -137,6 +125,8 @@ const AllBlogs: NextPage<{
           width={"100%"}
           className={careerstyles.estimatebannerimg}
         />
+        </div>
+        
 
         <div className={careerstyles.section5_centerText}>
           <div className={blogStyle.section5_subText1}>

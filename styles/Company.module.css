@@ -64,6 +64,10 @@
 .company_banner .call_to_action:hover {
   background: #0171c1;
 }
+.descrption p{
+  padding: 0% 14%;
+}
+
 
 /* .company_banner .call_to_action :hover {
     color: #000;
@@ -550,7 +554,12 @@
   text-align: center;
   color: white;
 }
-
+.blog_banner_web{
+  width: 100%;
+  display: grid;
+  text-align: center;
+  color: white;
+}
 .current_opening .banner_container {
   position: absolute;
   top: 26%;
@@ -613,6 +622,9 @@
   .current_opening_banner_web{
     display: none;
   }
+  .blog_banner_web{
+display: none;
+  }
   .current_opening{
     height: 250px;
     background-image: url(../components/assets/about-bottom-bg.jpg);
@@ -630,5 +642,9 @@
   .current_opening .description {
     font-size: 12px;
     padding: 0 10px;
+  }
+  .descrption p{
+    font-size: 12px;
+    padding: 10px;
   }
 }

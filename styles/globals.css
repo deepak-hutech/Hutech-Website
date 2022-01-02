@@ -45,7 +45,7 @@ a {
 }
 
 .react-multi-carousel-dot-list {
-  bottom: -35px !important;
+  bottom: -50px !important;
 }
 .react-multi-carousel-list {
   align-items: baseline !important;
@@ -55,21 +55,24 @@ a {
   background: #0171c1 !important;
   /* border-color: #0171C1 !important; */
 }
-
-.pagination li{
-  font-size: 14px;
-    line-height: 15px;
-    color: #6D757D;
-    border: 1px solid #DCD7D7;
-    padding: 10px 18px;
+ol,
+ul {
+  padding-left: 0rem;
 }
-.pagination li.active{
-  background-color: #157FFB;
+
+.pagination li {
+  font-size: 14px;
+  line-height: 15px;
+  color: #6d757d;
+  border: 1px solid #dcd7d7;
+  padding: 10px 18px;
+}
+.pagination li.active {
+  background-color: #157ffb;
   color: #fff;
-  border: 1px solid #157FFB;
+  border: 1px solid #157ffb;
 }
 .pagination {
-  
   margin-top: 30px;
 }
 
@@ -109,7 +112,7 @@ a {
    font-weight: 600;
    background-color: white !important;
  }  */
- .home_blog_carousel .react-multiple-carousel__arrow--right {
+.home_blog_carousel .react-multiple-carousel__arrow--right {
   right: -webkit-calc(4% + 1px);
   right: calc(43% + 1px) !important;
   bottom: 0;
@@ -118,4 +121,8 @@ a {
   left: -webkit-calc(4% + 1px);
   left: calc(46% + 1px);
   bottom: 0;
+}
+.nav-link {
+    
+  padding: 0rem;
 }

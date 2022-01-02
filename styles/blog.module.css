@@ -9,6 +9,9 @@
   font-size: 38px;
   line-height: 55px;
 }
+.blog_bredcrumb{
+  padding: 2% 6% 0;
+}
 .compo {
   background-color: blueviolet;
   width: 361px;
@@ -265,8 +268,26 @@
     width: auto;
     height: auto;
   }
+  .descrption p{
+    font-size: 12px;
+  }
   .compo {
     
-    width: auto;}
+    width: auto;
+  }
+  .section5_subText2 {
+   
+    font-size: 20px;
+    margin: 2% 1%;
+  }
+  .section5_subText1 {
+    font-size: 15px;
+  }
+  .blogfree_text {
+    font-size: 26px;
+  }
+  .blog_bredcrumb{
+    padding: 4% 6% 0;
+  }
 }
 

@@ -11,6 +11,14 @@
   width: 50%;
   margin-bottom: 40px;
 }
+.sucessmsg{
+  font-size: 15px;
+  color: green;
+}
+.errormsg{
+  font-size: 15px;
+  color: red;
+}
 .homeinputbox {
   width: 90%;
   border-bottom: 1px solid #000;

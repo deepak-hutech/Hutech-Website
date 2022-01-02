@@ -7,8 +7,9 @@ import ReCAPTCHA from "react-google-recaptcha";
 const careerform = () => {
   const recaptchaRef = createRef();
   const [captchaCode, setCaptchaCode] = useState("");
-
   const [file, setFile] = useState("");
+  const [formMessage, setFormMessage] = useState("");
+
   const [inputs, setInputs] = useState({
     username: String,
     email: String,
@@ -16,7 +17,7 @@ const careerform = () => {
     company: String,
     projectDetails: "",
     country: String,
-    services: String
+    services: String,
   });
 
   const handleChange = (event) => {
@@ -51,10 +52,11 @@ const careerform = () => {
     })
       .then(({ data }) => {
         console.log("Succesfully uploaded: ", JSON.stringify(data));
-        location.reload(true);
+        setFormMessage("Form submitted successfully.");
       })
       .catch((error) => {
         console.log("Error: ", error.message);
+        setFormMessage("Error during form submission.");
       });
     // }
   };
@@ -99,8 +101,13 @@ const careerform = () => {
       className={CareerStyle.contactForm}
       onSubmit={upload}
     >
-      <Row className="mb-5 mt-3">
-        <Form.Group as={Col} md="6" controlId="validationCustom01">
+      <Row className="mt-3">
+        <Form.Group
+          as={Col}
+          md="6"
+          controlId="validationCustom01"
+          className={CareerStyle.contact_col}
+        >
           <Form.Label className={CareerStyle.contactForm_label}>
             Your Name
           </Form.Label>
@@ -114,7 +121,12 @@ const careerform = () => {
             placeholder="Enter your name"
           />
         </Form.Group>
-        <Form.Group as={Col} md="6" controlId="validationCustom02">
+        <Form.Group
+          as={Col}
+          md="6"
+          controlId="validationCustom02"
+          className={CareerStyle.contact_col}
+        >
           <Form.Label className={CareerStyle.contactForm_label}>
             Email address{" "}
           </Form.Label>
@@ -129,8 +141,13 @@ const careerform = () => {
           />
         </Form.Group>
       </Row>
-      <Row className="mb-5 mt-3">
-        <Form.Group as={Col} md="6" controlId="validationCustomPhone">
+      <Row className="mt-3">
+        <Form.Group
+          as={Col}
+          md="6"
+          controlId="validationCustomPhone"
+          className={CareerStyle.contact_col}
+        >
           <Form.Label className={CareerStyle.contactForm_label}>
             Phone Number
           </Form.Label>
@@ -145,7 +162,12 @@ const careerform = () => {
             required
           />
         </Form.Group>
-        <Form.Group as={Col} md="6" controlId="validationCustom04">
+        <Form.Group
+          as={Col}
+          md="6"
+          controlId="validationCustom04"
+          className={CareerStyle.contact_col}
+        >
           <Form.Label className={CareerStyle.nonMendatory_label}>
             Company name
           </Form.Label>
@@ -159,8 +181,13 @@ const careerform = () => {
           />
         </Form.Group>
       </Row>
-      <Row className="mb-5">
-        <Form.Group as={Col} md="6" controlId="validationCountryUsername">
+      <Row>
+        <Form.Group
+          as={Col}
+          md="6"
+          controlId="validationCountryUsername"
+          className={CareerStyle.contact_col}
+        >
           <Form.Label className={CareerStyle.nonMendatory_label}>
             Country
           </Form.Label>
@@ -179,7 +206,12 @@ const careerform = () => {
           </Form.Select>
         </Form.Group>
 
-        <Form.Group as={Col} md="6" controlId="validationCustomUsername">
+        <Form.Group
+          as={Col}
+          md="6"
+          controlId="validationCustomUsername"
+          className={CareerStyle.contact_col}
+        >
           <Form.Label className={CareerStyle.nonMendatory_label}>
             Interested Service
           </Form.Label>
@@ -200,7 +232,11 @@ const careerform = () => {
       </Row>
 
       <Row className="mb-3">
-        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Group
+          className="mb-3"
+          controlId="exampleForm.ControlTextarea1"
+          className={CareerStyle.contact_col}
+        >
           <Form.Label className={CareerStyle.contactForm_label}>
             Project Details{" "}
           </Form.Label>
@@ -216,31 +252,11 @@ const careerform = () => {
           />
         </Form.Group>
       </Row>
-
-      {/* <Row className="">
-        <Form.Group className="position-relative mb-3">
-          <Form.Label className={CareerStyle.nonMendatory_label}>
-            Please share your requirement documents
-          </Form.Label>
-
-          <Form.Label className={CareerStyle.Drag_label}>
-            <Form.Control
-              type="file"
-              name="file"
-              className={CareerStyle.fileUpload}
-              onChange={onChange}
-            />{" "}
-          
-            <sapn className={CareerStyle.vl}>
-              {" "}
-              Drag and drop your file here
-            </sapn>
-          </Form.Label>
-
-        </Form.Group>
-      </Row> */}
-       <Row className="">
-        <Form.Group className="position-relative mb-3">
+      <Row>
+        <Form.Group
+          className="position-relative mb-3"
+          className={CareerStyle.contact_col}
+        >
           <Form.Label>Please share your requirement documents</Form.Label>
           <Form.Control type="file" name="file" onChange={onChange} />
         </Form.Group>
@@ -259,6 +275,11 @@ const careerform = () => {
       <button type="submit" onClick={handleSubmit}>
         Submit
       </button>
+      {formMessage.indexOf("successfully") > 0 ? (
+        <p className={CareerStyle.sucessmsg}>{formMessage}</p>
+      ) : (
+        <p className={CareerStyle.errormsg}>{formMessage}</p>
+      )}
     </Form>
   );
 };

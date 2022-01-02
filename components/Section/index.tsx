@@ -27,6 +27,9 @@ import ContactForm from "../ContactForm";
 import Footer from "../Footer";
 import HomeForm from "../home_form/index.js";
 import strings from "./../../public/strings.json";
+import expertiseStyle from "../../styles/expertise.module.css";
+import leftIconportfolio from "../../components/assets/rightcaro.svg";
+import  rightIconportfolio from "../../components/assets/leftcaro.svg";
 
 const { baseUrl } = strings;
 
@@ -146,6 +149,72 @@ const Section: NextPage = (props: any) => {
       />
     </button>
   );
+  const CustomArrowportfolio = ({ onClick }: any) => (
+    <button
+      style={{ position: "absolute", right: "13%%", bottom: "50%" }}
+      onClick={onClick}
+      className={styles.arrowbtn}
+    >
+      <Image
+        loader={myLoader}
+        src={rightIconportfolio}
+        alt="Picture of the author"
+        width={30}
+        height={17}
+      />
+    </button>
+  );
+  const CustomleftArrowportfolio = ({ onClick }: any) => (
+    <button
+      style={{ position: "absolute", right: "13%", bottom: "50%" }}
+      onClick={onClick}
+      className={styles.arrowbtn}
+    >
+      <Image
+        loader={myLoader}
+        src={leftIconportfolio}
+        alt="Picture of the author"
+        width={30}
+        height={17}
+        className={styles.svgarrow}
+      />
+    </button>
+  );
+
+  const responsive_expertise_carousal = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+  };
+  const responsive_portfolio_details = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+  };
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -272,18 +341,20 @@ const Section: NextPage = (props: any) => {
             className={styles.carosel_banner}
           >
             {carosel_cards.map((item: any) => (
-              <div className={styles.carosel_card} data-aos="zoom-in"
-                data-aos-duration="1000">
+              <div
+                className={styles.carosel_card}
+                data-aos="zoom-in"
+                data-aos-duration="1000"
+              >
                 <img src={baseUrl + item.images[0].url} />
-               
-                <div className={styles.banner_container} >
+
+                <div className={styles.banner_container}>
                   {item.free_text && (
                     <div
                       className={styles.free_text}
                       dangerouslySetInnerHTML={{
                         __html: marked(item.free_text),
                       }}
-
                     ></div>
                   )}
                   {item.call_to_action && (
@@ -477,23 +548,20 @@ const Section: NextPage = (props: any) => {
       return (
         <div className={companyStyles.company_banner}>
           <div className={companyStyles.campany_banner_web}>
-          {home_banner[0] && (
-            <Image
-              loader={() =>
-                myLoaderbanner((baseUrl + home_banner[0].url) as any)
-              }
-              src={baseUrl + home_banner[0].url}
-              placeholder="blur"
-              blurDataURL={baseUrl + home_banner[0].url}
-              height={400}
-              width={"100%"}
-              className={companyStyles.bannerimg}
-            />
-          )}
+            {home_banner[0] && (
+              <Image
+                loader={() =>
+                  myLoaderbanner((baseUrl + home_banner[0].url) as any)
+                }
+                src={baseUrl + home_banner[0].url}
+                placeholder="blur"
+                blurDataURL={baseUrl + home_banner[0].url}
+                height={400}
+                width={"100%"}
+                className={companyStyles.bannerimg}
+              />
+            )}
           </div>
-          
-          
-          
 
           <div className={companyStyles.banner_container}>
             {free_text && (
@@ -575,7 +643,11 @@ const Section: NextPage = (props: any) => {
         <div className={companyStyles.values_vision_banner}>
           <div className={companyStyles.values_vision}>
             {carosel_cards.map((v: any) => (
-              <div className={companyStyles.vvContent} data-aos="fade-up" data-aos-duration="1500">
+              <div
+                className={companyStyles.vvContent}
+                data-aos="fade-up"
+                data-aos-duration="1500"
+              >
                 <img
                   className={companyStyles.profile}
                   src={baseUrl + v.images.map((v: any) => v.url)}
@@ -655,7 +727,6 @@ const Section: NextPage = (props: any) => {
                   </Col>
                 ))}
               </Carousel>
-
             </Row>
           </Container>
         </div>
@@ -677,8 +748,11 @@ const Section: NextPage = (props: any) => {
               ></div>
             )}
           </div>
-          <div className={companyStyles.allProducts} data-aos="zoom-out-up"
-            data-aos-duration="1500">
+          <div
+            className={companyStyles.allProducts}
+            data-aos="zoom-out-up"
+            data-aos-duration="1500"
+          >
             {carosel_cards.map((v: any) => (
               <div className={companyStyles.logos}>
                 <img
@@ -907,21 +981,21 @@ const Section: NextPage = (props: any) => {
       return (
         <div className={companyStyles.current_opening}>
           <div className={companyStyles.current_opening_banner_web}>
-          {home_banner[0] && (
-            <Image
-              loader={() =>
-                myLoaderbanner((baseUrl + home_banner[0].url) as any)
-              }
-              src={baseUrl + home_banner[0].url}
-              placeholder="blur"
-              blurDataURL={baseUrl + home_banner[0].url}
-              height={400}
-              width={"100%"}
-              className={companyStyles.bannerimg}
-            />
-          )}
+            {home_banner[0] && (
+              <Image
+                loader={() =>
+                  myLoaderbanner((baseUrl + home_banner[0].url) as any)
+                }
+                src={baseUrl + home_banner[0].url}
+                placeholder="blur"
+                blurDataURL={baseUrl + home_banner[0].url}
+                height={400}
+                width={"100%"}
+                className={companyStyles.bannerimg}
+              />
+            )}
           </div>
-          
+
           <div className={companyStyles.banner_container}>
             {free_text && (
               <div className={companyStyles.content}>
@@ -987,19 +1061,22 @@ const Section: NextPage = (props: any) => {
       return (
         <>
           <div className={companyStyles.company_banner}>
-            {home_banner[0] && (
-              <Image
-                loader={() =>
-                  myLoaderbanner((baseUrl + home_banner[0].url) as any)
-                }
-                src={baseUrl + home_banner[0].url}
-                placeholder="blur"
-                blurDataURL={baseUrl + home_banner[0].url}
-                height={400}
-                width={"100%"}
-                className={companyStyles.bannerimg}
-              />
-            )}
+            <div className={companyStyles.campany_banner_web}>
+              {home_banner[0] && (
+                <Image
+                  loader={() =>
+                    myLoaderbanner((baseUrl + home_banner[0].url) as any)
+                  }
+                  src={baseUrl + home_banner[0].url}
+                  placeholder="blur"
+                  blurDataURL={baseUrl + home_banner[0].url}
+                  height={400}
+                  width={"100%"}
+                  className={companyStyles.bannerimg}
+                />
+              )}
+            </div>
+
             <div className={companyStyles.banner_container}>
               {free_text && (
                 <div className={companyStyles.content}>
@@ -1037,7 +1114,6 @@ const Section: NextPage = (props: any) => {
           <div className={contactStyle.contact}>
             <div className={contactStyle.content}>
               <div className={contactStyle.tabsContainer}>
-                
                 <Tabs
                   defaultActiveKey="home"
                   id="uncontrolled-tab-example"
@@ -1054,7 +1130,9 @@ const Section: NextPage = (props: any) => {
                           width={30}
                           height={50}
                         />{" "}
-                        <div className={contactStyle.tabtitle}>Submit a form</div>
+                        <div className={contactStyle.tabtitle}>
+                          Submit a form
+                        </div>
                       </span>
                     }
                   >
@@ -1076,7 +1154,6 @@ const Section: NextPage = (props: any) => {
                     eventKey="profile"
                     title={
                       <span>
-                        
                         <Image
                           loader={myLoader}
                           src={mailIcon}
@@ -1084,10 +1161,12 @@ const Section: NextPage = (props: any) => {
                           width={30}
                           height={50}
                         />{" "}
-                        <div className={contactStyle.tabtitle}>Shoot us an Email</div>
+                        <div className={contactStyle.tabtitle}>
+                          Shoot us an Email
+                        </div>
                       </span>
                     }
-                  // title="Shoot us an Email"
+                    // title="Shoot us an Email"
                   >
                     <div className={contactStyle.tab2}>
                       <div>
@@ -1097,14 +1176,14 @@ const Section: NextPage = (props: any) => {
                         </h4>
                         <div className={contactStyle.sendEmail}>
                           <Button variant="">
-                            Support@hutechsolutions.com
+                            contactus@hutechsolutions.com
                           </Button>
                         </div>
                       </div>
                       <div>
                         <h4>For sales enquiries, contact us at:</h4>
                         <div className={contactStyle.sendEmail}>
-                          <Button variant="">sales@hutechsolutions.com</Button>
+                          <Button variant="">pravat@hutechsolutions.com</Button>
                         </div>
                       </div>
                     </div>
@@ -1114,7 +1193,6 @@ const Section: NextPage = (props: any) => {
                     eventKey="contact"
                     title={
                       <span>
-                      
                         <Image
                           loader={myLoader}
                           src={phoneIcon}
@@ -1122,10 +1200,13 @@ const Section: NextPage = (props: any) => {
                           width={30}
                           height={50}
                         />{" "}
-                        <div className={contactStyle.tabtitle}> Give us a call</div>
+                        <div className={contactStyle.tabtitle}>
+                          {" "}
+                          Give us a call
+                        </div>
                       </span>
                     }
-                  // title="Give us a call"
+                    // title="Give us a call"
                   >
                     <div className={contactStyle.tab3}>
                       <div>
@@ -1139,15 +1220,12 @@ const Section: NextPage = (props: any) => {
                       </div>
                       <div>
                         <Row>
-                          <Col>USA +2874787284</Col>
                           <Col>India +91-2874787284</Col>
                         </Row>
                         <Row>
-                          <Col>USA +2874787284</Col>
                           <Col>India +91-2874787284</Col>
                         </Row>
                         <Row>
-                          <Col>USA +2874787284</Col>
                           <Col>India +91-2874787284</Col>
                         </Row>
                       </div>
@@ -1162,19 +1240,22 @@ const Section: NextPage = (props: any) => {
     case "service_page_banner":
       return (
         <div className={servicesStyles.section1}>
-          {home_banner[0] && (
-            <Image
-              loader={() =>
-                myLoaderbanner((baseUrl + home_banner[0].url) as any)
-              }
-              src={baseUrl + home_banner[0].url}
-              placeholder="blur"
-              blurDataURL={baseUrl + home_banner[0].url}
-              height={400}
-              width={"100%"}
-              className={companyStyles.bannerimg}
-            />
-          )}
+          <div className={servicesStyles.service_banner_web}>
+            {home_banner[0] && (
+              <Image
+                loader={() =>
+                  myLoaderbanner((baseUrl + home_banner[0].url) as any)
+                }
+                src={baseUrl + home_banner[0].url}
+                placeholder="blur"
+                blurDataURL={baseUrl + home_banner[0].url}
+                height={400}
+                width={"100%"}
+                className={companyStyles.bannerimg}
+              />
+            )}
+          </div>
+
           <div className={servicesStyles.banner_container}>
             {free_text && (
               <div className={servicesStyles.content} data-aos="fade-up">
@@ -1215,8 +1296,11 @@ const Section: NextPage = (props: any) => {
           </div>
 
           <div className={`${servicesStyles.client_banner}`}>
-            <div className={servicesStyles.clientContent} data-aos="fade-up"
-              data-aos-duration="1500">
+            <div
+              className={servicesStyles.clientContent}
+              data-aos="fade-up"
+              data-aos-duration="1500"
+            >
               {free_text && (
                 <div
                   className={servicesStyles.section2_title}
@@ -1352,13 +1436,17 @@ const Section: NextPage = (props: any) => {
             <div className={`${servicesStyles.client_banner}`}>
               <div className={servicesStyles.clientContent}>
                 {free_text && (
-                  <div data-aos="fade-up" data-aos-duration="1000"
+                  <div
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
                     className={servicesStyles.section6_title}
                     dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                   ></div>
                 )}
                 {sub_heading && (
-                  <div data-aos="fade-up" data-aos-duration="1000"
+                  <div
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
                     className={servicesStyles.section6_note}
                     dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
                   ></div>
@@ -1373,7 +1461,8 @@ const Section: NextPage = (props: any) => {
             {carosel_cards[0] && (
               <div
                 className={servicesStyles.section6_imgages}
-                data-aos="zoom-in" data-aos-duration="2000"
+                data-aos="zoom-in"
+                data-aos-duration="2000"
               >
                 {carosel_cards.map((_card: any, index: number) => (
                   <Card {..._card} key={index} />
@@ -1390,7 +1479,9 @@ const Section: NextPage = (props: any) => {
             <div className={`${servicesStyles.client_banner}`}>
               <div className={servicesStyles.clientContent}>
                 {free_text && (
-                  <div data-aos="fade-up" data-aos-duration="1500"
+                  <div
+                    data-aos="fade-up"
+                    data-aos-duration="1500"
                     className={servicesStyles.section7_title}
                     dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                   ></div>
@@ -1445,7 +1536,9 @@ const Section: NextPage = (props: any) => {
             <div className={`${servicesStyles.client_banner}`}>
               <div className={servicesStyles.clientContent}>
                 {free_text && (
-                  <div data-aos="fade-up" data-aos-duration="1200"
+                  <div
+                    data-aos="fade-up"
+                    data-aos-duration="1200"
                     className={servicesStyles.section8_title}
                     dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                   ></div>
@@ -1459,7 +1552,9 @@ const Section: NextPage = (props: any) => {
               </div>
             </div>
             {carosel_cards[0] && (
-              <div className={servicesStyles.section8_img} data-aos="fade-up"
+              <div
+                className={servicesStyles.section8_img}
+                data-aos="fade-up"
                 data-aos-duration="2000"
               >
                 {carosel_cards.map((_card: any, index: number) => (
@@ -1599,19 +1694,21 @@ const Section: NextPage = (props: any) => {
     case "estimate_banner":
       return (
         <div className={careerstyles.section5}>
-          {estimate_image[0] && (
-            <Image
-              loader={() =>
-                myLoaderbanner((baseUrl + estimate_image[0].url) as any)
-              }
-              src={baseUrl + estimate_image[0].url}
-              placeholder="blur"
-              blurDataURL={baseUrl + estimate_image[0].url}
-              height={360}
-              width={"100%"}
-              className={careerstyles.estimatebannerimg}
-            />
-          )}
+          <div className={careerstyles.section5_banner_web}>
+            {estimate_image[0] && (
+              <Image
+                loader={() =>
+                  myLoaderbanner((baseUrl + estimate_image[0].url) as any)
+                }
+                src={baseUrl + estimate_image[0].url}
+                placeholder="blur"
+                blurDataURL={baseUrl + estimate_image[0].url}
+                height={360}
+                width={"100%"}
+                className={careerstyles.estimatebannerimg}
+              />
+            )}
+          </div>
 
           <div className={careerstyles.section5_centerText}>
             {Heading && (
@@ -1709,19 +1806,22 @@ const Section: NextPage = (props: any) => {
     case "portfolio_banner":
       return (
         <div className={portfolioStyles.portfolio_section1}>
-          {home_banner[0] && (
-            <Image
-              loader={() =>
-                myLoaderbanner((baseUrl + home_banner[0].url) as any)
-              }
-              src={baseUrl + home_banner[0].url}
-              placeholder="blur"
-              blurDataURL={baseUrl + home_banner[0].url}
-              height={400}
-              width={"100%"}
-              className={companyStyles.bannerimg}
-            />
-          )}
+          <div className={portfolioStyles.portfolio_web_banner}>
+            {home_banner[0] && (
+              <Image
+                loader={() =>
+                  myLoaderbanner((baseUrl + home_banner[0].url) as any)
+                }
+                src={baseUrl + home_banner[0].url}
+                placeholder="blur"
+                blurDataURL={baseUrl + home_banner[0].url}
+                height={400}
+                width={"100%"}
+                className={companyStyles.bannerimg}
+              />
+            )}
+          </div>
+
           <div className={portfolioStyles.banner_container}>
             {free_text && (
               <div className={portfolioStyles.content}>
@@ -1784,38 +1884,35 @@ const Section: NextPage = (props: any) => {
           <div className={`${portfolioStyles.Industries_section1}`}>
             {
               <div className={portfolioStyles.porfolio_details_cards}>
-                {carosel_cards[0] && (
-                  <div className={portfolioStyles.porfolioDetails_img}>
-                    {carosel_cards.map((_card: any, index: number) => (
-                      <Card {..._card} key={index} />
-                    ))}
-                  </div>
-                )}
+                <Carousel
+                  swipeable={true}
+                  draggable={false}
+                  showDots={false}
+                  responsive={responsive_portfolio_details}
+                  ssr={true} // means to render carousel on server-side.
+                  infinite={true}
+                  keyBoardControl={true}
+                  customTransition="all 0.5s ease"
+                  transitionDuration={1000}
+                  containerClass="carousel-container"
+                  removeArrowOnDeviceType={["tablet", "mobile"]}
+                  dotListClass="custom-dot-list-style"
+                  // itemClass="carousel-item-padding-40-px"
+                  className={styles.homeblogcarousel}
+                  customRightArrow={<CustomArrowportfolio />}
+                  customLeftArrow={<CustomleftArrowportfolio />}
+                >
+                  {carosel_cards.map((_card: any, index: number) => (
+                    <div
+                      className={portfolioStyles.porfolioDetails_img}
+                      key={index}
+                    >
+                      <Card {..._card} />
+                    </div>
+                  ))}
+                </Carousel>
               </div>
-
             }
-            {/* <Carousel
-              swipeable={true}
-              draggable={false}
-              showDots={false}
-              responsive={responsive_portfolio_details_cards}
-              ssr={true} // means to render carousel on server-side.
-              infinite={true}
-              keyBoardControl={true}
-              customTransition="all 0.5s ease"
-              transitionDuration={1000}
-              containerClass="carousel-container"
-              removeArrowOnDeviceType={["tablet", "mobile"]}
-              dotListClass="custom-dot-list-style"
-              // itemClass="carousel-item-padding-40-px"
-              className={styles.clientcarousel}
-              // customRightArrow={<CustomArrow />}
-              // customLeftArrow={<CustomleftArrow/>}
-            >
-              {carosel_cards.map((_card: any, index: number) => (
-                <Card {..._card} key={index} />
-              ))}
-            </Carousel> */}
 
             <div className={`${portfolioStyles.pclient_banner}`}>
               <div className={portfolioStyles.clientContent}>
@@ -1863,20 +1960,22 @@ const Section: NextPage = (props: any) => {
     case "servicedetails_banner":
       return (
         <div className={servicesStyles.seviceinner_bannerimg}>
+          <div className={servicesStyles.servicedetails_banner_web}>
+            {home_banner[0] && (
+              <Image
+                loader={() =>
+                  myLoaderbanner((baseUrl + home_banner[0].url) as any)
+                }
+                src={baseUrl + home_banner[0].url}
+                placeholder="blur"
+                blurDataURL={baseUrl + home_banner[0].url}
+                height={488}
+                width={"100%"}
+                className={servicesStyles.seviceinner_bannerimg}
+              />
+            )}
+          </div>
 
-          {home_banner[0] && (
-            <Image
-              loader={() =>
-                myLoaderbanner((baseUrl + home_banner[0].url) as any)
-              }
-              src={baseUrl + home_banner[0].url}
-              placeholder="blur"
-              blurDataURL={baseUrl + home_banner[0].url}
-              height={488}
-              width={"100%"}
-              className={servicesStyles.seviceinner_bannerimg}
-            />
-          )}
           <div className={servicesStyles.seviceinner_banner_container}>
             {free_text && (
               <div
@@ -1963,7 +2062,9 @@ const Section: NextPage = (props: any) => {
           {home_banner[0] && (
             <div className={`${servicesStyles.serviceinner_sec3_left_img}`}>
               <Image
-                loader={() => myLoaderbanner((baseUrl + home_banner[0].url) as any)}
+                loader={() =>
+                  myLoaderbanner((baseUrl + home_banner[0].url) as any)
+                }
                 src={baseUrl + home_banner[0].url}
                 placeholder="blur"
                 blurDataURL={baseUrl + home_banner[0].url}
@@ -1974,6 +2075,202 @@ const Section: NextPage = (props: any) => {
           )}
         </div>
         // </div>
+      );
+    case "expertise_banner":
+      return (
+        <div className={expertiseStyle.section1}>
+          <div className={expertiseStyle.expertise_banner_web}>
+            {home_banner[0] && (
+              <Image
+                loader={() =>
+                  myLoaderbanner((baseUrl + home_banner[0].url) as any)
+                }
+                src={baseUrl + home_banner[0].url}
+                placeholder="blur"
+                blurDataURL={baseUrl + home_banner[0].url}
+                height={400}
+                width={"100%"}
+                className={expertiseStyle.bannerimg}
+              />
+            )}
+          </div>
+
+          <div className={expertiseStyle.banner_container}>
+            {free_text && (
+              <div className={expertiseStyle.content} data-aos="fade-up">
+                <div
+                  className={expertiseStyle.free_text}
+                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                />
+                {sub_heading && (
+                  <div
+                    className={expertiseStyle.descrption}
+                    dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                  ></div>
+                )}
+                {home_button && (
+                  <div className={expertiseStyle.buttons}>
+                    {home_button.map((item: any) => (
+                      <div className={expertiseStyle.call_to_action}>
+                        {" "}
+                        {item.call_to_action}{" "}
+                        {/* <img
+                          src={`${baseUrl}${home_button[0].arrow_icon[0].url}`}
+                          className={styles.arrowicon}
+                        /> */}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    case "field_expertise":
+      return (
+        <div className={`${expertiseStyle.section2}`}>
+          <div className={expertiseStyle.breadCrum_expert}>
+            <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
+          </div>
+
+          <div className={`${expertiseStyle.client_banner}`}>
+            <div
+              className={expertiseStyle.clientContent}
+              data-aos="fade-up"
+              data-aos-duration="1500"
+            >
+              {free_text && (
+                <div
+                  className={expertiseStyle.section2_title}
+                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                ></div>
+              )}
+              {sub_heading && (
+                <div
+                  className={expertiseStyle.section2_note}
+                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                ></div>
+              )}
+            </div>
+          </div>
+          {/* <div className={styles.capabilities_cards}>
+                    {carosel_cards.map((_card: any, index: number) => (
+                        <Card {..._card} key={index} />
+                      ))}
+                    </div> */}
+        </div>
+      );
+    case "benefits_provide":
+      return (
+        <div className={expertiseStyle.section3}>
+          {home_banner[0] && (
+            <div className={`${expertiseStyle.section3_left_img}`}>
+              <Image
+                loader={() =>
+                  myLoaderbanner((baseUrl + home_banner[0].url) as any)
+                }
+                src={baseUrl + home_banner[0].url}
+                placeholder="blur"
+                blurDataURL={baseUrl + home_banner[0].url}
+                height={324}
+                width={512}
+              />
+            </div>
+          )}
+          <div className={expertiseStyle.section3_Content}>
+            {free_text && (
+              <div
+                className={expertiseStyle.section3_heading}
+                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+              ></div>
+            )}
+            {sub_heading && (
+              <div
+                className={expertiseStyle.section3_left_note}
+                dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+              ></div>
+            )}
+          </div>
+        </div>
+      );
+
+    case "expertise_carousal":
+      return (
+        <div className={`${expertiseStyle.section4}`}>
+          <Carousel
+            swipeable={false}
+            draggable={false}
+            showDots={true}
+            responsive={responsive_expertise_carousal}
+            ssr={true} // means to render carousel on server-side.
+            infinite={true}
+            autoPlay={true}
+            autoPlaySpeed={2000}
+            keyBoardControl={true}
+            customTransition="all 0.5s ease"
+            transitionDuration={500}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
+          >
+            <div className={servicesStyles.section3_card}>
+              {carosel_cards.slice(0, 3).map((_card: any, index: number) => (
+                <Card {..._card} key={index} />
+              ))}
+            </div>
+            <div className={servicesStyles.section3_card}>
+              {carosel_cards.slice(3, 6).map((_card: any, index: number) => (
+                <Card {..._card} key={index} />
+              ))}
+            </div>
+            <div className={servicesStyles.section3_card}>
+              {carosel_cards.slice(6, 9).map((_card: any, index: number) => (
+                <Card {..._card} key={index} />
+              ))}
+            </div>
+            <div className={servicesStyles.section3_card}>
+              {carosel_cards.slice(9, 11).map((_card: any, index: number) => (
+                <Card {..._card} key={index} />
+              ))}
+            </div>
+          </Carousel>
+          ;
+        </div>
+      );
+    case "expertise_description":
+      return (
+        <div className={expertiseStyle.section5}>
+          {home_banner[0] && (
+            <div className={`${expertiseStyle.section5_left_img}`}>
+              <Image
+                loader={() =>
+                  myLoaderbanner((baseUrl + home_banner[0].url) as any)
+                }
+                src={baseUrl + home_banner[0].url}
+                placeholder="blur"
+                blurDataURL={baseUrl + home_banner[0].url}
+                height={324}
+                width={512}
+              />
+            </div>
+          )}
+          <div className={expertiseStyle.section5_Content}>
+            {free_text && (
+              <div
+                className={expertiseStyle.section5_heading}
+                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+              ></div>
+            )}
+            {sub_heading && (
+              <div
+                className={expertiseStyle.section5_left_note}
+                dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+              ></div>
+            )}
+          </div>
+        </div>
       );
 
     case "blog_banner":
