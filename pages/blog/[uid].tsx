@@ -40,7 +40,7 @@ const Article: NextPage<{
           }
           src={baseUrl + blogBanner[0].content[0].home_banner[0].url}
           placeholder="blur"
-          blurDataURL={baseUrl + blogBanner[0].content[0].home_banner[0].url}
+          blurDataURL={(baseUrl + blogBanner[0].content[0].home_banner[0].url) as any}
           height={400}
           width={"100%"}
           className={companyStyles.bannerimg}
