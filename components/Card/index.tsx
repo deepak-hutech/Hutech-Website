@@ -200,8 +200,11 @@ const Card: NextPage = (props: any) => {
       );
     case "mobile_app_development_card":
       return (
-        <div className={servicesStyles.mobile_app_development_card} data-aos="flip-right"
-          data-aos-duration="2000">
+        <div
+          className={servicesStyles.mobile_app_development_card}
+          data-aos="flip-right"
+          data-aos-duration="2000"
+        >
           <a
             style={{ textDecoration: "none", color: "black" }}
             href="/service-details"
@@ -215,7 +218,7 @@ const Card: NextPage = (props: any) => {
                 className={servicesStyles.section3_para}
                 dangerouslySetInnerHTML={{ __html: marked(free_text) }}
               ></div>
-              <button >
+              <button>
                 <p>
                   {call_to_action}
                   {images.map((v: any) => (
@@ -356,7 +359,7 @@ const Card: NextPage = (props: any) => {
         <div className={careerstyles.featurecard}>
           <a
             id={props.id}
-          // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
+            // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
           >
             <div className={careerstyles.featurecardimg}>
               <Image
@@ -387,14 +390,14 @@ const Card: NextPage = (props: any) => {
               heading === "IOS Developer"
                 ? { backgroundColor: "#F9F8F8", border: "1px solid #D3D3D3" }
                 : heading === "React Developer"
-                  ? { backgroundColor: "#EFFCFF", border: "1px solid #61DAFB" }
-                  : heading === "Node JS Developer"
-                    ? { backgroundColor: "#F8FFF9", border: "1px solid #66CE77" }
-                    : heading === "Java Developer"
-                      ? { backgroundColor: "#FFF3F3", border: "1px solid #F56767" }
-                      : heading === "Adriod Developer"
-                        ? { backgroundColor: "#F8FFF9", border: "1px solid #66CE77" }
-                        : { color: "black" }
+                ? { backgroundColor: "#EFFCFF", border: "1px solid #61DAFB" }
+                : heading === "Node JS Developer"
+                ? { backgroundColor: "#F8FFF9", border: "1px solid #66CE77" }
+                : heading === "Java Developer"
+                ? { backgroundColor: "#FFF3F3", border: "1px solid #F56767" }
+                : heading === "Adriod Developer"
+                ? { backgroundColor: "#F8FFF9", border: "1px solid #66CE77" }
+                : { color: "black" }
             }
           >
             <a
@@ -404,7 +407,7 @@ const Card: NextPage = (props: any) => {
                 textDecoration: "none",
                 color: "black",
               }}
-            // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
+              // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
             >
               <div className={careerstyles.openingcardimg}>
                 <Image
@@ -470,7 +473,7 @@ const Card: NextPage = (props: any) => {
       return (
         <div className={portfolioStyles.portfolio_details_cards}>
           <Image
-            loader={() => myLoader((baseUrl +images[0].url) as any)}
+            loader={() => myLoader((baseUrl + images[0].url) as any)}
             src={`${baseUrl}${images[0].url}`}
             placeholder="blur"
             blurDataURL={baseUrl + images[0].url}
@@ -485,7 +488,7 @@ const Card: NextPage = (props: any) => {
         <div className={servicesStyles.androidcard}>
           <a
             id={props.id}
-          // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
+            // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
           >
             <div className={servicesStyles.androidcardimg}>
               <Image
@@ -510,54 +513,51 @@ const Card: NextPage = (props: any) => {
           </a>
         </div>
       );
-      case "expertise_carousal_card":
-        return (
-          <div className={expertiseStyle.expertisecard}>
-            <a
-              id={props.id}
-              // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
-            >
-              <div className={expertiseStyle.expertisecardimg}>
-                <Image
-                  loader={() => myLoader((baseUrl + images[0].url) as any)}
-                  src={`${baseUrl}${images[0].url}`}
-                  placeholder="blur"
-                  blurDataURL={baseUrl + images[0].url}
-                  width={70}
-                  height={70}
-                />
-              </div>
-              <div className={expertiseStyle.expertise_cardtext}>
-                <div
-                  className={expertiseStyle.expertise_heading}
-                  dangerouslySetInnerHTML={{ __html: marked(heading) }}
-                ></div>
-                <div
-                  className={expertiseStyle.expertise_subheading}
-                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-                ></div>
-                <button>
-                  <p>
-                    {call_to_action}
-                    {icon.map((v: any) => (
-                      <div>
-                        <img src={baseUrl + v.url}></img>
-                      </div>
-                    ))}
-                  </p>
-                </button>
-              </div>
-            </a>
-          </div>
-        );
- 
+    case "expertise_carousal_card":
+      return (
+        <div className={expertiseStyle.expertisecard}>
+          <a
+            id={props.id}
+            // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
+          >
+            <div className={expertiseStyle.expertisecardimg}>
+              <Image
+                loader={() => myLoader((baseUrl + images[0].url) as any)}
+                src={`${baseUrl}${images[0].url}`}
+                placeholder="blur"
+                blurDataURL={baseUrl + images[0].url}
+                width={70}
+                height={70}
+              />
+            </div>
+            <div className={expertiseStyle.expertise_cardtext}>
+              <div
+                className={expertiseStyle.expertise_heading}
+                dangerouslySetInnerHTML={{ __html: marked(heading) }}
+              ></div>
+              <div
+                className={expertiseStyle.expertise_subheading}
+                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+              ></div>
+              <button>
+                <p>
+                  {call_to_action}
+                  {icon.map((v: any) => (
+                    <div>
+                      <img src={baseUrl + v.url}></img>
+                    </div>
+                  ))}
+                </p>
+              </button>
+            </div>
+          </a>
+        </div>
+      );
+
     default:
       return (
         <div className={companyStyles.c_cards}>
-         
-          <img
-                        src={`${baseUrl}${images[0].url}`}
-                        className={styles.hello}/>
+          <img src={`${baseUrl}${(images[0].url)as any}`} className={styles.hello} />
           <p>{props.heading}</p>
         </div>
       );
