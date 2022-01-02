@@ -483,6 +483,22 @@ const Card: NextPage = (props: any) => {
           />
         </div>
       );
+      case "front_card":
+      return (
+        <div className={companyStyles.c_cards}>
+        {/* <img src={`${baseUrl}${images[0].url}`} className={styles.hello} /> */}
+        <Image
+            loader={() => myLoader((baseUrl + images[0].url) as any)}
+            src={`${baseUrl}${images[0].url}`}
+            placeholder="blur"
+            blurDataURL={baseUrl + images.url}
+            width={"100%"}
+            height={"70%"}
+            className={styles.hello}
+          />
+        <p>{props.heading}</p>
+      </div>
+      );
     case "android_app_card":
       return (
         <div className={servicesStyles.androidcard}>
@@ -556,19 +572,7 @@ const Card: NextPage = (props: any) => {
 
     default:
       return (
-        <div className={companyStyles.c_cards}>
-          {/* <img src={`${baseUrl}${images[0].url}`} className={styles.hello} /> */}
-          <Image
-              loader={() => myLoader((baseUrl + images[0].url) as any)}
-              src={`${baseUrl}${images[0].url}`}
-              placeholder="blur"
-              blurDataURL={baseUrl + images.url}
-              width={"100%"}
-              height={"70%"}
-              className={styles.hello}
-            />
-          <p>{props.heading}</p>
-        </div>
+        <div></div>
       );
   }
 };
