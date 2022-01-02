@@ -38,7 +38,7 @@ const Article: NextPage<{
               (baseUrl + blogBanner[0].content[0].home_banner[0].url) as any
             )
           }
-          src={baseUrl + blogBanner[0].content[0].home_banner[0].url}
+          src={(baseUrl + blogBanner[0].content[0].home_banner[0].url) as any}
           placeholder="blur"
           blurDataURL={(baseUrl + blogBanner[0].content[0].home_banner[0].url) as any}
           height={400}
