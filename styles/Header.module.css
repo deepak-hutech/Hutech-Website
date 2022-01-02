@@ -194,16 +194,12 @@ left: 44%;
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (max-width: 1200px) {
-  .container {
-    /* background-color: orange; */
-  }
+ 
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
-  .container {
-    /* background-color: green; */
-  }
+ 
   .logo img {
     height: 36px;
   }
@@ -221,8 +217,9 @@ left: 44%;
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
-  .container {
-    /* background-color: blue; */
+ 
+  .navContainer a:hover {
+    color: #ffaf2b;
   }
   .navContainer {
     display: flex;
@@ -351,7 +348,6 @@ left: 44%;
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 600px) {
-  .container {
-    /* background-color: yellow; */
-  }
+  .topNavLink:hover > .subMenuContainer {
+    display: none;}
 }

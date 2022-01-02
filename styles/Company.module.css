@@ -36,10 +36,6 @@
   margin-top: 40px;
 }
 
-.company_banner .content .description {
-  /* padding: 0 300px; */
-}
-
 .company_banner .call_to_action {
   color: white;
   background-color: #ffaf2b;
@@ -64,10 +60,9 @@
 .company_banner .call_to_action:hover {
   background: #0171c1;
 }
-.descrption p{
+.descrption p {
   padding: 0% 14%;
 }
-
 
 /* .company_banner .call_to_action :hover {
     color: #000;
@@ -95,7 +90,6 @@
     font-size: 30px;
   }
   .company_banner .banner_container {
-    
     top: 18%;
   }
 
@@ -113,9 +107,9 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
-  .campany_banner_web{
-      display: none;
-    }
+  .campany_banner_web {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -156,6 +150,7 @@
   line-height: 30px;
   color: #383838;
   text-align: center;
+  padding: 0 28%;
 }
 .abt_company .heading p {
   font-size: 40px;
@@ -167,9 +162,6 @@
 
 .abt_company .abt_img {
   margin-left: 32px;
-}
-.abt_company .abt_img img {
-  /* border-radius: 20px; */
 }
 
 .abt_company .note {
@@ -192,6 +184,7 @@
   .abt_company .heading h6 {
     font-size: 12px;
     line-height: 20px;
+    padding: 0;
   }
 
   .abt_company .note {
@@ -272,7 +265,6 @@
     margin: 20px 0 0;
   }
   .web_front_end_para {
-   
     padding-right: 0;
   }
 }
@@ -282,6 +274,14 @@
   text-align: center;
   width: 100%;
   margin: 50px 0px 0;
+}
+.imgborder {
+  border: 2px solid #A4CFF9;
+  padding: 2px;
+  border-radius: 50%;
+  height: 172px;
+  width: 172px;
+  margin: 0 15%;
 }
 
 .our_people .free_text h3 {
@@ -318,7 +318,7 @@
 
 .our_people .profiles .img {
   border-radius: 50%;
-  border: 2px solid #a4cff9;
+  /* border: 2px solid #a4cff9; */
   background: #2196ea;
 }
 
@@ -341,9 +341,13 @@
   }
 
   .our_people .profiles .img {
-    height: 136px;
-    width: 150px;
+    height: 132px;
+    width: 132px;
   }
+  .imgborder {
+    margin: 0 10%;
+    height: 142px;
+    width: 142px;}
 }
 
 /* Partner and Clients*/
@@ -548,13 +552,13 @@
   background-size: contain;
   background-position: center;
 }
-.current_opening_banner_web{
+.current_opening_banner_web {
   width: 100%;
   display: grid;
   text-align: center;
   color: white;
 }
-.blog_banner_web{
+.blog_banner_web {
   width: 100%;
   display: grid;
   text-align: center;
@@ -578,7 +582,6 @@
 
 .content {
   color: white;
-
 }
 
 .buttons .call_to_action_req {
@@ -616,22 +619,22 @@
 
 @media only screen and (max-width: 500px) {
   .current_opening .content .free_text {
-    font-size:20px;
+    font-size: 20px;
     padding: 0 8%;
   }
-  .current_opening_banner_web{
+  .current_opening_banner_web {
     display: none;
   }
-  .blog_banner_web{
-display: none;
+  .blog_banner_web {
+    display: none;
   }
-  .current_opening{
+  .current_opening {
     height: 250px;
     background-image: url(../components/assets/about-bottom-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
+
   .current_opening .banner_container {
     top: 15%;
   }
@@ -643,7 +646,7 @@ display: none;
     font-size: 12px;
     padding: 0 10px;
   }
-  .descrption p{
+  .descrption p {
     font-size: 12px;
     padding: 10px;
   }

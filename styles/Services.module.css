@@ -368,7 +368,7 @@
     font-size: 20px;
   }
   .section4_buttons .call_to_action {
-    width: 155px;
+    width: auto;
     font-size: 11px;
     height: 37px;
     margin-top: 0;
@@ -397,9 +397,7 @@
   /* padding: 0 10px; */
 }
 
-.section5_img_container img {
-  /* border-radius: 20px; */
-}
+
 
 .section5_cards {
   display: flex;
@@ -497,8 +495,6 @@
   transition-timing-function: ease-in-out;
 }
 
-.section6_img .cardimg {
-}
 
 .section6_img:hover {
   box-shadow: 0 1px 4px 0 rgb(0 0 0 / 22%);
@@ -651,10 +647,7 @@
     font-size: 12px;
   }
 
-  .section8 .our_work_card .section8_img img {
-    /* width: 250px;
-   height: 180px; */
-  }
+ 
 }
 
 /* Service_inner_page Design */
@@ -895,9 +888,7 @@
   .serviceinner_sec2_left_note p {
     font-size: 12px;
   }
-  .android_cardtext {
-    
-  }
+ 
   .seviceinner_sec4_descrption p {
     margin: 2rem 2rem;
   }

@@ -370,6 +370,51 @@ const Section: NextPage = (props: any) => {
           </Carousel>
         </div>
       );
+      case "home_banner_mobile":
+        return (
+          <div className={styles.home_caro_mob}>
+            <Carousel
+              swipeable={true}
+              draggable={false}
+              showDots={true}
+              responsive={responsive}
+              ssr={true} // means to render carousel on server-side.
+              infinite={true}
+              autoPlaySpeed={5000}
+              autoPlay={true}
+              keyBoardControl={true}
+              customTransition="all .5"
+              transitionDuration={500}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px"
+              className={styles.carosel_banner}
+            >
+              {carosel_cards.map((item: any) => (
+                <div
+                  className={styles.carosel_card_mob}
+                  
+                >
+                  <img src={baseUrl + item.images[0].url} />
+  
+                  <div className={styles.banner_container}>
+                    {item.free_text && (
+                      <div
+                        className={styles.free_text}
+                        dangerouslySetInnerHTML={{
+                          __html: marked(item.free_text),
+                        }}
+                      ></div>
+                    )}
+                    
+                  </div>
+                </div>
+              ))}
+            </Carousel>
+          </div>
+        );
+      
     case "development":
       return (
         <div className={styles.key_solutions}>
@@ -703,7 +748,7 @@ const Section: NextPage = (props: any) => {
                 removeArrowOnDeviceType={["tablet", "mobile"]}
                 dotListClass="custom-dot-list-style"
                 // itemClass="carousel-item-padding-40-px"
-                className={styles.clientcarousel}
+                className={styles.clientccarousel}
                 customRightArrow={<CustomArrow />}
                 customLeftArrow={<CustomleftArrow />}
               >
@@ -713,14 +758,14 @@ const Section: NextPage = (props: any) => {
                       className={companyStyles.profiles}
                       data-aos="zoom-in"
                       data-aos-duration="2000"
-                    >
+                    ><div className={companyStyles.imgborder}>
                       <img
                         className={companyStyles.img}
                         src={baseUrl + v.images.map((v: any) => v.url)}
                         placeholder="blur"
-                        height={162}
+                        height={163}
                         width={163}
-                      />
+                      /></div>
                       <h6>{v.heading}</h6>
                       <p className={companyStyles.role}>{v.free_text}</p>
                     </div>
@@ -2097,7 +2142,7 @@ const Section: NextPage = (props: any) => {
 
           <div className={expertiseStyle.banner_container}>
             {free_text && (
-              <div className={expertiseStyle.content} data-aos="fade-up">
+              <div className={expertiseStyle.content} >
                 <div
                   className={expertiseStyle.free_text}
                   dangerouslySetInnerHTML={{ __html: marked(free_text) }}
@@ -2137,8 +2182,7 @@ const Section: NextPage = (props: any) => {
           <div className={`${expertiseStyle.client_banner}`}>
             <div
               className={expertiseStyle.clientContent}
-              data-aos="fade-up"
-              data-aos-duration="1500"
+              
             >
               {free_text && (
                 <div

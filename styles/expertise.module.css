@@ -112,7 +112,7 @@
   font-weight: 600;
   font-size: 40px;
 }
-.breadCrum_expert{
+.breadCrum_expert {
   padding: 4% 8% 0;
 }
 
@@ -248,10 +248,11 @@
   display: flex;
   align-items: center;
   /* justify-content:space-evenly;  */
-  margin: 5.5% 7% 8% 8%;
+  margin: 5.5% 0% 8% 8%;
 }
 .section5_Content {
-  margin: 0 7%;
+  margin: 0 4%;
+  width: 46%;
 }
 .section5_heading h4 {
   width: 100%;
@@ -346,5 +347,9 @@
   }
   .section5_Content {
     margin: 0;
+    width: 100%;
+  }
+  .section5_left_note p {
+    font-size: 12px;
   }
 }

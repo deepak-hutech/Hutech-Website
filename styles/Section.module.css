@@ -3,6 +3,14 @@
   height: 450px;
   background: #deebf1;
 }
+.home_caro_mob{
+  height: 0px;
+  overflow: hidden;
+}
+.carosel_card_mob img {
+  width: 100%;
+  height: 0px;
+}
 .homebanner .title p {
   font-size: 45px;
   color: #005fa2;
@@ -21,6 +29,12 @@
   height: 430px;
   overflow: hidden;
 }
+.clientccarousel {
+  align-items: start;
+  height: 370px;
+  overflow: hidden;
+}
+
 .clientcarousel .react-multiple-carousel__arrow--left {
   left: -webkit-calc(4% + 1px);
   left: calc(86% + 1px);
@@ -215,10 +229,7 @@
   width: 267px;
   height: 211px;
 }
-.hero_banner .medium img {
-}
-.hero_banner .large img {
-}
+
 .hero_banner .free_text {
   width: max-content;
 }
@@ -499,8 +510,7 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.carosel_home_blog_banner {
-}
+
 .accordion_head {
   padding-top: 3%;
   padding-bottom: 5%;
@@ -692,8 +702,19 @@
   filter: brightness(0) saturate(100%);
 }
 @media only screen and (max-width: 500px) {
+  .home_caro {
+    display: none;
+  }
+  .home_caro_mob{
+    height: 330px;
+    overflow: visible;
+  }
+  
+  .carosel_card_mob img {
+    width: 100%;
+    height: 330px;
+  }
   .clientcarousel {
-    
     height: 240px;
   }
   .hero_banner p {
@@ -764,7 +785,7 @@
 }
 .free_text p {
   font-size: 20px;
-  line-height: 30px;
+  line-height: 40px;
   color: #000;
 }
 .homecall_to_action {
@@ -918,6 +939,13 @@
     line-height: 40px;
     margin-right: 72px;
   }
+  
+  .free_text p {
+    font-size: 26px;
+    margin-top: 15px;
+    line-height: 40px;
+    font-family: "GraphikMedium";
+  }
   .descrption {
     font-size: 18px;
     line-height: 30px;
@@ -931,7 +959,7 @@
     left: 4%;
   }
   .our_latest_works {
-    padding: 10% 0% 0% 0%;
+    padding: 16% 0% 10% 0%;
   }
   .title h3 {
     font-size: 26px;

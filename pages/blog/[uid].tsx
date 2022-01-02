@@ -32,6 +32,7 @@ const Article: NextPage<{
       <Header {...header} />
 
       <div className={companyStyles.company_banner}>
+      <div className={companyStyles.blog_banner_web}>
         <Image
           loader={() =>
             myLoaderbanner(
@@ -45,6 +46,7 @@ const Article: NextPage<{
           width={"100%"}
           className={companyStyles.bannerimg}
         />
+        </div>
 
         <div className={companyStyles.banner_container}>
           <div className={companyStyles.content}>
