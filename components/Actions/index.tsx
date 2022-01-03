@@ -35,13 +35,13 @@ const Action: NextPage = ({
           <section className={styles.subMenuContainer}>
             {group.map(({ title, action }: any) => (
               <div className={styles.servicesubMenu}>
-                <Image
+                {/* <Image
                   loader={myLoader}
                   src={subheadingIcon}
                   className={styles.subheaderimg}
                   width={10}
                   height={10}
-                />
+                /> */}
                 <a href={title} className={styles.topNavLink}>
 
 
@@ -50,7 +50,7 @@ const Action: NextPage = ({
 
                 {/* {action?.map((action: any, index: number) => (
                   <a key={index} href={action.link ? action.link : "/"}>
-                    {action.display}
+                    {title}
                   </a>
                 ))} */}
               </div>

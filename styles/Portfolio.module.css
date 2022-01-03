@@ -61,6 +61,7 @@
 }
 .content {
   color: white;
+  padding: 0 15%;
 }
 .portfolio_sec2_note{
   margin:4rem 7.3rem ;
@@ -203,6 +204,10 @@
       .portfolio_para2  {
         margin-bottom: 0;
         font-size: 11px;
+      }
+      .content {
+        
+        padding: 0 1%;
       }
 }
 

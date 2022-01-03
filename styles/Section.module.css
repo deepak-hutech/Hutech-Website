@@ -3,13 +3,16 @@
   height: 450px;
   background: #deebf1;
 }
-.home_caro_mob{
+.home_caro_mob {
   height: 0px;
   overflow: hidden;
 }
 .carosel_card_mob img {
   width: 100%;
   height: 0px;
+}
+.descrption p {
+  width: 50%;
 }
 .homebanner .title p {
   font-size: 45px;
@@ -63,30 +66,6 @@
   width: 80%;
   height: 80%;
 }
-/* .carosel_banner .content {
-  position: absolute;
-  left: 10%;
-  height: 400px;
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  padding: 20px;
-} */
-/* .carosel_banner .content h1 {
-  color: #233253;
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 58px;
-  margin: 10px 0px;
-}
-.carosel_banner .content h5 {
-  color: #8a93a5;
-  font-size: 16px;
-  font-weight: 400;
-  margin: 10px 0px;
-} */
 
 .cardbanner {
   column-gap: 15px;
@@ -133,13 +112,6 @@
   background-color: #c6def1;
   font-family: "Saira Extra Condensed", sans-serif;
 }
-/* .hero_banner:nth-child(even) {
-  background-color: #f9f9f9;
-}
-.hero_banner:nth-child(odd) {
-  background-color: #ffffff;
-  /* flex-direction: row-reverse;
-  padding: 85px 30px 72px 150px; */
 
 .image {
   /* flex: 345px; */
@@ -209,12 +181,6 @@
   transition: box-shadow 1s cubic-bezier(0.55, 0, 0.1, 1) 0s;
 }
 
-/* .hero_banner .call_to_action:hover {
-  background: #ff3038 !important;
-  box-shadow: 0 5px 7px rgb(228 24 32 / 40%);
-  color: #fff;
-  border: 1px solid #ed1c24;
-} */
 .buttons {
   display: flex;
 }
@@ -705,17 +671,17 @@
   .home_caro {
     display: none;
   }
-  .home_caro_mob{
+  .home_caro_mob {
     height: 330px;
     overflow: visible;
   }
-  
+
   .carosel_card_mob img {
     width: 100%;
     height: 330px;
   }
   .clientcarousel {
-    height: 240px;
+    height: 280px;
   }
   .hero_banner p {
     display: none;
@@ -939,7 +905,7 @@
     line-height: 40px;
     margin-right: 72px;
   }
-  
+
   .free_text p {
     font-size: 26px;
     margin-top: 15px;
@@ -947,11 +913,11 @@
     font-family: "GraphikMedium";
   }
   .descrption {
-    font-size: 18px;
+    font-size: 12px;
     line-height: 30px;
   }
   .successful_product {
-    padding: 5% 4% 8% 4%;
+    padding: 5% 2% 8% 2%;
     margin-bottom: 6%;
   }
   .banner_container {
@@ -981,6 +947,7 @@
   }
   .product_title h3 {
     font-size: 26px;
+    margin: 0 0 0px 10px;
   }
   .blog_banner {
     padding: 7%;
@@ -1001,5 +968,17 @@
   .home_form_section {
     background-color: #0171c1;
     padding: 4%;
+  }
+  .carousel {
+    margin-top: -60px;
+  }
+  .clients_cards {
+    margin-top: 0px;
+  }
+  .development_descrption p {
+    font-size: 12px;
+  }
+  .descrption p {
+    width: 100%;
   }
 }

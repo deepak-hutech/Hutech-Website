@@ -520,6 +520,10 @@
   .section6_img p {
     font-size: 12px;
   }
+  .section6 {
+    
+    background-image: none;
+    }
 }
 
 /* /////section 7 */
@@ -637,6 +641,10 @@
 .section8_para2 {
   line-height: 0px;
 }
+.section8_note p{
+  padding: 0 24%;
+  
+}
 
 @media only screen and (max-width: 500px) {
   .section8_title {
@@ -645,9 +653,14 @@
 
   .section8_note {
     font-size: 12px;
+   
   }
-
- 
+  
+  .section8_note p{
+    padding: 0 3%;
+    
+  }
+  
 }
 
 /* Service_inner_page Design */

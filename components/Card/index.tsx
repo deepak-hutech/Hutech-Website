@@ -56,7 +56,7 @@ const Card: NextPage = (props: any) => {
           <div
             className={styles.card}
             data-aos="zoom-in"
-            data-aos-duration="1000"
+            
           >
             <a id={props.id} href={Link ? Link : `/plans/${props.title}`}>
               <Image
@@ -72,7 +72,7 @@ const Card: NextPage = (props: any) => {
           <div
             className={styles.heading}
             data-aos="zoom-in"
-            data-aos-duration="1200"
+            
           >
             {heading}
           </div>
@@ -84,7 +84,7 @@ const Card: NextPage = (props: any) => {
           <div
             className={styles.capabilities}
             data-aos="zoom-in"
-            data-aos-duration="1000"
+            
           >
             <Image
               loader={() => myLoader((baseUrl + images[0].url) as any)}
@@ -100,7 +100,7 @@ const Card: NextPage = (props: any) => {
             className={styles.capabilities_cards_title}
             dangerouslySetInnerHTML={{ __html: marked(free_text) }}
             data-aos="zoom-in"
-            data-aos-duration="1200"
+            
           ></div>
         </div>
       );
@@ -110,7 +110,7 @@ const Card: NextPage = (props: any) => {
           <div
             className={styles.capabilities}
             data-aos="zoom-in"
-            data-aos-duration="1000"
+            
           >
             <Image
               loader={() => myLoader((baseUrl + images[0].url) as any)}
@@ -125,7 +125,7 @@ const Card: NextPage = (props: any) => {
           <p
             className={styles.para}
             data-aos="zoom-in"
-            data-aos-duration="1200"
+            
           >
             {heading}
           </p>
@@ -133,7 +133,7 @@ const Card: NextPage = (props: any) => {
             className={styles.product_para}
             dangerouslySetInnerHTML={{ __html: marked(free_text) }}
             data-aos="zoom-in"
-            data-aos-duration="1500"
+            
           ></div>
         </div>
       );
@@ -142,9 +142,9 @@ const Card: NextPage = (props: any) => {
         <div
           className={styles.clients_card}
           data-aos="zoom-in"
-          data-aos-duration="1000"
+        
         >
-          <img src={`${baseUrl}${images[0].url}`}></img>
+          <img src={`${baseUrl}${images[0].url}`} className={styles.clientsimgmob}></img>
         </div>
       );
     case "wide_card":
@@ -203,7 +203,7 @@ const Card: NextPage = (props: any) => {
         <div
           className={servicesStyles.mobile_app_development_card}
           data-aos="flip-right"
-          data-aos-duration="2000"
+          
         >
           <a
             style={{ textDecoration: "none", color: "black" }}
@@ -239,7 +239,7 @@ const Card: NextPage = (props: any) => {
             <div
               className={servicesStyles.section5_img}
               data-aos="zoom-in"
-              data-aos-duration="1000"
+              
             >
               <Image
                 loader={() => myLoader((baseUrl + images[0].url) as any)}
@@ -259,13 +259,13 @@ const Card: NextPage = (props: any) => {
             className={servicesStyles.section5_heading}
             dangerouslySetInnerHTML={{ __html: marked(heading) }}
             data-aos="zoom-in"
-            data-aos-duration="1300"
+            
           ></div>
           <div
             className={servicesStyles.section5_para2}
             dangerouslySetInnerHTML={{ __html: marked(free_text) }}
             data-aos="zoom-in"
-            data-aos-duration="1500"
+            
           ></div>
         </div>
       );
@@ -447,7 +447,7 @@ const Card: NextPage = (props: any) => {
           <div
             className={portfolioStyles.portfolio_card}
             data-aos="fade-up"
-            data-aos-duration="2000"
+            
           >
             <div className={portfolioStyles.portfolio_img}>
               <a id={props.id} href={Link ? Link : `/portfolio/${props.title}`}>

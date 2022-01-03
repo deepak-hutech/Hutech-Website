@@ -9,7 +9,7 @@
   transition: box-shadow 1s cubic-bezier(0.55, 0, 0.1, 1) 0s;
   margin: 0 10px;
 }
-.hello{
+.hello {
   width: 100%;
   height: auto;
 }
@@ -408,10 +408,10 @@
   .card {
     width: 90%;
     height: 100%;
-    margin: 20px 20px 40px;
+    margin: 20px 20px 10px;
   }
   .heading {
-    margin: 30px 20px 20px 20px;
+    margin: 20px 20px 20px 20px;
   }
   .capabilities_cards {
     width: 136px;
@@ -421,13 +421,15 @@
     font-size: 14px;
   }
   .successful_product_card {
-    width: 220px;
+    width: 150px;
     height: 210px;
+    margin: 20px 10px 0;
   }
   /* .product_para {
   font-size: 11px;} */
   .para {
     margin: 10px 0px 10px 0px;
+    font-size: 16px;
   }
   .wide_card_ {
     flex-wrap: wrap;
@@ -451,7 +453,18 @@
   .right_card_heading {
     font-size: 18px;
   }
-  .clients_card:first-child {
-    margin-top: 50px;
+  /* .clients_card:first-child {
+    margin-top: 0px;
+  } */
+  .product_para {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .clientsimgmob {
+    width: 98%;
+  }
+  .clients_card {
+    width: 140px;
+    height: 90px;
   }
 }

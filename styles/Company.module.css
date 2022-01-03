@@ -266,6 +266,10 @@
   }
   .web_front_end_para {
     padding-right: 0;
+    
+  }
+  .web_front_end_para p {
+    font-size: 12px;
   }
 }
 

@@ -344,7 +344,8 @@ const Section: NextPage = (props: any) => {
               <div
                 className={styles.carosel_card}
                 data-aos="zoom-in"
-                data-aos-duration="1000"
+                
+
               >
                 <img src={baseUrl + item.images[0].url} />
 
@@ -691,7 +692,7 @@ const Section: NextPage = (props: any) => {
               <div
                 className={companyStyles.vvContent}
                 data-aos="fade-up"
-                data-aos-duration="1500"
+                
               >
                 <img
                   className={companyStyles.profile}
@@ -757,7 +758,7 @@ const Section: NextPage = (props: any) => {
                     <div
                       className={companyStyles.profiles}
                       data-aos="zoom-in"
-                      data-aos-duration="2000"
+                      
                     ><div className={companyStyles.imgborder}>
                       <img
                         className={companyStyles.img}
@@ -796,7 +797,7 @@ const Section: NextPage = (props: any) => {
           <div
             className={companyStyles.allProducts}
             data-aos="zoom-out-up"
-            data-aos-duration="1500"
+            
           >
             {carosel_cards.map((v: any) => (
               <div className={companyStyles.logos}>
@@ -858,7 +859,7 @@ const Section: NextPage = (props: any) => {
                     <div
                       className={companyStyles.company_cards}
                       data-aos="fade-up"
-                      data-aos-duration="1500"
+                      
                     >
                       {carosel_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
@@ -889,7 +890,7 @@ const Section: NextPage = (props: any) => {
                     <div
                       className={companyStyles.company_cards}
                       data-aos="fade-up"
-                      data-aos-duration="1600"
+                      
                     >
                       {Carosel_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
@@ -920,7 +921,7 @@ const Section: NextPage = (props: any) => {
                     <div
                       className={companyStyles.company_cards}
                       data-aos="fade-up"
-                      data-aos-duration="1500"
+                      
                     >
                       {carosel_card.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
@@ -951,7 +952,7 @@ const Section: NextPage = (props: any) => {
                     <div
                       className={companyStyles.company_cards}
                       data-aos="fade-up"
-                      data-aos-duration="1600"
+                     
                     >
                       {android_card.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
@@ -978,7 +979,7 @@ const Section: NextPage = (props: any) => {
                     <div
                       className={companyStyles.company_cards}
                       data-aos="fade-up"
-                      data-aos-duration="1500"
+                      
                     >
                       {ios_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
@@ -1007,7 +1008,7 @@ const Section: NextPage = (props: any) => {
                     <div
                       className={companyStyles.company_cards}
                       data-aos="fade-up"
-                      data-aos-duration="1600"
+                      
                     >
                       {devops_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
@@ -1184,7 +1185,7 @@ const Section: NextPage = (props: any) => {
                     <div
                       className={contactStyle.tab1}
                       data-aos="fade-up"
-                      data-aos-duration="1800"
+                      
                     >
                       <div className="mb-5">
                         <h4>
@@ -1582,8 +1583,8 @@ const Section: NextPage = (props: any) => {
               <div className={servicesStyles.clientContent}>
                 {free_text && (
                   <div
-                    data-aos="fade-up"
-                    data-aos-duration="1200"
+                    
+                    
                     className={servicesStyles.section8_title}
                     dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                   ></div>
