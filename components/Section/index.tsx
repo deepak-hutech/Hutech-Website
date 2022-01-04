@@ -29,7 +29,7 @@ import HomeForm from "../home_form/index.js";
 import strings from "./../../public/strings.json";
 import expertiseStyle from "../../styles/expertise.module.css";
 import leftIconportfolio from "../../components/assets/rightcaro.svg";
-import  rightIconportfolio from "../../components/assets/leftcaro.svg";
+import rightIconportfolio from "../../components/assets/leftcaro.svg";
 
 const { baseUrl } = strings;
 
@@ -341,12 +341,7 @@ const Section: NextPage = (props: any) => {
             className={styles.carosel_banner}
           >
             {carosel_cards.map((item: any) => (
-              <div
-                className={styles.carosel_card}
-                data-aos="zoom-in"
-                
-
-              >
+              <div className={styles.carosel_card} data-aos="zoom-in">
                 <img src={baseUrl + item.images[0].url} />
 
                 <div className={styles.banner_container}>
@@ -371,51 +366,47 @@ const Section: NextPage = (props: any) => {
           </Carousel>
         </div>
       );
-      case "home_banner_mobile":
-        return (
-          <div className={styles.home_caro_mob}>
-            <Carousel
-              swipeable={true}
-              draggable={false}
-              showDots={true}
-              responsive={responsive}
-              ssr={true} // means to render carousel on server-side.
-              infinite={true}
-              autoPlaySpeed={5000}
-              autoPlay={true}
-              keyBoardControl={true}
-              customTransition="all .5"
-              transitionDuration={500}
-              containerClass="carousel-container"
-              removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
-              dotListClass="custom-dot-list-style"
-              itemClass="carousel-item-padding-40-px"
-              className={styles.carosel_banner}
-            >
-              {carosel_cards.map((item: any) => (
-                <div
-                  className={styles.carosel_card_mob}
-                  
-                >
-                  <img src={baseUrl + item.images[0].url} />
-  
-                  <div className={styles.banner_container}>
-                    {item.free_text && (
-                      <div
-                        className={styles.free_text}
-                        dangerouslySetInnerHTML={{
-                          __html: marked(item.free_text),
-                        }}
-                      ></div>
-                    )}
-                    
-                  </div>
+    case "home_banner_mobile":
+      return (
+        <div className={styles.home_caro_mob}>
+          <Carousel
+            swipeable={true}
+            draggable={false}
+            showDots={true}
+            responsive={responsive}
+            ssr={true} // means to render carousel on server-side.
+            infinite={true}
+            autoPlaySpeed={5000}
+            autoPlay={true}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={500}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
+            className={styles.carosel_banner}
+          >
+            {carosel_cards.map((item: any) => (
+              <div className={styles.carosel_card_mob}>
+                <img src={baseUrl + item.images[0].url} />
+
+                <div className={styles.banner_container}>
+                  {item.free_text && (
+                    <div
+                      className={styles.free_text}
+                      dangerouslySetInnerHTML={{
+                        __html: marked(item.free_text),
+                      }}
+                    ></div>
+                  )}
                 </div>
-              ))}
-            </Carousel>
-          </div>
-        );
-      
+              </div>
+            ))}
+          </Carousel>
+        </div>
+      );
+
     case "development":
       return (
         <div className={styles.key_solutions}>
@@ -689,11 +680,7 @@ const Section: NextPage = (props: any) => {
         <div className={companyStyles.values_vision_banner}>
           <div className={companyStyles.values_vision}>
             {carosel_cards.map((v: any) => (
-              <div
-                className={companyStyles.vvContent}
-                data-aos="fade-up"
-                
-              >
+              <div className={companyStyles.vvContent} data-aos="fade-up">
                 <img
                   className={companyStyles.profile}
                   src={baseUrl + v.images.map((v: any) => v.url)}
@@ -755,18 +742,16 @@ const Section: NextPage = (props: any) => {
               >
                 {carosel_cards.map((v: any) => (
                   <Col>
-                    <div
-                      className={companyStyles.profiles}
-                      data-aos="zoom-in"
-                      
-                    ><div className={companyStyles.imgborder}>
-                      <img
-                        className={companyStyles.img}
-                        src={baseUrl + v.images.map((v: any) => v.url)}
-                        placeholder="blur"
-                        height={163}
-                        width={163}
-                      /></div>
+                    <div className={companyStyles.profiles} data-aos="zoom-in">
+                      <div className={companyStyles.imgborder}>
+                        <img
+                          className={companyStyles.img}
+                          src={baseUrl + v.images.map((v: any) => v.url)}
+                          placeholder="blur"
+                          height={163}
+                          width={163}
+                        />
+                      </div>
                       <h6>{v.heading}</h6>
                       <p className={companyStyles.role}>{v.free_text}</p>
                     </div>
@@ -794,11 +779,7 @@ const Section: NextPage = (props: any) => {
               ></div>
             )}
           </div>
-          <div
-            className={companyStyles.allProducts}
-            data-aos="zoom-out-up"
-            
-          >
+          <div className={companyStyles.allProducts} data-aos="zoom-out-up">
             {carosel_cards.map((v: any) => (
               <div className={companyStyles.logos}>
                 <img
@@ -859,7 +840,6 @@ const Section: NextPage = (props: any) => {
                     <div
                       className={companyStyles.company_cards}
                       data-aos="fade-up"
-                      
                     >
                       {carosel_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
@@ -890,7 +870,6 @@ const Section: NextPage = (props: any) => {
                     <div
                       className={companyStyles.company_cards}
                       data-aos="fade-up"
-                      
                     >
                       {Carosel_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
@@ -921,7 +900,6 @@ const Section: NextPage = (props: any) => {
                     <div
                       className={companyStyles.company_cards}
                       data-aos="fade-up"
-                      
                     >
                       {carosel_card.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
@@ -952,7 +930,6 @@ const Section: NextPage = (props: any) => {
                     <div
                       className={companyStyles.company_cards}
                       data-aos="fade-up"
-                     
                     >
                       {android_card.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
@@ -979,7 +956,6 @@ const Section: NextPage = (props: any) => {
                     <div
                       className={companyStyles.company_cards}
                       data-aos="fade-up"
-                      
                     >
                       {ios_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
@@ -1008,7 +984,6 @@ const Section: NextPage = (props: any) => {
                     <div
                       className={companyStyles.company_cards}
                       data-aos="fade-up"
-                      
                     >
                       {devops_cards.map((_card: any, index: number) => (
                         <Card {..._card} key={index} />
@@ -1182,11 +1157,7 @@ const Section: NextPage = (props: any) => {
                       </span>
                     }
                   >
-                    <div
-                      className={contactStyle.tab1}
-                      data-aos="fade-up"
-                      
-                    >
+                    <div className={contactStyle.tab1} data-aos="fade-up">
                       <div className="mb-5">
                         <h4>
                           Take a Step Forward To Start a Conversation With Us !
@@ -1583,8 +1554,6 @@ const Section: NextPage = (props: any) => {
               <div className={servicesStyles.clientContent}>
                 {free_text && (
                   <div
-                    
-                    
                     className={servicesStyles.section8_title}
                     dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                   ></div>
@@ -1611,6 +1580,7 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
+
     case "career_banner":
       return (
         <div className={`${careerstyles.main_sec1}`}>
@@ -1812,43 +1782,51 @@ const Section: NextPage = (props: any) => {
       );
     case "qualification_banner":
       return (
-        <div className={careerstyles.qualification_section2}>
-          <div className={careerstyles.apply_left}>
-            {User_Experience_Data[0] && (
-              <div className={careerstyles.apply_section2_left}>
-                {User_Experience_Data.map((_card: any, index: number) => (
-                  <div style={{ display: "block" }}>
-                    <div style={{ display: "inline-block" }}>
-                      {_card.title && (
-                        <div
-                          className={careerstyles.qualification_left_title}
-                          dangerouslySetInnerHTML={{
-                            __html: marked(_card.title),
-                          }}
-                        ></div>
-                      )}
-                    </div>
-                    <div style={{ display: "inline-block" }}>
-                      {_card.free_text && (
-                        <div
-                          className={careerstyles.qualification_left_note}
-                          dangerouslySetInnerHTML={{
-                            __html: marked(_card.free_text),
-                          }}
-                        ></div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
+        <div>
+          <div className={careerstyles.careerdetails_breadcrumb}>
+            <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
           </div>
-          <div className={careerstyles.apply_right}>
-            <div className={careerstyles.apply_heading}>Apply Now</div>
-            <CareerForm />
+          <div className={careerstyles.qualification_section2}>
+            <div className={careerstyles.apply_left}>
+              {User_Experience_Data[0] && (
+                <div className={careerstyles.apply_section2_left}>
+                  {User_Experience_Data.map((_card: any, index: number) => (
+                    <div className={careerstyles.apply_left_title}>
+                      <div className={careerstyles.apply_left_subtitle}>
+                        {_card.title && (
+                          <div
+                            className={careerstyles.qualification_left_title}
+                            dangerouslySetInnerHTML={{
+                              __html: marked(_card.title),
+                            }}
+                          ></div>
+                        )}
+                      </div>
+                      <div className={careerstyles.apply_left_subtitle}>
+                        {_card.free_text && (
+                          <div
+                            className={careerstyles.qualification_left_note}
+                            dangerouslySetInnerHTML={{
+                              __html: marked(_card.free_text),
+                            }}
+                          ></div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+            <div className={careerstyles.apply_right}>
+              <h4 className={careerstyles.apply_heading}>Apply Now</h4>
+              <div className={careerstyles.careerForm_style}>
+                <CareerForm />
+              </div>
+            </div>
           </div>
         </div>
       );
+
     case "portfolio_banner":
       return (
         <div className={portfolioStyles.portfolio_section1}>
@@ -2143,7 +2121,7 @@ const Section: NextPage = (props: any) => {
 
           <div className={expertiseStyle.banner_container}>
             {free_text && (
-              <div className={expertiseStyle.content} >
+              <div className={expertiseStyle.content}>
                 <div
                   className={expertiseStyle.free_text}
                   dangerouslySetInnerHTML={{ __html: marked(free_text) }}
@@ -2181,10 +2159,7 @@ const Section: NextPage = (props: any) => {
           </div>
 
           <div className={`${expertiseStyle.client_banner}`}>
-            <div
-              className={expertiseStyle.clientContent}
-              
-            >
+            <div className={expertiseStyle.clientContent}>
               {free_text && (
                 <div
                   className={expertiseStyle.section2_title}
