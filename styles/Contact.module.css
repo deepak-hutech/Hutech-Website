@@ -175,7 +175,7 @@
   /* margin: 20px 0; */
   line-height: 22px;
   font-size: 14px;
-  padding: 0;
+  padding: 4px;
   border: 1px solid #d9d9d9;
   margin-bottom: 0;
   box-sizing: border-box;
@@ -256,19 +256,19 @@
 .contactForm_label::after {
   padding-left: 3px;
   color: #ff4d4f;
-  font-size: 16px;
+  font-size: 14px;
   content: "*";
 }
 .contactForm ::placeholder {
   font-style: normal;
   font-weight: normal;
   color: #bababa;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
 }
 .nonMendatory_label {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 30px;
   color: #5b5b5b;
 }
@@ -281,7 +281,7 @@
   font-family: "GraphikMedium";
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 30px;
   color: #5b5b5b;
 }
@@ -341,7 +341,7 @@
   font-style: normal;
   font-weight: normal;
   color: #bababa;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
 }
 .selectoption_style option {
@@ -356,7 +356,7 @@
 
 .contactForm button {
   width: 100%;
-  font-size: 18px;
+  font-size: 16px;
   color: #ffff;
   background: #ffaf2b;
   border: 0;

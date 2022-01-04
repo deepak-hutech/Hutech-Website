@@ -152,6 +152,7 @@ left: 44%;
   border-radius: 7px;
   margin-top: 47px;
   -webkit-box-shadow: 0 -1px 25px 0 rgb(0 0 0 / 15%);
+  box-shadow: 0 -1px 25px 0 rgb(0 0 0 / 15%);
 }
 
 .subMenu {

@@ -107,6 +107,16 @@ ul {
 .container-xxl {
   padding-left: 0 !important;
 }
+
+.rc-anchor-error-msg-container {
+  
+  font-family: "GraphikRegular";
+  font-size: 10px;
+  
+  left: 10px;
+  
+  top: 2px;
+}
 /* 
  #breadCrum ol li a{
    font-weight: 600;
@@ -123,6 +133,5 @@ ul {
   bottom: 0;
 }
 .nav-link {
-    
   padding: 0rem;
 }
