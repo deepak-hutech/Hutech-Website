@@ -33,7 +33,7 @@ const Action: NextPage = ({
         <a href={link} className={styles.topNavLink}>
           {display}
           <section className={styles.subMenuContainer}>
-            {group.map(({ title, action }: any) => (
+            {group.map(({ title,link, action }: any) => (
               <div className={styles.servicesubMenu}>
                 {/* <Image
                   loader={myLoader}
@@ -42,7 +42,7 @@ const Action: NextPage = ({
                   width={10}
                   height={10}
                 /> */}
-                <a href={title} className={styles.topNavLink}>
+                <a href={link} className={styles.topNavLink}>
 
 
                   {title}
