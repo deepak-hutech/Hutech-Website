@@ -32,9 +32,9 @@
   background: #0662a7;
   align-items: center;
   position: relative;
-  background-image: url(../components/assets/company-yellow-bg.png);
+  background-image: url(../components/assets/mobile-tech-bg.png);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100% 95%;
   background-position: center;
 }
 .careerbannerimg {
@@ -53,14 +53,16 @@
 .section1_subText1 h3 {
   font-style: normal;
   font-size: 40px;
-  font-weight: 400;
+  line-height:44px;
+  color: #FFFFFF;
+  font-weight: bold;
   font-family: "GraphikMedium";
 }
 .section1_subText2 p {
   width: 100%;
   font-style: normal;
-  font-size: 16px;
-  line-height: 25px;
+  font-size: 24px;
+  line-height: 30px;
   font-weight: normal;
   text-align: center;
 }
@@ -74,8 +76,8 @@
   justify-content: center;
 }
 .breadCum_career {
-  margin-top: 5rem;
-  margin-left: 3rem;
+ margin-top: 6%;
+    margin-left: 6%;
 }
 .sec2_left {
   width: 50%;
@@ -92,14 +94,24 @@
   font-style: normal;
   font-weight: bold;
   font-size: 30px;
-  line-height: 30px;
+  line-height: 33px;
   font-family: "GraphikMedium";
   margin-top: 20px;
 }
 .sec2_left_note p {
-  font-size: 1rem;
-  line-height: 2rem;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 30px;
   margin-top: 2rem;
+  color: #000000;
+}
+.sec2_left_note h5 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 17px;
+  color: #000000;
 }
 .sec2_right {
   width: 50%;
@@ -185,28 +197,28 @@
 
 .section3_title h3 {
   font-style: normal;
-  font-weight: bolder;
-  font-size: 1.875rem;
-  line-height: 2.0625rem;
-  margin-top: 20%;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 33px;
+    margin-top: 20%;
 }
 
 .section3_title h5 {
   font-style: normal;
-  font-weight: normal;
-  font-family: "GraphikMedium";
-  font-size: 1.125rem;
-  line-height: 1.25rem;
-  margin-top: 7%;
+    font-weight: normal;
+    font-family: "GraphikMedium";
+    font-size: 18px;
+    line-height: 20px;
+    margin-top: 7%;
 }
 
 .section3_note p {
-  font-size: 1.125rem;
-  line-height: 1.5rem;
+  font-size: 18px;
+  line-height:24px;
   text-align: center;
   font-style: normal;
   font-weight: normal;
-  margin-top: 5%;
+  margin-top: 3%;
 }
 .section3_cards {
   display: flex;
@@ -235,7 +247,7 @@
   content: "";
   position: absolute;
   border-style: solid;
-  /* border-radius:15px ; */
+  border-radius:15px ;
   border-color: #0171c1;
   transition-duration: 0.4s;
   /* z-index: -1; */
@@ -264,16 +276,18 @@
 }
 
 .feature_heading {
-  font-size: 1.5rem;
-  line-height: 1.875rem;
-  text-align: center;
-  font-weight: bold;
-  font-style: normal;
+  font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-style: normal;
 }
-.feature_subheading {
-  font-size: 0.9375rem;
-  line-height: 1.875rem;
-  text-align: center;
+.feature_subheading p{
+  font-size: 15px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: normal;
+    font-style: normal;
   margin-top: 0.5rem;
 }
 .feature_cardtext {
@@ -303,11 +317,17 @@
   transition: all 0.15s ease-in-out;
   padding: 3% 1.5% 3% 1.5%;
 }
+.openingcard img{
+  object-fit: contain;
+}
 .openingcard:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .estimate_call {
   display: flex;
+}
+.estimate_call img {
+object-fit:contain;
 }
 .estimate_call:hover {
   animation: pulse 1s infinite;
@@ -343,11 +363,30 @@
   background-color: white !important;
   background-image: none !important;
   margin: 0;
+  padding: 5% 0;
   width: 100%;
+}
+.captcha_text{
+  font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 18px;
+
+margin: 5% 0% 3% 0%;
+color: #5B5B5B;
+
+}
+.careerFormNew .inputs::placeholder {
+  font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 18px;
+  color: #000000;
 }
 
 .careerFormNew select {
   border: none;
+  padding: 5% 0;
   border-bottom: 1px solid black;
   border-radius: 0;
   box-shadow: none !important;
@@ -365,15 +404,12 @@
 /* //////////////////// */
 
 .opening_heading {
-  font-size: 1.25rem;
-  line-height: 1.375rem;
-  text-align: center;
-  font-weight: bold;
+  font-size: 20px;
+    line-height: 22px;
+    text-align: center;
+    font-weight: bold;
 }
 .opening_subheading {
-  font-size: 1rem;
-  line-height: 1.7rem;
-  text-align: center;
   margin-top: 0.4rem;
   margin-bottom: 1.3rem;
 }
@@ -382,11 +418,12 @@
   border: 1px solid #0171c1;
   border-radius: 4px;
   color: #0171c1;
-  padding: 4px 25px;
+  padding: 8px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 15px;
+  line-height: 17px;
   margin-top: 7px;
 }
 .section4 {
@@ -533,8 +570,11 @@
   box-sizing: border-box;
   border-radius: 4px;
 }
+.careerForm_style{
+  margin-top:10%;
+}
 .careerFormNew button {
-  width: 90%;
+  width: 100%;
   font-size: 18px;
   color: #ffff;
   background: #ffaf2b;
@@ -585,22 +625,30 @@
   line-height: 1.875rem;
   margin: 0 10px;
 }
+.careerdetails_breadcrumb{
+  margin: 6% 6% 0% 6%;
+}
 .qualification_section2 {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .apply_left {
-  width: 55%;
-  height: 80%;
-  margin: 10% 0% 6% 8%;
+   /* width: 55%; 
+   height: 80%;  */
+width: 554px;
+ height:829px;
+  height: 10%;
+  margin: 0% 0% 6% 6%;
   transition: 0.3s;
   background-color: white;
   padding: 3% 0% 3% 0%;
 }
 .apply_right {
-  width: 45%;
-  height: 80%;
+  /* width: 45%;
+  height: 80%; */
+  width: 554px;
+  height:829px;
   margin: 10% 9% 6% 2%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: 0;
@@ -609,21 +657,51 @@
   background-color: white;
   padding: 3% 3% 3% 3%;
 }
-.apply_heading {
+.apply_right h4{
   text-align: center;
-  font-weight: bold;
-  font-size: 1.5rem;
-  line-height: 1.625rem;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 26px;
+    font-style: normal;
 }
-.qualification_left_title {
+.qualification_left_title p {
   font-weight: bold;
-  font-size: 1.2rem;
-  line-height: 0rem;
-  margin-right: 0.7rem;
+  font-size: 18px;
+  line-height: 30px;
+  margin-right: 0.5rem;
+  color:#000000
 }
-.qualification_left_note {
-  font-size: 1rem;
-  line-height: 1.5rem;
+.apply_left_title{
+  display:block;
+}
+.apply_left_subtitle{
+   display:inline-block;
+}
+.qualification_left_note p {
+   font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  color:#8A8A8A;
+}
+.qualification_left_note h5 {
+  font-style: normal;
+font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+  color:#000000;
+}
+.qualification_left_note ul li::marker {
+   font-weight: normal;
+  font-size: 27px;
+  color:#5A5656;
+}
+.qualification_left_note ul li {
+  margin-left: 10%;
+  font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 30px;
+color:#000000;
 }
 #fileupload input[type="file"] {
   display: none;
@@ -681,8 +759,11 @@
   padding-top: 10%;
 }
 .form_upload_text {
-  font-size: 13px;
-  padding-left: 5%;
+ font-style: normal;
+font-weight: normal;
+font-size: 13px;
+line-height: 14px;
+color: #000000;
 }
 .formborder ~ .focus_border {
   position: absolute;
@@ -847,10 +928,6 @@
     background-size: contain;
     background-repeat: no-repeat;
     height: 250px;
-  }
-  .breadCum_career {
-    margin-top: 0;
-    margin-left: 20px;
   }
   .section4_subText1 h3 {
     font-size: 26px;
