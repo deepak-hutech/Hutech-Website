@@ -777,7 +777,7 @@ const Section: NextPage = (props: any) => {
           </Container>
         </div>
       );
-    case "successful_product_company":
+    case "partner":
       return (
         <div className={`${companyStyles.partner}`}>
           <div className={`${companyStyles.partner_head}`}>

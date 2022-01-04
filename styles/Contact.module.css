@@ -290,9 +290,9 @@
   font-family: "GraphikRegular";
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 11px;
   color: black;
-  margin-top: -10px;
+  margin-top: -20px;
 }
 
 .contactForm input::-webkit-inner-spin-button {
@@ -320,6 +320,13 @@
 .contact textarea:focus {
   box-shadow: none;
 }
+.contactForm .form-control:invalid:focus {
+  box-shadow: none;
+}
+
+.form-control.is-invalid:focus, .was-validated .form-control:invalid:focus{
+  box-shadow: none;
+}
 
 .contactForm select {
   border: none;
@@ -327,8 +334,8 @@
   border-radius: 0;
   box-shadow: none !important;
   padding: 10px 0;
-  /* background-image: url(../components/assets/dropdown.svg); */
   /* background-image: none !important; */
+  /* background-image: url(../components/assets/dropdown.svg); */
 }
 .selectoption_style {
   font-style: normal;
