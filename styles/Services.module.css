@@ -17,6 +17,7 @@
   display: grid;
   text-align: center;
   color: white;
+  
 }
 .section1 {
   width: 100%;
@@ -46,6 +47,7 @@
   position: absolute;
   top: 26%;
   width: 100%;
+  padding: 0 20%;
 }
 
 .section1 .content .free_text {
@@ -107,6 +109,7 @@
 @media only screen and (max-width: 500px) {
   .section1 .banner_container {
     top: 20%;
+    padding: 0 2%;
   }
   .section1 .content .free_text {
     font-size: 25px;
@@ -115,6 +118,8 @@
   .section1 .content .descrption {
     padding: 0 30px;
     font-size: 12px;
+    display: none;
+
   }
 
   .section1 .banner_container .call_to_action {
@@ -196,7 +201,10 @@
 
 .section3 .clientContent {
   text-align: center;
-  padding: 0;
+  
+}
+.clientContent{
+  padding: 0 8%;
 }
 
 .section3 .clientContent .section3_title {
@@ -310,6 +318,10 @@
   .section3_card .mobile_app_development_card {
     margin: 10px 0;
   }
+  .clientContent{
+    padding: 0%;
+  }
+  
 }
 
 /* //////////SECTION-4 */
@@ -390,6 +402,7 @@
   font-weight: bold;
   font-size: 30px;
   line-height: 29px;
+  padding: 0 20%;
 }
 
 .section5_img_container {
@@ -416,6 +429,9 @@
   font-size: 20px;
   line-height: 22px;
   margin: 20px 0;
+}
+.section5_note{
+  padding: 0 20%;
 }
 
 @media only screen and (max-width: 500px) {

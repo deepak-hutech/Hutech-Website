@@ -58,7 +58,7 @@ const Card: NextPage = (props: any) => {
             data-aos="zoom-in"
             
           >
-            <a id={props.id} href={Link ? Link : `/plans/${props.title}`}>
+            <a id={props.id} href="/portfolio">
               <Image
                 loader={() => myLoader((baseUrl + images[0].url) as any)}
                 src={`${baseUrl}${images[0].url}`}

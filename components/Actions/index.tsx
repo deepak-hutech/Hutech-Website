@@ -30,23 +30,24 @@ const Action: NextPage = ({
       );
     case "dropdown":
       return (
-        <a href={link} className={styles.topNavLink}>
+        <a href={link} className={styles.topsubmenuLink}>
           {display}
           <section className={styles.subMenuContainer}>
-            {group.map(({ title,link, action }: any) => (
+            {group.map(({ title, link, action }: any) => (
               <div className={styles.servicesubMenu}>
-                {/* <Image
+                <div>
+                <Image
                   loader={myLoader}
                   src={subheadingIcon}
                   className={styles.subheaderimg}
-                  width={10}
-                  height={10}
-                /> */}
-                <a href={link} className={styles.topNavLink}>
-
-
-                  {title}
-                </a>
+                  width={3}
+                  height={3}
+                /></div>
+                <div className={styles.suheadercontener}>
+                  <a href={link} className={styles.topsubmenuLink}>
+                    {title}
+                  </a>
+                </div>
 
                 {/* {action?.map((action: any, index: number) => (
                   <a key={index} href={action.link ? action.link : "/"}>
