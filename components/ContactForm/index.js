@@ -1,14 +1,17 @@
-import { useState, createRef } from "react";
+import { useState, createRef, useEffect } from "react";
 import axios from "axios";
 import CareerStyle from "../../styles/Contact.module.css";
 import { InputGroup, Form, Button, Row, Col, Container } from "react-bootstrap";
 import ReCAPTCHA from "react-google-recaptcha";
+import allCountries from "../data/countries.json"
 
 const careerform = () => {
   const recaptchaRef = createRef();
   const [captchaCode, setCaptchaCode] = useState("");
   const [file, setFile] = useState("");
   const [formMessage, setFormMessage] = useState("");
+
+  const [resetForm, setresetForm] = useState()
 
   const [inputs, setInputs] = useState({
     username: String,
@@ -53,6 +56,7 @@ const careerform = () => {
       .then(({ data }) => {
         console.log("Succesfully uploaded: ", JSON.stringify(data));
         setFormMessage("Form submitted successfully.");
+        location.reload();
       })
       .catch((error) => {
         console.log("Error: ", error.message);
@@ -76,7 +80,6 @@ const careerform = () => {
       recaptchaRef.current.reset();
       return;
     }
-    document.getElementById("form").onsubmit = function () {};
   };
 
   const onReCAPTCHAChange = (captchaCode) => {
@@ -92,6 +95,7 @@ const careerform = () => {
   const removeCaptchaCode = () => {
     setCaptchaCode("");
   };
+
   return (
     <Form
       noValidate
@@ -200,9 +204,9 @@ const careerform = () => {
             <option value="" selected>
               Select Country
             </option>
-            <option value="India">India</option>
-            <option value="China">China</option>
-            <option value="Japan">Japan</option>
+            {allCountries.map((val)=> (
+              <option value={val.name}>{val.name}</option>
+            ))}
           </Form.Select>
         </Form.Group>
 
@@ -224,9 +228,9 @@ const careerform = () => {
             <option value="" selected>
               Select interested service
             </option>
-            <option value="service1">service1</option>
-            <option value="service2">service2</option>
-            <option value="servic3">Service3</option>
+            <option value="Staff Augmentation">Staff Augmentation</option>
+            <option value="Managed Project">Managed Project</option>
+            <option value="Time and Material Hybrid">Time and Material Hybrid</option>
           </Form.Select>
         </Form.Group>
       </Row>
@@ -265,12 +269,15 @@ const careerform = () => {
         File types: pdf, docx and doc | Maximum file size: 5MB.
       </p>
 
+       <Form.Label>
+          Please check the box below to proceed
+        </Form.Label> 
       <ReCAPTCHA
         ref={recaptchaRef}
         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
         onChange={onReCAPTCHAChange}
         onExpired={removeCaptchaCode}
-        onErrored={removeCaptchaCode}
+        onErrored={removeCaptchaCode} 
       />
       <button type="submit" onClick={handleSubmit}>
         Submit

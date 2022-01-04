@@ -224,6 +224,7 @@
 }
 .web_front_end_title h2 {
   font-size: 24px;
+  font-weight: 600;
 }
 .web_front_end_para p {
   font-size: 14px;
@@ -399,7 +400,16 @@
 }
 
 .partner .logos .images {
-  margin: 30px;
+  /* margin: 30px; */
+    width: 254px;
+    height: 154px;
+    margin: 2% 4% 2% 0;
+    border: 1px solid #d1d1d1;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 1px;
 }
 
 @media only screen and (max-width: 500px) {
@@ -408,16 +418,24 @@
   }
   .partner .desc p {
     font-size: 12px;
+    line-height: 21px;
   }
+
   .partner .allProducts .images {
     margin: 10px;
     width: 85px;
   }
   .partner .logos {
     width: 50%;
+    margin-top: 0;
   }
   .partner {
     padding: 50px 10px;
+  }
+
+  .partner  .logos .images {
+    width: 140px;
+    height: 90px;
   }
 }
 
@@ -483,7 +501,7 @@
 }
 
 .c_cards {
-  width: 120px;
+  width: 119px;
   height: 120px;
   margin: 5px;
   padding: 8px 2px;
@@ -520,8 +538,8 @@
 @media only screen and (max-width: 500px) {
   .c_cards {
     margin: 5px 10px;
-    width: 90px;
-    height: 90px;
+    width: 88px;
+    height: 88px;
     padding: 7px 2px;
   }
 
