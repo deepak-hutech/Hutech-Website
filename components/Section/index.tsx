@@ -30,6 +30,8 @@ import strings from "./../../public/strings.json";
 import expertiseStyle from "../../styles/expertise.module.css";
 import leftIconportfolio from "../../components/assets/rightcaro.svg";
 import rightIconportfolio from "../../components/assets/leftcaro.svg";
+import link from "next/link";
+import Link from "next/link";
 
 const { baseUrl } = strings;
 
@@ -356,7 +358,10 @@ const Section: NextPage = (props: any) => {
                   {item.call_to_action && (
                     <div className={styles.buttons}>
                       <div className={styles.homecall_to_action}>
-                        {item.call_to_action}
+                        
+                        <Link href={`/portfolio`}>
+                      <a>{item.call_to_action}</a>
+                    </Link>
                       </div>
                     </div>
                   )}
@@ -563,7 +568,8 @@ const Section: NextPage = (props: any) => {
                         src={`${baseUrl}${item.arrow_icon[0].url}`}
                         className={styles.arrowicon}
                       />
-                      {item.call_to_action}{" "}
+                      <a href={item.link}>
+                      {item.call_to_action}{" "}</a>
                     </div>
                   ))}
                 </div>

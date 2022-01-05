@@ -14,12 +14,16 @@
   color: #fff;
   margin: 0;
   display: flex;
+  opacity: .5;
   
+}
+.footersubheading:hover{
+opacity: 1;
 }
 .footersubheading img {
   margin-right: 8px;
   min-height: auto;
-  margin-top: 5px;
+  margin-top: 2px;
   height: 100%;
 }
 .navContainer button {
@@ -68,6 +72,13 @@
   font-weight: normal;
   font-size: 11px;
   margin: 0;
+  opacity: .5;
+}
+footer .terms , .copyRight:hover {
+  opacity: 1;
+}
+.terms:hover{
+  opacity: 1;
 }
 
 .footer .iconsContainer {
@@ -81,7 +92,12 @@
 
 .footer .iconsContainer img {
   padding:  0 5px;
+  opacity: .5;
 }
+.footer .iconsContainer img:hover{
+  opacity: 1;
+} 
+
 
 @media only screen and (max-width: 500px) {
   .footer {
