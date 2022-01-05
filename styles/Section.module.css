@@ -678,7 +678,7 @@
 
   .carosel_card_mob img {
     width: 100%;
-    height: 330px;
+    height: 300px;
   }
   .clientcarousel {
     height: 280px;
@@ -697,6 +697,9 @@
     top: 12%;
     font-size: 34px;
     line-height: 40px;
+  }
+  .serviceKeySolutionimg img {
+    height: auto;
   }
   .accordion_head {
     margin-top: 200px;
@@ -857,6 +860,9 @@
   line-height: 30px;
   color: #ffff;
 }
+.fome_form_button a:hover{
+  color: #fff;
+}
 .arrowicon {
   margin-right: 16px;
   width: 24px;
@@ -918,11 +924,20 @@
   }
   .successful_product {
     padding: 5% 2% 8% 2%;
-    margin-bottom: 6%;
+    /* margin-bottom: 6%; */
   }
   .banner_container {
-    top: 30%;
+    top: 24%;
     left: 4%;
+    right: 4%;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid #cceaff;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px #bee4ff;
+    border-radius: 5px;
+    width: auto;
+    padding: 10px 28px 0 10px;
   }
   .our_latest_works {
     padding: 16% 0% 10% 0%;
@@ -941,6 +956,7 @@
   }
   .serviceKeySolutionimg {
     width: 100%;
+    height: auto;
   }
   .development_title h3 {
     font-size: 26px;
@@ -970,7 +986,7 @@
     padding: 4%;
   }
   .carousel {
-    margin-top: -60px;
+    margin-top: 0px;
   }
   .clients_cards {
     margin-top: 0px;

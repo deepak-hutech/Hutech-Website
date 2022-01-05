@@ -159,6 +159,7 @@
   font-style: normal;
   font-weight: 600;
   font-size: 38px;
+  
 }
 
 .section2 .section2_note {
@@ -177,6 +178,7 @@
   line-height: 33px;
   font-family: "GraphikMedium";
   font-size: 36px;
+  line-height: 50px;
 }
 
 @media only screen and (max-width: 500px) {
