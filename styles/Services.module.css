@@ -170,7 +170,7 @@ line-height: 30px;
 .section2 .section2_note {
   display: flex;
   justify-content: center;
-  margin: 0 6%;
+  /* margin: 0 0%; */
 }
 .section2 .section2_note p {
   /* font-family: "GraphikRegular"; */
@@ -180,12 +180,6 @@ font-size: 15px;
 line-height: 24px;
 text-align:justify;
 }
-/* .section2 .section2_title p {
-  text-align: center;
-  line-height: 33px;
-  font-family: "GraphikMedium";
-  font-size: 36px;
-} */
 
 @media only screen and (max-width: 500px) {
   .section2 .section2_title p {
@@ -212,7 +206,7 @@ text-align:justify;
   
 }
 .clientContent{
-  padding: 0 8%;
+  padding: 0 6%;
 }
 
 .section3 .clientContent .section3_title p {
@@ -277,7 +271,7 @@ font-size: 15px;
 line-height: 24px;
  display: -webkit-box;
   max-width: 360px;
-  -webkit-line-clamp: 9;
+  -webkit-line-clamp: 7;
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 10px;

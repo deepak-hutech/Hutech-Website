@@ -218,7 +218,7 @@ const Card: NextPage = (props: any) => {
                 className={servicesStyles.section3_para}
                 dangerouslySetInnerHTML={{ __html: marked(free_text) }}
               ></div>
-              {/* <button>
+              <button>
                 <p>
                   {call_to_action}
                   {images.map((v: any) => (
@@ -227,7 +227,7 @@ const Card: NextPage = (props: any) => {
                     </div>
                   ))}
                 </p>
-              </button> */}
+              </button>
             </div>
           </a>
         </div>
