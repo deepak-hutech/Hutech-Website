@@ -86,7 +86,7 @@ const AllBlogs: NextPage<{
         style={{
           display: "flex",
           flexWrap: "wrap",
-          padding: "0 7% 8%",
+          padding: "0 2% 8%",
           position: "relative",
           justifyContent: "center",
         }}

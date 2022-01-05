@@ -555,7 +555,7 @@ const Card: NextPage = (props: any) => {
                 className={expertiseStyle.expertise_subheading}
                 dangerouslySetInnerHTML={{ __html: marked(free_text) }}
               ></div>
-              <button>
+              {/* <button>
                 <p>
                   {call_to_action}
                   {icon.map((v: any) => (
@@ -564,7 +564,7 @@ const Card: NextPage = (props: any) => {
                     </div>
                   ))}
                 </p>
-              </button>
+              </button> */}
             </div>
           </a>
         </div>
