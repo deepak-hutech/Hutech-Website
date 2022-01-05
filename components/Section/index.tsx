@@ -11,6 +11,8 @@ import "react-multi-carousel/lib/styles.css";
 import leftIcon from "../../components/assets/leftarrow.svg";
 import leftIconBlog from "../../components/assets/leftarrowblog.svg";
 import mailIcon from "../../components/assets/mail-icon@2x.svg";
+import mailImage from "../../components/assets/contact-email-icon@2x.svg";
+import CallImage from "../../components/assets/contact-call-icon@2x.svg";
 import phoneIcon from "../../components/assets/phone-icon@2x.svg";
 import rightIcon from "../../components/assets/rightarrow.svg";
 import rightIconBlog from "../../components/assets/rightarrowblog.svg";
@@ -21,6 +23,7 @@ import contactStyle from "../../styles/Contact.module.css";
 import portfolioStyles from "../../styles/Portfolio.module.css";
 import styles from "../../styles/Section.module.css";
 import servicesStyles from "../../styles/Services.module.css";
+import flag from "../../components/assets/flag-icon.png";
 import Card from "../Card";
 import CareerForm from "../careerForm/index.js";
 import ContactForm from "../ContactForm";
@@ -358,10 +361,9 @@ const Section: NextPage = (props: any) => {
                   {item.call_to_action && (
                     <div className={styles.buttons}>
                       <div className={styles.homecall_to_action}>
-                        
                         <Link href={`/portfolio`}>
-                      <a>{item.call_to_action}</a>
-                    </Link>
+                          <a>{item.call_to_action}</a>
+                        </Link>
                       </div>
                     </div>
                   )}
@@ -568,8 +570,7 @@ const Section: NextPage = (props: any) => {
                         src={`${baseUrl}${item.arrow_icon[0].url}`}
                         className={styles.arrowicon}
                       />
-                      <a href={item.link}>
-                      {item.call_to_action}{" "}</a>
+                      <a href={item.link}>{item.call_to_action} </a>
                     </div>
                   ))}
                 </div>
@@ -1135,7 +1136,7 @@ const Section: NextPage = (props: any) => {
               )}
             </div>
           </div>
-          <div style={{ padding: "2% 6% 0" }}>
+          <div style={{ padding: "3% 6% 2%" }}>
             <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
           </div>
           <div className={contactStyle.contact}>
@@ -1197,16 +1198,29 @@ const Section: NextPage = (props: any) => {
                           Send us an email with necessary screenshots and your
                           account details to:
                         </h4>
-                        <div className={contactStyle.sendEmail}>
-                          <Button variant="">
-                            contactus@hutechsolutions.com
-                          </Button>
-                        </div>
                       </div>
-                      <div>
-                        <h4>For sales enquiries, contact us at:</h4>
-                        <div className={contactStyle.sendEmail}>
-                          <Button variant="">pravat@hutechsolutions.com</Button>
+                      <div className={contactStyle.mailcontainer}>
+                        <div className={contactStyle.mailimage}>
+                          <Image
+                            loader={myLoader}
+                            src={mailImage}
+                            alt="Picture of the author"
+                            width={200}
+                            height={200}
+                          />{" "}
+                        </div>
+                        <div className={contactStyle.mailcontenertext}>
+                          <div className={contactStyle.sendEmail}>
+                            <a href="mailto:contactus@hutechsolutions.com">
+                              contactus@hutechsolutions.com
+                            </a>
+                          </div>
+                          <h5>For sales enquiries, contact us at:</h5>
+                          <div className={contactStyle.sendEmail}>
+                            <a href="mailto:pravat@hutechsolutions.com">
+                              pravat@hutechsolutions.com
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1241,16 +1255,39 @@ const Section: NextPage = (props: any) => {
                           Mail)
                         </p>
                       </div>
-                      <div>
-                        <Row>
-                          <Col>India +91-2874787284</Col>
-                        </Row>
-                        <Row>
-                          <Col>India +91-2874787284</Col>
-                        </Row>
-                        <Row>
-                          <Col>India +91-2874787284</Col>
-                        </Row>
+                      <div className={contactStyle.mailcontainer}>
+                        <div className={contactStyle.mailimage}>
+                          <Image
+                            loader={myLoader}
+                            src={CallImage}
+                            alt="Picture of the author"
+                            width={200}
+                            height={200}
+                          />{" "}
+                        </div>
+                        <div className={contactStyle.mailcontenertext}>
+                          <div className={contactStyle.calltextarea}>
+                          <Image
+                            loader={myLoader}
+                            src={flag}
+                            alt="Picture of the author"
+                            width={40}
+                            height={20}
+                          />
+                          <a href="tel:+91-2874787284">India +91-2874787284</a>
+                          </div>
+                          <div className={contactStyle.calltextarea}>
+                          <Image
+                            loader={myLoader}
+                            src={flag}
+                            alt="Picture of the author"
+                            width={40}
+                            height={20}
+                          />
+                          <a href="tel:+91-2874787284">India +91-2874787284</a>
+                          </div>
+                          
+                        </div>
                       </div>
                     </div>
                   </Tab>

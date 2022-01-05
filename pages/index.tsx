@@ -48,8 +48,8 @@ const Home: NextPage<{ header: any; pages: any; footer: any; blogs: any }> = (
   return (
     <div ref={scrollRef}>
       <Head>
-        <title>{title}</title>
-        <meta name="description" content={descrption} />
+        <title>Hutech Soultion Pvt. Ltd.</title>
+        <meta name="description" content="Hutech Soultion Pvt. Ltd." />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         {/* <link
           rel="stylesheet"

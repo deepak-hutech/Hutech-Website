@@ -117,6 +117,9 @@ ul {
   
   top: 2px;
 }
+.nav-tabs .nav-link.active{
+  color: #2F95DE;
+}
 /* 
  #breadCrum ol li a{
    font-weight: 600;

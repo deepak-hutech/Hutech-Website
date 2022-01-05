@@ -272,7 +272,7 @@
     padding: 20px;
   }
   .postdate {
-    margin-left: 30%;
+    margin-left: 28%;
     width: 100%;
     padding: 0px;
   }
@@ -307,9 +307,9 @@
   }
 
   .compo {
-    /* height: 444px; */
-    margin: 20px 50px;
-    /* width: auto; */
+    height: 444px;
+    
+    width: auto;
   }
   .section5_subText2 {
     font-size: 20px;

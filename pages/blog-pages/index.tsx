@@ -27,7 +27,7 @@ const AllBlogs: NextPage<{
   blogs: any;
   blogBanner: any;
 }> = (props) => {
-  const PAGE_SIZE = 3;
+  const PAGE_SIZE = 6;
   const scrollRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const { header, footer, blogs, blogBanner } = props;
   const [pageNum, setPageNum] = useState(1);

@@ -11,11 +11,11 @@
   margin-top: 66px;
 }
 
-.sucessmsg{
+.sucessmsg {
   font-size: 15px;
   color: green;
 }
-.errormsg{
+.errormsg {
   font-size: 15px;
   color: red;
 }
@@ -53,8 +53,8 @@
 .section1_subText1 h3 {
   font-style: normal;
   font-size: 40px;
-  line-height:44px;
-  color: #FFFFFF;
+  line-height: 44px;
+  color: #ffffff;
   font-weight: bold;
   font-family: "GraphikMedium";
 }
@@ -76,8 +76,8 @@
   justify-content: center;
 }
 .breadCum_career {
- margin-top: 6%;
-    margin-left: 6%;
+  margin-top: 6%;
+  margin-left: 6%;
 }
 .sec2_left {
   width: 50%;
@@ -197,24 +197,24 @@
 
 .section3_title h3 {
   font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 33px;
-    margin-top: 20%;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 33px;
+  margin-top: 20%;
 }
 
 .section3_title h5 {
   font-style: normal;
-    font-weight: normal;
-    font-family: "GraphikMedium";
-    font-size: 18px;
-    line-height: 20px;
-    margin-top: 7%;
+  font-weight: normal;
+  font-family: "GraphikMedium";
+  font-size: 18px;
+  line-height: 20px;
+  margin-top: 7%;
 }
 
 .section3_note p {
   font-size: 18px;
-  line-height:24px;
+  line-height: 24px;
   text-align: center;
   font-style: normal;
   font-weight: normal;
@@ -247,7 +247,7 @@
   content: "";
   position: absolute;
   border-style: solid;
-  border-radius:15px ;
+  border-radius: 15px;
   border-color: #0171c1;
   transition-duration: 0.4s;
   /* z-index: -1; */
@@ -277,17 +277,17 @@
 
 .feature_heading {
   font-size: 24px;
-    line-height: 30px;
-    text-align: center;
-    font-weight: bold;
-    font-style: normal;
+  line-height: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-style: normal;
 }
-.feature_subheading p{
+.feature_subheading p {
   font-size: 15px;
-    line-height: 30px;
-    text-align: center;
-    font-weight: normal;
-    font-style: normal;
+  line-height: 30px;
+  text-align: center;
+  font-weight: normal;
+  font-style: normal;
   margin-top: 0.5rem;
 }
 .feature_cardtext {
@@ -317,7 +317,7 @@
   transition: all 0.15s ease-in-out;
   padding: 3% 1.5% 3% 1.5%;
 }
-.openingcard img{
+.openingcard img {
   object-fit: contain;
 }
 .openingcard:hover {
@@ -327,7 +327,7 @@
   display: flex;
 }
 .estimate_call img {
-object-fit:contain;
+  object-fit: contain;
 }
 .estimate_call:hover {
   animation: pulse 1s infinite;
@@ -366,21 +366,20 @@ object-fit:contain;
   padding: 5% 0;
   width: 100%;
 }
-.captcha_text{
+.captcha_text {
   font-style: normal;
-font-weight: normal;
-font-size: 16px;
-line-height: 18px;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
 
-margin: 5% 0% 3% 0%;
-color: #5B5B5B;
-
+  margin: 5% 0% 3% 0%;
+  color: #5b5b5b;
 }
 .careerFormNew .inputs::placeholder {
   font-style: normal;
-font-weight: normal;
-font-size: 16px;
-line-height: 18px;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
   color: #000000;
 }
 
@@ -405,9 +404,9 @@ line-height: 18px;
 
 .opening_heading {
   font-size: 20px;
-    line-height: 22px;
-    text-align: center;
-    font-weight: bold;
+  line-height: 22px;
+  text-align: center;
+  font-weight: bold;
 }
 .opening_subheading {
   margin-top: 0.4rem;
@@ -570,8 +569,8 @@ line-height: 18px;
   box-sizing: border-box;
   border-radius: 4px;
 }
-.careerForm_style{
-  margin-top:10%;
+.careerForm_style {
+  margin-top: 10%;
 }
 .careerFormNew button {
   width: 100%;
@@ -588,7 +587,7 @@ line-height: 18px;
   cursor: pointer;
   text-align: center;
 }
-.career_col{
+.career_col {
   margin: 0 0 30px 0;
 }
 .careerFormNew button:hover {
@@ -625,19 +624,19 @@ line-height: 18px;
   line-height: 1.875rem;
   margin: 0 10px;
 }
-.careerdetails_breadcrumb{
+.careerdetails_breadcrumb {
   margin: 6% 6% 0% 6%;
 }
 .qualification_section2 {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
 }
 .apply_left {
-   /* width: 55%; 
+  /* width: 55%; 
    height: 80%;  */
-width: 554px;
- height:829px;
+  width: 554px;
+  height: 829px;
   height: 10%;
   margin: 0% 0% 6% 6%;
   transition: 0.3s;
@@ -648,8 +647,8 @@ width: 554px;
   /* width: 45%;
   height: 80%; */
   width: 554px;
-  height:829px;
-  margin: 10% 9% 6% 2%;
+  height: 829px;
+  margin: 4% 9% 6% 2%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: 0;
   border-radius: 15px;
@@ -657,51 +656,51 @@ width: 554px;
   background-color: white;
   padding: 3% 3% 3% 3%;
 }
-.apply_right h4{
+.apply_right h4 {
   text-align: center;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 26px;
-    font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 26px;
+  font-style: normal;
 }
 .qualification_left_title p {
   font-weight: bold;
   font-size: 18px;
   line-height: 30px;
   margin-right: 0.5rem;
-  color:#000000
+  color: #000000;
 }
-.apply_left_title{
-  display:block;
+.apply_left_title {
+  display: block;
 }
-.apply_left_subtitle{
-   display:inline-block;
+.apply_left_subtitle {
+  display: inline-block;
 }
 .qualification_left_note p {
-   font-weight: normal;
+  font-weight: normal;
   font-size: 18px;
   line-height: 30px;
-  color:#8A8A8A;
+  color: #8a8a8a;
 }
 .qualification_left_note h5 {
   font-style: normal;
-font-weight: normal;
+  font-weight: normal;
   font-size: 16px;
   line-height: 30px;
-  color:#000000;
+  color: #000000;
 }
 .qualification_left_note ul li::marker {
-   font-weight: normal;
+  font-weight: normal;
   font-size: 27px;
-  color:#5A5656;
+  color: #5a5656;
 }
 .qualification_left_note ul li {
   margin-left: 10%;
   font-style: normal;
-font-weight: normal;
-font-size: 16px;
-line-height: 30px;
-color:#000000;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+  color: #000000;
 }
 #fileupload input[type="file"] {
   display: none;
@@ -759,11 +758,11 @@ color:#000000;
   padding-top: 10%;
 }
 .form_upload_text {
- font-style: normal;
-font-weight: normal;
-font-size: 13px;
-line-height: 14px;
-color: #000000;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 14px;
+  color: #000000;
 }
 .formborder ~ .focus_border {
   position: absolute;
@@ -805,6 +804,7 @@ color: #000000;
   }
 }
 
+
 @media only screen and (max-width: 768px) {
   .section1_subText1 h3 {
     font-size: 1.5rem;
@@ -828,7 +828,6 @@ color: #000000;
   .sec2_left_note {
     font-size: 0.85rem;
     line-height: 1.3rem;
-    
   }
   .sec2_right {
     width: 75%;
@@ -891,39 +890,59 @@ color: #000000;
 }
 @media only screen and (max-width: 480px) {
   .apply_right {
-    width: 100%;
-    margin: 0;
-    
+    width: 90%;
+    margin: 0 5% 6%;
+  }
+  .careerFormNew select {
+    font-size: 12px;
+  }
+  .careerFormNew .inputs::placeholder {
+    font-size: 12px;
+  }
+  .qualification_left_note ul li::marker {
+    font-size: 18px;
+  }
+  .qualification_left_title p {
+    font-size: 15px;
+  }
+  .qualification_left_note h5 {
+    font-size: 12px;
+  }
+  .qualification_left_note p {
+    font-size: 15px;
   }
   .sec2_left_note p {
     font-size: 12px;
-    
   }
+  .apply_right {
+   
+    height: auto;}
+  
   .careerFormNew .inputs {
     margin: 0;
     width: 100%;
+    font-size: 12px;
   }
   .apply_left {
     width: 90%;
     margin: 10px;
-    padding:0;
+    padding: 0;
   }
   .section1_centerText {
     width: 100%;
     padding: 20px;
-    top:44%;
+    top: 44%;
   }
   .section2_content {
     display: inline-block;
   }
   .section1_subText1 h3 {
     font-size: 26px;
-    
   }
-  .section1{
+  .section1 {
     display: none;
   }
-  .main_sec1{
+  .main_sec1 {
     background-image: url(../components/assets/mobile-career-top-banner-bg-new.jpg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -937,7 +956,6 @@ color: #000000;
   }
   .section1_subText2 p {
     font-size: 12px;
-    
   }
   .Estimate_btn1 {
     height: auto;
@@ -981,7 +999,6 @@ color: #000000;
   }
   .section5_centerText {
     width: 100%;
-    
   }
   .section5_banner_web {
     display: none;
@@ -994,6 +1011,9 @@ color: #000000;
     height: 230px;
   }
   .qualification_left_note {
+    font-size: 12px;
+  }
+  .qualification_left_note ul li {
     font-size: 12px;
   }
 }
