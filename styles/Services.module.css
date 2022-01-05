@@ -50,16 +50,21 @@
   padding: 0 20%;
 }
 
-.section1 .content .free_text {
+.section1 .content .free_text p {
   font-family: "GraphikMedium";
   font-style: normal;
   font-weight: bold;
-  font-size: 38px;
+  font-size: 50px;
   line-height: 55px;
+  text-align: center;
 }
 
-.section1 .content .descrption {
-  padding: 0 30px;
+.section1 .content .descrption p{
+  font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 30px;
+ text-align: center;
 }
 
 .companybanner .title p {
@@ -88,15 +93,16 @@
   background-color: #ffaf2b;
   width: max-content;
   font-family: "GraphikRegular";
-  padding: 8px 40px;
-  font-size: 16px;
-  font-weight: 800;
-  line-height: 20px;
+  padding: 15px 50px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 17px;
   border: 0px;
   border-radius: 60px;
   cursor: pointer;
   border: none;
   margin: auto;
+  text-transform: uppercase;
   transition: background-color 0.3s cubic-bezier(0.55, 0, 0.1, 1),
     color 0.3s cubic-bezier(0.55, 0, 0.1, 1);
   transition: box-shadow 1s cubic-bezier(0.55, 0, 0.1, 1) 0s;
@@ -153,7 +159,7 @@
 
 .section2 .section2_title p {
   text-align: center;
-  line-height: 33px;
+  line-height: 44px;
   margin-top: 30px;
   font-family: "GraphikMedium";
   font-style: normal;
@@ -165,9 +171,10 @@
 .section2 .section2_note {
   display: flex;
   justify-content: center;
+  /* margin: 0 0%; */
 }
 .section2 .section2_note p {
-  font-family: "GraphikRegular";
+  /* font-family: "GraphikRegular"; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -206,29 +213,33 @@
   
 }
 .clientContent{
-  padding: 0 8%;
+  padding: 0 6%;
 }
 
-.section3 .clientContent .section3_title {
+.section3 .clientContent .section3_title p {
   font-family: "GraphikMedium";
   text-align: center;
-  font-weight: 600;
-  font-size: 34px;
-  line-height: 40px;
+  font-style: normal;
+font-weight: 600;
+font-size: 36px;
+line-height: 24px;
 }
 
-.section3 .section3_note {
+.section3 .section3_note p{
   font-family: "GraphikRegular";
   font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
+font-weight: normal;
+font-size: 16px;
+line-height: 24px;
+text-align: center;
 }
 
-.section3_heading {
+.section3_heading p{
   font-family: "GraphikMedium";
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 24px;
+  font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 24px;
 }
 
 .section3_card {
@@ -259,26 +270,18 @@
   border-radius: 20px;
 }
 
-.section3_cards .section3_para {
+.section3_cards .section3_para p {
   font-family: "GraphikRegular";
   font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 21px !important;
-  display: -webkit-box;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+ display: -webkit-box;
   max-width: 360px;
-  -webkit-line-clamp: 9;
+  -webkit-line-clamp: 7;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  line-height: 24px;
   margin-bottom: 10px;
-}
-
-.section3_cards .section3_para {
-  font-family: "GraphikRegular";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
 }
 .section3_card .mobile_app_development_card button {
   all: unset;
