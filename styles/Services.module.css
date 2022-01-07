@@ -154,7 +154,8 @@ line-height: 30px;
 
 /* /////////SECTION2/ */
 .section2 {
-  margin-bottom: 40px;
+ max-width: 1200px;
+    margin: 2% auto;
 }
 
 .section2 .section2_title p {
@@ -193,12 +194,14 @@ text-align:justify;
   background-color: #f1f8ff;
   background-image: url(../components/assets/transparent-bg.png);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100% 100%;
   background-position: center;
 }
 
 .section3 .Industries_banner {
-  padding: 5%;
+   max-width: 1200px;
+    margin: 2% auto;
+    padding: 5% 0;
 }
 
 .section3 .clientContent {
@@ -237,12 +240,12 @@ line-height: 24px;
 
 .section3_card {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   flex-wrap: wrap;
-  padding-left: 10px;
-  margin-top: 35px;
-  padding: 10px;
+  /* padding-left: 10px; */
+  /* margin-top: 35px;
+  padding: 10px; */
 }
 
 .section3_serviceimg {
@@ -254,7 +257,7 @@ line-height: 24px;
 .section3_card .mobile_app_development_card {
   width: 330px;
   height: 350px;
-  margin: 2px 20px;
+  margin: 2% 5% 2% 0%;
   padding: 20px 18px;
   background: #ffffff;
   border: 1px solid #cccccc;
@@ -323,7 +326,10 @@ line-height: 24px;
 }
 
 /* //////////SECTION-4 */
-
+.service_section4{
+  max-width:1200px;
+  margin:0 auto;
+}
 .clientContent4 {
   text-align: center;
   margin: 50px 0;
@@ -388,6 +394,8 @@ line-height: 24px;
 /* ////////////////////SECTION-5 */
 
 .section5 {
+  max-width: 1200px;
+  margin: 0 auto;
   padding-bottom: 4rem;
 }
 .section5_content {
@@ -419,7 +427,7 @@ line-height: 24px;
 .section5 .mobile_app_development_cards {
   margin: 0px;
   padding: 10px 16px;
-  width: 330px;
+  width: 290px;
 }
 
 .section5 .mobile_app_development_cards .section5_heading {
@@ -597,13 +605,18 @@ line-height: 24px;
 /* SECTION-8 */
 
 .section8 {
+  
   text-align: center;
   background-color: #eea52c;
   padding: 50px 0;
   background-image: url(../components/assets/our-work-bg.png);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100% 100%;
   background-position: center;
+}
+.section8 .Industries_banner{
+max-width: 1200px;
+  margin: 0 auto;
 }
 .section8 .clientContent {
   padding: 30px 0;
