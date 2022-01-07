@@ -335,7 +335,7 @@ const Section: NextPage = (props: any) => {
             ssr={true} // means to render carousel on server-side.
             infinite={true}
             autoPlaySpeed={5000}
-            autoPlay={true}
+            autoPlay={false}
             keyBoardControl={true}
             customTransition="all .5"
             transitionDuration={500}
@@ -346,7 +346,7 @@ const Section: NextPage = (props: any) => {
             className={styles.carosel_banner}
           >
             {carosel_cards.map((item: any) => (
-              <div className={styles.carosel_card} data-aos="zoom-in">
+              <div className={styles.carosel_card} >
                 <img src={baseUrl + item.images[0].url} />
 
                 <div className={styles.banner_container}>
@@ -441,16 +441,18 @@ const Section: NextPage = (props: any) => {
     case "successful_product":
       return (
         <div className={styles.successful_product}>
-          {free_text && (
-            <div
-              className={styles.product_title}
-              dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-            ></div>
-          )}
-          <div className={styles.capabilities_cards}>
-            {carosel_cards.map((_card: any, index: number) => (
-              <Card {..._card} key={index} />
-            ))}
+          <div className={styles.successful_product_contener}>
+            {free_text && (
+              <div
+                className={styles.product_title}
+                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+              ></div>
+            )}
+            <div className={styles.capabilities_cards}>
+              {carosel_cards.map((_card: any, index: number) => (
+                <Card {..._card} key={index} />
+              ))}
+            </div>
           </div>
         </div>
       );
@@ -542,6 +544,7 @@ const Section: NextPage = (props: any) => {
     case "home_form":
       return (
         <div className={`${styles.home_form_section}`}>
+          <div className={styles.home_from_container}>
           <div className={`${styles.left_content}`}>
             <div className={styles.left_content_title}>
               {free_text && (
@@ -585,6 +588,7 @@ const Section: NextPage = (props: any) => {
 
           <div className={styles.right_from_section}>
             <HomeForm />
+          </div>
           </div>
         </div>
       );
@@ -1059,7 +1063,7 @@ const Section: NextPage = (props: any) => {
     case "home_blog":
       return (
         <div className={`${styles.blog_banner}`}>
-          <div className={styles.carousel}>
+          <div className={styles.carousel_blog_home}>
             <Carousel
               swipeable={true}
               draggable={false}
@@ -1267,26 +1271,29 @@ const Section: NextPage = (props: any) => {
                         </div>
                         <div className={contactStyle.mailcontenertext}>
                           <div className={contactStyle.calltextarea}>
-                          <Image
-                            loader={myLoader}
-                            src={flag}
-                            alt="Picture of the author"
-                            width={40}
-                            height={20}
-                          />
-                          <a href="tel:+91-2874787284">India +91-2874787284</a>
+                            <Image
+                              loader={myLoader}
+                              src={flag}
+                              alt="Picture of the author"
+                              width={40}
+                              height={20}
+                            />
+                            <a href="tel:+91-2874787284">
+                              India +91-2874787284
+                            </a>
                           </div>
                           <div className={contactStyle.calltextarea}>
-                          <Image
-                            loader={myLoader}
-                            src={flag}
-                            alt="Picture of the author"
-                            width={40}
-                            height={20}
-                          />
-                          <a href="tel:+91-2874787284">India +91-2874787284</a>
+                            <Image
+                              loader={myLoader}
+                              src={flag}
+                              alt="Picture of the author"
+                              width={40}
+                              height={20}
+                            />
+                            <a href="tel:+91-2874787284">
+                              India +91-2874787284
+                            </a>
                           </div>
-                          
                         </div>
                       </div>
                     </div>

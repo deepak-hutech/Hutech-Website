@@ -95,7 +95,7 @@
   transform: translateZ(0);
 }
 .headerbtn :hover {
-  color: #000;
+  color: #fff;
 }
 .headerbtn::before {
   background-color: #0171c1;
@@ -113,6 +113,7 @@
 .headerbtn:hover::before {
   transform: scaleX(1);
   transform-origin: center left;
+  border-radius: 30px;
 }
 
 .subMenuContainer {
@@ -216,7 +217,7 @@
   .navContainer a {
     margin: 0 8px;
     padding: 12px 0;
-    color: #fff;
+    color: #000;
     font-family: "GraphikMedium";
   }
   .headerbtn {

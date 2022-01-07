@@ -20,7 +20,7 @@
 .clients_card {
   width: 254px;
   height: 154px;
-  margin: 2% 4% 2% 0;
+  margin: 16px;
   border: 1px solid #d1d1d1;
   box-sizing: border-box;
   border-radius: 5px;
@@ -279,7 +279,7 @@
 }
 .heading {
   font-size: 20px;
-  margin: 30px 70px 20px 20px;
+  margin: 30px 20px 30px 20px;
   text-transform: capitalize;
   line-height: 22px;
   text-align: center;
