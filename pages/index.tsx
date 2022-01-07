@@ -9,35 +9,15 @@ import strings from "../public/strings.json";
 
 
 const { baseUrl } = strings;
-// if (typeof window !== "undefined") {
-//   const LocomotiveScroll = require("locomotive-scroll");
-//   const scroll = new LocomotiveScroll.default({
-//     el: document.querySelector("[data-scroll-container]"),
-//     smooth: true,
-//   });
-// }
+
 
 const Home: NextPage<{ header: any; pages: any; footer: any; blogs: any }> = (
   props
 ) => {
-  // if (!props.pages) {
-  //   return <ErrorPage statusCode={404} />;
-  // }
-
+  
   const scrollRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 
-  // useEffect(() => {
-  //   if (typeof window === "undefined") {
-  //     return;
-  //   }
-  //   const LocomotiveScroll = require("locomotive-scroll");
-  //   const scroll = new LocomotiveScroll.default({
-  //     el: scrollRef.current,
-  //     smooth: true,
-  //   });
-
-  //   return () => scroll.destroy();
-  // }, []);
+  
 
   const { header, footer } = props;
   const { title, content, Logo, descrption } = props?.pages[0];
@@ -48,8 +28,8 @@ const Home: NextPage<{ header: any; pages: any; footer: any; blogs: any }> = (
   return (
     <div ref={scrollRef}>
       <Head>
-        <title>{title}</title>
-        <meta name="description" content={descrption} />
+        <title>Hutech Soultion Pvt. Ltd.</title>
+        <meta name="description" content="Hutech Soultion Pvt. Ltd." />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         {/* <link
           rel="stylesheet"
@@ -61,21 +41,18 @@ const Home: NextPage<{ header: any; pages: any; footer: any; blogs: any }> = (
 
        
       </Head>
+      <div className="root">
       <Header {...header} />
-      {/* <div style={{display:"none"}}>
-      <Breadcrumbs useDefaultStyle transformLabel={(title) => title } />
-      <Breadcrumbs omitRootLabel />
-      </div> */}
+      
 
       {content.map((section: any) => (
         <Section {...section} />
       ))}
 
-      {/* {AllBlogContent.map((section: any) => (
-        <BlogSection {...section} />
-      ))} */}
+      
 
       <Footer {...footer} />
+      </div>
     </div>
   );
 };

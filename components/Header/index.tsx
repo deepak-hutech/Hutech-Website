@@ -5,9 +5,6 @@ import Action from "../Actions";
 import strings from "./../../public/strings.json";
 
 const { baseUrl } = strings;
-interface IBackground {
-  color: string;
-}
 
 const Header: NextPage = (props: any) => {
   const { Logo, action } = props;
@@ -23,7 +20,6 @@ const Header: NextPage = (props: any) => {
 
   useEffect(() => {
     window.addEventListener("scroll", changeBackgroundColor);
-
     return () => {
       window.removeEventListener("scroll", changeBackgroundColor);
     };
@@ -31,8 +27,9 @@ const Header: NextPage = (props: any) => {
 
   return (
     <nav
-      className={`${styles.container} ${onScrollBackground ? styles.onScrollBackground : ""
-        }`}
+      className={`${styles.container} ${
+        onScrollBackground ? styles.onScrollBackground : ""
+      }`}
     >
       <div className={styles.innerContainer}>
         <a className={styles.logo} href={"/"}>

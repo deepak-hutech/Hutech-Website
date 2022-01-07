@@ -108,7 +108,7 @@ const careerform = () => {
       <Row className="mt-3">
         <Form.Group
           as={Col}
-          md="6"
+          md="4"
           controlId="validationCustom01"
           className={CareerStyle.contact_col}
         >
@@ -127,7 +127,7 @@ const careerform = () => {
         </Form.Group>
         <Form.Group
           as={Col}
-          md="6"
+          md="4"
           controlId="validationCustom02"
           className={CareerStyle.contact_col}
         >
@@ -144,11 +144,35 @@ const careerform = () => {
             placeholder="Enter your email address"
           />
         </Form.Group>
-      </Row>
-      <Row className="mt-3">
         <Form.Group
           as={Col}
-          md="6"
+          md="4"
+          controlId="validationCustomPhone"
+          className={CareerStyle.contact_col}
+        >
+          <Form.Label className={CareerStyle.contactForm_label}>
+            Phone Number
+          </Form.Label>
+          <Form.Control
+            value={inputs.phone}
+            type="number"
+            className={CareerStyle.inputs}
+            onChange={handleChange}
+            name="phone"
+            placeholder="09897888927"
+            aria-describedby="inputGroupPrepend"
+            required
+          />
+        </Form.Group>
+      </Row>
+      <Row className="mt-3">
+        
+        
+      </Row>
+      <Row>
+      <Form.Group
+          as={Col}
+          md="4"
           controlId="validationCustomPhone"
           className={CareerStyle.contact_col}
         >
@@ -168,27 +192,7 @@ const careerform = () => {
         </Form.Group>
         <Form.Group
           as={Col}
-          md="6"
-          controlId="validationCustom04"
-          className={CareerStyle.contact_col}
-        >
-          <Form.Label className={CareerStyle.nonMendatory_label}>
-            Company name
-          </Form.Label>
-          <Form.Control
-            value={inputs.company}
-            type="text"
-            className={CareerStyle.inputs}
-            onChange={handleChange}
-            name="company"
-            placeholder="Enter company name"
-          />
-        </Form.Group>
-      </Row>
-      <Row>
-        <Form.Group
-          as={Col}
-          md="6"
+          md="4"
           controlId="validationCountryUsername"
           className={CareerStyle.contact_col}
         >
@@ -212,7 +216,7 @@ const careerform = () => {
 
         <Form.Group
           as={Col}
-          md="6"
+          md="4"
           controlId="validationCustomUsername"
           className={CareerStyle.contact_col}
         >
@@ -258,6 +262,8 @@ const careerform = () => {
       </Row>
       <Row>
         <Form.Group
+         as={Col}
+         md="5"
           className="position-relative mb-3"
           className={CareerStyle.contact_col}
         >

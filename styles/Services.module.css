@@ -165,7 +165,8 @@ line-height: 30px;
   font-family: "GraphikMedium";
   font-style: normal;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 38px;
+  
 }
 
 .section2 .section2_note {
@@ -176,10 +177,16 @@ line-height: 30px;
 .section2 .section2_note p {
   /* font-family: "GraphikRegular"; */
   font-style: normal;
-font-weight: normal;
-font-size: 15px;
-line-height: 24px;
-text-align:justify;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+}
+.section2 .section2_title p {
+  text-align: center;
+  line-height: 33px;
+  font-family: "GraphikMedium";
+  font-size: 36px;
+  line-height: 50px;
 }
 
 @media only screen and (max-width: 500px) {

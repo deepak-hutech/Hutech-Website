@@ -27,7 +27,7 @@ const AllBlogs: NextPage<{
   blogs: any;
   blogBanner: any;
 }> = (props) => {
-  const PAGE_SIZE = 3;
+  const PAGE_SIZE = 6;
   const scrollRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const { header, footer, blogs, blogBanner } = props;
   const [pageNum, setPageNum] = useState(1);
@@ -86,7 +86,7 @@ const AllBlogs: NextPage<{
         style={{
           display: "flex",
           flexWrap: "wrap",
-          padding: "0 7% 8%",
+          padding: "0 2% 8%",
           position: "relative",
           justifyContent: "center",
         }}

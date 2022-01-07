@@ -5,7 +5,7 @@ import Link from "next/link";
 import "react-multi-carousel/lib/styles.css";
 import strings from "../../public/strings.json";
 import blogStyle from "../../styles/blog.module.css";
-import publishIcon from "../assets/publishdate.svg";
+import publishIcon from "../../components/assets/publishdate.svg";
 
 
 

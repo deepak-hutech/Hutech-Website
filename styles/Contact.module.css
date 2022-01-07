@@ -1,17 +1,15 @@
 /* ///////////////////////APPP */
 
- 
-
 .contact .content {
   width: 100%;
-  /* padding: 50px;
-  margin: 60px; */
+  background: #f2f9ff;
+  /* margin: 60px; */
 }
-.sucessmsg{
+.sucessmsg {
   font-size: 15px;
   color: green;
 }
-.errormsg{
+.errormsg {
   font-size: 15px;
   color: red;
 }
@@ -24,13 +22,36 @@
   font-family: "GraphikMedium";
   text-align: center;
 }
-.contact_col{
+.mailimage {
+  width: 45%;
+  padding: 2%;
+  text-align: center;
+}
+.mailcontenertext {
+  width: 55%;
+  margin: 20px 0;
+  border-left: 1px solid #c8c8c8;
+  padding-left: 40px;
+}
+.mailcontainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.contact_col {
   margin: 0 0 30px;
+  /* width: 33%; */
 }
 .contact .content h4 {
   font-weight: 700;
   text-align: center;
   /* padding: 10px 10px 0; */
+  line-height: 30px;
+  font-size: 20px;
+}
+.contact .content h5 {
+  font-weight: 700;
+  text-align: left;
+  padding: 0 10px 0;
   line-height: 30px;
   font-size: 20px;
 }
@@ -41,15 +62,16 @@
 }
 .tabStyle {
   margin-bottom: 3px;
-  width: 45%;
+  width: 70%;
 }
 .tabtitle {
   font-weight: 500;
   font-size: 18px;
   line-height: 20px;
-  color: #000000;
+
   margin-bottom: 20px;
 }
+
 .tabsContainer ul li .nav-item button {
   display: flex;
   flex-direction: column;
@@ -59,6 +81,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 30px;
   /* width: 50%; */
   /* margin: 20px 70px; */
 }
@@ -103,21 +126,20 @@
 }
 
 .tabsContainer .tab1 {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 50px;
+  margin: 0;
+  padding: 50px 50px 10px;
   box-sizing: border-box;
   min-height: 400px;
-  width: 100%;
-  /* background: #ffffff; */
+  width: 990px;
+  max-width: 990px;
+  background: #ffffff;
   box-shadow: 0px 4px 15px rgba(155, 149, 149, 0.25);
 }
 
-
-
 .tabsContainer .tab2 {
-  max-width: 600px;
-  margin: 40px auto;
+  width: 990px;
+  max-width: 990px;
+  margin: 0px auto;
   box-shadow: 0 0 20px 4px rgb(207 207 207 / 30%);
   background: #fff;
   padding: 50px;
@@ -125,14 +147,23 @@
   min-height: 400px;
 }
 .tabsContainer .tab3 {
-  max-width: 600px;
-  margin: 40px auto;
+  width: 990px;
+  max-width: 990px;
+  margin: 0px auto;
   box-shadow: 0 0 20px 4px rgb(207 207 207 / 30%);
   background: #fff;
   padding: 50px;
   box-sizing: border-box;
   min-height: 400px;
   text-align: center;
+}
+.calltextarea {
+  display: flex;
+  margin: 20px;
+}
+.calltextarea a {
+  padding: 10px;
+  font-size: 15px;
 }
 
 .tab3 p {
@@ -142,19 +173,19 @@
   font-weight: 500;
 }
 
-.tab2 .sendEmail button {
+.tab2 .sendEmail a {
   font-size: 20px;
-  color: #03a9f5;
-  background: #f5f5f5;
-  border-radius: 20px;
-  display: block;
+  color: #0171c1;
+  background: #f2f9ff;
+  border-radius: 30px;
+  display: table;
   padding: 12px 20px;
   line-height: normal;
-  
-  margin: 20px auto;
+width: auto;
+  margin: 20px 0;
   font-weight: 500;
   cursor: pointer;
-  text-align: center;
+  text-align: left;
 }
 
 /* button[type="submit"] {
@@ -172,7 +203,7 @@
 .contactForm input {
   width: 100%;
   height: 30px;
-  /* margin: 20px 0; */
+  margin: 10px 0;
   line-height: 22px;
   font-size: 14px;
   padding: 4px;
@@ -324,7 +355,8 @@
   box-shadow: none;
 }
 
-.form-control.is-invalid:focus, .was-validated .form-control:invalid:focus{
+.form-control.is-invalid:focus,
+.was-validated .form-control:invalid:focus {
   box-shadow: none;
 }
 
@@ -355,13 +387,13 @@
 }
 
 .contactForm button {
-  width: 100%;
+  width: 34%;
   font-size: 16px;
   color: #ffff;
   background: #ffaf2b;
   border: 0;
   border-radius: 5px;
-  display: block;
+
   padding: 9px 20px;
   line-height: 20px;
   margin: 20px auto;
@@ -388,6 +420,9 @@
   .tabStyle {
     width: 100%;
   }
+  .tabsContainer {
+    padding: 20px 0;
+  }
   .tabsContainer .tab1 {
     /* max-width: 600px; */
     margin: 20px;
@@ -395,7 +430,7 @@
   }
   .tabsContainer .tab2 {
     padding: 30px;
-   }
+  }
   .tabtitle {
     font-size: 14px;
     margin-bottom: 10px;
@@ -412,5 +447,22 @@
   .tabsContainer .inputs {
     margin-bottom: 10px;
   }
-  
+  .contactForm button {
+    width: 100%;
+  }
+  .mailimage {
+    width: 100%;
+  }
+  .mailcontenertext {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+  .tab2 .sendEmail a {
+    font-size: 18px;
+  }
+  .contact .content h5 {
+    font-size: 18px;
+  }
 }

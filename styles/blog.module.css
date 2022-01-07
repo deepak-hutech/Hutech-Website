@@ -113,7 +113,7 @@
   color: #0171c1;
 }
 
-.related_posts {
+.related_posts h3{
   text-align: center;
 }
 
@@ -213,8 +213,13 @@
 .blog_cata {
   line-height: 20px;
 }
-.relatedPost {
-  padding: 2% 8%;
+.relatedPost h3{
+  text-align: center;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 30px;
+  /* padding: 2% 8%; */
 }
 .authercontainer {
   background: #f7f7f7;
@@ -267,7 +272,7 @@
     padding: 20px;
   }
   .postdate {
-    margin-left: 30%;
+    margin-left: 28%;
     width: 100%;
     padding: 0px;
   }
@@ -294,8 +299,16 @@
   }
   .descrption p {
     font-size: 12px;
+    line-height: 20px;
   }
+
+  .related_posts h3{
+    /* font-size: 25px; */
+  }
+
   .compo {
+    height: 444px;
+    
     width: auto;
   }
   .section5_subText2 {

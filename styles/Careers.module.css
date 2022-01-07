@@ -841,6 +841,7 @@ max-height: auto;
   }
 }
 
+
 @media only screen and (max-width: 768px) {
   .section1_subText1 h3 {
     font-size: 1.5rem;
@@ -929,6 +930,24 @@ max-height: auto;
     width: 100%;
     margin: 0;
   }
+  .careerFormNew select {
+    font-size: 12px;
+  }
+  .careerFormNew .inputs::placeholder {
+    font-size: 12px;
+  }
+  .qualification_left_note ul li::marker {
+    font-size: 18px;
+  }
+  .qualification_left_title p {
+    font-size: 15px;
+  }
+  .qualification_left_note h5 {
+    font-size: 12px;
+  }
+  .qualification_left_note p {
+    font-size: 15px;
+  }
 
   .sec2_left_note p {
     font-size: 12px;
@@ -936,9 +955,14 @@ max-height: auto;
   .sec2_left_note h5 {
     font-size: 12px;
   }
+  .apply_right {
+   
+    height: auto;}
+  
   .careerFormNew .inputs {
     margin: 0;
     width: 100%;
+    font-size: 12px;
   }
   .apply_left {
     width: 90%;
@@ -1031,6 +1055,9 @@ max-height: auto;
     height: 230px;
   }
   .qualification_left_note {
+    font-size: 12px;
+  }
+  .qualification_left_note ul li {
     font-size: 12px;
   }
 }
