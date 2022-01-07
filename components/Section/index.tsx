@@ -413,7 +413,6 @@ const Section: NextPage = (props: any) => {
           </Carousel>
         </div>
       );
-
     case "development":
       return (
         <div className={styles.key_solutions}>
@@ -1425,7 +1424,7 @@ const Section: NextPage = (props: any) => {
       );
     case "dedicated_developer":
       return (
-        <div className={`${servicesStyles.Industries_banner}`}>
+        <div className={`${servicesStyles.service_section4}`}>
           <div className={`${servicesStyles.client_banner}`}>
             <div className={servicesStyles.clientContent4}>
               {free_text && (
@@ -1646,6 +1645,7 @@ const Section: NextPage = (props: any) => {
                 height={470}
                 width={"100%"}
                 className={careerstyles.careerbannerimg}
+                // style="max-width:100%;height:auto;"
               />
             )}
           </div>
@@ -1707,7 +1707,7 @@ const Section: NextPage = (props: any) => {
                   src={baseUrl + home_banner[0].url}
                   placeholder="blur"
                   blurDataURL={baseUrl + home_banner[0].url}
-                  height={500}
+                  height={440}
                   width={659}
                 />
               )}
@@ -1718,25 +1718,27 @@ const Section: NextPage = (props: any) => {
     case "feature_banner":
       return (
         <div className={careerstyles.section3}>
-          {free_text && (
-            <div
-              className={careerstyles.section3_title}
-              dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-            ></div>
-          )}
-          {sub_heading && (
-            <div
-              className={careerstyles.section3_note}
-              dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-            ></div>
-          )}
-          {carosel_cards[0] && (
-            <div className={careerstyles.section3_cards}>
-              {carosel_cards.map((_card: any, index: number) => (
-                <Card {..._card} key={index} />
-              ))}
-            </div>
-          )}
+          <div className={careerstyles.section3_container}>
+            {free_text && (
+              <div
+                className={careerstyles.section3_title}
+                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+              ></div>
+            )}
+            {sub_heading && (
+              <div
+                className={careerstyles.section3_note}
+                dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+              ></div>
+            )}
+            {carosel_cards[0] && (
+              <div className={careerstyles.section3_cards}>
+                {carosel_cards.map((_card: any, index: number) => (
+                  <Card {..._card} key={index} />
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       );
     case "current_opening_career":
@@ -1832,7 +1834,7 @@ const Section: NextPage = (props: any) => {
       );
     case "qualification_banner":
       return (
-        <div>
+        <div className={careerstyles.careerdetails_container}>
           <div className={careerstyles.careerdetails_breadcrumb}>
             <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
           </div>
