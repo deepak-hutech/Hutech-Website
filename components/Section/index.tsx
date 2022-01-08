@@ -127,7 +127,7 @@ const Section: NextPage = (props: any) => {
     <button
       style={{ position: "absolute", right: "50%", bottom: 10 }}
       onClick={onClick}
-      className={styles.arrowbtn}
+      className={styles.arrowbtntestimonial}
     >
       <Image
         loader={myLoader}
@@ -142,7 +142,7 @@ const Section: NextPage = (props: any) => {
     <button
       style={{ position: "absolute", right: "54%", bottom: 10 }}
       onClick={onClick}
-      className={styles.arrowbtn}
+      className={styles.arrowbtntestimonial}
     >
       <Image
         loader={myLoader}
@@ -492,7 +492,7 @@ const Section: NextPage = (props: any) => {
           <Carousel
             swipeable={true}
             draggable={false}
-            showDots={false}
+            showDots={true}
             // autoPlay={true}
             responsive={responsive_small_cards}
             ssr={true} // means to render carousel on server-side.

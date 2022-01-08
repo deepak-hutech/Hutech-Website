@@ -1,10 +1,10 @@
 .company_banner {
-  width: 100%;
+ 
   display: grid;
   margin-top: 66px;
   text-align: center;
   color: white;
-  height: 77%;
+  
   background: #0662a7;
   align-items: center;
   position: relative;
@@ -12,6 +12,12 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: 0;
+  padding-right: 0;
 }
 .company_banner .banner_container {
   position: absolute;
@@ -19,7 +25,12 @@
   width: 100%;
 }
 .campany_banner_web {
-  width: 100%;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: 0;
+  padding-right: 0;
   display: grid;
   text-align: center;
   color: white;

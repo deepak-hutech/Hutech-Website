@@ -1,8 +1,10 @@
 import { NextPage } from "next";
-import Image from "next/image";
+
+import Image, { ImageLoader } from "next/image";
 import Link from "next/link";
 import styles from "../../styles/Header.module.css";
 import subheadingIcon from "../assets/subheading.svg";
+import submenuIcon from "../assets/submenuicon.svg";
 
 const myLoader = ({ src, width, quality }: any) => {
   const origin = typeof window !== "undefined" && window.location.origin;
@@ -57,7 +59,23 @@ const Action: NextPage = ({
               </div>
             ))}
           </section>
+          <Image
+        loader={myLoader}
+        src={submenuIcon}
+        alt="Picture of the author"
+        width={30}
+        height={17}
+      />
+          <Image
+                  loader={myLoader}
+                  src={submenuIcon}
+                  
+                  width={20}
+                  height={8}
+                />
+          
         </a>
+        
       );
     case "call_to_action":
       return (

@@ -68,7 +68,7 @@ const Footer: NextPage = (props: any) => {
         <Container className={styles.footerCon}>
           <Row>
             {footer_action.map(({ display, group, icon }: any, index: any) => (
-              <Col>
+              <Col sm={12} md={6} lg={3}>
                 <div className={styles.footerContainer}>
                   <div key={index} className={styles.heading}>
                     {display}

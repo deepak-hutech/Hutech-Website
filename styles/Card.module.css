@@ -25,6 +25,9 @@
   box-sizing: border-box;
   border-radius: 5px;
   padding: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .successful_product_card {
@@ -370,27 +373,41 @@
     height: 236px;
   }
 }
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 1200px) {
   .card {
     width: 270px;
     height: 200px;
   }
   .heading {
     font-size: 18px;
-    margin: 30px 50px 20px 20px;
+    margin: 30px 20px 20px 20px;
   }
   .capabilities_cards {
     width: 170px;
     height: 210px;
   }
 }
+
 @media only screen and (max-width: 992px) {
+  .clients_card {
+    width: 220px;
+    height: 130px;
+  }
+  .capabilities_cards_title h3 {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 768px) {
   .card {
     width: 250px;
     height: 170px;
   }
-}
-@media only screen and (max-width: 768px) {
+  .capabilities_cards {
+    width: 160px;
+  }
+  .clients_card {
+    margin: 10px;
+  }
 }
 @media only screen and (max-width: 500px) {
   .carosoulCards {
@@ -409,6 +426,7 @@
     width: 90%;
     height: 100%;
     margin: 20px 20px 10px;
+    box-shadow: none;
   }
   .heading {
     margin: 20px 20px 20px 20px;
