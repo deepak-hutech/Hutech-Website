@@ -36,29 +36,14 @@
   background-image: url(../components/assets/mobile-tech-bg.png);
   background-repeat: no-repeat;
   background-size: 100% 95%;
- background-position: center center;
+  background-position: center center;
 }
-.section1 img{
- /* width: 100%; */
-  /* min-height: 470px;
-  max-height: 100%; */
- min-width: 8%;
-max-height: auto;
-  /* background-repeat: no-repeat;
-  background-size: contain;
- background-position: center center; */
+.section1 img {
+  min-width: 8%;
+  max-height: auto;
 }
-/* .careerbannerimg {
-  width: 100%;
-  min-height: 470px;
-  max-height: 100%;
-
-  background-repeat: no-repeat;
-  background-size: contain;
- background-position: center center;
-} */
 .section1_centerText {
-  max-width:1200px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -88,10 +73,9 @@ max-height: auto;
 /* section2 */
 .section2 {
   visibility: visible;
-    animation: Careers_slide__3N0kO 3s;
+  animation: slide 3s;
   max-width: 1200px;
-    
-    margin: 0 auto;
+  margin: 0 auto;
 }
 .section2_content {
   display: flex;
@@ -212,7 +196,7 @@ max-height: auto;
   visibility: visible;
   animation: slide 5s;
 }
-.section3_container{
+.section3_container {
   max-width: 1200px;
   margin: 0 auto;
   background-image: url(../components/assets/career-bg.png);
@@ -395,7 +379,7 @@ max-height: auto;
   font-size: 16px;
   line-height: 18px;
 
-  margin: 5% 0% 3% 0%;
+  margin: 10% 0% 3% 0%;
   color: #5b5b5b;
 }
 .careerFormNew .inputs::placeholder {
@@ -449,7 +433,6 @@ max-height: auto;
   margin-top: 7px;
 }
 .section4 {
- 
   max-width: 1200px;
   margin: 0 auto;
   animation: slide 5s;
@@ -471,7 +454,7 @@ max-height: auto;
   display: flex;
   /* justify-content: space-between; */
   flex-wrap: wrap;
-   margin: 0 0 5% 0;
+  margin: 0 0 5% 0;
 }
 .section5 {
   /* max-width: 1200px;
@@ -483,9 +466,9 @@ max-height: auto;
   position: relative;
   text-align: center;
 }
-.section5 img{
+.section5 img {
   min-width: 8%;
-max-height: auto;
+  max-height: auto;
 }
 .featurecardimg {
   margin-top: 1.5rem;
@@ -615,7 +598,7 @@ max-height: auto;
   display: block;
   padding: 9px 20px;
   line-height: normal;
-  margin: 20px auto;
+  margin: 7% auto;
   font-weight: 500;
   cursor: pointer;
   text-align: center;
@@ -657,7 +640,7 @@ max-height: auto;
   line-height: 1.875rem;
   margin: 0 10px;
 }
-.careerdetails_container{
+.careerdetails_container {
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -841,7 +824,6 @@ max-height: auto;
   }
 }
 
-
 @media only screen and (max-width: 768px) {
   .section1_subText1 h3 {
     font-size: 1.5rem;
@@ -956,9 +938,9 @@ max-height: auto;
     font-size: 12px;
   }
   .apply_right {
-   
-    height: auto;}
-  
+    height: auto;
+  }
+
   .careerFormNew .inputs {
     margin: 0;
     width: 100%;
@@ -969,7 +951,7 @@ max-height: auto;
     margin: 10px;
     padding: 0;
   }
-  .career_col{
+  .career_col {
     margin: 0 0 0 0;
   }
   .section1_centerText {

@@ -178,23 +178,23 @@ const Card: NextPage = (props: any) => {
     case "mobile_app_development_card":
       return (
         <div
-          className={servicesStyles.mobile_app_development_card}
+          className={servicesStyles.mobile_app_dev_card}
           data-aos="flip-right"
         >
           <a
             style={{ textDecoration: "none", color: "black" }}
             href="/service-details"
           >
-            <div className={servicesStyles.section3_cards}>
+            <div className={servicesStyles.mobile_dev_sec3_cards}>
               <div
-                className={servicesStyles.section3_heading}
+                className={servicesStyles.mobile_dev_sec3_heading}
                 dangerouslySetInnerHTML={{ __html: marked(heading) }}
               ></div>
               <div
-                className={servicesStyles.section3_para}
+                className={servicesStyles.mobile_dev_sec3_para}
                 dangerouslySetInnerHTML={{ __html: marked(free_text) }}
               ></div>
-              <button>
+              {/* <button>
                 <p>
                   {call_to_action}
                   {images.map((v: any) => (
@@ -203,7 +203,7 @@ const Card: NextPage = (props: any) => {
                     </div>
                   ))}
                 </p>
-              </button>
+              </button> */}
             </div>
           </a>
         </div>
@@ -218,8 +218,8 @@ const Card: NextPage = (props: any) => {
                 src={`${baseUrl}${images[0].url}`}
                 placeholder="blur"
                 blurDataURL={baseUrl + images[0].url}
-                width={55}
-                height={55}
+                width={82}
+                height={76}
                 className={servicesStyles.cardimg}
               />
               {/* <button>
@@ -250,20 +250,15 @@ const Card: NextPage = (props: any) => {
                   src={`${baseUrl}${images[0].url}`}
                   placeholder="blur"
                   blurDataURL={baseUrl + images[0].url}
-                  width={70}
-                  height={55}
+                  width={71}
+                  height={61}
                   className={servicesStyles.cardimg}
-                />
-                {/* <button>
-                <p>{call_to_action}</p>
-              </button> */}
+                /> 
                 <p className={servicesStyles.iconText}>{free_text}</p>
               </div>
             </div>
 
-            {/* <button>
-                  <p>{call_to_action}</p>
-                </button> */}
+           
           </div>
           {/* <p className={servicesStyles.icon}>{heading}</p> */}
           <p className={servicesStyles.iconText}></p>
@@ -303,7 +298,6 @@ const Card: NextPage = (props: any) => {
     case "our_work_card":
       return (
         <div className={servicesStyles.our_work_card}>
-          <div className={servicesStyles.our_work_card}>
             <div className={servicesStyles.section8_img}>
               <Image
                 loader={() => myLoader((baseUrl + images[0].url) as any)}
@@ -315,12 +309,9 @@ const Card: NextPage = (props: any) => {
                 className={servicesStyles.section8Cardimg}
               />
             </div>
-          </div>
           <div className={servicesStyles.section8Para}>
-            <div className={servicesStyles.section8Contents}>
               <p className={servicesStyles.section8_para1}>{heading}</p>
               <p className={servicesStyles.section8_para2}>{free_text}</p>
-            </div>
           </div>
         </div>
       );
