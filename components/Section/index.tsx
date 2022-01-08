@@ -248,6 +248,11 @@ const Section: NextPage = (props: any) => {
       items: 3,
       slidesToSlide: 2, // optional, default to 1.
     },
+    tablet2: {
+      breakpoint: { max: 760, min: 464 },
+      items: 2,
+      slidesToSlide: 2, // optional, default to 1.
+    },
     mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 2,
@@ -278,7 +283,12 @@ const Section: NextPage = (props: any) => {
       slidesToSlide: 1, // optional, default to 1.
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1024, min: 756 },
+      items: 2,
+      slidesToSlide: 2, // optional, default to 1.
+    },
+    tablet2: {
+      breakpoint: { max: 756, min: 564 },
       items: 2,
       slidesToSlide: 2, // optional, default to 1.
     },
@@ -644,18 +654,13 @@ const Section: NextPage = (props: any) => {
           <div id="breadCrum">
             <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
           </div>
-          <Container>
-            <Row>
               {free_text && (
                 <div
                   className={companyStyles.heading}
                   dangerouslySetInnerHTML={{ __html: marked(free_text) }}
                 ></div>
               )}
-            </Row>
-          </Container>
 
-          <Container>
             <Row>
               <Col md={6} sm={12}>
                 {home_banner[0] && (
@@ -682,30 +687,33 @@ const Section: NextPage = (props: any) => {
                 )}
               </Col>
             </Row>
-          </Container>
         </div>
       );
     case "values_vision_mission":
       return (
         <div className={companyStyles.values_vision_banner}>
-          <div className={companyStyles.values_vision}>
-            {carosel_cards.map((v: any) => (
-              <div className={companyStyles.vvContent} data-aos="fade-up">
-                <img
-                  className={companyStyles.profile}
-                  src={baseUrl + v.images.map((v: any) => v.url)}
-                  placeholder="blur"
-                  height={50}
-                  width={50}
-                />
-                <h5 className={companyStyles.heading}>{v.heading}</h5>
-                <div
-                  className={companyStyles.free_text}
-                  dangerouslySetInnerHTML={{ __html: marked(v.free_text) }}
-                ></div>
-              </div>
-            ))}
-          </div>
+           <div className={companyStyles.values_vision}>
+           <Row>
+              {carosel_cards.map((v: any) => (
+            <Col xs={12} md={4} sm={6}>
+                <div className={companyStyles.vvContent} data-aos="fade-up">
+                  <img
+                    className={companyStyles.profile}
+                    src={baseUrl + v.images.map((v: any) => v.url)}
+                    placeholder="blur"
+                    height={50}
+                    width={50}
+                  />
+                  <h5 className={companyStyles.heading}>{v.heading}</h5>
+                  <div
+                    className={companyStyles.free_text}
+                    dangerouslySetInnerHTML={{ __html: marked(v.free_text) }}
+                  ></div>
+                </div>
+            </Col>
+              ))}
+          </Row>
+             </div> 
         </div>
       );
     case "our_people":
@@ -735,7 +743,7 @@ const Section: NextPage = (props: any) => {
                 swipeable={true}
                 draggable={false}
                 showDots={false}
-                autoPlay={true}
+                // autoPlay={true}
                 responsive={responsive_our_people_cards}
                 ssr={true} // means to render carousel on server-side.
                 infinite={true}
@@ -789,18 +797,23 @@ const Section: NextPage = (props: any) => {
               ></div>
             )}
           </div>
-          <div className={companyStyles.allProducts} data-aos="zoom-out-up">
+          <div className={companyStyles.allProducts} >
+            <Row>
+
             {carosel_cards.map((v: any) => (
-              <div className={companyStyles.logos}>
-                <img
-                  className={companyStyles.images}
-                  src={baseUrl + v.images.map((v: any) => v.url)}
-                  placeholder="blur"
-                  height={45}
-                  width={137}
-                />
-              </div>
+               <Col xs={6} md={3} sm={4}>
+                  <div className={companyStyles.logos} data-aos="zoom-in">
+                    <img
+                      className={companyStyles.images}
+                      src={baseUrl + v.images.map((v: any) => v.url)}
+                      placeholder="blur"
+                      height={45}
+                      width={137}
+                      />
+                  </div>
+             </Col>
             ))}
+            </Row>
           </div>
         </div>
       );
@@ -828,7 +841,6 @@ const Section: NextPage = (props: any) => {
     case "web_frontend":
       return (
         <div className={`${companyStyles.web_dev}`}>
-          <Container>
             <Row>
               <Col md={6} className={companyStyles.webContainer}>
                 {web_front_end_title ? (
@@ -1005,7 +1017,6 @@ const Section: NextPage = (props: any) => {
                 )}
               </Col>
             </Row>
-          </Container>
         </div>
       );
     case "current_opening_banner":
@@ -2270,45 +2281,28 @@ const Section: NextPage = (props: any) => {
     case "expertise_carousal":
       return (
         <div className={`${expertiseStyle.section4}`}>
-          <Carousel
-            swipeable={false}
-            draggable={false}
-            showDots={true}
-            responsive={responsive_expertise_carousal}
-            ssr={true} // means to render carousel on server-side.
-            infinite={true}
-            autoPlay={true}
-            autoPlaySpeed={2000}
-            keyBoardControl={true}
-            customTransition="all 0.5s ease"
-            transitionDuration={500}
-            containerClass="carousel-container"
-            removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
-            dotListClass="custom-dot-list-style"
-            itemClass="carousel-item-padding-40-px"
-          >
-            <div className={servicesStyles.section3_card}>
-              {carosel_cards.slice(0, 3).map((_card: any, index: number) => (
-                <Card {..._card} key={index} />
-              ))}
+            <div className={expertiseStyle.section4Cards}>
+            <Carousel
+                swipeable={true}
+                draggable={false}
+                showDots={true}
+                responsive={responsive_small_cards}
+                ssr={true} // means to render carousel on server-side.
+                infinite={true}
+                autoPlay={true}
+                keyBoardControl={true}
+                autoPlaySpeed={1500}
+                customTransition="all 0.5s ease"
+                transitionDuration={500}
+                containerClass="carousel-container"
+                removeArrowOnDeviceType={["desktop", "tablet", "mobile", "tablet2"]}
+                dotListClass="custom-dot-list-style"
+                itemClass="carousel-item-padding-40-px">
+              {carosel_cards.map((_card: any, index: number) => (
+                  <Card {..._card} key={index} />
+                ))}
+              </Carousel>
             </div>
-            <div className={servicesStyles.section3_card}>
-              {carosel_cards.slice(3, 6).map((_card: any, index: number) => (
-                <Card {..._card} key={index} />
-              ))}
-            </div>
-            <div className={servicesStyles.section3_card}>
-              {carosel_cards.slice(6, 9).map((_card: any, index: number) => (
-                <Card {..._card} key={index} />
-              ))}
-            </div>
-            <div className={servicesStyles.section3_card}>
-              {carosel_cards.slice(9, 11).map((_card: any, index: number) => (
-                <Card {..._card} key={index} />
-              ))}
-            </div>
-          </Carousel>
-          ;
         </div>
       );
     case "expertise_description":

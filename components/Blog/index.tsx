@@ -37,7 +37,7 @@ const Blog: NextPage = (props: any) => {
   switch (type) {
     case "blog":
       return (
-        <div>
+        <div className={blogStyle.blogContainer}>
           <div className={blogStyle.compo}>
             {blogimage && (
               <Image
