@@ -12,6 +12,7 @@ import blogStyle from "../../styles/blog.module.css";
 import careerstyles from "../../styles/Careers.module.css";
 // import "./bootstrap.min.css";
 import companyStyles from "../../styles/Company.module.css";
+import { Button, Col, Container, Row, Tab, Tabs } from "react-bootstrap";
 
 
 
@@ -46,7 +47,7 @@ const AllBlogs: NextPage<{
   return (
     <div ref={scrollRef}>
       <Header {...header} />
-      <div className={companyStyles.company_banner}>
+      <div className={companyStyles.blog_banner}>
         <div className={companyStyles.blog_banner_web}>
         <Image
           loader={() =>
@@ -84,10 +85,12 @@ const AllBlogs: NextPage<{
       </div>
       <div
         style={{
+
           display: "flex",
           flexWrap: "wrap",
-          padding: "0 2% 8%",
           position: "relative",
+          maxWidth: "1200px",
+          margin: "auto",
           justifyContent: "center",
         }}
       >
@@ -96,20 +99,22 @@ const AllBlogs: NextPage<{
             <BlogSection {...val} />
           </div>
         ))}
-        <ReactPaginate
-          previousLabel={"previous"}
-          nextLabel={"next"}
-          breakLabel={"..."}
-          breakClassName={"break-me"}
-          activeClassName={"active"}
-          containerClassName={"pagination"}
-          initialPage={pageNum - 1}
-          pageCount={pageCount}
-          marginPagesDisplayed={2}
-          pageRangeDisplayed={5}
-          onPageChange={pagginationHandler}
-        />
       </div>
+        <section>
+          <ReactPaginate
+              previousLabel={"previous"}
+              nextLabel={"next"}
+              breakLabel={"..."}
+              breakClassName={"break-me"}
+              activeClassName={"active"}
+              containerClassName={"pagination"}
+              initialPage={pageNum - 1}
+              pageCount={pageCount}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={5}
+              onPageChange={pagginationHandler}
+            />
+        </section>
       <div className={careerstyles.section5}>
         <div className={careerstyles.section5_banner_web}> 
         <Image
