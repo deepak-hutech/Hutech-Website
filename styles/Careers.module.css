@@ -1004,6 +1004,9 @@
 }
 }
 @media only screen and (max-width: 550px) {
+  /* .section1_subText2{
+     display: none;
+  } */
   .section2_content {
     display: inline-block;
   }

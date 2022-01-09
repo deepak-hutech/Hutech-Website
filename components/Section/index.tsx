@@ -1798,9 +1798,6 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
-    
-    
-    
     case "qualification_banner":
       return (
         <div className={careerstyles.careerdetails_container}>
