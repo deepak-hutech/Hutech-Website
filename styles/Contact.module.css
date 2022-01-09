@@ -9,6 +9,8 @@
   margin-right: calc(50% - 50vw);
   padding-left: 0;
   padding-right: 0;
+  object-fit: cover;
+  object-position: center;
   /* margin: 60px; */
 }
 .sucessmsg {

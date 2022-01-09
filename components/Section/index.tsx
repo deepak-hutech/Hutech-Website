@@ -125,7 +125,7 @@ const Section: NextPage = (props: any) => {
   );
   const CustomArrowBlog = ({ onClick }: any) => (
     <button
-      style={{ position: "absolute", right: "50%", bottom: 10 }}
+      style={{ position: "absolute", right: "0%", bottom: -60 }}
       onClick={onClick}
       className={styles.arrowbtntestimonial}
     >
@@ -140,7 +140,7 @@ const Section: NextPage = (props: any) => {
   );
   const CustomleftArrowBlog = ({ onClick }: any) => (
     <button
-      style={{ position: "absolute", right: "54%", bottom: 10 }}
+      style={{ position: "absolute", right: "4%", bottom: -60 }}
       onClick={onClick}
       className={styles.arrowbtntestimonial}
     >
@@ -156,13 +156,13 @@ const Section: NextPage = (props: any) => {
   );
   const CustomArrowportfolio = ({ onClick }: any) => (
     <button
-      style={{ position: "absolute", right: "13%%", bottom: "50%" }}
+      style={{ position: "absolute", right: "0", bottom: "50%" }}
       onClick={onClick}
       className={styles.arrowbtn}
     >
       <Image
         loader={myLoader}
-        src={rightIconportfolio}
+        src={leftIconportfolio}
         alt="Picture of the author"
         width={30}
         height={17}
@@ -171,13 +171,13 @@ const Section: NextPage = (props: any) => {
   );
   const CustomleftArrowportfolio = ({ onClick }: any) => (
     <button
-      style={{ position: "absolute", right: "13%", bottom: "50%" }}
+      style={{ position: "absolute", left: "0", bottom: "50%" }}
       onClick={onClick}
       className={styles.arrowbtn}
     >
       <Image
         loader={myLoader}
-        src={leftIconportfolio}
+        src={rightIconportfolio}
         alt="Picture of the author"
         width={30}
         height={17}
@@ -301,12 +301,12 @@ const Section: NextPage = (props: any) => {
   const responsive_wide_cards = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 1,
+      items: 2,
       slidesToSlide: 1, // optional, default to 1.
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 1,
+      items: 2,
       slidesToSlide: 2, // optional, default to 1.
     },
     mobile: {
@@ -1887,7 +1887,7 @@ const Section: NextPage = (props: any) => {
     case "portfolio_img_banner":
       return (
         <div className={`${portfolioStyles.porfolio_card_section}`}>
-          <div style={{ padding: "4% 6% 0" }}>
+          <div style={{ padding: "4% 0%" }}>
             <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
           </div>
           <div className={`${portfolioStyles.Industries_banner}`}>
@@ -1938,21 +1938,20 @@ const Section: NextPage = (props: any) => {
                   customTransition="all 0.5s ease"
                   transitionDuration={1000}
                   containerClass="carousel-container"
-                  removeArrowOnDeviceType={["tablet", "mobile"]}
+                  
                   dotListClass="custom-dot-list-style"
                   // itemClass="carousel-item-padding-40-px"
-                  className={styles.homeblogcarousel}
+                  // className={styles.homeblogcarousel}
                   customRightArrow={<CustomArrowportfolio />}
                   customLeftArrow={<CustomleftArrowportfolio />}
                 >
+                 
                   {carosel_cards.map((_card: any, index: number) => (
-                    <div
-                      className={portfolioStyles.porfolioDetails_img}
-                      key={index}
-                    >
-                      <Card {..._card} />
-                    </div>
+                    
+                      <Card {..._card} key={index}/>
+                   
                   ))}
+                  
                 </Carousel>
               </div>
             }

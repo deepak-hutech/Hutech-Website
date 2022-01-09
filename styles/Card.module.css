@@ -17,6 +17,9 @@
   width: 100%;
   vertical-align: middle;
 }
+.card a:hover {
+ color: #2F95DE;
+}
 .clients_card {
   width: 254px;
   height: 154px;
@@ -163,13 +166,17 @@
   display: flex;
 }
 .wide_card {
-  width: 50%;
+ 
+  background: #fff;
+  color: #000;
 }
 .card_contant {
-  padding: 12% 0% 0 8%;
+  background: #fff;
   display: flex;
   flex-direction: column;
-  width: calc(100% - 420px);
+padding: 20px 20px 0 20px;
+ width: 500px;
+ margin: 0 4%;
 }
 .wide_card.wide {
   column-gap: 20px;
@@ -324,6 +331,7 @@
 }
 .wide_card_ {
   display: flex;
+
 }
 .right_card {
   display: flex;
@@ -337,20 +345,20 @@
 
   font-family: "GraphikRegular";
   font-weight: 600;
-  color: #fff;
+  color: #0171C1;
 }
 .right_card_para {
   font-size: 14px;
   font-family: "GraphikRegular";
   margin: 10px 0px 20px 22px;
-  color: #fff;
+  color: #000;
   font-weight: 400;
 }
 .right_card_text {
-  font-size: 22px;
+  font-size: 18px;
   font-family: "GraphikRegular";
-  margin: 20px 0px 20px 4px;
-  color: #fff;
+  margin: 20px 10px 0px 4px;
+  color: #000;
   font-weight: 400;
   line-height: 27px;
 }

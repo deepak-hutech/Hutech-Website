@@ -128,7 +128,7 @@ const Card: NextPage = (props: any) => {
     case "wide_card":
       return (
         <div className={styles.wide_card_}>
-          <div className={styles.blog}>
+          {/* <div className={styles.blog}>
             <Image
               loader={() => myLoader((baseUrl + image[0].url) as any)}
               src={`${baseUrl}${image[0].url}`}
@@ -137,7 +137,7 @@ const Card: NextPage = (props: any) => {
               width={420}
               height={430}
             />
-          </div>
+          </div> */}
           <div className={styles.card_contant}>
             <div className={styles.right_card}>
               <Image
@@ -406,8 +406,8 @@ const Card: NextPage = (props: any) => {
     case "portfolio_card":
       return (
         <div className={portfolioStyles.portfolio_card}>
-          <div className={portfolioStyles.portfolio_card} data-aos="fade-up">
-            <div className={portfolioStyles.portfolio_img}>
+          <div data-aos="fade-up">
+            <div >
               <a id={props.id} href={Link ? Link : `/portfolio/${props.title}`}>
                 <Image
                   loader={() => myLoader((baseUrl + images[0].url) as any)}
@@ -429,15 +429,15 @@ const Card: NextPage = (props: any) => {
       );
     case "portfolio_details_cards":
       return (
-        <div className={portfolioStyles.portfolio_details_cards}>
+        <div  className={portfolioStyles.portinnerimg}>
           <Image
             loader={() => myLoader((baseUrl + images[0].url) as any)}
             src={`${baseUrl}${images[0].url}`}
             placeholder="blur"
             blurDataURL={baseUrl + images[0].url}
-            width={628}
+            width={600}
             height={445}
-            className={portfolioStyles.portfolioDetailsCardimg}
+            // className={portfolioStyles.portfolioDetailsCardimg}
           />
         </div>
       );

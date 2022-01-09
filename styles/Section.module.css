@@ -8,9 +8,11 @@
   max-width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-
+overflow-x: hidden;
   padding-left: 0;
   padding-right: 0;
+  overflow-y: visible;
+  height: 650px;
 }
 .home_caro_mob {
   height: 0px;
@@ -424,9 +426,9 @@
 }
 .blog_banner {
   background: #ea9913;
-  padding: 2% 7% 0% 8%;
+  padding: 8% 0;
   margin-bottom: 100px;
-  height: 450px;
+  
   width: 100vw;
   max-width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -436,6 +438,9 @@
 }
 .wide_card_ {
   display: flex;
+  background: #fff;
+    border-radius: 4px;
+    margin-right: 50px;
 }
 /* .Industries_banner {
   background: #ffffff;
@@ -476,9 +481,10 @@
   display: block !important;
 } */
 .carousel_blog_home {
-  margin: -90px auto 0;
+  margin: auto;
   overflow: hidden;
   width: 1200px;
+  height: 280px;
 }
 .homeblogcarousel .react-multiple-carousel__arrow--right {
   right: -webkit-calc(4% + 1px);

@@ -1,5 +1,10 @@
 .portfolio_section1 {
-  width: 100%;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: 0;
+  padding-right: 0;
   display: grid;
   margin-top: 66px;
   text-align: center;
@@ -13,11 +18,19 @@
   background-size: contain;
   background-position: center;
 }
-.portfolio_web_banner{
+.portfolio_web_banner {
   width: 100%;
   display: grid;
   text-align: center;
   color: white;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: 0;
+  padding-right: 0;
+  object-fit: cover;
+  object-position: center;
 }
 .portfolio_section1 .banner_container {
   position: absolute;
@@ -29,19 +42,19 @@
   font-weight: bold;
   font-size: 40px;
   font-family: "GraphikMedium";
- }
+}
 
- .portfolio_note {
-    margin: 40px 60px ;
- }
+.portfolio_note {
+  margin: 40px 60px;
+}
 
- .portfolio_note p {
+.portfolio_note p {
   font-family: "GraphikMedium";
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
   line-height: 24px;
- }
+}
 .companybanner .title p {
   font-size: 15px;
   color: #062841;
@@ -63,11 +76,11 @@
   color: white;
   padding: 0 15%;
 }
-.portfolio_sec2_note{
-  margin:4rem 7.3rem ;
+/* .portfolio_sec2_note{
+  
   text-align: justify;
-}
-.portfolio_img {
+} */
+/* .portfolio_img {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,7 +88,7 @@
   padding-left: 10px;
   margin-top: 40px;
   column-gap: 40px;
-}
+} */
 .portfolio_para1 {
   font-family: "GraphikMedium";
   font-size: 18px;
@@ -111,7 +124,6 @@
   box-shadow: 0 1px 4px 0 rgb(0 0 0 / 22%);
   transform: scale(1.1);
   border-radius: 10px;
-
 }
 /* PORTFOLIO DETAILS CSS */
 .Industries_section1 {
@@ -133,145 +145,143 @@
   padding: 0 20px;
 }
 
-  .portfolio_img{
-    display: flex;
-    justify-content:center ;
-    align-items: center;
-    flex-wrap: wrap;
-    padding-left: 10px;
-    margin-top: 40px;
-    column-gap: 40px;
-  }
-  .portfolio_para1{
-    font-family: "GraphikMedium";
-    font-size: 18px;
-    font-weight: bold;
-    
-  }
-  .portfolio_para2{
-    font-family: "GraphikMedium";
-    font-size: 13px;
-    line-height: 8px;
-  }
-  .portfolio_subBox{
-    position: relative;
-    bottom:40px;
-    background-color:white;
-    color:black;
-    margin: auto;
-    width: 50%;
-    border-radius: 8px;
-    text-align: center;
-    height: 80px;
-    padding: 14px;
-    box-shadow: 0px 4px 3px -1px rgba(192, 189, 189, 0.25);
-  }
-  .portfolioCardimg{
-    border-radius: 10px;
-  }
-  @media only screen and (max-width: 500px) {
-    .portfolio_section1 .content .free_text {
-        font-size: 26px;
-    }
-    .portfolio_sec2_note{
-      margin:10px 20px ;
-      text-align: justify;
-      font-size: 12px;
-    }
-    .portfolio_section1 .banner_container {
-     padding: 0 10px;
-      top: 10%;}
-    .portfolio_section1 .banner_container .descrption{
-      font-size: 12px;
-    }
+.portfolio_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 
-    .portfolio_img{
-      padding-left: 0;
-      margin-top: 20px;
+  margin-top: 40px;
+  column-gap: 40px;
+}
+.portfolio_para1 {
+  font-family: "GraphikMedium";
+  font-size: 18px;
+  font-weight: bold;
+}
+.portfolio_para2 {
+  font-family: "GraphikMedium";
+  font-size: 13px;
+  line-height: 8px;
+}
+.portfolio_subBox {
+  position: relative;
+  bottom: 40px;
+  background-color: white;
+  color: black;
+  margin: auto;
+  width: 50%;
+  border-radius: 8px;
+  text-align: center;
+  height: 80px;
+  padding: 14px;
+  box-shadow: 0px 4px 3px -1px rgba(192, 189, 189, 0.25);
+}
+.portfolioCardimg {
+  border-radius: 10px;
+}
+@media only screen and (max-width: 500px) {
+  .portfolio_section1 .content .free_text {
+    font-size: 26px;
+  }
+  .portfolio_sec2_note {
+    margin: 10px 20px;
+    text-align: justify;
+    font-size: 12px;
+  }
+  .portfolio_section1 .banner_container {
+    padding: 0 10px;
+    top: 10%;
+  }
+  .portfolio_section1 .banner_container .descrption {
+    font-size: 12px;
+  }
 
-    }
-      .portfolio_img img {
-        width: 238px;
-        height: 180px;
-      }
-      .portfolio_subBox{
-        width: 121px;
-        height: 58px;
-        padding: 8px;
-      }
-      .portfolio_para1{
-        font-family: "GraphikRegular";
-        font-size: 14px;
-      }
-      .portfolio_para2  {
-        margin-bottom: 0;
-        font-size: 11px;
-      }
-      .content {
-        
-        padding: 0 1%;
-      }
+  .portfolio_img {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+  .portfolio_img img {
+    width: 238px;
+    height: 180px;
+  }
+  .portfolio_subBox {
+    width: 121px;
+    height: 58px;
+    padding: 8px;
+  }
+  .portfolio_para1 {
+    font-family: "GraphikRegular";
+    font-size: 14px;
+  }
+  .portfolio_para2 {
+    margin-bottom: 0;
+    font-size: 11px;
+  }
+  .content {
+    padding: 0 1%;
+  }
 }
 
-  /* PORTFOLIO DETAILS CSS */
-  .Industries_section1{
-    display: flex;
-    flex-direction: row;
-    padding: 4% 8%;
-    /* background-image: url(../components/assets/top-banner-transparent.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center; */
-    /* align-items: center; */
-    margin-top: 5rem;
-  }
-  .porfolioDetails_title{
-    font-weight: bold;
-    font-size: 30px;
-    letter-spacing: 0.4px;
-    font-family: "GraphikMedium";
-    /* margin-top: 50px; */
-  }
-  .porfolioDetails_note {
-     font-family: "GraphikRegular";
-  }
+/* PORTFOLIO DETAILS CSS */
+.Industries_section1 {
+  display: flex;
+  flex-direction: row;
+  margin: 5rem 0;
+}
+.porfolioDetails_title {
+  font-weight: bold;
+  font-size: 30px;
+  letter-spacing: 0.4px;
+  font-family: "GraphikMedium";
+  /* margin-top: 50px; */
+}
+.porfolioDetails_note {
+  font-family: "GraphikRegular";
+}
 
-  .porfolio_details_cards{
-    width: 60%;
+.porfolio_details_cards {
+  width: 60%;
+}
 
+.pclient_banner {
+  padding: 0 20px;
+  width: 40%;
+}
+
+@media only screen and (max-width: 768px) {
+  .porfolio_details_cards {
+    width: 100%;
   }
-  .pclient_banner{
+  
+  .pclient_banner {
     padding: 0 20px;
+    width: 100%;
   }
-
-
+}
 @media only screen and (max-width: 500px) {
   .Industries_section1 {
     flex-direction: column;
   }
   .porfolio_details_cards {
     align-self: center;
-
   }
-  .portfolio_web_banner{
+  .portfolio_web_banner {
     display: none;
   }
-  .portfolio_section1{
+  .portfolio_section1 {
     background-image: url(../components/assets/mobile-portfolio-bg.jpg);
     height: 225px;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
   }
-  
-  .porfolioDetails_title{
+
+  .porfolioDetails_title {
     font-size: 18px;
     margin-top: 20px;
-    }
+  }
 
   .porfolioDetails_note {
-     font-size: 12px;
+    font-size: 12px;
   }
 }
-
-
- 

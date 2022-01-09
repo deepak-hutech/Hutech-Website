@@ -71,7 +71,7 @@ a {
 
 .react-multi-carousel-list {
   align-items: baseline !important;
-  /* overflow: visible !important; */
+  overflow: visible !important;
 }
 .custom-dot-list-style {
   overflow: visible !important;

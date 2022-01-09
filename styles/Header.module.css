@@ -241,6 +241,10 @@
   .navContainer a:hover {
     color: #ffaf2b;
   }
+  .navContainer a {
+    
+    color: #fff;
+  }
   .navContainer {
     display: flex;
     align-items: baseline;
