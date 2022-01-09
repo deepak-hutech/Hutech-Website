@@ -3,6 +3,12 @@
 .contact .content {
   width: 100%;
   background: #f2f9ff;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: 0;
+  padding-right: 0;
   /* margin: 60px; */
 }
 .sucessmsg {
@@ -82,6 +88,7 @@
   justify-content: center;
   flex-direction: column;
   padding: 30px;
+
   /* width: 50%; */
   /* margin: 20px 70px; */
 }
@@ -97,7 +104,7 @@
   color: #1976d2;
   display: flex;
   justify-content: space-around;
-  width: 87%;
+  width: 72%;
 }
 .nav-item .nav-link {
   color: black;
@@ -182,7 +189,7 @@
   display: table;
   padding: 12px 20px;
   line-height: normal;
-width: auto;
+  width: auto;
   margin: 20px 0;
   font-weight: 500;
   cursor: pointer;
@@ -417,6 +424,88 @@ width: auto;
   -webkit-appearance: none;
   margin: 0;
 }
+
+@media only screen and (max-width: 1200px) {
+  .tabsContainer .tab1 {
+    max-width: 990px;
+  }
+  .tabsContainer .tab2 {
+    width: 990px;
+  }
+  .tabsContainer .tab3 {
+    width: 990px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .tabsContainer .tab1 {
+    max-width: 850px;
+  }
+  .tabsContainer .tab2 {
+    width: 850px;
+  }
+  .tabsContainer .tab3 {
+    width: 850px;
+  }
+  .mailcontenertext {
+    width: 65%;
+  }
+  .mailimage {
+    width: 35%;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .tabsContainer .tab1 {
+    width: 768px;
+  }
+  .tabsContainer .tab2 {
+    width: 768px;
+  }
+  .tabsContainer .tab3 {
+    width: 768px;
+  }
+  
+}
+@media only screen and (max-width: 768px) {
+  .tabsContainer .tab1 {
+    padding: 0 2%;
+    width: 100%;
+  }
+  .col-lg-3 {
+    width: 50%;
+  }
+  .calltextarea {
+    justify-content: center;
+  }
+  .tabsContainer .tab2 {
+    width: 100%;
+    padding: 0 2%;
+  }
+  .tabsContainer .tab3 {
+    width: 100%;
+    padding: 0 2%;
+  }
+  .tabsContainer ul {
+    width: 100%;
+  }
+  .mailimage {
+    width: 100%;
+  }
+  .mailcontenertext {
+    width: 100%;
+    border-left: 0;
+  }
+  .contact .content h4 {
+    padding: 20px 70px 10px;
+  }
+  .sendEmail{
+    display: flex;
+    justify-content: center;
+  }
+  .mailcontenertext h5{
+    display: flex;
+    justify-content: center;
+  }
+}
 @media only screen and (max-width: 500px) {
   .tabStyle {
     width: 100%;
@@ -431,6 +520,9 @@ width: auto;
   }
   .tabsContainer .tab2 {
     padding: 30px;
+  }
+  .contact .content h4 {
+    padding: 20px 0px 10px;
   }
   .tabtitle {
     font-size: 14px;
