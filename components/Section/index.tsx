@@ -1415,7 +1415,8 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
-    case "dedicated_developer":
+    
+      case "dedicated_developer":
       return (
         <div className={`${servicesStyles.service_section4}`}> 
               {free_text && (
