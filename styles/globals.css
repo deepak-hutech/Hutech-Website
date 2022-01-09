@@ -37,8 +37,8 @@ body {
   src: URL("./../components/assets/fonts/GraphikRegular.otf") format("truetype");
 }
 .root {
-  width: 100%;
-  max-width: 1200px;
+  width: 100%; 
+   max-width: 1200px;
   margin: 0 auto;
 }
 
