@@ -45,7 +45,7 @@
   font-size: 15px;
   font-weight: 400;
   margin: 0 18px;
-  color: #233253;
+  color: #000;
   text-decoration: none;
   padding: 30px 0;
   line-height: 40px;
@@ -62,14 +62,7 @@
 .navContainer a:hover {
   color: #0c7ed4;
 }
-.subheaderimg {
-  font-size: 12px;
-}
-/* .navContainer:last-child img{
-    width: 50px!important;
-    height: 50px!important;
-    object-fit: contain;
-  } */
+
 .navContainer img {
   position: absolute;
   padding-left: 4px;
@@ -80,7 +73,7 @@
   position: relative;
 }
 .headerbtn {
-  height: 40px;
+  overflow-x: hidden;
   width: 150px;
   background-color: #ffaf2b;
   color: #fff;
@@ -146,10 +139,7 @@
   box-shadow: none;
   transform: rotate(180deg);
 }
-/* .topNavLink{
-  position: relative;
-  display: inline-block;
-} */
+
 .topsubmenuLink:hover > .subMenuContainer {
   display: flex;
   flex-wrap: wrap;
@@ -200,13 +190,16 @@
 }
 
 @media only screen and (max-width: 1240px) {
-  .logo {
+  /* .logo {
     margin: 0 16px;
-  }
+  } */
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (max-width: 1200px) {
+  .innerContainer {
+    max-width: 992px;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -214,20 +207,37 @@
   .logo img {
     height: 36px;
   }
+  .innerContainer {
+    max-width: 850px;
+  }
+
   .navContainer a {
-    margin: 0 8px;
+    margin: 0 10px;
     padding: 12px 0;
     color: #000;
-    font-family: "GraphikMedium";
   }
   .headerbtn {
     width: 130px;
-    height: 45px;
+    height: 40px;
+  }
+  .navContainer a {
+    font-size: 13px;
+  }
+  .headerbtn {
+    font-size: 13px;
   }
 }
-
+@media only screen and (max-width: 850px) {
+  .innerContainer {
+    max-width: 768px;
+  }
+}
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
+  .innerContainer {
+    max-width: 100%;
+    padding: 0 2%;
+  }
   .navContainer a:hover {
     color: #ffaf2b;
   }

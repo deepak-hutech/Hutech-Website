@@ -46,6 +46,7 @@ const DynamicPage: NextPage<{ header: any; pages: any; footer: any }> = (
           href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.css"
         />
       </Head>
+      <div className="root">
       <Header {...header} />
 
       {content.map((section: any) => (
@@ -54,6 +55,7 @@ const DynamicPage: NextPage<{ header: any; pages: any; footer: any }> = (
       {/* <div data-scroll data-scroll-call="{y,o,l,o}">Trigger</div>
       <h1 data-scroll data-scroll-speed="1" >TEST</h1> */}
       <Footer {...footer} />
+      </div>
     </div>
   );
 };

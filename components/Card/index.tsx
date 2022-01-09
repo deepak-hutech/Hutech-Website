@@ -11,6 +11,7 @@ import portfolioStyles from "../../styles/Portfolio.module.css";
 import servicesStyles from "../../styles/Services.module.css";
 import strings from "./../../public/strings.json";
 import expertiseStyle from "../../styles/expertise.module.css";
+import { Button, Col, Container, Row, Tab, Tabs } from "react-bootstrap";
 
 const { baseUrl } = strings;
 
@@ -488,7 +489,9 @@ const Card: NextPage = (props: any) => {
       );
     case "expertise_carousal_card":
       return (
-        <div className={expertiseStyle.expertisecard}>
+        <Row>
+          <Col md={12}>
+          <div className={expertiseStyle.expertisecard}>
           <a
             id={props.id}
             // href={link ? link : `/plans/${props.title.split(" ").join("_")}`}>>
@@ -512,19 +515,12 @@ const Card: NextPage = (props: any) => {
                 className={expertiseStyle.expertise_subheading}
                 dangerouslySetInnerHTML={{ __html: marked(free_text) }}
               ></div>
-              {/* <button>
-                <p>
-                  {call_to_action}
-                  {icon.map((v: any) => (
-                    <div>
-                      <img src={baseUrl + v.url}></img>
-                    </div>
-                  ))}
-                </p>
-              </button> */}
             </div>
           </a>
         </div>
+          </Col>
+        </Row>
+        
       );
 
     default:

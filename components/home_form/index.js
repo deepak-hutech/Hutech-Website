@@ -12,12 +12,12 @@ function HomeForm() {
     var name = document.forms["form"]["name"];
     var email = document.forms["form"]["email"];
     var phone = document.forms["form"]["phone"];
-    var company = document.forms["form"]["company"];
+    var message = document.forms["form"]["message"];
     let colorRed = "1px solid red";
 
-    if (company.value === "") {
-      company.style.borderBottom = colorRed;
-      company.focus();
+    if (message.value === "") {
+      message.style.borderBottom = colorRed;
+      message.focus();
     }
 
     if (phone.value === "") {
@@ -110,7 +110,7 @@ function HomeForm() {
           />
         </div>
         <div className={homeform.labelbox}>
-          <label for="username" className={homeform.homeformlabel}>
+          <label for="username" className={homeform.nonvalidateLable}>
             Company
           </label>
           <input

@@ -65,10 +65,10 @@
   width: 70%;
 }
 .tabtitle {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 18px;
   line-height: 20px;
-
+  font-family: "GraphikMedium";
   margin-bottom: 20px;
 }
 
@@ -97,6 +97,7 @@
   color: #1976d2;
   display: flex;
   justify-content: space-around;
+  width: 87%;
 }
 .nav-item .nav-link {
   color: black;

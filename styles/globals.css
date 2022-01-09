@@ -8,7 +8,7 @@ body {
   font-family: "GraphikRegular";
   scroll-behavior: smooth;
   font-weight: 400;
-  
+
   word-break: break-word;
   width: 100%;
   min-height: 100%;
@@ -16,7 +16,7 @@ body {
   height: 100%;
   -webkit-text-size-adjust: 100%;
 }
-body{
+body {
   overflow-x: hidden;
 }
 @font-face {
@@ -37,9 +37,15 @@ body{
   src: URL("./../components/assets/fonts/GraphikRegular.otf") format("truetype");
 }
 .root {
-  width: 100%;
-  max-width: 1200px;
+  width: 100%; 
+   max-width: 1200px;
   margin: 0 auto;
+}
+
+:root {
+  --banner-title: 40px;
+  --banner-weight: bold;
+  --banner-family: "GraphikMedium"; 
 }
 
 a {
@@ -62,11 +68,12 @@ a {
 .react-multi-carousel-dot-list {
   bottom: -50px !important;
 }
+
 .react-multi-carousel-list {
   align-items: baseline !important;
   /* overflow: visible !important; */
 }
-.custom-dot-list-style{
+.custom-dot-list-style {
   overflow: visible !important;
 }
 .custom-dot-list-style .react-multi-carousel-dot button:hover:active {
@@ -91,6 +98,7 @@ ul {
   border: 1px solid #157ffb;
 }
 .pagination {
+  justify-content: center;
   margin-top: 30px;
 }
 
@@ -154,4 +162,31 @@ ul {
 }
 .nav-link {
   padding: 0rem;
+}
+.col-lg-3 {
+  width: 20%;
+}
+@media only screen and (max-width: 1200px) {
+  .root {
+    max-width: 992px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .root {
+    max-width: 850px;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .root {
+    max-width: 768px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .root {
+    padding: 0 2%;
+    max-width: 100%;
+  }
+  .col-lg-3 {
+    width: 50%;
+  }
 }

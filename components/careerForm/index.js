@@ -96,7 +96,7 @@ const careerform = () => {
       className={CareerStyle.careerFormNew}
       onSubmit={upload}
     >
-      <Row className=" mt-4 mb-4">
+      <Row className=" mt-3 mb-3">
         <Form.Group
           as={Col}
           md="6"
@@ -130,7 +130,7 @@ const careerform = () => {
           />
         </Form.Group>
       </Row>
-      <Row className=" mt-4 mb-4">
+      <Row className=" mt-3 mb-3">
         <Form.Group
           as={Col}
           md="6"
