@@ -651,7 +651,7 @@ const Section: NextPage = (props: any) => {
     case "about_company":
       return (
         <div className={companyStyles.abt_company}>
-          <div id="breadCrum">
+          <div id="breadCrum" className={companyStyles.Company_breadCrum}>
             <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
           </div>
           {free_text && (
@@ -751,7 +751,7 @@ const Section: NextPage = (props: any) => {
                 customTransition="all 0.5s ease"
                 transitionDuration={1000}
                 containerClass="carousel-container"
-                removeArrowOnDeviceType={["tablet", "mobile"]}
+                removeArrowOnDeviceType={["tablet", "mobile", "tablet2"]}
                 dotListClass="custom-dot-list-style"
                 // itemClass="carousel-item-padding-40-px"
                 className={styles.clientccarousel}
