@@ -2296,6 +2296,9 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
+    
+    
+    
     case "expertise_description":
       return (
         <div className={expertiseStyle.section5}>
