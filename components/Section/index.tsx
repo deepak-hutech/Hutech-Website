@@ -356,7 +356,7 @@ const Section: NextPage = (props: any) => {
             className={styles.carosel_banner}
           >
             {carosel_cards.map((item: any) => (
-              <div className={styles.carosel_card} >
+              <div className={styles.carosel_card}>
                 <img src={baseUrl + item.images[0].url} />
 
                 <div className={styles.banner_container}>
@@ -554,50 +554,50 @@ const Section: NextPage = (props: any) => {
       return (
         <div className={`${styles.home_form_section}`}>
           <div className={styles.home_from_container}>
-          <div className={`${styles.left_content}`}>
-            <div className={styles.left_content_title}>
-              {free_text && (
-                <div
-                  className={styles.capab_title}
-                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-                ></div>
-              )}
-              {address && (
-                <div
-                  className={styles.descrption}
-                  dangerouslySetInnerHTML={{ __html: marked(address) }}
-                ></div>
-              )}
-              {Buttons && (
-                <div>
-                  {Buttons.map((item: any) => (
-                    <div className={styles.fome_form_button}>
-                      {/* {arrow_icon.map((item: any)=>(
+            <div className={`${styles.left_content}`}>
+              <div className={styles.left_content_title}>
+                {free_text && (
+                  <div
+                    className={styles.capab_title}
+                    dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                  ></div>
+                )}
+                {address && (
+                  <div
+                    className={styles.descrption}
+                    dangerouslySetInnerHTML={{ __html: marked(address) }}
+                  ></div>
+                )}
+                {Buttons && (
+                  <div>
+                    {Buttons.map((item: any) => (
+                      <div className={styles.fome_form_button}>
+                        {/* {arrow_icon.map((item: any)=>(
                       <img
                       src={`${baseUrl}${Buttons[0].arrow_icon[0].url}`}
                       className={styles.arrowicon}
                     />
                     ))} */}
-                      <img
-                        src={`${baseUrl}${item.arrow_icon[0].url}`}
-                        className={styles.arrowicon}
-                      />
-                      <a href={item.link}>{item.call_to_action} </a>
-                    </div>
-                  ))}
-                </div>
-              )}
-              {heading_text && (
-                <div
-                  dangerouslySetInnerHTML={{ __html: marked(heading_text) }}
-                ></div>
-              )}
+                        <img
+                          src={`${baseUrl}${item.arrow_icon[0].url}`}
+                          className={styles.arrowicon}
+                        />
+                        <a href={item.link}>{item.call_to_action} </a>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {heading_text && (
+                  <div
+                    dangerouslySetInnerHTML={{ __html: marked(heading_text) }}
+                  ></div>
+                )}
+              </div>
             </div>
-          </div>
 
-          <div className={styles.right_from_section}>
-            <HomeForm />
-          </div>
+            <div className={styles.right_from_section}>
+              <HomeForm />
+            </div>
           </div>
         </div>
       );
@@ -654,66 +654,66 @@ const Section: NextPage = (props: any) => {
           <div id="breadCrum">
             <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
           </div>
-              {free_text && (
+          {free_text && (
+            <div
+              className={companyStyles.heading}
+              dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+            ></div>
+          )}
+
+          <Row>
+            <Col md={6} sm={12}>
+              {home_banner[0] && (
+                <div className={`${companyStyles.abt_img}`}>
+                  <Image
+                    loader={() =>
+                      myLoaderbanner((baseUrl + home_banner[0].url) as any)
+                    }
+                    src={baseUrl + home_banner[0].url}
+                    placeholder="blur"
+                    blurDataURL={baseUrl + home_banner[0].url}
+                    height={421}
+                    width={497}
+                  />
+                </div>
+              )}
+            </Col>
+            <Col md={6} sm={12}>
+              {sub_heading && (
                 <div
-                  className={companyStyles.heading}
-                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+                  className={companyStyles.note}
+                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
                 ></div>
               )}
-
-            <Row>
-              <Col md={6} sm={12}>
-                {home_banner[0] && (
-                  <div className={`${companyStyles.abt_img}`}>
-                    <Image
-                      loader={() =>
-                        myLoaderbanner((baseUrl + home_banner[0].url) as any)
-                      }
-                      src={baseUrl + home_banner[0].url}
-                      placeholder="blur"
-                      blurDataURL={baseUrl + home_banner[0].url}
-                      height={421}
-                      width={497}
-                    />
-                  </div>
-                )}
-              </Col>
-              <Col md={6} sm={12}>
-                {sub_heading && (
-                  <div
-                    className={companyStyles.note}
-                    dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-                  ></div>
-                )}
-              </Col>
-            </Row>
+            </Col>
+          </Row>
         </div>
       );
     case "values_vision_mission":
       return (
         <div className={companyStyles.values_vision_banner}>
-           <div className={companyStyles.values_vision}>
-           <Row>
+          <div className={companyStyles.values_vision}>
+            <Row>
               {carosel_cards.map((v: any) => (
-            <Col xs={12} md={4} sm={6}>
-                <div className={companyStyles.vvContent} data-aos="fade-up">
-                  <img
-                    className={companyStyles.profile}
-                    src={baseUrl + v.images.map((v: any) => v.url)}
-                    placeholder="blur"
-                    height={50}
-                    width={50}
-                  />
-                  <h5 className={companyStyles.heading}>{v.heading}</h5>
-                  <div
-                    className={companyStyles.free_text}
-                    dangerouslySetInnerHTML={{ __html: marked(v.free_text) }}
-                  ></div>
-                </div>
-            </Col>
+                <Col xs={12} md={4} sm={6}>
+                  <div className={companyStyles.vvContent} data-aos="fade-up">
+                    <img
+                      className={companyStyles.profile}
+                      src={baseUrl + v.images.map((v: any) => v.url)}
+                      placeholder="blur"
+                      height={50}
+                      width={50}
+                    />
+                    <h5 className={companyStyles.heading}>{v.heading}</h5>
+                    <div
+                      className={companyStyles.free_text}
+                      dangerouslySetInnerHTML={{ __html: marked(v.free_text) }}
+                    ></div>
+                  </div>
+                </Col>
               ))}
-          </Row>
-             </div> 
+            </Row>
+          </div>
         </div>
       );
     case "our_people":
@@ -797,11 +797,10 @@ const Section: NextPage = (props: any) => {
               ></div>
             )}
           </div>
-          <div className={companyStyles.allProducts} >
+          <div className={companyStyles.allProducts}>
             <Row>
-
-            {carosel_cards.map((v: any) => (
-               <Col xs={6} md={3} sm={4}>
+              {carosel_cards.map((v: any) => (
+                <Col xs={6} md={3} sm={4}>
                   <div className={companyStyles.logos} data-aos="zoom-in">
                     <img
                       className={companyStyles.images}
@@ -809,10 +808,10 @@ const Section: NextPage = (props: any) => {
                       placeholder="blur"
                       height={45}
                       width={137}
-                      />
+                    />
                   </div>
-             </Col>
-            ))}
+                </Col>
+              ))}
             </Row>
           </div>
         </div>
@@ -841,182 +840,182 @@ const Section: NextPage = (props: any) => {
     case "web_frontend":
       return (
         <div className={`${companyStyles.web_dev}`}>
-            <Row>
-              <Col md={6} className={companyStyles.webContainer}>
-                {web_front_end_title ? (
-                  <div className={`${companyStyles.web_front_end_title}`}>
-                    <h2
-                      className={companyStyles.free_text}
+          <Row>
+            <Col md={6} className={companyStyles.webContainer}>
+              {web_front_end_title ? (
+                <div className={`${companyStyles.web_front_end_title}`}>
+                  <h2
+                    className={companyStyles.free_text}
+                    dangerouslySetInnerHTML={{
+                      __html: marked(web_front_end_title),
+                    }}
+                  />
+                  {web_front_end_para && (
+                    <div
+                      className={companyStyles.web_front_end_para}
                       dangerouslySetInnerHTML={{
-                        __html: marked(web_front_end_title),
+                        __html: marked(web_front_end_para),
                       }}
-                    />
-                    {web_front_end_para && (
-                      <div
-                        className={companyStyles.web_front_end_para}
-                        dangerouslySetInnerHTML={{
-                          __html: marked(web_front_end_para),
-                        }}
-                      ></div>
-                    )}
-                    <div
-                      className={companyStyles.company_cards}
-                      data-aos="fade-up"
-                    >
-                      {carosel_cards.map((_card: any, index: number) => (
-                        <Card {..._card} key={index} />
-                      ))}
-                    </div>
+                    ></div>
+                  )}
+                  <div
+                    className={companyStyles.company_cards}
+                    data-aos="fade-up"
+                  >
+                    {carosel_cards.map((_card: any, index: number) => (
+                      <Card {..._card} key={index} />
+                    ))}
                   </div>
-                ) : (
-                  " "
-                )}
-              </Col>
-              <Col md={6} className={companyStyles.webContainer}>
-                {web_back_end_title ? (
-                  <div className={`${companyStyles.web_front_end_title}`}>
-                    <h2
-                      className={companyStyles.free_text}
+                </div>
+              ) : (
+                " "
+              )}
+            </Col>
+            <Col md={6} className={companyStyles.webContainer}>
+              {web_back_end_title ? (
+                <div className={`${companyStyles.web_front_end_title}`}>
+                  <h2
+                    className={companyStyles.free_text}
+                    dangerouslySetInnerHTML={{
+                      __html: marked(web_back_end_title),
+                    }}
+                  />
+                  {web_back_end_para && (
+                    <div
+                      className={companyStyles.web_front_end_para}
                       dangerouslySetInnerHTML={{
-                        __html: marked(web_back_end_title),
+                        __html: marked(web_back_end_para),
                       }}
-                    />
-                    {web_back_end_para && (
-                      <div
-                        className={companyStyles.web_front_end_para}
-                        dangerouslySetInnerHTML={{
-                          __html: marked(web_back_end_para),
-                        }}
-                      ></div>
-                    )}
-                    <div
-                      className={companyStyles.company_cards}
-                      data-aos="fade-up"
-                    >
-                      {Carosel_cards.map((_card: any, index: number) => (
-                        <Card {..._card} key={index} />
-                      ))}
-                    </div>
+                    ></div>
+                  )}
+                  <div
+                    className={companyStyles.company_cards}
+                    data-aos="fade-up"
+                  >
+                    {Carosel_cards.map((_card: any, index: number) => (
+                      <Card {..._card} key={index} />
+                    ))}
                   </div>
-                ) : (
-                  " "
-                )}
-              </Col>
-              <Col md={6} className={companyStyles.webContainer}>
-                {database_title ? (
-                  <div className={`${companyStyles.web_front_end_title}`}>
-                    <h2
-                      className={companyStyles.free_text}
+                </div>
+              ) : (
+                " "
+              )}
+            </Col>
+            <Col md={6} className={companyStyles.webContainer}>
+              {database_title ? (
+                <div className={`${companyStyles.web_front_end_title}`}>
+                  <h2
+                    className={companyStyles.free_text}
+                    dangerouslySetInnerHTML={{
+                      __html: marked(database_title),
+                    }}
+                  />
+                  {database_para && (
+                    <div
+                      className={companyStyles.web_front_end_para}
                       dangerouslySetInnerHTML={{
-                        __html: marked(database_title),
+                        __html: marked(database_para),
                       }}
-                    />
-                    {database_para && (
-                      <div
-                        className={companyStyles.web_front_end_para}
-                        dangerouslySetInnerHTML={{
-                          __html: marked(database_para),
-                        }}
-                      ></div>
-                    )}
-                    <div
-                      className={companyStyles.company_cards}
-                      data-aos="fade-up"
-                    >
-                      {carosel_card.map((_card: any, index: number) => (
-                        <Card {..._card} key={index} />
-                      ))}
-                    </div>
+                    ></div>
+                  )}
+                  <div
+                    className={companyStyles.company_cards}
+                    data-aos="fade-up"
+                  >
+                    {carosel_card.map((_card: any, index: number) => (
+                      <Card {..._card} key={index} />
+                    ))}
                   </div>
-                ) : (
-                  " "
-                )}
-              </Col>
-              <Col md={6} className={companyStyles.webContainer}>
-                {android_title ? (
-                  <div className={`${companyStyles.web_front_end_title}`}>
-                    <h2
-                      className={companyStyles.free_text}
+                </div>
+              ) : (
+                " "
+              )}
+            </Col>
+            <Col md={6} className={companyStyles.webContainer}>
+              {android_title ? (
+                <div className={`${companyStyles.web_front_end_title}`}>
+                  <h2
+                    className={companyStyles.free_text}
+                    dangerouslySetInnerHTML={{
+                      __html: marked(android_title),
+                    }}
+                  />
+                  {android_para && (
+                    <div
+                      className={companyStyles.web_front_end_para}
                       dangerouslySetInnerHTML={{
-                        __html: marked(android_title),
+                        __html: marked(android_para),
                       }}
-                    />
-                    {android_para && (
-                      <div
-                        className={companyStyles.web_front_end_para}
-                        dangerouslySetInnerHTML={{
-                          __html: marked(android_para),
-                        }}
-                      ></div>
-                    )}
-                    <div
-                      className={companyStyles.company_cards}
-                      data-aos="fade-up"
-                    >
-                      {android_card.map((_card: any, index: number) => (
-                        <Card {..._card} key={index} />
-                      ))}
-                    </div>
+                    ></div>
+                  )}
+                  <div
+                    className={companyStyles.company_cards}
+                    data-aos="fade-up"
+                  >
+                    {android_card.map((_card: any, index: number) => (
+                      <Card {..._card} key={index} />
+                    ))}
                   </div>
-                ) : (
-                  " "
-                )}
-              </Col>
-              <Col md={6} className={companyStyles.webContainer}>
-                {ios_title ? (
-                  <div className={`${companyStyles.web_front_end_title}`}>
-                    <h2
-                      className={companyStyles.free_text}
-                      dangerouslySetInnerHTML={{ __html: marked(ios_title) }}
-                    />
-                    {ios_para && (
-                      <div
-                        className={companyStyles.web_front_end_para}
-                        dangerouslySetInnerHTML={{ __html: marked(ios_para) }}
-                      ></div>
-                    )}
+                </div>
+              ) : (
+                " "
+              )}
+            </Col>
+            <Col md={6} className={companyStyles.webContainer}>
+              {ios_title ? (
+                <div className={`${companyStyles.web_front_end_title}`}>
+                  <h2
+                    className={companyStyles.free_text}
+                    dangerouslySetInnerHTML={{ __html: marked(ios_title) }}
+                  />
+                  {ios_para && (
                     <div
-                      className={companyStyles.company_cards}
-                      data-aos="fade-up"
-                    >
-                      {ios_cards.map((_card: any, index: number) => (
-                        <Card {..._card} key={index} />
-                      ))}
-                    </div>
+                      className={companyStyles.web_front_end_para}
+                      dangerouslySetInnerHTML={{ __html: marked(ios_para) }}
+                    ></div>
+                  )}
+                  <div
+                    className={companyStyles.company_cards}
+                    data-aos="fade-up"
+                  >
+                    {ios_cards.map((_card: any, index: number) => (
+                      <Card {..._card} key={index} />
+                    ))}
                   </div>
-                ) : (
-                  " "
-                )}
-              </Col>
-              <Col md={6} className={companyStyles.webContainer}>
-                {devops_title ? (
-                  <div className={`${companyStyles.web_front_end_title}`}>
-                    <h2
-                      className={companyStyles.free_text}
-                      dangerouslySetInnerHTML={{ __html: marked(devops_title) }}
-                    />
-                    {devops_para && (
-                      <div
-                        className={companyStyles.web_front_end_para}
-                        dangerouslySetInnerHTML={{
-                          __html: marked(devops_para),
-                        }}
-                      ></div>
-                    )}
+                </div>
+              ) : (
+                " "
+              )}
+            </Col>
+            <Col md={6} className={companyStyles.webContainer}>
+              {devops_title ? (
+                <div className={`${companyStyles.web_front_end_title}`}>
+                  <h2
+                    className={companyStyles.free_text}
+                    dangerouslySetInnerHTML={{ __html: marked(devops_title) }}
+                  />
+                  {devops_para && (
                     <div
-                      className={companyStyles.company_cards}
-                      data-aos="fade-up"
-                    >
-                      {devops_cards.map((_card: any, index: number) => (
-                        <Card {..._card} key={index} />
-                      ))}
-                    </div>
+                      className={companyStyles.web_front_end_para}
+                      dangerouslySetInnerHTML={{
+                        __html: marked(devops_para),
+                      }}
+                    ></div>
+                  )}
+                  <div
+                    className={companyStyles.company_cards}
+                    data-aos="fade-up"
+                  >
+                    {devops_cards.map((_card: any, index: number) => (
+                      <Card {..._card} key={index} />
+                    ))}
                   </div>
-                ) : (
-                  " "
-                )}
-              </Col>
-            </Row>
+                </div>
+              ) : (
+                " "
+              )}
+            </Col>
+          </Row>
         </div>
       );
     case "current_opening_banner":
@@ -1086,7 +1085,7 @@ const Section: NextPage = (props: any) => {
               transitionDuration={1000}
               containerClass="carousel-container"
               // removeArrowOnDeviceType={["tablet", "mobile"]}
-              
+
               dotListClass="custom-dot-list-style"
               // itemClass="carousel-item-padding-40-px"
               className={styles.homeblogcarousel}
@@ -1315,7 +1314,7 @@ const Section: NextPage = (props: any) => {
           </div>
         </>
       );
-    
+
     case "service_page_banner":
       return (
         <div className={servicesStyles.section1}>
@@ -1405,7 +1404,6 @@ const Section: NextPage = (props: any) => {
                 dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
               ></div>
             )}
-
             {carosel_cards[0] && (
               <div className={servicesStyles.mobile_app_development_card}>
                 {carosel_cards.map((_card: any, index: number) => (
@@ -1416,25 +1414,74 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
+    // case "expertise_in_mobile_app_banner":
+    //   return (
+    //     <div className={`${servicesStyles.section3}`}>
+    //       <div className={servicesStyles.clientContent}>
+    //         {free_text && (
+    //           <div
+    //             className={servicesStyles.section3_title}
+    //             dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+    //           ></div>
+    //         )}
+    //         {sub_heading && (
+    //           <div
+    //             className={servicesStyles.section3_note}
+    //             dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+    //           ></div>
+    //         )}
+    //         <Carousel
+    //           swipeable={true}
+    //           draggable={false}
+    //           showDots={true}
+    //           responsive={responsive_small_cards}
+    //           ssr={true} // means to render carousel on server-side.
+    //           infinite={true}
+    //           // autoPlay={true}
+    //           keyBoardControl={true}
+    //           autoPlaySpeed={1500}
+    //           customTransition="all 0.5s ease"
+    //           transitionDuration={500}
+    //           containerClass="carousel-container"
+    //           removeArrowOnDeviceType={[
+    //             "desktop",
+    //             "tablet",
+    //             "mobile",
+    //             "tablet2",
+    //           ]}
+    //           dotListClass="custom-dot-list-style"
+    //           itemClass="carousel-item-padding-40-px"
+    //         >
+    //           {carosel_cards[0] &&
+    //             carosel_cards.map((_card: any, index: number) => (
+    //               <Card {..._card} key={index} />
+    //             ))}
+    //         </Carousel>
+           
+    //       </div>
+    //     </div>
+    //   );
+
+
     case "dedicated_developer":
       return (
-        <div className={`${servicesStyles.service_section4}`}> 
-              {free_text && (
-                <div
-                  className={servicesStyles.section4_title}
-                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-                ></div>
-              )}
-              {home_button && (
-                <div className={servicesStyles.section4_buttons}>
-                  {home_button.map((item: any) => (
-                    <div className={servicesStyles.call_to_action}>
-                      {" "}
-                      {item.call_to_action}{" "}
-                    </div>
-                  ))}
+        <div className={`${servicesStyles.service_section4}`}>
+          {free_text && (
+            <div
+              className={servicesStyles.section4_title}
+              dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+            ></div>
+          )}
+          {home_button && (
+            <div className={servicesStyles.section4_buttons}>
+              {home_button.map((item: any) => (
+                <div className={servicesStyles.call_to_action}>
+                  {" "}
+                  {item.call_to_action}{" "}
                 </div>
-              )}
+              ))}
+            </div>
+          )}
         </div>
       );
     case "custom_mobile_app":
@@ -1482,37 +1529,35 @@ const Section: NextPage = (props: any) => {
     case "mobile_technologies":
       return (
         <div className={`${servicesStyles.section6}`}>
-         
-            <div className={servicesStyles.mobile_technology}>
-              {free_text && (
-                <div
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  className={servicesStyles.section6_title}
-                  dangerouslySetInnerHTML={{ __html: marked(free_text) }}
-                ></div>
-              )}
-              {sub_heading && (
-                <div
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  className={servicesStyles.section6_note}
-                  dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
-                ></div>
-              )}
-              {carosel_cards[0] && (
-                <div
-                  className={servicesStyles.section6_imgages}
-                  data-aos="zoom-in"
-                  data-aos-duration="2000"
-                >
-                  {carosel_cards.map((_card: any, index: number) => (
-                    <Card {..._card} key={index} />
-                  ))}
-                </div>
-              )}
-            </div>
-        
+          <div className={servicesStyles.mobile_technology}>
+            {free_text && (
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className={servicesStyles.section6_title}
+                dangerouslySetInnerHTML={{ __html: marked(free_text) }}
+              ></div>
+            )}
+            {sub_heading && (
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className={servicesStyles.section6_note}
+                dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+              ></div>
+            )}
+            {carosel_cards[0] && (
+              <div
+                className={servicesStyles.section6_imgages}
+                data-aos="zoom-in"
+                data-aos-duration="2000"
+              >
+                {carosel_cards.map((_card: any, index: number) => (
+                  <Card {..._card} key={index} />
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       );
     case "development_process":
@@ -1567,7 +1612,6 @@ const Section: NextPage = (props: any) => {
       return (
         <div className={`${servicesStyles.section8}`}>
           <div className={`${servicesStyles.section8_conatiner}`}>
-         
             <div className={servicesStyles.section8_content}>
               {free_text && (
                 <div
@@ -1582,7 +1626,7 @@ const Section: NextPage = (props: any) => {
                 ></div>
               )}
             </div>
-          
+
             {carosel_cards[0] && (
               <div
                 className={servicesStyles.section8_img}
@@ -1597,7 +1641,6 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
-
 
     case "career_banner":
       return (
@@ -1936,20 +1979,15 @@ const Section: NextPage = (props: any) => {
                   customTransition="all 0.5s ease"
                   transitionDuration={1000}
                   containerClass="carousel-container"
-                  
                   dotListClass="custom-dot-list-style"
                   // itemClass="carousel-item-padding-40-px"
                   // className={styles.homeblogcarousel}
                   customRightArrow={<CustomArrowportfolio />}
                   customLeftArrow={<CustomleftArrowportfolio />}
                 >
-                 
                   {carosel_cards.map((_card: any, index: number) => (
-                    
-                      <Card {..._card} key={index}/>
-                   
+                    <Card {..._card} key={index} />
                   ))}
-                  
                 </Carousel>
               </div>
             }
@@ -2228,28 +2266,34 @@ const Section: NextPage = (props: any) => {
     case "expertise_carousal":
       return (
         <div className={`${expertiseStyle.section4}`}>
-            <div className={expertiseStyle.section4Cards}>
+          <div className={expertiseStyle.section4Cards}>
             <Carousel
-                swipeable={true}
-                draggable={false}
-                showDots={true}
-                responsive={responsive_small_cards}
-                ssr={true} // means to render carousel on server-side.
-                infinite={true}
-                autoPlay={true}
-                keyBoardControl={true}
-                autoPlaySpeed={1500}
-                customTransition="all 0.5s ease"
-                transitionDuration={500}
-                containerClass="carousel-container"
-                removeArrowOnDeviceType={["desktop", "tablet", "mobile", "tablet2"]}
-                dotListClass="custom-dot-list-style"
-                itemClass="carousel-item-padding-40-px">
+              swipeable={true}
+              draggable={false}
+              showDots={true}
+              responsive={responsive_small_cards}
+              ssr={true} // means to render carousel on server-side.
+              infinite={true}
+              autoPlay={true}
+              keyBoardControl={true}
+              autoPlaySpeed={1500}
+              customTransition="all 0.5s ease"
+              transitionDuration={500}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={[
+                "desktop",
+                "tablet",
+                "mobile",
+                "tablet2",
+              ]}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px"
+            >
               {carosel_cards.map((_card: any, index: number) => (
-                  <Card {..._card} key={index} />
-                ))}
-              </Carousel>
-            </div>
+                <Card {..._card} key={index} />
+              ))}
+            </Carousel>
+          </div>
         </div>
       );
     case "expertise_description":

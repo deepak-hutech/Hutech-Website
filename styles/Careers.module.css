@@ -240,7 +240,7 @@
   width: 360px;
   margin-bottom: 3rem;
   position: relative;
-  margin:2% auto;
+  margin: 2% auto;
   /* margin: 1rem 1.6rem 1rem 1.6rem; */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: 0;
@@ -316,17 +316,12 @@
   width: 268px;
   margin-bottom: 3rem;
   position: relative;
- margin: 1rem 1rem 1rem 1rem;
+  margin: 1rem 1rem 1rem 1rem;
   border: 0;
   border-radius: 15px;
   cursor: pointer;
   transition: all 0.15s ease-in-out;
   padding: 3% 1.5% 3% 1.5%;
-
-
-
-  
-  
 }
 .openingcard img {
   object-fit: contain;
@@ -336,12 +331,11 @@
 }
 .estimate_call {
   display: flex;
-  
 }
 .estimate_call img {
   height: 24px;
-    width: 24px;
-    margin-top: 2%;
+  width: 24px;
+  margin-top: 2%;
   object-fit: contain;
 }
 .estimate_call:hover {
@@ -381,6 +375,19 @@
   padding: 4% 0;
   width: 100%;
 }
+.careerFormNew input[type=file]{
+  
+ border: 1px solid #DFDBDB;
+ font-size: 14px;
+}
+.careerFormNew input[type=file]::file-selector-button {
+   /* padding: .2em .4em; */
+  
+   background-color:#0171C1;
+   /* font-size: 14px; */
+   color: #ffffff;
+}
+
 .captcha_text {
   font-style: normal;
   font-weight: normal;
@@ -515,16 +522,17 @@
 }
 
 .Estimate_btn1 {
-  height: 3rem;
-  width: 12rem;
+  height: 58px;
+  width: 253px;
   background-color: #ffaf2b;
   color: #fff;
   border: none;
   box-sizing: border-box;
   border-radius: 30px;
   font-size: 0.9rem;
-  padding: 0.7rem 0.5rem;
+  padding: 0.9rem 0.7rem;
   cursor: pointer;
+  margin: auto auto;
 }
 .Estimate_btn1:hover {
   animation: pulse 1s infinite;
@@ -550,7 +558,7 @@
   transition: 0.3s;
 }
 .estimatearrowicon {
-  margin: 0px 0px -2px 10px;
+  margin: 0px 0px 0px 10px;
 }
 .estimatebannerimg {
   width: 100%;
@@ -640,14 +648,17 @@
 }
 .Estimate_btn1 .call_to_action {
   text-align: center;
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-.estimatenote p {
   font-style: normal;
   font-weight: normal;
-  font-size: 1.25rem;
-  line-height: 1.875rem;
+  font-size: 20px;
+  line-height: 30px;
+}
+.estimatenote p {
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
   margin: 0 10px;
 }
 .careerdetails_container {
@@ -687,6 +698,7 @@
   padding: 3% 3% 3% 3%;
 }
 .apply_right h4 {
+  font-family: "GraphikMedium";
   text-align: center;
   font-weight: bold;
   font-size: 24px;
@@ -841,16 +853,16 @@
   .section1_subText2 p {
     font-size: 21px;
   }
-  .openingcard{
+  .openingcard {
     height: 235px;
-  width: 293px;
+    width: 293px;
   }
-   .section5_subText1 p{
+  .section5_subText1 p {
     font-size: 24px;
   }
   .section5_subText2 h4 {
-  font-size: 26px;
-}
+    font-size: 26px;
+  }
 }
 @media only screen and (max-width: 992px) {
   .section1_subText1 h3 {
@@ -868,16 +880,16 @@
     margin: 10% 0% 6% 0%;
     padding: 5% 5% 5% 5%;
   }
-   .openingcard{
+  .openingcard {
     height: 235px;
- width: 251px;
+    width: 251px;
   }
-  .section5_subText1 p{
+  .section5_subText1 p {
     font-size: 24px;
   }
   .section5_subText2 h4 {
-  font-size: 22px;
-}
+    font-size: 22px;
+  }
 }
 @media only screen and (max-width: 850px) {
   .section1_subText1 h3 {
@@ -886,17 +898,20 @@
   .section1_subText2 p {
     font-size: 15px;
   }
-  .openingcard{
-   height: 235px;
-    width: 224px
+  .openingcard {
+    height: 235px;
+    width: 224px;
   }
-  .section5_subText1 p{
+  .section5_subText1 p {
     font-size: 20px;
   }
   .section5_subText2 h4 {
-  font-size: 22px;
-}
- /* .featurecard {
+    font-size: 22px;
+  }
+  .section3{
+    background-image: none;
+  }
+  /* .featurecard {
     margin: 2% 0% 2% 5%;
     padding: 3% 1.5% 3% 1.5%;
   } */
@@ -942,8 +957,8 @@
     transform: scale(1.1);
     opacity: 0.7;
   }
-  .section3{
-     background-image:none;
+  .section3 {
+    background-image: none;
   }
   .opening_btn {
     height: 3rem;
@@ -967,9 +982,9 @@
     margin-top: 1rem;
     padding: 3% 1.5% 3% 1.5%;
   } */
-.openingcard{
-   height: 235px;
-    width: 213px
+  .openingcard {
+    height: 235px;
+    width: 213px;
   }
   /* .section4_cards {
     margin: 0% 15%;
@@ -987,21 +1002,21 @@
   }
   .apply_right {
     width: 80%;
-    margin: 8% auto; 
+    margin: 8% auto;
     padding: 5% 5% 5% 5%;
   }
   .career_col {
     margin: 0 0 0 0;
   }
-  .section5_subText1 p{
+  .section5_subText1 p {
     font-size: 18px;
   }
   .section5_subText2 h4 {
-  font-size: 20px;
-}
-.careerForm_style {
-  margin-top: 0%;
-}
+    font-size: 20px;
+  }
+  .careerForm_style {
+    margin-top: 0%;
+  }
 }
 @media only screen and (max-width: 550px) {
   /* .section1_subText2{
@@ -1020,8 +1035,8 @@
     width: 100%;
     margin: 5% 0% 0% 0%;
   }
-  .section3{
-     background-image:none;
+  .section3 {
+    background-image: none;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -1067,16 +1082,16 @@
   .sec2_left_note h5 {
     font-size: 12px;
   }
-  .section3{
-     background-image:none;
+  .section3 {
+    background-image: none;
   }
-  .featurecard{
-     margin:2% 5%;
+  .featurecard {
+    margin: 2% 5%;
   }
   .section3_note p {
-  font-size: 11px;
-  line-height: 20px;
-}
+    font-size: 11px;
+    line-height: 20px;
+  }
   .apply_left {
     width: 90%;
     margin: 10px;
