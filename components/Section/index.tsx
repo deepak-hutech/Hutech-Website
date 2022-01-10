@@ -306,8 +306,8 @@ const Section: NextPage = (props: any) => {
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      slidesToSlide: 2, // optional, default to 1.
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
     },
     mobile: {
       breakpoint: { max: 564, min: 0 },
@@ -1085,7 +1085,8 @@ const Section: NextPage = (props: any) => {
               customTransition="all 0.5s ease"
               transitionDuration={1000}
               containerClass="carousel-container"
-              removeArrowOnDeviceType={["tablet", "mobile"]}
+              // removeArrowOnDeviceType={["tablet", "mobile"]}
+              
               dotListClass="custom-dot-list-style"
               // itemClass="carousel-item-padding-40-px"
               className={styles.homeblogcarousel}

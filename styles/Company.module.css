@@ -3,7 +3,7 @@
   margin-top: 66px;
   text-align: center;
   color: white;
-  
+
   background: #0662a7;
   align-items: center;
   position: relative;
@@ -24,7 +24,6 @@
   margin-right: calc(50% - 50vw);
   padding-left: 0;
   padding-right: 0;
-
 }
 
 .company_banner img {
@@ -34,7 +33,10 @@
 .company_banner .banner_container {
   position: absolute;
   /* top: 26%; */
-  width: 100%;
+  width: 1200px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
 }
 .campany_banner_web {
   width: 100vw;
@@ -83,33 +85,35 @@
 .company_banner .call_to_action:hover {
   background: #0171c1;
 }
-.descrption p {
-  padding: 0% 14%;
+
+
+@media only screen and (max-width: 992px) {
+  .company_banner .banner_container {
+    width: 850px;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .company_banner .banner_container {
+    width: 768px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .company_banner .banner_container {
+    width: 100%;
+    padding: 0 2%;
+  }
 }
 
-/* .company_banner .call_to_action :hover {
-    color: #000;
-  }
-  .call_to_action::before {
-    background-color: #0171C1;
-    border-radius: 30px;
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transform: scaleX(0);
-    transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-    transform-origin: center right;
-  }
-  .call_to_action:hover::before {
-    transform: scaleX(1);
-    transform-origin: center left;
-  } */
 
 @media only screen and (max-width: 500px) {
   .company_banner .content .free_text p {
+    font-size: 30px;
+  }
+  .current_opening .banner_container {
+    top: 20%;
+  }
+
+  .current_opening .banner_container .free_text {
     font-size: 30px;
   }
   .company_banner .banner_container {
@@ -134,21 +138,6 @@
     display: none;
   }
 }
-@media only screen and (max-width: 992px) {
-  .company_banner {
-    /* display: none; */
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .current_opening .banner_container {
-    top: 20%;
-  }
-
-  .current_opening .banner_container .free_text {
-    font-size: 30px;
-  }
-}
 
 /* About Company */
 
@@ -157,7 +146,7 @@
   /* padding: 3% 6%; */
   /* border-radius: 20%; */
   max-width: 1200px;
-  margin: 0 16PX;
+  margin: 0 16px;
 }
 .abt_company .heading {
   margin: 40px 0;
@@ -213,12 +202,10 @@
     padding: 0 33px;
   }
   .abt_company .heading h3 {
-      font-size: 26px;
-      line-height: 20px;
-      padding: 0 33px;
-    
+    font-size: 26px;
+    line-height: 20px;
+    padding: 0 33px;
   }
-
 }
 
 @media only screen and (max-width: 480px) {
@@ -308,9 +295,9 @@
   font-family: "GraphikRegular";
 }
 @media only screen and (max-width: 768px) {
-   .values_vision {
-      padding: 35px 30px;
-   }
+  .values_vision {
+    padding: 35px 30px;
+  }
   .values_vision .free_text {
     font-size: 12px;
   }
@@ -326,7 +313,6 @@
   }
   .web_front_end_para {
     padding-right: 0;
-    
   }
   .web_front_end_para p {
     font-size: 12px;
@@ -339,7 +325,7 @@
   }
   .values_vision {
     padding: 35px 30px;
- }
+  }
   .values_vision .vvContent {
     display: flex;
     flex-direction: column;
@@ -352,7 +338,6 @@
   }
   .web_front_end_para {
     padding-right: 0;
-    
   }
   .web_front_end_para p {
     font-size: 12px;
@@ -364,9 +349,10 @@
   text-align: center;
   width: 100%;
   margin: 50px 0px 0;
+  overflow-x: hidden;
 }
 .imgborder {
-  border: 2px solid #A4CFF9;
+  border: 2px solid #a4cff9;
   padding: 2px;
   border-radius: 50%;
   height: 172px;
@@ -425,10 +411,7 @@
     font-size: 11px;
     margin-bottom: 10px;
   }
-
-
 }
-
 
 @media only screen and (max-width: 480px) {
   .our_people .free_text h3 {
@@ -460,7 +443,8 @@
   .imgborder {
     margin: 0 10%;
     height: 142px;
-    width: 142px;}
+    width: 142px;
+  }
 }
 
 /* Partner and Clients*/
@@ -515,7 +499,6 @@
 }
 
 .partner .logos {
-
   width: auto;
   /* height: 154px; */
   margin: 16px;
@@ -585,7 +568,7 @@
 
 .tech_slack {
   max-width: 1200px;
-  margin: 50px  auto;
+  margin: 50px auto;
   text-align: center;
 }
 
@@ -649,7 +632,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-
   .tech_slack .our_slack_title {
     font-size: 23px;
   }
@@ -777,7 +759,6 @@
   text-align: center;
   color: white;
   opacity: 0.3;
-
 }
 
 .blog_banner_web img {
@@ -787,7 +768,7 @@
 .blog_banner .banner_container {
   position: absolute;
   /* top: 26%; */
-  width: 100%;
+  width: 1200px;
 }
 .current_opening .banner_container {
   position: absolute;
@@ -876,5 +857,3 @@
     padding: 10px;
   }
 }
-
-
