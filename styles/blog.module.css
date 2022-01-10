@@ -11,7 +11,7 @@
   line-height: 55px;
 }
 .blog_bredcrumb {
-  padding: 2% 6% 0;
+  padding: 25px;
 }
 .blogContainer{
   max-width: 1200px;
@@ -266,8 +266,12 @@
   .blog_details_container {
     flex-direction: column;
   }
+
+  .blog_banner {
+    background-image: none;
+  }
+
   .authername {
-    
     width: 70%;
   }
   .blog_details_right {
@@ -313,8 +317,7 @@
 
   .compo {
     height: 444px;
-    
-    width: auto;
+    /* width: auto; */
   }
   .section5_subText2 {
     font-size: 20px;

@@ -91,7 +91,18 @@ ul {
   color: #6d757d;
   border: 1px solid #dcd7d7;
   padding: 10px 18px;
+  font-weight: 600;
 }
+.pagination .previous {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.pagination .next {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 .pagination li.active {
   background-color: #157ffb;
   color: #fff;

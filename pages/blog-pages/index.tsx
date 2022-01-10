@@ -102,8 +102,8 @@ const AllBlogs: NextPage<{
       </div>
         <section>
           <ReactPaginate
-              previousLabel={"previous"}
-              nextLabel={"next"}
+              previousLabel={"Previous"}
+              nextLabel={"Next"}
               breakLabel={"..."}
               breakClassName={"break-me"}
               activeClassName={"active"}

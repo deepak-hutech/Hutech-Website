@@ -26,6 +26,10 @@
   padding-right: 0;
 }
 
+.Company_breadCrum {
+  padding: 40px 0;
+}
+
 .company_banner img {
   min-width: 8%;
   max-height: auto;
@@ -88,16 +92,41 @@
 
 
 @media only screen and (max-width: 992px) {
+  .company_banner {
+    background-image: none;
+  }
   .company_banner .banner_container {
     width: 850px;
   }
 }
 @media only screen and (max-width: 850px) {
+  .company_banner {
+    background-image: none;
+  }
   .company_banner .banner_container {
     width: 768px;
   }
 }
 @media only screen and (max-width: 768px) {
+  .company_banner .content .free_text p {
+    font-size:30px;
+  }
+
+  .current_opening .banner_container .free_text {
+    font-size: 28px;
+  }
+
+  .company_banner .content .description {
+    font-size: 13px;
+  }
+
+  .company_banner .call_to_action {
+    width: 165px;
+    font-size: 13px;
+  }
+  .company_banner {
+    background-image: none;
+  }
   .company_banner .banner_container {
     width: 100%;
     padding: 0 2%;
@@ -105,9 +134,9 @@
 }
 
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 480px) {
   .company_banner .content .free_text p {
-    font-size: 30px;
+    font-size:28px;
   }
   .current_opening .banner_container {
     top: 20%;
@@ -116,9 +145,9 @@
   .current_opening .banner_container .free_text {
     font-size: 30px;
   }
-  .company_banner .banner_container {
+  /* .company_banner .banner_container {
     top: 18%;
-  }
+  } */
 
   .company_banner .content .description {
     font-size: 12px;
@@ -146,10 +175,10 @@
   /* padding: 3% 6%; */
   /* border-radius: 20%; */
   max-width: 1200px;
-  margin: 0 16px;
+  /* margin: 0 16px; */
 }
 .abt_company .heading {
-  margin: 40px 0;
+  margin: 30px 00px 60px 0px;
 }
 .abt_company .heading h3 {
   /* margin-top: 40px; */
@@ -228,8 +257,8 @@
   }
 
   .company_banner .call_to_action {
-    width: 158px;
-    font-size: 13px;
+    width: 150px;
+    font-size: 12px;
   }
 }
 
@@ -294,7 +323,15 @@
   font-size: 13px;
   font-family: "GraphikRegular";
 }
+
+@media only screen and (max-width: 1150px) {
+  .values_vision_banner {
+    background-image: none;
+  }
+}
+
 @media only screen and (max-width: 768px) {
+
   .values_vision {
     padding: 35px 30px;
   }
@@ -320,6 +357,7 @@
 }
 
 @media only screen and (max-width: 500px) {
+
   .values_vision .free_text {
     font-size: 12px;
   }
@@ -347,7 +385,7 @@
 /* Our People */
 .our_people {
   text-align: center;
-  width: 100%;
+  width: 97%;
   margin: 50px 0px 0;
   overflow-x: hidden;
 }
@@ -416,7 +454,7 @@
 @media only screen and (max-width: 480px) {
   .our_people .free_text h3 {
     font-size: 26px;
-    line-height: 20px;
+    line-height: 30px;
   }
   .our_people .sub_heading p {
     font-size: 12px;
@@ -463,6 +501,13 @@
   margin-right: calc(50% - 50vw);
   padding-left: 0;
   padding-right: 0;
+}
+
+@media (min-width: 576px){
+  .col-sm-4 {
+  /* background-color: tomato !important; */
+
+ }
 }
 
 .partner .heading {
@@ -513,6 +558,16 @@
 
 .partner .logos .images {
   margin: 20% auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .partner .heading h3 {
+    font-size: 28px;
+  }
+  .partner .desc p {
+    font-size: 13px;
+    line-height: 21px;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -768,7 +823,8 @@
 .blog_banner .banner_container {
   position: absolute;
   /* top: 26%; */
-  width: 1200px;
+  width: 100%;
+
 }
 .current_opening .banner_container {
   position: absolute;
@@ -823,22 +879,30 @@
   color: white;
 }
 
+@media only screen and (max-width: 1150px) {
+  .current_opening {
+    background-image: none;
+ }
+ .blog_banner {
+  background-image: none;
+}
+}
+
 @media only screen and (max-width: 480px) {
   .current_opening .content .free_text {
     font-size: 20px;
     padding: 0 8%;
   }
-  .current_opening_banner_web {
-    /* display: none; */
+  .blog_banner {
+    background-image: none;
   }
-  .blog_banner_web {
-    /* display: none; */
+  .company_banner .current_opening_banner_web{
+    width: auto;
+    height: inherit;
   }
-  .current_opening {
-    height: 250px;
-    background-image: url(../components/assets/about-bottom-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+  .current_opening img{
+     background-image: none;
+     max-height: 300px;
   }
 
   .current_opening .banner_container {

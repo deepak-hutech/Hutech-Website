@@ -453,6 +453,8 @@ overflow-x: hidden;
   justify-content: center;
   align-items: center;
   align-content: center;
+  max-width: 1200px;
+  margin: auto;
 }
 .client {
   background: #f1f2f3;
