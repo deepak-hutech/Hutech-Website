@@ -43,7 +43,7 @@ const AllBlogs: NextPage<{
   console.log(dataToShow);
 
   return (
-    <div ref={scrollRef} className={blogStyle.root}>
+    <div ref={scrollRef} className="root">
       <Header {...header} />
       <div className={companyStyles.blog_banner}>
         <div className={companyStyles.blog_banner_web}>
@@ -81,17 +81,7 @@ const AllBlogs: NextPage<{
       <div className={blogStyle.blog_bredcrumb} >
         <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
       </div>
-      <div
-        style={{
-
-          display: "flex",
-          flexWrap: "wrap",
-          position: "relative",
-          maxWidth: "1200px",
-          margin: "auto",
-          justifyContent: "center",
-        }}
-      >
+      <div className={blogStyle.blogCards}>
         {dataToShow.map((val: any) => (
           <div key={val.uid} className={blogStyle.allBlogs}>
             <BlogSection {...val} />

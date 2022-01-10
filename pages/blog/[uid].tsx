@@ -28,7 +28,7 @@ const Article: NextPage<{
     props;
 
   return (
-    <div ref={scrollRef}>
+    <div ref={scrollRef} className="root">
       <Header {...header} />
 
       <div className={companyStyles.company_banner}>
@@ -56,7 +56,7 @@ const Article: NextPage<{
           </div>
         </div>
       </div>
-      <div style={{ padding: "2% 6% 0" }}>
+      <div style={{ padding: "2% 0" }}>
         <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
       </div>
       <div className={blogStyle.blog_details_container}>
@@ -125,6 +125,7 @@ const Article: NextPage<{
       </div>
 
       <div className={careerstyles.section5}>
+        <div className={careerstyles.section5_banner_web}> 
         <Image
           loader={() =>
             myLoaderbanner(
@@ -138,6 +139,8 @@ const Article: NextPage<{
           width={"100%"}
           className={careerstyles.estimatebannerimg}
         />
+        </div>
+        
 
         <div className={careerstyles.section5_centerText}>
           <div className={blogStyle.section5_subText1}>

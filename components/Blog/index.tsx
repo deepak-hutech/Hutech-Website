@@ -85,23 +85,7 @@ const Blog: NextPage = (props: any) => {
         </div>
       );
 
-    // case "blog_banner":
-    //   return (
-    //     <div>
-    //       <div className={blogStyle.page}>
-    //         <Pagination >
-    //           <Pagination.Prev />
-    //           <Pagination.Item key={1} active={true}>
-    //             1
-    //           </Pagination.Item>
-    //           <Pagination.Item key={2}>2</Pagination.Item>
-    //           <Pagination.Item key={3}>3</Pagination.Item>
-    //           <Pagination.Next />
-    //         </Pagination>
-    //       </div>
-    //     </div>
-    //   );
-
+    
     default:
       return (
         <div>
