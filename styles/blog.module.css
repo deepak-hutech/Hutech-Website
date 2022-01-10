@@ -3,6 +3,12 @@
   display: flex;
 } */
 
+.root {
+  max-width: 1200px;
+  margin: auto;
+}
+
+
 .blogfree_text {
   font-family: var(--banner-family);
   font-style: normal;
@@ -11,7 +17,7 @@
   line-height: 55px;
 }
 .blog_bredcrumb {
-  padding: 25px;
+  padding: 30px 0;
 }
 .blogContainer{
   max-width: 1200px;
@@ -262,6 +268,12 @@
 .postdate p {
   font-size: 12px;
 }
+@media only screen and (max-width: 1299px) {
+  .blogPage {
+    /* margin: 20px; */
+  }
+}
+
 @media only screen and (max-width: 480px) {
   .blog_details_container {
     flex-direction: column;
@@ -330,10 +342,9 @@
     font-size: 26px;
     line-height: 40px;
   }
-  .blog_bredcrumb {
-    padding: 4% 6% 0;
-  }
+ 
   .blog_details_container {
     display: flex;
     padding: 2% 4%;}
 }
+

@@ -26,7 +26,7 @@
   padding-right: 0;
 }
 
-.Company_breadCrum {
+.abt_company .Company_breadCrum {
   padding: 40px 0;
 }
 
@@ -218,7 +218,7 @@
 }
 @media only screen and (max-width: 768px) {
   .abt_company .abt_img {
-    padding: 0 9%;
+    padding: 3% 12%;
   }
   .abt_company .heading h6 {
     padding: 0 9%;
@@ -878,6 +878,12 @@
 .current_content {
   color: white;
 }
+
+@media only screen and (max-width: 768px) {
+  .buttons .call_to_action_req {
+        font-size: 14px;
+    }
+  }
 
 @media only screen and (max-width: 1150px) {
   .current_opening {
