@@ -651,7 +651,7 @@ const Section: NextPage = (props: any) => {
     case "about_company":
       return (
         <div className={companyStyles.abt_company}>
-          <div id="breadCrum">
+          <div id="breadCrum" className={companyStyles.Company_breadCrum}>
             <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
           </div>
               {free_text && (
@@ -751,7 +751,7 @@ const Section: NextPage = (props: any) => {
                 customTransition="all 0.5s ease"
                 transitionDuration={1000}
                 containerClass="carousel-container"
-                removeArrowOnDeviceType={["tablet", "mobile"]}
+                removeArrowOnDeviceType={["tablet", "mobile", "tablet2"]}
                 dotListClass="custom-dot-list-style"
                 // itemClass="carousel-item-padding-40-px"
                 className={styles.clientccarousel}
@@ -797,23 +797,10 @@ const Section: NextPage = (props: any) => {
               ></div>
             )}
           </div>
-          <div className={companyStyles.allProducts} >
-            <Row>
-
-            {carosel_cards.map((v: any) => (
-               <Col xs={6} md={3} sm={4}>
-                  <div className={companyStyles.logos} data-aos="zoom-in">
-                    <img
-                      className={companyStyles.images}
-                      src={baseUrl + v.images.map((v: any) => v.url)}
-                      placeholder="blur"
-                      height={45}
-                      width={137}
-                      />
-                  </div>
-             </Col>
-            ))}
-            </Row>
+          <div className={styles.clients_cards} >
+              {carosel_cards.map((_card: any, index: number) => (
+                  <Card {..._card} key={index} />
+                 ))}
           </div>
         </div>
       );
@@ -2236,7 +2223,7 @@ const Section: NextPage = (props: any) => {
                 responsive={responsive_small_cards}
                 ssr={true} // means to render carousel on server-side.
                 infinite={true}
-                autoPlay={true}
+                // autoPlay={true}
                 keyBoardControl={true}
                 autoPlaySpeed={1500}
                 customTransition="all 0.5s ease"

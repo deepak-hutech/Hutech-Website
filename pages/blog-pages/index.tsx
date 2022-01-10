@@ -16,8 +16,6 @@ import { Button, Col, Container, Row, Tab, Tabs } from "react-bootstrap";
 
 
 
-
-
 const { baseUrl } = strings;
 const myLoaderbanner: ImageLoader = (url: any) => {
   return url;
@@ -45,7 +43,7 @@ const AllBlogs: NextPage<{
   console.log(dataToShow);
 
   return (
-    <div ref={scrollRef}>
+    <div ref={scrollRef} className={blogStyle.root}>
       <Header {...header} />
       <div className={companyStyles.blog_banner}>
         <div className={companyStyles.blog_banner_web}>
@@ -102,8 +100,8 @@ const AllBlogs: NextPage<{
       </div>
         <section>
           <ReactPaginate
-              previousLabel={"previous"}
-              nextLabel={"next"}
+              previousLabel={"Previous"}
+              nextLabel={"Next"}
               breakLabel={"..."}
               breakClassName={"break-me"}
               activeClassName={"active"}
