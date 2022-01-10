@@ -2263,6 +2263,7 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
+    
     case "expertise_carousal":
       return (
         <div className={`${expertiseStyle.section4}`}>
