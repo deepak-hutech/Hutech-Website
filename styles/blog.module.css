@@ -280,10 +280,20 @@
   .blogPage {
     /* margin: 20px; */
   }
+  .blogfree_text {
+    font-size: 34px;
+  }
+
 }
 @media only screen and (max-width: 850px) {
   .blogCards {
     justify-content: center;
+  }
+  .blogfree_text {
+    font-size: 32px;
+  }
+  .descrption {
+    font-size: 14px;
   }
   .blog_details_container {
     flex-direction: column;
