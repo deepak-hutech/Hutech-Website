@@ -359,6 +359,12 @@
   display: grid;
   text-align: center;
   color: white;
+  height: 350px;
+
+}
+.section5_banner_web img{
+  object-fit: cover;
+  object-position: center;
 }
 .careerFormNew input {
   box-shadow: none !important;
@@ -926,7 +932,10 @@
   /* .section2_content {
     display: inline-block;
   } */
-
+  .section5_centerText {
+    width: 100%;
+    
+  }
   .sec2_left {
     width: 75%;
     height: 50%;

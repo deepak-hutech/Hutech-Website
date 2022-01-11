@@ -177,7 +177,7 @@
   display: grid;
   height: 100%; */
   margin: 5% 0;
-  height: 570px;
+  height: 630px;
   /* flex-direction: row;   */
   /* justify-content: center;  */
   /* align-items: center;     */
@@ -292,7 +292,7 @@
 .section5 {
   display: flex;
   align-items: center;
-  margin-bottom: 8%;
+  margin: 8% 0 6%;
   /* justify-content:space-evenly;  */
   /* margin: 5.5% 0% 8% 8%; */
 }
@@ -413,19 +413,36 @@
   }
 }
 
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1200px) {
   .section1  {
     background-image: none;
   }
   .section4 {
     background-image: none;
   }
+  .section4Cards {
+    max-width: 992px;
+  }
+  .expertisecard {
+    height: 410px;
+    width: 300px;
+    padding: 5%;
+  }
 }
-
-
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 992px){
+  .section4Cards {
+    max-width: 850px;}
+}
+@media only screen and (max-width: 850px){
+  .section4Cards {
+    max-width: 768px;}
+}
+@media only screen and (max-width: 768px) {
   .section1 .content .free_text h3 {
     font-size: 29px;
+  }
+  .section4Cards {
+    height: 620px;
   }
   .expertise_heading p {
     font-size: 21px;

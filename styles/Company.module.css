@@ -62,35 +62,19 @@
   margin: 0;
 }
 
-.company_banner .content .buttons {
-  margin-top: 40px;
+
+
+
+
+.company_banner .buttons {
+  display:flex;
+  justify-content: center;
 }
 
-.company_banner .call_to_action {
-  color: white;
-  background-color: #ffaf2b;
-  width: 220px;
-  height: 45px;
-  font-family: "GraphikRegular";
-  padding: 10px 0px;
-  font-size: 16px;
-  font-weight: 800;
-  line-height: 20px;
-  border: 0px;
-  border-radius: 60px;
-  cursor: pointer;
-  border: none;
-  margin: auto;
-  height: 40px;
-  transition: background-color 0.3s cubic-bezier(0.55, 0, 0.1, 1),
-    color 0.3s cubic-bezier(0.55, 0, 0.1, 1);
-  transition: box-shadow 1s cubic-bezier(0.55, 0, 0.1, 1) 0s;
-}
-
-.company_banner .call_to_action:hover {
-  background: #0171c1;
-}
-
+ .buttons {
+  display:flex;
+  justify-content: center;
+ }
 @media only screen and (max-width: 992px) {
   .company_banner {
     background-image: none;
@@ -331,12 +315,32 @@
   font-family: "GraphikRegular";
 }
 
-@media only screen and (max-width: 1150px) {
-  .values_vision_banner {
+@media only screen and (max-width: 1200px) {
+  /* .values_vision_banner {
     background-image: none;
+  } */
+  .values_vision {
+    
+    max-width: 992px;
+    padding: 8% 0;
   }
 }
-
+@media only screen and (max-width: 992px) {
+  
+  .values_vision {
+    
+    max-width: 850px;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 850px) {
+  
+  .values_vision {
+    
+    max-width: 768px;
+    margin: auto;
+  }
+}
 @media only screen and (max-width: 768px) {
   .values_vision {
     padding: 35px 30px;
@@ -390,7 +394,7 @@
 /* Our People */
 .our_people {
   text-align: center;
-  width: 97%;
+  /* width: 97%; */
   margin: 50px 0px 0;
   overflow-x: hidden;
 }
@@ -776,6 +780,7 @@
   display: grid;
   text-align: center;
   color: white;
+  height: 350px;
 }
 
 .blog_banner {

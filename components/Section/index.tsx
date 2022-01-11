@@ -35,6 +35,7 @@ import leftIconportfolio from "../../components/assets/rightcaro.svg";
 import rightIconportfolio from "../../components/assets/leftcaro.svg";
 import link from "next/link";
 import Link from "next/link";
+import OnScrollGalary from "../OnScollGalary";
 
 const { baseUrl } = strings;
 
@@ -124,11 +125,7 @@ const Section: NextPage = (props: any) => {
     </button>
   );
   const CustomArrowBlog = ({ onClick }: any) => (
-    <button
-      
-      onClick={onClick}
-      className={styles.arrowbtntestimonial}
-    >
+    <button onClick={onClick} className={styles.arrowbtntestimonial}>
       <Image
         loader={myLoader}
         src={rightIconBlog}
@@ -426,7 +423,7 @@ const Section: NextPage = (props: any) => {
     case "development":
       return (
         <div className={styles.key_solutions}>
-          {home_banner[0] && (
+          {/* {home_banner[0] && (
             <div className={`${styles.serviceKeySolutionimg}`}>
               <img src={baseUrl + home_banner[0].url} />
             </div>
@@ -444,7 +441,8 @@ const Section: NextPage = (props: any) => {
                 dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
               ></div>
             )}
-          </div>
+          </div> */}
+          {/* <OnScrollGalary /> */}
         </div>
       );
     case "successful_product":
@@ -636,10 +634,12 @@ const Section: NextPage = (props: any) => {
                 {home_button && (
                   <div className={companyStyles.buttons}>
                     {home_button.map((item: any) => (
-                      <button className={companyStyles.call_to_action}>
-                        {" "}
-                        {item.call_to_action}{" "}
-                      </button>
+                      
+                      <div className={styles.companycall_to_action}>
+                        <Link href={`/contact-us`}>
+                          <a>{item.call_to_action}</a>
+                        </Link>
+                      </div>
                     ))}
                   </div>
                 )}
@@ -686,7 +686,7 @@ const Section: NextPage = (props: any) => {
                 ></div>
               )}
             </Col>
-            </Row>
+          </Row>
         </div>
       );
     case "values_vision_mission":
@@ -743,7 +743,7 @@ const Section: NextPage = (props: any) => {
                 swipeable={true}
                 draggable={false}
                 showDots={false}
-                // autoPlay={true}
+                autoPlay={true}
                 responsive={responsive_our_people_cards}
                 ssr={true} // means to render carousel on server-side.
                 infinite={true}
@@ -1047,13 +1047,10 @@ const Section: NextPage = (props: any) => {
                 {home_button && (
                   <div className={companyStyles.buttons}>
                     {home_button.map((item: any) => (
-                      <div className={companyStyles.call_to_action_req}>
-                        {" "}
-                        {item.call_to_action}{" "}
-                        {/* <img
-                        src={`${baseUrl}${home_button[0].arrow_icon[0].url}`}
-                        className={styles.arrowicon}
-                      /> */}
+                      <div className={styles.companycall_to_action}>
+                        <Link href={`/careers`}>
+                          <a>{item.call_to_action}</a>
+                        </Link>
                       </div>
                     ))}
                   </div>
@@ -1073,6 +1070,8 @@ const Section: NextPage = (props: any) => {
       return (
         <div className={`${styles.blog_banner}`}>
           <div className={styles.carousel_blog_home}>
+            <h3>What our Client Says</h3>
+            <h5>Our send us bunch of smile with our services and love them</h5>
             <Carousel
               swipeable={true}
               draggable={false}
@@ -1457,7 +1456,7 @@ const Section: NextPage = (props: any) => {
     //               <Card {..._card} key={index} />
     //             ))}
     //         </Carousel>
-           
+
     //       </div>
     //     </div>
     //   );
@@ -2185,14 +2184,16 @@ const Section: NextPage = (props: any) => {
                   ></div>
                 )}
                 {home_button && (
-                  <div className={expertiseStyle.buttons}>
-                    {home_button.map((item: any) => (
-                      <div className={expertiseStyle.call_to_action}>
-                        {" "}
-                        {item.call_to_action}{" "}
-                      </div>
-                    ))}
-                  </div>
+                  <div className={companyStyles.buttons}>
+                  {home_button.map((item: any) => (
+                    
+                    <div className={styles.companycall_to_action}>
+                      <Link href={`/contact-us`}>
+                        <a>{item.call_to_action}</a>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
                 )}
               </div>
             )}
@@ -2262,28 +2263,34 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
-    
+
     case "expertise_carousal":
       return (
         <div className={`${expertiseStyle.section4}`}>
           <div className={expertiseStyle.section4Cards}>
             <Carousel
-                swipeable={true}
-                draggable={false}
-                showDots={true}
-                responsive={responsive_small_cards}
-                ssr={true} // means to render carousel on server-side.
-                infinite={true}
-                // autoPlay={true}
-                keyBoardControl={true}
-                autoPlaySpeed={5000}
-                autoPlay={true}
-                customTransition="all 0.5s ease"
-                transitionDuration={1000}
-                containerClass="carousel-container"
-                removeArrowOnDeviceType={["desktop", "tablet", "mobile", "tablet2"]}
-                dotListClass="custom-dot-list-style"
-                itemClass="carousel-item-padding-40-px">
+              swipeable={true}
+              draggable={false}
+              showDots={true}
+              responsive={responsive_small_cards}
+              ssr={true} // means to render carousel on server-side.
+              infinite={true}
+              // autoPlay={true}
+              keyBoardControl={true}
+              autoPlaySpeed={5000}
+              autoPlay={true}
+              customTransition="all 0.5s ease"
+              transitionDuration={1000}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={[
+                "desktop",
+                "tablet",
+                "mobile",
+                "tablet2",
+              ]}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px"
+            >
               {carosel_cards.map((_card: any, index: number) => (
                 <Card {..._card} key={index} />
               ))}
@@ -2291,9 +2298,7 @@ const Section: NextPage = (props: any) => {
           </div>
         </div>
       );
-    
-    
-    
+
     case "expertise_description":
       return (
         <div className={expertiseStyle.section5}>

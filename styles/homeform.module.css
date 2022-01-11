@@ -88,6 +88,42 @@
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;
+  transition: background-color 0.6s cubic-bezier(0.075, 0.82, 0.165, 1),
+    color 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: translateZ(0);
+  overflow-x: hidden;
+}
+.formbtn:hover {
+  color: #fff;
+  border: 1px solid #0171c1;
+}
+
+.formbtn p {
+  color: #fff;
+  position: relative;}
+.formbtn::before {
+  background-color: #0171c1;
+  border-radius: 38px;
+  content: "";
+  position: absolute;
+  top: 0;
+  border: 1px solid #0171c1;
+  background-image: url(../components/assets/contact.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  transform: scaleX(0);
+  transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform-origin: center right;
+}
+.formbtn:hover::before {
+  transform: scaleX(1);
+  transform-origin: center left;
+  border-radius: 30px;
 }
 
 .contactForm input::-webkit-inner-spin-button {
