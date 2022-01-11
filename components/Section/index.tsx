@@ -662,7 +662,7 @@ const Section: NextPage = (props: any) => {
               )}
 
             <Row>
-              <Col md={6} sm={12}>
+              <Col md={12} sm={12} lg={6}>
                 {home_banner[0] && (
                   <div className={`${companyStyles.abt_img}`}>
                     <Image
@@ -678,7 +678,7 @@ const Section: NextPage = (props: any) => {
                   </div>
                 )}
               </Col>
-              <Col md={6} sm={12}>
+              <Col md={12} sm={12} lg={6}>
                 {sub_heading && (
                   <div
                     className={companyStyles.note}
