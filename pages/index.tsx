@@ -6,18 +6,12 @@ import Header from "../components/Header";
 import Section from "../components/Section";
 import strings from "../public/strings.json";
 
-
-
 const { baseUrl } = strings;
-
 
 const Home: NextPage<{ header: any; pages: any; footer: any; blogs: any }> = (
   props
 ) => {
-  
   const scrollRef = useRef() as React.MutableRefObject<HTMLInputElement>;
-
-  
 
   const { header, footer } = props;
   const { title, content, Logo, descrption } = props?.pages[0];
@@ -38,20 +32,15 @@ const Home: NextPage<{ header: any; pages: any; footer: any; blogs: any }> = (
         {/* <link rel="icon" href={`${baseUrl}${favicon}`} /> */}
         {/* <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
         <script src="bower_components/aos/dist/aos.js"></script>  */}
-
-       
       </Head>
       <div className="root">
-      <Header {...header} />
-      
+        <Header {...header} />
 
-      {content.map((section: any) => (
-        <Section {...section} />
-      ))}
+        {content.map((section: any) => (
+          <Section {...section} />
+        ))}
 
-      
-
-      <Footer {...footer} />
+        <Footer {...footer} />
       </div>
     </div>
   );
