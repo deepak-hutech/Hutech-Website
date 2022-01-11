@@ -635,7 +635,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
   margin-top: 1rem;
 }
 .Estimate_btn1 .call_to_action {
@@ -646,7 +646,7 @@
 .estimatenote p {
   font-style: normal;
   font-weight: normal;
-  font-size: 1.25rem;
+  /* font-size: 1.25rem; */
   line-height: 1.875rem;
   margin: 0 10px;
 }

@@ -181,7 +181,7 @@
   box-shadow: 0px 4px 4px rgba(144, 140, 140, 0.25);
   border-radius: 20px;
   position: relative;
-  padding: 3% 1.5% 3% 1.5%;
+  padding: 9% 6%;
 
 }
 .mobile_dev_sec3_cards .mobile_dev_sec3_heading p{
@@ -513,8 +513,9 @@ font-family:"GraphikMedium";
 }
 .section8_img {
   display: flex;
+  flex-wrap: wrap;
   position: relative;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .section8_img .section8Cardimg {

@@ -204,9 +204,10 @@
 .section4Cards {
   max-width: 1200px;
   margin: auto;
-  overflow: hidden;
+  overflow-x: hidden;
+  
   /* display: flex; */
-  /* height: 600px; */
+  height: 600px;
 }
 /* .react-multi-carousel-dot-list
 {
