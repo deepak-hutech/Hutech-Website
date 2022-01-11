@@ -8,7 +8,7 @@
   max-width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-overflow-x: hidden;
+  overflow-x: hidden;
   padding-left: 0;
   padding-right: 0;
   overflow-y: visible;
@@ -24,6 +24,7 @@ overflow-x: hidden;
 }
 .descrption p {
   width: 50%;
+  color: #6C6C6C;
 }
 .homebanner .title p {
   font-size: 45px;
@@ -428,7 +429,7 @@ overflow-x: hidden;
   background: #ea9913;
   padding: 8% 0;
   margin-bottom: 100px;
-  
+
   width: 100vw;
   max-width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -439,8 +440,8 @@ overflow-x: hidden;
 .wide_card_ {
   display: flex;
   background: #fff;
-    border-radius: 4px;
-    margin-right: 50px;
+  border-radius: 4px;
+  margin-right: 50px;
 }
 /* .Industries_banner {
   background: #ffffff;
@@ -708,8 +709,22 @@ overflow-x: hidden;
   border: none;
   background: transparent;
   opacity: 0.5;
+  position: absolute;
+  right: 6%;
+  bottom: -60px;
+}
+.arrowleftbtntestimonial {
+  border: none;
+  background: transparent;
+  opacity: 0.5;
+  position: absolute;
+  right: 11%;
+  bottom: -60px;
 }
 .arrowbtntestimonial:hover {
+  opacity: 1;
+}
+.arrowleftbtntestimonial:hover {
   opacity: 1;
 }
 
@@ -728,9 +743,6 @@ overflow-x: hidden;
   .home_caro_mob {
     height: 360px;
     overflow-x: hidden;
-    
-
-
   }
 
   .carosel_card_mob img {
@@ -815,6 +827,10 @@ overflow-x: hidden;
   font-size: 20px;
   line-height: 40px;
   color: #000;
+ 
+    
+    width: 500px;
+  
 }
 .homecall_to_action {
   font-size: 15px;
@@ -959,7 +975,7 @@ overflow-x: hidden;
   } */
   .free_text p {
     font-size: 16px;
-    width: 63%;
+    width: 500px;
   }
   .free_text h2 {
     font-size: 48px;
@@ -975,6 +991,9 @@ overflow-x: hidden;
   }
   .home_from_container {
     width: 992px;
+  }
+  .arrowleftbtntestimonial {
+    right: 14%;
   }
 }
 @media only screen and (max-width: 992px) {
@@ -992,7 +1011,7 @@ overflow-x: hidden;
   }
   .free_text p {
     font-size: 14px;
-    width: 63%;
+    width: 60%;
     line-height: 30px;
   }
   .free_text h2 {
@@ -1079,16 +1098,18 @@ overflow-x: hidden;
   .fome_form_button {
     font-size: 14px;
   }
+  .arrowleftbtntestimonial {
+    right: 14%;
+  }
 }
 @media only screen and (max-width: 480px) {
-  
   .free_text h2 {
     font-size: 30px;
     line-height: 40px;
     margin-right: 72px;
   }
   .capabilities_cards {
-justify-content: space-between;
+    justify-content: space-between;
   }
 
   .free_text p {

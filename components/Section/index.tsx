@@ -125,7 +125,7 @@ const Section: NextPage = (props: any) => {
   );
   const CustomArrowBlog = ({ onClick }: any) => (
     <button
-      style={{ position: "absolute", right: "0%", bottom: -60 }}
+      
       onClick={onClick}
       className={styles.arrowbtntestimonial}
     >
@@ -140,9 +140,9 @@ const Section: NextPage = (props: any) => {
   );
   const CustomleftArrowBlog = ({ onClick }: any) => (
     <button
-      style={{ position: "absolute", right: "4%", bottom: -60 }}
+      // style={{ position: "absolute", right: "4%", bottom: -60 }}
       onClick={onClick}
-      className={styles.arrowbtntestimonial}
+      className={styles.arrowleftbtntestimonial}
     >
       <Image
         loader={myLoader}
@@ -345,7 +345,7 @@ const Section: NextPage = (props: any) => {
             ssr={true} // means to render carousel on server-side.
             infinite={true}
             autoPlaySpeed={5000}
-            autoPlay={false}
+            autoPlay={true}
             keyBoardControl={true}
             customTransition="all .5"
             transitionDuration={500}
@@ -2269,27 +2269,22 @@ const Section: NextPage = (props: any) => {
         <div className={`${expertiseStyle.section4}`}>
           <div className={expertiseStyle.section4Cards}>
             <Carousel
-              swipeable={true}
-              draggable={false}
-              showDots={true}
-              responsive={responsive_small_cards}
-              ssr={true} // means to render carousel on server-side.
-              infinite={true}
-              autoPlay={true}
-              keyBoardControl={true}
-              autoPlaySpeed={1500}
-              customTransition="all 0.5s ease"
-              transitionDuration={500}
-              containerClass="carousel-container"
-              removeArrowOnDeviceType={[
-                "desktop",
-                "tablet",
-                "mobile",
-                "tablet2",
-              ]}
-              dotListClass="custom-dot-list-style"
-              itemClass="carousel-item-padding-40-px"
-            >
+                swipeable={true}
+                draggable={false}
+                showDots={true}
+                responsive={responsive_small_cards}
+                ssr={true} // means to render carousel on server-side.
+                infinite={true}
+                // autoPlay={true}
+                keyBoardControl={true}
+                autoPlaySpeed={5000}
+                autoPlay={true}
+                customTransition="all 0.5s ease"
+                transitionDuration={1000}
+                containerClass="carousel-container"
+                removeArrowOnDeviceType={["desktop", "tablet", "mobile", "tablet2"]}
+                dotListClass="custom-dot-list-style"
+                itemClass="carousel-item-padding-40-px">
               {carosel_cards.map((_card: any, index: number) => (
                 <Card {..._card} key={index} />
               ))}

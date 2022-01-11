@@ -505,6 +505,7 @@
 }
 .section8_img {
   display: flex;
+  flex-wrap: wrap;
   position: relative;
   /* margin: 0 auto; */
   justify-content: space-evenly;
@@ -847,11 +848,11 @@ padding: 0 4%;
 margin: 0 auto;
 }
   .section8Para{
-     width: 120px;
-  height: 65px;
-  margin: 0 50px;
-  top: -28px;
-  padding: 10px 0;
+   width: 120px;
+    height: 65px;
+    margin: 10px 100px;
+    top: -28px;
+    padding: 10px 0;
   }
   .section8_para1 {
  
