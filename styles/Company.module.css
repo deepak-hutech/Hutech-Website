@@ -821,7 +821,7 @@
 .blog_banner .banner_container {
   position: absolute;
   /* top: 26%; */
-  width: 1200px;
+  /* width: 1200px; */
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
@@ -844,7 +844,7 @@
 
 .content {
   color: white;
-  width: 1200px;
+  /* width: 1200px; */
   margin: 0 auto;
 }
 
@@ -904,7 +904,7 @@
     background-image: none;
   }
   .blog_banner {
-    background-image: none;
+    background-image: none !important;
   }
 }
 @media only screen and (max-width: 992px) {
@@ -914,6 +914,7 @@
   .content {
     width: 850px;
   }
+
 }
 @media only screen and (max-width: 850px) {
   .blog_banner .banner_container {
