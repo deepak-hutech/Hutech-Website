@@ -3,6 +3,7 @@
   margin-top: 66px;
   text-align: center;
   color: white;
+  justify-items: center;
 
   background: #0662a7;
   align-items: center;
@@ -196,7 +197,7 @@
   line-height: 30px;
   color: #383838;
   text-align: center;
-  padding: 0 28%;
+  padding: 0 12%;
 }
 .abt_company .heading p {
   font-size: 40px;
@@ -214,9 +215,17 @@
   font-size: 15px;
   line-height: 30px;
 }
+
+@media only screen and (max-width: 980px) {
+  .abt_company .abt_img {
+    padding: 3% 12%;
+    text-align: center;
+  }
+}
 @media only screen and (max-width: 768px) {
   .abt_company .abt_img {
     padding: 3% 12%;
+    text-align: center;
   }
   .abt_company .heading h6 {
     padding: 0 9%;
@@ -872,6 +881,18 @@
   color: white;
 }
 
+@media only screen and (max-width: 768px) {
+  .buttons .call_to_action_req {
+        font-size: 14px;
+    }
+    .current_opening .content .description {
+        padding: 0 38px;
+        font-size: 14px;
+    }
+    .current_opening .content .free_text {
+      font-size: 26px;
+    }
+    
 @media only screen and (max-width: 1200px) {
   .blog_banner .banner_container {
     width: 992px;
@@ -948,5 +969,6 @@
   .descrption p {
     font-size: 12px;
     padding: 10px;
-  }
+   }
+ }
 }

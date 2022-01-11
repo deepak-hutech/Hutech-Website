@@ -686,7 +686,33 @@ const Section: NextPage = (props: any) => {
                 ></div>
               )}
             </Col>
-          </Row>
+            </Row>
+            <Row>
+              <Col md={12} sm={12} lg={6}>
+                {home_banner[0] && (
+                  <div className={`${companyStyles.abt_img}`}>
+                    <Image
+                      loader={() =>
+                        myLoaderbanner((baseUrl + home_banner[0].url) as any)
+                      }
+                      src={baseUrl + home_banner[0].url}
+                      placeholder="blur"
+                      blurDataURL={baseUrl + home_banner[0].url}
+                      height={421}
+                      width={497}
+                    />
+                  </div>
+                )}
+              </Col>
+              <Col md={12} sm={12} lg={6}>
+                {sub_heading && (
+                  <div
+                    className={companyStyles.note}
+                    dangerouslySetInnerHTML={{ __html: marked(sub_heading) }}
+                  ></div>
+                )}
+              </Col>
+            </Row>
         </div>
       );
     case "values_vision_mission":
@@ -1461,7 +1487,6 @@ const Section: NextPage = (props: any) => {
     //       </div>
     //     </div>
     //   );
-
 
     case "dedicated_developer":
       return (
