@@ -138,11 +138,12 @@
   letter-spacing: 0.4px;
 }
 .porfolio_details_cards {
-  width: 60%;
+  width: 52%;
   overflow: hidden;
 }
 .pclient_banner {
-  padding: 0 20px;
+  padding: 0 2% 0 8%;
+  width: 40%;
 }
 
 .portfolio_img {
@@ -187,6 +188,9 @@
   flex-direction: row;
   margin: 5rem 0;
 }
+.porfolio_card_section{
+margin-bottom: 4%;
+}
 .porfolioDetails_title {
   font-weight: bold;
   font-size: 30px;
@@ -199,12 +203,12 @@
 }
 
 .porfolio_details_cards {
-  width: 60%;
+  width: 52%;
 }
 
 .pclient_banner {
-  padding: 0 20px;
-  width: 40%;
+  padding: 0 2% 0 8%;
+  width: 50%;
 }
 @media only screen and (max-width: 850px) {
   .portfolio_img {

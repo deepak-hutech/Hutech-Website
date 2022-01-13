@@ -96,7 +96,7 @@ const careerform = () => {
       className={CareerStyle.careerFormNew}
       onSubmit={upload}
     >
-      <Row className=" mt-3 mb-3">
+      <Row >
         <Form.Group
           as={Col}
           md="6"
@@ -130,7 +130,7 @@ const careerform = () => {
           />
         </Form.Group>
       </Row>
-      <Row className=" mt-3 mb-3">
+      <Row >
         <Form.Group
           as={Col}
           md="6"
@@ -163,16 +163,16 @@ const careerform = () => {
             <option value="" selected>
               Select Post
             </option>
-            <option value="Java_Developer">Java_Developer</option>
-            <option value="React_Developer">React_Developer</option>
-            <option value="IOS_Developer">IOS_Developer</option>
+            <option value="Java_Developer">Java Developer</option>
+            <option value="React_Developer">React Developer</option>
+            <option value="IOS_Developer">IOS Developer</option>
           </Form.Select>
         </Form.Group>
       </Row>
 
-      <Row className="mb-3">
+      <Row >
         <Form.Group
-          className="mb-3"
+          
           controlId="exampleForm.ControlTextarea1"
           className={CareerStyle.career_col}
         >
@@ -186,7 +186,7 @@ const careerform = () => {
       </Row>
 
       <Row className="">
-        <Form.Group className="position-relative mb-3">
+        <Form.Group className="position-relative mb-2">
           <Form.Label>Attach File</Form.Label>
           <Form.Control type="file" required name="file" onChange={onChange} />
         </Form.Group>

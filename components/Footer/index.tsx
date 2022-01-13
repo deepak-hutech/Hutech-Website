@@ -65,7 +65,7 @@ const Footer: NextPage = (props: any) => {
   return (
     <div>
       <div className={styles.footer}>
-        <Container className={styles.footerCon}>
+        <div className={styles.footerCon}>
           <Row>
             {footer_action.map(({ display, group, icon }: any, index: any) => (
               <Col sm={12} md={6} lg={3}>
@@ -104,7 +104,7 @@ const Footer: NextPage = (props: any) => {
             </div>
           </div>
           <p className={styles.copyRight}>Copyright © 2019 - 2021. All Rights Reserved.</p>
-        </Container>
+        </div>
       </div>
     </div>
   );

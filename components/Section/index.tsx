@@ -634,7 +634,6 @@ const Section: NextPage = (props: any) => {
                 {home_button && (
                   <div className={companyStyles.buttons}>
                     {home_button.map((item: any) => (
-                      
                       <div className={styles.companycall_to_action}>
                         <Link href={`/contact-us`}>
                           <a>{item.call_to_action}</a>
@@ -702,7 +701,7 @@ const Section: NextPage = (props: any) => {
                       src={baseUrl + v.images.map((v: any) => v.url)}
                       placeholder="blur"
                       height={50}
-                      width={50}
+                      width={60}
                     />
                     <h5 className={companyStyles.heading}>{v.heading}</h5>
                     <div
@@ -798,21 +797,14 @@ const Section: NextPage = (props: any) => {
             )}
           </div>
           <div className={companyStyles.allProducts}>
-            <Row>
-              {carosel_cards.map((v: any) => (
-                <Col xs={6} md={3} sm={4}>
-                  <div className={companyStyles.logos} data-aos="zoom-in">
-                    <img
-                      className={companyStyles.images}
-                      src={baseUrl + v.images.map((v: any) => v.url)}
-                      placeholder="blur"
-                      height={45}
-                      width={137}
-                    />
-                  </div>
-                </Col>
-              ))}
-            </Row>
+            {carosel_cards.map((v: any) => (
+              <div className={companyStyles.logos} data-aos="zoom-in">
+                <img
+                  src={baseUrl + v.images.map((v: any) => v.url)}
+                  className={styles.clientsimgmob}
+                ></img>
+              </div>
+            ))}
           </div>
         </div>
       );
@@ -1346,14 +1338,24 @@ const Section: NextPage = (props: any) => {
                   ></div>
                 )}
                 {home_button && (
-                  <div className={servicesStyles.buttons}>
+                  <div className={companyStyles.buttons}>
                     {home_button.map((item: any) => (
-                      <div className={servicesStyles.call_to_action}>
-                        {" "}
-                        {item.call_to_action}{" "}
+                      <div className={styles.companycall_to_action}>
+                        <Link href={`/contact-us`}>
+                          <a>{item.call_to_action}</a>
+                        </Link>
                       </div>
                     ))}
                   </div>
+
+                  // <div className={servicesStyles.buttons}>
+                  //   {home_button.map((item: any) => (
+                  //     <div className={servicesStyles.call_to_action}>
+                  //       {" "}
+                  //       {item.call_to_action}{" "}
+                  //     </div>
+                  //   ))}
+                  // </div>
                 )}
               </div>
             )}
@@ -1548,7 +1550,7 @@ const Section: NextPage = (props: any) => {
               <div
                 className={servicesStyles.section6_imgages}
                 data-aos="zoom-in"
-                data-aos-duration="2000"
+                data-aos-duration="1000"
               >
                 {carosel_cards.map((_card: any, index: number) => (
                   <Card {..._card} key={index} />
@@ -1800,15 +1802,19 @@ const Section: NextPage = (props: any) => {
               ></div>
             )}
             {Estimated_buttons && (
-              <div className={careerstyles.Estimate_btn1}>
+              <div>
                 {Estimated_buttons.map((item: any) => (
-                  <div className={careerstyles.call_to_action}>
-                    {" "}
-                    {item.call_to_action}{" "}
-                    <img
-                      src={`${baseUrl}${Estimated_buttons[0].arrow_icon[0].url}`}
-                      className={careerstyles.estimatearrowicon}
-                    />
+                  <div className={styles.companycall_to_action}>
+                    <Link href={`/contact-us`}>
+                      <a>
+                        {" "}
+                        {item.call_to_action}{" "}
+                        <img
+                          src={`${baseUrl}${Estimated_buttons[0].arrow_icon[0].url}`}
+                          className={careerstyles.estimatearrowicon}
+                        />
+                      </a>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -1926,7 +1932,7 @@ const Section: NextPage = (props: any) => {
     case "portfolio_img_banner":
       return (
         <div className={`${portfolioStyles.porfolio_card_section}`}>
-          <div style={{ padding: "4% 0%" }}>
+          <div style={{ padding: "2% 0%" }}>
             <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
           </div>
           <div className={`${portfolioStyles.Industries_banner}`}>
@@ -1963,6 +1969,9 @@ const Section: NextPage = (props: any) => {
     case "portfolio_sub_banner":
       return (
         <div className={`${portfolioStyles.porfolioDetails_card_section}`}>
+          <div style={{ padding: "2% 0% 0" }}>
+            <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
+          </div>
           <div className={`${portfolioStyles.Industries_section1}`}>
             {
               <div className={portfolioStyles.porfolio_details_cards}>
@@ -2185,15 +2194,14 @@ const Section: NextPage = (props: any) => {
                 )}
                 {home_button && (
                   <div className={companyStyles.buttons}>
-                  {home_button.map((item: any) => (
-                    
-                    <div className={styles.companycall_to_action}>
-                      <Link href={`/contact-us`}>
-                        <a>{item.call_to_action}</a>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
+                    {home_button.map((item: any) => (
+                      <div className={styles.companycall_to_action}>
+                        <Link href={`/contact-us`}>
+                          <a>{item.call_to_action}</a>
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
                 )}
               </div>
             )}

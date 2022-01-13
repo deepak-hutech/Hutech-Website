@@ -10,11 +10,12 @@ import Header from "../../components/Header";
 import strings from "../../public/strings.json";
 import blogStyle from "../../styles/blog.module.css";
 import careerstyles from "../../styles/Careers.module.css";
+import styles from "../../styles/Section.module.css";
+
+import Link from "next/link";
 // import "./bootstrap.min.css";
 import companyStyles from "../../styles/Company.module.css";
 import { Button, Col, Container, Row, Tab, Tabs } from "react-bootstrap";
-
-
 
 const { baseUrl } = strings;
 const myLoaderbanner: ImageLoader = (url: any) => {
@@ -38,7 +39,10 @@ const AllBlogs: NextPage<{
     setPageNum(page.selected + 1);
   };
 
-  const dataToShow = blogs.slice((pageNum - 1) * PAGE_SIZE, pageNum * PAGE_SIZE);
+  const dataToShow = blogs.slice(
+    (pageNum - 1) * PAGE_SIZE,
+    pageNum * PAGE_SIZE
+  );
   console.log(blogs);
   console.log(dataToShow);
 
@@ -47,21 +51,20 @@ const AllBlogs: NextPage<{
       <Header {...header} />
       <div className={companyStyles.blog_banner}>
         <div className={companyStyles.blog_banner_web}>
-        <Image
-          loader={() =>
-            myLoaderbanner(
-              (baseUrl + blogBanner[0].content[0].home_banner[0].url) as any
-            )
-          }
-          src={baseUrl + blogBanner[0].content[0].home_banner[0].url}
-          placeholder="blur"
-          blurDataURL={baseUrl + blogBanner[0].content[0].home_banner[0].url}
-          height={400}
-          width={"100%"}
-          className={companyStyles.bannerimg}
-        />
+          <Image
+            loader={() =>
+              myLoaderbanner(
+                (baseUrl + blogBanner[0].content[0].home_banner[0].url) as any
+              )
+            }
+            src={baseUrl + blogBanner[0].content[0].home_banner[0].url}
+            placeholder="blur"
+            blurDataURL={baseUrl + blogBanner[0].content[0].home_banner[0].url}
+            height={400}
+            width={"100%"}
+            className={companyStyles.bannerimg}
+          />
         </div>
-        
 
         <div className={companyStyles.banner_container}>
           <div className={companyStyles.content}>
@@ -78,7 +81,7 @@ const AllBlogs: NextPage<{
           </div>
         </div>
       </div>
-      <div className={blogStyle.blog_bredcrumb} >
+      <div className={blogStyle.blog_bredcrumb}>
         <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
       </div>
       <div className={blogStyle.blogCards}>
@@ -88,38 +91,40 @@ const AllBlogs: NextPage<{
           </div>
         ))}
       </div>
-        <section>
-          <ReactPaginate
-              previousLabel={"Previous"}
-              nextLabel={"Next"}
-              breakLabel={"..."}
-              breakClassName={"break-me"}
-              activeClassName={"active"}
-              containerClassName={"pagination"}
-              initialPage={pageNum - 1}
-              pageCount={pageCount}
-              marginPagesDisplayed={2}
-              pageRangeDisplayed={5}
-              onPageChange={pagginationHandler}
-            />
-        </section>
-      <div className={careerstyles.section5}>
-        <div className={careerstyles.section5_banner_web}> 
-        <Image
-          loader={() =>
-            myLoaderbanner(
-              (baseUrl + blogBanner[0].content[1].estimate_image[0].url) as any
-            )
-          }
-          src={baseUrl + blogBanner[0].content[1].estimate_image[0].url}
-          placeholder="blur"
-          blurDataURL={baseUrl + blogBanner[0].content[1].estimate_image[0].url}
-          height={360}
-          width={"100%"}
-          className={careerstyles.estimatebannerimg}
+      <section>
+        <ReactPaginate
+          previousLabel={"Previous"}
+          nextLabel={"Next"}
+          breakLabel={"..."}
+          breakClassName={"break-me"}
+          activeClassName={"active"}
+          containerClassName={"pagination"}
+          initialPage={pageNum - 1}
+          pageCount={pageCount}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={5}
+          onPageChange={pagginationHandler}
         />
+      </section>
+      <div className={careerstyles.section5}>
+        <div className={careerstyles.section5_banner_web}>
+          <Image
+            loader={() =>
+              myLoaderbanner(
+                (baseUrl +
+                  blogBanner[0].content[1].estimate_image[0].url) as any
+              )
+            }
+            src={baseUrl + blogBanner[0].content[1].estimate_image[0].url}
+            placeholder="blur"
+            blurDataURL={
+              baseUrl + blogBanner[0].content[1].estimate_image[0].url
+            }
+            height={360}
+            width={"100%"}
+            className={careerstyles.estimatebannerimg}
+          />
         </div>
-        
 
         <div className={careerstyles.section5_centerText}>
           <div className={blogStyle.section5_subText1}>
@@ -129,15 +134,16 @@ const AllBlogs: NextPage<{
           <div className={blogStyle.section5_subText2}>
             {blogBanner[0].content[1].free_text}
           </div>
-
-          <div className={careerstyles.Estimate_btn1}>
-            <div className={careerstyles.call_to_action}>
-              {blogBanner[0].content[1].Estimated_buttons[0].call_to_action}
-              <img
-                src={`${baseUrl}${blogBanner[0].content[1].Estimated_buttons[0].arrow_icon[0].url}`}
-                className={careerstyles.estimatearrowicon}
-              />
-            </div>
+          <div className={styles.companycall_to_action}>
+            <Link href={`/contact-us`}>
+              <a>
+                {blogBanner[0].content[1].Estimated_buttons[0].call_to_action}
+                <img
+                  src={`${baseUrl}${blogBanner[0].content[1].Estimated_buttons[0].arrow_icon[0].url}`}
+                  className={careerstyles.estimatearrowicon}
+                />
+              </a>
+            </Link>
           </div>
 
           <div className={careerstyles.section5_subText4}>

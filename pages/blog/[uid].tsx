@@ -10,6 +10,9 @@ import strings from "../../public/strings.json";
 import blogStyle from "../../styles/blog.module.css";
 import careerstyles from "../../styles/Careers.module.css";
 import companyStyles from "../../styles/Company.module.css";
+import styles from "../../styles/Section.module.css";
+
+import Link from "next/link";
 const { baseUrl } = strings;
 const myLoaderbanner: ImageLoader = (url: any) => {
   return url;
@@ -151,14 +154,16 @@ const Article: NextPage<{
             {blogBanner[0].content[1].free_text}
           </div>
 
-          <div className={careerstyles.Estimate_btn1}>
-            <div className={careerstyles.call_to_action}>
-              {blogBanner[0].content[1].Estimated_buttons[0].call_to_action}
-              <img
-                src={`${baseUrl}${blogBanner[0].content[1].Estimated_buttons[0].arrow_icon[0].url}`}
-                className={careerstyles.estimatearrowicon}
-              />
-            </div>
+          <div className={styles.companycall_to_action}>
+            <Link href={`/contact-us`}>
+              <a>
+                {blogBanner[0].content[1].Estimated_buttons[0].call_to_action}
+                <img
+                  src={`${baseUrl}${blogBanner[0].content[1].Estimated_buttons[0].arrow_icon[0].url}`}
+                  className={careerstyles.estimatearrowicon}
+                />
+              </a>
+            </Link>
           </div>
 
           <div className={careerstyles.section5_subText4}>

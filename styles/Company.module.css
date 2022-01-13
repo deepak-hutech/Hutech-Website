@@ -28,7 +28,8 @@
 }
 
 .abt_company .Company_breadCrum {
-  padding: 40px 0;
+  padding: 20px 0 0;
+  font-size: 14px;
 }
 
 .company_banner img {
@@ -53,6 +54,12 @@
   display: grid;
   text-align: center;
   color: white;
+  height: 350px
+  
+}
+.campany_banner_web img{
+  object-fit: cover;
+  object-position: center;
 }
 .company_banner .content .free_text p {
   font-family: "GraphikMedium";
@@ -63,7 +70,10 @@
 }
 
 
-
+.abt_img img{
+  object-fit: cover;
+  object-position: center;
+}
 
 
 .company_banner .buttons {
@@ -161,7 +171,7 @@
   /* margin: 0 16px; */
 }
 .abt_company .heading {
-  margin: 30px 00px 60px 0px;
+  margin: 20px 0px 50px 0px;
 }
 .abt_company .heading h3 {
   /* margin-top: 40px; */
@@ -545,9 +555,9 @@
   margin: auto;
 }
 
-.partner .logos {
+/* .partner .logos {
   width: auto;
-  /* height: 154px; */
+ 
   margin: 16px;
   border: 1px solid #d1d1d1;
   -webkit-box-sizing: border-box;
@@ -556,12 +566,33 @@
   border-radius: 5px;
   padding: 1px;
   background-color: white;
+} */
+.logos {
+  width: 254px;
+  height: 154px;
+  margin: 16px;
+  border: 1px solid #d1d1d1;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.partner .logos .images {
+/* .partner .logos .images {
   margin: 20% auto;
+} */
+.allProducts {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px 0;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  max-width: 1200px;
+  margin: auto;
 }
-
 @media only screen and (max-width: 768px) {
   .partner .heading h3 {
     font-size: 28px;
@@ -816,12 +847,13 @@
   display: grid;
   text-align: center;
   color: white;
-  opacity: 0.3;
+  opacity: 0.2;
+  height: 350px;
 }
 
 .blog_banner_web img {
-  min-width: 8%;
-  max-height: auto;
+  object-fit: cover;
+  object-position: center;
 }
 .blog_banner .banner_container {
   position: absolute;

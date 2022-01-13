@@ -407,7 +407,7 @@ const Card: NextPage = (props: any) => {
       return (
         <div className={portfolioStyles.portfolio_card}>
           <div data-aos="fade-up">
-            <div >
+            <div style={{borderRadius:"10px", overflow:"hidden",height:"300px"}}>
               <a id={props.id} href={Link ? Link : `/portfolio/${props.title}`}>
                 <Image
                   loader={() => myLoader((baseUrl + images[0].url) as any)}

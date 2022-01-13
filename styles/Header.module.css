@@ -62,7 +62,9 @@
 .navContainer a:hover {
   color: #0c7ed4;
 }
-
+.navContainer a.active {
+  color: #0c7ed4;
+}
 .navContainer img {
   position: absolute;
   padding-left: 4px;
@@ -75,7 +77,7 @@
 .headerbtn {
   overflow-x: hidden;
   width: 150px;
-  background-color: #ffaf2b;
+  background-color: #0171c1;
   color: #fff;
   border: none;
   box-sizing: border-box;
@@ -91,7 +93,8 @@
   color: #fff;
 }
 .headerbtn::before {
-  background-color: #0171c1;
+  
+  background-color: #ffaf2b;
   border-radius: 30px;
   content: "";
   position: absolute;
@@ -146,7 +149,7 @@
   min-height: auto;
   text-align: left;
   left: 33%;
-  width: 50%;
+  width: 730px;
   padding: 2%;
   transition: all 0.5s ease;
   border-radius: 7px;

@@ -59,7 +59,13 @@
   display: grid;
   text-align: center;
   color: white;
-  opacity: 0.3;
+  opacity: 0.2;
+  height: 350px;
+  
+}
+.expertise_banner_web img{
+  object-fit: cover;
+  object-position: center;
 }
 
 .section1 .banner_container {

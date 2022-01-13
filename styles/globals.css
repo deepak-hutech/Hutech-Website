@@ -37,15 +37,15 @@ body {
   src: URL("./../components/assets/fonts/GraphikRegular.otf") format("truetype");
 }
 .root {
-  width: 100%; 
-   max-width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 :root {
   --banner-title: 40px;
   --banner-weight: bold;
-  --banner-family: "GraphikMedium"; 
+  --banner-family: "GraphikMedium";
 }
 
 a {
@@ -94,8 +94,8 @@ ul {
   font-weight: 600;
 }
 .pagination .previous {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .pagination .next {
@@ -144,7 +144,28 @@ ul {
 .container-xxl {
   padding-left: 0 !important;
 }
-
+._2jvtI {
+  font-size: 14px !important;
+}
+._2jvtI li:last-child a {
+  background: #eaf6ff !important;
+}
+._2jvtI li a {
+  background: #c2e4fc;
+  padding: 5px 0 5px 50px;
+}
+._2jvtI li a::after {
+  border-left: 20px solid #c2e4fc !important;
+}
+._2jvtI li a::before {
+  border-left: 23px solid #eaf6ff;
+  margin-left: 0;
+}
+._2jvtI li:nth-child(2) a {
+  background: #c2e4fc;
+}
+.form-select:focus {
+  border-color: transparent;}
 .rc-anchor-error-msg-container {
   font-family: "GraphikRegular";
   font-size: 10px;
@@ -176,6 +197,7 @@ ul {
 }
 .col-lg-3 {
   width: 20%;
+  padding: 0;
 }
 @media only screen and (max-width: 1200px) {
   .root {

@@ -14,6 +14,7 @@
   overflow-y: visible;
   height: 650px;
 }
+
 .home_caro_mob {
   height: 0px;
   overflow: hidden;
@@ -49,7 +50,9 @@
   height: 370px;
   overflow: hidden;
 }
-
+.clients{
+  padding: 6% 0;
+}
 .clientcarousel .react-multiple-carousel__arrow--left {
   left: -webkit-calc(4% + 1px);
   left: calc(86% + 1px);
@@ -428,7 +431,7 @@
 .blog_banner {
   background-color: #ea9913;
   padding: 8% 0 6%;
-  margin-bottom: 100px;
+  
   background-image: url(../components/assets/home-yellow-bg.png);
 
   background-repeat: no-repeat;
@@ -801,6 +804,7 @@
   flex-wrap: wrap;
   margin-top: 0px;
   align-items: baseline;
+  margin-top: 4%;
 }
 .home_bannerimg {
   width: 100%;
@@ -886,7 +890,7 @@
   box-sizing: border-box;
   border-radius: 30px;
   padding: 14px 32px;
-  margin-top: 30px;
+  
   transition: background-color 0.6s cubic-bezier(0.075, 0.82, 0.165, 1),
     color 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
   transform: translateZ(0);
@@ -964,7 +968,7 @@
   /* margin: 0 0 50px 0; */
 }
 .successful_product {
-  padding: 5% 7% 8% 7%;
+  padding: 5% 7% 4% 7%;
   background-color: #f4f7f9;
   width: 100vw;
   max-width: 100vw;
@@ -998,7 +1002,7 @@
 .home_from_container {
   width: 1200px;
   margin: 0 auto;
-  padding: 1% 0;
+  padding: 3% 0;
   display: flex;
   flex-wrap: wrap;
 }
@@ -1010,7 +1014,7 @@
   font-family: "GraphikMedium";
   font-size: 24px;
   font-weight: bold;
-  line-height: 40px;
+  line-height: 30px;
   color: #ffff;
   margin: 0;
 }

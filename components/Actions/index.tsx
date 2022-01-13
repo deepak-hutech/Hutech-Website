@@ -5,6 +5,8 @@ import Link from "next/link";
 import styles from "../../styles/Header.module.css";
 import subheadingIcon from "../assets/subheading.svg";
 import submenuIcon from "../assets/submenuicon.svg";
+import strings from "./../../public/strings.json";
+const { baseUrl } = strings;
 
 const myLoader = ({ src, width, quality }: any) => {
   const origin = typeof window !== "undefined" && window.location.origin;
@@ -34,6 +36,7 @@ const Action: NextPage = ({
       return (
         <a href={link} className={styles.topsubmenuLink}>
           {display}
+           
           <section className={styles.subMenuContainer}>
             {group.map(({ title, link, action }: any) => (
               <div className={styles.servicesubMenu}>
@@ -66,13 +69,7 @@ const Action: NextPage = ({
         width={30}
         height={17}
       />
-          <Image
-                  loader={myLoader}
-                  src={submenuIcon}
-                  
-                  width={20}
-                  height={8}
-                />
+          
           
         </a>
         

@@ -16,20 +16,21 @@
   margin-top: 66px;
   text-align: center;
   color: white;
-  height: 77%;
+  height: 350px;
   background: #0171c1;
   align-items: center;
   position: relative;
   background-image: url(../components/assets/mobile-tech-bg.png);
   background-repeat: no-repeat;
-  background-size: 100% 98%;
+  background-size: contain;
   background-position: center center;
 }
 
 .service_banner_web img {
-  opacity: 0.3;
-  min-width: 8%;
-  max-height: auto;
+  opacity: 0.2;
+  object-fit: cover;
+  object-position: center;
+  height: 350px;
 }
 .section1 .banner_container {
   max-width: 1200px;
@@ -97,17 +98,14 @@
 /* Service section2 */
 .section2 {
   max-width: 1200px;
-  margin: 5% auto;
+  margin: 2% auto;
 }
-.breadCum_career {
-  margin-top: 4%;
-  margin-left: 0%;
-}
+
 
 .service_sec2_banner .section2_title p {
   text-align: center;
   line-height: 44px;
-  margin-top: 40px;
+  margin-top: 30px;
   font-family: "GraphikMedium";
   font-style: normal;
   font-weight: 600;
@@ -173,7 +171,7 @@
 .mobile_app_dev_card {
   width: 360px;
   height: 402px;
-  margin: 2% auto;
+  margin: 20% auto 2%;
   padding: 20px 18px;
   background: #ffffff;
   border: 1px solid #cccccc;
@@ -181,20 +179,20 @@
   box-shadow: 0px 4px 4px rgba(144, 140, 140, 0.25);
   border-radius: 20px;
   position: relative;
-  padding: 3% 1.5% 3% 1.5%;
+  padding: 7% 4% 6% 5%;
 }
 .mobile_dev_sec3_cards .mobile_dev_sec3_heading p {
   font-family: "GraphikMedium";
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 24px;
 }
 .mobile_dev_sec3_cards .mobile_dev_sec3_para p {
   font-family: "GraphikRegular";
   font-style: normal;
   font-weight: normal;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 24px;
   padding-top: 3%;
 }
@@ -355,6 +353,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 5% 0;
+  
 }
 
 .section6_title p {
@@ -613,6 +612,7 @@ text-align: center;
   justify-content: center;
   margin-top: 3rem;
 }
+
 .serviceinner_sec2_heading h3 {
   font-style: normal;
   font-weight: bold;
@@ -745,6 +745,8 @@ text-align: center;
  
 } */
 @media only screen and (max-width: 1200px) {
+  .section6 .mobile_technology {
+    max-width: 992px;}
   .section1 .content .free_text p {
     font-size: 50px;
   }
@@ -769,8 +771,12 @@ text-align: center;
 .section8_note p {
 padding: 0 20%;
 }
+.mobile_app_dev_card {
+  width: 300px;}
 }
 @media only screen and (max-width: 992px) {
+  .section6 .mobile_technology {
+    max-width: 850px;}
   .section1 .content .free_text p {
     font-size: 45px;
   }
@@ -818,12 +824,13 @@ padding: 0 14%;
   }
 }
 @media only screen and (max-width: 850px) {
-
+  .section6 .mobile_technology {
+    max-width: 768px;}
   .section1 .content .free_text p {
     font-size: 39px;
   }
   .mobile_app_dev_card{
-    padding: 3%;
+    padding: 6%;
   }
   .section3{
      background-image:none;
@@ -843,7 +850,7 @@ padding: 0 14%;
 .section5 .mobile_app_development_cards{
     margin: 0 0%;
     padding: 0px 16px;
-    width: 420px;
+    width: auto;
 }
   .section6{
     background-image:none;
@@ -887,6 +894,11 @@ margin: 0 auto;
 }
 }
 @media only screen and (max-width: 768px) {
+  .section1 .banner_container {
+    width: 100%;
+  }
+  .section6 .mobile_technology {
+    max-width: 100%;}
   .section1 .content .free_text p {
     font-size: 35px;
   }
@@ -1006,7 +1018,8 @@ margin: 0 auto;
   line-height: 22px;
 }
 .mobile_app_dev_card{
-    padding: 7%;
+    padding: 5%;
+    width: 350px;
   }
   .section3_card .mobile_app_development_card {
     margin: 10px 0;
