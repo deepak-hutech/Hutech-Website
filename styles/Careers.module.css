@@ -413,7 +413,7 @@
 
 .careerFormNew select {
   border: none;
-  padding: 5% 0;
+  padding: 7% 0;
   border-bottom: 1px solid black;
   border-radius: 0;
   box-shadow: none !important;
@@ -677,7 +677,7 @@
   margin: 0 auto;
 }
 .careerdetails_breadcrumb {
-  margin: 4% 0% 0% 0%;
+  margin: 2% 0% 0% 0%;
 }
 .qualification_section2 {
   display: flex;
@@ -871,7 +871,7 @@ textarea:not(:placeholder-shown) ~ .floatingLabel,
 .formSelect:valid ~ .floatingLabel{
   top: -8px;
   left: 12px;
-  font-size: 11px;
+  font-size: 13px;
   opacity: 1;
 }
 

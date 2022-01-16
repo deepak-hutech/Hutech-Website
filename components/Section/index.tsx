@@ -1141,7 +1141,7 @@ const Section: NextPage = (props: any) => {
               )}
             </div>
           </div>
-          <div style={{ padding: "3% 6% 2%" }}>
+          <div style={{ padding: "2% 6% 2%" }}>
             <Breadcrumbs useDefaultStyle transformLabel={(title) => title} />
           </div>
           <div className={contactStyle.contact}>

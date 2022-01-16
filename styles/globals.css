@@ -177,6 +177,9 @@ ul {
 .nav-tabs .nav-link.active {
   color: #2f95de;
 }
+.form-control:focus{
+  box-shadow: none !important;
+}
 /* 
  #breadCrum ol li a{
    font-weight: 600;
