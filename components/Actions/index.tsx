@@ -36,18 +36,21 @@ const Action: NextPage = ({
       return (
         <a href={link} className={styles.topsubmenuLink}>
           {display}
-           
+
           <section className={styles.subMenuContainer}>
             {group.map(({ title, link, action }: any) => (
               <div className={styles.servicesubMenu}>
-                <div>
-                <Image
-                  loader={myLoader}
-                  src={subheadingIcon}
-                  className={styles.subheaderimg}
-                  width={3}
-                  height={3}
-                /></div>
+                <div className={styles.imageWrapper}>
+                  <Image
+                    loader={myLoader}
+                    src={subheadingIcon}
+                    className={styles.subheaderimg}
+                    width={100}
+                    height={100}
+                    objectFit="contain"
+                  />
+                </div>
+
                 <div className={styles.suheadercontener}>
                   <a href={link} className={styles.topsubmenuLink}>
                     {title}
@@ -63,16 +66,13 @@ const Action: NextPage = ({
             ))}
           </section>
           <Image
-        loader={myLoader}
-        src={submenuIcon}
-        alt="Picture of the author"
-        width={30}
-        height={17}
-      />
-          
-          
+            loader={myLoader}
+            src={submenuIcon}
+            alt="Picture of the author"
+            width={30}
+            height={17}
+          />
         </a>
-        
       );
     case "call_to_action":
       return (

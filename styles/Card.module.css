@@ -33,7 +33,13 @@
   justify-content: center;
   align-items: center;
 }
-
+.clients_card:hover{
+  border: 1px solid #7099FF;
+  -webkit-box-shadow: 0 0 0 3px rgb(112 153 255 / 33%);
+  box-shadow: 0 0 0 3px rgb(112 153 255 / 33%);
+  -webkit-transition: all .04s ease-in;
+  transition: all .25s ease-in;
+}
 
 .product_para {
   font-size: 14px;

@@ -96,7 +96,7 @@ const careerform = () => {
       className={CareerStyle.careerFormNew}
       onSubmit={upload}
     >
-      <Row >
+      <Row>
         <Form.Group
           as={Col}
           md="6"
@@ -110,8 +110,8 @@ const careerform = () => {
             className={CareerStyle.inputs}
             onChange={handleChange}
             name="name"
-            placeholder="Name"
           />
+          <span class={CareerStyle.floatingLabel}>Name</span>
         </Form.Group>
         <Form.Group
           as={Col}
@@ -126,11 +126,12 @@ const careerform = () => {
             className={CareerStyle.inputs}
             onChange={handleChange}
             name="email"
-            placeholder="Email"
+            placeholder="&nbsp;"
           />
+          <span class={CareerStyle.floatingLabel}>Email</span>
         </Form.Group>
       </Row>
-      <Row >
+      <Row>
         <Form.Group
           as={Col}
           md="6"
@@ -143,10 +144,10 @@ const careerform = () => {
             className={CareerStyle.inputs}
             onChange={handleChange}
             name="phone"
-            placeholder="Phone Number"
             aria-describedby="inputGroupPrepend"
             required
           />
+          <span class={CareerStyle.floatingLabel}>Phone Number</span>
         </Form.Group>
         <Form.Group
           as={Col}
@@ -158,30 +159,26 @@ const careerform = () => {
             value={inputs.post || ""}
             onChange={handleChange}
             name="post"
+            className={CareerStyle.formSelect}
             required
           >
             <option value="" selected>
-              Select Post
             </option>
             <option value="Java_Developer">Java Developer</option>
             <option value="React_Developer">React Developer</option>
             <option value="IOS_Developer">IOS Developer</option>
           </Form.Select>
+          <span class={CareerStyle.floatingLabel}>Position</span>
         </Form.Group>
       </Row>
 
-      <Row >
+      <Row>
         <Form.Group
-          
           controlId="exampleForm.ControlTextarea1"
           className={CareerStyle.career_col}
         >
-          <Form.Control
-            as="textarea"
-            placeholder="Message"
-            rows={3}
-            className={CareerStyle.inputs}
-          />
+          <Form.Control as="textarea" rows={3} className={CareerStyle.inputs} placeholder="&nbsp;" />
+          <span class={CareerStyle.floatingLabel}>Message</span>
         </Form.Group>
       </Row>
 

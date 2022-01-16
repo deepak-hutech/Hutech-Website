@@ -580,6 +580,13 @@
   justify-content: center;
   align-items: center;
 }
+.logos:hover{
+  border: 1px solid #7099FF;
+    -webkit-box-shadow: 0 0 0 3px rgb(112 153 255 / 33%);
+    box-shadow: 0 0 0 3px rgb(112 153 255 / 33%);
+    -webkit-transition: all .25s ease-in;
+    transition: all .25s ease-in;
+}
 /* .partner .logos .images {
   margin: 20% auto;
 } */
