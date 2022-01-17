@@ -177,7 +177,7 @@ const careerform = () => {
           className={CareerStyle.contact_col}
         >
           <Form.Label className={CareerStyle.contactForm_label}>
-            Phone Number
+          Company name
           </Form.Label>
           <Form.Control
             value={inputs.phone}
@@ -185,7 +185,7 @@ const careerform = () => {
             className={CareerStyle.inputs}
             onChange={handleChange}
             name="phone"
-            placeholder="09897888927"
+            placeholder="Enter company name"
             aria-describedby="inputGroupPrepend"
             required
           />
@@ -260,7 +260,7 @@ const careerform = () => {
           />
         </Form.Group>
       </Row>
-      <Row>
+      <Row >
         <Form.Group
          as={Col}
          md="5"

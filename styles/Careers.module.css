@@ -196,10 +196,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* background-image: url(../components/assets/career-bg.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center; */
+  
 }
 .section3_title h3 {
   font-family: "GraphikMedium";
@@ -251,38 +248,7 @@
   background-color: white;
   padding: 3% 1.5% 3% 1.5%;
 }
-/* .featurecard::before,
-.featurecard::after {
-  content: "";
-  position: absolute;
-  border-style: solid;
-  border-radius: 15px;
-  border-color: #0171c1;
-  transition-duration: 0.4s;
-  
-} */
-/* .featurecard::before {
-  width: 100%;
-  height: 0;
-  border-width: 0 2px;
-  top: 50%;
-  left: 0;
-  transform: translate(-1px, -50%);
-}
-.featurecard::after {
-  width: 0;
-  height: 100%;
-  border-width: 2px 0;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -1px);
-}
-.featurecard:hover::before {
-  height: 100%;
-}
-.featurecard:hover::after {
-  width: 100%;
-} */
+
 
 .feature_heading {
   font-size: 24px;
@@ -586,16 +552,7 @@
 .rightarrowicon {
   margin: 1rem 0px 0px 0px;
 }
-/* .careerFormNew input {
-  margin: 20px;
-  line-height: 22px;
-  font-size: 14px;
-  padding: 5px 10px;
-  border: none;
-  border-bottom: 1px solid #d9d9d9;
-  margin-bottom: 0;
-  box-sizing: border-box;
-} */
+
 .careerFormNew textarea:focus,
 .careerFormNew input:focus {
   outline: none;
@@ -681,12 +638,10 @@
 }
 .qualification_section2 {
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
+ 
 }
 .apply_left {
-  /* width: 55%; 
-   height: 80%;  */
+ 
   width: 554px;
   height: 829px;
   height: 10%;
@@ -696,8 +651,7 @@
   padding: 3% 0% 3% 0%;
 }
 .apply_right {
-  /* width: 45%;
-  height: 80%; */
+ 
   width: 554px;
   height: 770px;
   margin: 0% 0% 6% 6%;
@@ -772,16 +726,14 @@
 }
 .careerForm_row1 {
   display: flex;
-  /* align-items: center; */
-  /* justify-content:center; */
+  
   width: 100%;
   column-gap: 1%;
   padding-left: 0%;
 }
 .careerForm_row2 {
   display: flex;
-  /* align-items: center;
-  justify-content:center; */
+  
   width: 100%;
   column-gap: 7%;
   padding-right: 5%;
@@ -963,24 +915,23 @@ textarea:not(:placeholder-shown) ~ .floatingLabel,
   .section3 {
     background-image: none;
   }
-  /* .featurecard {
-    margin: 2% 0% 2% 5%;
-    padding: 3% 1.5% 3% 1.5%;
-  } */
+  
 }
 @media only screen and (max-width: 768px) {
+  .apply_right h4 {
+    margin-bottom: 40px;
+  }
   .section3_container {
     max-width: 100%;
   }
+  
   .section1_subText1 h3 {
     font-size: 25px;
   }
   .section1_subText2 p {
     font-size: 14px;
   }
-  /* .section2_content {
-    display: inline-block;
-  } */
+  
   .section5_centerText {
     width: 100%;
   }
@@ -1063,7 +1014,7 @@ textarea:not(:placeholder-shown) ~ .floatingLabel,
     padding: 5% 5% 5% 5%;
   }
   .career_col {
-    margin: 0 0 0 0;
+    margin: 0 0 30px 0;
     position: relative;
   }
   .section5_subText1 p {
@@ -1080,6 +1031,7 @@ textarea:not(:placeholder-shown) ~ .floatingLabel,
   /* .section1_subText2{
      display: none;
   } */
+  
   .section2_content {
     display: inline-block;
   }
@@ -1185,10 +1137,7 @@ textarea:not(:placeholder-shown) ~ .floatingLabel,
     font-size: 12px;
   }
 
-  .career_col {
-    margin: 0 0 0 0;
-    position: relative;
-  }
+  
   /* .featurecard {
     margin: 2% auto;
   } */

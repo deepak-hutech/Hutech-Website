@@ -182,9 +182,9 @@ const careerform = () => {
         </Form.Group>
       </Row>
 
-      <Row className="">
+      <Row className="fileuplodrow">
         <Form.Group className="position-relative mb-2">
-          <Form.Label>Attach File</Form.Label>
+          <Form.Label >Attach File</Form.Label>
           <Form.Control type="file" required name="file" onChange={onChange} />
         </Form.Group>
       </Row>
