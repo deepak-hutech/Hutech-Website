@@ -11,6 +11,7 @@ import strings from "../../public/strings.json";
 import blogStyle from "../../styles/blog.module.css";
 import careerstyles from "../../styles/Careers.module.css";
 import styles from "../../styles/Section.module.css";
+import servicesStyles from "../../styles/Services.module.css";
 
 import Link from "next/link";
 // import "./bootstrap.min.css";
@@ -65,6 +66,8 @@ const AllBlogs: NextPage<{
             className={companyStyles.bannerimg}
           />
         </div>
+        <div className={servicesStyles.dotsmoveTop}></div>
+          <div className={servicesStyles.dotsmoveBottom}></div>
 
         <div className={companyStyles.banner_container}>
           <div className={companyStyles.content}>

@@ -5,7 +5,6 @@ import { Col, Container, Row } from "react-bootstrap";
 import strings from "../../public/strings.json";
 import styles from "../../styles/Footer.module.css";
 
-
 const { baseUrl } = strings;
 const myLoader: ImageLoader = (url: any) => {
   return url;
@@ -51,6 +50,7 @@ const Footer: NextPage = (props: any) => {
     action,
     freetext,
     note,
+    link,
     weblinks,
     footerLogo,
     footer_three,
@@ -58,16 +58,15 @@ const Footer: NextPage = (props: any) => {
     phone_no,
     Skype_id,
     mail,
-    social_icon
+    social_icon,
   } = props;
-
 
   return (
     <div>
       <div className={styles.footer}>
         <div className={styles.footerCon}>
           <Row>
-            {footer_action.map(({ display, group, icon }: any, index: any) => (
+            {footer_action.map(({link, display, group, icon }: any, index: any) => (
               <Col sm={12} md={6} lg={3}>
                 <div className={styles.footerContainer}>
                   <div key={index} className={styles.heading}>
@@ -76,10 +75,12 @@ const Footer: NextPage = (props: any) => {
 
                   <div key={index} className={styles.sub_heading}>
                     {group.map((v: any) => {
-
                       return (
-                        <div className={styles.footersubheading} >
-                          <img src={`${baseUrl}${v.icon[0]?.url}`} /><div dangerouslySetInnerHTML={{ __html: marked(v.freetext) }}></div>
+                        <div className={styles.footersubheading}>
+                          <img src={`${baseUrl}${v.icon[0]?.url}`} />
+                            
+                          <a href={v.link}>{v.freetext}</a>
+                          
                         </div>
                       );
                     })}
@@ -90,7 +91,9 @@ const Footer: NextPage = (props: any) => {
           </Row>
           <hr className={styles.divider}></hr>
           <div className={styles.iconsContainer}>
-            <p className={styles.terms}>Terms and Conditions  |  Privacy Policy | Disclaimer</p>
+            <p className={styles.terms}>
+              Terms and Conditions | Privacy Policy | Disclaimer
+            </p>
             <div className={styles.item}>
               {social_icon.map(({ display, icon }: any, index: any) => (
                 <div>
@@ -103,7 +106,9 @@ const Footer: NextPage = (props: any) => {
               ))}
             </div>
           </div>
-          <p className={styles.copyRight}>Copyright © 2019 - 2021. All Rights Reserved.</p>
+          <p className={styles.copyRight}>
+            Copyright © 2019 - 2021. All Rights Reserved.
+          </p>
         </div>
       </div>
     </div>

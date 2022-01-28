@@ -180,13 +180,13 @@ const careerform = () => {
           Company name
           </Form.Label>
           <Form.Control
-            value={inputs.phone}
-            type="number"
+            value={inputs.company}
+            type="text"
             className={CareerStyle.inputs}
             onChange={handleChange}
-            name="phone"
+            name="company"
             placeholder="Enter company name"
-            aria-describedby="inputGroupPrepend"
+           
             required
           />
         </Form.Group>

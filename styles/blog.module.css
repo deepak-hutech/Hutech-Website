@@ -277,9 +277,7 @@
   margin-left: 4px;
 }
 @media only screen and (max-width: 1299px) {
-  .blogPage {
-    /* margin: 20px; */
-  }
+  
   .blogfree_text {
     font-size: 34px;
   }
@@ -356,9 +354,7 @@
     line-height: 20px;
   }
 
-  .related_posts h3 {
-    /* font-size: 25px; */
-  }
+  
 
   .compo {
     height: 444px;

@@ -45,8 +45,8 @@ const Action: NextPage = ({
                     loader={myLoader}
                     src={subheadingIcon}
                     className={styles.subheaderimg}
-                    width={100}
-                    height={100}
+                    width={2}
+                    height={2}
                     objectFit="contain"
                   />
                 </div>

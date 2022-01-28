@@ -10,6 +10,48 @@
   text-align: center;
   color: white;
 }
+@keyframes movebounce { 
+  0% { transform: translateY(0); }
+  100% { transform: translateY(50px); }
+}
+@keyframes movebouncetop { 
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50px); }
+}
+.dotsmoveTop{
+  background-image: url(../components/assets/moving.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position:absolute;
+  width: 207px;
+    height: 210px;
+    right:  0;
+    top: 0;
+    /* transform: translate(-28%, 50%);
+    
+    -webkit-animation: movebounce 3s infinite linear;
+    animation: movebounce 3s infinite linear; */
+    animation: movebounce 3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.dotsmoveBottom{
+  background-image: url(../components/assets/triangle@2x.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position:absolute;
+  width: 207px;
+    height: 210px;
+    left:  0;
+    bottom: 0px;
+    animation: movebouncetop 3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
 .service_banner_web {
   width: 100%;
   display: grid;
@@ -20,7 +62,7 @@
   background: #0171c1;
   align-items: center;
   position: relative;
-  background-image: url(../components/assets/mobile-tech-bg.png);
+  /* background-image: url(../components/assets/mobile-tech-bg.png); */
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
@@ -138,9 +180,9 @@
   text-align: justify;
    max-width: 1200px;
   margin: 2% auto;
-  padding: 5% 0;
+  padding: 5% 0 0;
 
-  max-width: 1309px;
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -160,6 +202,7 @@
   font-size: 16px;
   line-height: 24px;
   text-align: center;
+  padding: 0 7%;
 }
 
 .mobile_app_development_card {
@@ -264,7 +307,7 @@
 }
 .section5_content {
   text-align: center;
-  margin: 10% auto;
+  margin: 7% auto;
 }
 
 .section5_content .section5_title p {
@@ -377,7 +420,7 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  /* justify-content: center; */
+  justify-content: center;
 }
 
 .section6_img {

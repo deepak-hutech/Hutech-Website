@@ -9,7 +9,7 @@
   align-items: center;
   position: relative;
   /* background-image: url(../components/assets/company-yellow-bg.png); */
-  background-image: url(../components/assets/top-banner-transparent.png);
+  /* background-image: url(../components/assets/top-banner-transparent.png); */
 
   background-repeat: no-repeat;
   background-size: contain;
@@ -290,12 +290,8 @@
   margin: auto;
 }
 
-.values_vision .vvContent {
-  /* margin: 30px; */
-}
-.web_dev {
-  /* padding: 0 8%; */
-}
+
+
 .web_front_end_title h2 {
   font-size: 24px;
   font-weight: 600;

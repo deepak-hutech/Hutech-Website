@@ -57,6 +57,7 @@
   text-decoration: none;
   line-height: 40px;
   position: relative;
+  margin: 0 8px;
 }
 .navContainer a:hover {
   color: #0c7ed4;
@@ -120,10 +121,6 @@
   left: auto;
   bottom: 0;
   right: auto;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 8px;
-  grid-row-gap: 8px;
   background: #fff;
   z-index: 1002;
 }
@@ -201,8 +198,8 @@
 }
 
 .imageWrapper > div {
-  height: 20px;
-  width: 20px;
+  height: 12px;
+  width: 12px;
 }
 @media only screen and (max-width: 1240px) {
   /* .logo {

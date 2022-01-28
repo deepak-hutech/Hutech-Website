@@ -34,7 +34,7 @@
   background: #0171c1;
   align-items: center;
   position: relative;
-  background-image: url(../components/assets/mobile-tech-bg.png);
+  /* background-image: url(../components/assets/mobile-tech-bg.png); */
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
