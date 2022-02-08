@@ -20,6 +20,13 @@ const Action: NextPage = ({
   icon,
   sublink,
 }: any) => {
+  const trackEvent = (display: string) => {
+    const _global: any = window;
+    _global.dataLayer.push({
+      event: "callToAction",
+      actionType: display,
+    });
+  };
   switch (type) {
     case "hyperlink":
       return (
@@ -77,7 +84,10 @@ const Action: NextPage = ({
     case "call_to_action":
       return (
         <Link href="/contact-us" passHref>
-          <button className={styles.headerbtn}>
+          <button
+            className={styles.headerbtn}
+            onClick={() => trackEvent(display)}
+          >
             <p style={{ margin: "0" }}>
               {display}
               {/* <img src={`${baseUrl}${icon[0].url}`} alt="" height="21px" width="24px" /> */}

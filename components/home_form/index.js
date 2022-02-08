@@ -54,6 +54,11 @@ function HomeForm() {
       .then(({ data }) => {
         document.getElementById("form").reset();
         console.log("Succesfully uploaded: ", JSON.stringify(data));
+        const _global = window;
+        _global.dataLayer.push({
+          event: "callToAction",
+          actionType: "Query submit - Home",
+        });
         setFormMessage("Form submitted successfully.");
       })
       .catch((error) => {
