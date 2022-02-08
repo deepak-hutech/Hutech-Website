@@ -134,6 +134,113 @@
   animation-iteration-count: infinite;
   z-index: 0;
 }
+
+
+/* client section animation home */
+@keyframes movebounce {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+@keyframes movebouncetop {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-50px);
+  }
+}
+.dotsmoveHomeclientTop {
+  background-image: url(../components/assets/client_section_right_tri.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: absolute;
+  width: 207px;
+  height: 210px;
+  right: 0;
+  top: 0;
+  /* transform: translate(-28%, 50%);
+    
+    -webkit-animation: movebounce 3s infinite linear;
+    animation: movebounce 3s infinite linear; */
+  animation: movebounce 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  z-index: 0;
+}
+.dotsmoveclientBottom {
+  background-image: url(../components/assets/client_section_left_tri.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: absolute;
+  width: 207px;
+  height: 210px;
+  left: 0;
+  bottom: 0px;
+  animation: movebouncetop 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  z-index: 0;
+}
+/* home form section animation  */
+@keyframes movebounceform {
+  0% {
+    transform: translateY(-60px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes movebouncetopform {
+  0% {
+    transform: translateY(60px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.dotsmoveHomehomeformTop {
+  background-image: url(../components/assets/homeblogtringletop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: absolute;
+  width: 207px;
+  height: 210px;
+  right: 0;
+  top: 0;
+  /* transform: translate(-28%, 50%);
+    
+    -webkit-animation: movebounce 3s infinite linear;
+    animation: movebounce 3s infinite linear; */
+  animation: movebounceform 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  z-index: 0;
+}
+.dotsmovehomeformBottom {
+  background-image: url(../components/assets/homeblogtringlebottom.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: absolute;
+  width: 207px;
+  height: 210px;
+  left: 0;
+  bottom: 0px;
+  animation: movebouncetopform 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  z-index: 0;
+}
+.homeblogcarousel{
+  z-index: 9;
+}
 .homebanner {
   width: 100%;
   height: 450px;
@@ -597,8 +704,8 @@
   background-color: #ea9913;
   padding: 8% 0 6%;
 
-  background-image: url(../components/assets/home-yellow-bg.png);
-
+  /* background-image: url(../components/assets/home-yellow-bg.png); */
+position: relative;
   background-repeat: no-repeat;
   background-position: center;
   object-fit: cover;
@@ -1213,7 +1320,7 @@
 }
 .right_from_section {
   width: 66%;
-  background-image: url(../components/assets/contactus-bg.png);
+  /* background-image: url(../components/assets/contactus-bg.png); */
   object-fit: cover;
   object-position: center;
   background-repeat: no-repeat;
@@ -1221,6 +1328,7 @@
   padding: 30px 95px;
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 @media only screen and (max-width: 1200px) {
   /* .banner_container {

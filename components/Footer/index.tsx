@@ -66,28 +66,30 @@ const Footer: NextPage = (props: any) => {
       <div className={styles.footer}>
         <div className={styles.footerCon}>
           <Row>
-            {footer_action.map(({link, display, group, icon }: any, index: any) => (
-              <Col sm={12} md={6} lg={3}>
-                <div className={styles.footerContainer}>
-                  <div key={index} className={styles.heading}>
-                    {display}
-                  </div>
+            {footer_action.map(
+              ({ link, display, group, icon }: any, index: any) => (
+                <Col sm={12} md={6} lg={3}>
+                  <div className={styles.footerContainer}>
+                    <div key={index} className={styles.heading}>
+                      {display}
+                    </div>
 
-                  <div key={index} className={styles.sub_heading}>
-                    {group.map((v: any) => {
-                      return (
+                    <div key={index} className={styles.sub_heading}>
+                      {group.map((v: any) => (
                         <div className={styles.footersubheading}>
                           <img src={`${baseUrl}${v.icon[0]?.url}`} />
-                            
-                          <a href={v.link}>{v.freetext}</a>
-                          
+                          {v.title === "address" ? (
+                            <span dangerouslySetInnerHTML={{ __html: marked(v.freetext) }}></span>
+                          ) : (
+                            <a href={v.link}>{v.freetext}</a>
+                          )}
                         </div>
-                      );
-                    })}
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </Col>
-            ))}
+                </Col>
+              )
+            )}
           </Row>
           <hr className={styles.divider}></hr>
           <div className={styles.iconsContainer}>

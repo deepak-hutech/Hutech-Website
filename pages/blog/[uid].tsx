@@ -187,6 +187,8 @@ const Article: NextPage<{
             </div>
           </div>
         </div>
+        <div className={companyStyles.bottom_banner_dotsmoveTop}></div>
+        <div className={companyStyles.bottom_banner_dotsmoveBottom}></div>
       </div>
 
       <Footer {...footer} />

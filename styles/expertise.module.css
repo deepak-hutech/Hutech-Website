@@ -190,7 +190,8 @@
   padding: 40px 0;
 
   background: #f1f8ff;
-  background-image: url(../components/assets/transparent-bg.png);
+  /* background-image: url(../components/assets/transparent-bg.png); */
+  position: relative;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
@@ -211,7 +212,8 @@
   max-width: 1200px;
   margin: auto;
   overflow-x: hidden;
-  
+  position: relative;
+  z-index: 9;
   /* display: flex; */
   height: 600px;
 }

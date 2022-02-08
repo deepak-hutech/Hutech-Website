@@ -10,46 +10,105 @@
   text-align: center;
   color: white;
 }
-@keyframes movebounce { 
-  0% { transform: translateY(0); }
-  100% { transform: translateY(50px); }
+@keyframes movebounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
 }
-@keyframes movebouncetop { 
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50px); }
+@keyframes movebouncetop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50px);
+  }
 }
-.dotsmoveTop{
+.dotsmoveTop {
   background-image: url(../components/assets/moving.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  position:absolute;
+  position: absolute;
   width: 207px;
-    height: 210px;
-    right:  0;
-    top: 0;
-    /* transform: translate(-28%, 50%);
+  height: 210px;
+  right: 0;
+  top: 0;
+  /* transform: translate(-28%, 50%);
     
     -webkit-animation: movebounce 3s infinite linear;
     animation: movebounce 3s infinite linear; */
-    animation: movebounce 3s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
+  animation: movebounce 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  z-index: 0;
 }
 
-.dotsmoveBottom{
+.dotsmoveBottom {
   background-image: url(../components/assets/triangle@2x.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  position:absolute;
+  position: absolute;
   width: 207px;
-    height: 210px;
-    left:  0;
-    bottom: 0px;
-    animation: movebouncetop 3s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
+  height: 210px;
+  left: 0;
+  bottom: 0px;
+  animation: movebouncetop 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  z-index: 0;
+}
+.mobile_technologies_dotsmoveBottom {
+  background-image: url(../components/assets/mobile_technologies_dotsmoveBottom.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: absolute;
+  width: 170px;
+  height: 140px;
+  left: 0;
+  bottom: 0px;
+  animation: movebouncetop 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  z-index: 0;
+}
+.our_works_dotsmoveTop {
+  background-image: url(../components/assets/yellow-right-bg1.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: absolute;
+  width: 170px;
+  height: 140px;
+  right: 0;
+  top: 0;
+  /* transform: translate(-28%, 50%);
+    
+    -webkit-animation: movebounce 3s infinite linear;
+    animation: movebounce 3s infinite linear; */
+  animation: movebounce 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  z-index: 0;
+}
+.our_works_dotsmoveBottom {
+  background-image: url(../components/assets/yellow-left-bg1.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: absolute;
+  width: 207px;
+  height: 210px;
+  left: 0;
+  bottom: 0px;
+  animation: movebouncetop 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  z-index: 0;
 }
 
 .service_banner_web {
@@ -143,7 +202,6 @@
   margin: 2% auto;
 }
 
-
 .service_sec2_banner .section2_title p {
   text-align: center;
   line-height: 44px;
@@ -170,15 +228,50 @@
   padding-left: 0;
   padding-right: 0;
   background-color: #f1f8ff;
-  background-image: url(../components/assets/transparent-bg.png);
-  background-repeat: no-repeat;
+  /* background-image: url(../components/assets/transparent-bg.png); */
+  /* background-repeat: no-repeat;
   background-size: 100% 98%;
-  background-position: center;
+  background-position: center; */
+  position: relative;
+}
+.expertise_in_mobile_app_banner_dotsmoveTop {
+  background-image: url(../components/assets/service_card_top_tri.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: absolute;
+  width: 207px;
+  height: 210px;
+  right: 0;
+  top: 0;
+  /* transform: translate(-28%, 50%);
+    
+    -webkit-animation: movebounce 3s infinite linear;
+    animation: movebounce 3s infinite linear; */
+  animation: movebounce 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  z-index: 0;
+}
+.expertise_in_mobile_app_banner_dotsmoveBottom {
+  background-image: url(../components/assets/service_card_bottom_tri.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: absolute;
+  width: 207px;
+  height: 210px;
+  left: 0;
+  bottom: 0px;
+  animation: movebouncetop 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  z-index: 0;
 }
 
 .section3 .clientContent {
   text-align: justify;
-   max-width: 1200px;
+  max-width: 1200px;
   margin: 2% auto;
   padding: 5% 0 0;
 
@@ -386,7 +479,8 @@
   padding-right: 0;
   text-align: center;
   background: #0662a7;
-  background-image: url(../components/assets/mobile-tech-bg.png);
+  /* background-image: url(../components/assets/mobile-tech-bg.png); */
+  position: relative;
   background-repeat: no-repeat;
   background-size: 100% 98%;
   background-position: center;
@@ -396,7 +490,8 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 5% 0;
-  
+  z-index: 9;
+  position: relative;
 }
 
 .section6_title p {
@@ -525,7 +620,8 @@
   text-align: center;
   background-color: #eea52c;
   padding: 50px 0;
-  background-image: url(../components/assets/our-work-bg.png);
+  /* background-image: url(../components/assets/our-work-bg.png); */
+  position: relative;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
@@ -533,6 +629,8 @@
 .section8 .section8_conatiner {
   max-width: 1200px;
   margin: 0 auto;
+  z-index: 9;
+  position: relative;
 }
 .section8_conatiner .section8_content {
   padding: 30px 0;
@@ -594,10 +692,10 @@
 }
 .section8_note p {
   font-style: normal;
-font-weight: normal;
-font-size: 16px;
-line-height: 24px;
-text-align: center;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
   padding: 0 20%;
 }
 
@@ -789,7 +887,8 @@ text-align: center;
 } */
 @media only screen and (max-width: 1200px) {
   .section6 .mobile_technology {
-    max-width: 992px;}
+    max-width: 992px;
+  }
   .section1 .content .free_text p {
     font-size: 40px;
   }
@@ -809,17 +908,19 @@ text-align: center;
     font-size: 13px;
   }
   .section8_title {
-  font-size: 34px;
-}
-.section8_note p {
-padding: 0 20%;
-}
-.mobile_app_dev_card {
-  width: 300px;}
+    font-size: 34px;
+  }
+  .section8_note p {
+    padding: 0 20%;
+  }
+  .mobile_app_dev_card {
+    width: 300px;
+  }
 }
 @media only screen and (max-width: 992px) {
   .section6 .mobile_technology {
-    max-width: 850px;}
+    max-width: 850px;
+  }
   .section1 .content .free_text p {
     font-size: 45px;
   }
@@ -834,11 +935,11 @@ padding: 0 20%;
     height: 940px;
   }
   .section8_title {
-  font-size: 32px;
-}
-.section8_note p {
-padding: 0 14%;
-}
+    font-size: 32px;
+  }
+  .section8_note p {
+    padding: 0 14%;
+  }
 
   /* Inner page */
   .serviceinner_sec3_Content_left {
@@ -868,80 +969,79 @@ padding: 0 14%;
 }
 @media only screen and (max-width: 850px) {
   .section6 .mobile_technology {
-    max-width: 768px;}
+    max-width: 768px;
+  }
   .section1 .content .free_text p {
     font-size: 39px;
   }
-  .mobile_app_dev_card{
+  .mobile_app_dev_card {
     padding: 6%;
   }
-  .section3{
-     background-image:none;
+  .section3 {
+    background-image: none;
   }
-  
-  
+
   .section5_serviceimg img {
     width: 384px;
     height: 1470px;
   }
   .section5_cards {
-  display: inline-block;
-  align-items: center;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
-.section5 .mobile_app_development_cards{
+    display: inline-block;
+    align-items: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  .section5 .mobile_app_development_cards {
     margin: 0 0%;
     padding: 0px 16px;
     width: auto;
-}
-  .section6{
-    background-image:none;
   }
-  .section8{
- background-image:none;
+  .section6 {
+    background-image: none;
+  }
+  .section8 {
+    background-image: none;
   }
   .section8_title {
-  font-size: 30px;
-}
-.section8_note p {
-padding: 0 4%;
-}
+    font-size: 30px;
+  }
+  .section8_note p {
+    padding: 0 4%;
+  }
   .section8_img {
-  margin: 0 0;
+    margin: 0 0;
     border-radius: 10px;
-    width:85%;
+    width: 85%;
     height: 70%;
   }
   .section8_img {
-  display: flex;
-  position: relative;
-margin: 0 auto;
-}
-  .section8Para{
-   width: 120px;
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+  }
+  .section8Para {
+    width: 120px;
     height: 65px;
     margin: 10px 100px;
     top: -28px;
     padding: 10px 0;
   }
   .section8_para1 {
- 
-  font-size: 15px;
-  line-height: 20px;
-}
-.section8_para2 {
-  
-  font-size: 12px;
-  line-height: 10px;
-}
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .section8_para2 {
+    font-size: 12px;
+    line-height: 10px;
+  }
 }
 @media only screen and (max-width: 768px) {
   .section1 .banner_container {
     width: 100%;
   }
   .section6 .mobile_technology {
-    max-width: 100%;}
+    max-width: 100%;
+  }
   .section1 .content .free_text p {
     font-size: 35px;
   }
@@ -949,21 +1049,20 @@ margin: 0 auto;
     font-size: 15px;
   }
   .section8_title {
-  font-size: 30px;
-}
-.section8_note p {
- padding: 0 4%;
-}
-.section3 .clientContent .section3_title p {
-  font-size: 26px;
-  line-height: 22px;
-}
+    font-size: 30px;
+  }
+  .section8_note p {
+    padding: 0 4%;
+  }
+  .section3 .clientContent .section3_title p {
+    font-size: 26px;
+    line-height: 22px;
+  }
 
-.section3 .section3_note p {
- 
-  font-size: 15px;
-  line-height: 22px;
-}
+  .section3 .section3_note p {
+    font-size: 15px;
+    line-height: 22px;
+  }
 
   /* Inner page */
   .serviceinner_sec2_Content {
@@ -1051,16 +1150,15 @@ margin: 0 auto;
   }
 
   .section3 .clientContent .section3_title p {
-  font-size: 23px;
-  line-height: 30px;
-}
+    font-size: 23px;
+    line-height: 30px;
+  }
 
-.section3 .section3_note p {
- 
-  font-size: 18px;
-  line-height: 22px;
-}
-.mobile_app_dev_card{
+  .section3 .section3_note p {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .mobile_app_dev_card {
     padding: 5%;
     width: 350px;
   }

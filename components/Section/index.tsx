@@ -385,55 +385,7 @@ const Section: NextPage = (props: any) => {
           </Carousel>
         </div>
       );
-    // case "home_page_banner":
-    // return (
-    //   <div className={styles.home_caro}>
-    //     <Carousel
-    //       swipeable={true}
-    //       draggable={false}
-    //       showDots={true}
-    //       responsive={responsive}
-    //       ssr={true} // means to render carousel on server-side.
-    //       infinite={true}
-    //       autoPlaySpeed={5000}
-    //       autoPlay={true}
-    //       keyBoardControl={true}
-    //       customTransition="all .5"
-    //       transitionDuration={500}
-    //       containerClass="carousel-container"
-    //       removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
-    //       dotListClass="custom-dot-list-style"
-    //       itemClass="carousel-item-padding-40-px"
-    //       className={styles.carosel_banner}
-    //     >
-    //       {carosel_cards.map((item: any) => (
-    //         <div className={styles.carosel_card}>
-    //           <img src={baseUrl + item.images[0].url} />
 
-    //           <div className={styles.banner_container}>
-    //             {item.free_text && (
-    //               <div
-    //                 className={styles.free_text}
-    //                 dangerouslySetInnerHTML={{
-    //                   __html: marked(item.free_text),
-    //                 }}
-    //               ></div>
-    //             )}
-    //             {item.call_to_action && (
-    //               <div className={styles.buttons}>
-    //                 <div className={styles.homecall_to_action}>
-    //                   <Link href={`/portfolio`}>
-    //                     <a>{item.call_to_action}</a>
-    //                   </Link>
-    //                 </div>
-    //               </div>
-    //             )}
-    //           </div>
-    //         </div>
-    //       ))}
-    //     </Carousel>
-    //   </div>
-    // );
     case "home_banner_mobile":
       return (
         <div className={styles.home_caro_mob}>
@@ -649,6 +601,8 @@ const Section: NextPage = (props: any) => {
 
             <div className={styles.right_from_section}>
               <HomeForm />
+              <div className={styles.dotsmoveHomehomeformTop}></div>
+              <div className={styles.dotsmovehomeformBottom}></div> 
             </div>
           </div>
         </div>
@@ -769,6 +723,8 @@ const Section: NextPage = (props: any) => {
               ))}
             </Row>
           </div>
+          <div className={companyStyles.dotsmoveTop}></div>
+          <div className={companyStyles.dotsmoveBottom}></div>
         </div>
       );
     case "our_people":
@@ -1084,6 +1040,8 @@ const Section: NextPage = (props: any) => {
               />
             )}
           </div>
+          <div className={companyStyles.bottom_banner_dotsmoveTop}></div>
+          <div className={companyStyles.bottom_banner_dotsmoveBottom}></div>
 
           <div className={companyStyles.banner_container}>
             {free_text && (
@@ -1116,34 +1074,40 @@ const Section: NextPage = (props: any) => {
       );
     case "home_blog":
       return (
-        <div className={`${styles.blog_banner}`}>
-          <div className={styles.carousel_blog_home}>
-            <h3>What our Client Says</h3>
-            <h5>Our send us bunch of smile with our services and love them</h5>
-            <Carousel
-              swipeable={true}
-              draggable={false}
-              showDots={false}
-              responsive={responsive_wide_cards}
-              ssr={true} // means to render carousel on server-side.
-              infinite={true}
-              keyBoardControl={true}
-              customTransition="all 0.5s ease"
-              transitionDuration={1000}
-              containerClass="carousel-container"
-              // removeArrowOnDeviceType={["tablet", "mobile"]}
+        <div style={{ position: "relative" }}>
+          <div className={`${styles.blog_banner}`}>
+            <div className={styles.carousel_blog_home}>
+              <h3>What our Client Says</h3>
+              <h5>
+                Our send us bunch of smile with our services and love them
+              </h5>
+              <Carousel
+                swipeable={true}
+                draggable={false}
+                showDots={false}
+                responsive={responsive_wide_cards}
+                ssr={true} // means to render carousel on server-side.
+                infinite={true}
+                keyBoardControl={true}
+                customTransition="all 0.5s ease"
+                transitionDuration={1000}
+                containerClass="carousel-container"
+                // removeArrowOnDeviceType={["tablet", "mobile"]}
 
-              dotListClass="custom-dot-list-style"
-              // itemClass="carousel-item-padding-40-px"
-              className={styles.homeblogcarousel}
-              customRightArrow={<CustomArrowBlog />}
-              customLeftArrow={<CustomleftArrowBlog />}
-            >
-              {cards.map((_card: any, index: number) => (
-                <Card {..._card} key={index} />
-              ))}
-            </Carousel>
+                dotListClass="custom-dot-list-style"
+                // itemClass="carousel-item-padding-40-px"
+                className={styles.homeblogcarousel}
+                customRightArrow={<CustomArrowBlog />}
+                customLeftArrow={<CustomleftArrowBlog />}
+              >
+                {cards.map((_card: any, index: number) => (
+                  <Card {..._card} key={index} />
+                ))}
+              </Carousel>
+            </div>
           </div>
+          <div className={styles.dotsmoveHomeclientTop}></div>
+          <div className={styles.dotsmoveclientBottom}></div>
         </div>
       );
     case "contact_us":
@@ -1502,6 +1466,16 @@ const Section: NextPage = (props: any) => {
               </Carousel>
             </div>
           </div>
+          <div
+            className={
+              servicesStyles.expertise_in_mobile_app_banner_dotsmoveTop
+            }
+          ></div>
+          <div
+            className={
+              servicesStyles.expertise_in_mobile_app_banner_dotsmoveBottom
+            }
+          ></div>
         </div>
       );
     // case "expertise_in_mobile_app_banner":
@@ -1647,6 +1621,10 @@ const Section: NextPage = (props: any) => {
               </div>
             )}
           </div>
+          <div className={servicesStyles.dotsmoveTop}></div>
+          <div
+            className={servicesStyles.mobile_technologies_dotsmoveBottom}
+          ></div>
         </div>
       );
     case "development_process":
@@ -1728,6 +1706,8 @@ const Section: NextPage = (props: any) => {
               </div>
             )}
           </div>
+          <div className={servicesStyles.our_works_dotsmoveTop}></div>
+          <div className={servicesStyles.our_works_dotsmoveBottom}></div>
         </div>
       );
 
@@ -1840,6 +1820,16 @@ const Section: NextPage = (props: any) => {
               </div>
             )}
           </div>
+          <div
+            className={
+              servicesStyles.expertise_in_mobile_app_banner_dotsmoveTop
+            }
+          ></div>
+          <div
+            className={
+              servicesStyles.expertise_in_mobile_app_banner_dotsmoveBottom
+            }
+          ></div>
         </div>
       );
     case "current_opening_career":
@@ -1878,6 +1868,8 @@ const Section: NextPage = (props: any) => {
               />
             )}
           </div>
+          <div className={companyStyles.bottom_banner_dotsmoveTop}></div>
+          <div className={companyStyles.bottom_banner_dotsmoveBottom}></div>
 
           <div className={careerstyles.section5_centerText}>
             {Heading && (
@@ -2399,6 +2391,16 @@ const Section: NextPage = (props: any) => {
               ))}
             </Carousel>
           </div>
+          <div
+            className={
+              servicesStyles.expertise_in_mobile_app_banner_dotsmoveTop
+            }
+          ></div>
+          <div
+            className={
+              servicesStyles.expertise_in_mobile_app_banner_dotsmoveBottom
+            }
+          ></div>
         </div>
       );
 

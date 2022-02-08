@@ -67,7 +67,7 @@ const AllBlogs: NextPage<{
           />
         </div>
         <div className={servicesStyles.dotsmoveTop}></div>
-          <div className={servicesStyles.dotsmoveBottom}></div>
+        <div className={servicesStyles.dotsmoveBottom}></div>
 
         <div className={companyStyles.banner_container}>
           <div className={companyStyles.content}>
@@ -165,6 +165,8 @@ const AllBlogs: NextPage<{
             </div>
           </div>
         </div>
+        <div className={companyStyles.bottom_banner_dotsmoveTop}></div>
+        <div className={companyStyles.bottom_banner_dotsmoveBottom}></div>
       </div>
 
       <Footer {...footer} />
