@@ -79,9 +79,9 @@ const Footer: NextPage = (props: any) => {
                         <div className={styles.footersubheading}>
                           <img src={`${baseUrl}${v.icon[0]?.url}`} />
                           {v.title === "address" ? (
-                            <span dangerouslySetInnerHTML={{ __html: marked(v.freetext) }}></span>
+                            <span  dangerouslySetInnerHTML={{ __html: marked(v.freetext )}}></span>
                           ) : (
-                            <a href={v.link}>{v.freetext}</a>
+                            <a href={v.link} className={styles.footerlink}>{v.freetext}</a>
                           )}
                         </div>
                       ))}

@@ -18,7 +18,7 @@
 .footerMenuOne a {
   height: 30px !important;
 }
-.footersubheading{
+.footerlink{
   font-size: 13px;
   line-height: 20px;
   color: #fff;
@@ -29,16 +29,27 @@
 .footersubheading h6{
 font-size: 13px;
 }
-.footersubheading p{
-  margin: 0;
+.footersubheading{
+  display: flex;
+  margin: 12px 0;
 }
-.footersubheading a{
+.footerlink{
+  margin: 0;
+  
+}
+.footerlink{
  color:  #fff;
  /* padding: 30px 0; */
 }
- 
-.footersubheading:hover {
+ .footerlink h5{
+   color: #fff;
+   opacity: 1;
+ }
+.footerlink:hover {
   opacity: 1;
+}
+.footersubheading a:hover{
+  color: #fff;
 }
 .footersubheading img {
   margin-right: 8px;
