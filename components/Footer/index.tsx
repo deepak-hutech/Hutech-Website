@@ -66,7 +66,7 @@ const Footer: NextPage = (props: any) => {
       <div className={styles.footer}>
         <div className={styles.footerCon}>
           <Row>
-            {footer_action.map(
+            {footer_action && footer_action.map(
               ({ link, display, group, icon }: any, index: any) => (
                 <Col sm={12} md={6} lg={3}>
                   <div className={styles.footerContainer}>
@@ -97,7 +97,7 @@ const Footer: NextPage = (props: any) => {
               Terms and Conditions | Privacy Policy | Disclaimer
             </p>
             <div className={styles.item}>
-              {social_icon.map(({ display, icon }: any, index: any) => (
+              {social_icon && social_icon.map(({ display, icon }: any, index: any) => (
                 <div>
                   <div key={index}>
                     <div>

@@ -41,7 +41,7 @@ const Header: NextPage = (props: any) => {
           <span className={styles.hamburgerMenuIcon}></span>
           <span className={styles.hamburgerMenuIcon}></span>
           <div className={styles.navContainer}>
-            {action.map((item: any) => (
+            {action && action.map((item: any) => (
               <Action {...item} />
             ))}
           </div>
