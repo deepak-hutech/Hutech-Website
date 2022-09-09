@@ -3,7 +3,7 @@ import axios from "axios";
 import CareerStyle from "../../styles/Contact.module.css";
 import { InputGroup, Form, Button, Row, Col, Container } from "react-bootstrap";
 import ReCAPTCHA from "react-google-recaptcha";
-import allCountries from "../data/countries.json"
+import allCountries from "../data/countries.json";
 
 const careerform = () => {
   const recaptchaRef = createRef();
@@ -11,7 +11,7 @@ const careerform = () => {
   const [file, setFile] = useState("");
   const [formMessage, setFormMessage] = useState("");
 
-  const [resetForm, setresetForm] = useState()
+  const [resetForm, setresetForm] = useState();
 
   const [inputs, setInputs] = useState({
     username: String,
@@ -165,19 +165,16 @@ const careerform = () => {
           />
         </Form.Group>
       </Row>
-      <Row className="mt-3">
-        
-        
-      </Row>
+      <Row className="mt-3"></Row>
       <Row>
-      <Form.Group
+        <Form.Group
           as={Col}
           md="4"
           controlId="validationCustomPhone"
           className={CareerStyle.contact_col}
         >
           <Form.Label className={CareerStyle.contactForm_label}>
-          Company name
+            Company name
           </Form.Label>
           <Form.Control
             value={inputs.company}
@@ -186,7 +183,6 @@ const careerform = () => {
             onChange={handleChange}
             name="company"
             placeholder="Enter company name"
-           
             required
           />
         </Form.Group>
@@ -208,7 +204,7 @@ const careerform = () => {
             <option value="" selected>
               Select Country
             </option>
-            {allCountries.map((val)=> (
+            {allCountries.map((val) => (
               <option value={val.name}>{val.name}</option>
             ))}
           </Form.Select>
@@ -234,7 +230,9 @@ const careerform = () => {
             </option>
             <option value="Staff Augmentation">Staff Augmentation</option>
             <option value="Managed Project">Managed Project</option>
-            <option value="Time and Material Hybrid">Time and Material Hybrid</option>
+            <option value="Time and Material Hybrid">
+              Time and Material Hybrid
+            </option>
           </Form.Select>
         </Form.Group>
       </Row>
@@ -243,7 +241,7 @@ const careerform = () => {
         <Form.Group
           className="mb-3"
           controlId="exampleForm.ControlTextarea1"
-          className={CareerStyle.contact_col}
+          // className={CareerStyle.contact_col}
         >
           <Form.Label className={CareerStyle.contactForm_label}>
             Project Details{" "}
@@ -260,12 +258,12 @@ const careerform = () => {
           />
         </Form.Group>
       </Row>
-      <Row >
+      <Row>
         <Form.Group
-         as={Col}
-         md="5"
+          as={Col}
+          md="5"
           className="position-relative mb-3"
-          className={CareerStyle.contact_col}
+          // className={CareerStyle.contact_col}
         >
           <Form.Label>Please share your requirement documents</Form.Label>
           <Form.Control type="file" name="file" onChange={onChange} />
@@ -275,15 +273,13 @@ const careerform = () => {
         File types: pdf, docx and doc | Maximum file size: 5MB.
       </p>
 
-       <Form.Label>
-          Please check the box below to proceed
-        </Form.Label> 
+      <Form.Label>Please check the box below to proceed</Form.Label>
       <ReCAPTCHA
         ref={recaptchaRef}
         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
         onChange={onReCAPTCHAChange}
         onExpired={removeCaptchaCode}
-        onErrored={removeCaptchaCode} 
+        onErrored={removeCaptchaCode}
       />
       <button type="submit" onClick={handleSubmit}>
         Submit
