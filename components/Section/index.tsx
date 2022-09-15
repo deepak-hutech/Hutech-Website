@@ -89,6 +89,7 @@ const Section: NextPage = (props: any) => {
     address,
     para,
   } = props;
+  console.log("this is props : -", type);
 
   useEffect(() => {
     AOS.init();
