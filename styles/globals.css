@@ -71,7 +71,7 @@ a {
 
 .react-multi-carousel-list {
   align-items: baseline !important;
-  overflow: visible !important;
+  /* overflow: visible !important; */
 }
 .custom-dot-list-style {
   overflow: visible !important;
@@ -165,7 +165,8 @@ ul {
   background: #c2e4fc;
 }
 .form-select:focus {
-  border-color: transparent;}
+  border-color: transparent;
+}
 .rc-anchor-error-msg-container {
   font-family: "GraphikRegular";
   font-size: 10px;
@@ -177,7 +178,7 @@ ul {
 .nav-tabs .nav-link.active {
   color: #2f95de;
 }
-.form-control:focus{
+.form-control:focus {
   box-shadow: none !important;
 }
 /* 
